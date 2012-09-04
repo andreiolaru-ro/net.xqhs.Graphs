@@ -1,0 +1,9 @@
+====== The changelog ======
+
+// This file should be in DokuWiki syntax [[http://www.dokuwiki.org/syntax]] //
+// exception: in the file use -- and -/ instead of <del> and </del> for strikethroughs
+
+
+===== 04.09.2012 first commits (andreiolaru) =====
+
+  - added information files.
