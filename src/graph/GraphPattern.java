@@ -1,5 +1,8 @@
 package graph;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import net.xqhs.util.logging.UnitConfigData;
 
 public class GraphPattern extends Graph
@@ -31,9 +34,9 @@ public class GraphPattern extends Graph
 			labelIndex = genericIndex;
 		}
 		
-		public NodeP(String _label)
+		public NodeP(String label)
 		{
-			super(_label);
+			super(label);
 		}
 		
 		public boolean isGeneric()
@@ -73,6 +76,10 @@ public class GraphPattern extends Graph
 		super(unitConfig);
 	}
 	
+	/**
+	 * Only {@link NodeP} instances can be added to a {@link GraphPattern}. This makes it easier to work with the nodes
+	 * in the pattern, because conversion won't fail.
+	 */
 	@Override
 	public GraphPattern addNode(Node node)
 	{
@@ -104,5 +111,13 @@ public class GraphPattern extends Graph
 		}
 		super.addNode(node);
 		return this;
+	}
+	
+	public Collection<NodeP> getNodesP()
+	{
+		Collection<NodeP> ret = new ArrayList<>();
+		for(Node n : getNodes())
+			ret.add((NodeP) n);
+		return ret;
 	}
 }

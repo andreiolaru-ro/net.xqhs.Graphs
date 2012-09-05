@@ -12,5 +12,6 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/Logging/output/Logging.jar!/doc"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Logging/lib/log4j-1.2.16.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

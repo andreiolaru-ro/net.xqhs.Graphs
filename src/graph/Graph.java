@@ -163,6 +163,13 @@ public class Graph extends Unit
 		return true;
 	}
 	
+	/**
+	 * Simple Dijskstra algorithm to compute the distance between one node and all others.
+	 * 
+	 * @param node
+	 *            : the source node.
+	 * @return the distances to the other nodes.
+	 */
 	protected Map<Node, Integer> computeDistancesFromUndirected(Node node)
 	{
 		if(!nodes.contains(node))

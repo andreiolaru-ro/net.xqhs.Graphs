@@ -3,6 +3,9 @@
 // This file should be in DokuWiki syntax [[http://www.dokuwiki.org/syntax]] //
 // exception: in the file use -- and -/ instead of <del> and </del> for strikethroughs
 
+===== 05.09.2012 fixing errors (andreiolaru) =====
+
+  - debugging and fixing matching algorithms; CURRENT: why if mergeCandidates is a TreeSet not all candidates are added?
 
 ===== 05.09.2012 fixing errors (andreiolaru) =====
 
