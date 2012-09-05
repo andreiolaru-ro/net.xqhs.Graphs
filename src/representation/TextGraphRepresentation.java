@@ -1,7 +1,9 @@
 package representation;
 
 import graph.Edge;
+import graph.Graph;
 import graph.GraphPattern.NodeP;
+import graph.Node;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -10,9 +12,11 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 
-import net.xqhs.util.logging.Unit;
+import net.xqhs.util.logging.UnitComponent;
 import net.xqhs.util.logging.UnitConfigData;
+import representation.TextRepresentationElement.Symbol;
 import representation.TextRepresentationElement.TextRepElementConfig;
+import representation.TextRepresentationElement.Type;
 
 public class TextGraphRepresentation extends LinearGraphRepresentation
 {
@@ -75,7 +79,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	{
 		super.processGraph();
 		
-		Set<PathElement> blackNodes = new HashSet<PathElement>(); // contains all 'visited' nodes
+		Set<PathElement> blackNodes = new HashSet<>(); // contains all 'visited' nodes
 		TextRepresentationElement textRepresentation = new TextRepresentationElement(new TextRepElementConfig(this,
 				Type.ELEMENT_CONTAINER));
 		
@@ -103,11 +107,11 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	{
 		GraphConfig conf = (GraphConfig) this.config;
 		
-		List<TextRepresentationElement> ret = new LinkedList<TextRepresentationElement>();
+		List<TextRepresentationElement> ret = new LinkedList<>();
 		
 		int allchildren = el.otherChildren.size() + el.children.size();
 		int remainingChildren = allchildren;
-		List<PathElement> others = new LinkedList<PathElement>(el.otherChildren);
+		List<PathElement> others = new LinkedList<>(el.otherChildren);
 		
 		for(PathElement child : el.children)
 		{
@@ -172,6 +176,11 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		return theRepresentation;
 	}
 	
+	protected boolean isBackwards()
+	{
+		return ((GraphConfig)config).isBackwards;
+	}
+	
 	/**
 	 * Returns a text representation of the associated graph, on one line.
 	 * 
@@ -201,22 +210,21 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	public static Graph readRepresentation(String rawInput, UnitConfigData graphUnitConfig,
 			UnitConfigData thisUnitConfig)
 	{
-		Unit thisUnit = new Unit(thisUnitConfig);
-		Logger log = thisUnit.getLog();
+		UnitComponent log = new UnitComponent(thisUnitConfig);
 		
-		log.info("reading graph");
-		ContentHolder<String> input = new ContentHolder<String>(rawInput);
+		log.li("reading graph");
+		ContentHolder<String> input = new ContentHolder<>(rawInput);
 		Graph g = new Graph(graphUnitConfig);
 		
 		boolean isBackwards = input.get().indexOf(Symbol.EDGE_ENDING_BACKWARD.toString()) >= 0;
 		TextGraphRepresentation repr = new TextGraphRepresentation(
 				(GraphConfig) new TextGraphRepresentation.GraphConfig(g).setBackwards(isBackwards));
 		repr.theRepresentation = TextRepresentationElement.readRepresentation(input, repr, log);
-		log.trace("result:" + repr.theRepresentation.toString() + "\n====================================");
+		log.lf("result:" + repr.theRepresentation.toString() + "\n====================================");
 		
 		// start building the graph
-		Stack<Queue<TextRepresentationElement>> tree = new Stack<Queue<TextRepresentationElement>>();
-		Queue<TextRepresentationElement> cLevel = new LinkedList<TextRepresentationElement>(), nLevel = null;
+		Stack<Queue<TextRepresentationElement>> tree = new Stack<>();
+		Queue<TextRepresentationElement> cLevel = new LinkedList<>(), nLevel = null;
 		cLevel.add((TextRepresentationElement) repr.theRepresentation);
 		tree.add(cLevel);
 		
@@ -224,12 +232,12 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		while(!tree.isEmpty())
 		{
 			cLevel = tree.peek();
-			log.trace("inspecting tree at level [" + tree.size() + "]");
+			log.lf("inspecting tree at level [" + tree.size() + "]");
 			if(cLevel.isEmpty())
 				tree.pop();
 			else
 			{
-				log.trace("[" + cLevel.size() + "] elements left to inspect");
+				log.lf("[" + cLevel.size() + "] elements left to inspect");
 				
 				TextRepresentationElement element = cLevel.poll();
 				Type type = ((TextRepElementConfig) element.config).linkType;
@@ -237,19 +245,19 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 				{
 				case ELEMENT_CONTAINER:
 				case SUBGRAPH:
-					log.trace("inspecting [" + type + "]");
-					nLevel = new LinkedList<TextRepresentationElement>();
+					log.lf("inspecting [" + type + "]");
+					nLevel = new LinkedList<>();
 					nLevel.addAll(element.content);
 					tree.push(nLevel);
 					break;
 				case NODE:
 				{
 					Node node = (Node) element.config.representedComponent;
-					log.trace("inspecting [" + type + "]: [" + node + "]");
-					log.info("adding to graph node [" + node + "]");
+					log.lf("inspecting [" + type + "]: [" + node + "]");
+					log.li("adding to graph node [" + node + "]");
 					g.addNode(node);
 					
-					nLevel = new LinkedList<TextRepresentationElement>();
+					nLevel = new LinkedList<>();
 					tree.push(nLevel);
 					
 					// add edges
@@ -260,7 +268,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 							edge.setFrom(node);
 						else
 							edge.setTo(node);
-						log.trace("adding to queue [" + ((TextRepElementConfig) edgeEl.config).linkType + "]: [" + edge
+						log.lf("adding to queue [" + ((TextRepElementConfig) edgeEl.config).linkType + "]: [" + edge
 								+ "]");
 						nLevel.add(edgeEl);
 					}
@@ -271,9 +279,9 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 				case EXTERNAL_LINK:
 				{
 					Edge edge = (Edge) element.config.representedComponent;
-					log.trace("inspecting [" + type + "]: [" + edge + "]");
+					log.lf("inspecting [" + type + "]: [" + edge + "]");
 					
-					nLevel = new LinkedList<TextRepresentationElement>();
+					nLevel = new LinkedList<>();
 					tree.push(nLevel);
 					Node targetNode = null;
 					TextRepresentationElement targetNodeEl = element.content.iterator().next();
@@ -282,19 +290,19 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 						Node dummyTargetNode = (Node) targetNodeEl.config.representedComponent;
 						if(dummyTargetNode instanceof NodeP && ((NodeP) dummyTargetNode).isGeneric())
 						{
-							log.trace("searching pattern target node [" + dummyTargetNode + "]");
+							log.lf("searching pattern target node [" + dummyTargetNode + "]");
 							for(Node candidateNode : g.getNodesNamed(dummyTargetNode.getLabel()))
 								if(candidateNode instanceof NodeP
 										&& ((NodeP) dummyTargetNode).genericIndex() == ((NodeP) candidateNode)
 												.genericIndex())
 									targetNode = candidateNode;
-							log.trace("found old target pattern node [" + targetNode + "]");
+							log.lf("found old target pattern node [" + targetNode + "]");
 						}
 						else
 						{
-							log.trace("searching target node [" + dummyTargetNode + "]");
+							log.lf("searching target node [" + dummyTargetNode + "]");
 							targetNode = g.getNodesNamed(dummyTargetNode.getLabel()).iterator().next();
-							log.trace("found old target node [" + targetNode + "]");
+							log.lf("found old target node [" + targetNode + "]");
 						}
 					}
 					else
@@ -302,19 +310,19 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					  // actual new node
 						targetNode = (Node) targetNodeEl.config.representedComponent;
 						nLevel.add(targetNodeEl);
-						log.trace("target node (added to queue) [" + targetNode + "]");
+						log.lf("target node (added to queue) [" + targetNode + "]");
 					}
 					if(!isBackwards)
 						edge.setTo(targetNode);
 					else
 						edge.setFrom(targetNode);
-					log.info("adding to graph edge [" + edge + "]");
+					log.li("adding to graph edge [" + edge + "]");
 					g.addEdge(edge);
 				}
 				}
 			}
 		}
-		thisUnit.exit();
+		log.doExit();
 		return g;
 	}
 }

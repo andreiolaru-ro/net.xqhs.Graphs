@@ -1,6 +1,8 @@
 package representation;
 
+import graph.Graph;
 import graph.GraphPattern.NodeP;
+import graph.Node;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -58,14 +60,14 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 	public class PathElement
 	{
 		Node			  node		  = null;
-		int			   distance	  = 0;							// distance from firstNode / subgraph root
+		int			   distance	  = 0;				 // distance from firstNode / subgraph root
 		PathElement	   parent		= null;
-		int			   treeOrder	 = -1;						   // order of the sub-tree containing this
-																		 // element
-		List<PathElement> children	  = new LinkedList<PathElement>();
-		List<PathElement> otherChildren = new LinkedList<PathElement>();
-		int			   pathlength	= -1;						   // distance to farthest leaf
-																		 
+		int			   treeOrder	 = -1;				// order of the sub-tree containing this
+															  // element
+		List<PathElement> children	  = new LinkedList<>();
+		List<PathElement> otherChildren = new LinkedList<>();
+		int			   pathlength	= -1;				// distance to farthest leaf
+															  
 		public PathElement(Node _node, int _distance, PathElement _parent)
 		{
 			this.node = _node;
@@ -138,7 +140,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 	@Override
 	protected void processGraph()
 	{
-		sortedNodes = new LinkedList<Node>(theGraph.getNodes());
+		sortedNodes = new LinkedList<>(theGraph.getNodes());
 		Collections.sort(sortedNodes, new NodeInAlphaComparator());
 		
 		buildPaths();
@@ -148,8 +150,8 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 	{
 		GraphConfig conf = (GraphConfig) this.config;
 		
-		Queue<PathElement> grayNodes = new LinkedList<PathElement>();
-		Queue<PathElement> blackNodes = new LinkedList<PathElement>();
+		Queue<PathElement> grayNodes = new LinkedList<>();
+		Queue<PathElement> blackNodes = new LinkedList<>();
 		
 		while(blackNodes.size() < sortedNodes.size())
 		{
@@ -169,7 +171,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 			while(!grayNodes.isEmpty())
 			{
 				PathElement el = grayNodes.poll();
-				log.trace("taking element " + el);
+				lf("taking element " + el);
 				// expand
 				for(Node n1 : (conf.isBackwards ? el.node.inList() : el.node.outList()))
 				{
@@ -192,14 +194,14 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 						{
 							el1 = eli;
 							wasinblacknodes = true;
-							log.trace("(element " + el1 + " was black)");
+							lf("(element " + el1 + " was black)");
 						}
 					if(el1 == null)
 					{ // new node, add new PathElement
 						el1 = new PathElement(n1, el.distance + 1, el);
 						if(!towardsoutside)
 						{
-							log.trace("new gray node added: " + el1 + " of " + el);
+							lf("new gray node added: " + el1 + " of " + el);
 							grayNodes.add(el1);
 							el.children.add(el1);
 						}
@@ -210,7 +212,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 					}
 					else if(el.pathContains(el1))
 					{ // cycle detected -> not good / no add
-						log.trace("cycle detected for " + el1);
+						lf("cycle detected for " + el1);
 						if(!el.otherChildren.contains(el1))
 							el.otherChildren.add(el1);
 					}
@@ -231,18 +233,18 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 							blackNodes.remove(el1);
 							grayNodes.add(el1);
 						}
-						log.trace("element reinserted: " + el1);
+						lf("element reinserted: " + el1);
 					}
 					else
 					{ // new distance would not be longer, leave alone
-						log.trace("element not reinserted");
+						lf("element not reinserted");
 						if(!el.otherChildren.contains(el1))
 							el.otherChildren.add(el1);
 					}
 				}
 				blackNodes.add(el);
 			}
-			log.info("build paths done");
+			li("build paths done");
 			
 			for(PathElement el : blackNodes)
 				if(el.children.isEmpty())
@@ -259,12 +261,12 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 					}
 				}
 		}
-		log.info("measure paths done");
-		log.trace("path_element : [children] / [otherchildren]");
+		li("measure paths done");
+		lf("path_element : [children] / [otherchildren]");
 		
 		for(PathElement el : blackNodes)
 		{
-			Set<PathElement> marked = new HashSet<LinearGraphRepresentation.PathElement>();
+			Set<PathElement> marked = new HashSet<>();
 			for(PathElement oth : el.otherChildren)
 				if(!oth.pathContains(el) && (oth.parent != null) && (el.pathlength > oth.parent.pathlength))
 				// 1) if the other child is already having the element as ancestor, then it is already on the main path
@@ -274,8 +276,8 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 				// 3) switch if the other child is outside of the main path, and this way it would be closer to the main
 				// path
 				{ // switch
-					log.trace("switching " + oth.toString()
-							+ ((oth.parent != null) ? (" from " + oth.parent.toString()) : "") + " to " + el.toString());
+					lf("switching " + oth.toString() + ((oth.parent != null) ? (" from " + oth.parent.toString()) : "")
+							+ " to " + el.toString());
 					if(oth.parent != null)
 					{
 						oth.parent.children.remove(oth);
@@ -292,15 +294,15 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 			}
 			Collections.sort(el.children, new PathComparator());
 			Collections.sort(el.otherChildren, new PathComparator());
-			log.trace(el.toString() + ": " + el.children.toString() + " / " + el.otherChildren.toString());
+			lf(el.toString() + ": " + el.children.toString() + " / " + el.otherChildren.toString());
 		}
-		paths = new LinkedList<PathElement>(blackNodes);
+		paths = new LinkedList<>(blackNodes);
 		Collections.sort(paths, new PathComparator());
 		
-		log.info("sort paths done");
+		li("sort paths done");
 		
-		log.info("[node_name ( distance_from_root : parent_or_dash_if_root / number_of_children_or_dot_if_none +number_of_other_children)]"
+		li("[node_name ( distance_from_root : parent_or_dash_if_root / number_of_children_or_dot_if_none +number_of_other_children)]"
 				+ "/ path_length_from_node)]");
-		log.info(paths.toString());
+		li(paths.toString());
 	}
 }

@@ -8,6 +8,7 @@
 
   - now using the Logging library
   - now using Java 7 conventions
+  - fixed import and log errors
 
 ===== 04.09.2012 first commits (andreiolaru) =====
 

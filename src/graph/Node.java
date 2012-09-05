@@ -27,13 +27,13 @@ public class Node extends GraphComponent
 	public Node(String nodeLabel)
 	{
 		this.label = nodeLabel;
-		this.outEdges = new HashSet<Edge>();
-		this.inEdges = new HashSet<Edge>();
+		this.outEdges = new HashSet<>();
+		this.inEdges = new HashSet<>();
 	}
 	
 	public Set<Node> outList()
 	{
-		Set<Node> ret = new HashSet<Node>();
+		Set<Node> ret = new HashSet<>();
 		for(Edge e : outEdges)
 			ret.add(e.to);
 		return ret;
@@ -41,7 +41,7 @@ public class Node extends GraphComponent
 	
 	public Set<Node> inList()
 	{
-		Set<Node> ret = new HashSet<Node>();
+		Set<Node> ret = new HashSet<>();
 		for(Edge e : inEdges)
 			ret.add(e.from);
 		return ret;

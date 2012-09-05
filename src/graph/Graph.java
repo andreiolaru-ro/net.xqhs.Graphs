@@ -61,6 +61,12 @@ public class Graph extends Unit
 		edges = new HashSet<>();
 	}
 	
+	@Override
+	public String getUnitName()
+	{
+		return super.getUnitName();
+	}
+	
 	public Graph addNode(Node node)
 	{
 		if(node == null)

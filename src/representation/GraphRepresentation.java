@@ -1,5 +1,6 @@
 package representation;
 
+import graph.Graph;
 import graph.GraphComponent;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitConfigData;
@@ -42,21 +43,26 @@ public abstract class GraphRepresentation extends Unit
 		}
 		
 		@Override
-		public GraphConfig setName(String _unitName)
+		public GraphConfig setName(String unitName)
 		{
-			if(DEFAULT_UNIT_NAME.equals(_unitName))
+			if(DEFAULT_UNIT_NAME.equals(unitName))
 			{
-				if(this.graph.getName() == null)
+				if(this.graph.getUnitName() == null)
 					return (GraphConfig) super.setName(setDefaultName("Graph"
 							+ new Integer(graph.hashCode()).toString().substring(0, 5)));
-				return (GraphConfig) super.setName(setDefaultName(this.graph.getName()));
+				return (GraphConfig) super.setName(setDefaultName(this.graph.getUnitName()));
 			}
-			return (GraphConfig) super.setName(_unitName);
-			
+			return (GraphConfig) super.setName(unitName);
 		}
 		
+		/**
+		 * This can be overridden by other representations to produce the correct suffix.
+		 * 
+		 * @param name
+		 *            : the name of the graph's unit.
+		 * @return the name of the representation
+		 */
 		@SuppressWarnings("static-method")
-		// this has to be overridable
 		protected String setDefaultName(String name)
 		{
 			return name + "-R";
@@ -64,23 +70,22 @@ public abstract class GraphRepresentation extends Unit
 	}
 	
 	Graph				 theGraph		  = null;
-	GraphConfig		   config			= null;
 	RepresentationElement theRepresentation = null;
 	
 	public GraphRepresentation(GraphConfig conf)
 	{
 		super(conf);
 		
-		if(conf == null)
+		if(!(config instanceof GraphConfig))
 			throw new IllegalArgumentException("null graph configuration");
-		this.config = conf;
+		GraphConfig gconfig = (GraphConfig) config;
 		
-		this.theGraph = this.config.graph;
+		this.theGraph = gconfig.graph;
 		
-		if(this.config.rootRepresentation == null)
-			this.config.rootRepresentation = this;
+		if(gconfig.rootRepresentation == null)
+			gconfig.rootRepresentation = this;
 		
-		if(this.config.doProcess)
+		if(gconfig.doProcess)
 			processGraph();
 	}
 	

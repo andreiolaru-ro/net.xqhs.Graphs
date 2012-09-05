@@ -9,7 +9,7 @@ import representation.RepresentationElement;
 
 public abstract class GraphComponent
 {
-	protected Set<RepresentationElement> representations = new HashSet<RepresentationElement>();
+	protected Set<RepresentationElement> representations = new HashSet<>();
 	
 	public void addRepresentation(RepresentationElement repr)
 	{
@@ -31,7 +31,7 @@ public abstract class GraphComponent
 	
 	protected Collection<RepresentationElement> getRepresentationsForPlatform(GraphRepresentation representation)
 	{
-		Collection<RepresentationElement> ret = new HashSet<RepresentationElement>();
+		Collection<RepresentationElement> ret = new HashSet<>();
 		for(RepresentationElement repr : representations)
 			if(repr.getRootRepresentation() == representation)
 				ret.add(repr);

@@ -15,6 +15,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.Vector;
 
+import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitConfigData;
 import representation.TextGraphRepresentation;
@@ -73,14 +74,14 @@ public class GraphMatcher extends Unit
 			matchedGraph = new Graph().addNode(e.from).addNode(e.to).addEdge(e);
 			solvedPart = (GraphPattern) new GraphPattern().addNode((NodeP) eP.from, false)
 					.addNode((NodeP) eP.to, false).addEdge(eP);
-			nodeFunction = new HashMap<NodeP, Node>();
+			nodeFunction = new HashMap<>();
 			nodeFunction.put((NodeP) eP.from, e.from);
 			nodeFunction.put((NodeP) eP.to, e.to);
-			frontier = new HashMap<GraphPattern.NodeP, Integer>();
+			frontier = new HashMap<>();
 			frontier.put((NodeP) eP.from, new Integer(eP.from.inEdges.size() + eP.from.outEdges.size() - 1));
 			frontier.put((NodeP) eP.to, new Integer(eP.to.inEdges.size() + eP.to.outEdges.size() - 1));
-			edgeFunction = new HashMap<EdgeP, List<Edge>>();
-			List<Edge> eL = new Vector<Edge>(1, 0);
+			edgeFunction = new HashMap<>();
+			List<Edge> eL = new Vector<>(1, 0);
 			eL.add(e);
 			edgeFunction.put(eP, eL);
 			
@@ -93,7 +94,7 @@ public class GraphMatcher extends Unit
 					unsolvedPart.addEdge(ePi);
 			k = unsolvedPart.edges.size();
 			
-			matchCandidates = new HashSet<Match>();
+			matchCandidates = new HashSet<>();
 			
 			this.id = id;
 		}
@@ -156,7 +157,7 @@ public class GraphMatcher extends Unit
 	 */
 	public int doMatching()
 	{
-		SortedSet<Node> vertexSet = new TreeSet<Node>(new Comparator<Node>() {
+		SortedSet<Node> vertexSet = new TreeSet<>(new Comparator<Node>() {
 			@Override
 			public int compare(Node n1, Node n2)
 			{
@@ -164,19 +165,18 @@ public class GraphMatcher extends Unit
 				int out2 = n2.outEdges.size() - n2.inEdges.size();
 				if(out1 != out2)
 					return -(out1 - out2);
-				else
-					return n1.label.compareTo(n2.label);
+				return n1.label.compareTo(n2.label);
 			}
 		});
 		vertexSet.addAll(pattern.getNodes());
-		log.trace("sorted vertex set: " + vertexSet);
+		lf("sorted vertex set: " + vertexSet);
 		Node vMP = vertexSet.first();
-		log.trace("start vertex: " + vMP);
+		lf("start vertex: " + vMP);
 		final Map<Node, Integer> distances = pattern.computeDistancesFromUndirected(vMP);
-		log.trace("vertex distances: " + distances);
+		lf("vertex distances: " + distances);
 		
 		// match sorter queue
-		PriorityQueue<Match> matchQueue = new PriorityQueue<Match>(1, new Comparator<Match>() {
+		PriorityQueue<Match> matchQueue = new PriorityQueue<>(1, new Comparator<Match>() {
 			@Override
 			public int compare(Match m1, Match m2)
 			{
@@ -186,21 +186,19 @@ public class GraphMatcher extends Unit
 					Edge e2 = m2.solvedPart.edges.iterator().next();
 					int result = Math.min(distances.get(e1.from).intValue(), distances.get(e1.to).intValue())
 							- Math.min(distances.get(e2.from).intValue(), distances.get(e2.to).intValue());
-					// log.trace("compare (" + result + ") " + e1 + " : " + e2);
+					// lf("compare (" + result + ") " + e1 + " : " + e2);
 					if(result != 0)
 						return result;
-					else
-						return m1.id.compareTo(m2.id);
+					return m1.id.compareTo(m2.id);
 				}
-				else
-					return m1.unsolvedPart.size() - m2.unsolvedPart.size();
+				return m1.unsolvedPart.size() - m2.unsolvedPart.size();
 			}
 		});
 		
 		// /////// build initial matches
 		
 		int edgeId = 0;
-		SortedSet<Edge> sortedEdges = new TreeSet<Edge>(new Comparator<Edge>() {
+		SortedSet<Edge> sortedEdges = new TreeSet<>(new Comparator<Edge>() {
 			@Override
 			public int compare(Edge e1, Edge e2)
 			{
@@ -217,22 +215,22 @@ public class GraphMatcher extends Unit
 				int matchId = 0;
 				for(Edge e : graph.edges)
 				{
-					// log.trace("trying edges: " + eP + " : " + e);
+					// lf("trying edges: " + eP + " : " + e);
 					if(isMatch(eP, e))
 					{
 						Match m = new Match(graph, pattern, e, eP, edgeId + ":" + matchId);
 						addMatchToQueue(m, matchQueue);
-						log.info("new initial match: " + m.solvedPart.edges.iterator().next() + " : "
+						li("new initial match: " + m.solvedPart.edges.iterator().next() + " : "
 								+ m.matchedGraph.edges.iterator().next());
 						matchId++;
 					}
 				}
-				log.trace("edge " + eP + " has id [" + edgeId + "]");
+				lf("edge " + eP + " has id [" + edgeId + "]");
 				edgeId++;
 			}
 		}
 		
-		log.trace("initial matches (" + matchQueue.size() + "): " + matchQueue + "-------------------------");
+		lf("initial matches (" + matchQueue.size() + "): " + matchQueue + "-------------------------");
 		
 		while(!matchQueue.isEmpty())
 		{
@@ -242,7 +240,7 @@ public class GraphMatcher extends Unit
 				Match mc = itm.next();
 				itm.remove();
 				mc.matchCandidates.remove(m);
-				log.trace("merging " + m + " and " + mc);
+				lf("merging " + m + " and " + mc);
 				Match mr = merge(m, mc);
 				if(mr != null)
 					addMatchToQueue(mr, matchQueue);
@@ -262,7 +260,7 @@ public class GraphMatcher extends Unit
 		newM.unsolvedPart.nodes.addAll(pt.nodes);
 		newM.k = newM.unsolvedPart.edges.size();
 		
-		Set<Edge> totalMatch = new HashSet<Edge>();
+		Set<Edge> totalMatch = new HashSet<>();
 		totalMatch.addAll(m1.solvedPart.edges);
 		totalMatch.addAll(m2.solvedPart.edges);
 		
@@ -274,7 +272,7 @@ public class GraphMatcher extends Unit
 			newM.unsolvedPart.removeEdge(eP).removeNode(eP.from).removeNode(eP.to);
 			newM.k--;
 			if(newM.frontier == null)
-				newM.frontier = new HashMap<GraphPattern.NodeP, Integer>();
+				newM.frontier = new HashMap<>();
 			// newM.frontier.put((NodeP)eP.from, new Integer(eP.from.inEdges.size() + eP.from.outEdges.size() - 1)); //
 			// FIXME
 			// newM.frontier.put((NodeP)eP.to, new Integer(eP.to.inEdges.size() + eP.to.outEdges.size() - 1)); // FIXME
@@ -289,7 +287,7 @@ public class GraphMatcher extends Unit
 			{
 				if(fitted)
 				{
-					log.error("match-intersection pattern edge found: [" + eP + "]");
+					le("match-intersection pattern edge found: [" + eP + "]");
 					throw new IllegalArgumentException("match-intersection edge");
 				}
 				fitted = true;
@@ -299,12 +297,12 @@ public class GraphMatcher extends Unit
 		return null;
 	}
 	
-	protected void addMatchToQueue(Match m, PriorityQueue<Match> queue)
+	protected static void addMatchToQueue(Match m, PriorityQueue<Match> queue)
 	{
 		for(Match mi : queue)
-			if(!new HashSet<Edge>(m.solvedPart.edges).removeAll(mi.solvedPart.edges)) // check that the two matches
+			if(!new HashSet<>(m.solvedPart.edges).removeAll(mi.solvedPart.edges)) // check that the two matches
 																					  // don't intersect
-				if(!new HashSet<Edge>(m.matchedGraph.edges).removeAll(mi.matchedGraph.edges))
+				if(!new HashSet<>(m.matchedGraph.edges).removeAll(mi.matchedGraph.edges))
 					for(Map.Entry<NodeP, Integer> frontierV : mi.frontier.entrySet())
 						if(m.frontier.containsKey(frontierV.getKey())
 								&& (m.nodeFunction.get(frontierV.getKey()) == mi.nodeFunction.get(frontierV.getKey())))
@@ -316,7 +314,7 @@ public class GraphMatcher extends Unit
 		
 	}
 	
-	protected boolean isMatch(EdgeP eP, Edge e)
+	protected static boolean isMatch(EdgeP eP, Edge e)
 	{
 		if(!((NodeP) eP.from).generic && !eP.from.label.equals(e.from.label))
 			return false;
@@ -332,7 +330,6 @@ public class GraphMatcher extends Unit
 			else
 				return false;
 		}
-		else
-			return false; // TODO // FIXME
+		return false; // TODO // FIXME
 	}
 }

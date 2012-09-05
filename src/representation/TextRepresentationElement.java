@@ -3,9 +3,12 @@ package representation;
 import graph.Edge;
 import graph.GraphComponent;
 import graph.GraphPattern.NodeP;
+import graph.Node;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import net.xqhs.util.logging.UnitComponent;
 
 public class TextRepresentationElement extends RepresentationElement
 {
@@ -108,7 +111,7 @@ public class TextRepresentationElement extends RepresentationElement
 	{
 		super(conf);
 		
-		content = new LinkedList<TextRepresentationElement>();
+		content = new LinkedList<>();
 		
 		if(conf.representedComponent != null)
 			conf.representedComponent.addRepresentation(this);
@@ -153,7 +156,7 @@ public class TextRepresentationElement extends RepresentationElement
 		
 		if(isEdgeType(linkType)) // FIXME: should not use Edge's toString function, should represent manually
 			ret += ((Edge) conf.representedComponent)
-					.toStringShort(((TextGraphRepresentation.GraphConfig) config.rootRepresentation.config).isBackwards);
+					.toStringShort(((TextGraphRepresentation) config.rootRepresentation).isBackwards());
 		
 		if(linkType == Type.NODE)
 			ret += conf.representedComponent.toString(); // FIXME: should not use Node's toString function, should
@@ -196,15 +199,15 @@ public class TextRepresentationElement extends RepresentationElement
 	}
 	
 	static TextRepresentationElement readRepresentation(ContentHolder<String> input, TextGraphRepresentation root,
-			Logger log)
+			UnitComponent log)
 	{
 		return readRepresentation(input, Type.ELEMENT_CONTAINER, true, root, log);
 	}
 	
 	static TextRepresentationElement readRepresentation(ContentHolder<String> input, Type type, boolean firstSibling,
-			TextGraphRepresentation root, Logger log)
+			TextGraphRepresentation root, UnitComponent log)
 	{
-		log.trace("reading [" + type + "] from: " + input);
+		log.lf("reading [" + type + "] from: " + input);
 		TextRepresentationElement ret = null;
 		int nSiblings = 0;
 		switch(type)
@@ -221,7 +224,7 @@ public class TextRepresentationElement extends RepresentationElement
 			if(rez.length > 0 && rez[0].length() > 0)
 			{
 				input.set(rez[0]);
-				log.info("create new subgraph");
+				log.li("create new subgraph");
 				ret = new TextRepresentationElement(new TextRepElementConfig(root, Type.SUBGRAPH, firstSibling));
 				ret.addSub(readRepresentation(input, Type.NODE, true, root, log));
 			}
@@ -280,7 +283,7 @@ public class TextRepresentationElement extends RepresentationElement
 				edgeString = input.get().trim();
 				rest = "";
 			}
-			log.trace("identified " + (lastChild ? "[last]" : "") + " edge [" + edgeString + "]");
+			log.lf("identified " + (lastChild ? "[last]" : "") + " edge [" + edgeString + "]");
 			
 			// read branch
 			// get the label
@@ -288,7 +291,7 @@ public class TextRepresentationElement extends RepresentationElement
 			int firstIndex, lastIndex;
 			String nextNode;
 			
-			if(!((LinearGraphRepresentation.GraphConfig) root.config).isBackwards)
+			if(!root.isBackwards())
 			{ // - forward-edge [-]> next node
 				String rez[] = edgeString.split(Symbol.EDGE_ENDING_FORWARD.toString(), 2);
 				firstIndex = rez[0].indexOf(Symbol.EDGE_LIMIT.toString()) + 1;
@@ -335,7 +338,7 @@ public class TextRepresentationElement extends RepresentationElement
 				nextNode = nextNode.substring(1);
 			
 			// create
-			log.info("create new [" + edgeTypeChar + "][" + edgeType + "] edge: [" + edgeName + "]");
+			log.li("create new [" + edgeTypeChar + "][" + edgeType + "] edge: [" + edgeName + "]");
 			Edge edge = new Edge(null, null, edgeName); // node names will be filled in later (in
 														// LinearGraphRepresentation)
 			// FIXME: what level to give; does it matter? remove level?
@@ -359,12 +362,12 @@ public class TextRepresentationElement extends RepresentationElement
 			{
 				int index = Integer.parseInt(nodeName.substring(NodeP.NODEP_LABEL.length()
 						+ NodeP.NODEP_INDEX_MARK.length()));
-				log.info("create new pattern node #[" + index + "]");
+				log.li("create new pattern node #[" + index + "]");
 				node = new NodeP(index); // for internal links, this should not be a new node; it will be replaced later
 			}
 			else
 			{
-				log.info("create new node: [" + nodeName + "]");
+				log.li("create new node: [" + nodeName + "]");
 				node = new Node(nodeName); // for internal links, this should not be a new node; it will be replaced
 										   // later
 			}

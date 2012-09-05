@@ -1,5 +1,6 @@
 package testing;
 
+import graph.Graph;
 import graph.GraphMatcher;
 import graph.GraphPattern;
 import graph.GraphPattern.EdgeP;
@@ -7,7 +8,9 @@ import graph.GraphPattern.NodeP;
 
 import java.io.ByteArrayInputStream;
 
+import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
+import net.xqhs.util.logging.UnitComponent;
 import net.xqhs.util.logging.UnitConfigData;
 import representation.TextGraphRepresentation;
 
@@ -17,8 +20,8 @@ public class GraphMatcherTest
 	
 	public static void main(String[] args)
 	{
-		Logger log = Log.getLogger(unitName);
-		log.trace("Hello World");
+		UnitComponent unit = new UnitComponent(new UnitConfigData().setName(unitName));
+		unit.lf("Hello World");
 		
 		String input = "";
 		input += "AIConf -> conftime;";
@@ -34,13 +37,13 @@ public class GraphMatcherTest
 		input += "CFP -contains> conftime;";
 		Graph G = Graph.readFrom(new ByteArrayInputStream(input.getBytes()), new UnitConfigData().setName("G")
 				.setLevel(Level.INFO).setLink(unitName));
-		log.info(G.toString());
+		unit.li(G.toString());
 		
 		TextGraphRepresentation.GraphConfig configT = new TextGraphRepresentation.GraphConfig(G).setLayout("\n", "\t",
 				2);
 		configT.setName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLevel(Level.ERROR);
 		TextGraphRepresentation GRT = new TextGraphRepresentation(configT);
-		log.info(GRT.displayRepresentation());
+		unit.li(GRT.displayRepresentation());
 		
 		GraphPattern GP = new GraphPattern(new UnitConfigData().setName("GP").setLevel(Level.INFO).setLink(unitName));
 		NodeP nConf = new NodeP();
@@ -67,17 +70,17 @@ public class GraphMatcherTest
 		GP.addEdge(new EdgeP(nCFP, nDocumentType, "isa"));
 		// GraphPattern GP = GraphPattern.readFrom(new ByteArrayInputStream(input2.getBytes()), new
 		// UnitConfigData("GP").setLevel(Level.INFO).setLink(unitName));
-		log.info(GP.toString());
+		unit.li(GP.toString());
 		
 		TextGraphRepresentation.GraphConfig configT2 = new TextGraphRepresentation.GraphConfig(GP).setLayout("\n",
 				"\t", 2);
 		configT2.setName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLevel(Level.ERROR);
 		TextGraphRepresentation GPRT = new TextGraphRepresentation(configT2);
-		log.info(GPRT.displayRepresentation());
+		unit.li(GPRT.displayRepresentation());
 		
 		new GraphMatcher(G, GP).doMatching();
 		
-		Log.exitLogger(unitName);
+		unit.doExit();
 	}
 	
 }

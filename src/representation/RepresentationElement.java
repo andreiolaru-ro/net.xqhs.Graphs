@@ -1,6 +1,7 @@
 package representation;
 
 import graph.GraphComponent;
+import net.xqhs.util.config.Config;
 
 public abstract class RepresentationElement
 {
