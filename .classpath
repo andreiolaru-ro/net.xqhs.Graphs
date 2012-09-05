@@ -2,5 +2,15 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Config/output/Config.jar" sourcepath="/Config/output/Config.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/Config/output/Config.jar!/doc"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Logging/output/Logging.jar" sourcepath="/Logging/output/Logging.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/Logging/output/Logging.jar!/doc"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

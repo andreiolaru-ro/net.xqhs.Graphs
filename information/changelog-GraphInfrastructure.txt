@@ -4,6 +4,11 @@
 // exception: in the file use -- and -/ instead of <del> and </del> for strikethroughs
 
 
+===== 05.09.2012 fixing errors (andreiolaru) =====
+
+  - now using the Logging library
+  - now using Java 7 conventions
+
 ===== 04.09.2012 first commits (andreiolaru) =====
 
   - added information files.
