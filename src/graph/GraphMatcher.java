@@ -354,26 +354,33 @@ public class GraphMatcher extends Unit
 		
 		// /////// build initial matches
 		
-		/**
-		 * Ordered pattern edges, according to label.
-		 */
-		SortedSet<Edge> sortedEdges = new TreeSet<>(new Comparator<Edge>() {
+		Comparator<Edge> edgeComparator = new Comparator<Edge>() {
 			@Override
 			public int compare(Edge e1, Edge e2)
 			{
 				if(e1.label == null && e2.label == null)
-					return e1.hashCode() - e2.hashCode();
+					return e1.toString().compareTo(e2.toString());
 				if(e1.label == null)
 					return -1;
-				if(e1.label == null)
+				if(e2.label == null)
 					return 1;
 				if(e1.label.compareTo(e2.label) == 0)
-					return e1.hashCode() - e2.hashCode();
+					return e1.toString().compareTo(e2.toString());
 				return e1.label.compareTo(e2.label);
 			}
-			
-		});
+		};
+		
+		/**
+		 * Ordered pattern edges, according to label.
+		 */
+		SortedSet<Edge> sortedEdges = new TreeSet<>(edgeComparator);
 		sortedEdges.addAll(pattern.edges);
+		
+		/**
+		 * Ordered graph edges, according to label.
+		 */
+		SortedSet<Edge> sortedGraphEdges = new TreeSet<>(edgeComparator);
+		sortedGraphEdges.addAll(graph.edges);
 		
 		// for each edge in the pattern, create an id and build a match.
 		int edgeId = 0;
@@ -384,7 +391,7 @@ public class GraphMatcher extends Unit
 			{
 				int matchId = 0;
 				lf("edge " + eP + " has id [" + edgeId + "]");
-				for(Edge e : graph.edges)
+				for(Edge e : sortedGraphEdges)
 				{
 					dbg(D_G.D_MATCHING_INITIAL, "trying edges: " + eP + " : " + e);
 					if(isMatch(eP, e))

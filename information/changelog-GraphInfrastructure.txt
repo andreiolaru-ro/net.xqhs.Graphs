@@ -5,7 +5,7 @@
 
 ===== 05.09.2012 fixing errors (andreiolaru) =====
 
-  - debugging and fixing matching algorithms; CURRENT: why if mergeCandidates is a TreeSet not all candidates are added?
+  - debugging and fixing matching algorithms;
 
 ===== 05.09.2012 fixing errors (andreiolaru) =====
 
