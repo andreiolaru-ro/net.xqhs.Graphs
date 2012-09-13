@@ -3,6 +3,8 @@ package graph;
 import graph.GraphPattern.EdgeP;
 import graph.GraphPattern.NodeP;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,7 +15,7 @@ import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import java.util.Vector;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
@@ -55,48 +57,48 @@ public class GraphMatcher extends Unit
 		/**
 		 * Reference to the graph G.
 		 */
-		Graph				  targetGraphLink;
+		Graph					 targetGraphLink;
 		/**
 		 * Reference to the pattern GP
 		 */
-		GraphPattern		   patternLink;
+		GraphPattern			  patternLink;
 		
 		/**
 		 * G', the subgraph of G that has been matched. It is connected and it is a proper graph.
 		 */
-		Graph				  matchedGraph;
+		Graph					 matchedGraph;
 		/**
 		 * GmP, the part of GP that has been matched. It is connected and it is a proper graph.
 		 */
-		GraphPattern		   solvedPart;
+		GraphPattern			  solvedPart;
 		/**
 		 * GxP, the part of GP that has not been matched. It may contain edges without the adjacent nodes.
 		 */
-		GraphPattern		   unsolvedPart;
+		GraphPattern			  unsolvedPart;
 		/**
 		 * k, the number of edges in GxP
 		 */
-		int					k;
+		int					   k;
 		
 		/**
-		 * The correspondence function VmP -> V'
+		 * The correspondence (node) function VmP -> V'
 		 */
-		Map<NodeP, Node>	   nodeFunction;
+		Map<NodeP, Node>		  nodeFunction;
 		/**
-		 * The correspondence function EmP -> E'
+		 * The correspondence (edge) function EmP -> E'
 		 */
-		Map<EdgeP, List<Edge>> edgeFunction;
+		Map<EdgeP, List<Edge>>	edgeFunction;
 		/**
 		 * The nodes on the frontier of GmP - nodes that have adjacent edges in ExP. Nodes are a subset of VmP.
 		 * <p>
 		 * For each node the number of remaining edges in ExP that are adjacent to it is given.
 		 */
-		Map<NodeP, Integer>	frontier		= null;
+		Map<NodeP, AtomicInteger> frontier		= null;
 		/**
 		 * Matches that could possibly be merged to this one (i.e. not intersecting and sharing at least one common
 		 * vertex (with a common correspondent in the graph).
 		 */
-		Set<Match>			 mergeCandidates = null;
+		Set<Match>				mergeCandidates = null;
 		
 		/**
 		 * The name of the edge.
@@ -104,7 +106,7 @@ public class GraphMatcher extends Unit
 		 * Initially (for single-edge matches) the id is the id of the pattern edge, dash, a counter for matches based
 		 * on that edge.
 		 */
-		String				 id			  = "-";
+		String					id			  = "-";
 		
 		/**
 		 * Create a new empty match; some parts may be uninitialized / undefined (like frontier, or matchCandidates)
@@ -147,15 +149,15 @@ public class GraphMatcher extends Unit
 			nodeFunction.put((NodeP) eP.to, e.to);
 			// edge function
 			edgeFunction = new HashMap<>();
-			List<Edge> eL = new Vector<>(1, 0);
+			List<Edge> eL = new ArrayList<>();
 			eL.add(e);
 			edgeFunction.put(eP, eL);
 			// the frontier contains both nodes (if it is the case), with their adjacent edges minus the matched edge
 			frontier = new HashMap<>();
 			if(eP.from.inEdges.size() + eP.from.outEdges.size() > 1)
-				frontier.put((NodeP) eP.from, new Integer(eP.from.inEdges.size() + eP.from.outEdges.size() - 1));
+				frontier.put((NodeP) eP.from, new AtomicInteger(eP.from.inEdges.size() + eP.from.outEdges.size() - 1));
 			if(eP.to.inEdges.size() + eP.to.outEdges.size() > 1)
-				frontier.put((NodeP) eP.to, new Integer(eP.to.inEdges.size() + eP.to.outEdges.size() - 1));
+				frontier.put((NodeP) eP.to, new AtomicInteger(eP.to.inEdges.size() + eP.to.outEdges.size() - 1));
 			// unsolved part (all nodes and edges except the matched ones)
 			unsolvedPart = new GraphPattern();
 			for(Node vP : p.nodes)
@@ -202,7 +204,7 @@ public class GraphMatcher extends Unit
 			ret += "Gx: <GxP>" + "\n\t";
 			ret += "frontier: <frontier>";
 			ret += "mCs: [ <merge candidates ids> ] \n\t";
-			ret += "fv: <node function>\n\t";
+			ret += "fv: <node function>";
 			return ret;
 		}
 		
@@ -223,7 +225,7 @@ public class GraphMatcher extends Unit
 			for(Match mi : mergeCandidates)
 				ret += mi.id + ", ";
 			ret += "] \n\t";
-			ret += "fv: " + nodeFunction + "\n\t";
+			ret += "fv: " + nodeFunction;
 			// ret += "fe: " + edgeFunction + "\n\t";
 			return ret;
 		}
@@ -279,6 +281,54 @@ public class GraphMatcher extends Unit
 	 */
 	public int doMatching()
 	{
+		Map<Node, Integer> distances = computeVertexDistances();
+		
+		Comparator<Match> matchComparator = createMatchComparator(distances);
+		
+		PriorityQueue<Match> matchQueue = new PriorityQueue<>(1, matchComparator);
+		
+		addInitialMatches(matchQueue, matchComparator);
+		
+		/**
+		 * The main process is the merging (growing) of matches.
+		 * <p>
+		 * Note that after each cycle, the chosen match will not exist any more - it is removed from the queue and from
+		 * all the candidate's candidates list - it will either grow (by merging with various candidates) or disappear
+		 * completely.
+		 */
+		while(!matchQueue.isEmpty())
+		{
+			Match m = matchQueue.poll(); // matches are sorted according to the criteria above
+			for(Iterator<Match> itm = m.mergeCandidates.iterator(); itm.hasNext();)
+			{
+				// remove the candidate from the list, and the match from the candidate's list
+				Match mc = itm.next();
+				itm.remove();
+				mc.mergeCandidates.remove(m);
+				lf("merging " + m + " and " + mc);
+				Match mr = merge(m, mc);
+				if(mr != null) // merge should never fail // FIXME
+				{
+					lf("new match: " + m.toString());
+					addMatchToQueue(mr, matchQueue);
+				}
+				else
+					lf("match failed");
+			}
+		}
+		
+		return 0; // FIXME
+	}
+	
+	/**
+	 * Decides which is the "start vertex" in the pattern (maximum in-degree minus out-degree).
+	 * <p>
+	 * Then, computes the distances of each vertex in the pattern from the start vertex.
+	 * 
+	 * @return the distance map.
+	 */
+	protected Map<Node, Integer> computeVertexDistances()
+	{
 		/**
 		 * Vertices ordered by out-degree (minus in-degree) (first is greatest).
 		 * 
@@ -320,6 +370,21 @@ public class GraphMatcher extends Unit
 		final Map<Node, Integer> distances = pattern.computeDistancesFromUndirected(vMP);
 		dbg(D_G.D_MATCHING_INITIAL, "vertex distances: " + distances);
 		
+		return distances;
+	}
+	
+	/**
+	 * Creates the match queue, based on a {@link Comparator} that uses the <i>k</i> of the match (for matches
+	 * containing multiple edges) and the distance from the start vertex (for single-edge matches).
+	 * 
+	 * TODO: use the distance to the nearest leaf.
+	 * 
+	 * @param distances
+	 *            : the map of distances of each vertex from the start vertex.
+	 * @return the created match queue, currently empty.
+	 */
+	protected Comparator<Match> createMatchComparator(final Map<Node, Integer> distances)
+	{
 		/**
 		 * Match sorter queue
 		 * <p>
@@ -330,30 +395,42 @@ public class GraphMatcher extends Unit
 		 * <li>for matches with more than one edge, order by <code>k</code> (smaller k first). If equal, order by id.
 		 * </ul>
 		 */
-		PriorityQueue<Match> matchQueue = new PriorityQueue<>(1, new Comparator<Match>() {
+		return new Comparator<Match>() {
+			// for dbg
 			@SuppressWarnings("synthetic-access")
 			@Override
 			public int compare(Match m1, Match m2)
 			{
-				if((m1.solvedPart.m() == 1) && (m2.solvedPart.m() == 1))
+				if((m1.solvedPart.m() == 1) && (m2.solvedPart.m() == 1)) // single-edge matches
 				{
 					Edge e1 = m1.solvedPart.edges.iterator().next();
 					Edge e2 = m2.solvedPart.edges.iterator().next();
 					int result = Math.min(distances.get(e1.from).intValue(), distances.get(e1.to).intValue())
 							- Math.min(distances.get(e2.from).intValue(), distances.get(e2.to).intValue());
-					dbg(D_G.D_MATCHING_INITIAL, "compare (" + result + ") " + e1 + " : " + e2);
+					dbg(D_G.D_MATCHING_INITIAL, "compare (" + result + ") " + e1 + " : " + e2 + " (for " + m1.id
+							+ " vs " + m2.id + ")");
 					if(result != 0)
 						return result;
-					return m1.id.compareTo(m2.id);
 				}
 				if(m1.k != m2.k)
 					return m1.k - m2.k;
+				dbg(D_G.D_MATCHING_INITIAL, "re-compare (" + m1.id.compareTo(m2.id) + ")");
 				return m1.id.compareTo(m2.id);
 			}
-		});
+		};
 		
-		// /////// build initial matches
-		
+	}
+	
+	/**
+	 * Add initial (i.e. all single-edge) matches to the match queue.
+	 * 
+	 * @param matchQueue
+	 *            : the empty match queue.
+	 * @param comparator
+	 *            : used for debugging
+	 */
+	protected void addInitialMatches(PriorityQueue<Match> matchQueue, Comparator<Match> comparator)
+	{
 		Comparator<Edge> edgeComparator = new Comparator<Edge>() {
 			@Override
 			public int compare(Edge e1, Edge e2)
@@ -398,8 +475,20 @@ public class GraphMatcher extends Unit
 					{
 						Match m = new Match(graph, pattern, e, eP, edgeId + ":" + matchId);
 						addMatchToQueue(m, matchQueue);
-						li("new initial match: " + m.solvedPart.edges.iterator().next() + " : "
+						li("new initial match: (" + m.id + ") " + m.solvedPart.edges.iterator().next() + " : "
 								+ m.matchedGraph.edges.iterator().next());
+						
+						if(D_G.D_MATCHING_INITIAL.toBool())
+						{
+							dbg(D_G.D_MATCHING_INITIAL, "=======");
+							String dbg_match = "=============== match queue ===============================> ";
+							Match[] dbg_sorted = matchQueue.toArray(new Match[1]);
+							Arrays.sort(dbg_sorted, comparator);
+							for(Match mdbg : dbg_sorted)
+								dbg_match += mdbg.id + ", ";
+							dbg(D_G.D_MATCHING_INITIAL, dbg_match);
+						}
+						
 						matchId++;
 					}
 				}
@@ -407,36 +496,22 @@ public class GraphMatcher extends Unit
 			}
 		}
 		
-		lf("initial matches (" + matchQueue.size() + "): " + matchQueue + "-------------------------");
-		
-		/**
-		 * The main process is the merging (growing) of matches.
-		 * <p>
-		 * Note that after each cycle, the chosen match will not exist any more - it is removed from the queue and from
-		 * all the candidate's candidates list - it will either grow (by merging with various candidates) or disappear
-		 * completely.
-		 */
-		while(!matchQueue.isEmpty())
-		{
-			Match m = matchQueue.poll(); // matches are sorted according to the criteria above
-			for(Iterator<Match> itm = m.mergeCandidates.iterator(); itm.hasNext();)
-			{
-				// remove the candidate from the list, and the match from the candidate's list
-				Match mc = itm.next();
-				itm.remove();
-				mc.mergeCandidates.remove(m);
-				lf("merging " + m + " and " + mc);
-				Match mr = merge(m, mc);
-				if(mr != null) // merge should naver fail // FIXME
-					addMatchToQueue(mr, matchQueue);
-			}
-		}
-		
-		return 0; // FIXME
+		Match[] sorted = matchQueue.toArray(new Match[1]);
+		Arrays.sort(sorted, comparator);
+		String string = "[\n ";
+		for(Match m : sorted)
+			string += m.toString() + ", \n";
+		string += "]";
+		lf("initial matches (" + matchQueue.size() + "): " + string + "-------------------------");
 	}
 	
 	/**
 	 * Merges to matches into one.
+	 * <p>
+	 * Matches are expected to be disjoint, both as GmP and as G' (in terms of edges); also, all common nodes in GmP
+	 * must correspond to the same nodes in G' (this check should be done in <code>addMatcheToQueue</code>.
+	 * <p>
+	 * <b>Attention:</b> matches are expected to be merge-able without checks.
 	 * 
 	 * @param m1
 	 *            : the first match.
@@ -446,7 +521,20 @@ public class GraphMatcher extends Unit
 	 */
 	protected Match merge(Match m1, Match m2)
 	{
+		// must handle (create in the new match, based on the two matches:
+		// G and GP links -> in constructor
+		// GmP -> obtained by adding edges from m1.GmP and m2.GmP and their adjacent vertices
+		// G' -> obtained by adding the values of the edge and node functions, when adding edges in GmP
+		// GxP -> obtained by removing edges added to GmP and nodes
+		// k -> obtained by decrementing when adding edges
+		// node function -> reuniting the node functions of the two matches
+		// edge function -> reuniting the edge functions of the two matches
+		// frontier -> practically adding nodes from solved part, always checking if they are still on the frontier
+		// match candidates TODO
+		// id TODO
+		
 		GraphPattern pt = m1.patternLink;
+		// G and GP links -> set in constructor
 		Match newM = new Match(m1.targetGraphLink, pt);
 		
 		newM.unsolvedPart = new GraphPattern();
@@ -454,44 +542,69 @@ public class GraphMatcher extends Unit
 		newM.unsolvedPart.nodes.addAll(pt.nodes);
 		newM.k = newM.unsolvedPart.edges.size();
 		
-		Set<Edge> totalMatch = new HashSet<>(); // is a set, so it will contain no duplicates
+		Set<Edge> totalMatch = new HashSet<>(); // there should be no duplicates as the solved parts should be disjoint.
 		totalMatch.addAll(m1.solvedPart.edges);
 		totalMatch.addAll(m2.solvedPart.edges);
 		
+		newM.solvedPart = new GraphPattern();
+		newM.matchedGraph = new Graph();
+		newM.frontier = new HashMap<>();
 		for(Edge e : totalMatch)
 		{
 			EdgeP eP = (EdgeP) e;
-			boolean fitted = false;
+			// GmP -> obtained by adding edges from m1.GmP and m2.GmP and their adjacent vertices
 			newM.solvedPart.addEdge(eP).addNode(eP.from).addNode(eP.to);
-			// TODO check if the elements were contained in unsolvedPart
+			// GxP -> obtained by removing edges added to GmP and nodes
 			newM.unsolvedPart.removeEdge(eP).removeNode(eP.from).removeNode(eP.to);
+			// k -> obtained by decrementing when adding edges
 			newM.k--;
-			if(newM.frontier == null)
-				newM.frontier = new HashMap<>();
-			// newM.frontier.put((NodeP)eP.from, new Integer(eP.from.inEdges.size() + eP.from.outEdges.size() - 1)); //
-			// FIXME
-			// newM.frontier.put((NodeP)eP.to, new Integer(eP.to.inEdges.size() + eP.to.outEdges.size() - 1)); // FIXME
 			
+			Match sourceMatch = null; // which match does eP come from
 			if(m1.solvedPart.contains(eP))
-			{
-				fitted = true;
-				for(Edge em : m1.edgeFunction.get(eP))
-					newM.matchedGraph.addEdge(em).addNode(em.from).addNode(em.to);
-			}
+				sourceMatch = m1;
 			if(m2.solvedPart.contains(eP))
 			{
-				if(fitted)
+				if(sourceMatch != null)
 				{
 					le("match-intersection pattern edge found: [" + eP + "]");
 					throw new IllegalArgumentException("match-intersection edge");
 				}
-				fitted = true;
-				for(Edge em : m2.edgeFunction.get(eP))
-					newM.matchedGraph.addEdge(em).addNode(em.from).addNode(em.to);
+				sourceMatch = m2;
 			}
+			if(sourceMatch == null)
+				throw new InternalError("edge not found in total match"); // impossible
+				
+			// node function -> reuniting the node functions of the two matches
+			newM.nodeFunction.put((NodeP) eP.from, sourceMatch.nodeFunction.get(eP.from));
+			newM.nodeFunction.put((NodeP) eP.to, sourceMatch.nodeFunction.get(eP.to));
+			// edge function -> reuniting the edge functions of the two matches
+			newM.edgeFunction.put(eP, sourceMatch.edgeFunction.get(eP));
+			// G' -> obtained by adding the values of the edge and node functions, when adding edges in GmP
+			for(Edge em : sourceMatch.edgeFunction.get(eP))
+				newM.matchedGraph.addEdge(em).addNode(em.from).addNode(em.to);
+			
+			// frontier -> practically adding nodes from solved part, always checking if they are still on the frontier
+			AtomicInteger fromIndex = newM.frontier.get(e.from);
+			if(fromIndex != null)
+				if(fromIndex.decrementAndGet() == 0)
+					newM.frontier.remove(e.from);
+				else
+					newM.frontier.put((NodeP) e.from, fromIndex);
+			else
+				newM.frontier.put((NodeP) eP.from, new AtomicInteger(eP.from.inEdges.size() + eP.from.outEdges.size()
+						- 1));
+			AtomicInteger toIndex = newM.frontier.get(e.to);
+			if(toIndex != null)
+				if(toIndex.decrementAndGet() == 0)
+					newM.frontier.remove(e.to);
+				else
+					newM.frontier.put((NodeP) e.to, toIndex);
+			else
+				newM.frontier.put((NodeP) eP.to, new AtomicInteger(eP.to.inEdges.size() + eP.to.outEdges.size() - 1));
 		}
 		
 		return null;
+		// return newMatch;
 	}
 	
 	/**
@@ -515,7 +628,7 @@ public class GraphMatcher extends Unit
 				boolean reject = false;
 				// iterate on the frontier of the potential candidate
 				// TODO: it should iterate on the frontier of the candidate with a shorter frontier
-				for(Map.Entry<NodeP, Integer> frontierV : mi.frontier.entrySet())
+				for(Map.Entry<NodeP, AtomicInteger> frontierV : mi.frontier.entrySet())
 				{
 					// accept if: the two matches contain the same node and the node corresponds, in both matches, to
 					// the same node in G
@@ -531,7 +644,6 @@ public class GraphMatcher extends Unit
 							break;
 						}
 					}
-					// QUEST: what if one match contains interior nodes from the other? is that possible?
 				}
 				if(accept && !reject)
 				{ // then each match is a merge candidate for the other
