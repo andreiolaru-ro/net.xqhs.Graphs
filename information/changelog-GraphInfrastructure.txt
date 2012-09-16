@@ -3,9 +3,11 @@
 // This file should be in DokuWiki syntax [[http://www.dokuwiki.org/syntax]] //
 // exception: in the file use -- and -/ instead of <del> and </del> for strikethroughs
 
-===== 05.09.2012 fixing errors (andreiolaru) =====
+===== 05/12/13.09.2012 fixing errors (andreiolaru) =====
 
   - debugging and fixing matching algorithms;
+  - fixing printing the matchQueue (a PriorityQueue is not iterated in order)
+  - implementing match merging (unchecked)
 
 ===== 05.09.2012 fixing errors (andreiolaru) =====
 
