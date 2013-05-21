@@ -57,52 +57,52 @@ public class GraphMatcher extends Unit
 		/**
 		 * Reference to the graph G.
 		 */
-		Graph					 targetGraphLink;
+		Graph						targetGraphLink;
 		/**
 		 * Reference to the pattern GP
 		 */
-		GraphPattern			  patternLink;
+		GraphPattern				patternLink;
 		
 		/**
 		 * G', the subgraph of G that has been matched. It is connected and it is a proper graph.
 		 */
-		Graph					 matchedGraph;
+		Graph						matchedGraph;
 		/**
 		 * GmP, the part of GP that has been matched. It is connected and it is a proper graph.
 		 */
-		GraphPattern			  solvedPart;
+		GraphPattern				solvedPart;
 		/**
 		 * GxP, the part of GP that has not been matched. It may contain edges without the adjacent nodes.
 		 */
-		GraphPattern			  unsolvedPart;
+		GraphPattern				unsolvedPart;
 		/**
 		 * k, the number of edges in GxP
 		 */
-		int					   k;
+		int							k;
 		
 		/**
 		 * The correspondence (node) function VmP -> V'
 		 */
-		Map<NodeP, Node>		  nodeFunction;
+		Map<NodeP, Node>			nodeFunction;
 		/**
 		 * The correspondence (edge) function EmP -> E'
 		 */
-		Map<EdgeP, List<Edge>>	edgeFunction;
+		Map<EdgeP, List<Edge>>		edgeFunction;
 		/**
 		 * The nodes on the frontier of GmP - nodes that have adjacent edges in ExP. Nodes are a subset of VmP.
 		 * <p>
 		 * For each node the number of remaining edges in ExP that are adjacent to it is given.
 		 */
-		Map<NodeP, AtomicInteger> frontier			 = null;
+		Map<NodeP, AtomicInteger>	frontier				= null;
 		/**
 		 * MC, matches that could possibly be merged with this one (i.e. not intersecting and sharing at least one
 		 * common vertex (with a common correspondent in the graph).
 		 */
-		Set<Match>				mergeCandidates	  = null;
+		Set<Match>					mergeCandidates			= null;
 		/**
-		 * MO, matches that could potentially merge with this one, but not immediatly (they are not adjacent).
+		 * MO, matches that could potentially merge with this one, but not immediately (they are not adjacent).
 		 */
-		Set<Match>				mergeOuterCandidates = null;
+		Set<Match>					mergeOuterCandidates	= null;
 		
 		/**
 		 * The name of the edge.
@@ -110,13 +110,18 @@ public class GraphMatcher extends Unit
 		 * Initially (for single-edge matches) the id is the id of the pattern edge, dash, a counter for matches based
 		 * on that edge.
 		 */
-		String					id				   = "-";
+		String						id						= "-";
 		
 		/**
 		 * Create a new empty match; some parts may be uninitialized / undefined (like frontier, or matchCandidates)
 		 * <p>
 		 * This constructor is meant just to construct matches that will later be completely initialized as a result of
 		 * merging two existing matches.
+		 * 
+		 * @param g
+		 *            : the graph
+		 * @param p
+		 *            : the pattern
 		 */
 		public Match(Graph g, GraphPattern p)
 		{
@@ -172,7 +177,7 @@ public class GraphMatcher extends Unit
 					unsolvedPart.addEdge(ePi);
 			k = unsolvedPart.edges.size();
 			
-			// no match candidates added;
+			// no match candidates added; they will be added in addInitialMatches()
 			mergeCandidates = new TreeSet<>(new MatchComparator());
 			mergeOuterCandidates = new TreeSet<>(new MatchComparator());
 			
@@ -265,7 +270,7 @@ public class GraphMatcher extends Unit
 	 */
 	protected static class MatchComparator implements Comparator<Match>
 	{
-		private Map<Node, Integer> distances = null;
+		private Map<Node, Integer>	distances	= null;
 		
 		protected MatchComparator()
 		{
@@ -301,11 +306,11 @@ public class GraphMatcher extends Unit
 	/**
 	 * The graph to match the pattern to (G).
 	 */
-	Graph		graph;
+	Graph			graph;
 	/**
 	 * The pattern to match to the graph (GP).
 	 */
-	GraphPattern pattern;
+	GraphPattern	pattern;
 	
 	/**
 	 * Initializes a matcher. Does not do the matching.
@@ -557,6 +562,7 @@ public class GraphMatcher extends Unit
 					&& !new HashSet<>(m.matchedGraph.edges).removeAll(mi.matchedGraph.edges))
 				reject = true;
 			else
+				// build merge candidates
 				// iterate on the frontier of the potential candidate
 				// TODO: it should iterate on the frontier of the candidate with a shorter frontier
 				for(Map.Entry<NodeP, AtomicInteger> frontierV : mi.frontier.entrySet())
@@ -595,7 +601,7 @@ public class GraphMatcher extends Unit
 	}
 	
 	/**
-	 * Merges to matches into one.
+	 * Merges two matches into one.
 	 * <p>
 	 * Matches are expected to be disjoint, both as GmP and as G' (in terms of edges); also, all common nodes in GmP
 	 * must correspond to the same nodes in G' (this check should be done in <code>addMatcheToQueue</code>.
