@@ -1,9 +1,4 @@
-package representation;
-
-import graph.Edge;
-import graph.Graph;
-import graph.GraphPattern.NodeP;
-import graph.Node;
+package net.xqhs.graphs.representation;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -12,19 +7,24 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 
+import net.xqhs.graphs.graph.Edge;
+import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.GraphPattern.NodeP;
+import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.representation.TextRepresentationElement.Symbol;
+import net.xqhs.graphs.representation.TextRepresentationElement.TextRepElementConfig;
+import net.xqhs.graphs.representation.TextRepresentationElement.Type;
+import net.xqhs.graphs.util.ContentHolder;
 import net.xqhs.util.logging.UnitComponent;
 import net.xqhs.util.logging.UnitConfigData;
-import representation.TextRepresentationElement.Symbol;
-import representation.TextRepresentationElement.TextRepElementConfig;
-import representation.TextRepresentationElement.Type;
 
 public class TextGraphRepresentation extends LinearGraphRepresentation
 {
 	public static class GraphConfig extends LinearGraphRepresentation.GraphConfig
 	{
-		protected String indent		  = "";
-		protected String indentIncrement = "";
-		protected int	incrementLimit  = -1;
+		protected String	indent			= "";
+		protected String	indentIncrement	= "";
+		protected int		incrementLimit	= -1;
 		
 		public GraphConfig(Graph g)
 		{
@@ -178,7 +178,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	
 	protected boolean isBackwards()
 	{
-		return ((GraphConfig)config).isBackwards;
+		return ((GraphConfig) config).isBackwards;
 	}
 	
 	/**
@@ -307,7 +307,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					}
 					else
 					{ // no external links should actually appear here, i think? TODO: is it?
-					  // actual new node
+						// actual new node
 						targetNode = (Node) targetNodeEl.config.representedComponent;
 						nLevel.add(targetNodeEl);
 						log.lf("target node (added to queue) [" + targetNode + "]");

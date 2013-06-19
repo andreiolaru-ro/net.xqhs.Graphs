@@ -1,10 +1,10 @@
-package graph;
+package net.xqhs.graphs.graph;
 
 public class Edge extends GraphComponent
 {
-	protected String label = null; // FIXME: support null labels throughout the source
-	protected Node   from  = null;
-	protected Node   to	= null;
+	protected String	label	= null; // FIXME: support null labels throughout the source
+	protected Node		from	= null;
+	protected Node		to		= null;
 	
 	/**
 	 * Constructs a new edge. WARNING: this also changes the from and to nodes, by adding the newly constructed edge to

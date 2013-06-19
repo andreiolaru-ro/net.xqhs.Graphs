@@ -1,22 +1,21 @@
 package testing;
 
-import graph.Graph;
-import graph.GraphMatcher;
-import graph.GraphPattern;
-import graph.GraphPattern.EdgeP;
-import graph.GraphPattern.NodeP;
-
 import java.io.ByteArrayInputStream;
 
+import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.GraphPattern;
+import net.xqhs.graphs.graph.GraphPattern.EdgeP;
+import net.xqhs.graphs.graph.GraphPattern.NodeP;
+import net.xqhs.graphs.matcher.GraphMatcherQuick;
+import net.xqhs.graphs.representation.TextGraphRepresentation;
 import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitComponent;
 import net.xqhs.util.logging.UnitConfigData;
-import representation.TextGraphRepresentation;
 
 public class GraphMatcherTest
 {
-	private static String unitName = "graphMatcherTestMain";
+	private static String	unitName	= "graphMatcherTestMain";
 	
 	public static void main(String[] args)
 	{
@@ -78,7 +77,7 @@ public class GraphMatcherTest
 		TextGraphRepresentation GPRT = new TextGraphRepresentation(configT2);
 		unit.li(GPRT.displayRepresentation());
 		
-		new GraphMatcher(G, GP).doMatching();
+		new GraphMatcherQuick(G, GP).doMatching();
 		
 		unit.doExit();
 	}

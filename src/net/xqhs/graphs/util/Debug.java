@@ -1,4 +1,4 @@
-package util;
+package net.xqhs.graphs.util;
 
 import net.xqhs.util.logging.Debug.DebugItem;
 
@@ -12,7 +12,7 @@ public class Debug
 		
 		;
 		
-		boolean isset;
+		boolean	isset;
 		
 		private D_G(boolean set)
 		{

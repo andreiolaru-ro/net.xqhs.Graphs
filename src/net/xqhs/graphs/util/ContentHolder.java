@@ -1,8 +1,8 @@
-package representation;
+package net.xqhs.graphs.util;
 
 public class ContentHolder<T>
 {
-	T content;
+	T	content;
 	
 	public ContentHolder(T _content)
 	{

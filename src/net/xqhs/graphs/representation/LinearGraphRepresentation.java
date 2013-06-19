@@ -1,8 +1,4 @@
-package representation;
-
-import graph.Graph;
-import graph.GraphPattern.NodeP;
-import graph.Node;
+package net.xqhs.graphs.representation;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -11,6 +7,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
+
+import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.GraphPattern.NodeP;
+import net.xqhs.graphs.graph.Node;
 
 /**
  * Class that allows the representation of a {@link Graph} structure. Also can be written as GrapheR
@@ -59,15 +59,15 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 	
 	public class PathElement
 	{
-		Node			  node		  = null;
-		int			   distance	  = 0;				 // distance from firstNode / subgraph root
-		PathElement	   parent		= null;
-		int			   treeOrder	 = -1;				// order of the sub-tree containing this
-															  // element
-		List<PathElement> children	  = new LinkedList<>();
-		List<PathElement> otherChildren = new LinkedList<>();
-		int			   pathlength	= -1;				// distance to farthest leaf
-															  
+		Node				node			= null;
+		int					distance		= 0;					// distance from firstNode / subgraph root
+		PathElement			parent			= null;
+		int					treeOrder		= -1;					// order of the sub-tree containing this
+																	// element
+		List<PathElement>	children		= new LinkedList<>();
+		List<PathElement>	otherChildren	= new LinkedList<>();
+		int					pathlength		= -1;					// distance to farthest leaf
+																	
 		public PathElement(Node _node, int _distance, PathElement _parent)
 		{
 			this.node = _node;
@@ -100,7 +100,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 	
 	public static class GraphConfig extends GraphRepresentation.GraphConfig
 	{
-		boolean isBackwards = false;
+		boolean	isBackwards	= false;
 		
 		public GraphConfig(Graph thegraph)
 		{
@@ -126,8 +126,8 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 		}
 	}
 	
-	protected List<Node>		sortedNodes = null;
-	protected List<PathElement> paths	   = null;
+	protected List<Node>		sortedNodes	= null;
+	protected List<PathElement>	paths		= null;
 	
 	/**
 	 * Builds a new {@link LinearGraphRepresentation} for the specified graph.

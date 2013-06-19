@@ -1,6 +1,4 @@
-package graph;
-
-import graph.GraphPattern.NodeP;
+package net.xqhs.graphs.graph;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -15,10 +13,11 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Set;
 
+import net.xqhs.graphs.graph.GraphPattern.NodeP;
+import net.xqhs.graphs.representation.LinearGraphRepresentation;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitComponent;
 import net.xqhs.util.logging.UnitConfigData;
-import representation.LinearGraphRepresentation;
 
 /**
  * <p>
@@ -43,8 +42,8 @@ import representation.LinearGraphRepresentation;
  */
 public class Graph extends Unit
 {
-	protected Set<Node> nodes = null;
-	protected Set<Edge> edges = null;
+	protected Set<Node>	nodes	= null;
+	protected Set<Edge>	edges	= null;
 	
 	/**
 	 * Generates an empty graph.

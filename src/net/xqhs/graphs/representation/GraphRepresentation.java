@@ -1,7 +1,7 @@
-package representation;
+package net.xqhs.graphs.representation;
 
-import graph.Graph;
-import graph.GraphComponent;
+import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitConfigData;
 
@@ -14,7 +14,7 @@ import net.xqhs.util.logging.UnitConfigData;
  * 
  * <p>
  * A {@link GraphRepresentation} is based on {@link RepresentationElement} instances, each instance associated with a
- * specific {@link GraphComponent}. Representation elements should be updatable.
+ * specific {@link GraphComponent}. Representation elements should be updateable.
  * 
  * @author Andrei Olaru
  * 
@@ -30,9 +30,9 @@ public abstract class GraphRepresentation extends Unit
 	 */
 	public static class GraphConfig extends UnitConfigData
 	{
-		Graph			   graph			  = null;
-		GraphRepresentation rootRepresentation = null;
-		boolean			 doProcess		  = true;
+		Graph				graph				= null;
+		GraphRepresentation	rootRepresentation	= null;
+		boolean				doProcess			= true;
 		
 		public GraphConfig(Graph thegraph)
 		{
@@ -69,8 +69,8 @@ public abstract class GraphRepresentation extends Unit
 		}
 	}
 	
-	Graph				 theGraph		  = null;
-	RepresentationElement theRepresentation = null;
+	Graph					theGraph			= null;
+	RepresentationElement	theRepresentation	= null;
 	
 	public GraphRepresentation(GraphConfig conf)
 	{

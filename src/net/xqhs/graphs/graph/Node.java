@@ -1,10 +1,10 @@
-package graph;
-
-import graph.GraphPattern.NodeP;
+package net.xqhs.graphs.graph;
 
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
+
+import net.xqhs.graphs.graph.GraphPattern.NodeP;
 
 public class Node extends GraphComponent
 {
@@ -20,9 +20,9 @@ public class Node extends GraphComponent
 		}
 	}
 	
-	protected String	label	= null;
-	protected Set<Edge> outEdges = null;
-	protected Set<Edge> inEdges  = null;
+	protected String	label		= null;
+	protected Set<Edge>	outEdges	= null;
+	protected Set<Edge>	inEdges		= null;
 	
 	public Node(String nodeLabel)
 	{

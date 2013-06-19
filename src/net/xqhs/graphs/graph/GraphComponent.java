@@ -1,15 +1,15 @@
-package graph;
+package net.xqhs.graphs.graph;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import representation.GraphRepresentation;
-import representation.RepresentationElement;
+import net.xqhs.graphs.representation.GraphRepresentation;
+import net.xqhs.graphs.representation.RepresentationElement;
 
 public abstract class GraphComponent
 {
-	protected Set<RepresentationElement> representations = new HashSet<>();
+	protected Set<RepresentationElement>	representations	= new HashSet<>();
 	
 	public void addRepresentation(RepresentationElement repr)
 	{

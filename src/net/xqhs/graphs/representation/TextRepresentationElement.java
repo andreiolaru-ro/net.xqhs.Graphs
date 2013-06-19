@@ -1,13 +1,13 @@
-package representation;
-
-import graph.Edge;
-import graph.GraphComponent;
-import graph.GraphPattern.NodeP;
-import graph.Node;
+package net.xqhs.graphs.representation;
 
 import java.util.LinkedList;
 import java.util.List;
 
+import net.xqhs.graphs.graph.Edge;
+import net.xqhs.graphs.graph.GraphComponent;
+import net.xqhs.graphs.graph.GraphPattern.NodeP;
+import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.util.ContentHolder;
 import net.xqhs.util.logging.UnitComponent;
 
 public class TextRepresentationElement extends RepresentationElement
@@ -35,7 +35,7 @@ public class TextRepresentationElement extends RepresentationElement
 		
 		;
 		
-		private String symbol;
+		private String	symbol;
 		
 		private Symbol(String symb)
 		{
@@ -51,10 +51,10 @@ public class TextRepresentationElement extends RepresentationElement
 	
 	public static class TextRepElementConfig extends RepElementConfig
 	{
-		int	 nestingLevel	= 0;	// TODO: not currently used
-		boolean isLastChild	 = false;
-		boolean isOnlyChild	 = false;
-		boolean isFirstSubgraph = false;
+		int		nestingLevel	= 0;		// TODO: not currently used
+		boolean	isLastChild		= false;
+		boolean	isOnlyChild		= false;
+		boolean	isFirstSubgraph	= false;
 		Type	linkType;
 		
 		public TextRepElementConfig(GraphRepresentation root, Type type)
@@ -105,7 +105,7 @@ public class TextRepresentationElement extends RepresentationElement
 		}
 	}
 	
-	List<TextRepresentationElement> content = null;
+	List<TextRepresentationElement>	content	= null;
 	
 	public TextRepresentationElement(TextRepElementConfig conf)
 	{
@@ -160,7 +160,7 @@ public class TextRepresentationElement extends RepresentationElement
 		
 		if(linkType == Type.NODE)
 			ret += conf.representedComponent.toString(); // FIXME: should not use Node's toString function, should
-														 // represent manually
+															// represent manually
 			
 		if(linkType == Type.EXTERNAL_LINK)
 			ret += Symbol.EXTERNAL_LINK_PREFIX;
@@ -304,8 +304,8 @@ public class TextRepresentationElement extends RepresentationElement
 			}
 			else
 			{ // <[-] backward-edge - next node
-			  // assume first character is (EDGE_ENDING_BACKWARD) (edgeString is trimmed)
-			  // identify edge name ending by last EDGE_LIMIT before the next EDGE_ENDING_BACKWARD
+				// assume first character is (EDGE_ENDING_BACKWARD) (edgeString is trimmed)
+				// identify edge name ending by last EDGE_LIMIT before the next EDGE_ENDING_BACKWARD
 				edgeString = edgeString.substring(1);
 				String rez[] = edgeString.split(Symbol.EDGE_ENDING_BACKWARD.toString(), 2);
 				lastIndex = rez[0].lastIndexOf(Symbol.EDGE_LIMIT.toString());
@@ -369,14 +369,14 @@ public class TextRepresentationElement extends RepresentationElement
 			{
 				log.li("create new node: [" + nodeName + "]");
 				node = new Node(nodeName); // for internal links, this should not be a new node; it will be replaced
-										   // later
+											// later
 			}
 			ret = new TextRepresentationElement(new TextRepElementConfig(root, node, Type.NODE));
 			if(parts.length > 1)
 			{
 				String startedWith = input.get().substring(parts[0].length(), parts[0].length() + 1);// remember what
-																									 // was after the
-																									 // node name
+																										// was after the
+																										// node name
 				input.set(startedWith + parts[1]);
 				while(input.get().length() > 0)
 					ret.addSub(readRepresentation(input, Type.BRANCH, (nSiblings++ == 0), root, log));

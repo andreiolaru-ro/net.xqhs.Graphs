@@ -1,7 +1,4 @@
-package graph;
-
-import graph.GraphPattern.EdgeP;
-import graph.GraphPattern.NodeP;
+package net.xqhs.graphs.matcher;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,18 +14,24 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import net.xqhs.graphs.graph.Edge;
+import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.GraphPattern;
+import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.graph.GraphPattern.EdgeP;
+import net.xqhs.graphs.graph.GraphPattern.NodeP;
+import net.xqhs.graphs.representation.TextGraphRepresentation;
+import net.xqhs.graphs.util.Debug.D_G;
 import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitConfigData;
-import representation.TextGraphRepresentation;
-import util.Debug.D_G;
 
 /**
- * An algorithm that finds partial matches between a graph pattern GP (or G^P) and a graph (G).
+ * An algorithm that finds partial matches between a graph pattern GP (or G^P) and a graph (G). It implements the {@link GraphMatcher} interface.
  * 
  * @author Andrei Olaru
  */
-public class GraphMatcher extends Unit
+public class GraphMatcherQuick extends Unit
 {
 	/**
 	 * Class describing a [partial] match of GP in G. In time, matches go from a 1-edge match to a maximal match.
@@ -320,7 +323,7 @@ public class GraphMatcher extends Unit
 	 * @param pattern
 	 *            : the pattern (GP).
 	 */
-	public GraphMatcher(Graph graph, GraphPattern pattern)
+	public GraphMatcherQuick(Graph graph, GraphPattern pattern)
 	{
 		super(new UnitConfigData().setName(Unit.DEFAULT_UNIT_NAME).setLevel(Level.ALL));
 		this.graph = graph;

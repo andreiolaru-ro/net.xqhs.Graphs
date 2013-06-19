@@ -1,14 +1,14 @@
-package representation;
+package net.xqhs.graphs.representation;
 
-import graph.GraphComponent;
+import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.util.config.Config;
 
 public abstract class RepresentationElement
 {
 	public static class RepElementConfig extends Config
 	{
-		GraphRepresentation rootRepresentation;
-		GraphComponent	  representedComponent = null;
+		GraphRepresentation	rootRepresentation;
+		GraphComponent		representedComponent	= null;
 		
 		public RepElementConfig(GraphRepresentation root, GraphComponent component)
 		{
@@ -17,7 +17,7 @@ public abstract class RepresentationElement
 		}
 	}
 	
-	protected RepElementConfig config;
+	protected RepElementConfig	config;
 	
 	public RepresentationElement(RepElementConfig conf)
 	{

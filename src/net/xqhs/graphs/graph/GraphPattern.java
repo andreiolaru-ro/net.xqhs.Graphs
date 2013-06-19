@@ -1,4 +1,4 @@
-package graph;
+package net.xqhs.graphs.graph;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,12 +9,12 @@ public class GraphPattern extends Graph
 {
 	public static class NodeP extends Node
 	{
-		public static final String NODEP_LABEL	  = "?";
-		public static final String NODEP_INDEX_MARK = "#";
+		public static final String	NODEP_LABEL			= "?";
+		public static final String	NODEP_INDEX_MARK	= "#";
 		
-		boolean					generic		  = false;
-		int						labelIndex	   = 0;	// must be greater than 0 for generic nodes;
-															 
+		boolean						generic				= false;
+		int							labelIndex			= 0;		// must be greater than 0 for generic nodes;
+																	
 		public NodeP()
 		{
 			super(NODEP_LABEL);
@@ -58,7 +58,7 @@ public class GraphPattern extends Graph
 	
 	public static class EdgeP extends Edge
 	{
-		boolean generic = false;
+		boolean	generic	= false;
 		
 		public EdgeP(NodeP fromNode, NodeP toNode, String edgeLabel)
 		{ // TODO: why does this constructor exist?

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.0.10" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
   realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
-  <class id="1" language="java" name="representation.LinearGraphRepresentation.PathComparator" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/LinearGraphRepresentation.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="net.xqhs.graphs.representation.LinearGraphRepresentation.PathComparator" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/LinearGraphRepresentation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="95" width="207" x="405" y="1621"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -10,8 +11,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="representation.LinearGraphRepresentation.PathElement" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/LinearGraphRepresentation.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="net.xqhs.graphs.representation.LinearGraphRepresentation.PathElement" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/LinearGraphRepresentation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="180" width="194" x="654" y="1756"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -19,8 +21,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="representation.LinearGraphRepresentation.GraphConfig" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/LinearGraphRepresentation.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="net.xqhs.graphs.representation.LinearGraphRepresentation.GraphConfig" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/LinearGraphRepresentation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="146" width="205" x="64" y="995"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -28,8 +31,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="representation.TextRepresentationElement" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/TextRepresentationElement.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="net.xqhs.graphs.representation.TextRepresentationElement" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/TextRepresentationElement.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="197" width="598" x="353" y="274"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -37,9 +41,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="representation.TextRepresentationElement.TextRepElementConfig" 
-    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/representation/TextRepresentationElement.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="net.xqhs.graphs.representation.TextRepresentationElement.TextRepElementConfig" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/TextRepresentationElement.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="197" width="451" x="552" y="995"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -47,8 +51,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="6" language="java" name="representation.TextRepresentationElement.Type" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/TextRepresentationElement.java" binary="false" corner="BOTTOM_RIGHT">    
+  <enumeration id="6" language="java" name="net.xqhs.graphs.representation.TextRepresentationElement.Type" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/TextRepresentationElement.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="180" width="161" x="863" y="1232"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -56,8 +61,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="7" language="java" name="representation.TextGraphRepresentation" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/TextGraphRepresentation.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="net.xqhs.graphs.representation.TextGraphRepresentation" project="net.xqhs.Graphs" 
+    file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/TextGraphRepresentation.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="197" width="436" x="982" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -65,8 +71,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="representation.TextGraphRepresentation.GraphConfig" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/TextGraphRepresentation.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="8" language="java" name="net.xqhs.graphs.representation.TextGraphRepresentation.GraphConfig" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/TextGraphRepresentation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="180" width="217" x="104" y="1232"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -74,8 +81,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="representation.RepresentationElement" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/RepresentationElement.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="9" language="java" name="net.xqhs.graphs.representation.RepresentationElement" project="net.xqhs.Graphs" 
+    file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/RepresentationElement.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="95" width="248" x="673" y="521"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -83,9 +91,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="representation.LinearGraphRepresentation.NodeInAlphaComparator" 
-    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/representation/LinearGraphRepresentation.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="10" language="java" name="net.xqhs.graphs.representation.LinearGraphRepresentation.NodeInAlphaComparator" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/LinearGraphRepresentation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="95" width="163" x="365" y="1756"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -93,8 +101,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="11" language="java" name="representation.TextRepresentationElement.Symbol" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/TextRepresentationElement.java" binary="false" corner="BOTTOM_RIGHT">    
+  <enumeration id="11" language="java" name="net.xqhs.graphs.representation.TextRepresentationElement.Symbol" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/TextRepresentationElement.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="248" width="202" x="125" y="521"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -102,8 +111,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="12" language="java" name="representation.LinearGraphRepresentation" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/LinearGraphRepresentation.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="12" language="java" name="net.xqhs.graphs.representation.LinearGraphRepresentation" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/LinearGraphRepresentation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="129" width="226" x="405" y="1452"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -111,8 +121,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="representation.GraphRepresentation.GraphConfig" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/GraphRepresentation.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="13" language="java" name="net.xqhs.graphs.representation.GraphRepresentation.GraphConfig" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/GraphRepresentation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="146" width="167" x="424" y="809"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -120,8 +131,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="representation.GraphRepresentation" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/GraphRepresentation.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="14" language="java" name="net.xqhs.graphs.representation.GraphRepresentation" project="net.xqhs.Graphs" 
+    file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/GraphRepresentation.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="163" width="240" x="405" y="1232"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
@@ -129,8 +141,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="representation.RepresentationElement.RepElementConfig" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/representation/RepresentationElement.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="15" language="java" name="net.xqhs.graphs.representation.RepresentationElement.RepElementConfig" 
+    project="net.xqhs.Graphs" file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/RepresentationElement.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="95" width="309" x="673" y="809"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
