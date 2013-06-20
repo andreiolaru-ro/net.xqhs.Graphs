@@ -1,3 +1,14 @@
+/*******************************************************************************
+ * Copyright (C) 2013 Andrei Olaru.
+ * 
+ * This file is part of net.xqhs.Graphs.
+ * 
+ * net.xqhs.Graphs is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
+ * 
+ * net.xqhs.Graphs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
+ ******************************************************************************/
 package net.xqhs.graphs.graph;
 
 import java.util.HashSet;
@@ -5,12 +16,34 @@ import java.util.Set;
 
 import net.xqhs.graphs.representation.GraphComponentImplementation;
 
+/**
+ * A simple implementation of the {@link Node} and {@link ConnectedNode} interfaces, also inheriting functionality from
+ * {@link GraphComponentImplementation}.
+ * 
+ * @author Andrei Olaru
+ * 
+ */
 public class SimpleNode extends GraphComponentImplementation implements ConnectedNode
 {
+	/**
+	 * The label of the node
+	 */
 	protected String	label		= null;
+	/**
+	 * The set of outgoing edges. It will be updated when adjacent edges are added.
+	 */
 	protected Set<Edge>	outEdges	= null;
+	/**
+	 * The set of incoming edges. It will be updated when adjacent edges are added.
+	 */
 	protected Set<Edge>	inEdges		= null;
 	
+	/**
+	 * Constructs a new node with the specified label and empty edge adjacency lists - representing an unconnected node.
+	 * 
+	 * @param nodeLabel
+	 *            - the label of the node
+	 */
 	public SimpleNode(String nodeLabel)
 	{
 		this.label = nodeLabel;

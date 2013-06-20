@@ -1,21 +1,51 @@
+/*******************************************************************************
+ * Copyright (C) 2013 Andrei Olaru.
+ * 
+ * This file is part of net.xqhs.Graphs.
+ * 
+ * net.xqhs.Graphs is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
+ * 
+ * net.xqhs.Graphs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
+ ******************************************************************************/
 package net.xqhs.graphs.graph;
 
 import net.xqhs.graphs.representation.GraphComponentImplementation;
 
+/**
+ * A simple implementation on the {@link Edge} interface, also inheriting functions from
+ * {@link GraphComponentImplementation}.
+ * 
+ * @author Andrei Olaru
+ * 
+ */
 public class SimpleEdge extends GraphComponentImplementation implements Edge
 {
+	/**
+	 * The label of the edge.
+	 */
 	protected String	label	= null; // FIXME: support null labels throughout the source
+	/**
+	 * The source of the edge.
+	 */
 	protected Node		from	= null;
+	
+	/**
+	 * The destination of the edge.
+	 */
 	protected Node		to		= null;
 	
 	/**
-	 * Constructs a new edge. WARNING: this also changes the from and to nodes, by adding the newly constructed edge to
-	 * their respective out and in lists.
+	 * Constructs a new edge.
+	 * <p>
+	 * WARNING: if the nodes are instances of {@link ConnectedNode}, this also changes the from and to nodes, by adding
+	 * the newly constructed {@link Edge} to their respective out and in lists.
 	 * 
 	 * @param fromNode
-	 *            : the from node; this edge is added to the node's outEdges list
+	 *            : the source {@link Node}; the edge is added to the node's outEdges list
 	 * @param toNode
-	 *            : the to node; this edge is added to the node's inEdges list
+	 *            : the destination {@link Node}; the edge is added to the node's inEdges list
 	 * @param edgeLabel
 	 *            : the label of the edge
 	 */
@@ -54,11 +84,13 @@ public class SimpleEdge extends GraphComponentImplementation implements Edge
 		return from + toStringShort() + to;
 	}
 	
+	@Override
 	public String toStringShort()
 	{
 		return toStringShort(false);
 	}
 	
+	@Override
 	public String toStringShort(boolean isBackward)
 	{
 		return (isBackward ? "<" : "") + (this.label != null ? ("-" + this.label + "-") : "-")

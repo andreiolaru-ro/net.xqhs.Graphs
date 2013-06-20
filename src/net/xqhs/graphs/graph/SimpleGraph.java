@@ -1,3 +1,14 @@
+/*******************************************************************************
+ * Copyright (C) 2013 Andrei Olaru.
+ * 
+ * This file is part of net.xqhs.Graphs.
+ * 
+ * net.xqhs.Graphs is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
+ * 
+ * net.xqhs.Graphs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
+ ******************************************************************************/
 package net.xqhs.graphs.graph;
 
 import java.io.InputStream;
@@ -31,7 +42,7 @@ import net.xqhs.util.logging.UnitConfigData;
  * {@link LinearGraphRepresentation}.
  * 
  * <p>
- * Currently only supports adding of new nodes and edges.
+ * Currently only supports adding of new nodes and edges, as well as reading from / writing to simple formats.
  * 
  * <p>
  * Warning: if a graph contains the edge, id does not necessarily contain any of the nodes of the edge. It may be that
@@ -42,17 +53,29 @@ import net.xqhs.util.logging.UnitConfigData;
  */
 public class SimpleGraph extends Unit implements Graph
 {
+	/**
+	 * The nodes
+	 */
 	protected Set<Node>	nodes	= null;
+	/**
+	 * The edges
+	 */
 	protected Set<Edge>	edges	= null;
 	
 	/**
-	 * Generates an empty graph.
+	 * Creates an empty graph.
 	 */
 	public SimpleGraph()
 	{
 		this(null);
 	}
 	
+	/**
+	 * Creates an empty graph, also passing information for logging (see {@link Unit}).
+	 * 
+	 * @param unitConfig
+	 *            - the configuration for the underlying {@link Unit} instance
+	 */
 	public SimpleGraph(UnitConfigData unitConfig)
 	{
 		super(unitConfig);
@@ -129,15 +152,27 @@ public class SimpleGraph extends Unit implements Graph
 	}
 	
 	@Override
-	public boolean contains(Edge e)
+	public Collection<Node> getNodes()
 	{
-		return edges.contains(e);
+		return nodes;
+	}
+	
+	@Override
+	public Collection<Edge> getEdges()
+	{
+		return edges;
 	}
 	
 	@Override
 	public boolean contains(Node node)
 	{
 		return nodes.contains(node);
+	}
+	
+	@Override
+	public boolean contains(Edge e)
+	{
+		return edges.contains(e);
 	}
 	
 	@Override
@@ -150,20 +185,8 @@ public class SimpleGraph extends Unit implements Graph
 		return ret;
 	}
 	
-	@Override
-	public Collection<Node> getNodes()
-	{
-		return nodes;
-	}
-	
-	@Override
-	public Collection<Edge> getEdges()
-	{
-		return edges;
-	}
-	
 	/**
-	 * Checks if the inEdges and outEdges lists of the nodes are coherent with the edges list of the graph
+	 * Checks if the inEdges and outEdges lists of the nodes are coherent with the edges of the graph.
 	 * 
 	 * @return true if the graph is coherent with respect to the above principle.
 	 */
@@ -175,7 +198,7 @@ public class SimpleGraph extends Unit implements Graph
 	}
 	
 	/**
-	 * Simple Dijskstra algorithm to compute the distance between one node and all others.
+	 * Simple Dijkstra algorithm to compute the distance between one node and all others.
 	 * 
 	 * @param node
 	 *            : the source node.
@@ -228,6 +251,9 @@ public class SimpleGraph extends Unit implements Graph
 		return dists;
 	}
 	
+	/**
+	 * Returns a display of the graph that shows the number of nodes and edges, the list of nodes and the list of edges.
+	 */
 	@Override
 	public String toString()
 	{
@@ -235,15 +261,19 @@ public class SimpleGraph extends Unit implements Graph
 		ret += "G[" + n() + ", " + m() + "] ";
 		List<Node> list = new ArrayList<>(nodes);
 		Collections.sort(list, new NodeAlphaComparator());
-		int first = 0;
 		ret += list.toString();
-		// for(Node node : list)
-		// ret += "\n" + node.getLabel() + ": " + node.inEdges + "  :  " + node.outEdges;
 		for(Edge e : edges)
 			ret += "\n" + e.toString();
 		return ret;
 	}
 	
+	/**
+	 * Creates a representation of the {@link Graph} in DOT format.
+	 * <p>
+	 * See <a href = 'http://en.wikipedia.org/wiki/DOT_language'>http://en.wikipedia.org/wiki/DOT_language</a>
+	 * 
+	 * @return the DOT representation
+	 */
 	public String toDot()
 	{
 		String ret = "digraph G {\n";
@@ -265,8 +295,7 @@ public class SimpleGraph extends Unit implements Graph
 		}
 		for(Node node : nodes)
 		{
-			if(node instanceof NodeP && ((NodeP) node).isGeneric()) // fairly redundant as all NodeP instances are
-																	// generic
+			if(node instanceof NodeP && ((NodeP) node).isGeneric())
 				ret += "\t\"" + node.toString() + "\" [label=\"" + node.getLabel() + "\"];\n";
 			// if(node.getLabel().contains(" "))
 			// ret += "\t" + node.getLabel().replace(' ', '_') + " [label=\"" + node.getLabel() + "\"];\n";
@@ -275,11 +304,29 @@ public class SimpleGraph extends Unit implements Graph
 		return ret;
 	}
 	
+	/**
+	 * Reads the structure of the graph as list of edges, adding all nodes appearing in the definition of edges.
+	 * 
+	 * @param input
+	 *            - a stream to read from
+	 * @return a newly created {@link Graph} instance
+	 */
 	public static SimpleGraph readFrom(InputStream input)
 	{
 		return readFrom(input, null);
 	}
 	
+	/**
+	 * Reads the structure of the graph as list of edges, adding all nodes appearing in the definition of edges.
+	 * <p>
+	 * This version also attaches an underlying {@link Unit} to the graph, configured by the parameter.
+	 * 
+	 * @param input
+	 *            - a stream to read from
+	 * @param unitConfig
+	 *            - the configuration for the underlying {@link Unit}
+	 * @return a newly created {@link Graph} instance
+	 */
 	public static SimpleGraph readFrom(InputStream input, UnitConfigData unitConfig)
 	{
 		SimpleGraph g = new SimpleGraph(unitConfig);
