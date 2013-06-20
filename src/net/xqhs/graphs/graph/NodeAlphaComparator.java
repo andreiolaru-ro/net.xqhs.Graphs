@@ -2,7 +2,7 @@ package net.xqhs.graphs.graph;
 
 import java.util.Comparator;
 
-import net.xqhs.graphs.graph.GraphPattern.NodeP;
+import net.xqhs.graphs.pattern.NodeP;
 
 public class NodeAlphaComparator implements Comparator<Node>
 {

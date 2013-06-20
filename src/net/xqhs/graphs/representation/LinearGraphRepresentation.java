@@ -12,7 +12,6 @@ import net.xqhs.graphs.graph.ConnectedNode;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.NodeAlphaComparator;
 import net.xqhs.graphs.graph.SimpleGraph;
-import net.xqhs.graphs.graph.GraphPattern.NodeP;
 import net.xqhs.graphs.graph.SimpleNode;
 
 /**

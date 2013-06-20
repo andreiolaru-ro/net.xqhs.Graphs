@@ -1,12 +1,12 @@
 package net.xqhs.graphs.representation;
 
 import net.xqhs.graphs.graph.SimpleGraph;
-import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitConfigData;
 
 /**
- * Abstract class for all classes that produce a representation (graphical, textual, etc) for a {@link SimpleGraph} instance.
+ * Abstract class for all classes that produce a representation (graphical, textual, etc) for a {@link SimpleGraph}
+ * instance.
  * 
  * <p>
  * It is possible that a {@link GraphRepresentation} class uses other, "sub-" {@link GraphRepresentation} instances for
@@ -14,7 +14,7 @@ import net.xqhs.util.logging.UnitConfigData;
  * 
  * <p>
  * A {@link GraphRepresentation} is based on {@link RepresentationElement} instances, each instance associated with a
- * specific {@link GraphComponent}. Representation elements should be updateable.
+ * specific {@link GraphComponentImplementation}. Representation elements should be updateable.
  * 
  * @author Andrei Olaru
  * 
@@ -22,15 +22,15 @@ import net.xqhs.util.logging.UnitConfigData;
 public abstract class GraphRepresentation extends Unit
 {
 	/**
-	 * Configures the graph representation with the {@link SimpleGraph} to represent, the root of the representation hierarchy
-	 * (if any), and an indication whether to process the graph immediately or not.
+	 * Configures the graph representation with the {@link SimpleGraph} to represent, the root of the representation
+	 * hierarchy (if any), and an indication whether to process the graph immediately or not.
 	 * 
 	 * @author Andrei Olaru
 	 * 
 	 */
 	public static class GraphConfig extends UnitConfigData
 	{
-		SimpleGraph				graph				= null;
+		SimpleGraph			graph				= null;
 		GraphRepresentation	rootRepresentation	= null;
 		boolean				doProcess			= true;
 		
@@ -69,7 +69,7 @@ public abstract class GraphRepresentation extends Unit
 		}
 	}
 	
-	SimpleGraph					theGraph			= null;
+	SimpleGraph				theGraph			= null;
 	RepresentationElement	theRepresentation	= null;
 	
 	public GraphRepresentation(GraphConfig conf)

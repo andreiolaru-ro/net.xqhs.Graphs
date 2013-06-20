@@ -3,10 +3,10 @@ package testing;
 import java.io.ByteArrayInputStream;
 
 import net.xqhs.graphs.graph.SimpleGraph;
-import net.xqhs.graphs.graph.GraphPattern;
-import net.xqhs.graphs.graph.GraphPattern.EdgeP;
-import net.xqhs.graphs.graph.GraphPattern.NodeP;
 import net.xqhs.graphs.matcher.GraphMatcherQuick;
+import net.xqhs.graphs.pattern.EdgeP;
+import net.xqhs.graphs.pattern.GraphPattern;
+import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.TextGraphRepresentation;
 import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
@@ -34,8 +34,8 @@ public class GraphMatcherTest
 		input += "30032011 -isa> date;";
 		input += "AIConf -> 30032011;";
 		input += "CFP -contains> conftime;";
-		SimpleGraph G = SimpleGraph.readFrom(new ByteArrayInputStream(input.getBytes()), new UnitConfigData().setName("G")
-				.setLevel(Level.INFO).setLink(unitName));
+		SimpleGraph G = SimpleGraph.readFrom(new ByteArrayInputStream(input.getBytes()),
+				new UnitConfigData().setName("G").setLevel(Level.INFO).setLink(unitName));
 		unit.li(G.toString());
 		
 		TextGraphRepresentation.GraphConfig configT = new TextGraphRepresentation.GraphConfig(G).setLayout("\n", "\t",

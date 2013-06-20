@@ -1,26 +1,26 @@
-package net.xqhs.graphs.graph;
+package net.xqhs.graphs.representation;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.xqhs.graphs.representation.GraphRepresentation;
-import net.xqhs.graphs.representation.RepresentationElement;
-
-public abstract class GraphComponent
+public abstract class GraphComponentImplementation implements VisualizableGraphComponent
 {
 	protected Set<RepresentationElement>	representations	= new HashSet<>();
 	
+	@Override
 	public void addRepresentation(RepresentationElement repr)
 	{
 		representations.add(repr);
 	}
 	
+	@Override
 	public Collection<RepresentationElement> getRepresentations()
 	{
 		return representations;
 	}
 	
+	@Override
 	public RepresentationElement getFirstRepresentationForPlatform(GraphRepresentation representation)
 	{
 		Collection<RepresentationElement> filtered = getRepresentationsForPlatform(representation);
@@ -29,7 +29,8 @@ public abstract class GraphComponent
 		return filtered.iterator().next();
 	}
 	
-	protected Collection<RepresentationElement> getRepresentationsForPlatform(GraphRepresentation representation)
+	@Override
+	public Collection<RepresentationElement> getRepresentationsForPlatform(GraphRepresentation representation)
 	{
 		Collection<RepresentationElement> ret = new HashSet<>();
 		for(RepresentationElement repr : representations)

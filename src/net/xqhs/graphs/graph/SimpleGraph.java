@@ -13,7 +13,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Set;
 
-import net.xqhs.graphs.graph.GraphPattern.NodeP;
+import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.LinearGraphRepresentation;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitComponent;
@@ -84,6 +84,7 @@ public class SimpleGraph extends Unit implements Graph
 	 *            : the edge to add
 	 * @return the updated graph
 	 */
+	@Override
 	public SimpleGraph addEdge(Edge edge)
 	{
 		if(edge == null)
@@ -93,6 +94,7 @@ public class SimpleGraph extends Unit implements Graph
 		return this;
 	}
 	
+	@Override
 	public SimpleGraph removeNode(Node node)
 	{
 		if(!nodes.remove(node))
@@ -100,6 +102,7 @@ public class SimpleGraph extends Unit implements Graph
 		return this;
 	}
 	
+	@Override
 	public SimpleGraph removeEdge(Edge edge)
 	{
 		if(!edges.remove(edge))
@@ -107,31 +110,37 @@ public class SimpleGraph extends Unit implements Graph
 		return this;
 	}
 	
+	@Override
 	public int n()
 	{
 		return nodes.size();
 	}
 	
+	@Override
 	public int m()
 	{
 		return edges.size();
 	}
 	
+	@Override
 	public int size()
 	{
 		return n();
 	}
 	
+	@Override
 	public boolean contains(Edge e)
 	{
 		return edges.contains(e);
 	}
 	
+	@Override
 	public boolean contains(Node node)
 	{
 		return nodes.contains(node);
 	}
 	
+	@Override
 	public Collection<Node> getNodesNamed(String name)
 	{
 		Collection<Node> ret = new HashSet<>();
@@ -141,11 +150,13 @@ public class SimpleGraph extends Unit implements Graph
 		return ret;
 	}
 	
+	@Override
 	public Collection<Node> getNodes()
 	{
 		return nodes;
 	}
 	
+	@Override
 	public Collection<Edge> getEdges()
 	{
 		return edges;
@@ -206,7 +217,7 @@ public class SimpleGraph extends Unit implements Graph
 					if(!grayNodes.contains(e.getFrom()))
 					{
 						if(!(e.getFrom() instanceof ConnectedNode))
-							throw new IllegalArgumentException("node " + e.getFrom()+ " is not a ConnectedNode");
+							throw new IllegalArgumentException("node " + e.getFrom() + " is not a ConnectedNode");
 						grayNodes.add((ConnectedNode) e.getFrom());
 					}
 					if(!dists.containsKey(e.getFrom()) || (dists.get(e.getFrom()).intValue() > (dist + 1)))

@@ -4,9 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import net.xqhs.graphs.graph.SimpleEdge;
-import net.xqhs.graphs.graph.GraphComponent;
-import net.xqhs.graphs.graph.GraphPattern.NodeP;
 import net.xqhs.graphs.graph.SimpleNode;
+import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.util.ContentHolder;
 import net.xqhs.util.logging.UnitComponent;
 
@@ -77,8 +76,8 @@ public class TextRepresentationElement extends RepresentationElement
 			linkType = type;
 		}
 		
-		public TextRepElementConfig(GraphRepresentation root, GraphComponent representedEdge, Type type, int level,
-				boolean lastChild, boolean alone)
+		public TextRepElementConfig(GraphRepresentation root, GraphComponentImplementation representedEdge, Type type,
+				int level, boolean lastChild, boolean alone)
 		{
 			super(root, null);
 			
@@ -93,7 +92,7 @@ public class TextRepresentationElement extends RepresentationElement
 			isOnlyChild = alone;
 		}
 		
-		public TextRepElementConfig(GraphRepresentation root, GraphComponent representedNode, Type type)
+		public TextRepElementConfig(GraphRepresentation root, GraphComponentImplementation representedNode, Type type)
 		{
 			super(root, null);
 			
@@ -340,7 +339,7 @@ public class TextRepresentationElement extends RepresentationElement
 			// create
 			log.li("create new [" + edgeTypeChar + "][" + edgeType + "] edge: [" + edgeName + "]");
 			SimpleEdge edge = new SimpleEdge(null, null, edgeName); // node names will be filled in later (in
-														// LinearGraphRepresentation)
+			// LinearGraphRepresentation)
 			// FIXME: what level to give; does it matter? remove level?
 			ret = new TextRepresentationElement(new TextRepElementConfig(root, edge, edgeType, -1, lastChild, lastChild
 					&& firstSibling));
@@ -368,8 +367,9 @@ public class TextRepresentationElement extends RepresentationElement
 			else
 			{
 				log.li("create new node: [" + nodeName + "]");
-				node = new SimpleNode(nodeName); // for internal links, this should not be a new node; it will be replaced
-											// later
+				node = new SimpleNode(nodeName); // for internal links, this should not be a new node; it will be
+													// replaced
+				// later
 			}
 			ret = new TextRepresentationElement(new TextRepElementConfig(root, node, Type.NODE));
 			if(parts.length > 1)

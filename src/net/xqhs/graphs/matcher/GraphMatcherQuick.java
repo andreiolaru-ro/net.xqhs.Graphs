@@ -16,10 +16,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.SimpleGraph;
-import net.xqhs.graphs.graph.GraphPattern;
 import net.xqhs.graphs.graph.SimpleNode;
-import net.xqhs.graphs.graph.GraphPattern.EdgeP;
-import net.xqhs.graphs.graph.GraphPattern.NodeP;
+import net.xqhs.graphs.pattern.EdgeP;
+import net.xqhs.graphs.pattern.GraphPattern;
+import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.TextGraphRepresentation;
 import net.xqhs.graphs.util.Debug.D_G;
 import net.xqhs.util.logging.Log.Level;
@@ -27,7 +27,8 @@ import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitConfigData;
 
 /**
- * An algorithm that finds partial matches between a graph pattern GP (or G^P) and a graph (G). It implements the {@link GraphMatcher} interface.
+ * An algorithm that finds partial matches between a graph pattern GP (or G^P) and a graph (G). It implements the
+ * {@link GraphMatcher} interface.
  * 
  * @author Andrei Olaru
  */
@@ -64,7 +65,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		/**
 		 * Reference to the pattern GP
 		 */
-		GraphPattern				patternLink;
+		GraphPattern					patternLink;
 		
 		/**
 		 * G', the subgraph of G that has been matched. It is connected and it is a proper graph.
@@ -73,15 +74,15 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		/**
 		 * GmP, the part of GP that has been matched. It is connected and it is a proper graph.
 		 */
-		GraphPattern				solvedPart;
+		GraphPattern					solvedPart;
 		/**
 		 * GxP, the part of GP that has not been matched. It may contain edges without the adjacent nodes.
 		 */
-		GraphPattern				unsolvedPart;
+		GraphPattern					unsolvedPart;
 		/**
 		 * k, the number of edges in GxP
 		 */
-		int							k;
+		int								k;
 		
 		/**
 		 * The correspondence (node) function VmP -> V'
@@ -90,22 +91,22 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		/**
 		 * The correspondence (edge) function EmP -> E'
 		 */
-		Map<EdgeP, List<SimpleEdge>>		edgeFunction;
+		Map<EdgeP, List<SimpleEdge>>	edgeFunction;
 		/**
 		 * The nodes on the frontier of GmP - nodes that have adjacent edges in ExP. Nodes are a subset of VmP.
 		 * <p>
 		 * For each node the number of remaining edges in ExP that are adjacent to it is given.
 		 */
-		Map<NodeP, AtomicInteger>	frontier				= null;
+		Map<NodeP, AtomicInteger>		frontier				= null;
 		/**
 		 * MC, matches that could possibly be merged with this one (i.e. not intersecting and sharing at least one
 		 * common vertex (with a common correspondent in the graph).
 		 */
-		Set<Match>					mergeCandidates			= null;
+		Set<Match>						mergeCandidates			= null;
 		/**
 		 * MO, matches that could potentially merge with this one, but not immediately (they are not adjacent).
 		 */
-		Set<Match>					mergeOuterCandidates	= null;
+		Set<Match>						mergeOuterCandidates	= null;
 		
 		/**
 		 * The name of the edge.
@@ -113,7 +114,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		 * Initially (for single-edge matches) the id is the id of the pattern edge, dash, a counter for matches based
 		 * on that edge.
 		 */
-		String						id						= "-";
+		String							id						= "-";
 		
 		/**
 		 * Create a new empty match; some parts may be uninitialized / undefined (like frontier, or matchCandidates)
@@ -167,9 +168,11 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 			// the frontier contains both nodes (if it is the case), with their adjacent edges minus the matched edge
 			frontier = new HashMap<>();
 			if(eP.getFrom().inEdges.size() + eP.getFrom().outEdges.size() > 1)
-				frontier.put((NodeP) eP.getFrom(), new AtomicInteger(eP.getFrom().inEdges.size() + eP.getFrom().outEdges.size() - 1));
+				frontier.put((NodeP) eP.getFrom(), new AtomicInteger(eP.getFrom().inEdges.size()
+						+ eP.getFrom().outEdges.size() - 1));
 			if(eP.getTo().inEdges.size() + eP.getTo().outEdges.size() > 1)
-				frontier.put((NodeP) eP.getTo(), new AtomicInteger(eP.getTo().inEdges.size() + eP.getTo().outEdges.size() - 1));
+				frontier.put((NodeP) eP.getTo(),
+						new AtomicInteger(eP.getTo().inEdges.size() + eP.getTo().outEdges.size() - 1));
 			// unsolved part (all nodes and edges except the matched ones)
 			unsolvedPart = new GraphPattern();
 			for(SimpleNode vP : p.nodes)
@@ -309,7 +312,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 	/**
 	 * The graph to match the pattern to (G).
 	 */
-	SimpleGraph			graph;
+	SimpleGraph		graph;
 	/**
 	 * The pattern to match to the graph (GP).
 	 */
@@ -641,7 +644,8 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		newM.unsolvedPart.nodes.addAll(pt.nodes);
 		newM.k = newM.unsolvedPart.edges.size();
 		
-		Set<SimpleEdge> totalMatch = new HashSet<>(); // there should be no duplicates as the solved parts should be disjoint.
+		Set<SimpleEdge> totalMatch = new HashSet<>(); // there should be no duplicates as the solved parts should be
+														// disjoint.
 		totalMatch.addAll(m1.solvedPart.edges);
 		totalMatch.addAll(m2.solvedPart.edges);
 		
@@ -692,8 +696,8 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 				else
 					newM.frontier.put((NodeP) e.getFrom(), fromIndex);
 			else
-				newM.frontier.put((NodeP) eP.getFrom(), new AtomicInteger(eP.getFrom().inEdges.size() + eP.getFrom().outEdges.size()
-						- 1));
+				newM.frontier.put((NodeP) eP.getFrom(), new AtomicInteger(eP.getFrom().inEdges.size()
+						+ eP.getFrom().outEdges.size() - 1));
 			AtomicInteger toIndex = newM.frontier.get(e.getTo());
 			if(toIndex != null)
 				if(toIndex.decrementAndGet() == 0)
@@ -701,7 +705,8 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 				else
 					newM.frontier.put((NodeP) e.getTo(), toIndex);
 			else
-				newM.frontier.put((NodeP) eP.getTo(), new AtomicInteger(eP.getTo().inEdges.size() + eP.getTo().outEdges.size() - 1));
+				newM.frontier.put((NodeP) eP.getTo(),
+						new AtomicInteger(eP.getTo().inEdges.size() + eP.getTo().outEdges.size() - 1));
 			
 			// merge candidates: MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
 			// common merge candidates, and candidates of each match that were outer candidates for the other match

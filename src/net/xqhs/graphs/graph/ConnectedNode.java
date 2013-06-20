@@ -1,6 +1,5 @@
 package net.xqhs.graphs.graph;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public interface ConnectedNode extends Node
@@ -16,5 +15,5 @@ public interface ConnectedNode extends Node
 	public Set<Node> getOutNodes();
 	
 	public Set<Node> getInNodes();
-
+	
 }

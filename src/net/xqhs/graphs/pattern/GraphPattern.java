@@ -1,71 +1,14 @@
-package net.xqhs.graphs.graph;
+package net.xqhs.graphs.pattern;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
+import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.util.logging.UnitConfigData;
 
 public class GraphPattern extends SimpleGraph
 {
-	public static class NodeP extends SimpleNode
-	{
-		public static final String	NODEP_LABEL			= "?";
-		public static final String	NODEP_INDEX_MARK	= "#";
-		
-		boolean						generic				= false;
-		int							labelIndex			= 0;		// must be greater than 0 for generic nodes;
-																	
-		public NodeP()
-		{
-			super(NODEP_LABEL);
-			generic = true;
-		}
-		
-		/**
-		 * WARNING: use this with grate caution;
-		 * 
-		 * @param genericIndex
-		 *            : be absolutely certain this is not the same index with other nodes in the graph
-		 */
-		public NodeP(int genericIndex)
-		{
-			super(NODEP_LABEL);
-			generic = true;
-			labelIndex = genericIndex;
-		}
-		
-		public NodeP(String label)
-		{
-			super(label);
-		}
-		
-		public boolean isGeneric()
-		{
-			return generic;
-		}
-		
-		public int genericIndex()
-		{
-			return labelIndex;
-		}
-		
-		@Override
-		public String toString()
-		{
-			return super.toString() + (labelIndex > 0 ? NODEP_INDEX_MARK + labelIndex : "");
-		}
-	}
-	
-	public static class EdgeP extends SimpleEdge
-	{
-		boolean	generic	= false;
-		
-		public EdgeP(NodeP fromNode, NodeP toNode, String edgeLabel)
-		{ // TODO: why does this constructor exist?
-			super(fromNode, toNode, edgeLabel);
-		}
-	}
-	
 	public GraphPattern()
 	{
 		this(null);
@@ -96,7 +39,7 @@ public class GraphPattern extends SimpleGraph
 			int maxIdx = 0;
 			NodeP lastEquiv = null;
 			for(Node n : this.nodes)
-				if((n.getLabel().equals(node.label)) && (maxIdx <= ((NodeP) n).labelIndex))
+				if((n.getLabel().equals(node.getLabel())) && (maxIdx <= ((NodeP) n).labelIndex))
 				{
 					maxIdx = ((NodeP) n).labelIndex;
 					lastEquiv = (NodeP) n;

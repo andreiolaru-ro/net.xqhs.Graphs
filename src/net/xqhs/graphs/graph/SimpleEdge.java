@@ -1,6 +1,8 @@
 package net.xqhs.graphs.graph;
 
-public class SimpleEdge extends GraphComponent implements Edge
+import net.xqhs.graphs.representation.GraphComponentImplementation;
+
+public class SimpleEdge extends GraphComponentImplementation implements Edge
 {
 	protected String	label	= null; // FIXME: support null labels throughout the source
 	protected Node		from	= null;
@@ -23,21 +25,24 @@ public class SimpleEdge extends GraphComponent implements Edge
 		this.to = toNode;
 		this.label = edgeLabel;
 		if(this.to instanceof ConnectedNode && this.to != null)
-			((ConnectedNode)this.to).getInEdges().add(this);
+			((ConnectedNode) this.to).getInEdges().add(this);
 		if(this.from instanceof ConnectedNode && this.from != null)
-			((ConnectedNode)this.to).getOutEdges().add(this);
+			((ConnectedNode) this.to).getOutEdges().add(this);
 	}
 	
+	@Override
 	public String getLabel()
 	{
 		return label;
 	}
 	
+	@Override
 	public Node getFrom()
 	{
 		return from;
 	}
 	
+	@Override
 	public Node getTo()
 	{
 		return to;

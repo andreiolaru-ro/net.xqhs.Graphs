@@ -1,16 +1,15 @@
 package net.xqhs.graphs.representation;
 
-import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.util.config.Config;
 
 public abstract class RepresentationElement
 {
 	public static class RepElementConfig extends Config
 	{
-		GraphRepresentation	rootRepresentation;
-		GraphComponent		representedComponent	= null;
+		GraphRepresentation				rootRepresentation;
+		GraphComponentImplementation	representedComponent	= null;
 		
-		public RepElementConfig(GraphRepresentation root, GraphComponent component)
+		public RepElementConfig(GraphRepresentation root, GraphComponentImplementation component)
 		{
 			this.rootRepresentation = root;
 			this.representedComponent = component;

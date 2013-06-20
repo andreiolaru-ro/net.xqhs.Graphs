@@ -9,8 +9,8 @@ import java.util.Stack;
 
 import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.SimpleGraph;
-import net.xqhs.graphs.graph.GraphPattern.NodeP;
 import net.xqhs.graphs.graph.SimpleNode;
+import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.TextRepresentationElement.Symbol;
 import net.xqhs.graphs.representation.TextRepresentationElement.TextRepElementConfig;
 import net.xqhs.graphs.representation.TextRepresentationElement.Type;
@@ -185,9 +185,9 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	 * Returns a text representation of the associated graph, on one line.
 	 * 
 	 * <p>
-	 * The representation uses the text-representations of the nodes (written by {@link SimpleNode}.toString() ) and edges
-	 * (written by {@link SimpleEdge} .toStringShort()}, and a few special symbols: parentheses for branches (the last branch
-	 * of a node is not surrounded by parentheses) and "*" to refer nodes that have already appeared in the
+	 * The representation uses the text-representations of the nodes (written by {@link SimpleNode}.toString() ) and
+	 * edges (written by {@link SimpleEdge} .toStringShort()}, and a few special symbols: parentheses for branches (the
+	 * last branch of a node is not surrounded by parentheses) and "*" to refer nodes that have already appeared in the
 	 * representation earlier. Also, "^" for nodes outside the (sub)graph.
 	 * 
 	 * <p>
