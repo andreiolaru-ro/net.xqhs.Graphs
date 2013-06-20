@@ -5,9 +5,9 @@ import java.util.Collection;
 
 import net.xqhs.util.logging.UnitConfigData;
 
-public class GraphPattern extends Graph
+public class GraphPattern extends SimpleGraph
 {
-	public static class NodeP extends Node
+	public static class NodeP extends SimpleNode
 	{
 		public static final String	NODEP_LABEL			= "?";
 		public static final String	NODEP_INDEX_MARK	= "#";
@@ -56,7 +56,7 @@ public class GraphPattern extends Graph
 		}
 	}
 	
-	public static class EdgeP extends Edge
+	public static class EdgeP extends SimpleEdge
 	{
 		boolean	generic	= false;
 		
@@ -96,7 +96,7 @@ public class GraphPattern extends Graph
 			int maxIdx = 0;
 			NodeP lastEquiv = null;
 			for(Node n : this.nodes)
-				if((n.label.equals(node.label)) && (maxIdx <= ((NodeP) n).labelIndex))
+				if((n.getLabel().equals(node.label)) && (maxIdx <= ((NodeP) n).labelIndex))
 				{
 					maxIdx = ((NodeP) n).labelIndex;
 					lastEquiv = (NodeP) n;

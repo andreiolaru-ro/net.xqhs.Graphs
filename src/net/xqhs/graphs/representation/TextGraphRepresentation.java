@@ -7,10 +7,10 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 
-import net.xqhs.graphs.graph.Edge;
-import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.SimpleEdge;
+import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.graph.GraphPattern.NodeP;
-import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.representation.TextRepresentationElement.Symbol;
 import net.xqhs.graphs.representation.TextRepresentationElement.TextRepElementConfig;
 import net.xqhs.graphs.representation.TextRepresentationElement.Type;
@@ -26,7 +26,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		protected String	indentIncrement	= "";
 		protected int		incrementLimit	= -1;
 		
-		public GraphConfig(Graph g)
+		public GraphConfig(SimpleGraph g)
 		{
 			super(g);
 		}
@@ -119,7 +119,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 			{
 				remainingChildren--;
 				PathElement other = others.get(0);
-				Edge edge = conf.isBackwards ? el.node.getEdgeFrom(other.node) : el.node.getEdgeTo(other.node);
+				SimpleEdge edge = conf.isBackwards ? el.node.getEdgesFrom(other.node) : el.node.getEdgesTo(other.node);
 				// backlink
 				// ret.add(new TextRepresentationElement(new TextRepElementConfig(this, other.node.toString(),
 				// edge.toStringShort(conf.isBackwards),
@@ -133,7 +133,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 			}
 			
 			remainingChildren--;
-			Edge edge = conf.isBackwards ? el.node.getEdgeFrom(child.node) : el.node.getEdgeTo(child.node);
+			SimpleEdge edge = conf.isBackwards ? el.node.getEdgesFrom(child.node) : el.node.getEdgesTo(child.node);
 			// branch
 			TextRepresentationElement reprEdge = new TextRepresentationElement(new TextRepElementConfig(this, edge,
 					Type.BRANCH, level, !(remainingChildren > 0), (allchildren == 1)));
@@ -150,7 +150,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 			remainingChildren--;
 			PathElement other = others.get(0);
 			boolean external = !blackNodes.contains(other);
-			Edge edge = conf.isBackwards ? el.node.getEdgeFrom(other.node) : el.node.getEdgeTo(other.node);
+			SimpleEdge edge = conf.isBackwards ? el.node.getEdgesFrom(other.node) : el.node.getEdgesTo(other.node);
 			// backlinks and external links
 			TextRepresentationElement repr = new TextRepresentationElement(new TextRepElementConfig(this, edge,
 					(external ? Type.EXTERNAL_LINK : Type.INTERNAL_LINK), level, !(remainingChildren > 0),
@@ -185,8 +185,8 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	 * Returns a text representation of the associated graph, on one line.
 	 * 
 	 * <p>
-	 * The representation uses the text-representations of the nodes (written by {@link Node}.toString() ) and edges
-	 * (written by {@link Edge} .toStringShort()}, and a few special symbols: parentheses for branches (the last branch
+	 * The representation uses the text-representations of the nodes (written by {@link SimpleNode}.toString() ) and edges
+	 * (written by {@link SimpleEdge} .toStringShort()}, and a few special symbols: parentheses for branches (the last branch
 	 * of a node is not surrounded by parentheses) and "*" to refer nodes that have already appeared in the
 	 * representation earlier. Also, "^" for nodes outside the (sub)graph.
 	 * 
@@ -202,19 +202,19 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 				((GraphConfig) config).indentIncrement, ((GraphConfig) config).incrementLimit);
 	}
 	
-	public static Graph readRepresentation(String rawInput)
+	public static SimpleGraph readRepresentation(String rawInput)
 	{
 		return readRepresentation(rawInput, null, null);
 	}
 	
-	public static Graph readRepresentation(String rawInput, UnitConfigData graphUnitConfig,
+	public static SimpleGraph readRepresentation(String rawInput, UnitConfigData graphUnitConfig,
 			UnitConfigData thisUnitConfig)
 	{
 		UnitComponent log = new UnitComponent(thisUnitConfig);
 		
 		log.li("reading graph");
 		ContentHolder<String> input = new ContentHolder<>(rawInput);
-		Graph g = new Graph(graphUnitConfig);
+		SimpleGraph g = new SimpleGraph(graphUnitConfig);
 		
 		boolean isBackwards = input.get().indexOf(Symbol.EDGE_ENDING_BACKWARD.toString()) >= 0;
 		TextGraphRepresentation repr = new TextGraphRepresentation(
@@ -252,7 +252,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					break;
 				case NODE:
 				{
-					Node node = (Node) element.config.representedComponent;
+					SimpleNode node = (SimpleNode) element.config.representedComponent;
 					log.lf("inspecting [" + type + "]: [" + node + "]");
 					log.li("adding to graph node [" + node + "]");
 					g.addNode(node);
@@ -263,7 +263,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					// add edges
 					for(TextRepresentationElement edgeEl : element.content)
 					{
-						Edge edge = (Edge) edgeEl.config.representedComponent;
+						SimpleEdge edge = (SimpleEdge) edgeEl.config.representedComponent;
 						if(!isBackwards)
 							edge.setFrom(node);
 						else
@@ -278,20 +278,20 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 				case INTERNAL_LINK:
 				case EXTERNAL_LINK:
 				{
-					Edge edge = (Edge) element.config.representedComponent;
+					SimpleEdge edge = (SimpleEdge) element.config.representedComponent;
 					log.lf("inspecting [" + type + "]: [" + edge + "]");
 					
 					nLevel = new LinkedList<>();
 					tree.push(nLevel);
-					Node targetNode = null;
+					SimpleNode targetNode = null;
 					TextRepresentationElement targetNodeEl = element.content.iterator().next();
 					if(((TextRepElementConfig) element.config).linkType == Type.INTERNAL_LINK)
 					{
-						Node dummyTargetNode = (Node) targetNodeEl.config.representedComponent;
+						SimpleNode dummyTargetNode = (SimpleNode) targetNodeEl.config.representedComponent;
 						if(dummyTargetNode instanceof NodeP && ((NodeP) dummyTargetNode).isGeneric())
 						{
 							log.lf("searching pattern target node [" + dummyTargetNode + "]");
-							for(Node candidateNode : g.getNodesNamed(dummyTargetNode.getLabel()))
+							for(SimpleNode candidateNode : g.getNodesNamed(dummyTargetNode.getLabel()))
 								if(candidateNode instanceof NodeP
 										&& ((NodeP) dummyTargetNode).genericIndex() == ((NodeP) candidateNode)
 												.genericIndex())
@@ -308,7 +308,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					else
 					{ // no external links should actually appear here, i think? TODO: is it?
 						// actual new node
-						targetNode = (Node) targetNodeEl.config.representedComponent;
+						targetNode = (SimpleNode) targetNodeEl.config.representedComponent;
 						nLevel.add(targetNodeEl);
 						log.lf("target node (added to queue) [" + targetNode + "]");
 					}

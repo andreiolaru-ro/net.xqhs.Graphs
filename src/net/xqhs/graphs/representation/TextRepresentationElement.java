@@ -3,10 +3,10 @@ package net.xqhs.graphs.representation;
 import java.util.LinkedList;
 import java.util.List;
 
-import net.xqhs.graphs.graph.Edge;
+import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.graphs.graph.GraphPattern.NodeP;
-import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.util.ContentHolder;
 import net.xqhs.util.logging.UnitComponent;
 
@@ -155,7 +155,7 @@ public class TextRepresentationElement extends RepresentationElement
 			ret += Symbol.BRANCH_IN;
 		
 		if(isEdgeType(linkType)) // FIXME: should not use Edge's toString function, should represent manually
-			ret += ((Edge) conf.representedComponent)
+			ret += ((SimpleEdge) conf.representedComponent)
 					.toStringShort(((TextGraphRepresentation) config.rootRepresentation).isBackwards());
 		
 		if(linkType == Type.NODE)
@@ -339,7 +339,7 @@ public class TextRepresentationElement extends RepresentationElement
 			
 			// create
 			log.li("create new [" + edgeTypeChar + "][" + edgeType + "] edge: [" + edgeName + "]");
-			Edge edge = new Edge(null, null, edgeName); // node names will be filled in later (in
+			SimpleEdge edge = new SimpleEdge(null, null, edgeName); // node names will be filled in later (in
 														// LinearGraphRepresentation)
 			// FIXME: what level to give; does it matter? remove level?
 			ret = new TextRepresentationElement(new TextRepElementConfig(root, edge, edgeType, -1, lastChild, lastChild
@@ -354,7 +354,7 @@ public class TextRepresentationElement extends RepresentationElement
 					"[" + Symbol.EDGE_LIMIT + Symbol.BRANCH_IN + Symbol.EDGE_ENDING_BACKWARD + "]", 2);
 			// TODO: should check if there is anything in parts[0]?
 			String nodeName = parts[0].trim();
-			Node node = null;
+			SimpleNode node = null;
 			if(nodeName.substring(0, 0 + NodeP.NODEP_LABEL.length()).equals(NodeP.NODEP_LABEL)
 					&& nodeName.substring(NodeP.NODEP_LABEL.length(),
 							NodeP.NODEP_LABEL.length() + NodeP.NODEP_INDEX_MARK.length())
@@ -368,7 +368,7 @@ public class TextRepresentationElement extends RepresentationElement
 			else
 			{
 				log.li("create new node: [" + nodeName + "]");
-				node = new Node(nodeName); // for internal links, this should not be a new node; it will be replaced
+				node = new SimpleNode(nodeName); // for internal links, this should not be a new node; it will be replaced
 											// later
 			}
 			ret = new TextRepresentationElement(new TextRepElementConfig(root, node, Type.NODE));

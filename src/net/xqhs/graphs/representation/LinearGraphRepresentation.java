@@ -8,15 +8,18 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
-import net.xqhs.graphs.graph.Graph;
-import net.xqhs.graphs.graph.GraphPattern.NodeP;
+import net.xqhs.graphs.graph.ConnectedNode;
 import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.graph.NodeAlphaComparator;
+import net.xqhs.graphs.graph.SimpleGraph;
+import net.xqhs.graphs.graph.GraphPattern.NodeP;
+import net.xqhs.graphs.graph.SimpleNode;
 
 /**
- * Class that allows the representation of a {@link Graph} structure. Also can be written as GrapheR
+ * Class that allows the representation of a {@link SimpleGraph} structure. Also can be written as GrapheR
  * 
  * <p>
- * An instance remains associated with the same {@link Graph} instance for all of its lifecycle.
+ * An instance remains associated with the same {@link SimpleGraph} instance for all of its lifecycle.
  * 
  * @author Andrei Olaru
  * 
@@ -24,24 +27,22 @@ import net.xqhs.graphs.graph.Node;
 public abstract class LinearGraphRepresentation extends GraphRepresentation
 {
 	/**
-	 * Compares two {@link Node} structures. First criterion: node with lower in-degree is first; second criterion is
-	 * lexical order.
+	 * Compares two {@link SimpleNode} structures. First criterion: node with lower in-degree is first; second criterion
+	 * is lexical order.
 	 * 
 	 * @author Andrei Olaru
 	 * 
 	 */
-	static class NodeInAlphaComparator implements Comparator<Node>
+	static class NodeInAlphaComparator extends NodeAlphaComparator
 	{
 		@Override
 		public int compare(Node n0, Node n1)
 		{
-			if(n0.getInEdges().size() != n1.getInEdges().size())
-				return (int) Math.signum(n0.getInEdges().size() - n1.getInEdges().size());
-			if(!n0.getLabel().equals(n1.getLabel()))
-				return n0.getLabel().compareTo(n1.getLabel());
-			if((n0 == n1) || !(n0 instanceof NodeP) || !(n1 instanceof NodeP)) // something may be weird here...
-				return 0;
-			return ((NodeP) n0).genericIndex() - ((NodeP) n1).genericIndex();
+			if(n0 instanceof ConnectedNode && n1 instanceof ConnectedNode
+					&& ((ConnectedNode) n0).getInEdges().size() != ((ConnectedNode) n1).getInEdges().size())
+				return (int) Math.signum(((ConnectedNode) n0).getInEdges().size()
+						- ((ConnectedNode) n1).getInEdges().size());
+			return super.compare(n0, n1);
 		}
 	}
 	
@@ -59,7 +60,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 	
 	public class PathElement
 	{
-		Node				node			= null;
+		ConnectedNode		node			= null;
 		int					distance		= 0;					// distance from firstNode / subgraph root
 		PathElement			parent			= null;
 		int					treeOrder		= -1;					// order of the sub-tree containing this
@@ -68,11 +69,13 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 		List<PathElement>	otherChildren	= new LinkedList<>();
 		int					pathlength		= -1;					// distance to farthest leaf
 																	
-		public PathElement(Node _node, int _distance, PathElement _parent)
+		public PathElement(Node node, int distance, PathElement parent)
 		{
-			this.node = _node;
-			this.distance = _distance;
-			this.parent = _parent;
+			if(!(node instanceof ConnectedNode))
+				throw new IllegalArgumentException("node " + node + " is not a ConnectedNode");
+			this.node = (ConnectedNode) node;
+			this.distance = distance;
+			this.parent = parent;
 		}
 		
 		public boolean pathContains(PathElement el1)
@@ -102,7 +105,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 	{
 		boolean	isBackwards	= false;
 		
-		public GraphConfig(Graph thegraph)
+		public GraphConfig(SimpleGraph thegraph)
 		{
 			super(thegraph);
 		}
@@ -173,12 +176,14 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 				PathElement el = grayNodes.poll();
 				lf("taking element " + el);
 				// expand
-				for(Node n1 : (conf.isBackwards ? el.node.inList() : el.node.outList()))
+				for(Node n1 : (conf.isBackwards ? el.node.getInNodes() : el.node.getOutNodes()))
 				{
 					boolean towardsoutside = false;
-					if(!conf.isBackwards && !theGraph.contains(el.node.getEdgeTo(n1)))
+					// FIXME: only works with single edges between nodes; is that OK?
+					if(!conf.isBackwards && !theGraph.contains(el.node.getEdgesTo(n1).iterator().next()))
 						continue; // the edge is not in the graph displayed.
-					if(conf.isBackwards && !theGraph.contains(el.node.getEdgeFrom(n1)))
+					// FIXME: only works with single edges between nodes; is that OK?
+					if(conf.isBackwards && !theGraph.contains(el.node.getEdgesFrom(n1).iterator().next()))
 						continue; // the edge is not in the graph displayed.
 					if(!theGraph.contains(n1))
 						// the edge is in the graph, but the other node is not

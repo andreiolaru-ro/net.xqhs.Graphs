@@ -14,10 +14,10 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import net.xqhs.graphs.graph.Edge;
-import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.SimpleEdge;
+import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.graph.GraphPattern;
-import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.graph.GraphPattern.EdgeP;
 import net.xqhs.graphs.graph.GraphPattern.NodeP;
 import net.xqhs.graphs.representation.TextGraphRepresentation;
@@ -31,7 +31,7 @@ import net.xqhs.util.logging.UnitConfigData;
  * 
  * @author Andrei Olaru
  */
-public class GraphMatcherQuick extends Unit
+public class GraphMatcherQuick extends Unit implements GraphMatcher
 {
 	/**
 	 * Class describing a [partial] match of GP in G. In time, matches go from a 1-edge match to a maximal match.
@@ -60,7 +60,7 @@ public class GraphMatcherQuick extends Unit
 		/**
 		 * Reference to the graph G.
 		 */
-		Graph						targetGraphLink;
+		SimpleGraph						targetGraphLink;
 		/**
 		 * Reference to the pattern GP
 		 */
@@ -69,7 +69,7 @@ public class GraphMatcherQuick extends Unit
 		/**
 		 * G', the subgraph of G that has been matched. It is connected and it is a proper graph.
 		 */
-		Graph						matchedGraph;
+		SimpleGraph						matchedGraph;
 		/**
 		 * GmP, the part of GP that has been matched. It is connected and it is a proper graph.
 		 */
@@ -86,11 +86,11 @@ public class GraphMatcherQuick extends Unit
 		/**
 		 * The correspondence (node) function VmP -> V'
 		 */
-		Map<NodeP, Node>			nodeFunction;
+		Map<NodeP, SimpleNode>			nodeFunction;
 		/**
 		 * The correspondence (edge) function EmP -> E'
 		 */
-		Map<EdgeP, List<Edge>>		edgeFunction;
+		Map<EdgeP, List<SimpleEdge>>		edgeFunction;
 		/**
 		 * The nodes on the frontier of GmP - nodes that have adjacent edges in ExP. Nodes are a subset of VmP.
 		 * <p>
@@ -126,7 +126,7 @@ public class GraphMatcherQuick extends Unit
 		 * @param p
 		 *            : the pattern
 		 */
-		public Match(Graph g, GraphPattern p)
+		public Match(SimpleGraph g, GraphPattern p)
 		{
 			targetGraphLink = g;
 			patternLink = p;
@@ -146,36 +146,36 @@ public class GraphMatcherQuick extends Unit
 		 * @param id
 		 *            : the matching graph edge's id
 		 */
-		public Match(Graph g, GraphPattern p, Edge e, EdgeP eP, String id)
+		public Match(SimpleGraph g, GraphPattern p, SimpleEdge e, EdgeP eP, String id)
 		{
 			this(g, p);
 			
 			// G' contains the edge and the two adjacent nodes
-			matchedGraph = new Graph().addNode(e.from).addNode(e.to).addEdge(e);
+			matchedGraph = new SimpleGraph().addNode(e.getFrom()).addNode(e.getTo()).addEdge(e);
 			// GmP contains the pattern edge and the two adjacent nodes
-			solvedPart = (GraphPattern) new GraphPattern().addNode((NodeP) eP.from, false)
-					.addNode((NodeP) eP.to, false).addEdge(eP);
+			solvedPart = (GraphPattern) new GraphPattern().addNode((NodeP) eP.getFrom(), false)
+					.addNode((NodeP) eP.getTo(), false).addEdge(eP);
 			// node function
 			nodeFunction = new HashMap<>();
-			nodeFunction.put((NodeP) eP.from, e.from);
-			nodeFunction.put((NodeP) eP.to, e.to);
+			nodeFunction.put((NodeP) eP.getFrom(), e.getFrom());
+			nodeFunction.put((NodeP) eP.getTo(), e.getTo());
 			// edge function
 			edgeFunction = new HashMap<>();
-			List<Edge> eL = new ArrayList<>();
+			List<SimpleEdge> eL = new ArrayList<>();
 			eL.add(e);
 			edgeFunction.put(eP, eL);
 			// the frontier contains both nodes (if it is the case), with their adjacent edges minus the matched edge
 			frontier = new HashMap<>();
-			if(eP.from.inEdges.size() + eP.from.outEdges.size() > 1)
-				frontier.put((NodeP) eP.from, new AtomicInteger(eP.from.inEdges.size() + eP.from.outEdges.size() - 1));
-			if(eP.to.inEdges.size() + eP.to.outEdges.size() > 1)
-				frontier.put((NodeP) eP.to, new AtomicInteger(eP.to.inEdges.size() + eP.to.outEdges.size() - 1));
+			if(eP.getFrom().inEdges.size() + eP.getFrom().outEdges.size() > 1)
+				frontier.put((NodeP) eP.getFrom(), new AtomicInteger(eP.getFrom().inEdges.size() + eP.getFrom().outEdges.size() - 1));
+			if(eP.getTo().inEdges.size() + eP.getTo().outEdges.size() > 1)
+				frontier.put((NodeP) eP.getTo(), new AtomicInteger(eP.getTo().inEdges.size() + eP.getTo().outEdges.size() - 1));
 			// unsolved part (all nodes and edges except the matched ones)
 			unsolvedPart = new GraphPattern();
-			for(Node vP : p.nodes)
-				if((vP != eP.from) && (vP != eP.to))
+			for(SimpleNode vP : p.nodes)
+				if((vP != eP.getFrom()) && (vP != eP.getTo()))
 					unsolvedPart.addNode((NodeP) vP, false);
-			for(Edge ePi : p.edges)
+			for(SimpleEdge ePi : p.edges)
 				if(ePi != eP)
 					unsolvedPart.addEdge(ePi);
 			k = unsolvedPart.edges.size();
@@ -273,13 +273,13 @@ public class GraphMatcherQuick extends Unit
 	 */
 	protected static class MatchComparator implements Comparator<Match>
 	{
-		private Map<Node, Integer>	distances	= null;
+		private Map<SimpleNode, Integer>	distances	= null;
 		
 		protected MatchComparator()
 		{
 		}
 		
-		protected MatchComparator(Map<Node, Integer> distances)
+		protected MatchComparator(Map<SimpleNode, Integer> distances)
 		{
 			this.distances = distances;
 		}
@@ -290,10 +290,10 @@ public class GraphMatcherQuick extends Unit
 			// single-edge matches (in case distances is defined)
 			if((m1.solvedPart.m() == 1) && (m2.solvedPart.m() == 1) && (distances != null))
 			{
-				Edge e1 = m1.solvedPart.edges.iterator().next();
-				Edge e2 = m2.solvedPart.edges.iterator().next();
-				int result = Math.min(distances.get(e1.from).intValue(), distances.get(e1.to).intValue())
-						- Math.min(distances.get(e2.from).intValue(), distances.get(e2.to).intValue());
+				SimpleEdge e1 = m1.solvedPart.edges.iterator().next();
+				SimpleEdge e2 = m2.solvedPart.edges.iterator().next();
+				int result = Math.min(distances.get(e1.getFrom()).intValue(), distances.get(e1.getTo()).intValue())
+						- Math.min(distances.get(e2.getFrom()).intValue(), distances.get(e2.getTo()).intValue());
 				// dbg(D_G.D_MATCHING_INITIAL, "compare (" + result + ") " + e1 + " : " + e2 + " (for " + m1.id + " vs "
 				// + m2.id + ")");
 				if(result != 0)
@@ -309,7 +309,7 @@ public class GraphMatcherQuick extends Unit
 	/**
 	 * The graph to match the pattern to (G).
 	 */
-	Graph			graph;
+	SimpleGraph			graph;
 	/**
 	 * The pattern to match to the graph (GP).
 	 */
@@ -323,7 +323,7 @@ public class GraphMatcherQuick extends Unit
 	 * @param pattern
 	 *            : the pattern (GP).
 	 */
-	public GraphMatcherQuick(Graph graph, GraphPattern pattern)
+	public GraphMatcherQuick(SimpleGraph graph, GraphPattern pattern)
 	{
 		super(new UnitConfigData().setName(Unit.DEFAULT_UNIT_NAME).setLevel(Level.ALL));
 		this.graph = graph;
@@ -337,7 +337,7 @@ public class GraphMatcherQuick extends Unit
 	 */
 	public int doMatching()
 	{
-		Map<Node, Integer> distances = computeVertexDistances();
+		Map<SimpleNode, Integer> distances = computeVertexDistances();
 		
 		Comparator<Match> matchComparator = new MatchComparator(distances);
 		
@@ -383,7 +383,7 @@ public class GraphMatcherQuick extends Unit
 	 * 
 	 * @return the distance map.
 	 */
-	protected Map<Node, Integer> computeVertexDistances()
+	protected Map<SimpleNode, Integer> computeVertexDistances()
 	{
 		/**
 		 * Vertices ordered by out-degree (minus in-degree) (first is greatest).
@@ -418,12 +418,12 @@ public class GraphMatcherQuick extends Unit
 		/**
 		 * The start vertex.
 		 */
-		Node vMP = vertexSet.first();
+		SimpleNode vMP = vertexSet.first();
 		lf("start vertex: " + vMP);
 		/**
 		 * Distances of vertices relative to the start vertex. Used in sorting single-edge matches in the match queue.
 		 */
-		final Map<Node, Integer> distances = pattern.computeDistancesFromUndirected(vMP);
+		final Map<SimpleNode, Integer> distances = pattern.computeDistancesFromUndirected(vMP);
 		dbg(D_G.D_MATCHING_INITIAL, "vertex distances: " + distances);
 		
 		return distances;
@@ -439,9 +439,9 @@ public class GraphMatcherQuick extends Unit
 	 */
 	protected void addInitialMatches(PriorityQueue<Match> matchQueue, Comparator<Match> comparator)
 	{
-		Comparator<Edge> edgeComparator = new Comparator<Edge>() {
+		Comparator<SimpleEdge> edgeComparator = new Comparator<SimpleEdge>() {
 			@Override
-			public int compare(Edge e1, Edge e2)
+			public int compare(SimpleEdge e1, SimpleEdge e2)
 			{
 				if(e1.label == null && e2.label == null)
 					return e1.toString().compareTo(e2.toString());
@@ -458,25 +458,25 @@ public class GraphMatcherQuick extends Unit
 		/**
 		 * Ordered pattern edges, according to label.
 		 */
-		SortedSet<Edge> sortedEdges = new TreeSet<>(edgeComparator);
+		SortedSet<SimpleEdge> sortedEdges = new TreeSet<>(edgeComparator);
 		sortedEdges.addAll(pattern.edges);
 		
 		/**
 		 * Ordered graph edges, according to label.
 		 */
-		SortedSet<Edge> sortedGraphEdges = new TreeSet<>(edgeComparator);
+		SortedSet<SimpleEdge> sortedGraphEdges = new TreeSet<>(edgeComparator);
 		sortedGraphEdges.addAll(graph.edges);
 		
 		// for each edge in the pattern, create an id and build a match.
 		int edgeId = 0;
-		for(Edge ePi : sortedEdges)
+		for(SimpleEdge ePi : sortedEdges)
 		{
 			EdgeP eP = (EdgeP) ePi;
 			if(!eP.generic)
 			{
 				int matchId = 0;
 				lf("edge " + eP + " has id [" + edgeId + "]");
-				for(Edge e : sortedGraphEdges)
+				for(SimpleEdge e : sortedGraphEdges)
 				{
 					dbg(D_G.D_MATCHING_INITIAL, "trying edges: " + eP + " : " + e);
 					if(isMatch(eP, e))
@@ -522,13 +522,13 @@ public class GraphMatcherQuick extends Unit
 	 *            : the edge in the graph (eP in E)
 	 * @return <code>true</code> if the edges match.
 	 */
-	protected static boolean isMatch(EdgeP eP, Edge e)
+	protected static boolean isMatch(EdgeP eP, SimpleEdge e)
 	{
 		// reject if: the from node of eP is not generic and does not have the same label as the from node of E
-		if(!((NodeP) eP.from).generic && !eP.from.label.equals(e.from.label))
+		if(!((NodeP) eP.getFrom()).generic && !eP.getFrom().label.equals(e.getFrom().label))
 			return false;
 		// reject if: the to node of eP is not generic and does not have the same label as the to node of E
-		if(!((NodeP) eP.to).generic && !eP.to.label.equals(e.to.label))
+		if(!((NodeP) eP.getTo()).generic && !eP.getTo().label.equals(e.getTo().label))
 			return false;
 		
 		if(!eP.generic)
@@ -641,22 +641,22 @@ public class GraphMatcherQuick extends Unit
 		newM.unsolvedPart.nodes.addAll(pt.nodes);
 		newM.k = newM.unsolvedPart.edges.size();
 		
-		Set<Edge> totalMatch = new HashSet<>(); // there should be no duplicates as the solved parts should be disjoint.
+		Set<SimpleEdge> totalMatch = new HashSet<>(); // there should be no duplicates as the solved parts should be disjoint.
 		totalMatch.addAll(m1.solvedPart.edges);
 		totalMatch.addAll(m2.solvedPart.edges);
 		
 		newM.solvedPart = new GraphPattern();
 		newM.nodeFunction = new HashMap<>();
 		newM.edgeFunction = new HashMap<>();
-		newM.matchedGraph = new Graph();
+		newM.matchedGraph = new SimpleGraph();
 		newM.frontier = new HashMap<>();
-		for(Edge e : totalMatch)
+		for(SimpleEdge e : totalMatch)
 		{
 			EdgeP eP = (EdgeP) e;
 			// GmP -> obtained by adding edges from m1.GmP and m2.GmP and their adjacent vertices
-			newM.solvedPart.addEdge(eP).addNode(eP.from).addNode(eP.to);
+			newM.solvedPart.addEdge(eP).addNode(eP.getFrom()).addNode(eP.getTo());
 			// GxP -> obtained by removing edges added to GmP and nodes
-			newM.unsolvedPart.removeEdge(eP).removeNode(eP.from).removeNode(eP.to);
+			newM.unsolvedPart.removeEdge(eP).removeNode(eP.getFrom()).removeNode(eP.getTo());
 			// k -> obtained by decrementing when adding edges
 			newM.k--;
 			
@@ -676,32 +676,32 @@ public class GraphMatcherQuick extends Unit
 				throw new InternalError("edge not found in total match"); // impossible
 				
 			// node function -> reuniting the node functions of the two matches
-			newM.nodeFunction.put((NodeP) eP.from, sourceMatch.nodeFunction.get(eP.from));
-			newM.nodeFunction.put((NodeP) eP.to, sourceMatch.nodeFunction.get(eP.to));
+			newM.nodeFunction.put((NodeP) eP.getFrom(), sourceMatch.nodeFunction.get(eP.getFrom()));
+			newM.nodeFunction.put((NodeP) eP.getTo(), sourceMatch.nodeFunction.get(eP.getTo()));
 			// edge function -> reuniting the edge functions of the two matches
 			newM.edgeFunction.put(eP, sourceMatch.edgeFunction.get(eP));
 			// G' -> obtained by adding the values of the edge and node functions, when adding edges in GmP
-			for(Edge em : sourceMatch.edgeFunction.get(eP))
-				newM.matchedGraph.addEdge(em).addNode(em.from).addNode(em.to);
+			for(SimpleEdge em : sourceMatch.edgeFunction.get(eP))
+				newM.matchedGraph.addEdge(em).addNode(em.getFrom()).addNode(em.getTo());
 			
 			// frontier -> practically adding nodes from solved part, always checking if they are still on the frontier
-			AtomicInteger fromIndex = newM.frontier.get(e.from);
+			AtomicInteger fromIndex = newM.frontier.get(e.getFrom());
 			if(fromIndex != null)
 				if(fromIndex.decrementAndGet() == 0)
-					newM.frontier.remove(e.from);
+					newM.frontier.remove(e.getFrom());
 				else
-					newM.frontier.put((NodeP) e.from, fromIndex);
+					newM.frontier.put((NodeP) e.getFrom(), fromIndex);
 			else
-				newM.frontier.put((NodeP) eP.from, new AtomicInteger(eP.from.inEdges.size() + eP.from.outEdges.size()
+				newM.frontier.put((NodeP) eP.getFrom(), new AtomicInteger(eP.getFrom().inEdges.size() + eP.getFrom().outEdges.size()
 						- 1));
-			AtomicInteger toIndex = newM.frontier.get(e.to);
+			AtomicInteger toIndex = newM.frontier.get(e.getTo());
 			if(toIndex != null)
 				if(toIndex.decrementAndGet() == 0)
-					newM.frontier.remove(e.to);
+					newM.frontier.remove(e.getTo());
 				else
-					newM.frontier.put((NodeP) e.to, toIndex);
+					newM.frontier.put((NodeP) e.getTo(), toIndex);
 			else
-				newM.frontier.put((NodeP) eP.to, new AtomicInteger(eP.to.inEdges.size() + eP.to.outEdges.size() - 1));
+				newM.frontier.put((NodeP) eP.getTo(), new AtomicInteger(eP.getTo().inEdges.size() + eP.getTo().outEdges.size() - 1));
 			
 			// merge candidates: MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
 			// common merge candidates, and candidates of each match that were outer candidates for the other match

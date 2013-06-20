@@ -2,7 +2,7 @@ package testing;
 
 import java.io.ByteArrayInputStream;
 
-import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.graph.GraphPattern;
 import net.xqhs.graphs.graph.GraphPattern.EdgeP;
 import net.xqhs.graphs.graph.GraphPattern.NodeP;
@@ -34,7 +34,7 @@ public class GraphMatcherTest
 		input += "30032011 -isa> date;";
 		input += "AIConf -> 30032011;";
 		input += "CFP -contains> conftime;";
-		Graph G = Graph.readFrom(new ByteArrayInputStream(input.getBytes()), new UnitConfigData().setName("G")
+		SimpleGraph G = SimpleGraph.readFrom(new ByteArrayInputStream(input.getBytes()), new UnitConfigData().setName("G")
 				.setLevel(Level.INFO).setLink(unitName));
 		unit.li(G.toString());
 		

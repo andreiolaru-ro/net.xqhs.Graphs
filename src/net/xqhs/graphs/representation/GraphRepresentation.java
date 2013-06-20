@@ -1,12 +1,12 @@
 package net.xqhs.graphs.representation;
 
-import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitConfigData;
 
 /**
- * Abstract class for all classes that produce a representation (graphical, textual, etc) for a {@link Graph} instance.
+ * Abstract class for all classes that produce a representation (graphical, textual, etc) for a {@link SimpleGraph} instance.
  * 
  * <p>
  * It is possible that a {@link GraphRepresentation} class uses other, "sub-" {@link GraphRepresentation} instances for
@@ -22,7 +22,7 @@ import net.xqhs.util.logging.UnitConfigData;
 public abstract class GraphRepresentation extends Unit
 {
 	/**
-	 * Configures the graph representation with the {@link Graph} to represent, the root of the representation hierarchy
+	 * Configures the graph representation with the {@link SimpleGraph} to represent, the root of the representation hierarchy
 	 * (if any), and an indication whether to process the graph immediately or not.
 	 * 
 	 * @author Andrei Olaru
@@ -30,11 +30,11 @@ public abstract class GraphRepresentation extends Unit
 	 */
 	public static class GraphConfig extends UnitConfigData
 	{
-		Graph				graph				= null;
+		SimpleGraph				graph				= null;
 		GraphRepresentation	rootRepresentation	= null;
 		boolean				doProcess			= true;
 		
-		public GraphConfig(Graph thegraph)
+		public GraphConfig(SimpleGraph thegraph)
 		{
 			super();
 			if(thegraph == null)
@@ -69,7 +69,7 @@ public abstract class GraphRepresentation extends Unit
 		}
 	}
 	
-	Graph					theGraph			= null;
+	SimpleGraph					theGraph			= null;
 	RepresentationElement	theRepresentation	= null;
 	
 	public GraphRepresentation(GraphConfig conf)
