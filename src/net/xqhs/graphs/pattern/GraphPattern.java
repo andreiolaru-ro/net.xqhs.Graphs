@@ -16,15 +16,37 @@ import java.util.Collection;
 
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleGraph;
+import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitConfigData;
 
+/**
+ * Graph patterns are graphs that allow nodes with unspecified labels (marked with question marks) and edges labeled
+ * with regular expressions.
+ * <p>
+ * The class inherits from {@link SimpleGraph}.
+ * <p>
+ * It is expected that a {@link GraphPattern} only contains elements that are instances of {@link NodeP} and
+ * {@link EdgeP}.
+ * 
+ * @author Andrei Olaru
+ * 
+ */
 public class GraphPattern extends SimpleGraph
 {
+	/**
+	 * Creates an empty graph pattern.
+	 */
 	public GraphPattern()
 	{
 		this(null);
 	}
 	
+	/**
+	 * Creates an empty graph pattern and configures the underlying {@link Unit} for logging.
+	 * 
+	 * @param unitConfig
+	 *            - configuration for the underlying {@link Unit}.
+	 */
 	public GraphPattern(UnitConfigData unitConfig)
 	{
 		super(unitConfig);
@@ -33,7 +55,13 @@ public class GraphPattern extends SimpleGraph
 	/**
 	 * Only {@link NodeP} instances can be added to a {@link GraphPattern}. This makes it easier to work with the nodes
 	 * in the pattern, because conversion won't fail.
+	 * <p>
+	 * This does not stop {@link NodeP} instances to represent normal, labeled nodes.
+	 * <p>
+	 * Generic nodes will be (re)indexed.
 	 */
+	// the parameter is not of NodeP type because this would allow someone to easily work around this method and call
+	// the method in the super class.
 	@Override
 	public GraphPattern addNode(Node node)
 	{
@@ -42,9 +70,21 @@ public class GraphPattern extends SimpleGraph
 		return this.addNode((NodeP) node, true);
 	}
 	
+	/**
+	 * Adds a node to the graph, also indexing it if necessary (for generic {@link NodeP} instances).
+	 * <p>
+	 * <b>Warning:</b> while the method allows not indexing the added generic nodes (by setting <code>doindex</code> to
+	 * <code>false</code>), this is strongly discouraged and should be used with caution.
+	 * 
+	 * @param node
+	 *            - the node to be added
+	 * @param doindex
+	 *            - if set to <code>true</code>, the node will be (re)indexed according to the pre-existing nodes in the
+	 *            graph
+	 * @return the graph itself
+	 */
 	public GraphPattern addNode(NodeP node, boolean doindex)
 	{
-		// Map<String, Integer> labelNs = new HashMap<String, Integer>();
 		if(doindex)
 		{
 			int maxIdx = 0;

@@ -11,14 +11,39 @@
  ******************************************************************************/
 package net.xqhs.graphs.pattern;
 
+import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleEdge;
 
+/**
+ * The {@link EdgeP} is an edge that is part of a {@link GraphPattern} and may be generic (used in graph matching to one
+ * or a series of more edges).
+ * <p>
+ * Currently, the generic aspect is not implemented. //FIXME Implement the generic aspect for edges.
+ * <p>
+ * It is expected that all edges in a {@link GraphPattern} are instances of {@link EdgeP}.
+ * 
+ * @author Andrei Olaru
+ * 
+ */
 public class EdgeP extends SimpleEdge
 {
+	/**
+	 * Indicates that the edge is generic.
+	 */
 	boolean	generic	= false;
 	
+	/**
+	 * A constructor that replicates the one in {@link SimpleEdge}.
+	 * 
+	 * @param fromNode
+	 *            : the source {@link Node}; the edge is added to the node's outEdges list
+	 * @param toNode
+	 *            : the destination {@link Node}; the edge is added to the node's inEdges list
+	 * @param edgeLabel
+	 *            : the label of the edge
+	 */
 	public EdgeP(NodeP fromNode, NodeP toNode, String edgeLabel)
-	{ // TODO: why does this constructor exist?
+	{ // this constructor exists because it is required, as the superclass has no 0-argument constructors
 		super(fromNode, toNode, edgeLabel);
 	}
 }
