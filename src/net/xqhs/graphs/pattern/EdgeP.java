@@ -19,8 +19,6 @@ import net.xqhs.graphs.graph.SimpleEdge;
  * or a series of more edges).
  * <p>
  * Currently, the generic aspect is not implemented. //FIXME Implement the generic aspect for edges.
- * <p>
- * It is expected that all edges in a {@link GraphPattern} are instances of {@link EdgeP}.
  * 
  * @author Andrei Olaru
  * 

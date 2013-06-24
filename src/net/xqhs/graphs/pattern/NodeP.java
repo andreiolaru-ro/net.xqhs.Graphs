@@ -18,9 +18,7 @@ import net.xqhs.graphs.graph.SimpleNode;
  * match any node in the matched graph).
  * <p>
  * A generic node is characterized by a label equal to a specific symbol (usually a question mark) and an index, to
- * identify a specific generic node.
- * <p>
- * It is expected that all nodes in a {@link GraphPattern} are instances of {@link NodeP}.
+ * identify a specific generic node in a graph.
  * 
  * @author Andrei Olaru
  * 

@@ -89,6 +89,7 @@ public class SimpleGraph extends Unit implements Graph
 		return super.getUnitName();
 	}
 	
+	// FIXME: this does not stop different Node instances with the same label from being added
 	@Override
 	public SimpleGraph addNode(Node node)
 	{
@@ -274,6 +275,7 @@ public class SimpleGraph extends Unit implements Graph
 	 * 
 	 * @return the DOT representation
 	 */
+	// FIXME: override this method in GraphPattern to handle NodeP instances, instead of doing that here
 	public String toDot()
 	{
 		String ret = "digraph G {\n";

@@ -11,9 +11,6 @@
  ******************************************************************************/
 package net.xqhs.graphs.pattern;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.util.logging.Unit;
@@ -23,10 +20,9 @@ import net.xqhs.util.logging.UnitConfigData;
  * Graph patterns are graphs that allow nodes with unspecified labels (marked with question marks) and edges labeled
  * with regular expressions.
  * <p>
- * The class inherits from {@link SimpleGraph}.
+ * The class inherits from {@link SimpleGraph}, to which it is identical with the exception that it provides additional
+ * support for {@link NodeP} and {@link EdgeP} instances.
  * <p>
- * It is expected that a {@link GraphPattern} only contains elements that are instances of {@link NodeP} and
- * {@link EdgeP}.
  * 
  * @author Andrei Olaru
  * 
@@ -53,25 +49,19 @@ public class GraphPattern extends SimpleGraph
 	}
 	
 	/**
-	 * Only {@link NodeP} instances can be added to a {@link GraphPattern}. This makes it easier to work with the nodes
-	 * in the pattern, because conversion won't fail.
-	 * <p>
-	 * This does not stop {@link NodeP} instances to represent normal, labeled nodes.
+	 * Adds a node to the graph, but offers support for indexing {@link NodeP} instances (see
+	 * <code>addNode(NodeP, boolean)</code>).
 	 * <p>
 	 * Generic nodes will be (re)indexed.
 	 */
-	// the parameter is not of NodeP type because this would allow someone to easily work around this method and call
-	// the method in the super class.
 	@Override
 	public GraphPattern addNode(Node node)
 	{
-		if(!(node instanceof NodeP))
-			throw new IllegalArgumentException("cannot add Node instances to a pattern");
-		return this.addNode((NodeP) node, true);
+		return this.addNode(node, true);
 	}
 	
 	/**
-	 * Adds a node to the graph, also indexing it if necessary (for generic {@link NodeP} instances).
+	 * Adds a node to the graph, also indexing generic {@link NodeP} instances if required.
 	 * <p>
 	 * <b>Warning:</b> while the method allows not indexing the added generic nodes (by setting <code>doindex</code> to
 	 * <code>false</code>), this is strongly discouraged and should be used with caution.
@@ -79,39 +69,22 @@ public class GraphPattern extends SimpleGraph
 	 * @param node
 	 *            - the node to be added
 	 * @param doindex
-	 *            - if set to <code>true</code>, the node will be (re)indexed according to the pre-existing nodes in the
-	 *            graph
+	 *            - if set to <code>true</code>, and if the node is a generic {@link NodeP}, the node will be
+	 *            (re)indexed according to the pre-existing nodes in the graph
 	 * @return the graph itself
 	 */
-	public GraphPattern addNode(NodeP node, boolean doindex)
+	public GraphPattern addNode(Node node, boolean doindex)
 	{
-		if(doindex)
+		if(doindex && (node instanceof NodeP) && ((NodeP) node).isGeneric())
 		{
 			int maxIdx = 0;
-			NodeP lastEquiv = null;
 			for(Node n : this.nodes)
-				if((n.getLabel().equals(node.getLabel())) && (maxIdx <= ((NodeP) n).labelIndex))
-				{
-					maxIdx = ((NodeP) n).labelIndex;
-					lastEquiv = (NodeP) n;
-				}
-			if((lastEquiv != null) && (maxIdx == 0))
-			{
-				lastEquiv.labelIndex++;
-				maxIdx = lastEquiv.labelIndex;
-			}
+				if((n instanceof NodeP) && (((NodeP) n).isGeneric()) && (maxIdx <= ((NodeP) n).genericIndex()))
+					maxIdx = ((NodeP) n).genericIndex();
 			if(maxIdx > 0)
-				node.labelIndex = maxIdx + 1;
+				((NodeP) node).labelIndex = maxIdx + 1;
 		}
 		super.addNode(node);
 		return this;
-	}
-	
-	public Collection<NodeP> getNodesP()
-	{
-		Collection<NodeP> ret = new ArrayList<>();
-		for(Node n : getNodes())
-			ret.add((NodeP) n);
-		return ret;
 	}
 }
