@@ -9,7 +9,7 @@
  * 
  * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
-package net.xqhs.graphs.representation;
+package net.xqhs.graphs.representation.linear;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -20,10 +20,12 @@ import java.util.Queue;
 import java.util.Set;
 
 import net.xqhs.graphs.graph.ConnectedNode;
+import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.NodeAlphaComparator;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.graph.SimpleNode;
+import net.xqhs.graphs.representation.GraphRepresentationImplementation;
 
 /**
  * Class that allows the representation of a {@link SimpleGraph} structure. Also can be written as GrapheR
@@ -34,7 +36,7 @@ import net.xqhs.graphs.graph.SimpleNode;
  * @author Andrei Olaru
  * 
  */
-public abstract class LinearGraphRepresentation extends GraphRepresentation
+public abstract class LinearGraphRepresentation extends GraphRepresentationImplementation
 {
 	/**
 	 * Compares two {@link SimpleNode} structures. First criterion: node with lower in-degree is first; second criterion
@@ -109,45 +111,51 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 					+ (!children.isEmpty() ? "/" + children.size() : ".")
 					+ (otherChildren.isEmpty() ? "" : "+" + otherChildren.size()) + "/" + pathlength + ")";
 		}
-	}
-	
-	public static class GraphConfig extends GraphRepresentation.GraphConfig
-	{
-		boolean	isBackwards	= false;
 		
-		public GraphConfig(SimpleGraph thegraph)
+		public ConnectedNode getNode()
 		{
-			super(thegraph);
+			return node;
 		}
 		
-		public GraphConfig setBackwards()
+		public List<PathElement> getChildren()
 		{
-			isBackwards = true;
-			return this;
+			return children;
 		}
 		
-		public GraphConfig setBackwards(boolean back)
+		public List<PathElement> getOtherChildren()
 		{
-			isBackwards = back;
-			return this;
-		}
-		
-		@Override
-		protected String setDefaultName(String name)
-		{
-			return super.setDefaultName(name) + "Lin";
+			return otherChildren;
 		}
 	}
 	
+	protected boolean			isBackwards	= false;
 	protected List<Node>		sortedNodes	= null;
 	protected List<PathElement>	paths		= null;
 	
 	/**
 	 * Builds a new {@link LinearGraphRepresentation} for the specified graph.
 	 */
-	public LinearGraphRepresentation(GraphConfig conf)
+	public LinearGraphRepresentation(Graph theGraph)
 	{
-		super(conf);
+		super(theGraph);
+	}
+	
+	public LinearGraphRepresentation setBackwards()
+	{
+		isBackwards = true;
+		return this;
+	}
+	
+	public LinearGraphRepresentation setBackwards(boolean back)
+	{
+		isBackwards = back;
+		return this;
+	}
+	
+	@Override
+	protected String setDefaultName(String name)
+	{
+		return super.setDefaultName(name) + "Lin";
 	}
 	
 	@Override
@@ -161,8 +169,6 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 	
 	protected void buildPaths()
 	{
-		GraphConfig conf = (GraphConfig) this.config;
-		
 		Queue<PathElement> grayNodes = new LinkedList<>();
 		Queue<PathElement> blackNodes = new LinkedList<>();
 		
@@ -186,14 +192,14 @@ public abstract class LinearGraphRepresentation extends GraphRepresentation
 				PathElement el = grayNodes.poll();
 				lf("taking element " + el);
 				// expand
-				for(Node n1 : (conf.isBackwards ? el.node.getInNodes() : el.node.getOutNodes()))
+				for(Node n1 : (isBackwards ? el.node.getInNodes() : el.node.getOutNodes()))
 				{
 					boolean towardsoutside = false;
 					// FIXME: only works with single edges between nodes; is that OK?
-					if(!conf.isBackwards && !theGraph.contains(el.node.getEdgesTo(n1).iterator().next()))
+					if(!isBackwards && !theGraph.contains(el.node.getEdgesTo(n1).iterator().next()))
 						continue; // the edge is not in the graph displayed.
 					// FIXME: only works with single edges between nodes; is that OK?
-					if(conf.isBackwards && !theGraph.contains(el.node.getEdgesFrom(n1).iterator().next()))
+					if(isBackwards && !theGraph.contains(el.node.getEdgesFrom(n1).iterator().next()))
 						continue; // the edge is not in the graph displayed.
 					if(!theGraph.contains(n1))
 						// the edge is in the graph, but the other node is not

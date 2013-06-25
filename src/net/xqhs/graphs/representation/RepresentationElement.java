@@ -13,29 +13,24 @@ package net.xqhs.graphs.representation;
 
 import net.xqhs.util.config.Config;
 
-public abstract class RepresentationElement
+public abstract class RepresentationElement extends Config
 {
-	public static class RepElementConfig extends Config
-	{
-		GraphRepresentation				rootRepresentation;
-		GraphComponentImplementation	representedComponent	= null;
-		
-		public RepElementConfig(GraphRepresentation root, GraphComponentImplementation component)
-		{
-			this.rootRepresentation = root;
-			this.representedComponent = component;
-		}
-	}
+	GraphRepresentation			rootRepresentation;
+	VisualizableGraphComponent	representedComponent	= null;
 	
-	protected RepElementConfig	config;
-	
-	public RepresentationElement(RepElementConfig conf)
+	public RepresentationElement(GraphRepresentation root, VisualizableGraphComponent component)
 	{
-		this.config = conf;
+		this.rootRepresentation = root;
+		this.representedComponent = component;
 	}
 	
 	public GraphRepresentation getRootRepresentation()
 	{
-		return config.rootRepresentation;
+		return rootRepresentation;
+	}
+	
+	public VisualizableGraphComponent getRepresentedComponent()
+	{
+		return representedComponent;
 	}
 }

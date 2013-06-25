@@ -13,8 +13,6 @@ package net.xqhs.graphs.pattern;
 
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleGraph;
-import net.xqhs.util.logging.Unit;
-import net.xqhs.util.logging.UnitConfigData;
 
 /**
  * Graph patterns are graphs that allow nodes with unspecified labels (marked with question marks) and edges labeled
@@ -34,18 +32,7 @@ public class GraphPattern extends SimpleGraph
 	 */
 	public GraphPattern()
 	{
-		this(null);
-	}
-	
-	/**
-	 * Creates an empty graph pattern and configures the underlying {@link Unit} for logging.
-	 * 
-	 * @param unitConfig
-	 *            - configuration for the underlying {@link Unit}.
-	 */
-	public GraphPattern(UnitConfigData unitConfig)
-	{
-		super(unitConfig);
+		super();
 	}
 	
 	/**
@@ -81,7 +68,7 @@ public class GraphPattern extends SimpleGraph
 			for(Node n : this.nodes)
 				if((n instanceof NodeP) && (((NodeP) n).isGeneric()) && (maxIdx <= ((NodeP) n).genericIndex()))
 					maxIdx = ((NodeP) n).genericIndex();
-			if(maxIdx > 0)
+			if(maxIdx >= 0)
 				((NodeP) node).labelIndex = maxIdx + 1;
 		}
 		super.addNode(node);

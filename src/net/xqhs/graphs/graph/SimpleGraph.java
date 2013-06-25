@@ -25,10 +25,9 @@ import java.util.Scanner;
 import java.util.Set;
 
 import net.xqhs.graphs.pattern.NodeP;
-import net.xqhs.graphs.representation.LinearGraphRepresentation;
+import net.xqhs.graphs.representation.linear.LinearGraphRepresentation;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitComponent;
-import net.xqhs.util.logging.UnitConfigData;
 
 /**
  * <p>
@@ -67,18 +66,7 @@ public class SimpleGraph extends Unit implements Graph
 	 */
 	public SimpleGraph()
 	{
-		this(null);
-	}
-	
-	/**
-	 * Creates an empty graph, also passing information for logging (see {@link Unit}).
-	 * 
-	 * @param unitConfig
-	 *            - the configuration for the underlying {@link Unit} instance
-	 */
-	public SimpleGraph(UnitConfigData unitConfig)
-	{
-		super(unitConfig);
+		super();
 		nodes = new HashSet<>();
 		edges = new HashSet<>();
 	}
@@ -308,31 +296,16 @@ public class SimpleGraph extends Unit implements Graph
 	
 	/**
 	 * Reads the structure of the graph as list of edges, adding all nodes appearing in the definition of edges.
-	 * 
-	 * @param input
-	 *            - a stream to read from
-	 * @return a newly created {@link Graph} instance
-	 */
-	public static SimpleGraph readFrom(InputStream input)
-	{
-		return readFrom(input, null);
-	}
-	
-	/**
-	 * Reads the structure of the graph as list of edges, adding all nodes appearing in the definition of edges.
 	 * <p>
-	 * This version also attaches an underlying {@link Unit} to the graph, configured by the parameter.
+	 * The newly read edges and nodes are added on the existing structure, if any.
 	 * 
 	 * @param input
 	 *            - a stream to read from
-	 * @param unitConfig
-	 *            - the configuration for the underlying {@link Unit}
-	 * @return a newly created {@link Graph} instance
+	 * @return the enriched {@link SimpleGraph} instance
 	 */
-	public static SimpleGraph readFrom(InputStream input, UnitConfigData unitConfig)
+	public SimpleGraph readFrom(InputStream input)
 	{
-		SimpleGraph g = new SimpleGraph(unitConfig);
-		UnitComponent log = new UnitComponent(new UnitConfigData().setLink(g.getUnitName()));
+		UnitComponent log = (UnitComponent) new UnitComponent().setLink(getUnitName());
 		try (Scanner scan = new Scanner(input))
 		{
 			while(scan.hasNextLine())
@@ -385,29 +358,29 @@ public class SimpleGraph extends Unit implements Graph
 					// log.trace("[" + parts1.toString() + "] [" + parts2.toString() + "]");
 					log.lf("[" + node1name + "] [" + node2name + "] [" + edgeName + "]");
 					
-					if(g.getNodesNamed(node1name).isEmpty())
+					if(getNodesNamed(node1name).isEmpty())
 					{
 						node1 = new SimpleNode(node1name);
-						g.addNode(node1);
+						addNode(node1);
 					}
 					else
-						node1 = g.getNodesNamed(node1name).iterator().next();
+						node1 = getNodesNamed(node1name).iterator().next();
 					
-					if(g.getNodesNamed(node2name).isEmpty())
+					if(getNodesNamed(node2name).isEmpty())
 					{
 						node2 = new SimpleNode(node2name);
-						g.addNode(node2);
+						addNode(node2);
 					}
 					else
-						node2 = g.getNodesNamed(node2name).iterator().next();
+						node2 = getNodesNamed(node2name).iterator().next();
 					
-					g.addEdge(new SimpleEdge(node1, node2, edgeName));
+					addEdge(new SimpleEdge(node1, node2, edgeName));
 					if(bidirectional)
-						g.addEdge(new SimpleEdge(node2, node1, edgeName));
+						addEdge(new SimpleEdge(node2, node1, edgeName));
 				}
 			}
 			
-			return g;
+			return this;
 		}
 	}
 }

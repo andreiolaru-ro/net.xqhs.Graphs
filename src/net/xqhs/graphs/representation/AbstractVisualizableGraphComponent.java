@@ -15,7 +15,8 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class GraphComponentImplementation implements VisualizableGraphComponent
+
+public abstract class AbstractVisualizableGraphComponent implements VisualizableGraphComponent
 {
 	protected Set<RepresentationElement>	representations	= new HashSet<>();
 	
@@ -32,7 +33,7 @@ public abstract class GraphComponentImplementation implements VisualizableGraphC
 	}
 	
 	@Override
-	public RepresentationElement getFirstRepresentationForPlatform(GraphRepresentation representation)
+	public RepresentationElement getFirstRepresentationForPlatform(GraphRepresentationImplementation representation)
 	{
 		Collection<RepresentationElement> filtered = getRepresentationsForPlatform(representation);
 		if(filtered.isEmpty())
@@ -41,7 +42,7 @@ public abstract class GraphComponentImplementation implements VisualizableGraphC
 	}
 	
 	@Override
-	public Collection<RepresentationElement> getRepresentationsForPlatform(GraphRepresentation representation)
+	public Collection<RepresentationElement> getRepresentationsForPlatform(GraphRepresentationImplementation representation)
 	{
 		Collection<RepresentationElement> ret = new HashSet<>();
 		for(RepresentationElement repr : representations)

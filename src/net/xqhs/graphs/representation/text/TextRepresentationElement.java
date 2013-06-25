@@ -9,14 +9,19 @@
  * 
  * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
-package net.xqhs.graphs.representation;
+package net.xqhs.graphs.representation.text;
 
 import java.util.LinkedList;
 import java.util.List;
 
+import net.xqhs.graphs.graph.Edge;
+import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.pattern.NodeP;
+import net.xqhs.graphs.representation.GraphRepresentation;
+import net.xqhs.graphs.representation.RepresentationElement;
+import net.xqhs.graphs.representation.VisualizableGraphComponent;
 import net.xqhs.graphs.util.ContentHolder;
 import net.xqhs.util.logging.UnitComponent;
 
@@ -59,72 +64,120 @@ public class TextRepresentationElement extends RepresentationElement
 		}
 	}
 	
-	public static class TextRepElementConfig extends RepElementConfig
+	int								nestingLevel	= 0;		// TODO: not currently used
+	boolean							isLastChild		= false;
+	boolean							isOnlyChild		= false;
+	boolean							isFirstSubgraph	= false;
+	Type							linkType;
+	/**
+	 * The nested elements.
+	 */
+	List<TextRepresentationElement>	content			= null;
+	
+	/**
+	 * Creates a text representation for an element container (a level in a multi-level representation)
+	 * 
+	 * @param root
+	 *            - the root representation
+	 * @param type
+	 *            - must be <code>ELEMENT_CONTAINER</code>
+	 */
+	public TextRepresentationElement(GraphRepresentation root, Type type)
 	{
-		int		nestingLevel	= 0;		// TODO: not currently used
-		boolean	isLastChild		= false;
-		boolean	isOnlyChild		= false;
-		boolean	isFirstSubgraph	= false;
-		Type	linkType;
+		this(root, null, type, 0, false, false, false);
 		
-		public TextRepElementConfig(GraphRepresentation root, Type type)
-		{
-			super(root, null);
-			
-			if(type != Type.ELEMENT_CONTAINER)
-				throw new IllegalArgumentException();
-			linkType = type;
-		}
-		
-		public TextRepElementConfig(GraphRepresentation root, Type type, boolean first)
-		{
-			super(root, null);
-			
-			if(type != Type.SUBGRAPH)
-				throw new IllegalArgumentException();
-			
-			isFirstSubgraph = first;
-			linkType = type;
-		}
-		
-		public TextRepElementConfig(GraphRepresentation root, GraphComponentImplementation representedEdge, Type type,
-				int level, boolean lastChild, boolean alone)
-		{
-			super(root, null);
-			
-			if(!isEdgeType(type))
-				throw new IllegalArgumentException();
-			
-			representedComponent = representedEdge;
-			
-			linkType = type;
-			nestingLevel = level;
-			isLastChild = lastChild;
-			isOnlyChild = alone;
-		}
-		
-		public TextRepElementConfig(GraphRepresentation root, GraphComponentImplementation representedNode, Type type)
-		{
-			super(root, null);
-			
-			if(type != Type.NODE)
-				throw new IllegalArgumentException();
-			
-			representedComponent = representedNode;
-			linkType = type;
-		}
+		if(type != Type.ELEMENT_CONTAINER)
+			throw new IllegalArgumentException();
 	}
 	
-	List<TextRepresentationElement>	content	= null;
-	
-	public TextRepresentationElement(TextRepElementConfig conf)
+	/**
+	 * Creates a text representation of a subgraph (connected part of a graph).
+	 * 
+	 * @param root
+	 *            - the root representation
+	 * @param type
+	 *            - must be <code>SUBGRAPH</code>
+	 * @param first
+	 *            - <code>true</code> if it is the first subgraph in a series (otherwise, a separator will be included
+	 *            in the representation)
+	 */
+	public TextRepresentationElement(GraphRepresentation root, Type type, boolean first)
 	{
-		super(conf);
+		this(root, null, type, 0, false, false, true);
+		
+		if(type != Type.SUBGRAPH)
+			throw new IllegalArgumentException();
+	}
+	
+	/**
+	 * Creates a text representation of a graph edge.
+	 * 
+	 * @param root
+	 *            - the root representation
+	 * @param representedEdge
+	 *            - the {@link Edge} instance (must also implement {@link VisualizableGraphComponent}
+	 * @param type
+	 *            - must be one of <code>EXTERNAL_LINK</code>, <code>INTERNAL_LINK</code> or <code>BRANCH</code>
+	 * @param level
+	 *            - currently not used // FIXME
+	 * @param lastChild
+	 *            - <code>true</code> it it is the last edge going out of its source node
+	 * @param alone
+	 *            - <code>true</code> if it is the only outgoing edge of its source node
+	 */
+	public TextRepresentationElement(GraphRepresentation root, VisualizableGraphComponent representedEdge, Type type,
+			int level, boolean lastChild, boolean alone)
+	{
+		this(root, representedEdge, type, level, lastChild, alone, false);
+		
+		if(!isEdgeType(type))
+			throw new IllegalArgumentException();
+	}
+	
+	/**
+	 * Creates a text representation of a graph node.
+	 * 
+	 * @param root
+	 *            - the root representation
+	 * @param representedNode
+	 *            - the {@link Node} instance (must also implement {@link VisualizableGraphComponent}
+	 * @param type
+	 *            - must be <code>NODE</code>
+	 */
+	public TextRepresentationElement(GraphRepresentation root, VisualizableGraphComponent representedNode, Type type)
+	{
+		this(root, representedNode, type, 0, false, false, false);
+		
+		if(type != Type.NODE)
+			throw new IllegalArgumentException();
+	}
+	
+	/**
+	 * Constructor aggregating all the other constructors.
+	 * 
+	 * @param root
+	 * @param representedElement
+	 * @param type
+	 * @param level
+	 * @param lastChild
+	 * @param alone
+	 * @param firstSubgraph
+	 */
+	protected TextRepresentationElement(GraphRepresentation root, VisualizableGraphComponent representedElement,
+			Type type, int level, boolean lastChild, boolean alone, boolean firstSubgraph)
+	{
+		super(root, representedElement);
 		
 		content = new LinkedList<>();
 		
-		if(conf.representedComponent != null)
-			conf.representedComponent.addRepresentation(this);
+		linkType = type;
+		nestingLevel = level;
+		isLastChild = lastChild;
+		isOnlyChild = alone;
+		isFirstSubgraph = firstSubgraph;
+		
+		if(getRepresentedComponent() != null)
+			getRepresentedComponent().addRepresentation(this);
 	}
 	
 	protected TextRepresentationElement addSub(TextRepresentationElement sub)
@@ -139,16 +192,14 @@ public class TextRepresentationElement extends RepresentationElement
 		return this;
 	}
 	
-	public String toString(String indent, String indentIncrement, int indentLimit)
+	public String toString(String indent, String indentIncrement, int indentLimit, boolean isBackwards)
 	{
 		String displayedIndent = indent;
 		String displayedIndentIncrement = indentIncrement;
-		TextRepElementConfig conf = (TextRepElementConfig) this.config;
-		Type linkType = conf.linkType;
 		
 		String ret = "";
 		
-		if((conf.linkType == Type.SUBGRAPH) && !conf.isFirstSubgraph)
+		if((linkType == Type.SUBGRAPH) && !isFirstSubgraph)
 			ret += Symbol.SUBGRAPH_SEPARATOR;
 		
 		if(indentLimit == 0)
@@ -156,22 +207,21 @@ public class TextRepresentationElement extends RepresentationElement
 			displayedIndent = "";
 			displayedIndentIncrement = "";
 		}
-		if(!conf.isOnlyChild && linkType != Type.NODE)
+		if(!isOnlyChild && linkType != Type.NODE)
 		{
 			ret += displayedIndent;
 		}
 		
-		if(isEdgeType(linkType) && !conf.isOnlyChild && !conf.isLastChild)
+		if(isEdgeType(linkType) && !isOnlyChild && !isLastChild)
 			ret += Symbol.BRANCH_IN;
 		
 		if(isEdgeType(linkType)) // FIXME: should not use Edge's toString function, should represent manually
-			ret += ((SimpleEdge) conf.representedComponent)
-					.toStringShort(((TextGraphRepresentation) config.rootRepresentation).isBackwards());
+			ret += ((SimpleEdge) getRepresentedComponent()).toStringShort(isBackwards);
 		
 		if(linkType == Type.NODE)
-			ret += conf.representedComponent.toString(); // FIXME: should not use Node's toString function, should
-															// represent manually
-			
+			ret += getRepresentedComponent().toString(); // FIXME: should not use Node's toString function, should
+		// represent manually
+		
 		if(linkType == Type.EXTERNAL_LINK)
 			ret += Symbol.EXTERNAL_LINK_PREFIX;
 		if(linkType == Type.INTERNAL_LINK)
@@ -183,25 +233,23 @@ public class TextRepresentationElement extends RepresentationElement
 			for(TextRepresentationElement el : content)
 				ret += el.toString(((linkType == Type.ELEMENT_CONTAINER || oneChild) ? displayedIndent
 						: displayedIndent + displayedIndentIncrement), displayedIndentIncrement,
-						(!isEdgeType(linkType) ? indentLimit : indentLimit - 1));
+						(!isEdgeType(linkType) ? indentLimit : indentLimit - 1), isBackwards);
 		}
 		
-		if(isEdgeType(linkType) && !conf.isOnlyChild && !conf.isLastChild)
+		if(isEdgeType(linkType) && !isOnlyChild && !isLastChild)
 			ret += Symbol.BRANCH_OUT;
 		
 		return ret;
 	}
 	
-	/**
-	 * for debugging only; should not be used in the source
-	 */
-	@Override
-	public String toString()
-	{
-		TextGraphRepresentation.GraphConfig c = new TextGraphRepresentation.GraphConfig(
-				config.rootRepresentation.theGraph);
-		return toString(c.indent, c.indentIncrement, c.incrementLimit);
-	}
+	// /**
+	// * for debugging only; should not be used in the source
+	// */
+	// @Override
+	// public String toString()
+	// {
+	// return toString(c.indent, c.indentIncrement, c.incrementLimit);
+	// }
 	
 	static boolean isEdgeType(Type linkType)
 	{
@@ -223,7 +271,7 @@ public class TextRepresentationElement extends RepresentationElement
 		switch(type)
 		{
 		case ELEMENT_CONTAINER:
-			ret = new TextRepresentationElement(new TextRepElementConfig(root, type));
+			ret = new TextRepresentationElement(root, type);
 			while(input.get().length() > 0)
 				ret.addSub(readRepresentation(input, Type.SUBGRAPH, (nSiblings++ == 0), root, log));
 			break;
@@ -235,7 +283,7 @@ public class TextRepresentationElement extends RepresentationElement
 			{
 				input.set(rez[0]);
 				log.li("create new subgraph");
-				ret = new TextRepresentationElement(new TextRepElementConfig(root, Type.SUBGRAPH, firstSibling));
+				ret = new TextRepresentationElement(root, Type.SUBGRAPH, firstSibling);
 				ret.addSub(readRepresentation(input, Type.NODE, true, root, log));
 			}
 			if(rez.length > 1)
@@ -352,8 +400,7 @@ public class TextRepresentationElement extends RepresentationElement
 			SimpleEdge edge = new SimpleEdge(null, null, edgeName); // node names will be filled in later (in
 			// LinearGraphRepresentation)
 			// FIXME: what level to give; does it matter? remove level?
-			ret = new TextRepresentationElement(new TextRepElementConfig(root, edge, edgeType, -1, lastChild, lastChild
-					&& firstSibling));
+			ret = new TextRepresentationElement(root, edge, edgeType, -1, lastChild, lastChild && firstSibling);
 			ret.addSub(readRepresentation(input.set(nextNode), Type.NODE, true, root, log));
 			input.set(rest);
 			break;
@@ -373,21 +420,20 @@ public class TextRepresentationElement extends RepresentationElement
 				int index = Integer.parseInt(nodeName.substring(NodeP.NODEP_LABEL.length()
 						+ NodeP.NODEP_INDEX_MARK.length()));
 				log.li("create new pattern node #[" + index + "]");
-				node = new NodeP(index); // for internal links, this should not be a new node; it will be replaced later
+				// for internal links, this should not be a new node; it will be replaced later
+				node = new NodeP(index);
 			}
 			else
 			{
 				log.li("create new node: [" + nodeName + "]");
-				node = new SimpleNode(nodeName); // for internal links, this should not be a new node; it will be
-													// replaced
-				// later
+				// for internal links, this should not be a new node; it will be replaced later
+				node = new SimpleNode(nodeName);
 			}
-			ret = new TextRepresentationElement(new TextRepElementConfig(root, node, Type.NODE));
+			ret = new TextRepresentationElement(root, node, Type.NODE);
 			if(parts.length > 1)
 			{
-				String startedWith = input.get().substring(parts[0].length(), parts[0].length() + 1);// remember what
-																										// was after the
-																										// node name
+				// remember what was after the node name
+				String startedWith = input.get().substring(parts[0].length(), parts[0].length() + 1);
 				input.set(startedWith + parts[1]);
 				while(input.get().length() > 0)
 					ret.addSub(readRepresentation(input, Type.BRANCH, (nSiblings++ == 0), root, log));

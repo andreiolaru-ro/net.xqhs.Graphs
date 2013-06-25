@@ -11,16 +11,16 @@
  ******************************************************************************/
 package net.xqhs.graphs.graph;
 
-import net.xqhs.graphs.representation.GraphComponentImplementation;
+import net.xqhs.graphs.representation.AbstractVisualizableGraphComponent;
 
 /**
  * A simple implementation on the {@link Edge} interface, also inheriting functions from
- * {@link GraphComponentImplementation}.
+ * {@link AbstractVisualizableGraphComponent}.
  * 
  * @author Andrei Olaru
  * 
  */
-public class SimpleEdge extends GraphComponentImplementation implements Edge
+public class SimpleEdge extends AbstractVisualizableGraphComponent implements Edge
 {
 	/**
 	 * The label of the edge.
@@ -57,7 +57,7 @@ public class SimpleEdge extends GraphComponentImplementation implements Edge
 		if(this.to instanceof ConnectedNode && this.to != null)
 			((ConnectedNode) this.to).getInEdges().add(this);
 		if(this.from instanceof ConnectedNode && this.from != null)
-			((ConnectedNode) this.to).getOutEdges().add(this);
+			((ConnectedNode) this.from).getOutEdges().add(this);
 	}
 	
 	@Override
@@ -97,4 +97,15 @@ public class SimpleEdge extends GraphComponentImplementation implements Edge
 				+ (isBackward ? "" : ">");
 	}
 	
+	@Deprecated
+	public void setFrom(Node node)
+	{
+		from = node;
+	}
+	
+	@Deprecated
+	public void setTo(Node node)
+	{
+		to = node;
+	}
 }

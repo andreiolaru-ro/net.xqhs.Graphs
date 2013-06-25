@@ -14,16 +14,16 @@ package net.xqhs.graphs.graph;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.xqhs.graphs.representation.GraphComponentImplementation;
+import net.xqhs.graphs.representation.AbstractVisualizableGraphComponent;
 
 /**
  * A simple implementation of the {@link Node} and {@link ConnectedNode} interfaces, also inheriting functionality from
- * {@link GraphComponentImplementation}.
+ * {@link AbstractVisualizableGraphComponent}.
  * 
  * @author Andrei Olaru
  * 
  */
-public class SimpleNode extends GraphComponentImplementation implements ConnectedNode
+public class SimpleNode extends AbstractVisualizableGraphComponent implements ConnectedNode
 {
 	/**
 	 * The label of the node

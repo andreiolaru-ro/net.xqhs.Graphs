@@ -31,7 +31,7 @@ import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.pattern.EdgeP;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
-import net.xqhs.graphs.representation.TextGraphRepresentation;
+import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.graphs.util.Debug.D_G;
 import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
