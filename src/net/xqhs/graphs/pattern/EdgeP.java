@@ -44,4 +44,12 @@ public class EdgeP extends SimpleEdge
 	{ // this constructor exists because it is required, as the superclass has no 0-argument constructors
 		super(fromNode, toNode, edgeLabel);
 	}
+	
+	/**
+	 * @return <code>true</code> if the edge is generic.
+	 */
+	public boolean isGeneric()
+	{
+		return generic;
+	}
 }

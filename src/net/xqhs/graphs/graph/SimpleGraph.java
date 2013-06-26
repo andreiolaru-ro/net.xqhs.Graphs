@@ -193,7 +193,7 @@ public class SimpleGraph extends Unit implements Graph
 	 *            : the source node.
 	 * @return the distances to the other nodes.
 	 */
-	protected Map<Node, Integer> computeDistancesFromUndirected(Node node)
+	public Map<Node, Integer> computeDistancesFromUndirected(Node node)
 	{
 		if(!nodes.contains(node))
 			throw new IllegalArgumentException("node " + node + " is not in graph");
