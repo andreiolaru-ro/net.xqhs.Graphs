@@ -44,8 +44,8 @@ public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 	{
 		super.makeDefaults();
 		setCanvas(new GCanvas());
-		topleft = new Point2D.Float(-100, -100);
-		bottomright = new Point2D.Float(100, 100);
+		topleft = new Point2D.Float(-100, -100); // FIXME: the names are totally misleading
+		bottomright = new Point2D.Float(100, 100); // FIXME: the names are totally misleading
 		return this;
 	}
 	
@@ -176,7 +176,9 @@ public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 		int hc = measurement.y;
 		
 		GraphicalRepresentationElement repr = (GraphicalRepresentationElement) theRepresentation;
-		((GContainer) repr.gelement).setSize(w, h);
+		((GContainer) repr.gelement).setSize(w, h).setMoveTo(
+				new Point2D.Double(topleft.getX() + w / 2, topleft.getY() + h / 2));
+		
 		doLayout((GraphicalRepresentationElement) theRepresentation, new Point(1, 0), w / (wc + 2), h / (hc + 1), repr);
 		
 	}
@@ -200,7 +202,8 @@ public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 			((GConnector) repr.gelement).setFrom(repr.connected.get(0).gelement).setTo(repr.connected.get(1).gelement);
 			break;
 		case NODE:
-			repr.positionInGrid(new Point(cPos), hFactor, hFactor);
+			repr.positionInGrid(new Point(cPos), wFactor, hFactor);
+			// add 1 to x to avoid forelinks passing through the node itself
 			cPos.setLocation(cPos.x, cPos.y + 1);
 			for(GraphicalRepresentationElement sub : repr.connected)
 			{
@@ -233,8 +236,7 @@ public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 					height = result.y;
 				width += result.x;
 			}
-			repr.setSize(new Point(width, height));
-			return new Point(width, height);
+			return repr.setSize(new Point(width, height)).subSize;
 		case EDGE:
 			return repr.setSize(measureLayout(repr.connected.get(1))).subSize;
 		case NODE:
@@ -245,10 +247,10 @@ public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 				Point result = measureLayout(sub);
 				if(result.y > height)
 					height = result.y;
+				// add 1 so that forelinks don't have a chance to pass through the node itself
 				width += result.x;
 			}
-			repr.setSize(new Point((width == 0) ? 1 : width, height + 1));
-			return repr.subSize;
+			return repr.setSize(new Point((width == 0) ? 1 : width + 1, height + 1)).subSize;
 		default:
 			return new Point(width, height);
 		}

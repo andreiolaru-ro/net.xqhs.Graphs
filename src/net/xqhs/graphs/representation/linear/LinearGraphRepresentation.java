@@ -163,6 +163,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 	{
 		sortedNodes = new LinkedList<>(theGraph.getNodes());
 		Collections.sort(sortedNodes, new NodeInAlphaComparator());
+		lf("sorted nodes: " + sortedNodes);
 		
 		buildPaths();
 	}
@@ -192,7 +193,9 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 				PathElement el = grayNodes.poll();
 				lf("taking element " + el);
 				// expand
-				for(Node n1 : (isBackwards ? el.node.getInNodes() : el.node.getOutNodes()))
+				List<Node> childSet = new LinkedList<>(isBackwards ? el.node.getInNodes() : el.node.getOutNodes());
+				Collections.sort(childSet, new NodeInAlphaComparator());
+				for(Node n1 : childSet)
 				{
 					boolean towardsoutside = false;
 					// FIXME: only works with single edges between nodes; is that OK?

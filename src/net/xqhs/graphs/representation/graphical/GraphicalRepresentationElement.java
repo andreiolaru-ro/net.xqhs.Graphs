@@ -67,10 +67,12 @@ public class GraphicalRepresentationElement extends RepresentationElement
 		case EDGE:
 			gelement = new GConnector();
 			glabel = new GLabel().setText(((Edge) this.getRepresentedComponent()).getLabel()).setParent(gelement);
+			label = ((Edge) this.getRepresentedComponent()).getLabel();
 			break;
 		case NODE:
 			gelement = new GElement();
 			glabel = new GLabel().setText(((Node) this.getRepresentedComponent()).getLabel()).setParent(gelement);
+			label = ((Node) this.getRepresentedComponent()).getLabel();
 			break;
 		default:
 			gelement = new GElement();
@@ -103,6 +105,21 @@ public class GraphicalRepresentationElement extends RepresentationElement
 		this.heightFactor = heightFactor;
 		
 		gelement.setMoveTo(new Point2D.Float(gridPos.x * widthFactor, gridPos.y * heightFactor));
+		return this;
+	}
+	
+	public GraphicalRepresentationElement positionInRadial(Point position, Point2D center, float angleFactor,
+			float rangeFactor)
+	{
+		this.gridPos = new Point(position);
+		this.widthFactor = angleFactor;
+		this.heightFactor = rangeFactor;
+		double init = Math.PI / 6;
+		double interval = Math.PI * 4 / 6;
+		
+		gelement.setMoveTo(new Point2D.Double(center.getX() + gridPos.y * rangeFactor
+				* Math.sin(gridPos.x * angleFactor * interval + init), center.getY() + gridPos.y * rangeFactor
+				* Math.cos(gridPos.x * angleFactor * interval + init)));
 		return this;
 	}
 }

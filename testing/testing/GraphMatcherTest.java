@@ -11,12 +11,18 @@
  ******************************************************************************/
 package testing;
 
+import java.awt.Point;
 import java.io.ByteArrayInputStream;
 
+import javax.swing.JFrame;
+
+import net.xqhs.graphical.GCanvas;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.pattern.EdgeP;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
+import net.xqhs.graphs.representation.GraphRepresentation;
+import net.xqhs.graphs.representation.graphical.RadialGraphRepresentation;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
@@ -84,6 +90,28 @@ public class GraphMatcherTest
 				.setLogLevel(Level.ERROR);
 		GPRT.update();
 		unit.li(GPRT.displayRepresentation());
+		
+		JFrame frame = new JFrame(unitName);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		GCanvas canvas = new GCanvas();
+		
+		GraphRepresentation GRG = (GraphRepresentation) new RadialGraphRepresentation(G)
+				.setOrigin(new Point(-200, -100)).setBottomRight(new Point(-10, 100)).setCanvas(canvas)
+				.setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Unit.DEFAULT_LEVEL);
+		GRG.update();
+		GraphRepresentation GPRG = (GraphRepresentation) new RadialGraphRepresentation(GP)
+				.setOrigin(new Point(10, -100)).setBottomRight(new Point(200, 100)).setCanvas(canvas)
+				.setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Unit.DEFAULT_LEVEL);
+		GPRG.update();
+		
+		canvas.setZoom(6);
+		canvas.resetLook();
+		frame.add(canvas);
+		
+		frame.setLocation(1450, 10);
+		frame.setSize(1500, 600);
+		frame.setVisible(true);
 		
 		// new GraphMatcherQuick(G, GP).doMatching();
 		
