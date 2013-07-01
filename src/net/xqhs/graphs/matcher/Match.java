@@ -1,5 +1,7 @@
 package net.xqhs.graphs.matcher;
 
+import java.awt.Color;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +10,9 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import net.xqhs.graphical.GCanvas;
+import net.xqhs.graphical.GConnector;
+import net.xqhs.graphical.GElement;
 import net.xqhs.graphs.graph.ConnectedNode;
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
@@ -16,6 +21,10 @@ import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.matcher.GraphMatcherQuick.MatchComparator;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
+import net.xqhs.graphs.representation.GraphRepresentation;
+import net.xqhs.graphs.representation.VisualizableGraphComponent;
+import net.xqhs.graphs.representation.graphical.GraphicalRepresentationElement;
+import net.xqhs.graphs.representation.graphical.RadialGraphRepresentation;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 
 /**
@@ -45,52 +54,52 @@ public class Match
 	/**
 	 * Reference to the graph G.
 	 */
-	Graph								targetGraphLink;
+	Graph						targetGraphLink;
 	/**
 	 * Reference to the pattern GP
 	 */
-	GraphPattern						patternLink;
+	GraphPattern				patternLink;
 	
 	/**
 	 * G', the subgraph of G that has been matched. It is connected and it is a proper graph.
 	 */
-	Graph								matchedGraph;
+	Graph						matchedGraph;
 	/**
 	 * GmP, the part of GP that has been matched. It is connected and it is a proper graph.
 	 */
-	GraphPattern						solvedPart;
+	GraphPattern				solvedPart;
 	/**
 	 * GxP, the part of GP that has not been matched. It may contain edges without the adjacent nodes.
 	 */
-	GraphPattern						unsolvedPart;
+	GraphPattern				unsolvedPart;
 	/**
 	 * k, the number of edges in GxP
 	 */
-	int									k;
+	int							k;
 	
 	/**
 	 * The correspondence (node) function VmP -> V'
 	 */
-	Map<ConnectedNode, ConnectedNode>	nodeFunction;
+	Map<Node, Node>				nodeFunction;
 	/**
 	 * The correspondence (edge) function EmP -> E'
 	 */
-	Map<Edge, List<Edge>>				edgeFunction;
+	Map<Edge, List<Edge>>		edgeFunction;
 	/**
 	 * The nodes on the frontier of GmP - nodes that have adjacent edges in ExP. Nodes are a subset of VmP.
 	 * <p>
 	 * For each node the number of remaining edges in ExP that are adjacent to it is given.
 	 */
-	Map<NodeP, AtomicInteger>			frontier				= null;
+	Map<NodeP, AtomicInteger>	frontier				= null;
 	/**
 	 * MC, matches that could possibly be merged with this one (i.e. not intersecting and sharing at least one common
 	 * vertex (with a common correspondent in the graph).
 	 */
-	Set<Match>							mergeCandidates			= null;
+	Set<Match>					mergeCandidates			= null;
 	/**
 	 * MO, matches that could potentially merge with this one, but not immediately (they are not adjacent).
 	 */
-	Set<Match>							mergeOuterCandidates	= null;
+	Set<Match>					mergeOuterCandidates	= null;
 	
 	/**
 	 * The name of the edge.
@@ -98,7 +107,7 @@ public class Match
 	 * Initially (for single-edge matches) the id is the id of the pattern edge, dash, a counter for matches based on
 	 * that edge.
 	 */
-	String								id						= "-";
+	String						id						= "-";
 	
 	/**
 	 * Create a new empty match; some parts may be uninitialized / undefined (like frontier, or matchCandidates)
@@ -145,8 +154,8 @@ public class Match
 		ConnectedNode ePTo = (ConnectedNode) eP.getTo();
 		// node function
 		nodeFunction = new HashMap<>();
-		nodeFunction.put(ePFrom, (ConnectedNode) e.getFrom());
-		nodeFunction.put(ePTo, (ConnectedNode) e.getTo());
+		nodeFunction.put(ePFrom, e.getFrom());
+		nodeFunction.put(ePTo, e.getTo());
 		// edge function
 		edgeFunction = new HashMap<>();
 		List<Edge> eL = new ArrayList<>();
@@ -208,10 +217,10 @@ public class Match
 	@Override
 	public String toString()
 	{
-		String ret = "match [" + id + "] (k=" + k + "): ";
-		ret += new TextGraphRepresentation(matchedGraph).setLayout("", " ", 2) + " : ";
-		ret += new TextGraphRepresentation(solvedPart).setLayout("", " ", 2) + "\n\t";
-		ret += "Gx: " + new TextGraphRepresentation(unsolvedPart).setLayout("", " ", 2) + "\n\t";
+		String ret = "match [" + id + "] (k=" + k + "): \t";
+		ret += new TextGraphRepresentation(matchedGraph).setLayout("", " ", 2).update() + "\t : \t";
+		ret += new TextGraphRepresentation(solvedPart).setLayout("", " ", 2).update() + "\t";
+		ret += "Gx: " + new TextGraphRepresentation(unsolvedPart).setLayout("", " ", 2).update() + "\t";
 		ret += "frontier: " + frontier + "; ";
 		ret += "mCs: [";
 		for(Match mi : mergeCandidates)
@@ -219,7 +228,7 @@ public class Match
 		ret += "] mOCs: [";
 		for(Match moi : mergeOuterCandidates)
 			ret += moi.id + ", ";
-		ret += "] \n\t";
+		ret += "] \t";
 		ret += "fv: " + nodeFunction;
 		// ret += "fe: " + edgeFunction + "\n\t";
 		return ret;
@@ -233,13 +242,34 @@ public class Match
 	public String toStringLong()
 	{
 		String ret = "match: \n\t";
-		ret += "G': " + new TextGraphRepresentation(matchedGraph).setLayout("", " ", 2) + "\n\t";
-		ret += "Gm: " + new TextGraphRepresentation(solvedPart).setLayout("", " ", 2) + "\n\t";
-		ret += "Gx: " + new TextGraphRepresentation(unsolvedPart).setLayout("", " ", 2) + "\n\t";
+		ret += "G': " + new TextGraphRepresentation(matchedGraph).setLayout("", " ", 2).update() + "\n\t";
+		ret += "Gm: " + new TextGraphRepresentation(solvedPart).setLayout("", " ", 2).update() + "\n\t";
+		ret += "Gx: " + new TextGraphRepresentation(unsolvedPart).setLayout("", " ", 2).update() + "\n\t";
 		ret += "fv: " + nodeFunction + "\n\t";
 		ret += "fe: " + edgeFunction + "\n\t";
 		ret += "k=" + k;
 		
 		return ret;
+	}
+	
+	public GraphRepresentation toVisual(GCanvas canvas, Point topleft, Point bottomright)
+	{
+		int tw = bottomright.x - topleft.x;
+		GraphRepresentation GR = new RadialGraphRepresentation(targetGraphLink).setCanvas(canvas).setOrigin(topleft)
+				.setBottomRight(new Point(topleft.x + tw / 2, bottomright.y)).update();
+		GraphRepresentation GPR = new RadialGraphRepresentation(patternLink).setCanvas(canvas)
+				.setOrigin(new Point(topleft.x + tw / 2, topleft.y)).setBottomRight(bottomright).update();
+		for(Map.Entry<Edge, List<Edge>> corr : edgeFunction.entrySet())
+		{
+			// TODO check casts
+			GElement el1 = ((GraphicalRepresentationElement) ((VisualizableGraphComponent) corr.getKey())
+					.getFirstRepresentationForRoot(GPR)).getGElement();
+			GElement el2 = ((GraphicalRepresentationElement) ((VisualizableGraphComponent) corr.getValue().iterator()
+					.next()).getFirstRepresentationForRoot(GR)).getGElement();
+			el1.setColor(Color.RED);
+			el2.setColor(Color.RED);
+			new GConnector().setFrom(el1).setTo(el2).setCanvas(canvas).setColor(Color.RED).setStrokeWidth(.5f);
+		}
+		return GPR;
 	}
 }

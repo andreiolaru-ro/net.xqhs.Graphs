@@ -31,8 +31,8 @@ import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.pattern.EdgeP;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
+import net.xqhs.graphs.representation.VisualizableGraphComponent;
 import net.xqhs.graphs.util.Debug.D_G;
-import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
 
 /**
@@ -59,7 +59,9 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		/**
 		 * Vector of distances between every node and the start vertex.
 		 */
-		private Map<Node, Integer>	distances	= null;
+		private Map<Node, Integer>	distances				= null;
+		
+		private AtomicInteger		performanceEdgesLink	= null;
 		
 		/**
 		 * Constructor used internally by a {@link Match}. Does not use vertex distances from root vertex.
@@ -73,9 +75,10 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		 * 
 		 * @param distances
 		 */
-		protected MatchComparator(Map<Node, Integer> distances)
+		protected MatchComparator(Map<Node, Integer> distances, AtomicInteger performanceEdges)
 		{
 			this.distances = distances;
+			this.performanceEdgesLink = performanceEdges;
 		}
 		
 		@Override
@@ -90,6 +93,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 						- Math.min(distances.get(e2.getFrom()).intValue(), distances.get(e2.getTo()).intValue());
 				// dbg(D_G.D_MATCHING_INITIAL, "compare (" + result + ") " + e1 + " : " + e2 + " (for " + m1.id + " vs "
 				// + m2.id + ")");
+				performanceEdgesLink.incrementAndGet();
 				if(result != 0)
 					return result;
 			}
@@ -103,11 +107,19 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 	/**
 	 * The graph to match the pattern to (G).
 	 */
-	Graph			graph;
+	Graph				graph;
 	/**
 	 * The pattern to match to the graph (GP).
 	 */
-	GraphPattern	pattern;
+	GraphPattern		pattern;
+	
+	/**
+	 * Matching visualizer to view the matching process.
+	 */
+	MatchingVisualizer	visual	= null;
+	
+	AtomicInteger		performanceNodes;
+	AtomicInteger		performanceEdges;
 	
 	/**
 	 * Initializes a matcher. Does not do the matching.
@@ -120,9 +132,27 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 	public GraphMatcherQuick(SimpleGraph graph, GraphPattern pattern)
 	{
 		super();
-		setUnitName(Unit.DEFAULT_UNIT_NAME).setLogLevel(Level.ALL);
 		this.graph = graph;
 		this.pattern = pattern;
+	}
+	
+	@Override
+	protected String getDefaultUnitName()
+	{
+		if(graph != null && graph instanceof SimpleGraph && pattern != null)
+			return ((SimpleGraph) graph).getUnitName() + ":" + pattern.getUnitName();
+		return super.getDefaultUnitName();
+	}
+	
+	/**
+	 * @param viz
+	 *            - the visualizer to use
+	 * @return the matcher itself
+	 */
+	public GraphMatcherQuick setVisual(MatchingVisualizer viz)
+	{
+		visual = viz;
+		return this;
 	}
 	
 	/**
@@ -132,9 +162,18 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 	 */
 	public int doMatching()
 	{
+		if(visual != null)
+		{
+			visual.feedLine(graph, null, "the graph");
+			visual.feedLine(pattern, null, "the pattern");
+		}
+		performanceNodes = new AtomicInteger();
+		performanceEdges = new AtomicInteger();
+		int mergeCount = 0;
+		
 		Map<Node, Integer> distances = computeVertexDistances();
 		
-		Comparator<Match> matchComparator = new MatchComparator(distances);
+		Comparator<Match> matchComparator = new MatchComparator(distances, performanceEdges);
 		
 		PriorityQueue<Match> matchQueue = new PriorityQueue<>(1, matchComparator);
 		
@@ -156,15 +195,25 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 				Match mc = itm.next();
 				itm.remove();
 				mc.mergeCandidates.remove(m);
-				lf("merging " + m + " and " + mc);
+				lf("merging \t " + m + " \n \t\t\t and \t\t " + mc);
 				Match mr = merge(m, mc);
 				if(mr != null) // merge should never fail // FIXME
 				{
-					lf("new match: " + mr.toString());
-					// addInitialMatchToQueue(mr, matchQueue);
+					lf("new match:\t " + mr.toString() + "\n");
+					if(visual != null)
+						visual.feedLine(m, mc, mr, "new match [k=" + mr.k + "]");
+					// matchQueue.remove(mc); // TODO: tentative.
+					matchQueue.add(mr);
+					mergeCount++;
 				}
 				else
-					lf("match failed");
+				{
+					lf("match failed\n");
+					if(visual != null)
+						visual.feedLine("match failed");
+				}
+				lf("merge count: " + mergeCount + ";\t nodes: " + performanceNodes + ";\t edges: " + performanceEdges
+						+ "\n");
 			}
 		}
 		
@@ -189,6 +238,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 			@Override
 			public int compare(Node n1, Node n2)
 			{
+				performanceNodes.incrementAndGet();
 				if(n1 instanceof ConnectedNode && n2 instanceof ConnectedNode)
 				{
 					int out1 = ((ConnectedNode) n1).getOutEdges().size() - ((ConnectedNode) n1).getInEdges().size();
@@ -222,7 +272,10 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		 */
 		Node vMP = vertexSet.first();
 		lf("start vertex: " + vMP);
-		/**
+		if(visual != null && vMP instanceof VisualizableGraphComponent)
+			visual.feedLine(pattern, (VisualizableGraphComponent) vMP, "start vertex");
+		
+		/*
 		 * Distances of vertices relative to the start vertex. Used in sorting single-edge matches in the match queue.
 		 */
 		final Map<Node, Integer> distances = pattern.computeDistancesFromUndirected(vMP);
@@ -245,6 +298,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 			@Override
 			public int compare(Edge e1, Edge e2)
 			{
+				performanceEdges.incrementAndGet();
 				if(e1.getLabel() == null && e2.getLabel() == null)
 					return e1.toString().compareTo(e2.toString());
 				if(e1.getLabel() == null)
@@ -310,8 +364,14 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		Match[] sorted = matchQueue.toArray(new Match[1]);
 		Arrays.sort(sorted, comparator);
 		String string = "[\n ";
+		if(visual != null)
+			visual.feedLine("initial matches: " + matchQueue.size());
 		for(Match m : sorted)
+		{
 			string += m.toString() + ", \n";
+			if(visual != null)
+				visual.feedLine(m, "initial match");
+		}
 		string += "]";
 		lf("initial matches (" + matchQueue.size() + "): " + string + "-------------------------");
 	}
@@ -325,8 +385,11 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 	 *            : the edge in the graph (eP in E)
 	 * @return <code>true</code> if the edges match.
 	 */
-	protected static boolean isMatch(EdgeP eP, Edge e)
+	// used to be static, but needs performance evaluation
+	protected boolean isMatch(EdgeP eP, Edge e)
 	{
+		performanceEdges.incrementAndGet();
+		performanceNodes.addAndGet(2);
 		// reject if: the from node of eP is not generic and does not have the same label as the from node of E
 		if(!((NodeP) eP.getFrom()).isGeneric() && !eP.getFrom().getLabel().equals(e.getFrom().getLabel()))
 			return false;
@@ -339,10 +402,13 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 			// accept if: eP is not labeled
 			// accept if: e is not labeled (or has a void label)
 			// accept if: eP has the same label as e
-			if((eP.getLabel() == null) || (e.getLabel() == null) || (e.getLabel().equals(""))
-					|| (eP.getLabel().equals(e.getLabel())))
+			if(eP.getLabel() == null)
 				return true;
-			// reject otherwise (both e and eP are labeled and labels don't match)
+			if((e.getLabel() == null) || (e.getLabel().equals("")))
+				return true;
+			if((e.getLabel() != null) && eP.getLabel().equals(e.getLabel()))
+				return true;
+			// reject otherwise (e and eP are labeled and labels don't match)
 			return false;
 		}
 		return false; // TODO: support RegExp edges.
@@ -357,7 +423,8 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 	 * @param queue
 	 *            : the match queue
 	 */
-	protected static void addInitialMatchToQueue(Match m, PriorityQueue<Match> queue)
+	// used to be static, but needs performance evaluation
+	protected void addInitialMatchToQueue(Match m, PriorityQueue<Match> queue)
 	{
 		// take all matches already in the queue and see if they are compatible
 		for(Match mi : queue)
@@ -365,8 +432,9 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 			boolean accept = false;
 			boolean reject = false;
 			// reject if: the two matches intersect (contain common pattern edges
+			performanceEdges.incrementAndGet();
 			if(new HashSet<>(m.solvedPart.getEdges()).removeAll(mi.solvedPart.getEdges())
-					&& !new HashSet<>(m.matchedGraph.getEdges()).removeAll(mi.matchedGraph.getEdges()))
+					|| new HashSet<>(m.matchedGraph.getEdges()).removeAll(mi.matchedGraph.getEdges()))
 				reject = true;
 			else
 				// build merge candidates
@@ -387,6 +455,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 							reject = true;
 							break;
 						}
+						performanceNodes.incrementAndGet();
 					}
 				}
 			if(!reject)
@@ -456,6 +525,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		newM.frontier = new HashMap<>();
 		for(Edge e : totalMatch)
 		{
+			performanceEdges.incrementAndGet();
 			// TODO check cast
 			EdgeP eP = (EdgeP) e;
 			// GmP -> obtained by adding edges from m1.GmP and m2.GmP and their adjacent vertices
@@ -481,8 +551,8 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 				throw new InternalError("edge not found in total match"); // impossible
 				
 			// node function -> reuniting the node functions of the two matches
-			newM.nodeFunction.put((NodeP) eP.getFrom(), sourceMatch.nodeFunction.get(eP.getFrom()));
-			newM.nodeFunction.put((NodeP) eP.getTo(), sourceMatch.nodeFunction.get(eP.getTo()));
+			newM.nodeFunction.put(eP.getFrom(), sourceMatch.nodeFunction.get(eP.getFrom()));
+			newM.nodeFunction.put(eP.getTo(), sourceMatch.nodeFunction.get(eP.getTo()));
 			// edge function -> reuniting the edge functions of the two matches
 			newM.edgeFunction.put(eP, sourceMatch.edgeFunction.get(eP));
 			// G' -> obtained by adding the values of the edge and node functions, when adding edges in GmP
@@ -508,10 +578,9 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 			else
 				newM.frontier.put((NodeP) eP.getTo(), new AtomicInteger(((ConnectedNode) eP.getTo()).getInEdges()
 						.size() + ((ConnectedNode) eP.getTo()).getOutEdges().size() - 1));
-			
-			// merge candidates: MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
-			// common merge candidates, and candidates of each match that were outer candidates for the other match
 		}
+		// merge candidates: MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
+		// common merge candidates, and candidates of each match that were outer candidates for the other match
 		newM.mergeCandidates = new HashSet<>(m1.mergeCandidates);
 		Set<Match> partB = new HashSet<>(m1.mergeCandidates);
 		Set<Match> partC = new HashSet<>(m2.mergeCandidates);
@@ -524,6 +593,9 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		// merge outer candidates: common outer candidates: MO = MO1 n MO2
 		newM.mergeOuterCandidates = new HashSet<>(m1.mergeOuterCandidates);
 		newM.mergeOuterCandidates.retainAll(m2.mergeOuterCandidates);
+		
+		performanceEdges.addAndGet(m1.mergeCandidates.size() + m2.mergeCandidates.size()
+				+ m1.mergeOuterCandidates.size() + m2.mergeOuterCandidates.size());
 		
 		return newM;
 	}

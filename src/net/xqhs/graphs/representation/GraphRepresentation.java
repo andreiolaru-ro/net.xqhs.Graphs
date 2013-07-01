@@ -11,12 +11,11 @@
  ******************************************************************************/
 package net.xqhs.graphs.representation;
 
-
 public interface GraphRepresentation
 {
-	public GraphRepresentationImplementation setRootRepresentation(GraphRepresentation root);
+	public GraphRepresentation setRootRepresentation(GraphRepresentation root);
 	
-	public void update();
+	public GraphRepresentation update();
 	
 	public RepresentationElement getRepresentation();
 	

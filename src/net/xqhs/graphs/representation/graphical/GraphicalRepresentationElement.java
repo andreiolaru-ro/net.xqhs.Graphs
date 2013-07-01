@@ -11,6 +11,7 @@
  ******************************************************************************/
 package net.xqhs.graphs.representation.graphical;
 
+import java.awt.Color;
 import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.util.LinkedList;
@@ -79,6 +80,8 @@ public class GraphicalRepresentationElement extends RepresentationElement
 			break;
 		}
 		gelement.setRepresented(getRepresentedComponent());
+		if(getRepresentedComponent() != null)
+			getRepresentedComponent().addRepresentation(this);
 	}
 	
 	public GraphicalRepresentationElement setEdge(EdgeType type, GraphicalRepresentationElement from,
@@ -96,6 +99,23 @@ public class GraphicalRepresentationElement extends RepresentationElement
 	{
 		this.subSize = size;
 		return this;
+	}
+	
+	public GraphicalRepresentationElement setHighlighted(boolean doHighlight)
+	{
+		if(gelement != null)
+		{
+			if(doHighlight)
+				gelement.setColor(Color.RED);
+			else
+				gelement.setColor(null);
+		}
+		return this;
+	}
+	
+	public GElement getGElement()
+	{
+		return gelement;
 	}
 	
 	public GraphicalRepresentationElement positionInGrid(Point position, float widthFactor, float heightFactor)

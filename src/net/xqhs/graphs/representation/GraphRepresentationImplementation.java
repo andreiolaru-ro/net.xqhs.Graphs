@@ -82,9 +82,10 @@ public abstract class GraphRepresentationImplementation extends Unit implements 
 	}
 	
 	@Override
-	public void update()
+	public GraphRepresentation update()
 	{
 		processGraph();
+		return this;
 	}
 	
 	protected void processGraph()

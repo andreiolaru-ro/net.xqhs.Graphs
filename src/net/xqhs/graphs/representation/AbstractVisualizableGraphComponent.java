@@ -32,20 +32,20 @@ public abstract class AbstractVisualizableGraphComponent implements Visualizable
 	}
 	
 	@Override
-	public RepresentationElement getFirstRepresentationForPlatform(GraphRepresentation representation)
+	public RepresentationElement getFirstRepresentationForRoot(GraphRepresentation root)
 	{
-		Collection<RepresentationElement> filtered = getRepresentationsForPlatform(representation);
+		Collection<RepresentationElement> filtered = getRepresentationsForRoot(root);
 		if(filtered.isEmpty())
 			return null;
 		return filtered.iterator().next();
 	}
 	
 	@Override
-	public Collection<RepresentationElement> getRepresentationsForPlatform(GraphRepresentation representation)
+	public Collection<RepresentationElement> getRepresentationsForRoot(GraphRepresentation root)
 	{
 		Collection<RepresentationElement> ret = new HashSet<>();
 		for(RepresentationElement repr : representations)
-			if(repr.getRootRepresentation() == representation)
+			if(repr.getRootRepresentation() == root)
 				ret.add(repr);
 		return ret;
 	}

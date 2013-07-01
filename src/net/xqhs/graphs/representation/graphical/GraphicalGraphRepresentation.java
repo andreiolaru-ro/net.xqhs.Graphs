@@ -141,7 +141,7 @@ public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 			PathElement other = others.get(0);
 			EdgeType actualEdgeType = edgeType;
 			GraphicalRepresentationElement otherRepr = (GraphicalRepresentationElement) ((VisualizableGraphComponent) other
-					.getNode()).getFirstRepresentationForPlatform(parentRepr.getRootRepresentation());
+					.getNode()).getFirstRepresentationForRoot(parentRepr.getRootRepresentation());
 			if(otherRepr == null)
 			{
 				others.remove(other);

@@ -18,11 +18,11 @@ import javax.swing.JFrame;
 
 import net.xqhs.graphical.GCanvas;
 import net.xqhs.graphs.graph.SimpleGraph;
+import net.xqhs.graphs.matcher.GraphMatcherQuick;
+import net.xqhs.graphs.matcher.MatchingVisualizer;
 import net.xqhs.graphs.pattern.EdgeP;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
-import net.xqhs.graphs.representation.GraphRepresentation;
-import net.xqhs.graphs.representation.graphical.RadialGraphRepresentation;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
@@ -41,20 +41,20 @@ public class GraphMatcherTest
 		input += "AIConf -> conftime;";
 		input += "conftime -isa> interval;";
 		input += "AIConf -> CFP;";
-		input += "CFP -> AIConf;";
 		input += "CFP -isa> document;";
-		input += "CFP -contains> 05012011;";
-		input += "05012011 -isa> date;";
-		input += "CFP -contains> 30032011;";
-		input += "30032011 -isa> date;";
-		input += "AIConf -> 30032011;";
+		input += "CFP -contains> 050111;";
+		input += "050111 -isa> date;";
+		input += "CFP -contains> 300311;";
+		input += "300311 -isa> date;";
+		input += "AIConf -> 300311;";
 		input += "CFP -contains> conftime;";
+		// input += "CFP -> AIConf;"; // not well supported by visual representation
 		SimpleGraph G = ((SimpleGraph) new SimpleGraph().setUnitName("G").setLogLevel(Level.INFO).setLink(unitName))
 				.readFrom(new ByteArrayInputStream(input.getBytes()));
 		unit.li(G.toString());
 		
 		TextGraphRepresentation GRT = (TextGraphRepresentation) new TextGraphRepresentation(G).setLayout("\n", "\t", 2)
-				.setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Level.ALL);
+				.setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Level.ERROR);
 		GRT.update();
 		unit.li(GRT.displayRepresentation());
 		
@@ -96,24 +96,27 @@ public class GraphMatcherTest
 		
 		GCanvas canvas = new GCanvas();
 		
-		GraphRepresentation GRG = (GraphRepresentation) new RadialGraphRepresentation(G)
-				.setOrigin(new Point(-200, -100)).setBottomRight(new Point(-10, 100)).setCanvas(canvas)
-				.setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Unit.DEFAULT_LEVEL);
-		GRG.update();
-		GraphRepresentation GPRG = (GraphRepresentation) new RadialGraphRepresentation(GP)
-				.setOrigin(new Point(10, -100)).setBottomRight(new Point(200, 100)).setCanvas(canvas)
-				.setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Unit.DEFAULT_LEVEL);
-		GPRG.update();
+		// GraphRepresentation GRG = (GraphRepresentation) new RadialGraphRepresentation(G)
+		// .setOrigin(new Point(-200, -100)).setBottomRight(new Point(-10, 100)).setCanvas(canvas)
+		// .setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Unit.DEFAULT_LEVEL);
+		// GRG.update();
+		// GraphRepresentation GPRG = (GraphRepresentation) new RadialGraphRepresentation(GP)
+		// .setOrigin(new Point(10, -100)).setBottomRight(new Point(200, 100)).setCanvas(canvas)
+		// .setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Unit.DEFAULT_LEVEL);
+		// GPRG.update();
 		
-		canvas.setZoom(6);
+		canvas.setZoom(2);
 		canvas.resetLook();
 		frame.add(canvas);
 		
-		frame.setLocation(1450, 10);
-		frame.setSize(1500, 600);
+		frame.setLocation(10, 30);
+		frame.setSize(1100, 700);
 		frame.setVisible(true);
 		
-		// new GraphMatcherQuick(G, GP).doMatching();
+		GraphMatcherQuick GMQ = ((GraphMatcherQuick) new GraphMatcherQuick(G, GP).setUnitName("matcher").setLogLevel(
+				Level.ALL));
+		GMQ.setVisual(new MatchingVisualizer().setCanvas(canvas).setTopLeft(new Point(-400, 0)));
+		GMQ.doMatching();
 		
 		unit.doExit();
 	}

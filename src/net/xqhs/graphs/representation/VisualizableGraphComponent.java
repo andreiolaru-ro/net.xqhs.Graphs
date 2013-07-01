@@ -19,7 +19,7 @@ public interface VisualizableGraphComponent
 	
 	public Collection<RepresentationElement> getRepresentations();
 	
-	public RepresentationElement getFirstRepresentationForPlatform(GraphRepresentation representation);
+	public RepresentationElement getFirstRepresentationForRoot(GraphRepresentation representation);
 	
-	public Collection<RepresentationElement> getRepresentationsForPlatform(GraphRepresentation representation);
+	public Collection<RepresentationElement> getRepresentationsForRoot(GraphRepresentation representation);
 }
