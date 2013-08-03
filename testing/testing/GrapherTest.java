@@ -21,10 +21,12 @@ import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.UnitComponent;
 
+@SuppressWarnings("javadoc")
 public class GrapherTest
 {
 	private static String	unitName	= "grapherTestMain";
 	
+	@SuppressWarnings("unused")
 	private static String	testDir		= "playground/graphplay/";
 	
 	public static void main(String args[])

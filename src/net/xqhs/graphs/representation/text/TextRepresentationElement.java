@@ -397,7 +397,7 @@ public class TextRepresentationElement extends RepresentationElement
 			
 			// create
 			log.li("create new [" + edgeTypeChar + "][" + edgeType + "] edge: [" + edgeName + "]");
-			SimpleEdge edge = new SimpleEdge(null, null, edgeName); // node names will be filled in later (in
+			SettableEdge edge = new SettableEdge(edgeName); // node names will be filled in later (in
 			// LinearGraphRepresentation)
 			// FIXME: what level to give; does it matter? remove level?
 			ret = new TextRepresentationElement(root, edge, edgeType, -1, lastChild, lastChild && firstSibling);

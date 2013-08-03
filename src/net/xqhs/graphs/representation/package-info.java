@@ -10,9 +10,6 @@
  * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
 /**
- * 
- */
-/**
  * This package contains classes that implement various manners of representation for graphs.
  * <p>
  * These representations are mostly based on creating a linear form of the graph.
@@ -24,3 +21,4 @@
  *
  */
 package net.xqhs.graphs.representation;
+

@@ -60,7 +60,7 @@
   </class>  
   <class id="7" language="java" name="net.xqhs.graphs.graph.SimpleNode" project="net.xqhs.Graphs" 
     file="/net.xqhs.Graphs/src/net/xqhs/graphs/graph/SimpleNode.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="905" y="1080"/>    
+    <position height="-1" width="-1" x="584" y="877"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -69,408 +69,87 @@
   </class>  
   <class id="8" language="java" name="net.xqhs.graphs.graph.SimpleEdge" project="net.xqhs.Graphs" 
     file="/net.xqhs.Graphs/src/net/xqhs/graphs/graph/SimpleEdge.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1098" y="1081"/>    
+    <position height="-1" width="-1" x="902" y="853"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="9" language="java" name="net.xqhs.graphs.graph.Edge" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/net/xqhs/graphs/graph/Edge.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1067" y="797"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <interface id="10" language="java" name="net.xqhs.graphs.graph.Node" project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/net/xqhs/graphs/graph/Node.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="900" y="794"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="11" language="java" name="net.xqhs.graphs.representation.linear.LinearGraphRepresentation" 
-    project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/linear/LinearGraphRepresentation.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="341" y="849"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="12" language="java" name="net.xqhs.graphs.representation.linear.LinearGraphRepresentation.PathComparator" 
-    project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/linear/LinearGraphRepresentation.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="384" y="1109"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="13" language="java" 
-    name="net.xqhs.graphs.representation.linear.LinearGraphRepresentation.NodeInAlphaComparator" 
-    project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/linear/LinearGraphRepresentation.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="607" y="1109"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="14" language="java" name="net.xqhs.graphs.representation.linear.LinearGraphRepresentation.PathElement" 
-    project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/linear/LinearGraphRepresentation.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="140" y="1108"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="15" language="java" name="net.xqhs.graphs.representation.text.TextGraphRepresentation" 
-    project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/text/TextGraphRepresentation.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="299" width="311" x="221" y="1324"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <enumeration id="16" language="java" name="net.xqhs.graphs.representation.text.TextRepresentationElement.Symbol" 
-    project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/text/TextRepresentationElement.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="757" y="1845"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </enumeration>  
-  <class id="17" language="java" name="net.xqhs.graphs.representation.text.TextRepresentationElement" 
-    project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/text/TextRepresentationElement.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="333" width="340" x="643" y="1326"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <enumeration id="18" language="java" name="net.xqhs.graphs.representation.text.TextRepresentationElement.Type" 
-    project="net.xqhs.Graphs" 
-    file="/net.xqhs.Graphs/src/net/xqhs/graphs/representation/text/TextRepresentationElement.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="981" y="1813"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </enumeration>  
-  <dependency id="19">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <dependency id="20">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <association id="21">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="22" name="theRepresentation"/>      
-      <multiplicity id="23" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="24">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <dependency id="25">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <dependency id="26">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="17"/>  
-  </dependency>  
-  <dependency id="27">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <generalization id="28">    
-    <bendpoint x="1205" y="740"/>    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <association id="29">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="30" name="to"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="32">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="33" name="parent"/>      
-      <multiplicity id="34" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="35">    
+  <dependency id="9">    
     <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <nesting id="36">    
-    <bendpoint x="211" y="984"/>    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="14"/>  
-  </nesting>  
-  <association id="37">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="38" name="inEdges"/>      
-      <multiplicity id="39" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="40">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="15"/>  
-  </dependency>  
-  <nesting id="41">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="16"/>  
-  </nesting>  
-  <generalization id="42">    
-    <end type="SOURCE" refId="17"/>    
     <end type="TARGET" refId="6"/>  
-  </generalization>  
-  <dependency id="43">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="5"/>  
   </dependency>  
-  <association id="44">    
-    <bendpoint x="111" y="337"/>    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="45" name="rootRepresentation"/>      
-      <multiplicity id="46" minimum="0" maximum="1"/>    
+  <association id="10">    
+    <bendpoint x="466" y="216"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="11" name="parentRepresentation"/>      
+      <multiplicity id="12" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="47">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="48" name="otherChildren"/>      
-      <multiplicity id="49" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="50">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="51" name="representations"/>      
-      <multiplicity id="52" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="53">    
+  <realization id="13">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="1"/>  
   </realization>  
-  <dependency id="54">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <generalization id="55">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <association id="56">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="57" name="content"/>      
-      <multiplicity id="58" minimum="0" maximum="2147483647"/>    
+  <association id="14">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="15" name="theRepresentation"/>      
+      <multiplicity id="16" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="59">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <dependency id="60">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="13"/>  
-  </dependency>  
-  <dependency id="61">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <association id="62">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="63" name="children"/>      
-      <multiplicity id="64" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="65">    
-    <end type="SOURCE" refId="15"/>    
+  <realization id="17">    
+    <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="5"/>  
-  </dependency>  
-  <association id="66">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="67" name="rootRepresentation"/>      
-      <multiplicity id="68" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="69">    
-    <end type="SOURCE" refId="17"/>    
+  </realization>  
+  <dependency id="18">    
+    <bendpoint x="634" y="565"/>    
+    <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="1"/>  
   </dependency>  
-  <generalization id="70">    
-    <bendpoint x="816" y="778"/>    
+  <generalization id="19">    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
-  <dependency id="71">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <association id="72">    
+  <association id="20">    
+    <bendpoint x="655" y="193"/>    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="73" name="representedComponent"/>      
-      <multiplicity id="74" minimum="0" maximum="1"/>    
+      <attribute id="21" name="representedComponent"/>      
+      <multiplicity id="22" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="75">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <dependency id="76">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="18"/>  
-  </dependency>  
-  <dependency id="77">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="14"/>  
-  </dependency>  
-  <nesting id="78">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="18"/>  
-  </nesting>  
-  <dependency id="79">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="14"/>  
-  </dependency>  
-  <association id="80">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="81" name="linkType"/>      
-      <multiplicity id="82" minimum="0" maximum="1"/>    
+  <association id="23">    
+    <bendpoint x="99" y="286"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="24" name="parentRepresentation"/>      
+      <multiplicity id="25" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="83">    
-    <bendpoint x="190" y="984"/>    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="84" name="paths"/>      
-      <multiplicity id="85" minimum="0" maximum="2147483647"/>    
+  <association id="26">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="27" name="representations"/>      
+      <multiplicity id="28" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="86">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="9"/>  
-  </dependency>  
-  <association id="87">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="88" name="outEdges"/>      
-      <multiplicity id="89" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="90">    
+  <generalization id="29">    
     <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="9"/>  
-  </realization>  
-  <dependency id="91">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="9"/>  
-  </dependency>  
-  <realization id="92">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <nesting id="93">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="13"/>  
-  </nesting>  
-  <dependency id="94">    
-    <bendpoint x="496" y="460"/>    
-    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <dependency id="30">    
+    <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="1"/>  
   </dependency>  
-  <association id="95">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="96" name="from"/>      
-      <multiplicity id="97" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="98">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <dependency id="99">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <association id="100">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="101" name="sortedNodes"/>      
-      <multiplicity id="102" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="103">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="12"/>  
-  </nesting>  
-  <generalization id="104">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <dependency id="105">    
-    <end type="SOURCE" refId="5"/>    
+  <dependency id="31">    
+    <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="6"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 

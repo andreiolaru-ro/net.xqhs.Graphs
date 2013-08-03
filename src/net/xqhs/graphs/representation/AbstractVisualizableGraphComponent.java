@@ -15,8 +15,18 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * THis class implements the basic representing element management required by the {@link VisualizableGraphComponent}
+ * interface. It does so by maintaining a {@link Set} of {@link RepresentationElement} instances.
+ * 
+ * @author Andrei Olaru
+ * 
+ */
 public abstract class AbstractVisualizableGraphComponent implements VisualizableGraphComponent
 {
+	/**
+	 * The set of elements representing this component.
+	 */
 	protected Set<RepresentationElement>	representations	= new HashSet<>();
 	
 	@Override
@@ -45,7 +55,7 @@ public abstract class AbstractVisualizableGraphComponent implements Visualizable
 	{
 		Collection<RepresentationElement> ret = new HashSet<>();
 		for(RepresentationElement repr : representations)
-			if(repr.getRootRepresentation() == root)
+			if(repr.getParentRepresentation() == root)
 				ret.add(repr);
 		return ret;
 	}

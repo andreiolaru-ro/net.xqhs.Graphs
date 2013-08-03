@@ -28,10 +28,23 @@ import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitComponent;
 
+/**
+ * Tester for {@link GraphMatcherQuick}.
+ * 
+ * @author Andrei Olaru
+ * 
+ */
 public class GraphMatcherTest
 {
+	/**
+	 * The name of the logging unit.
+	 */
 	private static String	unitName	= "graphMatcherTestMain";
 	
+	/**
+	 * @param args
+	 *            : arguments
+	 */
 	public static void main(String[] args)
 	{
 		UnitComponent unit = (UnitComponent) new UnitComponent().setUnitName(unitName);
