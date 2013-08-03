@@ -96,16 +96,4 @@ public class SimpleEdge extends AbstractVisualizableGraphComponent implements Ed
 		return (isBackward ? "<" : "") + (this.label != null ? ("-" + this.label + "-") : "-")
 				+ (isBackward ? "" : ">");
 	}
-	
-	@Deprecated
-	public void setFrom(Node node)
-	{
-		from = node;
-	}
-	
-	@Deprecated
-	public void setTo(Node node)
-	{
-		to = node;
-	}
 }

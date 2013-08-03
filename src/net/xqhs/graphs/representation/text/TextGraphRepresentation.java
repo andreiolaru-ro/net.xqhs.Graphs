@@ -269,7 +269,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					// add edges
 					for(TextRepresentationElement edgeEl : element.content)
 					{
-						SimpleEdge edge = (SimpleEdge) edgeEl.getRepresentedComponent();
+						SettableEdge edge = (SettableEdge) edgeEl.getRepresentedComponent();
 						if(!isBackwards)
 							edge.setFrom(node);
 						else
@@ -283,7 +283,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 				case INTERNAL_LINK:
 				case EXTERNAL_LINK:
 				{
-					SimpleEdge edge = (SimpleEdge) element.getRepresentedComponent();
+					SettableEdge edge = (SettableEdge) element.getRepresentedComponent();
 					lf("inspecting [" + type + "]: [" + edge + "]");
 					
 					nLevel = new LinkedList<>();
@@ -322,7 +322,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					else
 						edge.setFrom(targetNode);
 					li("adding to graph edge [" + edge + "]");
-					theGraph.addEdge(edge);
+					theGraph.addEdge(edge.toSimpleEdge());
 				}
 				}
 			}
