@@ -12,7 +12,6 @@
 package net.xqhs.graphs.representation.linear;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,15 +22,26 @@ import net.xqhs.graphs.graph.ConnectedNode;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.NodeAlphaComparator;
-import net.xqhs.graphs.graph.SimpleGraph;
-import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.representation.GraphRepresentationImplementation;
+import net.xqhs.graphs.representation.linear.PathElement.PathComparator;
 
 /**
- * Class that allows the representation of a {@link SimpleGraph} structure. Also can be written as GrapheR
- * 
+ * Class that allows the representation of a {@link Graph} structure.
  * <p>
- * An instance remains associated with the same {@link SimpleGraph} instance for all of its lifecycle.
+ * An instance remains associated with the same {@link Graph} instance for all of its lifecycle.
+ * <p>
+ * The linearization process works by creating a series of 'paths'. A path is a tree covering part of the graph. Each
+ * path attempts to cover as many nodes as possible (ideally all the nodes in a weakly-connected component of the
+ * graph). All the edges in the graph are then part of a path, cross between paths, or go from one node in the path to
+ * another, without being part of the path. Ideally, most of the edges are on a path and few other edges remain outside
+ * paths.
+ * <p>
+ * The result of the linearization is the set of paths, which are formed of {@link PathElement} instances.
+ * <p>
+ * The result of a linearization is always the same for the same graph.
+ * <p>
+ * The class is abstract because it does not provide a viewable representation, but rather a structure which other
+ * representations may use (e.g. the linear text representation).
  * 
  * @author Andrei Olaru
  * 
@@ -39,8 +49,8 @@ import net.xqhs.graphs.representation.GraphRepresentationImplementation;
 public abstract class LinearGraphRepresentation extends GraphRepresentationImplementation
 {
 	/**
-	 * Compares two {@link SimpleNode} structures. First criterion: node with lower in-degree is first; second criterion
-	 * is lexical order.
+	 * Compares two {@link Node} structures. First criterion: node with lower in-degree is first; second criterion is
+	 * lexical order (using {@link NodeAlphaComparator}).
 	 * 
 	 * @author Andrei Olaru
 	 * 
@@ -58,94 +68,60 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 		}
 	}
 	
-	static class PathComparator implements Comparator<PathElement>
-	{
-		@Override
-		public int compare(PathElement el1, PathElement el2)
-		{
-			if(el1.pathlength != el2.pathlength)
-				return -(el1.pathlength - el2.pathlength); // longest path first
-			return new NodeInAlphaComparator().compare(el1.node, el2.node);
-			// return (el1.distance - el2.distance); // longest path first // old alternative
-		}
-	}
-	
-	public class PathElement
-	{
-		ConnectedNode		node			= null;
-		int					distance		= 0;					// distance from firstNode / subgraph root
-		PathElement			parent			= null;
-		int					treeOrder		= -1;					// order of the sub-tree containing this
-																	// element
-		List<PathElement>	children		= new LinkedList<>();
-		List<PathElement>	otherChildren	= new LinkedList<>();
-		int					pathlength		= -1;					// distance to farthest leaf
-																	
-		public PathElement(Node node, int distance, PathElement parent)
-		{
-			if(!(node instanceof ConnectedNode))
-				throw new IllegalArgumentException("node " + node + " is not a ConnectedNode");
-			this.node = (ConnectedNode) node;
-			this.distance = distance;
-			this.parent = parent;
-		}
-		
-		public boolean pathContains(PathElement el1)
-		{
-			PathElement el = this;
-			while(el.parent != null)
-			{
-				if(el == el1)
-					return true;
-				el = el.parent;
-			}
-			return (el == el1);
-		}
-		
-		@Override
-		public String toString()
-		{
-			if(node == null)
-				return "<corrupt>";
-			return node.toString() + "(" + distance + ":" + (parent != null ? parent.node.toString() : "-")
-					+ (!children.isEmpty() ? "/" + children.size() : ".")
-					+ (otherChildren.isEmpty() ? "" : "+" + otherChildren.size()) + "/" + pathlength + ")";
-		}
-		
-		public ConnectedNode getNode()
-		{
-			return node;
-		}
-		
-		public List<PathElement> getChildren()
-		{
-			return children;
-		}
-		
-		public List<PathElement> getOtherChildren()
-		{
-			return otherChildren;
-		}
-	}
-	
+	/**
+	 * Specifies how paths should relate to the direction of edges on the path. See the documentation of method
+	 * <code>setBackwards()</code>.
+	 */
 	protected boolean			isBackwards	= false;
+	/**
+	 * The nodes of the graph, as sorted by a {@link NodeInAlphaComparator}.
+	 */
 	protected List<Node>		sortedNodes	= null;
+	/**
+	 * The paths in the representation (sorted by a {@link PathComparator}). These represent the output of this
+	 * representation, to be used by other non-abstract representations.
+	 */
 	protected List<PathElement>	paths		= null;
 	
 	/**
 	 * Builds a new {@link LinearGraphRepresentation} for the specified graph.
+	 * 
+	 * @param theGraph
+	 *            : the graph
 	 */
 	public LinearGraphRepresentation(Graph theGraph)
 	{
 		super(theGraph);
 	}
 	
+	/**
+	 * Sets the instace to be 'backwards'. See the documentation of <code>setBackwards(boolean)</code>.
+	 * 
+	 * @return the updated instance.
+	 */
 	public LinearGraphRepresentation setBackwards()
 	{
-		isBackwards = true;
-		return this;
+		return setBackwards(true);
 	}
 	
+	/**
+	 * Specifies how paths should relate to the direction of edges on the path. If <code>false</code> ('forward'), the
+	 * paths follow the direction of edges. If <code>true</code> ('backwards'), the path will follow in the opposite
+	 * direction of edges.
+	 * <p>
+	 * Example of a forward path: a -> b -> c
+	 * <p>
+	 * Example of a backward path: a <- b <- c (with the equivalent forward path c -> b -> a).
+	 * <p>
+	 * The choice of this setting depends on the purpose of the representation. For instance, if the edges mean
+	 * 'flows-to', the representation should be 'forward'. If the edges mean 'has-parent', a 'backward' representation
+	 * may be more suitable.
+	 * 
+	 * @param back
+	 *            : specifies whether the representation should be 'backward'.
+	 * 
+	 * @return the updated instance.
+	 */
 	public LinearGraphRepresentation setBackwards(boolean back)
 	{
 		isBackwards = back;
@@ -158,9 +134,15 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 		return super.setDefaultName(name) + "Lin";
 	}
 	
+	/**
+	 * Processing the graph actually relies on building the paths, after obtaining a sorted list of the nodes in the
+	 * graph (using {@link NodeInAlphaComparator}).
+	 */
 	@Override
 	protected void processGraph()
 	{
+		super.processGraph();
+		
 		sortedNodes = new LinkedList<>(theGraph.getNodes());
 		Collections.sort(sortedNodes, new NodeInAlphaComparator());
 		lf("sorted nodes: " + sortedNodes);
@@ -168,6 +150,28 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 		buildPaths();
 	}
 	
+	/**
+	 * Building paths has two phases.
+	 * <p>
+	 * <b>Phase 1</b>
+	 * <p>
+	 * First, the paths are decided (it is decide what edges are on the paths and in what order). The first node on the
+	 * path is the first node in the sorted list of nodes not explored so far (white node). Then, children of the node
+	 * (at the end of outgoing edges if forward or incoming edges if backward, anyway edges that belong to the graph)
+	 * are inspected: "new" children (white) are added as new, child, path elements (nodes outside the graph at the end
+	 * of edges inside the graph are added as "other children"), and others are added as "other children": edges that
+	 * point back in the current path from root - circular; edges that point to nodes already somewhere else in the path
+	 * - other branches. If the paths reaches a node through with a longer distance (depth) than before, the node is
+	 * shifted on the current path.
+	 * <p>
+	 * Then, paths are 'measured' and <code>forwardLength</code> information is computed (for each path element, the
+	 * longest distance to a leaf).
+	 * <p>
+	 * In the third phase, forward lengths are used to switch elements from paths with lower forward lengths to paths
+	 * with higher ones, in order to be sure that longer paths come first. All paths are then sorted using
+	 * {@link PathComparator}.
+	 * 
+	 */
 	protected void buildPaths()
 	{
 		Queue<PathElement> grayNodes = new LinkedList<>();
@@ -222,7 +226,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 						}
 					if(el1 == null)
 					{ // new node, add new PathElement
-						el1 = new PathElement(n1, el.distance + 1, el);
+						el1 = new PathElement(n1, el.depth + 1, el);
 						if(!towardsoutside)
 						{
 							lf("new gray node added: " + el1 + " of " + el);
@@ -240,14 +244,14 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 						if(!el.otherChildren.contains(el1))
 							el.otherChildren.add(el1);
 					}
-					else if(el.distance + 1 > el1.distance)
+					else if(el.depth + 1 > el1.depth)
 					{ // new, longer path detected -> update
 						if(el1.parent != null)
 						{
 							el1.parent.children.remove(el1);
 							el1.parent.otherChildren.add(el1);
 						}
-						el1.distance = el.distance + 1;
+						el1.depth = el.depth + 1;
 						el1.parent = el;
 						if(el.otherChildren.contains(el1))
 							el.otherChildren.remove(el1);
@@ -273,14 +277,14 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 			for(PathElement el : blackNodes)
 				if(el.children.isEmpty())
 				{ // leaf
-					el.pathlength = 0;
+					el.forwardLength = 0;
 					PathElement eli = el, elp;
 					while(eli.parent != null)
 					{
 						elp = eli.parent;
-						if(elp.pathlength < eli.pathlength + 1)
+						if(elp.forwardLength < eli.forwardLength + 1)
 							// update
-							elp.pathlength = eli.pathlength + 1;
+							elp.forwardLength = eli.forwardLength + 1;
 						eli = elp;
 					}
 				}
@@ -292,7 +296,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 		{
 			Set<PathElement> marked = new HashSet<>();
 			for(PathElement oth : el.otherChildren)
-				if(!oth.pathContains(el) && (oth.parent != null) && (el.pathlength > oth.parent.pathlength))
+				if(!oth.pathContains(el) && (oth.parent != null) && (el.forwardLength > oth.parent.forwardLength))
 				// 1) if the other child is already having the element as ancestor, then it is already on the main path
 				// and it is a forward link
 				// 2) if the parent of the other child is null, then it is already root of the main path (and it is a
@@ -308,7 +312,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 						oth.parent.otherChildren.add(oth);
 					}
 					oth.parent = el;
-					oth.distance = el.distance + 1; // FIXME distance should be propagated
+					oth.depth = el.depth + 1; // FIXME distance should be propagated
 					marked.add(oth);
 				}
 			for(PathElement oth : marked)

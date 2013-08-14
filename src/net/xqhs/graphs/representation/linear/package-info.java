@@ -10,12 +10,10 @@
  * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
 /**
- * 
- */
-/**
  * Contains necessary classes for representing graphs in a linear manner.
  * 
  * @author Andrei Olaru
  *
  */
 package net.xqhs.graphs.representation.linear;
+

@@ -27,6 +27,7 @@ import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.RepresentationElement;
 import net.xqhs.graphs.representation.VisualizableGraphComponent;
 import net.xqhs.graphs.representation.linear.LinearGraphRepresentation;
+import net.xqhs.graphs.representation.linear.PathElement;
 import net.xqhs.graphs.representation.text.TextRepresentationElement.Symbol;
 import net.xqhs.graphs.representation.text.TextRepresentationElement.Type;
 import net.xqhs.graphs.util.ContentHolder;

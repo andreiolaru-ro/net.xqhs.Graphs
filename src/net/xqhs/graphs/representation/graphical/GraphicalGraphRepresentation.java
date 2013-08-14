@@ -27,6 +27,7 @@ import net.xqhs.graphs.representation.VisualizableGraphComponent;
 import net.xqhs.graphs.representation.graphical.GraphicalRepresentationElement.EdgeType;
 import net.xqhs.graphs.representation.graphical.GraphicalRepresentationElement.Type;
 import net.xqhs.graphs.representation.linear.LinearGraphRepresentation;
+import net.xqhs.graphs.representation.linear.PathElement;
 
 public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 {
