@@ -366,16 +366,19 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 			}
 		}
 		
-		Match[] sorted = matchQueue.toArray(new Match[1]);
-		Arrays.sort(sorted, comparator);
 		String string = "[\n ";
-		if(visual != null)
-			visual.feedLine("initial matches: " + matchQueue.size());
-		for(Match m : sorted)
+		if(!matchQueue.isEmpty())
 		{
-			string += m.toString() + ", \n";
+			Match[] sorted = matchQueue.toArray(new Match[1]);
+			Arrays.sort(sorted, comparator);
 			if(visual != null)
-				visual.feedLine(m, "initial match");
+				visual.feedLine("initial matches: " + matchQueue.size());
+			for(Match m : sorted)
+			{
+				string += m.toString() + ", \n";
+				if(visual != null)
+					visual.feedLine(m, "initial match");
+			}
 		}
 		string += "]";
 		lf("initial matches (" + matchQueue.size() + "): " + string + "-------------------------");

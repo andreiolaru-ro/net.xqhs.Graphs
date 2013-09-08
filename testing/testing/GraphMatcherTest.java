@@ -48,9 +48,8 @@ public class GraphMatcherTest
 		String filexext = ".txt";
 		String patternpart = "P";
 		
-		String filename = "conf";
+		String filename = "small";
 		
-		// input += "CFP -> AIConf;"; // not well supported by visual representation
 		SimpleGraph G;
 		try
 		{
