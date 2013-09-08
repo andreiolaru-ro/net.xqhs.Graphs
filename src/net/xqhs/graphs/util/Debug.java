@@ -17,7 +17,7 @@ public class Debug
 {
 	public static enum D_G implements DebugItem {
 		
-		D_MATCHING_INITIAL(false),
+		D_MATCHING_INITIAL(true),
 		
 		D_CURRENT(true),
 		

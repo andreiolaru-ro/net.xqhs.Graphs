@@ -11,7 +11,14 @@
  ******************************************************************************/
 package net.xqhs.graphs.pattern;
 
+import java.io.InputStream;
+import java.util.HashSet;
+import java.util.Set;
+
+import net.xqhs.graphs.graph.ConnectedNode;
+import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.SimpleGraph;
 
 /**
@@ -72,6 +79,48 @@ public class GraphPattern extends SimpleGraph
 				((NodeP) node).labelIndex = maxIdx + 1;
 		}
 		super.addNode(node);
+		return this;
+	}
+	
+	@Override
+	public GraphPattern readFrom(InputStream input)
+	{
+		super.readFrom(input);
+		
+		Set<Node> additions = new HashSet<>();
+		Set<Node> removals = new HashSet<>();
+		for(Node node : nodes)
+			if(node.getLabel().startsWith("?#"))
+			{
+				Node newNode = new NodeP();
+				removals.add(node);
+				additions.add(newNode);
+				if(node instanceof ConnectedNode)
+				{
+					for(Edge edge : ((ConnectedNode) node).getInEdges())
+					{
+						if(edge instanceof SimpleEdge)
+							((SimpleEdge) edge).unlinkFrom();
+						removeEdge(edge);
+						addEdge(new SimpleEdge(edge.getFrom(), newNode, edge.getLabel()));
+						// FIXME: totally unsafe - there may be other implementations of edge. setFrom/setTo advised?
+					}
+					for(Edge edge : ((ConnectedNode) node).getOutEdges())
+					{
+						if(edge instanceof SimpleEdge)
+							((SimpleEdge) edge).unlinkTo();
+						removeEdge(edge);
+						addEdge(new SimpleEdge(newNode, edge.getTo(), edge.getLabel()));
+						// FIXME: totally unsafe - there may be other implementations of edge. setFrom/setTo advised?
+					}
+				}
+				else
+					; // TODO: iterate over all edges
+			}
+		nodes.removeAll(removals);
+		for(Node node : additions)
+			addNode(node);
+		
 		return this;
 	}
 }

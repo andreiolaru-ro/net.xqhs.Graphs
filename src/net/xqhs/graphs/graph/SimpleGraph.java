@@ -26,6 +26,7 @@ import java.util.Set;
 
 import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.linear.LinearGraphRepresentation;
+import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitComponent;
 
@@ -305,7 +306,8 @@ public class SimpleGraph extends Unit implements Graph
 	 */
 	public SimpleGraph readFrom(InputStream input)
 	{
-		UnitComponent log = (UnitComponent) new UnitComponent().setLink(getUnitName());
+		UnitComponent log = (UnitComponent) new UnitComponent().setLink(getUnitName()).setUnitName("test")
+				.setLogLevel(Level.ALL);
 		try (Scanner scan = new Scanner(input))
 		{
 			while(scan.hasNextLine())

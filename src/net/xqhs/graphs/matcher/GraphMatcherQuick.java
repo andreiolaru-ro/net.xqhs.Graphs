@@ -179,6 +179,8 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		
 		addInitialMatches(matchQueue, matchComparator);
 		
+		int minK = pattern.m();
+		
 		/**
 		 * The main process is the merging (growing) of matches.
 		 * <p>
@@ -205,6 +207,8 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 					// matchQueue.remove(mc); // TODO: tentative.
 					matchQueue.add(mr);
 					mergeCount++;
+					if(mr.k < minK)
+						minK = mr.k;
 				}
 				else
 				{
@@ -216,6 +220,9 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 						+ "\n");
 			}
 		}
+		
+		li("min k: " + minK + ";\t merge count: " + mergeCount + ";\t nodes: " + performanceNodes + ";\t edges: "
+				+ performanceEdges + "\n");
 		
 		return 0; // FIXME
 	}
@@ -325,11 +332,9 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		
 		// for each edge in the pattern, create an id and build a match.
 		int edgeId = 0;
-		for(Edge ePi : sortedEdges)
+		for(Edge eP : sortedEdges)
 		{
-			// TODO check cast
-			EdgeP eP = (EdgeP) ePi;
-			if(!eP.isGeneric())
+			if(!((eP instanceof EdgeP) && ((EdgeP) eP).isGeneric()))
 			{
 				int matchId = 0;
 				lf("edge " + eP + " has id [" + edgeId + "]");
@@ -386,32 +391,34 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 	 * @return <code>true</code> if the edges match.
 	 */
 	// used to be static, but needs performance evaluation
-	protected boolean isMatch(EdgeP eP, Edge e)
+	protected boolean isMatch(Edge eP, Edge e)
 	{
 		performanceEdges.incrementAndGet();
 		performanceNodes.addAndGet(2);
-		// reject if: the from node of eP is not generic and does not have the same label as the from node of E
-		if(!((NodeP) eP.getFrom()).isGeneric() && !eP.getFrom().getLabel().equals(e.getFrom().getLabel()))
+		
+		Node fromP = eP.getFrom();
+		Node toP = eP.getTo();
+		boolean fromGeneric = (fromP instanceof NodeP) && ((NodeP) fromP).isGeneric();
+		boolean toGeneric = (toP instanceof NodeP) && ((NodeP) toP).isGeneric();
+		
+		// reject if: the from node of eP is not generic and does not have the same label as the from node of e
+		if(!fromGeneric && !fromP.getLabel().equals(e.getFrom().getLabel()))
 			return false;
-		// reject if: the to node of eP is not generic and does not have the same label as the to node of E
-		if(!((NodeP) eP.getTo()).isGeneric() && !eP.getTo().getLabel().equals(e.getTo().getLabel()))
+		// reject if: the to node of eP is not generic and does not have the same label as the to node of e
+		if(!toGeneric && !toP.getLabel().equals(e.getTo().getLabel()))
 			return false;
 		
-		if(!eP.isGeneric())
-		{
-			// accept if: eP is not labeled
-			// accept if: e is not labeled (or has a void label)
-			// accept if: eP has the same label as e
-			if(eP.getLabel() == null)
-				return true;
-			if((e.getLabel() == null) || (e.getLabel().equals("")))
-				return true;
-			if((e.getLabel() != null) && eP.getLabel().equals(e.getLabel()))
-				return true;
-			// reject otherwise (e and eP are labeled and labels don't match)
-			return false;
-		}
-		return false; // TODO: support RegExp edges.
+		// accept if: eP is not labeled
+		// accept if: e is not labeled (or has a void label)
+		// accept if: eP has the same label as e
+		if(eP.getLabel() == null)
+			return true;
+		if((e.getLabel() == null) || (e.getLabel().equals("")))
+			return true;
+		if((e.getLabel() != null) && eP.getLabel().equals(e.getLabel()))
+			return true;
+		// reject otherwise (e and eP are labeled and labels don't match)
+		return false;
 	}
 	
 	/**
@@ -440,7 +447,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 				// build merge candidates
 				// iterate on the frontier of the potential candidate
 				// TODO: it should iterate on the frontier of the candidate with a shorter frontier
-				for(Map.Entry<NodeP, AtomicInteger> frontierV : mi.frontier.entrySet())
+				for(Map.Entry<Node, AtomicInteger> frontierV : mi.frontier.entrySet())
 				{
 					// accept if: the two matches contain the same node and the node corresponds, in both matches, to
 					// the same node in G
@@ -523,11 +530,9 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		newM.edgeFunction = new HashMap<>();
 		newM.matchedGraph = new SimpleGraph();
 		newM.frontier = new HashMap<>();
-		for(Edge e : totalMatch)
+		for(Edge eP : totalMatch)
 		{
 			performanceEdges.incrementAndGet();
-			// TODO check cast
-			EdgeP eP = (EdgeP) e;
 			// GmP -> obtained by adding edges from m1.GmP and m2.GmP and their adjacent vertices
 			newM.solvedPart.addEdge(eP).addNode(eP.getFrom()).addNode(eP.getTo());
 			// GxP -> obtained by removing edges added to GmP and nodes
@@ -560,24 +565,24 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 				newM.matchedGraph.addEdge(em).addNode(em.getFrom()).addNode(em.getTo());
 			
 			// frontier -> practically adding nodes from solved part, always checking if they are still on the frontier
-			AtomicInteger fromIndex = newM.frontier.get(e.getFrom());
+			AtomicInteger fromIndex = newM.frontier.get(eP.getFrom());
 			if(fromIndex != null)
 				if(fromIndex.decrementAndGet() == 0)
-					newM.frontier.remove(e.getFrom());
+					newM.frontier.remove(eP.getFrom());
 				else
-					newM.frontier.put((NodeP) e.getFrom(), fromIndex);
+					newM.frontier.put(eP.getFrom(), fromIndex);
 			else
-				newM.frontier.put((NodeP) eP.getFrom(), new AtomicInteger(((ConnectedNode) eP.getFrom()).getInEdges()
-						.size() + ((ConnectedNode) eP.getFrom()).getOutEdges().size() - 1));
-			AtomicInteger toIndex = newM.frontier.get(e.getTo());
+				newM.frontier.put(eP.getFrom(), new AtomicInteger(((ConnectedNode) eP.getFrom()).getInEdges().size()
+						+ ((ConnectedNode) eP.getFrom()).getOutEdges().size() - 1));
+			AtomicInteger toIndex = newM.frontier.get(eP.getTo());
 			if(toIndex != null)
 				if(toIndex.decrementAndGet() == 0)
-					newM.frontier.remove(e.getTo());
+					newM.frontier.remove(eP.getTo());
 				else
-					newM.frontier.put((NodeP) e.getTo(), toIndex);
+					newM.frontier.put(eP.getTo(), toIndex);
 			else
-				newM.frontier.put((NodeP) eP.getTo(), new AtomicInteger(((ConnectedNode) eP.getTo()).getInEdges()
-						.size() + ((ConnectedNode) eP.getTo()).getOutEdges().size() - 1));
+				newM.frontier.put(eP.getTo(), new AtomicInteger(((ConnectedNode) eP.getTo()).getInEdges().size()
+						+ ((ConnectedNode) eP.getTo()).getOutEdges().size() - 1));
 		}
 		// merge candidates: MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
 		// common merge candidates, and candidates of each match that were outer candidates for the other match

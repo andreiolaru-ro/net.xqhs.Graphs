@@ -31,7 +31,6 @@ import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.matcher.GraphMatcherQuick.MatchComparator;
 import net.xqhs.graphs.pattern.GraphPattern;
-import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.GraphRepresentation;
 import net.xqhs.graphs.representation.VisualizableGraphComponent;
 import net.xqhs.graphs.representation.graphical.GraphicalRepresentationElement;
@@ -101,7 +100,7 @@ public class Match
 	 * <p>
 	 * For each node the number of remaining edges in ExP that are adjacent to it is given.
 	 */
-	Map<NodeP, AtomicInteger>	frontier				= null;
+	Map<Node, AtomicInteger>	frontier				= null;
 	/**
 	 * MC, matches that could possibly be merged with this one (i.e. not intersecting and sharing at least one common
 	 * vertex (with a common correspondent in the graph).
@@ -175,11 +174,9 @@ public class Match
 		// the frontier contains both nodes (if it is the case), with their adjacent edges minus the matched edge
 		frontier = new HashMap<>();
 		if(ePFrom.getInEdges().size() + ePFrom.getOutEdges().size() > 1)
-			frontier.put((NodeP) eP.getFrom(), new AtomicInteger(ePFrom.getInEdges().size()
-					+ ePFrom.getOutEdges().size() - 1));
+			frontier.put(eP.getFrom(), new AtomicInteger(ePFrom.getInEdges().size() + ePFrom.getOutEdges().size() - 1));
 		if(ePTo.getInEdges().size() + ePTo.getOutEdges().size() > 1)
-			frontier.put((NodeP) eP.getTo(),
-					new AtomicInteger(ePTo.getInEdges().size() + ePTo.getOutEdges().size() - 1));
+			frontier.put(eP.getTo(), new AtomicInteger(ePTo.getInEdges().size() + ePTo.getOutEdges().size() - 1));
 		// unsolved part (all nodes and edges except the matched ones)
 		unsolvedPart = new GraphPattern();
 		for(Node vP : p.getNodes())

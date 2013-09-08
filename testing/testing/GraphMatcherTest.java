@@ -11,18 +11,12 @@
  ******************************************************************************/
 package testing;
 
-import java.awt.Point;
-import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
-import javax.swing.JFrame;
-
-import net.xqhs.graphical.GCanvas;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.matcher.GraphMatcherQuick;
-import net.xqhs.graphs.matcher.MatchingVisualizer;
-import net.xqhs.graphs.pattern.EdgeP;
 import net.xqhs.graphs.pattern.GraphPattern;
-import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.util.logging.Log.Level;
 import net.xqhs.util.logging.Unit;
@@ -50,20 +44,23 @@ public class GraphMatcherTest
 		UnitComponent unit = (UnitComponent) new UnitComponent().setUnitName(unitName);
 		unit.lf("Hello World");
 		
-		String input = "";
-		input += "AIConf -> conftime;";
-		input += "conftime -isa> interval;";
-		input += "AIConf -> CFP;";
-		input += "CFP -isa> document;";
-		input += "CFP -contains> 050111;";
-		input += "050111 -isa> date;";
-		input += "CFP -contains> 300311;";
-		input += "300311 -isa> date;";
-		input += "AIConf -> 300311;";
-		input += "CFP -contains> conftime;";
+		String filedir = "playground/";
+		String filexext = ".txt";
+		String patternpart = "P";
+		
+		String filename = "conf";
+		
 		// input += "CFP -> AIConf;"; // not well supported by visual representation
-		SimpleGraph G = ((SimpleGraph) new SimpleGraph().setUnitName("G").setLogLevel(Level.INFO).setLink(unitName))
-				.readFrom(new ByteArrayInputStream(input.getBytes()));
+		SimpleGraph G;
+		try
+		{
+			G = ((SimpleGraph) new SimpleGraph().setUnitName("G").setLogLevel(Level.INFO).setLink(unitName))
+					.readFrom(new FileInputStream(filedir + filename + filexext));
+		} catch(FileNotFoundException e)
+		{
+			e.printStackTrace();
+			return;
+		}
 		unit.li(G.toString());
 		
 		TextGraphRepresentation GRT = (TextGraphRepresentation) new TextGraphRepresentation(G).setLayout("\n", "\t", 2)
@@ -71,31 +68,16 @@ public class GraphMatcherTest
 		GRT.update();
 		unit.li(GRT.displayRepresentation());
 		
-		GraphPattern GP = (GraphPattern) new GraphPattern().setUnitName("GP").setLogLevel(Level.INFO).setLink(unitName);
-		NodeP nConf = new NodeP();
-		NodeP nDeadline = new NodeP();
-		NodeP nCFP = new NodeP();
-		NodeP nArticle = new NodeP();
-		NodeP nConfType = new NodeP("conference");
-		NodeP nDocumentType = new NodeP("document");
-		NodeP nDateType = new NodeP("date");
-		GP.addNode(nConf);
-		GP.addNode(nDeadline);
-		GP.addNode(nCFP);
-		GP.addNode(nArticle);
-		GP.addNode(nConfType);
-		GP.addNode(nDocumentType);
-		GP.addNode(nDateType);
-		GP.addEdge(new EdgeP(nConf, nConfType, "isa"));
-		GP.addEdge(new EdgeP(nConf, nArticle, "article"));
-		GP.addEdge(new EdgeP(nConf, nCFP, "CFP"));
-		GP.addEdge(new EdgeP(nConf, nDeadline, "deadline"));
-		GP.addEdge(new EdgeP(nDeadline, nDateType, "isa"));
-		GP.addEdge(new EdgeP(nCFP, nDeadline, "contains"));
-		GP.addEdge(new EdgeP(nArticle, nDocumentType, "isa"));
-		GP.addEdge(new EdgeP(nCFP, nDocumentType, "isa"));
-		// GraphPattern GP = GraphPattern.readFrom(new ByteArrayInputStream(input2.getBytes()), new UnitConfigData("GP")
-		// .setLevel(Level.INFO).setLink(unitName));
+		GraphPattern GP;
+		try
+		{
+			GP = (GraphPattern) ((SimpleGraph) new GraphPattern().setUnitName("GP").setLogLevel(Level.INFO)
+					.setLink(unitName)).readFrom(new FileInputStream(filedir + filename + patternpart + filexext));
+		} catch(FileNotFoundException e)
+		{
+			e.printStackTrace();
+			return;
+		}
 		unit.li(GP.toString());
 		
 		TextGraphRepresentation GPRT = (TextGraphRepresentation) new TextGraphRepresentation(GP)
@@ -104,10 +86,13 @@ public class GraphMatcherTest
 		GPRT.update();
 		unit.li(GPRT.displayRepresentation());
 		
-		JFrame frame = new JFrame(unitName);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		GCanvas canvas = new GCanvas();
+		// JFrame frame = new JFrame(unitName);
+		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//
+		// GCanvas canvas = new GCanvas();
+		// canvas.setZoom(2);
+		// canvas.resetLook();
+		// frame.add(canvas);
 		
 		// GraphRepresentation GRG = (GraphRepresentation) new RadialGraphRepresentation(G)
 		// .setOrigin(new Point(-200, -100)).setBottomRight(new Point(-10, 100)).setCanvas(canvas)
@@ -118,17 +103,13 @@ public class GraphMatcherTest
 		// .setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Unit.DEFAULT_LEVEL);
 		// GPRG.update();
 		
-		canvas.setZoom(2);
-		canvas.resetLook();
-		frame.add(canvas);
-		
-		frame.setLocation(10, 30);
-		frame.setSize(1100, 700);
-		frame.setVisible(true);
+		// frame.setLocation(10, 30);
+		// frame.setSize(1100, 700);
+		// frame.setVisible(true);
 		
 		GraphMatcherQuick GMQ = ((GraphMatcherQuick) new GraphMatcherQuick(G, GP).setUnitName("matcher").setLogLevel(
 				Level.ALL));
-		GMQ.setVisual(new MatchingVisualizer().setCanvas(canvas).setTopLeft(new Point(-400, 0)));
+		// GMQ.setVisual(new MatchingVisualizer().setCanvas(canvas).setTopLeft(new Point(-400, 0)));
 		GMQ.doMatching();
 		
 		unit.doExit();

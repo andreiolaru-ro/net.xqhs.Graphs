@@ -60,6 +60,30 @@ public class SimpleEdge extends AbstractVisualizableGraphComponent implements Ed
 			((ConnectedNode) this.from).getOutEdges().add(this);
 	}
 	
+	/**
+	 * Removes the edge from the list of outgoing edges in the source node.
+	 * 
+	 * @return the edge itself.
+	 */
+	public SimpleEdge unlinkFrom()
+	{
+		if(this.from instanceof ConnectedNode && this.from != null)
+			((ConnectedNode) this.from).getOutEdges().remove(this);
+		return this;
+	}
+	
+	/**
+	 * Removes the edge from the list of incoming edges in the destination node.
+	 * 
+	 * @return the edge itself.
+	 */
+	public SimpleEdge unlinkTo()
+	{
+		if(this.to instanceof ConnectedNode && this.to != null)
+			((ConnectedNode) this.to).getInEdges().remove(this);
+		return this;
+	}
+	
 	@Override
 	public String getLabel()
 	{
