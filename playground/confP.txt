@@ -1,0 +1,8 @@
+?#1-isa>conference;
+?#1-deadline>?#2;
+?#1-article>?#4;
+?#1-CFP>?#3;
+?#3-contains>?#2;
+?#3-isa>document;
+?#4-isa>document;
+?#2-isa>date;

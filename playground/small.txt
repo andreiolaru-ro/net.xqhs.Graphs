@@ -1,0 +1,7 @@
+cembalo -alert> abele;
+cembalo -shoe> oropharynx;
+sphere -skreak> abele;
+sphere -copyedit> oropharynx;
+abele -alert> abele;
+cembalo -gelatinize> abele;
+cembalo -streak> cembalo;

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Copyright (C) 2013 Andrei Olaru.
+  
+  This file is part of net.xqhs.Graphs.
+  
+  net.xqhs.Graphs is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
+  
+  net.xqhs.Graphs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<project default="import" basedir = "../">
+
+	<!-- the directory where the project is, relative to the parent of the current project -->
+	<property name="import-directory" value="." />
+
+	<!-- the target for the current project -->
+	<target name="Config">
+		<copy file="../${import-directory}/Config/deploy/Config.jar" todir="lib/" />
+	</target>
+	
+	<target name="Logging" depends="Config">
+		<copy file="../${import-directory}/Logging/deploy/Logging.jar" todir="lib/" />
+		<copy file="../${import-directory}/Logging/deploy/log4j-1.2.16.jar" todir="lib/" />
+	</target>
+	
+	<target name="Gel" depends="Logging">
+		<copy file="../${import-directory}/net.xqhs.Gel/deploy/Gel.jar" todir="lib/" />
+	</target>
+
+	<target name="import" depends="Logging, Gel" />
+</project>

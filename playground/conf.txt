@@ -1,0 +1,10 @@
+AIConf -> conftime;
+conftime -isa> interval;
+AIConf -> CFP;
+CFP -isa> document;
+CFP -contains> 050111;
+050111 -isa> date;
+CFP -contains> 300311;
+300311 -isa> date;
+AIConf -> 300311;
+CFP -contains> conftime;

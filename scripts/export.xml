@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Copyright (C) 2013 Andrei Olaru.
+  
+  This file is part of net.xqhs.Graphs.
+  
+  net.xqhs.Graphs is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
+  
+  net.xqhs.Graphs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<project name="Graphs" default="complete-export" basedir="../">
+
+	<property name="packages" value="net.xqhs.graphs.*" />
+	<property name="project-name" value="${ant.project.name}" />
+	<property name="doc-access-level" value="private" />
+	<property name="java-version" value="1.7" />
+
+
+	<property name="libs.dir" location="lib" />
+	<path id="build.classpath">
+		<fileset dir="${libs.dir}"
+		         includes="**/*.jar"
+		         erroronmissingdir="false"
+		/>
+	</path>
+
+	<target name="javadoc">
+		<javadoc access="${doc-access-level}"
+		         author="true"
+		         classpath="."
+		         classpathref="build.classpath"
+		         destdir="doc-${project-name}"
+		         nodeprecated="false"
+		         nodeprecatedlist="false"
+		         noindex="false"
+		         nonavbar="false"
+		         notree="false"
+		         packagenames="${packages}"
+		         source="${java-version}"
+		         sourcepath="src"
+		         splitindex="false"
+		         use="true"
+		         version="true"
+		/>
+	</target>
+
+	<target name="pack">
+		<jar destfile="deploy/${project-name}.jar">
+			<fileset dir="bin" includes="net/" />
+			<fileset dir="." includes="src/,doc-${project-name}/,info-${project-name}/" />
+			<zipgroupfileset dir="." includes="lib/" />
+		</jar>
+	</target>
+
+	<target name="complete-export" depends="javadoc,pack" />
+
+</project>

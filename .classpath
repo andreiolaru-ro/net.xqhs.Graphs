@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="testing"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/Config.jar" sourcepath="lib/Config.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/net.xqhs.Graphs/lib/Config.jar!/doc-Config"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/Gel.jar" sourcepath="lib/Gel.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/net.xqhs.Graphs/lib/Gel.jar!/doc-Gel"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/Logging.jar" sourcepath="lib/Logging.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/net.xqhs.Graphs/lib/Logging.jar!/doc-Logging"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

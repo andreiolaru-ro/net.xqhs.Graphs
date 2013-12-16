@@ -1,0 +1,10 @@
+massine -misgauge> ?#2;
+?#1 -overdrive> beaner;
+?#1 -recuperate> cacique;
+?#2 -twit> omani;
+omani -complete> massine;
+cacique -prolong> pavane;
+massine -pack> cacique;
+omani -luxuriate> beaner;
+?#2 -shoe> cacique;
+?#1 -telex> omani;
