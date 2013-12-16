@@ -38,6 +38,10 @@ import net.xqhs.util.logging.Unit;
 /**
  * An algorithm that finds partial matches between a graph pattern GP (or G^P) and a graph (G). It implements the
  * {@link GraphMatcher} interface.
+ * <p>
+ * The algorithm has been published in: Andrei Olaru, Context Matching for Ambient Intelligence Applications,
+ * Proceedings of SYNASC 2013, 15th International Symposium on Symbolic and Numeric Algorithms for Scientific Computing,
+ * September 23-26, 2013 Timisoara, Romania, IEEE CPS, 2013.
  * 
  * @author Andrei Olaru
  */
