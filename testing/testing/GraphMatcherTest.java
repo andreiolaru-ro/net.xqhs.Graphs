@@ -11,14 +11,19 @@
  ******************************************************************************/
 package testing;
 
+import java.awt.Point;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import javax.swing.JFrame;
+
+import net.xqhs.graphical.GCanvas;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.matcher.GraphMatcherQuick;
+import net.xqhs.graphs.matcher.MatchingVisualizer;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
-import net.xqhs.util.logging.Log.Level;
+import net.xqhs.util.logging.Logger.Level;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitComponent;
 
@@ -48,7 +53,7 @@ public class GraphMatcherTest
 		String filexext = ".txt";
 		String patternpart = "P";
 		
-		String filename = "small";
+		String filename = "conf";
 		
 		SimpleGraph G;
 		try
@@ -85,13 +90,13 @@ public class GraphMatcherTest
 		GPRT.update();
 		unit.li(GPRT.displayRepresentation());
 		
-		// JFrame frame = new JFrame(unitName);
-		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//
-		// GCanvas canvas = new GCanvas();
-		// canvas.setZoom(2);
-		// canvas.resetLook();
-		// frame.add(canvas);
+		JFrame frame = new JFrame(unitName);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		GCanvas canvas = new GCanvas();
+		canvas.setZoom(2);
+		canvas.resetLook();
+		frame.add(canvas);
 		
 		// GraphRepresentation GRG = (GraphRepresentation) new RadialGraphRepresentation(G)
 		// .setOrigin(new Point(-200, -100)).setBottomRight(new Point(-10, 100)).setCanvas(canvas)
@@ -102,13 +107,13 @@ public class GraphMatcherTest
 		// .setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Unit.DEFAULT_LEVEL);
 		// GPRG.update();
 		
-		// frame.setLocation(10, 30);
-		// frame.setSize(1100, 700);
-		// frame.setVisible(true);
+		frame.setLocation(10, 30);
+		frame.setSize(1100, 700);
+		frame.setVisible(true);
 		
 		GraphMatcherQuick GMQ = ((GraphMatcherQuick) new GraphMatcherQuick(G, GP).setUnitName("matcher").setLogLevel(
 				Level.ALL));
-		// GMQ.setVisual(new MatchingVisualizer().setCanvas(canvas).setTopLeft(new Point(-400, 0)));
+		GMQ.setVisual(new MatchingVisualizer().setCanvas(canvas).setTopLeft(new Point(-400, 0)));
 		GMQ.doMatching();
 		
 		unit.doExit();

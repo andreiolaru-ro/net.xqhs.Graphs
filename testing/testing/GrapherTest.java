@@ -18,7 +18,7 @@ import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.graph.SimpleNode;
-import net.xqhs.util.logging.Log.Level;
+import net.xqhs.util.logging.Logger.Level;
 import net.xqhs.util.logging.UnitComponent;
 
 @SuppressWarnings("javadoc")
