@@ -67,8 +67,8 @@ public class SimpleGraph extends Unit implements Graph
 	public SimpleGraph()
 	{
 		super();
-		nodes = new HashSet<>();
-		edges = new HashSet<>();
+		nodes = new HashSet<Node>();
+		edges = new HashSet<Edge>();
 	}
 	
 	@Override
@@ -167,7 +167,7 @@ public class SimpleGraph extends Unit implements Graph
 	@Override
 	public Collection<Node> getNodesNamed(String name)
 	{
-		Collection<Node> ret = new HashSet<>();
+		Collection<Node> ret = new HashSet<Node>();
 		for(Node node : nodes)
 			if(node.getLabel().equals(name))
 				ret.add(node);
@@ -199,9 +199,9 @@ public class SimpleGraph extends Unit implements Graph
 			throw new IllegalArgumentException("node " + node + " is not in graph");
 		if(!(node instanceof ConnectedNode))
 			throw new IllegalArgumentException("node " + node + " is not a ConnectedNode");
-		Map<Node, Integer> dists = new HashMap<>();
-		Queue<ConnectedNode> grayNodes = new LinkedList<>();
-		Set<ConnectedNode> blackNodes = new HashSet<>();
+		Map<Node, Integer> dists = new HashMap<Node, Integer>();
+		Queue<ConnectedNode> grayNodes = new LinkedList<ConnectedNode>();
+		Set<ConnectedNode> blackNodes = new HashSet<ConnectedNode>();
 		grayNodes.add((ConnectedNode) node);
 		dists.put(node, new Integer(0));
 		
@@ -248,7 +248,7 @@ public class SimpleGraph extends Unit implements Graph
 	{
 		String ret = "";
 		ret += "G[" + n() + ", " + m() + "] ";
-		List<Node> list = new ArrayList<>(nodes);
+		List<Node> list = new ArrayList<Node>(nodes);
 		Collections.sort(list, new NodeAlphaComparator());
 		ret += list.toString();
 		for(Edge e : edges)
@@ -307,81 +307,79 @@ public class SimpleGraph extends Unit implements Graph
 	{
 		UnitComponent log = (UnitComponent) new UnitComponent().setLink(getUnitName());
 		// .setUnitName("test").setLogLevel(Level.ALL);
-		try (Scanner scan = new Scanner(input))
+		Scanner scan = new Scanner(input);
+		while(scan.hasNextLine())
 		{
-			while(scan.hasNextLine())
+			String line = scan.nextLine();
+			String edgeReads[] = line.split(";");
+			for(String edgeRead : edgeReads)
 			{
-				String line = scan.nextLine();
-				String edgeReads[] = line.split(";");
-				for(String edgeRead : edgeReads)
+				log.lf("new edge: " + edgeRead);
+				
+				String[] parts1 = edgeRead.split("-", 2);
+				if(parts1.length < 2)
 				{
-					log.lf("new edge: " + edgeRead);
-					
-					String[] parts1 = edgeRead.split("-", 2);
-					if(parts1.length < 2)
-					{
-						log.le("input corrupted");
-						continue;
-					}
-					String node1name = parts1[0].trim();
-					String node2name = null;
-					String edgeName = null;
-					boolean bidirectional = false;
-					String[] parts2 = parts1[1].split(">");
-					if((parts2.length < 1) || (parts2.length > 2))
-					{
-						log.le("input corrupted");
-						continue;
-					}
-					
-					Node node1 = null;
-					Node node2 = null;
-					
+					log.le("input corrupted");
+					continue;
+				}
+				String node1name = parts1[0].trim();
+				String node2name = null;
+				String edgeName = null;
+				boolean bidirectional = false;
+				String[] parts2 = parts1[1].split(">");
+				if((parts2.length < 1) || (parts2.length > 2))
+				{
+					log.le("input corrupted");
+					continue;
+				}
+				
+				Node node1 = null;
+				Node node2 = null;
+				
+				if(parts2.length == 2)
+				{
+					edgeName = parts2[0].trim();
+					node2name = parts2[1].trim();
+				}
+				else
+				{
+					bidirectional = true;
+					parts2 = parts1[1].split("-");
 					if(parts2.length == 2)
 					{
 						edgeName = parts2[0].trim();
 						node2name = parts2[1].trim();
 					}
 					else
-					{
-						bidirectional = true;
-						parts2 = parts1[1].split("-");
-						if(parts2.length == 2)
-						{
-							edgeName = parts2[0].trim();
-							node2name = parts2[1].trim();
-						}
-						else
-							node2name = parts2[0].trim();
-					}
-					if((edgeName != null) && (edgeName.length() == 0))
-						edgeName = null;
-					// log.trace("[" + parts1.toString() + "] [" + parts2.toString() + "]");
-					log.lf("[" + node1name + "] [" + node2name + "] [" + edgeName + "]");
-					
-					if(getNodesNamed(node1name).isEmpty())
-					{
-						node1 = new SimpleNode(node1name);
-						addNode(node1);
-					}
-					else
-						node1 = getNodesNamed(node1name).iterator().next();
-					
-					if(getNodesNamed(node2name).isEmpty())
-					{
-						node2 = new SimpleNode(node2name);
-						addNode(node2);
-					}
-					else
-						node2 = getNodesNamed(node2name).iterator().next();
-					
-					addEdge(new SimpleEdge(node1, node2, edgeName));
-					if(bidirectional)
-						addEdge(new SimpleEdge(node2, node1, edgeName));
+						node2name = parts2[0].trim();
 				}
+				if((edgeName != null) && (edgeName.length() == 0))
+					edgeName = null;
+				// log.trace("[" + parts1.toString() + "] [" + parts2.toString() + "]");
+				log.lf("[" + node1name + "] [" + node2name + "] [" + edgeName + "]");
+				
+				if(getNodesNamed(node1name).isEmpty())
+				{
+					node1 = new SimpleNode(node1name);
+					addNode(node1);
+				}
+				else
+					node1 = getNodesNamed(node1name).iterator().next();
+				
+				if(getNodesNamed(node2name).isEmpty())
+				{
+					node2 = new SimpleNode(node2name);
+					addNode(node2);
+				}
+				else
+					node2 = getNodesNamed(node2name).iterator().next();
+				
+				addEdge(new SimpleEdge(node1, node2, edgeName));
+				if(bidirectional)
+					addEdge(new SimpleEdge(node2, node1, edgeName));
 			}
-			
-			return this;
 		}
+		scan.close();
+		return this;
 	}
 }

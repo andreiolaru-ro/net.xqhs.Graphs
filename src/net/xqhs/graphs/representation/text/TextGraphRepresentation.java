@@ -80,7 +80,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	{
 		super.processGraph();
 		
-		Set<PathElement> blackNodes = new HashSet<>(); // contains all 'visited' nodes
+		Set<PathElement> blackNodes = new HashSet<PathElement>(); // contains all 'visited' nodes
 		TextRepresentationElement textRepresentation = new TextRepresentationElement(this, Type.ELEMENT_CONTAINER);
 		
 		boolean first = true;
@@ -104,11 +104,11 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	
 	protected List<TextRepresentationElement> buildTextChildren(PathElement el, int level, Set<PathElement> blackNodes)
 	{
-		List<TextRepresentationElement> ret = new LinkedList<>();
+		List<TextRepresentationElement> ret = new LinkedList<TextRepresentationElement>();
 		
 		int allchildren = el.getOtherChildren().size() + el.getChildren().size();
 		int remainingChildren = allchildren;
-		List<PathElement> others = new LinkedList<>(el.getOtherChildren());
+		List<PathElement> others = new LinkedList<PathElement>(el.getOtherChildren());
 		
 		for(PathElement child : el.getChildren())
 		{
@@ -222,7 +222,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	public Graph readRepresentation(String rawInput)
 	{
 		li("reading graph");
-		ContentHolder<String> input = new ContentHolder<>(rawInput);
+		ContentHolder<String> input = new ContentHolder<String>(rawInput);
 		
 		setBackwards(input.get().indexOf(Symbol.EDGE_ENDING_BACKWARD.toString()) >= 0);
 		theRepresentation = TextRepresentationElement.readRepresentation(input, this,
@@ -230,8 +230,8 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		lf("result:" + theRepresentation.toString() + "\n====================================");
 		
 		// start building the graph
-		Stack<Queue<TextRepresentationElement>> tree = new Stack<>();
-		Queue<TextRepresentationElement> cLevel = new LinkedList<>(), nLevel = null;
+		Stack<Queue<TextRepresentationElement>> tree = new Stack<Queue<TextRepresentationElement>>();
+		Queue<TextRepresentationElement> cLevel = new LinkedList<TextRepresentationElement>(), nLevel = null;
 		cLevel.add((TextRepresentationElement) theRepresentation);
 		tree.add(cLevel);
 		
@@ -253,7 +253,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 				case ELEMENT_CONTAINER:
 				case SUBGRAPH:
 					lf("inspecting [" + type + "]");
-					nLevel = new LinkedList<>();
+					nLevel = new LinkedList<TextRepresentationElement>();
 					nLevel.addAll(element.content);
 					tree.push(nLevel);
 					break;
@@ -264,7 +264,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					li("adding to graph node [" + node + "]");
 					theGraph.addNode(node);
 					
-					nLevel = new LinkedList<>();
+					nLevel = new LinkedList<TextRepresentationElement>();
 					tree.push(nLevel);
 					
 					// add edges
@@ -287,7 +287,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					SettableEdge edge = (SettableEdge) element.getRepresentedComponent();
 					lf("inspecting [" + type + "]: [" + edge + "]");
 					
-					nLevel = new LinkedList<>();
+					nLevel = new LinkedList<TextRepresentationElement>();
 					tree.push(nLevel);
 					Node targetNode = null;
 					TextRepresentationElement targetNodeEl = element.content.iterator().next();

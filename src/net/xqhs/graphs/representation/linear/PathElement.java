@@ -72,12 +72,12 @@ public class PathElement
 	/**
 	 * The (ordered) list of children ("own children") of the current element in the path.
 	 */
-	List<PathElement>	children		= new LinkedList<>();
+	List<PathElement>	children		= new LinkedList<PathElement>();
 	/**
 	 * The (ordered) list of nodes / elements that are connected to the node, but are not children of it in the current
 	 * path ("other children").
 	 */
-	List<PathElement>	otherChildren	= new LinkedList<>();
+	List<PathElement>	otherChildren	= new LinkedList<PathElement>();
 	
 	/**
 	 * Creates a new instance, associated with a {@link ConnectedNode} instance. The constructor requires the parent and

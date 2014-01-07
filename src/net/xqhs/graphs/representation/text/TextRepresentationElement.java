@@ -168,7 +168,7 @@ public class TextRepresentationElement extends RepresentationElement
 	{
 		super(root, representedElement);
 		
-		content = new LinkedList<>();
+		content = new LinkedList<TextRepresentationElement>();
 		
 		linkType = type;
 		nestingLevel = level;

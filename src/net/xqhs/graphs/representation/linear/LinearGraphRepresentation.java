@@ -143,7 +143,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 	{
 		super.processGraph();
 		
-		sortedNodes = new LinkedList<>(theGraph.getNodes());
+		sortedNodes = new LinkedList<Node>(theGraph.getNodes());
 		Collections.sort(sortedNodes, new NodeInAlphaComparator());
 		lf("sorted nodes: " + sortedNodes);
 		
@@ -174,8 +174,8 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 	 */
 	protected void buildPaths()
 	{
-		Queue<PathElement> grayNodes = new LinkedList<>();
-		Queue<PathElement> blackNodes = new LinkedList<>();
+		Queue<PathElement> grayNodes = new LinkedList<PathElement>();
+		Queue<PathElement> blackNodes = new LinkedList<PathElement>();
 		
 		while(blackNodes.size() < sortedNodes.size())
 		{
@@ -197,7 +197,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 				PathElement el = grayNodes.poll();
 				lf("taking element " + el);
 				// expand
-				List<Node> childSet = new LinkedList<>(isBackwards ? el.node.getInNodes() : el.node.getOutNodes());
+				List<Node> childSet = new LinkedList<Node>(isBackwards ? el.node.getInNodes() : el.node.getOutNodes());
 				Collections.sort(childSet, new NodeInAlphaComparator());
 				for(Node n1 : childSet)
 				{
@@ -294,7 +294,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 		
 		for(PathElement el : blackNodes)
 		{
-			Set<PathElement> marked = new HashSet<>();
+			Set<PathElement> marked = new HashSet<PathElement>();
 			for(PathElement oth : el.otherChildren)
 				if(!oth.pathContains(el) && (oth.parent != null) && (el.forwardLength > oth.parent.forwardLength))
 				// 1) if the other child is already having the element as ancestor, then it is already on the main path
@@ -324,7 +324,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 			Collections.sort(el.otherChildren, new PathComparator());
 			lf(el.toString() + ": " + el.children.toString() + " / " + el.otherChildren.toString());
 		}
-		paths = new LinkedList<>(blackNodes);
+		paths = new LinkedList<PathElement>(blackNodes);
 		Collections.sort(paths, new PathComparator());
 		
 		li("sort paths done");

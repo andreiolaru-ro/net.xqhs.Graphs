@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Copyright (C) 2013 Andrei Olaru.
+  
+  This file is part of net.xqhs.XML.
+  
+  net.xqhs.XML is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
+  
+  net.xqhs.XML is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License along with net.xqhs.XML.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<project name="net.xqhs.XML" default="build-java6" basedir="../">
+
+	<property name="src" value="src/" />
+	<property name="build" value="bin-java6/" />
+	<property name="build.sysclasspath" value="first" />
+	<path id="build.classpath">
+		<fileset dir="lib/">
+			<include name="*.jar" />
+			<exclude name="Logging-full.jar" />
+		</fileset>
+		<fileset dir="deploy/java6/">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="build-java6">
+		<javac srcdir="${src}"
+		       destdir="${build}"
+		       fork="true"
+		       source="1.6"
+		       target="1.6"
+		       classpathref="build.classpath"
+		/>
+	</target>
+
+</project>

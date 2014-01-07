@@ -163,16 +163,16 @@ public class Match
 		ConnectedNode ePFrom = (ConnectedNode) eP.getFrom();
 		ConnectedNode ePTo = (ConnectedNode) eP.getTo();
 		// node function
-		nodeFunction = new HashMap<>();
+		nodeFunction = new HashMap<Node, Node>();
 		nodeFunction.put(ePFrom, e.getFrom());
 		nodeFunction.put(ePTo, e.getTo());
 		// edge function
-		edgeFunction = new HashMap<>();
-		List<Edge> eL = new ArrayList<>();
+		edgeFunction = new HashMap<Edge, List<Edge>>();
+		List<Edge> eL = new ArrayList<Edge>();
 		eL.add(e);
 		edgeFunction.put(eP, eL);
 		// the frontier contains both nodes (if it is the case), with their adjacent edges minus the matched edge
-		frontier = new HashMap<>();
+		frontier = new HashMap<Node, AtomicInteger>();
 		if(ePFrom.getInEdges().size() + ePFrom.getOutEdges().size() > 1)
 			frontier.put(eP.getFrom(), new AtomicInteger(ePFrom.getInEdges().size() + ePFrom.getOutEdges().size() - 1));
 		if(ePTo.getInEdges().size() + ePTo.getOutEdges().size() > 1)
@@ -188,8 +188,8 @@ public class Match
 		k = unsolvedPart.getEdges().size();
 		
 		// no match candidates added; they will be added in addInitialMatches()
-		mergeCandidates = new TreeSet<>(new MatchComparator());
-		mergeOuterCandidates = new TreeSet<>(new MatchComparator());
+		mergeCandidates = new TreeSet<Match>(new MatchComparator());
+		mergeOuterCandidates = new TreeSet<Match>(new MatchComparator());
 		
 		this.id = id;
 	}
@@ -260,6 +260,17 @@ public class Match
 		return ret;
 	}
 	
+	/**
+	 * Creates a graphical representation of the match and displays it using the specified {@link GCanvas}.
+	 * 
+	 * @param canvas
+	 *            - the canvas to use for the representation.
+	 * @param topleft
+	 *            - the top left point for the representation, on the canvas.
+	 * @param bottomright
+	 *            - the bottom right point for the representation, on the canvas.
+	 * @return - the created representation.
+	 */
 	public GraphRepresentation toVisual(GCanvas canvas, Point topleft, Point bottomright)
 	{
 		int tw = bottomright.x - topleft.x;

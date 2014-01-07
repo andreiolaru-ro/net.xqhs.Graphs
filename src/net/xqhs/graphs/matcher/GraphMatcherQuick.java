@@ -16,6 +16,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
@@ -65,6 +66,9 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		 */
 		private Map<Node, Integer>	distances				= null;
 		
+		/**
+		 * Link to the object measuring performance of the algorithm in terms of number of compared edges.
+		 */
 		private AtomicInteger		performanceEdgesLink	= null;
 		
 		/**
@@ -78,6 +82,9 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		 * Creates a match comparator that uses distances of vertices with respect to the root vertex.
 		 * 
 		 * @param distances
+		 *            - {@link Map} of distances between nodes and the start vertex.
+		 * @param performanceEdges
+		 *            - the object measuring performance in terms of edge matches.
 		 */
 		protected MatchComparator(Map<Node, Integer> distances, AtomicInteger performanceEdges)
 		{
@@ -122,7 +129,13 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 	 */
 	MatchingVisualizer	visual	= null;
 	
+	/**
+	 * Measures performance of the algorithm in terms of compared nodes.
+	 */
 	AtomicInteger		performanceNodes;
+	/**
+	 * Measures performance of the algorithm in terms of compared adge lables and references.
+	 */
 	AtomicInteger		performanceEdges;
 	
 	/**
@@ -179,7 +192,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		
 		Comparator<Match> matchComparator = new MatchComparator(distances, performanceEdges);
 		
-		PriorityQueue<Match> matchQueue = new PriorityQueue<>(1, matchComparator);
+		PriorityQueue<Match> matchQueue = new PriorityQueue<Match>(1, matchComparator);
 		
 		addInitialMatches(matchQueue, matchComparator);
 		
@@ -245,7 +258,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		 * 
 		 * Other criteria assure that the sorting will always be the same.
 		 */
-		SortedSet<Node> vertexSet = new TreeSet<>(new Comparator<Node>() {
+		SortedSet<Node> vertexSet = new TreeSet<Node>(new Comparator<Node>() {
 			@Override
 			public int compare(Node n1, Node n2)
 			{
@@ -325,13 +338,13 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		/**
 		 * Ordered pattern edges, according to label.
 		 */
-		SortedSet<Edge> sortedEdges = new TreeSet<>(edgeComparator);
+		SortedSet<Edge> sortedEdges = new TreeSet<Edge>(edgeComparator);
 		sortedEdges.addAll(pattern.getEdges());
 		
 		/**
 		 * Ordered graph edges, according to label.
 		 */
-		SortedSet<Edge> sortedGraphEdges = new TreeSet<>(edgeComparator);
+		SortedSet<Edge> sortedGraphEdges = new TreeSet<Edge>(edgeComparator);
 		sortedGraphEdges.addAll(graph.getEdges());
 		
 		// for each edge in the pattern, create an id and build a match.
@@ -447,8 +460,8 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 			boolean reject = false;
 			// reject if: the two matches intersect (contain common pattern edges
 			performanceEdges.incrementAndGet();
-			if(new HashSet<>(m.solvedPart.getEdges()).removeAll(mi.solvedPart.getEdges())
-					|| new HashSet<>(m.matchedGraph.getEdges()).removeAll(mi.matchedGraph.getEdges()))
+			if(new HashSet<Edge>(m.solvedPart.getEdges()).removeAll(mi.solvedPart.getEdges())
+					|| new HashSet<Edge>(m.matchedGraph.getEdges()).removeAll(mi.matchedGraph.getEdges()))
 				reject = true;
 			else
 				// build merge candidates
@@ -528,15 +541,16 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		newM.unsolvedPart.getNodes().addAll(pt.getNodes());
 		newM.k = newM.unsolvedPart.getEdges().size();
 		
-		Set<Edge> totalMatch = new HashSet<>(); // there should be no duplicates as the solved parts should be disjoint.
+		Set<Edge> totalMatch = new HashSet<Edge>(); // there should be no duplicates as the solved parts should be
+													// disjoint.
 		totalMatch.addAll(m1.solvedPart.getEdges());
 		totalMatch.addAll(m2.solvedPart.getEdges());
 		
 		newM.solvedPart = new GraphPattern();
-		newM.nodeFunction = new HashMap<>();
-		newM.edgeFunction = new HashMap<>();
+		newM.nodeFunction = new HashMap<Node, Node>();
+		newM.edgeFunction = new HashMap<Edge, List<Edge>>();
 		newM.matchedGraph = new SimpleGraph();
-		newM.frontier = new HashMap<>();
+		newM.frontier = new HashMap<Node, AtomicInteger>();
 		for(Edge eP : totalMatch)
 		{
 			performanceEdges.incrementAndGet();
@@ -593,9 +607,9 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		}
 		// merge candidates: MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
 		// common merge candidates, and candidates of each match that were outer candidates for the other match
-		newM.mergeCandidates = new HashSet<>(m1.mergeCandidates);
-		Set<Match> partB = new HashSet<>(m1.mergeCandidates);
-		Set<Match> partC = new HashSet<>(m2.mergeCandidates);
+		newM.mergeCandidates = new HashSet<Match>(m1.mergeCandidates);
+		Set<Match> partB = new HashSet<Match>(m1.mergeCandidates);
+		Set<Match> partC = new HashSet<Match>(m2.mergeCandidates);
 		newM.mergeCandidates.retainAll(m2.mergeCandidates);
 		partB.retainAll(m2.mergeOuterCandidates);
 		partC.retainAll(m1.mergeOuterCandidates);
@@ -603,7 +617,7 @@ public class GraphMatcherQuick extends Unit implements GraphMatcher
 		newM.mergeCandidates.addAll(partC);
 		
 		// merge outer candidates: common outer candidates: MO = MO1 n MO2
-		newM.mergeOuterCandidates = new HashSet<>(m1.mergeOuterCandidates);
+		newM.mergeOuterCandidates = new HashSet<Match>(m1.mergeOuterCandidates);
 		newM.mergeOuterCandidates.retainAll(m2.mergeOuterCandidates);
 		
 		performanceEdges.addAndGet(m1.mergeCandidates.size() + m2.mergeCandidates.size()

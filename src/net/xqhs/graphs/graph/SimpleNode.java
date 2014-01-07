@@ -47,14 +47,14 @@ public class SimpleNode extends AbstractVisualizableGraphComponent implements Co
 	public SimpleNode(String nodeLabel)
 	{
 		this.label = nodeLabel;
-		this.outEdges = new HashSet<>();
-		this.inEdges = new HashSet<>();
+		this.outEdges = new HashSet<Edge>();
+		this.inEdges = new HashSet<Edge>();
 	}
 	
 	@Override
 	public Set<Node> getOutNodes()
 	{
-		Set<Node> ret = new HashSet<>();
+		Set<Node> ret = new HashSet<Node>();
 		for(Edge e : outEdges)
 			ret.add(e.getTo());
 		return ret;
@@ -63,7 +63,7 @@ public class SimpleNode extends AbstractVisualizableGraphComponent implements Co
 	@Override
 	public Set<Node> getInNodes()
 	{
-		Set<Node> ret = new HashSet<>();
+		Set<Node> ret = new HashSet<Node>();
 		for(Edge e : inEdges)
 			ret.add(e.getFrom());
 		return ret;
@@ -90,7 +90,7 @@ public class SimpleNode extends AbstractVisualizableGraphComponent implements Co
 	@Override
 	public Set<Edge> getEdgesTo(Node outNode)
 	{
-		Set<Edge> ret = new HashSet<>();
+		Set<Edge> ret = new HashSet<Edge>();
 		for(Edge e : outEdges)
 			if(e.getTo() == outNode)
 				ret.add(e);
@@ -100,7 +100,7 @@ public class SimpleNode extends AbstractVisualizableGraphComponent implements Co
 	@Override
 	public Set<Edge> getEdgesFrom(Node inNode)
 	{
-		Set<Edge> ret = new HashSet<>();
+		Set<Edge> ret = new HashSet<Edge>();
 		for(Edge e : inEdges)
 			if(e.getFrom() == inNode)
 				ret.add(e);

@@ -57,6 +57,9 @@ public class MatchingVisualizer extends Unit
 	 */
 	float	lineSpacing	= .2f;
 	
+	/**
+	 * Size of the font to use for writing.
+	 */
 	int		fontSize	= 20;
 	
 	/**
@@ -92,30 +95,76 @@ public class MatchingVisualizer extends Unit
 		return this;
 	}
 	
+	/**
+	 * Outputs a line of the matching process visualization to the canvas, consisting of only one match, also adding the
+	 * specified comment.
+	 * 
+	 * @param m1
+	 *            - the match.
+	 * @param comment
+	 *            - the comment.
+	 * @return - the instance itself.
+	 */
 	public MatchingVisualizer feedLine(Match m1, String comment)
 	{
-		List<Match> ms = new ArrayList<>(1);
+		List<Match> ms = new ArrayList<Match>(1);
 		ms.add(m1);
 		return feedLine(ms, comment);
 	}
 	
+	/**
+	 * Outputs a line of the matching process visualization to the canvas, consisting of two matches, also adding the
+	 * specified comment.
+	 * 
+	 * @param m1
+	 *            - the first match.
+	 * @param m2
+	 *            - the second match.
+	 * @param comment
+	 *            - the comment.
+	 * @return - the instance itself.
+	 */
 	public MatchingVisualizer feedLine(Match m1, Match m2, String comment)
 	{
-		List<Match> ms = new ArrayList<>(2);
+		List<Match> ms = new ArrayList<Match>(2);
 		ms.add(m1);
 		ms.add(m2);
 		return feedLine(ms, comment);
 	}
 	
+	/**
+	 * Outputs a line of the matching process visualization to the canvas, consisting of three match, also adding the
+	 * specified comment.
+	 * 
+	 * @param m1
+	 *            - the first match.
+	 * @param m2
+	 *            - the second match.
+	 * @param m3
+	 *            - the third match.
+	 * @param comment
+	 *            - the comment.
+	 * @return - the instance itself.
+	 */
 	public MatchingVisualizer feedLine(Match m1, Match m2, Match m3, String comment)
 	{
-		List<Match> ms = new ArrayList<>(3);
+		List<Match> ms = new ArrayList<Match>(3);
 		ms.add(m1);
 		ms.add(m2);
 		ms.add(m3);
 		return feedLine(ms, comment);
 	}
 	
+	/**
+	 * Outputs a line of the matching process visualization to the canvas, also adding the specified comment.
+	 * 
+	 * @param ms
+	 *            - matches to add to the visualization.
+	 * @param comment
+	 *            - comment to add to the visualization.
+	 * @return the instance itself.
+	 */
+	@SuppressWarnings("null")
 	public MatchingVisualizer feedLine(List<Match> ms, String comment)
 	{
 		GraphRepresentation lastrepr = null;

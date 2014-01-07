@@ -87,8 +87,8 @@ public class GraphPattern extends SimpleGraph
 	{
 		super.readFrom(input);
 		
-		Set<Node> additions = new HashSet<>();
-		Set<Node> removals = new HashSet<>();
+		Set<Node> additions = new HashSet<Node>();
+		Set<Node> removals = new HashSet<Node>();
 		for(Node node : nodes)
 			if(node.getLabel().startsWith("?#"))
 			{
@@ -114,8 +114,7 @@ public class GraphPattern extends SimpleGraph
 						// FIXME: totally unsafe - there may be other implementations of edge. setFrom/setTo advised?
 					}
 				}
-				else
-					; // TODO: iterate over all edges
+				// else // TODO: iterate over all edges
 			}
 		nodes.removeAll(removals);
 		for(Node node : additions)

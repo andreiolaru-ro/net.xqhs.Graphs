@@ -27,7 +27,7 @@ public abstract class AbstractVisualizableGraphComponent implements Visualizable
 	/**
 	 * The set of elements representing this component.
 	 */
-	protected Set<RepresentationElement>	representations	= new HashSet<>();
+	protected Set<RepresentationElement>	representations	= new HashSet<RepresentationElement>();
 	
 	@Override
 	public void addRepresentation(RepresentationElement repr)
@@ -53,7 +53,7 @@ public abstract class AbstractVisualizableGraphComponent implements Visualizable
 	@Override
 	public Collection<RepresentationElement> getRepresentationsForRoot(GraphRepresentation root)
 	{
-		Collection<RepresentationElement> ret = new HashSet<>();
+		Collection<RepresentationElement> ret = new HashSet<RepresentationElement>();
 		for(RepresentationElement repr : representations)
 			if(repr.getParentRepresentation() == root)
 				ret.add(repr);
