@@ -11,7 +11,14 @@
  ******************************************************************************/
 package net.xqhs.graphs.matcher;
 
+/**
+ * Interface for any implementation that is able to match two graphs.
+ * <p>
+ * Currently it doesn't specify any methods.
+ * 
+ * @author Andrei Olaru
+ */
 public interface GraphMatcher
 {
-	
+	// nothing yet
 }

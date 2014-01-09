@@ -28,10 +28,36 @@ import net.xqhs.graphs.representation.GraphRepresentation;
 import net.xqhs.graphs.representation.RepresentationElement;
 import net.xqhs.graphs.representation.VisualizableGraphComponent;
 
+/**
+ * Extension of {@link RepresentationElement} for graphical representations.
+ * <p>
+ * Each graph component (as a {@link VisualizableGraphComponent} corresponds to a Gel {@link GElement}, which usually
+ * also has a {@link GLabel}.
+ * 
+ * @author Andrei Olaru
+ */
 public class GraphicalRepresentationElement extends RepresentationElement
 {
+	/**
+	 * The type of the representation.
+	 * 
+	 * @author Andrei Olaru
+	 */
 	enum Type {
-		NODE, EDGE, ELEMENT_CONTAINER
+		/**
+		 * The representation corresponds to a graph node and has as central element a default {@link GElement}.
+		 */
+		NODE,
+		
+		/**
+		 * The representation corresponds to a graph edge, and has as central element a {@link GConnector}.
+		 */
+		EDGE,
+		
+		/**
+		 * The representation corresponds to whole graph, that is contained in a {@link GContainer}.
+		 */
+		ELEMENT_CONTAINER
 	}
 	
 	enum EdgeType {
