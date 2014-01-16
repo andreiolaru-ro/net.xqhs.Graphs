@@ -53,7 +53,7 @@ public class GraphMatcherTest
 		String filexext = ".txt";
 		String patternpart = "P";
 		
-		String filename = "conf";
+		String filename = "Emily";
 		
 		SimpleGraph G;
 		try
