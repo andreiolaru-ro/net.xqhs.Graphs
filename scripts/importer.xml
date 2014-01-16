@@ -17,11 +17,11 @@
 
 	<!-- the target for the current project -->
 	<target name="Config">
-		<copy file="../${import-directory}/Config/deploy/Config.jar" todir="lib/" />
+		<copy file="../${import-directory}/Config/deploy/java6/Config.jar" todir="lib/" />
 	</target>
 	
 	<target name="Logging" depends="Config">
-		<copy file="../${import-directory}/Logging/deploy/Logging.jar" todir="lib/" />
+		<copy file="../${import-directory}/Logging/deploy/java6/Logging.jar" todir="lib/" />
 		<copy file="../${import-directory}/Logging/deploy/log4j-1.2.16.jar" todir="lib/" />
 	</target>
 	
