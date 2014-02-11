@@ -63,15 +63,15 @@ public abstract class GraphRepresentationImplementation extends Unit implements 
 	 * This constructor creates the link with the {@link Graph} instance that this representation will be bound to
 	 * throughout its lifecycle.
 	 * 
-	 * @param thegraph
+	 * @param graph
 	 *            : the represented graph.
 	 */
-	public GraphRepresentationImplementation(Graph thegraph)
+	public GraphRepresentationImplementation(Graph graph)
 	{
 		super();
-		if(thegraph == null)
+		if(graph == null)
 			throw new IllegalArgumentException("the graph cannot be null");
-		this.theGraph = thegraph;
+		theGraph = graph;
 	}
 	
 	@Override
@@ -91,7 +91,8 @@ public abstract class GraphRepresentationImplementation extends Unit implements 
 	@Override
 	public GraphRepresentationImplementation setParentRepresentation(GraphRepresentation parent)
 	{
-		locked();
+		if(lockedR())
+			return null;
 		if(parent != null)
 			parentRepresentation = parent;
 		return this;

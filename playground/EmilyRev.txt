@@ -1,0 +1,3 @@
+go shopping<-contains-schedule<-Emily;
+87<-is-*Emily;
+Entry Hall<-is-in-*Emily

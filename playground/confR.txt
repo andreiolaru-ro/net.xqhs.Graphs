@@ -1,0 +1,8 @@
+AIConf
+	(->CFP
+		(-contains->300311-isa->date)
+		(-contains->conftime-isa->interval)
+		(-contains->050111-isa->*date)
+		-isa->document)
+	(->*300311)
+	->*conftime

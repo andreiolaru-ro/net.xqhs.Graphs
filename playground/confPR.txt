@@ -1,0 +1,7 @@
+?#1
+	(-CFP->?#3
+		(-contains->?#2-isa->date)
+		-isa->document)
+	(-deadline->*?#2)
+	(-article->?#4-isa->*document)
+	-isa->conference

@@ -23,7 +23,7 @@ import net.xqhs.graphs.matcher.GraphMatcherQuick;
 import net.xqhs.graphs.matcher.MatchingVisualizer;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
-import net.xqhs.util.logging.Logger.Level;
+import net.xqhs.util.logging.LoggerSimple.Level;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitComponent;
 

@@ -53,13 +53,28 @@ import net.xqhs.util.logging.UnitComponent;
 public class SimpleGraph extends Unit implements Graph
 {
 	/**
+	 * Separator between edges.
+	 */
+	public static char	EDGE_SEPARATOR	= ';';
+	/**
+	 * Character that marks the beginning and end of an edge. Edge labels may contain this character, but node labels
+	 * may not. At the destination end of the edge it may be replaced by {@link #EDGE_TARGET}. In case of bi-directional
+	 * unlabeled edges, the representation of an edge may contain only one character.
+	 */
+	public static char	EDGE_LINE		= '-';
+	/**
+	 * Character that marks the destination end of an oriented edge.
+	 */
+	public static char	EDGE_TARGET		= '>';
+	
+	/**
 	 * The nodes
 	 */
-	protected Set<Node>	nodes	= null;
+	protected Set<Node>	nodes			= null;
 	/**
 	 * The edges
 	 */
-	protected Set<Edge>	edges	= null;
+	protected Set<Edge>	edges			= null;
 	
 	/**
 	 * Creates an empty graph.
@@ -296,7 +311,19 @@ public class SimpleGraph extends Unit implements Graph
 	
 	/**
 	 * Reads the structure of the graph as list of edges, adding all nodes appearing in the definition of edges.
-	 * <p>
+	 * <ul>
+	 * <li>lines will always be read separately
+	 * <li>multiple edges are read from the same line, if they are separated by a semi-column (;)
+	 * <li>node names cannot have dashes or 'greater' (>)
+	 * <li>edge names cannot have 'greater' (>)
+	 * <li>a labeled edge begins with a dash (-)
+	 * <li>a unidirectional edge ends with dash-greater or just greater (-> or >)
+	 * <li>an unlabeled unidirectional edge is either dash-greater or just greater (-> or >)
+	 * <li>all unidirectional edges are to the right (source -> destination)
+	 * <li>bi-directional edges with no label should be one or two dashes (- or --)
+	 * <li>labeled bi-directional edges should begin and end with a dash ( - label here - )
+	 * <li>all spaces between elements are accepted and ignored
+	 * </ul>
 	 * The newly read edges and nodes are added on the existing structure, if any.
 	 * 
 	 * @param input
@@ -311,23 +338,30 @@ public class SimpleGraph extends Unit implements Graph
 		while(scan.hasNextLine())
 		{
 			String line = scan.nextLine();
-			String edgeReads[] = line.split(";");
-			for(String edgeRead : edgeReads)
+			String edgeReads[] = line.split(Character.toString(EDGE_SEPARATOR));
+			for(String edgeRead : edgeReads) // each element is an edge
 			{
 				log.lf("new edge: " + edgeRead);
 				
-				String[] parts1 = edgeRead.split("-", 2);
-				if(parts1.length < 2)
+				boolean bidirectional = true;
+				
+				String[] parts1 = edgeRead.split(Character.toString(EDGE_LINE), 2); // identify first dash (beginning of
+																					// edge)
+				if(parts1.length < 2) // two parts: source node and edge name+destination node
 				{
-					log.le("input corrupted");
-					continue;
+					parts1 = edgeRead.split(Character.toString(EDGE_TARGET), 2);
+					if(parts1.length < 2)
+					{
+						log.le("input corrupted");
+						continue;
+					}
+					bidirectional = false;
 				}
-				String node1name = parts1[0].trim();
+				String node1name = parts1[0].trim(); // source node
 				String node2name = null;
 				String edgeName = null;
-				boolean bidirectional = false;
-				String[] parts2 = parts1[1].split(">");
-				if((parts2.length < 1) || (parts2.length > 2))
+				String[] parts2 = parts1[1].split(Character.toString(EDGE_TARGET)); // split destination node from edge
+				if((parts2.length < 1) || (parts2.length > 2)) // no appearance or 1 appearance
 				{
 					log.le("input corrupted");
 					continue;
@@ -336,22 +370,25 @@ public class SimpleGraph extends Unit implements Graph
 				Node node1 = null;
 				Node node2 = null;
 				
-				if(parts2.length == 2)
+				if(parts2.length == 2) // unidirectional edge
 				{
-					edgeName = parts2[0].trim();
+					bidirectional = false;
 					node2name = parts2[1].trim();
+					if((parts2[0].length() > 0) && (parts2[0].charAt(parts2[0].length() - 1) == '-'))
+						edgeName = parts2[0].substring(0, parts2[0].length() - 1).trim();
+					else
+						edgeName = parts2[0].trim();
 				}
 				else
 				{
-					bidirectional = true;
-					parts2 = parts1[1].split("-");
-					if(parts2.length == 2)
-					{
-						edgeName = parts2[0].trim();
-						node2name = parts2[1].trim();
-					}
-					else
+					int idx = parts1[1].lastIndexOf(EDGE_LINE);
+					if(idx < 0) // edge is just '-' (the one detected earlier)
 						node2name = parts2[0].trim();
+					else
+					{ // there is another dash somewhere that marks the end of the edge name
+						node2name = parts1[1].substring(idx + 1).trim();
+						edgeName = parts1[1].substring(0, idx).trim();
+					}
 				}
 				if((edgeName != null) && (edgeName.length() == 0))
 					edgeName = null;

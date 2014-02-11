@@ -14,8 +14,11 @@
  */
 /**
  * Contains classes for representing graphs in a textual manner, with help from a linearization process.
+ * <p>
+ * See {@link net.xqhs.graphs.representation.text.TextGraphRepresentation}.
  * 
  * @author Andrei Olaru
  *
  */
 package net.xqhs.graphs.representation.text;
+

@@ -86,16 +86,16 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 	/**
 	 * Builds a new {@link LinearGraphRepresentation} for the specified graph.
 	 * 
-	 * @param theGraph
+	 * @param graph
 	 *            : the graph
 	 */
-	public LinearGraphRepresentation(Graph theGraph)
+	public LinearGraphRepresentation(Graph graph)
 	{
-		super(theGraph);
+		super(graph);
 	}
 	
 	/**
-	 * Sets the instace to be 'backwards'. See the documentation of <code>setBackwards(boolean)</code>.
+	 * Sets the instance to be 'backwards'. See {@link #setBackwards(boolean)}.
 	 * 
 	 * @return the updated instance.
 	 */
@@ -128,6 +128,16 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 		return this;
 	}
 	
+	/**
+	 * Returns the 'backwards' state of the representation. See {@link #setBackwards(boolean)}.
+	 * 
+	 * @return <code>true</code> if the representation is 'backwards'.
+	 */
+	public boolean isBackwards()
+	{
+		return isBackwards;
+	}
+	
 	@Override
 	protected String setDefaultName(String name)
 	{
@@ -136,7 +146,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 	
 	/**
 	 * Processing the graph actually relies on building the paths, after obtaining a sorted list of the nodes in the
-	 * graph (using {@link NodeInAlphaComparator}).
+	 * graph (using {@link NodeInAlphaComparator}). See {@link #buildPaths()}.
 	 */
 	@Override
 	protected void processGraph()

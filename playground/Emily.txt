@@ -1,2 +1,4 @@
-Wallet -is-on-> Emily;
-Emily -is-in-> Entry Hall
+Emily -is-in> Entry Hall;
+Emily -is> 87;
+Emily -> schedule;
+schedule -contains> go shopping;  
