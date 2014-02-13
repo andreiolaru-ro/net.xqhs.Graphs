@@ -13,9 +13,11 @@
  * 
  */
 /**
- * This package contains the definition of the GraphMatcher interface and the GraphMatcherQuick implementation.
+ * This package contains the definition of the {@link net.xqhs.graphs.matcher.GraphMatcher} interface and the 
+ * {@link net.xqhs.graphs.matcher.GraphMatcherQuick} implementation.
  * 
  * @author Andrei Olaru
  *
  */
 package net.xqhs.graphs.matcher;
+

@@ -20,9 +20,13 @@ import javax.swing.JFrame;
 import net.xqhs.graphical.GCanvas;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.matcher.GraphMatcherQuick;
+import net.xqhs.graphs.matcher.GraphMatchingProcess;
+import net.xqhs.graphs.matcher.Match;
 import net.xqhs.graphs.matcher.MatchingVisualizer;
+import net.xqhs.graphs.matcher.MonitorPack;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
+import net.xqhs.util.logging.LoggerSimple;
 import net.xqhs.util.logging.LoggerSimple.Level;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitComponent;
@@ -46,14 +50,15 @@ public class GraphMatcherTest
 	 */
 	public static void main(String[] args)
 	{
-		UnitComponent unit = (UnitComponent) new UnitComponent().setUnitName(unitName);
-		unit.lf("Hello World");
+		UnitComponent log = (UnitComponent) new UnitComponent().setUnitName(unitName).setLogLevel(Level.ALL);
+		log.lf("Hello World");
 		
 		String filedir = "playground/";
 		String filexext = ".txt";
 		String patternpart = "P";
+		boolean visual = false;
 		
-		String filename = "Emily";
+		String filename = "conf";
 		
 		SimpleGraph G;
 		try
@@ -65,12 +70,12 @@ public class GraphMatcherTest
 			e.printStackTrace();
 			return;
 		}
-		unit.li(G.toString());
+		log.li(G.toString());
 		
 		TextGraphRepresentation GRT = (TextGraphRepresentation) new TextGraphRepresentation(G).setLayout("\n", "\t", 2)
 				.setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Level.ERROR);
 		GRT.update();
-		unit.li(GRT.displayRepresentation());
+		log.li(GRT.displayRepresentation());
 		
 		GraphPattern GP;
 		try
@@ -82,40 +87,58 @@ public class GraphMatcherTest
 			e.printStackTrace();
 			return;
 		}
-		unit.li(GP.toString());
+		log.li(GP.toString());
 		
 		TextGraphRepresentation GPRT = (TextGraphRepresentation) new TextGraphRepresentation(GP)
 				.setLayout("\n", "\t", 2).setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName)
 				.setLogLevel(Level.ERROR);
 		GPRT.update();
-		unit.li(GPRT.displayRepresentation());
+		log.li(GPRT.displayRepresentation());
 		
 		JFrame frame = new JFrame(unitName);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		GCanvas canvas = new GCanvas();
-		canvas.setZoom(2);
-		canvas.resetLook();
-		frame.add(canvas);
+		GCanvas canvas = null;
+		if(visual)
+		{
+			canvas = new GCanvas();
+			canvas.setZoom(2);
+			canvas.resetLook();
+			frame.add(canvas);
+			frame.setLocation(10, 30);
+			frame.setSize(1100, 700);
+			frame.setVisible(true);
+		}
 		
-		// GraphRepresentation GRG = (GraphRepresentation) new RadialGraphRepresentation(G)
-		// .setOrigin(new Point(-200, -100)).setBottomRight(new Point(-10, 100)).setCanvas(canvas)
-		// .setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Unit.DEFAULT_LEVEL);
-		// GRG.update();
-		// GraphRepresentation GPRG = (GraphRepresentation) new RadialGraphRepresentation(GP)
-		// .setOrigin(new Point(10, -100)).setBottomRight(new Point(200, 100)).setCanvas(canvas)
-		// .setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Unit.DEFAULT_LEVEL);
-		// GPRG.update();
+		MonitorPack monitoring = new MonitorPack().setLog((LoggerSimple) new UnitComponent().setUnitName("matcher")
+				.setLogLevel(Level.INFO));
+		if(visual)
+			monitoring.setVisual(new MatchingVisualizer().setCanvas(canvas).setTopLeft(new Point(-400, 0)));
+		GraphMatchingProcess GMQ = GraphMatcherQuick.getMatcher(G, GP, monitoring);
+		GMQ.resetIterator(4);
+		while(true)
+		{
+			Match m = GMQ.getNextMatch();
+			if(m == null)
+				break;
+			log.li("============== new match\n[]", m);
+		}
+		monitoring.printStats();
+		log.li("===============================================");
+		GMQ.resetIterator(3);
+		while(true)
+		{
+			Match m = GMQ.getNextMatch();
+			if(m == null)
+				break;
+			log.li("============== new match\n[]", m);
+		}
+		monitoring.printStats();
+		log.li("===============================================");
+		// GMQ.clearData();
+		log.li(GMQ.getAllMatches(3).toString()); // is a long line
+		monitoring.printStats();
 		
-		frame.setLocation(10, 30);
-		frame.setSize(1100, 700);
-		frame.setVisible(true);
-		
-		GraphMatcherQuick GMQ = ((GraphMatcherQuick) new GraphMatcherQuick(G, GP).setUnitName("matcher").setLogLevel(
-				Level.ALL));
-		GMQ.setVisual(new MatchingVisualizer().setCanvas(canvas).setTopLeft(new Point(-400, 0)));
-		GMQ.doMatching();
-		
-		unit.doExit();
+		log.doExit();
 	}
 }

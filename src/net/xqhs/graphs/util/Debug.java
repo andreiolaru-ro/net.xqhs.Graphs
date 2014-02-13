@@ -11,20 +11,48 @@
  ******************************************************************************/
 package net.xqhs.graphs.util;
 
-import net.xqhs.util.logging.Debug.DebugItem;
-
-public class Debug
+/**
+ * Debug items for
+ * 
+ * @author Andrei Olaru
+ */
+public class Debug extends net.xqhs.util.logging.Debug
 {
+	/**
+	 * Debug items for graphs and graph matching.
+	 * 
+	 * @author Andrei Olaru
+	 */
 	public static enum D_G implements DebugItem {
 		
+		/**
+		 * Debug for the initial matching process.
+		 */
 		D_MATCHING_INITIAL(false),
 		
+		/**
+		 * Debug for the progress of incremental matching.
+		 */
+		D_MATCHING_PROGRESS(false),
+		
+		/**
+		 * Debug item for the current issue at hand.
+		 */
 		D_CURRENT(true),
 		
 		;
 		
+		/**
+		 * Activation state.
+		 */
 		boolean	isset;
 		
+		/**
+		 * Constructor.
+		 * 
+		 * @param set
+		 *            - activation state.
+		 */
 		private D_G(boolean set)
 		{
 			isset = set;

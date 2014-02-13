@@ -9,16 +9,12 @@
  * 
  * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
-package net.xqhs.graphs.matcher;
-
 /**
- * Interface for any implementation that is able to match two graphs.
- * <p>
- * Currently it doesn't specify any methods.
+ * 
+ */
+/**
+ * The package contains classes and interfaces related to context representation, context patterns, and context matching.
  * 
  * @author Andrei Olaru
  */
-public interface GraphMatcher
-{
-	// nothing yet
-}
+package net.xqhs.graphs.context;
