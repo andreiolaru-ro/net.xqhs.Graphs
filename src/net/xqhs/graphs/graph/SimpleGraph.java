@@ -30,25 +30,19 @@ import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitComponent;
 
 /**
- * <p>
  * Represents a directed graph, using {@link Node} and {@link Edge} elements.
- * 
  * <p>
  * Functions that modify the graph return the graph itself, so that chained calls are possible.
- * 
  * <p>
  * This class should only be used as a data structure. Visualization should happen elsewhere (for instance, in
  * {@link LinearGraphRepresentation}.
- * 
  * <p>
  * Currently only supports adding of new nodes and edges, as well as reading from / writing to simple formats.
- * 
  * <p>
- * Warning: if a graph contains the edge, id does not necessarily contain any of the nodes of the edge. It may be that
+ * Warning: if a graph contains the edge, it does not necessarily contain any of the nodes of the edge. It may be that
  * the nodes have not been added to the graph. This is because this graph may be a subgraph of a larger graph.
  * 
  * @author Andrei Olaru
- * 
  */
 public class SimpleGraph extends Unit implements Graph
 {

@@ -83,6 +83,16 @@ public class TextRepresentationElement extends RepresentationElement
 	 */
 	public enum Symbol {
 		/**
+		 * Symbol that marks the beginning of a container element (i.e. of a graph).
+		 */
+		ELEMENT_CONTAINER_IN("["),
+		
+		/**
+		 * Symbol that marks the ending of a container element (i.e. of a graph).
+		 */
+		ELEMENT_CONTAINER_OUT("]"),
+		
+		/**
 		 * Separator between the representations of two subgraphs.
 		 */
 		SUBGRAPH_SEPARATOR(";"),
@@ -391,13 +401,16 @@ public class TextRepresentationElement extends RepresentationElement
 			displayedIndent = "";
 			displayedIndentIncrement = "";
 		}
-		if(!isOnlyChild && linkType != Type.NODE)
+		if(!isOnlyChild && (linkType != Type.NODE) && (linkType != Type.ELEMENT_CONTAINER)
+				&& ((linkType != Type.SUBGRAPH) || !isFirstSubgraph))
 			ret += displayedIndent;
 		if((linkType != Type.ELEMENT_CONTAINER) && (content.size() > 1))
 			displayedIndent += displayedIndentIncrement;
 		if(isEdgeType(linkType))
 			nextIndentLimit = indentLimit - 1;
 		
+		if(linkType == Type.ELEMENT_CONTAINER)
+			ret += Symbol.ELEMENT_CONTAINER_IN;
 		if(isEdgeType(linkType) && !isOnlyChild && !isLastChild)
 			ret += Symbol.BRANCH_IN;
 		
@@ -417,8 +430,13 @@ public class TextRepresentationElement extends RepresentationElement
 			ret += Symbol.INTERNAL_LINK_PREFIX;
 		
 		if(linkType == Type.NODE)
-			// appropriate use of toString() as nodes may have various representations
-			ret += getRepresentedComponent().toString();
+		{ // appropriate use of toString() as nodes may have various representations
+			String rendition = getRepresentedComponent().toString();
+			// if(getRepresentedComponent() instanceof HyperNode)
+			// ret += rendition + ;
+			// else
+			ret += rendition;
+		}
 		
 		if(content != null)
 			for(TextRepresentationElement el : content)
@@ -426,6 +444,8 @@ public class TextRepresentationElement extends RepresentationElement
 		
 		if(isEdgeType(linkType) && !isOnlyChild && !isLastChild)
 			ret += Symbol.BRANCH_OUT;
+		if(linkType == Type.ELEMENT_CONTAINER)
+			ret += Symbol.ELEMENT_CONTAINER_OUT;
 		
 		return ret;
 	}

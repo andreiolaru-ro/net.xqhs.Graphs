@@ -30,7 +30,6 @@ import net.xqhs.graphs.graph.SimpleGraph;
  * <p>
  * 
  * @author Andrei Olaru
- * 
  */
 public class GraphPattern extends SimpleGraph
 {

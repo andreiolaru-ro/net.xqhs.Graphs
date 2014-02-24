@@ -14,15 +14,28 @@ package testing;
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 import java.util.Random;
 
+import javax.swing.JFrame;
+
 import net.xqhs.graphs.graph.ConnectedNode;
+import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.HyperGraph;
+import net.xqhs.graphs.graph.HyperNode;
+import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.graph.SimpleNode;
+import net.xqhs.graphs.representation.graphical.GraphicalGraphRepresentation;
+import net.xqhs.graphs.representation.graphical.RadialGraphRepresentation;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.util.logging.LoggerSimple.Level;
 import net.xqhs.util.logging.Unit;
@@ -34,9 +47,6 @@ public class GrapherTest
 	private static String			unitName	= "grapherTestMain";
 	private static UnitComponent	log;
 	
-	@SuppressWarnings("unused")
-	private static String			testDir		= "playground/graphplay/";
-	
 	/**
 	 * @throws IOException
 	 *             if file not found or other IO exceptions.
@@ -46,64 +56,28 @@ public class GrapherTest
 		log = (UnitComponent) new UnitComponent().setUnitName(unitName).setLogLevel(Level.ALL);
 		log.lf("Hello World");
 		
-		testTextRepresentation();
+		// testTextRepresentation();
 		
 		// testSelfReading();
 		
-		// testGraphTextReading("ConfP");
+		// testGraphTextReading("Emily/EmilyP");
 		
 		// testTextRepresentationReading("test");
 		
 		// G3RT.update(); // log.li(G3RT.displayRepresentation());
 		
-		// GraphicalGraphRepresentation.GraphConfig configX = new GraphicalGraphRepresentation.GraphConfig(G3);
-		// configX.setBackwards().setName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLevel(Level.li);
-		// GraphicalGraphRepresentation G3RX = new GraphicalGraphRepresentation(configX);
-		// log.li(G3RX.displayRepresentation());
-		//
-		// String containers[] = { "AdministrationContainer", "RoomContainer", "AliceContainer" };
-		// Map<Node, Node> agentLevel = new HashMap<Graph.Node, Graph.Node>();
-		// for(Edge edge : G3.getEdges())
-		// if(edge.getName() == "resides-on")
-		// agentLevel.put(edge.getFrom(), edge.getTo());
-		// Map<Node, Node> containersLevel = new HashMap<Graph.Node, Graph.Node>();
-		// for(String containerName : containers)
-		// containersLevel.put(G3.getNodesNamed(containerName).iterator().next(), null);
-		// LinkedList<Map<Node, Node>> levels = new LinkedList<Map<Node, Node>>();
-		// levels.add(agentLevel);
-		// levels.add(containersLevel);
-		// MultilevelGraphRepresentation G3R = new TextMultilevelGraphRepresentation(G3, levels, null);
-		// log.li("\n\n" + G3R.toString() + "\n");
-		//
-		// JFrame acc = new JFrame(unitName);
-		// acc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// acc.setLocation(100, 100);
-		// acc.setSize(800, 500);
-		// acc.add(G3RX.displayRepresentation());
-		// acc.setVisible(true);
+		// testGraphicalContainerGraph(false);
 		
-		//
+		testHyperGraphs();
 		
-		// transform linear representation files into .dot files
-		// String files[] = new String[] { "alice", "aliceP", "conf", "confP", "book", "bookP" };
-		// String extension_in = ".txt";
-		// String extension_out = ".dot.txt";
-		// for(String file : files)
-		// {
-		// Graph graph = TextGraphRepresentation.readRepresentation(FileUtils.fileToString(testDir + file
-		// + extension_in)); // , null, new
-		// // UnitConfigData().setName(Unit.DEFAULT_UNIT_NAME).setLevel(Level.ALL));
-		// TextGraphRepresentation graphR = new TextGraphRepresentation(
-		// new TextGraphRepresentation.GraphConfig(graph).setLayout("\n", "\t", 5));
-		// log.li("\n\n" + graph.toString() + "\n");
-		// log.li("\n\n" + graphR.toString() + "\n");
-		// FileUtils.stringToFile(testDir + file + extension_out, graph.toDot());
-		// }
+		// testMultilevelRepresentation();
+		
+		// testDotConversion(new String[] { "alice", "aliceP", "conf", "confP", "book", "bookP" });
 		
 		log.doExit();
 	}
 	
-	// @SuppressWarnings("unused")
+	@SuppressWarnings("unused")
 	private static void testTextRepresentation()
 	{
 		// generate graph
@@ -290,21 +264,27 @@ public class GrapherTest
 			// expect 6 nodes and 11 edges (3 uni-, 4 bi-directional)
 			break;
 		case 3:
-			input = "";
-			input += "UniversityUPMCAgent -resides-on> AdministrationContainer;";
-			input += "SchedulerUPMCAgent -resides-on> AdministrationContainer;";
-			input += "CourseCSAgent -resides-on> AdministrationContainer;";
-			input += "Room04Agent -resides-on> RoomContainer;";
-			input += "AliceAgent -resides-on> AliceContainer;";
-			input += "Room04Agent-has-parent>UniversityUPMCAgent;";
-			input += "AliceAgent -has-parent> CourseCSAgent;";
-			input += "CourseCSAgent -has-parent> UniversityUPMCAgent;";
-			input += "CourseCSAgent -has-parent> Room04Agent;";
-			input += "SchedulerUPMCAgent -has-parent> UniversityUPMCAgent;";
+			input = getUPMCTest();
 			break;
 		}
 		
 		testGraphTextReading(new ByteArrayInputStream(input.getBytes()));
+	}
+	
+	private static String getUPMCTest()
+	{
+		String input = "";
+		input += "UniversityUPMCAgent -resides-on> AdministrationContainer;";
+		input += "SchedulerUPMCAgent -resides-on> AdministrationContainer;";
+		input += "CourseCSAgent -resides-on> AdministrationContainer;";
+		input += "Room04Agent -resides-on> RoomContainer;";
+		input += "AliceAgent -resides-on> AliceContainer;";
+		input += "Room04Agent-has-parent>UniversityUPMCAgent;";
+		input += "AliceAgent -has-parent> CourseCSAgent;";
+		input += "CourseCSAgent -has-parent> UniversityUPMCAgent;";
+		input += "CourseCSAgent -has-parent> Room04Agent;";
+		input += "SchedulerUPMCAgent -has-parent> UniversityUPMCAgent;";
+		return input;
 	}
 	
 	@SuppressWarnings("unused")
@@ -331,7 +311,7 @@ public class GrapherTest
 	@SuppressWarnings("unused")
 	private static void testTextRepresentationReading(String filename)
 	{
-		String filedir = "playground/";
+		String filedir = "playground/IOTesting/";
 		String filexext = ".txt";
 		
 		Graph G;
@@ -350,5 +330,95 @@ public class GrapherTest
 		TextGraphRepresentation GR = (TextGraphRepresentation) new TextGraphRepresentation(G).setLayout("\n", "\t", -1)
 				.update();
 		log.li("\n\n [] \n", GR.toString());
+	}
+	
+	@SuppressWarnings("unused")
+	private static void testGraphicalContainerGraph(boolean useRadial)
+	{
+		Graph G3 = new SimpleGraph().readFrom(new ByteArrayInputStream(getUPMCTest().getBytes()));
+		log.li(G3.toString());
+		log.li(new TextGraphRepresentation(G3).setLayout("\n", "\t", -1).setBackwards().update().toString());
+		
+		GraphicalGraphRepresentation G3RX = null;
+		if(!useRadial)
+			G3RX = new GraphicalGraphRepresentation(G3);
+		else
+			G3RX = new RadialGraphRepresentation(G3);
+		
+		G3RX.setBackwards().setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Level.ALL);
+		
+		JFrame acc = new JFrame(unitName);
+		acc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		acc.setLocation(100, 100);
+		acc.setSize(800, 500);
+		acc.add(((GraphicalGraphRepresentation) G3RX.update()).displayRepresentation());
+		acc.setVisible(true);
+	}
+	
+	@SuppressWarnings("unused")
+	private static void testHyperGraphs()
+	{
+		Node emily = new SimpleNode("Emily");
+		Node room1 = new SimpleNode("Room1");
+		Node room2 = new SimpleNode("Room2");
+		Node hn1 = new HyperNode(new SimpleGraph().addNode(emily).addNode(room1)
+				.addEdge(new SimpleEdge(emily, room1, "is-in")));
+		Node hn2 = new HyperNode(new SimpleGraph().addNode(emily).addNode(room2)
+				.addEdge(new SimpleEdge(emily, room2, "is-in")));
+		Graph HG = new HyperGraph().addNode(hn1).addNode(hn2).addEdge(new SimpleEdge(hn1, hn2, null));
+		
+		TextGraphRepresentation HGR = new TextGraphRepresentation(HG).setLayout("\n", "\t", -1);
+		HGR.update();
+		log.li(HGR.toString());
+	}
+	
+	@SuppressWarnings("unused")
+	private static void testMultilevelRepresentation()
+	{
+		Graph G3 = new SimpleGraph().readFrom(new ByteArrayInputStream(getUPMCTest().getBytes()));
+		log.li(new TextGraphRepresentation(G3).setLayout("\n", "\t", -1).setBackwards().update().toString());
+		
+		String containers[] = { "AdministrationContainer", "RoomContainer", "AliceContainer" };
+		Map<Node, Node> agentLevel = new HashMap<Node, Node>();
+		for(Edge edge : G3.getEdges())
+			if(edge.getLabel().equals("resides-on"))
+				agentLevel.put(edge.getFrom(), edge.getTo());
+		Map<Node, Node> containersLevel = new HashMap<Node, Node>();
+		for(String containerName : containers)
+			containersLevel.put(G3.getNodesNamed(containerName).iterator().next(), null);
+		LinkedList<Map<Node, Node>> levels = new LinkedList<Map<Node, Node>>();
+		levels.add(agentLevel);
+		levels.add(containersLevel);
+		// MultilevelGraphRepresentation G3R = new TextMultilevelGraphRepresentation(G3, levels, null);
+		// log.li("\n\n" + G3R.toString() + "\n");
+	}
+
+	@SuppressWarnings("unused")
+	private static void testDotConversion(String files[])
+	{
+		// transform linear representation files into .dot files
+		String extension_in = ".txt";
+		String extension_out = ".dot.txt";
+		String testDir = "/playground";
+		for(String file : files)
+		{
+			TextGraphRepresentation graphR = new TextGraphRepresentation(new SimpleGraph());
+			try
+			{
+				InputStream is = new FileInputStream(testDir + file + extension_in);
+				SimpleGraph graph = (SimpleGraph) graphR.readRepresentation(is);
+				is.close();
+				graphR.setLayout("\n", "\t", 5);
+				log.li("\n\n" + graph.toString() + "\n");
+				log.li("\n\n" + graphR.toString() + "\n");
+				OutputStream os = new FileOutputStream(testDir + file + extension_out, false);
+				os.write(graph.toDot().getBytes());
+				os.close();
+			} catch(IOException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		
 	}
 }

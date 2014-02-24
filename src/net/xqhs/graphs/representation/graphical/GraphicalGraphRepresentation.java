@@ -29,35 +29,76 @@ import net.xqhs.graphs.representation.graphical.GraphicalRepresentationElement.T
 import net.xqhs.graphs.representation.linear.LinearGraphRepresentation;
 import net.xqhs.graphs.representation.linear.PathElement;
 
+/**
+ * Graphical representation for a {@link Graph} that relies on {@link LinearGraphRepresentation} to create a tree of
+ * paths and then displays the tree of paths.
+ * <p>
+ * It relies on {@link GCanvas} and the <code>Gel</code> framework for the graphical display.
+ * <p>
+ * Currently not supporting links in the same path very well.
+ * 
+ * @author Andrei Olaru
+ */
 public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 {
+	/**
+	 * The canvas in which the graph will be displayed.
+	 */
 	GCanvas	canvas;
+	/**
+	 * Top left corner of the representation, in the canvas.
+	 */
 	Point2D	topleft;
+	/**
+	 * Bottom right corner of the representation, in the canvas.
+	 */
 	Point2D	bottomright;
 	
+	/**
+	 * Creates a new representation, based on the specified graph.
+	 * 
+	 * @param theGraph
+	 *            - the {@link Graph} instance to be represented.
+	 */
 	public GraphicalGraphRepresentation(Graph theGraph)
 	{
 		super(theGraph);
 	}
 	
+	/**
+	 * Sets a new {@link GCanvas} as a canvas for the representation, and sets the representation to be represented in a
+	 * 200 units square centered in the origin of the canvas.
+	 */
 	@Override
 	public GraphicalGraphRepresentation makeDefaults()
 	{
 		super.makeDefaults();
 		setCanvas(new GCanvas());
-		topleft = new Point2D.Float(-100, -100); // FIXME: the names are totally misleading
-		bottomright = new Point2D.Float(100, 100); // FIXME: the names are totally misleading
-		return this;
-	}
-	
-	public GraphicalGraphRepresentation setCanvas(GCanvas canvas)
-	{
-		this.canvas = canvas;
+		topleft = new Point2D.Float(-100, -100);
+		bottomright = new Point2D.Float(100, 100);
 		return this;
 	}
 	
 	/**
-	 * The origin of the rectangle for this representation, on the GCanvas
+	 * Configures the representation to use the specified canvas. By default, a new canvas is used.
+	 * 
+	 * @param representationCanvas
+	 *            - the {@link GCanvas} instance. If the argument is <code>null</code>, the call will be ignored.
+	 * @return the instance itself.
+	 */
+	public GraphicalGraphRepresentation setCanvas(GCanvas representationCanvas)
+	{
+		if(representationCanvas != null)
+			canvas = representationCanvas;
+		return this;
+	}
+	
+	/**
+	 * Sets the origin of the rectangle for this representation, on the GCanvas.
+	 * 
+	 * @param origin
+	 *            - the origin (top left corner - the minimum x and y in the representation).
+	 * @return the instance itself.
 	 */
 	public GraphicalGraphRepresentation setOrigin(Point2D origin)
 	{
@@ -65,6 +106,13 @@ public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 		return this;
 	}
 	
+	/**
+	 * Sets the size of the representation, by means of the bottom right corner.
+	 * 
+	 * @param bottomRight
+	 *            - the bottom right corner - the maximum x and y in the representation).
+	 * @return the instance itself.
+	 */
 	public GraphicalGraphRepresentation setBottomRight(Point2D bottomRight)
 	{
 		this.bottomright = bottomRight;
@@ -77,15 +125,20 @@ public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 		return super.setDefaultName(name) + "X";
 	}
 	
+	/**
+	 * Calculates the graph paths and creates the layout.
+	 */
 	@Override
 	protected void processGraph()
 	{
 		super.processGraph(); // calculates paths
 		
 		Set<PathElement> blackNodes = new HashSet<PathElement>();
+		// root element
 		GraphicalRepresentationElement representation = new GraphicalRepresentationElement(this, null,
 				Type.ELEMENT_CONTAINER);
 		
+		// add not yet added elements, together with their children.
 		for(PathElement el : paths)
 			if(!blackNodes.contains(el))
 				representation.connected.add(representChildren(el, blackNodes));

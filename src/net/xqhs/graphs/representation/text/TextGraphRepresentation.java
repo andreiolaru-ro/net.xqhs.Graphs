@@ -25,6 +25,7 @@ import java.util.Stack;
 
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.HyperNode;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.pattern.NodeP;
@@ -212,6 +213,25 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					Type.BRANCH, level, !(remainingChildren > 0), (allchildren == 1));
 			TextRepresentationElement reprNode = new TextRepresentationElement(this,
 					(VisualizableGraphComponent) child.getNode(), Type.NODE);
+			if(child.getNode() instanceof HyperNode)
+			{
+				TextRepresentationElement textRepresentation = new TextRepresentationElement(this,
+						Type.ELEMENT_CONTAINER);
+				boolean first = true;
+				for(PathElement elsub : paths)
+					if(!blackNodes.contains(elsub))
+					{
+						TextRepresentationElement nodeRepr = new TextRepresentationElement(this,
+								(VisualizableGraphComponent) elsub.getNode(), Type.NODE);
+						blackNodes.add(elsub);
+						nodeRepr.addSub(buildTextChildren(elsub, 1, blackNodes));
+						
+						TextRepresentationElement repr = new TextRepresentationElement(this, Type.SUBGRAPH, first);
+						repr.addSub(nodeRepr);
+						textRepresentation.addSub(repr);
+						first = false;
+					}
+			}
 			blackNodes.add(child);
 			reprEdge.addSub(reprNode);
 			reprNode.addSub(buildTextChildren(child, level + 1, blackNodes));
