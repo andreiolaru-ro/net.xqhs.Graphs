@@ -14,11 +14,9 @@ package net.xqhs.graphs.graph;
 /**
  * Interface for a simple, labeled, directed edge, characterized by its source and destination nodes.
  * 
- * 
  * @author Andrei Olaru
- * 
  */
-public interface Edge
+public interface Edge extends GraphComponent
 {
 	/**
 	 * If in need of a readable rendition of the edge's features, use the <code>toString</code> functions.

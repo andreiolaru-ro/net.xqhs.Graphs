@@ -22,9 +22,7 @@ import java.util.Collection;
  * Warning: depending on implementation, a {@link Graph} instance may not check if all edges have sources and
  * destinations inside the graph.
  * 
- * 
  * @author Andrei Olaru
- * 
  */
 public interface Graph
 {

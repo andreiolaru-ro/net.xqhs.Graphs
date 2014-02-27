@@ -14,11 +14,9 @@ package net.xqhs.graphs.graph;
 /**
  * Interface for a simple, labeled graph node.
  * 
- * 
  * @author Andrei Olaru
- *
  */
-public interface Node
+public interface Node extends GraphComponent
 {
 	/**
 	 * If in need of a readable rendition of the node's features, use the <code>toString</code> function.
