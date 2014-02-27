@@ -41,7 +41,7 @@ import net.xqhs.graphs.util.Debug.D_G;
  * <p>
  * Most of the methods in this implementation are <code>public static</code>, so as to be used easily in other classes.
  * <p>
- * In order to evaluate the performance and to visualize the process, a {@link MonitorPack} instance is used thourghout
+ * In order to evaluate the performance and to visualize the process, a {@link MonitorPack} instance is used throughout
  * the code.
  * <p>
  * All matches generated in the matching process are retained throughout the life of the instance. They can be cleared
@@ -813,15 +813,19 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	}
 	
 	/**
-	 * Returns a newly created {@link GraphMatcherQuick} instance for the psecified graph and pattern.
+	 * Returns a newly created {@link GraphMatcherQuick} instance for the specified graph and pattern.
 	 * 
 	 * @param graph
 	 *            - the graph.
 	 * @param pattern
 	 *            - the pattern.
 	 * @param monitoring
-	 *            - the monitoring instance.
+	 *            - the monitoring instance. It must not be <code>null</code> but it can be a newly created instance
+	 *            with no configuration.
 	 * @return the {@link GraphMatcherQuick} instance.
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if the <code>monitoring</code> argument is <code>null</code>.
 	 */
 	public static GraphMatcherQuick getMatcher(Graph graph, GraphPattern pattern, MonitorPack monitoring)
 	{
