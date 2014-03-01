@@ -24,7 +24,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import net.xqhs.graphical.GCanvas;
 import net.xqhs.graphical.GConnector;
 import net.xqhs.graphical.GElement;
-import net.xqhs.graphs.graph.ConnectedNode;
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.Node;
@@ -160,8 +159,8 @@ public class Match
 		solvedPart = (GraphPattern) new GraphPattern().addNode(eP.getFrom(), false).addNode(eP.getTo(), false)
 				.addEdge(eP);
 		// TODO: check casts
-		ConnectedNode ePFrom = (ConnectedNode) eP.getFrom();
-		ConnectedNode ePTo = (ConnectedNode) eP.getTo();
+		Node ePFrom = eP.getFrom();
+		Node ePTo = eP.getTo();
 		// node function
 		nodeFunction = new HashMap<Node, Node>();
 		nodeFunction.put(ePFrom, e.getFrom());
@@ -173,10 +172,11 @@ public class Match
 		edgeFunction.put(eP, eL);
 		// the frontier contains both nodes (if it is the case), with their adjacent edges minus the matched edge
 		frontier = new HashMap<Node, AtomicInteger>();
-		if(ePFrom.getInEdges().size() + ePFrom.getOutEdges().size() > 1)
-			frontier.put(eP.getFrom(), new AtomicInteger(ePFrom.getInEdges().size() + ePFrom.getOutEdges().size() - 1));
-		if(ePTo.getInEdges().size() + ePTo.getOutEdges().size() > 1)
-			frontier.put(eP.getTo(), new AtomicInteger(ePTo.getInEdges().size() + ePTo.getOutEdges().size() - 1));
+		if(g.getInEdges(ePFrom).size() + g.getOutEdges(ePFrom).size() > 1)
+			frontier.put(eP.getFrom(),
+					new AtomicInteger(g.getInEdges(ePFrom).size() + g.getOutEdges(ePFrom).size() - 1));
+		if(g.getInEdges(ePTo).size() + g.getOutEdges(ePTo).size() > 1)
+			frontier.put(eP.getTo(), new AtomicInteger(g.getInEdges(ePTo).size() + g.getOutEdges(ePTo).size() - 1));
 		// unsolved part (all nodes and edges except the matched ones)
 		unsolvedPart = new GraphPattern();
 		for(Node vP : p.getNodes())

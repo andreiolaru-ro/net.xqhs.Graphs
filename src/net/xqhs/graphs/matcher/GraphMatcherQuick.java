@@ -25,7 +25,6 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import net.xqhs.graphs.graph.ConnectedNode;
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.Node;
@@ -352,7 +351,7 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	 *            - the monitoring instance.
 	 * @return the distance map.
 	 */
-	public static Map<Node, Integer> computeVertexDistances(GraphPattern pattern, final MonitorPack monitor)
+	public static Map<Node, Integer> computeVertexDistances(final GraphPattern pattern, final MonitorPack monitor)
 	{
 		/**
 		 * Vertices ordered by out-degree (minus in-degree) (first is greatest).
@@ -363,14 +362,11 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 			@Override
 			public int compare(Node n1, Node n2)
 			{
-				if(n1 instanceof ConnectedNode && n2 instanceof ConnectedNode)
-				{
-					monitor.incrementNodeReferenceOperation();
-					int out1 = ((ConnectedNode) n1).getOutEdges().size() - ((ConnectedNode) n1).getInEdges().size();
-					int out2 = ((ConnectedNode) n2).getOutEdges().size() - ((ConnectedNode) n2).getInEdges().size();
-					if(out1 != out2)
-						return -(out1 - out2);
-				}
+				monitor.incrementNodeReferenceOperation();
+				int out1 = pattern.getOutEdges(n1).size() - pattern.getInEdges(n1).size();
+				int out2 = pattern.getOutEdges(n2).size() - pattern.getInEdges(n2).size();
+				if(out1 != out2)
+					return -(out1 - out2);
 				if(n1 instanceof NodeP && n2 instanceof NodeP)
 				{
 					monitor.incrementNodeReferenceOperation();
@@ -779,8 +775,10 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 				else
 					newM.frontier.put(eP.getFrom(), fromIndex);
 			else
-				newM.frontier.put(eP.getFrom(), new AtomicInteger(((ConnectedNode) eP.getFrom()).getInEdges().size()
-						+ ((ConnectedNode) eP.getFrom()).getOutEdges().size() - 1));
+				newM.frontier
+						.put(eP.getFrom(),
+								new AtomicInteger(pt.getInEdges(eP.getFrom()).size()
+										+ pt.getOutEdges(eP.getFrom()).size() - 1));
 			AtomicInteger toIndex = newM.frontier.get(eP.getTo());
 			if(toIndex != null)
 				if(toIndex.decrementAndGet() == 0)
@@ -788,8 +786,8 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 				else
 					newM.frontier.put(eP.getTo(), toIndex);
 			else
-				newM.frontier.put(eP.getTo(), new AtomicInteger(((ConnectedNode) eP.getTo()).getInEdges().size()
-						+ ((ConnectedNode) eP.getTo()).getOutEdges().size() - 1));
+				newM.frontier.put(eP.getTo(),
+						new AtomicInteger(pt.getInEdges(eP.getTo()).size() + pt.getOutEdges(eP.getTo()).size() - 1));
 		}
 		// merge candidates: MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
 		// common merge candidates, and candidates of each match that were outer candidates for the other match

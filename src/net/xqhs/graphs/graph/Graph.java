@@ -80,6 +80,24 @@ public interface Graph
 	public Collection<Edge> getEdges();
 	
 	/**
+	 * Retrieves the edges outgoing from the specified node.
+	 * 
+	 * @param node
+	 *            - the node.
+	 * @return the edges outgoing from the node.
+	 */
+	public Collection<Edge> getOutEdges(Node node);
+	
+	/**
+	 * Retrieves the edges going into the specified node.
+	 * 
+	 * @param node
+	 *            - the node.
+	 * @return the edges going into the node.
+	 */
+	public Collection<Edge> getInEdges(Node node);
+	
+	/**
 	 * @param node
 	 *            - the {@link Node} to search for
 	 * @return <code>true</code> if the node is contained in the graph

@@ -11,32 +11,21 @@
  ******************************************************************************/
 package net.xqhs.graphs.graph;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import net.xqhs.graphs.representation.AbstractVisualizableGraphComponent;
 
 /**
- * A simple implementation of the {@link Node} and {@link ConnectedNode} interfaces, also inheriting functionality from
+ * A simple implementation of the {@link Node} interface, also inheriting functionality from
  * {@link AbstractVisualizableGraphComponent}.
  * 
  * @author Andrei Olaru
  * 
  */
-public class SimpleNode extends AbstractVisualizableGraphComponent implements ConnectedNode
+public class SimpleNode extends AbstractVisualizableGraphComponent implements Node
 {
 	/**
 	 * The label of the node
 	 */
-	protected String	label		= null;
-	/**
-	 * The set of outgoing edges. It will be updated when adjacent edges are added.
-	 */
-	protected Set<Edge>	outEdges	= null;
-	/**
-	 * The set of incoming edges. It will be updated when adjacent edges are added.
-	 */
-	protected Set<Edge>	inEdges		= null;
+	protected String	label	= null;
 	
 	/**
 	 * Constructs a new node with the specified label and empty edge adjacency lists - representing an unconnected node.
@@ -47,64 +36,12 @@ public class SimpleNode extends AbstractVisualizableGraphComponent implements Co
 	public SimpleNode(String nodeLabel)
 	{
 		this.label = nodeLabel;
-		this.outEdges = new HashSet<Edge>();
-		this.inEdges = new HashSet<Edge>();
-	}
-	
-	@Override
-	public Set<Node> getOutNodes()
-	{
-		Set<Node> ret = new HashSet<Node>();
-		for(Edge e : outEdges)
-			ret.add(e.getTo());
-		return ret;
-	}
-	
-	@Override
-	public Set<Node> getInNodes()
-	{
-		Set<Node> ret = new HashSet<Node>();
-		for(Edge e : inEdges)
-			ret.add(e.getFrom());
-		return ret;
 	}
 	
 	@Override
 	public String getLabel()
 	{
 		return label;
-	}
-	
-	@Override
-	public Set<Edge> getOutEdges()
-	{
-		return outEdges;
-	}
-	
-	@Override
-	public Set<Edge> getInEdges()
-	{
-		return inEdges;
-	}
-	
-	@Override
-	public Set<Edge> getEdgesTo(Node outNode)
-	{
-		Set<Edge> ret = new HashSet<Edge>();
-		for(Edge e : outEdges)
-			if(e.getTo() == outNode)
-				ret.add(e);
-		return ret;
-	}
-	
-	@Override
-	public Set<Edge> getEdgesFrom(Node inNode)
-	{
-		Set<Edge> ret = new HashSet<Edge>();
-		for(Edge e : inEdges)
-			if(e.getFrom() == inNode)
-				ret.add(e);
-		return ret;
 	}
 	
 	@Override

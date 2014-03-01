@@ -15,7 +15,6 @@ import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.xqhs.graphs.graph.ConnectedNode;
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleEdge;
@@ -71,7 +70,7 @@ public class GraphPattern extends SimpleGraph
 		if(doindex && (node instanceof NodeP) && ((NodeP) node).isGeneric())
 		{
 			int maxIdx = 0;
-			for(Node n : this.nodes)
+			for(Node n : this.nodes.keySet())
 				if((n instanceof NodeP) && (((NodeP) n).isGeneric()) && (maxIdx <= ((NodeP) n).genericIndex()))
 					maxIdx = ((NodeP) n).genericIndex();
 			if(maxIdx >= 0)
@@ -88,34 +87,27 @@ public class GraphPattern extends SimpleGraph
 		
 		Set<Node> additions = new HashSet<Node>();
 		Set<Node> removals = new HashSet<Node>();
-		for(Node node : nodes)
-			if(node.getLabel().startsWith("?#"))
+		for(Node node : nodes.keySet())
+			if(node.getLabel().startsWith(NodeP.NODEP_LABEL + NodeP.NODEP_INDEX_MARK))
 			{
 				Node newNode = new NodeP();
 				removals.add(node);
 				additions.add(newNode);
-				if(node instanceof ConnectedNode)
+				for(Edge edge : getInEdges(node))
 				{
-					for(Edge edge : ((ConnectedNode) node).getInEdges())
-					{
-						if(edge instanceof SimpleEdge)
-							((SimpleEdge) edge).unlinkFrom();
-						removeEdge(edge);
-						addEdge(new SimpleEdge(edge.getFrom(), newNode, edge.getLabel()));
-						// FIXME: totally unsafe - there may be other implementations of edge. setFrom/setTo advised?
-					}
-					for(Edge edge : ((ConnectedNode) node).getOutEdges())
-					{
-						if(edge instanceof SimpleEdge)
-							((SimpleEdge) edge).unlinkTo();
-						removeEdge(edge);
-						addEdge(new SimpleEdge(newNode, edge.getTo(), edge.getLabel()));
-						// FIXME: totally unsafe - there may be other implementations of edge. setFrom/setTo advised?
-					}
+					removeEdge(edge);
+					// it is safe. super.readFrom uses SimpleEdge, so it is ok to replace it with another SimpleEdge.
+					addEdge(new SimpleEdge(edge.getFrom(), newNode, edge.getLabel()));
 				}
-				// else // TODO: iterate over all edges
+				for(Edge edge : getOutEdges(node))
+				{
+					removeEdge(edge);
+					// it is safe. super.readFrom uses SimpleEdge, so it is ok to replace it with another SimpleEdge.
+					addEdge(new SimpleEdge(newNode, edge.getTo(), edge.getLabel()));
+				}
 			}
-		nodes.removeAll(removals);
+		for(Node node : removals)
+			removeNode(node);
 		for(Node node : additions)
 			addNode(node);
 		

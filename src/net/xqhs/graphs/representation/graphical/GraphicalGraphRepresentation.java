@@ -164,22 +164,23 @@ public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 		boolean first = true;
 		for(PathElement child : el.getChildren())
 		{
-			Edge edge = null;
-			if(isBackwards)
-				edge = el.getNode().getEdgesFrom(child.getNode()).iterator().next();
-			else
-				edge = el.getNode().getEdgesTo(child.getNode()).iterator().next();
-			GraphicalRepresentationElement childRepr = representChildren(child, blackNodes);
-			GraphicalRepresentationElement edgeRepr = new GraphicalRepresentationElement(this,
-					(VisualizableGraphComponent) edge, Type.EDGE);
-			edgeRepr.setEdge(EdgeType.CHILDLINK, repr, childRepr);
+			for(Edge edge : (isBackwards ? theGraph.getInEdges(el.getNode()) : theGraph.getOutEdges(el.getNode())))
+				if((isBackwards && (edge.getFrom() == child.getNode()))
+						|| (!isBackwards && (edge.getTo() == child.getNode())))
+				{
+					GraphicalRepresentationElement childRepr = representChildren(child, blackNodes);
+					GraphicalRepresentationElement edgeRepr = new GraphicalRepresentationElement(this,
+							(VisualizableGraphComponent) edge, Type.EDGE);
+					edgeRepr.setEdge(EdgeType.CHILDLINK, repr, childRepr);
+					
+					repr.connected.add(edgeRepr);
+					((VisualizableGraphComponent) child.getNode()).addRepresentation(childRepr);
+					((VisualizableGraphComponent) edge).addRepresentation(edgeRepr);
+					first = false;
+				}
 			
 			representOthers(others, blackNodes, first ? EdgeType.FORELINK : EdgeType.SIDELINK, el, repr);
 			
-			repr.connected.add(edgeRepr);
-			((VisualizableGraphComponent) child.getNode()).addRepresentation(childRepr);
-			((VisualizableGraphComponent) edge).addRepresentation(edgeRepr);
-			first = false;
 		}
 		representOthers(others, blackNodes, EdgeType.EXTLINK, el, repr);
 		
@@ -205,17 +206,18 @@ public class GraphicalGraphRepresentation extends LinearGraphRepresentation
 			
 			if((actualEdgeType == EdgeType.BACKLINK) && !parent.pathContains(other))
 				actualEdgeType = EdgeType.SIDELINK;
-			Edge edge = null;
-			if(isBackwards)
-				edge = parent.getNode().getEdgesFrom(other.getNode()).iterator().next();
-			else
-				edge = parent.getNode().getEdgesTo(other.getNode()).iterator().next();
-			GraphicalRepresentationElement edgeRepr = new GraphicalRepresentationElement(this,
-					(VisualizableGraphComponent) edge, Type.EDGE);
-			edgeRepr.setEdge(actualEdgeType, parentRepr, otherRepr);
-			
-			parentRepr.connected.add(edgeRepr);
-			((VisualizableGraphComponent) edge).addRepresentation(edgeRepr);
+			for(Edge edge : (isBackwards ? theGraph.getInEdges(parent.getNode()) : theGraph.getOutEdges(parent
+					.getNode())))
+				if((isBackwards && (edge.getFrom() == other.getNode()))
+						|| (!isBackwards && (edge.getTo() == other.getNode())))
+				{
+					GraphicalRepresentationElement edgeRepr = new GraphicalRepresentationElement(this,
+							(VisualizableGraphComponent) edge, Type.EDGE);
+					edgeRepr.setEdge(actualEdgeType, parentRepr, otherRepr);
+					
+					parentRepr.connected.add(edgeRepr);
+					((VisualizableGraphComponent) edge).addRepresentation(edgeRepr);
+				}
 			others.remove(other);
 		}
 	}

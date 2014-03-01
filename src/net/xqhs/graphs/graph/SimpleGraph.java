@@ -47,28 +47,85 @@ import net.xqhs.util.logging.UnitComponent;
 public class SimpleGraph extends Unit implements Graph
 {
 	/**
+	 * Protected structure holding two sets of edges -- incoming and outgoing.
+	 * 
+	 * @author Andrei Olaru
+	 */
+	protected static class NodeData
+	{
+		/**
+		 * Incoming edges.
+		 */
+		Set<Edge>	inEdges;
+		/**
+		 * Outgoing edges.
+		 */
+		Set<Edge>	outEdges;
+		
+		/**
+		 * Default constructor.
+		 * 
+		 * @param in
+		 *            - incoming edges.
+		 * @param out
+		 *            - outgoing edges.
+		 */
+		public NodeData(Set<Edge> in, Set<Edge> out)
+		{
+			inEdges = in;
+			outEdges = out;
+		}
+		
+		/**
+		 * Retrieves incoming edges.
+		 * 
+		 * @return incoming edges.
+		 */
+		public Set<Edge> getInEdges()
+		{
+			return inEdges;
+		}
+		
+		/**
+		 * Retrieves outgoing edges.
+		 * 
+		 * @return outgoing edges.
+		 */
+		public Set<Edge> getOutEdges()
+		{
+			return outEdges;
+		}
+		
+		@Override
+		public String toString()
+		{
+			return "in:" + inEdges.toString() + ";out:" + outEdges.toString();
+		}
+	}
+	
+	/**
 	 * Separator between edges.
 	 */
-	public static char	EDGE_SEPARATOR	= ';';
+	public static char				EDGE_SEPARATOR	= ';';
 	/**
 	 * Character that marks the beginning and end of an edge. Edge labels may contain this character, but node labels
 	 * may not. At the destination end of the edge it may be replaced by {@link #EDGE_TARGET}. In case of bi-directional
 	 * unlabeled edges, the representation of an edge may contain only one character.
 	 */
-	public static char	EDGE_LINE		= '-';
+	public static char				EDGE_LINE		= '-';
 	/**
 	 * Character that marks the destination end of an oriented edge.
 	 */
-	public static char	EDGE_TARGET		= '>';
+	public static char				EDGE_TARGET		= '>';
 	
 	/**
 	 * The nodes
 	 */
-	protected Set<Node>	nodes			= null;
+	protected Map<Node, NodeData>	nodes			= null;
 	/**
 	 * The edges
 	 */
-	protected Set<Edge>	edges			= null;
+	protected Set<Edge>				edges			= null;
 	
 	/**
 	 * Creates an empty graph.
@@ -76,7 +133,7 @@ public class SimpleGraph extends Unit implements Graph
 	public SimpleGraph()
 	{
 		super();
-		nodes = new HashSet<Node>();
+		nodes = new HashMap<Node, SimpleGraph.NodeData>();
 		edges = new HashSet<Edge>();
 	}
 	
@@ -92,8 +149,22 @@ public class SimpleGraph extends Unit implements Graph
 	{
 		if(node == null)
 			throw new IllegalArgumentException("null nodes not allowed");
-		if(!nodes.add(node))
-			lw("node [" + node.toString() + "] already present.");
+		if(!contains(node))
+		{
+			Set<Edge> outEdges = new HashSet<Edge>();
+			Set<Edge> inEdges = new HashSet<Edge>();
+			// connect with potentially existing edges
+			for(Edge e : edges)
+			{
+				if(e.getFrom() == node)
+					outEdges.add(e);
+				if(e.getTo() == node)
+					inEdges.add(e);
+			}
+			nodes.put(node, new NodeData(inEdges, outEdges));
+		}
+		else
+			lw("node [" + node.toString() + "] already present. Not re-added.");
 		return this;
 	}
 	
@@ -110,7 +181,17 @@ public class SimpleGraph extends Unit implements Graph
 	{
 		if(edge == null)
 			throw new IllegalArgumentException("null edges not allowed");
-		if(!edges.add(edge))
+		if(!contains(edge))
+		{
+			edges.add(edge);
+			if(contains(edge.getFrom()))
+				// connect 'from' node
+				nodes.get(edge.getFrom()).getOutEdges().add(edge);
+			if(contains(edge.getTo()))
+				// connect 'to' node
+				nodes.get(edge.getTo()).getInEdges().add(edge);
+		}
+		else
 			lw("edge [" + edge.toString() + "] already present.");
 		return this;
 	}
@@ -118,7 +199,9 @@ public class SimpleGraph extends Unit implements Graph
 	@Override
 	public SimpleGraph removeNode(Node node)
 	{
-		if(!nodes.remove(node))
+		if(contains(node))
+			nodes.remove(node);
+		else
 			lw("node[" + node + "] not contained");
 		return this;
 	}
@@ -126,7 +209,14 @@ public class SimpleGraph extends Unit implements Graph
 	@Override
 	public SimpleGraph removeEdge(Edge edge)
 	{
-		if(!edges.remove(edge))
+		if(contains(edge))
+		{
+			if(contains(edge.getFrom()))
+				nodes.get(edge.getFrom()).getOutEdges().remove(edge);
+			if(contains(edge.getTo()))
+				nodes.get(edge.getTo()).getInEdges().remove(edge);
+		}
+		else
 			lw("edge [" + edge + "] not contained");
 		return this;
 	}
@@ -152,7 +242,7 @@ public class SimpleGraph extends Unit implements Graph
 	@Override
 	public Collection<Node> getNodes()
 	{
-		return nodes;
+		return nodes.keySet();
 	}
 	
 	@Override
@@ -162,9 +252,25 @@ public class SimpleGraph extends Unit implements Graph
 	}
 	
 	@Override
+	public Collection<Edge> getOutEdges(Node node)
+	{
+		if(!contains(node))
+			throw new IllegalArgumentException("node " + node + " is not in graph");
+		return nodes.get(node).getOutEdges();
+	}
+	
+	@Override
+	public Collection<Edge> getInEdges(Node node)
+	{
+		if(!contains(node))
+			throw new IllegalArgumentException("node " + node + " is not in graph");
+		return nodes.get(node).getInEdges();
+	}
+	
+	@Override
 	public boolean contains(Node node)
 	{
-		return nodes.contains(node);
+		return nodes.containsKey(node);
 	}
 	
 	@Override
@@ -177,22 +283,10 @@ public class SimpleGraph extends Unit implements Graph
 	public Collection<Node> getNodesNamed(String name)
 	{
 		Collection<Node> ret = new HashSet<Node>();
-		for(Node node : nodes)
+		for(Node node : nodes.keySet())
 			if(node.getLabel().equals(name))
 				ret.add(node);
 		return ret;
-	}
-	
-	/**
-	 * Checks if the inEdges and outEdges lists of the nodes are coherent with the edges of the graph.
-	 * 
-	 * @return true if the graph is coherent with respect to the above principle.
-	 */
-	@SuppressWarnings("static-method")
-	public boolean isCoherent()
-	{
-		// TODO
-		return true;
 	}
 	
 	/**
@@ -204,43 +298,33 @@ public class SimpleGraph extends Unit implements Graph
 	 */
 	public Map<Node, Integer> computeDistancesFromUndirected(Node node)
 	{
-		if(!nodes.contains(node))
+		if(!contains(node))
 			throw new IllegalArgumentException("node " + node + " is not in graph");
-		if(!(node instanceof ConnectedNode))
-			throw new IllegalArgumentException("node " + node + " is not a ConnectedNode");
 		Map<Node, Integer> dists = new HashMap<Node, Integer>();
-		Queue<ConnectedNode> grayNodes = new LinkedList<ConnectedNode>();
-		Set<ConnectedNode> blackNodes = new HashSet<ConnectedNode>();
-		grayNodes.add((ConnectedNode) node);
+		Queue<Node> grayNodes = new LinkedList<Node>();
+		Set<Node> blackNodes = new HashSet<Node>();
+		grayNodes.add(node);
 		dists.put(node, new Integer(0));
 		
 		while(!grayNodes.isEmpty())
 		{
-			ConnectedNode cNode = grayNodes.poll();
+			Node cNode = grayNodes.poll();
 			int dist = dists.get(cNode).intValue();
 			blackNodes.add(cNode);
 			
-			for(Edge e : cNode.getOutEdges())
+			for(Edge e : getOutEdges(cNode))
 				if(!blackNodes.contains(e.getTo()))
 				{
 					if(!grayNodes.contains(e.getTo()))
-					{
-						if(!(e.getTo() instanceof ConnectedNode))
-							throw new IllegalArgumentException("node " + e.getTo() + " is not a ConnectedNode");
-						grayNodes.add((ConnectedNode) e.getTo());
-					}
+						grayNodes.add(e.getTo());
 					if(!dists.containsKey(e.getTo()) || (dists.get(e.getTo()).intValue() > (dist + 1)))
 						dists.put(e.getTo(), new Integer(dist + 1));
 				}
-			for(Edge e : cNode.getInEdges())
+			for(Edge e : getInEdges(cNode))
 				if(!blackNodes.contains(e.getFrom()))
 				{
 					if(!grayNodes.contains(e.getFrom()))
-					{
-						if(!(e.getFrom() instanceof ConnectedNode))
-							throw new IllegalArgumentException("node " + e.getFrom() + " is not a ConnectedNode");
-						grayNodes.add((ConnectedNode) e.getFrom());
-					}
+						grayNodes.add(e.getFrom());
 					if(!dists.containsKey(e.getFrom()) || (dists.get(e.getFrom()).intValue() > (dist + 1)))
 						dists.put(e.getFrom(), new Integer(dist + 1));
 				}
@@ -257,7 +341,7 @@ public class SimpleGraph extends Unit implements Graph
 	{
 		String ret = "";
 		ret += "G[" + n() + ", " + m() + "] ";
-		List<Node> list = new ArrayList<Node>(nodes);
+		List<Node> list = new ArrayList<Node>(nodes.keySet());
 		Collections.sort(list, new NodeAlphaComparator());
 		ret += list.toString();
 		for(Edge e : edges)
@@ -292,7 +376,7 @@ public class SimpleGraph extends Unit implements Graph
 				ret += " [" + "label=\"" + edge.getLabel() + "\"]";
 			ret += ";\n";
 		}
-		for(Node node : nodes)
+		for(Node node : nodes.keySet())
 		{
 			if(node instanceof NodeP && ((NodeP) node).isGeneric())
 				ret += "\t\"" + node.toString() + "\" [label=\"" + node.getLabel() + "\"];\n";

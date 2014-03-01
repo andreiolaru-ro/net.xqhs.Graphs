@@ -12,18 +12,18 @@
 package net.xqhs.graphs.representation.linear;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
-import net.xqhs.graphs.graph.ConnectedNode;
+import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.NodeAlphaComparator;
 import net.xqhs.graphs.representation.GraphRepresentationImplementation;
-import net.xqhs.graphs.representation.linear.PathElement.PathComparator;
 
 /**
  * Class that allows the representation of a {@link Graph} structure.
@@ -49,22 +49,71 @@ import net.xqhs.graphs.representation.linear.PathElement.PathComparator;
 public abstract class LinearGraphRepresentation extends GraphRepresentationImplementation
 {
 	/**
-	 * Compares two {@link Node} structures. First criterion: node with lower in-degree is first; second criterion is
-	 * lexical order (using {@link NodeAlphaComparator}).
+	 * Compares two {@link Node} structures. First criterion: node with lower in-degree in the graph (given in
+	 * constructor) is first; second criterion is lexical order (using {@link NodeAlphaComparator}).
 	 * 
 	 * @author Andrei Olaru
 	 * 
 	 */
 	static class NodeInAlphaComparator extends NodeAlphaComparator
 	{
+		/**
+		 * The graph containing the nodes to be compared.
+		 */
+		protected Graph	theGraph	= null;
+		
+		/**
+		 * Default constructor. The graph is needed to calculate the in-degree.
+		 * 
+		 * @param graph
+		 *            - the graph to which the nodes to compare belong.
+		 */
+		public NodeInAlphaComparator(Graph graph)
+		{
+			theGraph = graph;
+		}
+		
 		@Override
 		public int compare(Node n0, Node n1)
 		{
-			if(n0 instanceof ConnectedNode && n1 instanceof ConnectedNode
-					&& ((ConnectedNode) n0).getInEdges().size() != ((ConnectedNode) n1).getInEdges().size())
-				return (int) Math.signum(((ConnectedNode) n0).getInEdges().size()
-						- ((ConnectedNode) n1).getInEdges().size());
+			if(theGraph.contains(n0) && theGraph.contains(n1)
+					&& (theGraph.getInEdges(n0).size() != theGraph.getInEdges(n1).size()))
+				return (int) Math.signum(theGraph.getInEdges(n0).size() - theGraph.getInEdges(n1).size());
 			return super.compare(n0, n1);
+		}
+	}
+	
+	/**
+	 * A {@link Comparator} for {@link PathElement} instances that sorts the element with the longer distance to a leaf
+	 * first. In case both elements have the same distance to the farthest leaf, a {@link NodeInAlphaComparator} is used
+	 * on the graph nodes corresponding to the path elements.
+	 * 
+	 * @author Andrei Olaru
+	 */
+	static class PathComparator implements Comparator<PathElement>
+	{
+		/**
+		 * The graph containing the paths to be compared.
+		 */
+		protected Graph	theGraph	= null;
+		
+		/**
+		 * Default constructor. The graph is needed to calculate the in-degree of nodes in path elements.
+		 * 
+		 * @param graph
+		 *            - the graph to which the paths to compare belong.
+		 */
+		public PathComparator(Graph graph)
+		{
+			theGraph = graph;
+		}
+		
+		@Override
+		public int compare(PathElement el1, PathElement el2)
+		{
+			if(el1.forwardLength != el2.forwardLength)
+				return -(el1.forwardLength - el2.forwardLength); // longest path first
+			return new NodeInAlphaComparator(theGraph).compare(el1.node, el2.node);
 		}
 	}
 	
@@ -154,7 +203,7 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 		super.processGraph();
 		
 		sortedNodes = new LinkedList<Node>(theGraph.getNodes());
-		Collections.sort(sortedNodes, new NodeInAlphaComparator());
+		Collections.sort(sortedNodes, new NodeInAlphaComparator(theGraph));
 		lf("sorted nodes: " + sortedNodes);
 		
 		buildPaths();
@@ -207,17 +256,17 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 				PathElement el = grayNodes.poll();
 				lf("taking element " + el);
 				// expand
-				List<Node> childSet = new LinkedList<Node>(isBackwards ? el.node.getInNodes() : el.node.getOutNodes());
-				Collections.sort(childSet, new NodeInAlphaComparator());
+				List<Node> childSet = new LinkedList<Node>();
+				if(!isBackwards)
+					for(Edge e : theGraph.getOutEdges(el.node))
+						childSet.add(e.getTo());
+				else
+					for(Edge e : theGraph.getInEdges(el.node))
+						childSet.add(e.getFrom());
+				Collections.sort(childSet, new NodeInAlphaComparator(theGraph));
 				for(Node n1 : childSet)
 				{
 					boolean towardsoutside = false;
-					// FIXME: only works with single edges between nodes; is that OK?
-					if(!isBackwards && !theGraph.contains(el.node.getEdgesTo(n1).iterator().next()))
-						continue; // the edge is not in the graph displayed.
-					// FIXME: only works with single edges between nodes; is that OK?
-					if(isBackwards && !theGraph.contains(el.node.getEdgesFrom(n1).iterator().next()))
-						continue; // the edge is not in the graph displayed.
 					if(!theGraph.contains(n1))
 						// the edge is in the graph, but the other node is not
 						towardsoutside = true;
@@ -330,12 +379,12 @@ public abstract class LinearGraphRepresentation extends GraphRepresentationImple
 				el.otherChildren.remove(oth);
 				el.children.add(oth);
 			}
-			Collections.sort(el.children, new PathComparator());
-			Collections.sort(el.otherChildren, new PathComparator());
+			Collections.sort(el.children, new PathComparator(theGraph));
+			Collections.sort(el.otherChildren, new PathComparator(theGraph));
 			lf(el.toString() + ": " + el.children.toString() + " / " + el.otherChildren.toString());
 		}
 		paths = new LinkedList<PathElement>(blackNodes);
-		Collections.sort(paths, new PathComparator());
+		Collections.sort(paths, new PathComparator(theGraph));
 		
 		li("sort paths done");
 		

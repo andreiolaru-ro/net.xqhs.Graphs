@@ -184,40 +184,51 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 			{
 				remainingChildren--;
 				PathElement other = others.get(0);
-				// FIXME: works only for a single edge between two nodes
-				// FIXME: can there be null returns
-				Edge edge = null;
-				if(isBackwards)
-					edge = el.getNode().getEdgesFrom(other.getNode()).iterator().next();
-				else
-					edge = el.getNode().getEdgesTo(other.getNode()).iterator().next();
-				// backlink
-				// FIXME: check conversions
-				TextRepresentationElement repr = new TextRepresentationElement(this, (VisualizableGraphComponent) edge,
-						Type.INTERNAL_LINK, level, !(remainingChildren > 0), (allchildren == 1));
-				repr.addSub(new TextRepresentationElement(this, (VisualizableGraphComponent) other.getNode(), Type.NODE));
-				ret.add(repr);
-				
+				// find edge to the other node
+				for(Edge edge : (isBackwards ? theGraph.getInEdges(el.getNode()) : theGraph.getOutEdges(el.getNode())))
+					if((isBackwards && (edge.getFrom() == other.getNode()))
+							|| (!isBackwards && (edge.getTo() == other.getNode())))
+					{
+						// backlink
+						// FIXME: check conversions
+						TextRepresentationElement repr = new TextRepresentationElement(this,
+								(VisualizableGraphComponent) edge, Type.INTERNAL_LINK, level, !(remainingChildren > 0),
+								(allchildren == 1));
+						repr.addSub(new TextRepresentationElement(this, (VisualizableGraphComponent) other.getNode(),
+								Type.NODE));
+						ret.add(repr);
+					}
 				others.remove(0);
 			}
 			
 			remainingChildren--;
-			Edge edge = null;
-			if(isBackwards)
-				edge = el.getNode().getEdgesFrom(child.getNode()).iterator().next();
-			else
-				edge = el.getNode().getEdgesTo(child.getNode()).iterator().next();
-			// branch
-			// FIXME: check conversions
-			TextRepresentationElement reprEdge = new TextRepresentationElement(this, (VisualizableGraphComponent) edge,
-					Type.BRANCH, level, !(remainingChildren > 0), (allchildren == 1));
-			TextRepresentationElement reprNode = new TextRepresentationElement(this,
-					(VisualizableGraphComponent) child.getNode(), Type.NODE);
+			boolean first = true;
+			for(Edge edge : (isBackwards ? theGraph.getInEdges(el.getNode()) : theGraph.getOutEdges(el.getNode())))
+				if((isBackwards && (edge.getFrom() == child.getNode()))
+						|| (!isBackwards && (edge.getTo() == child.getNode())))
+				{
+					// branch
+					// FIXME: check conversions
+					Type type = first ? Type.BRANCH : Type.INTERNAL_LINK;
+					TextRepresentationElement reprEdge = new TextRepresentationElement(this,
+							(VisualizableGraphComponent) edge, type, level, !(remainingChildren > 0),
+							(allchildren == 1));
+					TextRepresentationElement reprNode = new TextRepresentationElement(this,
+							(VisualizableGraphComponent) child.getNode(), Type.NODE);
+					if(first)
+						blackNodes.add(child);
+					first = false;
+					reprEdge.addSub(reprNode);
+					reprNode.addSub(buildTextChildren(child, level + 1, blackNodes));
+					ret.add(reprEdge);
+				}
+			
+			// handle hypernodes - the node is a whole graph
 			if(child.getNode() instanceof HyperNode)
 			{
 				TextRepresentationElement textRepresentation = new TextRepresentationElement(this,
 						Type.ELEMENT_CONTAINER);
-				boolean first = true;
+				first = true;
 				for(PathElement elsub : paths)
 					if(!blackNodes.contains(elsub))
 					{
@@ -232,10 +243,6 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 						first = false;
 					}
 			}
-			blackNodes.add(child);
-			reprEdge.addSub(reprNode);
-			reprNode.addSub(buildTextChildren(child, level + 1, blackNodes));
-			ret.add(reprEdge);
 		}
 		
 		// attach 'other children' that have been explored in the last recursive call
@@ -244,17 +251,19 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 			remainingChildren--;
 			PathElement other = others.get(0);
 			boolean external = !blackNodes.contains(other);
-			Edge edge = null;
-			if(isBackwards)
-				edge = el.getNode().getEdgesFrom(other.getNode()).iterator().next();
-			else
-				edge = el.getNode().getEdgesTo(other.getNode()).iterator().next();
-			// backlinks and external links
-			TextRepresentationElement repr = new TextRepresentationElement(this, (VisualizableGraphComponent) edge,
-					(external ? Type.EXTERNAL_LINK : Type.INTERNAL_LINK), level, !(remainingChildren > 0),
-					(allchildren == 1));
-			repr.addSub(new TextRepresentationElement(this, (VisualizableGraphComponent) other.getNode(), Type.NODE));
-			ret.add(repr);
+			for(Edge edge : (isBackwards ? theGraph.getInEdges(el.getNode()) : theGraph.getOutEdges(el.getNode())))
+				if((isBackwards && (edge.getFrom() == other.getNode()))
+						|| (!isBackwards && (edge.getTo() == other.getNode())))
+				{
+					// backlinks and external links
+					// FIXME: check conversions
+					TextRepresentationElement repr = new TextRepresentationElement(this,
+							(VisualizableGraphComponent) edge, (external ? Type.EXTERNAL_LINK : Type.INTERNAL_LINK),
+							level, !(remainingChildren > 0), (allchildren == 1));
+					repr.addSub(new TextRepresentationElement(this, (VisualizableGraphComponent) other.getNode(),
+							Type.NODE));
+					ret.add(repr);
+				}
 			blackNodes.add(other);
 			others.remove(0);
 		}
@@ -296,13 +305,18 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	 * That is, there is a cycle A-B-C-A, and also there is also a branch from B to D.
 	 * <p>
 	 * The representation can be customized with the parameters set in {@link #setLayout(String, String, int)}.
+	 * <p>
+	 * If the graph is meant to be printed on several lines (<code>branchSeparator</code>) contains a new line, an
+	 * additional <code>branchSeparator</code> will be added before the representation.
 	 */
 	@Override
 	public String displayRepresentation()
 	{
+		String firstIndent = indent.contains("\n") ? indent : ""; // see javadoc
 		if(theRepresentation != null)
-			return ((TextRepresentationElement) theRepresentation).toString(indent, indentIncrement, incrementLimit,
-					isBackwards);
+			return firstIndent
+					+ ((TextRepresentationElement) theRepresentation).toString(indent, indentIncrement, incrementLimit,
+							isBackwards);
 		le("representation not computed (use update()).");
 		return null;
 	}
@@ -383,7 +397,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		// read the representation, then connect
 		theRepresentation = TextRepresentationElement.readRepresentation(rawInput, this,
 				(UnitComponent) new UnitComponent().setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(getUnitName())
-						.setLogLevel(Level.ALL));
+						.setLogLevel(Level.WARN));
 		lf("result: [] \n====================================", theRepresentation.toString());
 		
 		// start building the graph: create a tree with the occasional links between branches or inside the same branch.

@@ -38,50 +38,19 @@ public class SimpleEdge extends AbstractVisualizableGraphComponent implements Ed
 	
 	/**
 	 * Constructs a new edge.
-	 * <p>
-	 * WARNING: if the nodes are instances of {@link ConnectedNode}, this also changes the from and to nodes, by adding
-	 * the newly constructed {@link Edge} to their respective out and in lists.
 	 * 
 	 * @param fromNode
-	 *            : the source {@link Node}; the edge is added to the node's outEdges list
+	 *            : the source {@link Node}; the edge is added to the node's outEdges list.
 	 * @param toNode
-	 *            : the destination {@link Node}; the edge is added to the node's inEdges list
+	 *            : the destination {@link Node}; the edge is added to the node's inEdges list.
 	 * @param edgeLabel
-	 *            : the label of the edge
+	 *            : the label of the edge.
 	 */
 	public SimpleEdge(Node fromNode, Node toNode, String edgeLabel)
 	{
 		this.from = fromNode;
 		this.to = toNode;
 		this.label = edgeLabel;
-		if(this.to instanceof ConnectedNode && this.to != null)
-			((ConnectedNode) this.to).getInEdges().add(this);
-		if(this.from instanceof ConnectedNode && this.from != null)
-			((ConnectedNode) this.from).getOutEdges().add(this);
-	}
-	
-	/**
-	 * Removes the edge from the list of outgoing edges in the source node.
-	 * 
-	 * @return the edge itself.
-	 */
-	public SimpleEdge unlinkFrom()
-	{
-		if(this.from instanceof ConnectedNode && this.from != null)
-			((ConnectedNode) this.from).getOutEdges().remove(this);
-		return this;
-	}
-	
-	/**
-	 * Removes the edge from the list of incoming edges in the destination node.
-	 * 
-	 * @return the edge itself.
-	 */
-	public SimpleEdge unlinkTo()
-	{
-		if(this.to instanceof ConnectedNode && this.to != null)
-			((ConnectedNode) this.to).getInEdges().remove(this);
-		return this;
 	}
 	
 	@Override

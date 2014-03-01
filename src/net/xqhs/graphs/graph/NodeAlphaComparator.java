@@ -33,6 +33,10 @@ public class NodeAlphaComparator implements Comparator<Node>
 	{
 		if(n0 == n1)
 			return 0;
+		if(n0 == null)
+			return -1;
+		if(n1 == null)
+			return 1;
 		if((n0 instanceof NodeP) && ((NodeP) n0).isGeneric() && (n0 instanceof NodeP) && ((NodeP) n0).isGeneric()
 				&& n0.getLabel().equals(n1.getLabel()))
 			return ((NodeP) n0).genericIndex() - ((NodeP) n1).genericIndex();

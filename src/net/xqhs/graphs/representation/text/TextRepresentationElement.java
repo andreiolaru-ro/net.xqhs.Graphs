@@ -431,11 +431,16 @@ public class TextRepresentationElement extends RepresentationElement
 		
 		if(linkType == Type.NODE)
 		{ // appropriate use of toString() as nodes may have various representations
-			String rendition = getRepresentedComponent().toString();
-			// if(getRepresentedComponent() instanceof HyperNode)
-			// ret += rendition + ;
-			// else
-			ret += rendition;
+			if(getRepresentedComponent() == null)
+				ret += "<null>";
+			else
+			{
+				String rendition = getRepresentedComponent().toString();
+				// if(getRepresentedComponent() instanceof HyperNode)
+				// ret += rendition + ;
+				// else
+				ret += rendition;
+			}
 		}
 		
 		if(content != null)
@@ -465,8 +470,12 @@ public class TextRepresentationElement extends RepresentationElement
 	}
 	
 	/**
-	 * The method reads the representation of a whole graph from the given text input. While the edges are placed
-	 * correctly, they have no adjacent nodes. They will be filed in later, in
+	 * The method reads the representation of a whole graph from the given text input. If more top-level graph
+	 * representations are present in the input, only the first one will be read. To read the representation and get the
+	 * remaining input, use
+	 * {@link #readRepresentation(ContentHolder, Type, boolean, TextGraphRepresentation, UnitComponent)}.
+	 * <p>
+	 * While the edges are placed correctly, they have no adjacent nodes. They will be filed in later, in
 	 * {@link TextGraphRepresentation#readRepresentation(String)}. Basically, elements are currently correct with
 	 * respect to their labels and their placement in a textual layout ({@link #toString()} returns an apparently
 	 * correct representation). The actual, correct graph is build later.
@@ -489,7 +498,10 @@ public class TextRepresentationElement extends RepresentationElement
 	 * The method uses the input string to read the representation of an element, removing the representation from the
 	 * input and leaving other calls of the method to read the rest (if any).
 	 * <p>
-	 * The input is modified by using {@link ContentHolder#set(Object)}.
+	 * If the representation contains any hyper nodes, it is mandatory that the representation f the graph is enclosed
+	 * between {@link Symbol#ELEMENT_CONTAINER_IN} and {@link Symbol#ELEMENT_CONTAINER_OUT}.
+	 * <p>
+	 * The <code>input</code> argument is modified by using {@link ContentHolder#set(Object)}.
 	 * 
 	 * @param input
 	 *            - the input, held be a {@link ContentHolder} instance.
@@ -513,11 +525,28 @@ public class TextRepresentationElement extends RepresentationElement
 		switch(type)
 		{
 		case ELEMENT_CONTAINER:
+		{
+			String rest = null; // rest of the input, in case multiple to-level graphs are defined
+			if(input.get().trim().startsWith(Symbol.ELEMENT_CONTAINER_IN.toString()))
+			{
+				String str = input.get();
+				str = str.substring(str.indexOf(Symbol.ELEMENT_CONTAINER_IN.toString())
+						+ Symbol.ELEMENT_CONTAINER_IN.toString().length());
+				// index of the closing of the element container
+				int lastIndex = getFirstUnmatchedClosingSymbolIndex(str, Symbol.ELEMENT_CONTAINER_IN.toString(),
+						Symbol.ELEMENT_CONTAINER_OUT.toString());
+				rest = str.substring(lastIndex + Symbol.ELEMENT_CONTAINER_OUT.toString().length());
+				str = str.substring(0, lastIndex);
+				input.set(str);
+			}
 			ret = new TextRepresentationElement(root, type);
 			while(input.get().length() > 0)
 				// input will be modified in the call below; each call reads a subgraph
 				ret.addSub(readRepresentation(input, Type.SUBGRAPH, (nChildren++ == 0), root, log));
+			if(rest != null)
+				input.set(rest);
 			break;
+		}
 		case SUBGRAPH:
 		{
 			String rez[] = input.get().split(Symbol.SUBGRAPH_SEPARATOR.toRegexp(), 2);
@@ -552,37 +581,10 @@ public class TextRepresentationElement extends RepresentationElement
 				// locate corresponding closing symbol
 				String open = Symbol.BRANCH_IN.toString();
 				String close = Symbol.BRANCH_OUT.toString();
-				int openlen = open.length();
-				int closelen = close.length();
-				int lastIndex = 0; // the index of the corresponding closing symbol
-				int openBranches = 0; // current number of open branches / opening symbols found
-				int pastLength = openlen; // length already explored
-				String str = input.get().substring(openlen); // go beyond opening brace
-				while(lastIndex == 0)
-				{
-					int openIndex = str.indexOf(open), closeIndex = str.indexOf(close);
-					if(openIndex >= 0 && openIndex < closeIndex)
-					{ // next a branch opens
-						openBranches++;
-						pastLength += openIndex + openlen;
-						str = str.substring(openIndex + openlen);
-					}
-					else
-					{ // next a branch closes
-						if(openBranches == 0)
-							// it's our branch
-							lastIndex = pastLength + closeIndex;
-						else
-						{
-							openBranches--;
-							pastLength += closeIndex + closelen;
-							str = str.substring(closeIndex + closelen);
-						}
-					}
-				}
-				
-				branchString = input.get().substring(openlen, lastIndex).trim();
-				rest = input.get().substring(lastIndex + closelen);
+				// get the index of the corresponding closing symbol
+				int lastIndex = getFirstUnmatchedClosingSymbolIndex(input.get().substring(open.length()), open, close);
+				branchString = input.get().substring(open.length(), lastIndex + open.length()).trim();
+				rest = input.get().substring(lastIndex + open.length() + close.length());
 				isLastChild = false;
 			}
 			else
@@ -707,5 +709,57 @@ public class TextRepresentationElement extends RepresentationElement
 		}
 		}
 		return ret;
+	}
+	
+	/**
+	 * Considering the input contains various enclosures delimited by an opening symbol and a closing symbol, the
+	 * methods gets the index of the first closing symbol which is not matched by an opening symbol appearing before it.
+	 * <p>
+	 * In other words, the methods gets the index of the closing symbol that closes the current enclosure (that has been
+	 * opened before the beginning of <code>input</code>.
+	 * <p>
+	 * Example, for opening and closing symbols '(' and ')', respectively: the returned index for the input <br>
+	 * <code>aaa ( bbb (ccc) b) (dd) aaaa) xxxx )</code> <br>
+	 * is the closing parenthesis after the group <code>aaaa</code>.
+	 * 
+	 * @param input
+	 *            - the input string.
+	 * @param openingSymbol
+	 *            - the opening symbol for enclosures.
+	 * @param closingSymbol
+	 *            - the closing symbol for enclosures.
+	 * @return the index of the first unmatched closing symbol.
+	 */
+	protected static int getFirstUnmatchedClosingSymbolIndex(String input, String openingSymbol, String closingSymbol)
+	{
+		int openlen = openingSymbol.length();
+		int closelen = closingSymbol.length();
+		int lastIndex = 0; // the index of the corresponding closing symbol
+		int openEnclosures = 0; // current number of open enclosures/ opening symbols found
+		int pastLength = 0; // length already explored
+		String str = input;
+		while(lastIndex == 0)
+		{
+			int openIndex = str.indexOf(openingSymbol), closeIndex = str.indexOf(closingSymbol);
+			if(openIndex >= 0 && openIndex < closeIndex)
+			{ // next an enclosure opens
+				openEnclosures++;
+				pastLength += openIndex + openlen;
+				str = str.substring(openIndex + openlen);
+			}
+			else
+			{ // next an enclosure closes
+				if(openEnclosures == 0)
+					// it's our enclosure
+					lastIndex = pastLength + closeIndex;
+				else
+				{
+					openEnclosures--;
+					pastLength += closeIndex + closelen;
+					str = str.substring(closeIndex + closelen);
+				}
+			}
+		}
+		return lastIndex;
 	}
 }

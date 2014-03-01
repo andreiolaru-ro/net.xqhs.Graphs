@@ -25,7 +25,6 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 
-import net.xqhs.graphs.graph.ConnectedNode;
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.HyperGraph;
@@ -64,11 +63,9 @@ public class GrapherTest
 		
 		// testTextRepresentationReading("test");
 		
-		// G3RT.update(); // log.li(G3RT.displayRepresentation());
-		
 		// testGraphicalContainerGraph(false);
 		
-		testHyperGraphs();
+		// testHyperGraphs();
 		
 		// testMultilevelRepresentation();
 		
@@ -82,7 +79,7 @@ public class GrapherTest
 	{
 		// generate graph
 		Graph G;
-		G = staticTest(4);
+		G = staticTest(3); // 1 to 4
 		
 		// G = randomTest(6, 8, -1, true);
 		// G = randomTest(6, 8, 1307714367060L, false);
@@ -106,7 +103,7 @@ public class GrapherTest
 		Graph G = new SimpleGraph();
 		
 		int nNodes = 9;
-		ConnectedNode nodes[] = new ConnectedNode[nNodes];
+		Node nodes[] = new Node[nNodes];
 		
 		for(int i = 0; i < nNodes; i++)
 		{
@@ -117,10 +114,12 @@ public class GrapherTest
 		switch(version)
 		{
 		case 2:
+			// case 1 plus: C -> hello
 			G.addEdge(new SimpleEdge(nodes[2], new SimpleNode("hello"), null)); // node hello is outside G
 			new SimpleEdge(nodes[2], nodes[3], "hello_edge"); // edge is outside G (but nodes are not)
 			//$FALL-THROUGH$
 		case 1:
+			// E (-> D (-> B -> C -> H -> I) -> F -> *I) -> A -> G -> *F
 			G.addEdge(new SimpleEdge(nodes[4], nodes[0], null));
 			G.addEdge(new SimpleEdge(nodes[4], nodes[3], null));
 			G.addEdge(new SimpleEdge(nodes[3], nodes[5], null));
@@ -133,6 +132,7 @@ public class GrapherTest
 			G.addEdge(new SimpleEdge(nodes[5], nodes[8], null));
 			break;
 		case 3:
+			// F (-> B (-> C -> D) -> A (->*B) -> E (-> *F) -> *A) -> *E; G; H; I
 			G.addEdge(new SimpleEdge(nodes[0], nodes[1], null));
 			G.addEdge(new SimpleEdge(nodes[0], nodes[4], null));
 			G.addEdge(new SimpleEdge(nodes[1], nodes[0], null));
@@ -169,7 +169,7 @@ public class GrapherTest
 			seed = seedPre;
 		log.lf("seed was " + seed);
 		Random rand = new Random(seed);
-		ConnectedNode nodes[] = new ConnectedNode[nNodes];
+		Node nodes[] = new Node[nNodes];
 		
 		for(int i = 0; i < nNodes; i++)
 		{
@@ -181,8 +181,19 @@ public class GrapherTest
 		{
 			int from = rand.nextInt(nNodes);
 			int to = rand.nextInt(nNodes);
-			while((from == to) || (nodes[from].getOutNodes().contains(nodes[to])))
+			while(true)
+			{
+				if(from != to)
+				{
+					boolean exists = false;
+					for(Edge e : G.getOutEdges(nodes[from]))
+						if(e.getTo() == nodes[to])
+							exists = true;
+					if(!exists)
+						break;
+				}
 				to = rand.nextInt(nNodes);
+			}
 			G.addEdge(new SimpleEdge(nodes[from], nodes[to], !labelEdges ? null : Character.toString((char) ('a' + i))));
 		}
 		
@@ -195,7 +206,8 @@ public class GrapherTest
 	@SuppressWarnings("unused")
 	private static void testSelfReading()
 	{
-		Graph G = randomTest(9, 8, -1, true);
+		Graph G = randomTest(9, 8, -1L, true);
+		log.li(G.toString());
 		TextGraphRepresentation GRa = new TextGraphRepresentation(G);
 		GRa.setLayout("\n", "\t", 3);
 		GRa.update();
@@ -305,7 +317,7 @@ public class GrapherTest
 		
 		TextGraphRepresentation GR = (TextGraphRepresentation) new TextGraphRepresentation(G).setLayout("\n", "\t", 2)
 				.update();
-		log.li("\n\n [] \n", GR.toString());
+		log.li(GR.toString());
 	}
 	
 	@SuppressWarnings("unused")
@@ -318,7 +330,7 @@ public class GrapherTest
 		try
 		{
 			G = ((TextGraphRepresentation) new TextGraphRepresentation(new SimpleGraph()).setUnitName(
-					Unit.DEFAULT_UNIT_NAME).setLogLevel(Level.ALL)).readRepresentation(new FileInputStream(filedir
+					Unit.DEFAULT_UNIT_NAME).setLogLevel(Level.WARN)).readRepresentation(new FileInputStream(filedir
 					+ filename + filexext));
 		} catch(FileNotFoundException e)
 		{
@@ -329,7 +341,7 @@ public class GrapherTest
 		
 		TextGraphRepresentation GR = (TextGraphRepresentation) new TextGraphRepresentation(G).setLayout("\n", "\t", -1)
 				.update();
-		log.li("\n\n [] \n", GR.toString());
+		log.li(GR.toString());
 	}
 	
 	@SuppressWarnings("unused")
@@ -392,7 +404,7 @@ public class GrapherTest
 		// MultilevelGraphRepresentation G3R = new TextMultilevelGraphRepresentation(G3, levels, null);
 		// log.li("\n\n" + G3R.toString() + "\n");
 	}
-
+	
 	@SuppressWarnings("unused")
 	private static void testDotConversion(String files[])
 	{

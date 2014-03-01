@@ -11,29 +11,61 @@
  ******************************************************************************/
 package net.xqhs.graphs.util;
 
+/**
+ * The class serves as a mutable instance of type T. The user is able to get and set the content of the holder.
+ * 
+ * @author Andrei Olaru
+ * 
+ * @param <T>
+ *            the type of the content.
+ */
 public class ContentHolder<T>
 {
-	T	content;
+	/**
+	 * The content.
+	 */
+	protected T	theContent;
 	
-	public ContentHolder(T _content)
+	/**
+	 * Creates a new content holder for type T, containing the <code>content</code>.
+	 * 
+	 * @param content
+	 *            - the content to be held by the instance.
+	 */
+	public ContentHolder(T content)
 	{
-		content = _content;
+		theContent = content;
 	}
 	
+	/**
+	 * Returns the current content of the instance.
+	 * 
+	 * @return the content
+	 */
 	public T get()
 	{
-		return content;
+		return theContent;
 	}
 	
-	public ContentHolder<T> set(T _content)
+	/**
+	 * Sets the current content of the instance.
+	 * 
+	 * @param content
+	 *            - the content.
+	 * @return the instance itself.
+	 */
+	public ContentHolder<T> set(T content)
 	{
-		content = _content;
+		theContent = content;
 		return this;
 	}
 	
+	/**
+	 * Returns the result of the {@link #toString()} of the content.
+	 */
 	@Override
 	public String toString()
 	{
-		return content.toString();
+		return theContent.toString();
 	}
 }
