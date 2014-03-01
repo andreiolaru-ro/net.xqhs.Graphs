@@ -12,10 +12,13 @@
 package net.xqhs.graphs.pattern;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import net.xqhs.graphs.graph.Edge;
+import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.SimpleGraph;
@@ -85,31 +88,33 @@ public class GraphPattern extends SimpleGraph
 	{
 		super.readFrom(input);
 		
-		Set<Node> additions = new HashSet<Node>();
-		Set<Node> removals = new HashSet<Node>();
+		Set<GraphComponent> additions = new HashSet<GraphComponent>();
+		Set<GraphComponent> removals = new HashSet<GraphComponent>();
+		Map<Node, Node> replacements = new HashMap<Node, Node>();
 		for(Node node : nodes.keySet())
 			if(node.getLabel().startsWith(NodeP.NODEP_LABEL + NodeP.NODEP_INDEX_MARK))
 			{
 				Node newNode = new NodeP();
 				removals.add(node);
 				additions.add(newNode);
-				for(Edge edge : getInEdges(node))
-				{
-					removeEdge(edge);
-					// it is safe. super.readFrom uses SimpleEdge, so it is ok to replace it with another SimpleEdge.
-					addEdge(new SimpleEdge(edge.getFrom(), newNode, edge.getLabel()));
-				}
-				for(Edge edge : getOutEdges(node))
-				{
-					removeEdge(edge);
-					// it is safe. super.readFrom uses SimpleEdge, so it is ok to replace it with another SimpleEdge.
-					addEdge(new SimpleEdge(newNode, edge.getTo(), edge.getLabel()));
-				}
+				replacements.put(node, newNode);
 			}
-		for(Node node : removals)
-			removeNode(node);
-		for(Node node : additions)
-			addNode(node);
+		for(Edge edge : edges)
+		{
+			Node from = replacements.get(edge.getFrom());
+			Node to = replacements.get(edge.getTo());
+			if((from != null) || (to != null))
+			{
+				removals.add(edge);
+				// it is safe. super.readFrom() uses SimpleEdge, so it is ok to replace it with another SimpleEdge.
+				additions.add(new SimpleEdge(from != null ? from : edge.getFrom(), to != null ? to : edge.getTo(), edge
+						.getLabel()));
+			}
+		}
+		for(GraphComponent comp : removals)
+			remove(comp);
+		for(GraphComponent comp : additions)
+			add(comp);
 		
 		return this;
 	}

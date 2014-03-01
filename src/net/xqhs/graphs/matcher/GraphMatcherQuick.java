@@ -719,8 +719,8 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 		Match newM = new Match(m1.targetGraphLink, pt);
 		
 		newM.unsolvedPart = new GraphPattern();
-		newM.unsolvedPart.getEdges().addAll(pt.getEdges());
-		newM.unsolvedPart.getNodes().addAll(pt.getNodes());
+		newM.unsolvedPart.addAll(pt.getNodes());
+		newM.unsolvedPart.addAll(pt.getEdges());
 		newM.k = newM.unsolvedPart.getEdges().size();
 		
 		Set<Edge> totalMatch = new HashSet<Edge>(); // there should be no duplicates as the solved parts should be

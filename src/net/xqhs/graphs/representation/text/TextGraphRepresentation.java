@@ -69,19 +69,31 @@ import net.xqhs.util.logging.UnitComponent;
  */
 public class TextGraphRepresentation extends LinearGraphRepresentation
 {
+	/**
+	 * The default branch separator.
+	 */
+	public static final String	DEFAULT_BRANCH_SEPARATOR	= "";
+	/**
+	 * The default separator increment.
+	 */
+	public static final String	DEFAULT_SEPARATOR_INCREMENT	= "";
+	/**
+	 * The default increment limit.
+	 */
+	public static final int		DEFAULT_INCREMENT_LIMIT		= -1;
 	
 	/**
 	 * Branch separator. See {@link #setLayout(String, String, int)}.
 	 */
-	protected String	indent			= "";
+	protected String			indent						= DEFAULT_BRANCH_SEPARATOR;
 	/**
 	 * Separator increment. See {@link #setLayout(String, String, int)}.
 	 */
-	protected String	indentIncrement	= "";
+	protected String			indentIncrement				= DEFAULT_SEPARATOR_INCREMENT;
 	/**
 	 * Increment limit. See {@link #setLayout(String, String, int)}.
 	 */
-	protected int		incrementLimit	= -1;
+	protected int				incrementLimit				= DEFAULT_INCREMENT_LIMIT;
 	
 	/**
 	 * Creates a new instance and links it to the specified graph. No processing will occur until {@link #update()} is

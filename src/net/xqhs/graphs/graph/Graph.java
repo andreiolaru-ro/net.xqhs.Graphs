@@ -28,31 +28,55 @@ public interface Graph
 {
 	/**
 	 * @param node
-	 *            - the {@link Node} to add
-	 * @return the graph itself, for chaining calls
+	 *            - the {@link Node} to add.
+	 * @return the graph itself, for chaining calls.
 	 */
 	public Graph addNode(Node node);
 	
 	/**
 	 * @param edge
-	 *            - the {@link Edge} to add
-	 * @return the graph itself, for chained calls
+	 *            - the {@link Edge} to add.
+	 * @return the graph itself, for chained calls.
 	 */
 	public Graph addEdge(Edge edge);
 	
 	/**
+	 * @param component
+	 *            - the component to add. Must be an implementation of {@link GraphComponent} that the implementing
+	 *            class can recognize.
+	 * @return the graph itself, for chained calls.
+	 */
+	public Graph add(GraphComponent component);
+	
+	/**
+	 * @param components
+	 *            - the components to add. Each must be an implementation of {@link GraphComponent} that the
+	 *            implementing class can recognize.
+	 * @return the graph itself, for chained calls.
+	 */
+	public Graph addAll(Collection<? extends GraphComponent> components);
+	
+	/**
 	 * @param node
-	 *            - the {@link Node} to remove
-	 * @return the graph itself, for chained calls
+	 *            - the {@link Node} to remove.
+	 * @return the graph itself, for chained calls.
 	 */
 	public Graph removeNode(Node node);
 	
 	/**
 	 * @param edge
-	 *            - the {@link Edge} to remove
-	 * @return the graph itself, for chained calls
+	 *            - the {@link Edge} to remove.
+	 * @return the graph itself, for chained calls.
 	 */
 	public Graph removeEdge(Edge edge);
+	
+	/**
+	 * @param component
+	 *            - the component to remove. Must be an implementation of {@link GraphComponent} that the implementing
+	 *            class can recognize.
+	 * @return the graph itself, for chained calls.
+	 */
+	public Graph remove(GraphComponent component);
 	
 	/**
 	 * @return the number of nodes in the graph
@@ -70,12 +94,12 @@ public interface Graph
 	public int size();
 	
 	/**
-	 * @return the list of {@link Node} instances in the graph
+	 * @return the list of {@link Node} instances in the graph. May be an immutable collection.
 	 */
 	public Collection<Node> getNodes();
 	
 	/**
-	 * @return the list of {@link Edge} instances in the graph
+	 * @return the list of {@link Edge} instances in the graph. May be an immutable collection.
 	 */
 	public Collection<Edge> getEdges();
 	

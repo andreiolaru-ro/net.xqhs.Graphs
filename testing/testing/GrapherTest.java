@@ -98,7 +98,7 @@ public class GrapherTest
 	}
 	
 	@SuppressWarnings("unused")
-	private static Graph staticTest(int version)
+	public static Graph staticTest(int version)
 	{
 		Graph G = new SimpleGraph();
 		
@@ -160,7 +160,7 @@ public class GrapherTest
 	 *            - use -1 for a new seed.
 	 * @return
 	 */
-	private static Graph randomTest(int nNodes, int nEdges, long seedPre, boolean labelEdges)
+	public static Graph randomTest(int nNodes, int nEdges, long seedPre, boolean labelEdges)
 	{
 		Graph G = new SimpleGraph();
 		

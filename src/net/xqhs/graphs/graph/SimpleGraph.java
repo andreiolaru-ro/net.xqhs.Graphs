@@ -192,7 +192,25 @@ public class SimpleGraph extends Unit implements Graph
 				nodes.get(edge.getTo()).getInEdges().add(edge);
 		}
 		else
-			lw("edge [" + edge.toString() + "] already present.");
+			lw("edge [" + edge.toString() + "] already present. Not re-added");
+		return this;
+	}
+	
+	@Override
+	public SimpleGraph add(GraphComponent component)
+	{
+		if(component instanceof Node)
+			return addNode((Node) component);
+		if(component instanceof Edge)
+			return addEdge((Edge) component);
+		throw new IllegalArgumentException("Given component is not one of Node, Edge.");
+	}
+	
+	@Override
+	public SimpleGraph addAll(Collection<? extends GraphComponent> components)
+	{
+		for(GraphComponent comp : components)
+			add(comp);
 		return this;
 	}
 	
@@ -215,10 +233,21 @@ public class SimpleGraph extends Unit implements Graph
 				nodes.get(edge.getFrom()).getOutEdges().remove(edge);
 			if(contains(edge.getTo()))
 				nodes.get(edge.getTo()).getInEdges().remove(edge);
+			edges.remove(edge);
 		}
 		else
 			lw("edge [" + edge + "] not contained");
 		return this;
+	}
+	
+	@Override
+	public SimpleGraph remove(GraphComponent component)
+	{
+		if(component instanceof Node)
+			return removeNode((Node) component);
+		if(component instanceof Edge)
+			return removeEdge((Edge) component);
+		throw new IllegalArgumentException("Given component is not one of Node, Edge.");
 	}
 	
 	@Override
@@ -242,13 +271,13 @@ public class SimpleGraph extends Unit implements Graph
 	@Override
 	public Collection<Node> getNodes()
 	{
-		return nodes.keySet();
+		return Collections.unmodifiableCollection(nodes.keySet());
 	}
 	
 	@Override
 	public Collection<Edge> getEdges()
 	{
-		return edges;
+		return Collections.unmodifiableCollection(edges);
 	}
 	
 	@Override
@@ -256,7 +285,7 @@ public class SimpleGraph extends Unit implements Graph
 	{
 		if(!contains(node))
 			throw new IllegalArgumentException("node " + node + " is not in graph");
-		return nodes.get(node).getOutEdges();
+		return Collections.unmodifiableCollection(nodes.get(node).getOutEdges());
 	}
 	
 	@Override
@@ -264,7 +293,7 @@ public class SimpleGraph extends Unit implements Graph
 	{
 		if(!contains(node))
 			throw new IllegalArgumentException("node " + node + " is not in graph");
-		return nodes.get(node).getInEdges();
+		return Collections.unmodifiableCollection(nodes.get(node).getInEdges());
 	}
 	
 	@Override
@@ -309,6 +338,11 @@ public class SimpleGraph extends Unit implements Graph
 		while(!grayNodes.isEmpty())
 		{
 			Node cNode = grayNodes.poll();
+			if(!contains(cNode))
+			{
+				lw("Node [] is not in graph.", cNode);
+				continue;
+			}
 			int dist = dists.get(cNode).intValue();
 			blackNodes.add(cNode);
 			

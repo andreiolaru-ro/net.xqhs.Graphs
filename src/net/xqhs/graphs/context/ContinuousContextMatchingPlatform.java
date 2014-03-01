@@ -3,7 +3,7 @@ package net.xqhs.graphs.context;
 import java.util.Collection;
 
 import net.xqhs.graphs.graph.Graph;
-import net.xqhs.graphs.matcher.GraphMatchingPlatform;
+import net.xqhs.graphs.matchingPlatform.GraphMatchingPlatform;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.util.config.Configurable;
 

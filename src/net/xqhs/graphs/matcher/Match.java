@@ -172,11 +172,11 @@ public class Match
 		edgeFunction.put(eP, eL);
 		// the frontier contains both nodes (if it is the case), with their adjacent edges minus the matched edge
 		frontier = new HashMap<Node, AtomicInteger>();
-		if(g.getInEdges(ePFrom).size() + g.getOutEdges(ePFrom).size() > 1)
+		if(p.getInEdges(ePFrom).size() + p.getOutEdges(ePFrom).size() > 1)
 			frontier.put(eP.getFrom(),
-					new AtomicInteger(g.getInEdges(ePFrom).size() + g.getOutEdges(ePFrom).size() - 1));
-		if(g.getInEdges(ePTo).size() + g.getOutEdges(ePTo).size() > 1)
-			frontier.put(eP.getTo(), new AtomicInteger(g.getInEdges(ePTo).size() + g.getOutEdges(ePTo).size() - 1));
+					new AtomicInteger(p.getInEdges(ePFrom).size() + p.getOutEdges(ePFrom).size() - 1));
+		if(p.getInEdges(ePTo).size() + p.getOutEdges(ePTo).size() > 1)
+			frontier.put(eP.getTo(), new AtomicInteger(p.getInEdges(ePTo).size() + p.getOutEdges(ePTo).size() - 1));
 		// unsolved part (all nodes and edges except the matched ones)
 		unsolvedPart = new GraphPattern();
 		for(Node vP : p.getNodes())

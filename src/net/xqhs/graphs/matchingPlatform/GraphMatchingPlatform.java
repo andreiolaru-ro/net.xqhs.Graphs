@@ -1,8 +1,10 @@
-package net.xqhs.graphs.matcher;
+package net.xqhs.graphs.matchingPlatform;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import net.xqhs.graphs.matcher.GraphMatchingProcess;
+import net.xqhs.graphs.matcher.Match;
 import net.xqhs.graphs.pattern.GraphPattern;
 
 /**
