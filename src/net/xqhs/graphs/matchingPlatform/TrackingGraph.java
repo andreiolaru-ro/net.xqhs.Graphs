@@ -53,6 +53,7 @@ public class TrackingGraph extends SimpleGraph
 		 */
 		REMOVE,
 		
+		// TODO
 		// CHANGE,
 	}
 	
@@ -364,6 +365,20 @@ public class TrackingGraph extends SimpleGraph
 				return singleOperationComponent + ": " + singleOperationOperation.toString();
 			return multipleOperations.toString();
 		}
+		
+		/**
+		 * Retrieves the operations in this transaction as a (copy) {@link Map} of {@link GraphComponent} &rarr;
+		 * {@link Operation}.
+		 * 
+		 * @return the operations.
+		 */
+		public Map<GraphComponent, Operation> toOperationMap()
+		{
+			toMultipleOperations();
+			Map<GraphComponent, Operation> ret = new HashMap<GraphComponent, Operation>(multipleOperations);
+			compact();
+			return ret;
+		}
 	}
 	
 	/**
@@ -660,6 +675,31 @@ public class TrackingGraph extends SimpleGraph
 	}
 	
 	/**
+	 * Retrieves the operations that will be applied at the next sequence increment.
+	 * 
+	 * @return the operations to be performed, or <code>null</code> if the shadow is synchronized with its master.
+	 */
+	public Map<GraphComponent, Operation> getNextSequenceOperations()
+	{
+		if(!isShadow)
+			throw new IllegalStateException("Non-shadow graphs do not support this operation");
+		if(transactionQueue.isEmpty())
+			// nowhere to increment
+			return null;
+		return transactionQueue.poll().toOperationMap();
+	}
+	
+	/**
+	 * Internal method that applies one transaction to the graph.
+	 */
+	protected void incrementSequenceInternal()
+	{
+		if(!isShadow || transactionQueue.isEmpty())
+			throw new IllegalStateException("Illegal state reached.");
+		applyTransactionInternal(transactionQueue.poll());
+	}
+	
+	/**
 	 * Takes one transaction from the graph's transaction queue and applies it to the current state of the graph.
 	 * 
 	 * @return the new current sequence number.
@@ -674,7 +714,7 @@ public class TrackingGraph extends SimpleGraph
 		if(transactionQueue.isEmpty())
 			// nowhere to increment
 			return -1;
-		applyTransactionInternal(transactionQueue.poll());
+		incrementSequenceInternal();
 		return sequence.get();
 	}
 	
@@ -696,7 +736,7 @@ public class TrackingGraph extends SimpleGraph
 		if(!isShadow)
 			throw new IllegalStateException("Non-shadow graphs do not support this operation");
 		while(!transactionQueue.isEmpty() && (sequence.get() < targetSequence))
-			applyTransactionInternal(transactionQueue.poll());
+			incrementSequenceInternal();
 		if(sequence.get() < targetSequence)
 			lw("Target sequence not reached.");
 		return sequence.get();
@@ -715,7 +755,7 @@ public class TrackingGraph extends SimpleGraph
 		if(!isShadow)
 			throw new IllegalStateException("Non-shadow graphs do not support this operation");
 		while(!transactionQueue.isEmpty())
-			applyTransactionInternal(transactionQueue.poll());
+			incrementSequenceInternal();
 		return sequence.get();
 	}
 	

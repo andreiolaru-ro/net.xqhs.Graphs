@@ -14,7 +14,10 @@ package net.xqhs.graphs.matcher;
 import java.awt.Color;
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -28,7 +31,6 @@ import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleGraph;
-import net.xqhs.graphs.matcher.GraphMatcherQuick.MatchComparator;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.representation.GraphRepresentation;
 import net.xqhs.graphs.representation.VisualizableGraphComponent;
@@ -60,6 +62,50 @@ import net.xqhs.graphs.representation.text.TextGraphRepresentation;
  */
 public class Match
 {
+	public static enum Candidacy {
+		OUTER,
+		
+		IMMEDIATE,
+		
+		NONE,
+	}
+	
+	/**
+	 * {@link Match} comparator.
+	 * <p>
+	 * The matches are sorted according to <code>k</code> (smaller k first). If equal, order by id.
+	 */
+	public static class MatchComparator implements Comparator<Match>
+	{
+		/**
+		 * Link to the object measuring performance of the algorithm in terms of number of compared edges.
+		 */
+		@SuppressWarnings("unused")
+		private MonitorPack	monitorLink	= null;
+		
+		/**
+		 * Creates a match comparator.
+		 * 
+		 * @param monitor
+		 *            - the object measuring performance in terms of edge matches.
+		 */
+		public MatchComparator(MonitorPack monitor)
+		{
+			monitorLink = monitor;
+		}
+		
+		@Override
+		public int compare(Match m1, Match m2)
+		{
+			if(m1.k != m2.k)
+				return m1.k - m2.k;
+			// dbg(D_G.D_MATCHING_INITIAL, "re-compare []", m1.id.compareTo(m2.id));
+			if(m1.id.equals(m2.id))
+				return m1.hashCode() - m2.hashCode();
+			return m1.id.compareTo(m2.id);
+		}
+	}
+	
 	/**
 	 * Reference to the graph G.
 	 */
@@ -117,6 +163,14 @@ public class Match
 	 * that edge.
 	 */
 	String						id						= "-";
+	
+	/**
+	 * States that the match is still valid. In persistent matching, a match may become invalid but not yet removed from
+	 * various structures.
+	 * 
+	 * @since 1.5
+	 */
+	boolean						valid					= true;
 	
 	/**
 	 * Create a new empty match; some parts may be uninitialized / undefined (like frontier, or matchCandidates)
@@ -188,8 +242,8 @@ public class Match
 		k = unsolvedPart.getEdges().size();
 		
 		// no match candidates added; they will be added in addInitialMatches()
-		mergeCandidates = new TreeSet<Match>(new MatchComparator());
-		mergeOuterCandidates = new TreeSet<Match>(new MatchComparator());
+		mergeCandidates = new TreeSet<Match>(new MatchComparator(null));
+		mergeOuterCandidates = new TreeSet<Match>(new MatchComparator(null));
 		
 		this.id = id;
 	}
@@ -204,6 +258,241 @@ public class Match
 	public int hashCode()
 	{
 		return id.hashCode();
+	}
+	
+	/**
+	 * Invalidates the match. The method can be used classes extending {@link GraphMatcherQuick} by calling
+	 * {@link GraphMatcherQuick#invalidateMatch(Match)}. This way matches cannot be invalidated by other classes.
+	 * 
+	 * @since 1.5
+	 */
+	protected void invalidate()
+	{
+		valid = false;
+	}
+	
+	/**
+	 * Checks if the match is valid. Invalid matches are on the way to be removed from various structures.
+	 * 
+	 * @return <code>true</code> if the match is still valid.
+	 * 
+	 * @since 1.5
+	 */
+	protected boolean isValid()
+	{
+		return valid;
+	}
+	
+	public int getK()
+	{
+		return k;
+	}
+	
+	public int getSize()
+	{
+		return solvedPart.m();
+	}
+	
+	public Candidacy getCandidacy(Match mc, Map<Edge, Set<Match>> eMatchIndex, Map<Edge, Set<Match>> ePMatchIndex,
+			MonitorPack monitor)
+	{
+		// check that match mc does not already contain any edges in this match
+		for(Edge eP : solvedPart.getEdges())
+			if(ePMatchIndex.get(eP).contains(mc))
+				return Candidacy.NONE;
+		// check that the subgraph matched by mc does not already contain any edges in this match
+		for(Edge e : matchedGraph.getEdges())
+			if(eMatchIndex.get(e).contains(mc))
+				return Candidacy.NONE;
+		return getCandidacyInternal(mc, monitor);
+	}
+	
+	protected Candidacy getCandidacyInternal(Match mc, MonitorPack monitor)
+	{
+		boolean outer = true;
+		// iterate over frontier intersection, see if nodes correspond to the same target in the matched subgraph
+		Set<Node> frontierIntersection = new HashSet<Node>(frontier.keySet());
+		frontierIntersection.retainAll(mc.frontier.keySet());
+		
+		for(Node node : frontierIntersection)
+			if(nodeFunction.get(node) == mc.nodeFunction.get(node))
+				outer = false;
+			else
+				return Candidacy.NONE;
+		if(outer)
+			return Candidacy.OUTER;
+		return Candidacy.IMMEDIATE;
+	}
+	
+	public Candidacy considerCandidate(Match mc, Map<Edge, Set<Match>> eMatchIndex, Map<Edge, Set<Match>> ePMatchIndex,
+			MonitorPack monitor)
+	{
+		if((mc == null) || (mc.targetGraphLink != targetGraphLink) || (mc.patternLink != patternLink))
+			throw new IllegalArgumentException("Other match is not in the same space");
+		Candidacy cand = getCandidacy(mc, eMatchIndex, ePMatchIndex, monitor);
+		if(cand == Candidacy.IMMEDIATE)
+		{
+			mergeCandidates.add(mc);
+			mc.mergeCandidates.add(this);
+		}
+		if(cand == Candidacy.OUTER)
+		{
+			mergeOuterCandidates.add(mc);
+			mc.mergeOuterCandidates.add(this);
+		}
+		return cand;
+	}
+	
+	/**
+	 * Merges two matches into a new one and returns the result.
+	 * <p>
+	 * Matches are expected to be disjoint (correct merge candidates), both as GmP and as G' (in terms of edges); also,
+	 * all common nodes in GmP must correspond to the same nodes in G' (this check should be done initially in
+	 * {@link #getCandidacy(Match, Map, Map, MonitorPack)}.
+	 * <p>
+	 * <b>Attention:</b> matches are expected to be merge-able without checks.
+	 * 
+	 * @param m1
+	 *            - the other match.
+	 * @return the merged match.
+	 */
+	public Match merge(Match m1, Map<Edge, Set<Match>> eMatchIndex, Map<Edge, Set<Match>> ePMatchIndex,
+			MonitorPack monitor)
+	{
+		// must handle (create in the new match, based on the two matches:
+		// G and GP links -> in constructor
+		// GmP -> obtained by adding edges from m1.GmP and m2.GmP and their adjacent vertices
+		// G' -> obtained by adding the values of the edge and node functions, when adding edges in GmP
+		// GxP -> obtained by removing edges added to GmP and nodes
+		// k -> obtained by decrementing when adding edges
+		// node function -> reuniting the node functions of the two matches
+		// edge function -> reuniting the edge functions of the two matches
+		// frontier -> practically adding nodes from solved part, always checking if they are still on the frontier
+		// MC -> MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
+		// MO -> common outer candidates: MO = MO1 n MO2
+		// id TODO
+		
+		GraphPattern pt = patternLink;
+		// G and GP links -> set in constructor
+		Match newM = new Match(targetGraphLink, pt);
+		
+		// add whole pattern (same for both matches) as unsolved part
+		newM.unsolvedPart = new GraphPattern();
+		newM.unsolvedPart.addAll(pt.getNodes());
+		newM.unsolvedPart.addAll(pt.getEdges());
+		newM.k = newM.unsolvedPart.getEdges().size();
+		
+		// there should be no duplicates as the solved parts should be disjoint. This is checked further on.
+		Set<Edge> totalMatch = new HashSet<Edge>();
+		
+		totalMatch.addAll(solvedPart.getEdges());
+		totalMatch.addAll(m1.solvedPart.getEdges());
+		
+		newM.solvedPart = new GraphPattern();
+		newM.nodeFunction = new HashMap<Node, Node>();
+		newM.edgeFunction = new HashMap<Edge, List<Edge>>();
+		newM.matchedGraph = new SimpleGraph();
+		newM.frontier = new HashMap<Node, AtomicInteger>();
+		for(Edge eP : totalMatch)
+		{
+			monitor.incrementEdgeReferenceOperation();
+			// GmP -> obtained by adding edges from m1.GmP and m2.GmP and their adjacent vertices
+			newM.solvedPart.addEdge(eP).addNode(eP.getFrom()).addNode(eP.getTo());
+			// GxP -> obtained by removing edges added to GmP and nodes
+			newM.unsolvedPart.removeEdge(eP).removeNode(eP.getFrom()).removeNode(eP.getTo());
+			// k -> obtained by decrementing when adding edges
+			newM.k--;
+			
+			Match sourceMatch = null; // which match does eP come from
+			if(solvedPart.contains(eP))
+				sourceMatch = this;
+			if(m1.solvedPart.contains(eP))
+			{
+				if(sourceMatch != null)
+				{
+					monitor.le("match-intersection pattern edge found: []", eP);
+					throw new IllegalArgumentException("match-intersection edge");
+				}
+				sourceMatch = m1;
+			}
+			if(sourceMatch == null)
+				throw new InternalError("edge not found in total match"); // impossible
+				
+			// node function -> reuniting the node functions of the two matches
+			newM.nodeFunction.put(eP.getFrom(), sourceMatch.nodeFunction.get(eP.getFrom()));
+			newM.nodeFunction.put(eP.getTo(), sourceMatch.nodeFunction.get(eP.getTo()));
+			// edge function -> reuniting the edge functions of the two matches
+			newM.edgeFunction.put(eP, sourceMatch.edgeFunction.get(eP));
+			// G' -> obtained by adding the values of the edge and node functions, when adding edges in GmP
+			for(Edge em : sourceMatch.edgeFunction.get(eP))
+			{
+				newM.matchedGraph.addEdge(em).addNode(em.getFrom()).addNode(em.getTo());
+				if(eMatchIndex != null)
+				// add to index
+				{
+					if(!eMatchIndex.containsKey(em))
+						eMatchIndex.put(em, new HashSet<Match>());
+					eMatchIndex.get(em).add(newM);
+				}
+			}
+			if(ePMatchIndex != null)
+			// add to index
+			{
+				if(!ePMatchIndex.containsKey(eP))
+					ePMatchIndex.put(eP, new HashSet<Match>());
+				ePMatchIndex.get(eP).add(newM);
+			}
+			
+			// frontier -> practically adding nodes from solved part, always checking if they are still on the frontier
+			AtomicInteger fromIndex = newM.frontier.get(eP.getFrom());
+			if(fromIndex != null)
+				if(fromIndex.decrementAndGet() == 0)
+					newM.frontier.remove(eP.getFrom());
+				else
+					newM.frontier.put(eP.getFrom(), fromIndex);
+			else
+				newM.frontier
+						.put(eP.getFrom(),
+								new AtomicInteger(pt.getInEdges(eP.getFrom()).size()
+										+ pt.getOutEdges(eP.getFrom()).size() - 1));
+			AtomicInteger toIndex = newM.frontier.get(eP.getTo());
+			if(toIndex != null)
+				if(toIndex.decrementAndGet() == 0)
+					newM.frontier.remove(eP.getTo());
+				else
+					newM.frontier.put(eP.getTo(), toIndex);
+			else
+				newM.frontier.put(eP.getTo(),
+						new AtomicInteger(pt.getInEdges(eP.getTo()).size() + pt.getOutEdges(eP.getTo()).size() - 1));
+		}
+		// 'u' stands for reunion and 'n' for intersection
+		// merge candidates: MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
+		// common merge candidates, and candidates of each match that were outer candidates for the other match
+		newM.mergeCandidates = new HashSet<Match>(mergeCandidates);
+		Set<Match> partB = new HashSet<Match>(mergeCandidates);
+		Set<Match> partC = new HashSet<Match>(m1.mergeCandidates);
+		newM.mergeCandidates.retainAll(m1.mergeCandidates);
+		partB.retainAll(m1.mergeOuterCandidates);
+		partC.retainAll(mergeOuterCandidates);
+		newM.mergeCandidates.addAll(partB);
+		newM.mergeCandidates.addAll(partC);
+		
+		// merge outer candidates: common outer candidates: MO = MO1 n MO2
+		newM.mergeOuterCandidates = new HashSet<Match>(mergeOuterCandidates);
+		newM.mergeOuterCandidates.retainAll(m1.mergeOuterCandidates);
+		
+		// check validity
+		for(Iterator<Match> mi = mergeCandidates.iterator(); mi.hasNext();)
+			if(!mi.next().isValid())
+				mi.remove();
+		for(Iterator<Match> mi = mergeOuterCandidates.iterator(); mi.hasNext();)
+			if(!mi.next().isValid())
+				mi.remove();
+		
+		monitor.incrementEdgeReferenceOperation(mergeCandidates.size() + m1.mergeCandidates.size()
+				+ mergeOuterCandidates.size() + m1.mergeOuterCandidates.size());
+		
+		return newM;
 	}
 	
 	/**
@@ -232,10 +521,12 @@ public class Match
 		ret += "frontier: " + frontier + "; ";
 		ret += "mCs: [";
 		for(Match mi : mergeCandidates)
-			ret += mi.id + ", ";
+			if(mi.isValid())
+				ret += mi.id + ", ";
 		ret += "] mOCs: [";
 		for(Match moi : mergeOuterCandidates)
-			ret += moi.id + ", ";
+			if(moi.isValid())
+				ret += moi.id + ", ";
 		ret += "] \t";
 		ret += "fv: " + nodeFunction;
 		// ret += "fe: " + edgeFunction + "\n\t";

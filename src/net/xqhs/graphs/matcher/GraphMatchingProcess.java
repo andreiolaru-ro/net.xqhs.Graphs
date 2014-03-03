@@ -47,8 +47,10 @@ public interface GraphMatchingProcess
 	 * <p>
 	 * The call to this method results in freeing all memory occupied by information related to the matching process
 	 * that was retained.
+	 * 
+	 * @return the instance itself.
 	 */
-	public void clearData();
+	public GraphMatchingProcess clearData();
 	
 	/**
 	 * Searches for the next match with a <i>k</i> lower than or equal to the current threshold. The match returned is

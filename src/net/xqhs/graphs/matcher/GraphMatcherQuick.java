@@ -14,13 +14,11 @@ package net.xqhs.graphs.matcher;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
-import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -28,7 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.Node;
-import net.xqhs.graphs.graph.SimpleGraph;
+import net.xqhs.graphs.matcher.Match.MatchComparator;
 import net.xqhs.graphs.pattern.EdgeP;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
@@ -37,8 +35,6 @@ import net.xqhs.graphs.util.Debug.D_G;
 
 /**
  * An algorithm that finds partial matches between a graph pattern GP (or G^P) and a graph (G).
- * <p>
- * Most of the methods in this implementation are <code>public static</code>, so as to be used easily in other classes.
  * <p>
  * In order to evaluate the performance and to visualize the process, a {@link MonitorPack} instance is used throughout
  * the code.
@@ -58,7 +54,42 @@ import net.xqhs.graphs.util.Debug.D_G;
 public class GraphMatcherQuick implements GraphMatchingProcess
 {
 	/**
-	 * {@link Match} comparator.
+	 * Graph/pattern edge comparator based on label and then hash code.
+	 */
+	public static class EdgeComparator implements Comparator<Edge>
+	{
+		/**
+		 * Link to the object measuring performance of the algorithm in terms of number of compared edges.
+		 */
+		private MonitorPack	monitorLink	= null;
+		
+		/**
+		 * Creates an new edge comparator.
+		 * 
+		 * @param monitor
+		 *            - the object measuring performance in terms of edge matches.
+		 */
+		public EdgeComparator(MonitorPack monitor)
+		{
+			monitorLink = monitor;
+		}
+		
+		@Override
+		public int compare(Edge e1, Edge e2)
+		{
+			if(e1.getLabel() == null)
+				return -1;
+			if(e2.getLabel() == null)
+				return 1;
+			monitorLink.incrementEdgeLabelComparison();
+			if(!e1.getLabel().equals(e2.getLabel()))
+				return e1.getLabel().compareTo(e2.getLabel());
+			return e1.hashCode() - e2.hashCode();
+		}
+	}
+	
+	/**
+	 * {@link Match} comparator with additional features for single-edge matches.
 	 * <p>
 	 * The matches are sorted according to:
 	 * <ul>
@@ -68,7 +99,7 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	 * <li>for matches with more than one edge, order by <code>k</code> (smaller k first). If equal, order by id.
 	 * </ul>
 	 */
-	protected static class MatchComparator implements Comparator<Match>
+	protected static class MatchSingleComparator extends MatchComparator
 	{
 		/**
 		 * Vector of distances between every node and the start vertex.
@@ -81,13 +112,6 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 		private MonitorPack			monitorLink	= null;
 		
 		/**
-		 * Constructor used internally by a {@link Match}. Does not use vertex distances from root vertex.
-		 */
-		protected MatchComparator()
-		{
-		}
-		
-		/**
 		 * Creates a match comparator that uses distances of vertices with respect to the root vertex.
 		 * 
 		 * @param vertexDistances
@@ -95,10 +119,10 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 		 * @param monitor
 		 *            - the object measuring performance in terms of edge matches.
 		 */
-		protected MatchComparator(Map<Node, Integer> vertexDistances, MonitorPack monitor)
+		protected MatchSingleComparator(Map<Node, Integer> vertexDistances, MonitorPack monitor)
 		{
+			super(monitor);
 			distances = vertexDistances;
-			monitorLink = monitor;
 		}
 		
 		@Override
@@ -112,16 +136,12 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 				int result = Math.min(distances.get(e1.getFrom()).intValue(), distances.get(e1.getTo()).intValue())
 						- Math.min(distances.get(e2.getFrom()).intValue(), distances.get(e2.getTo()).intValue());
 				// dbg(D_G.D_MATCHING_INITIAL, "compare [] [] : [] (for [] vs [])", result, e1, e2, m1.id, m2.id);
-				monitorLink.incrementEdgeReferenceOperation(2);
+				if(monitorLink != null)
+					monitorLink.incrementEdgeReferenceOperation(2);
 				if(result != 0)
 					return result;
 			}
-			if(m1.k != m2.k)
-				return m1.k - m2.k;
-			// dbg(D_G.D_MATCHING_INITIAL, "re-compare []", m1.id.compareTo(m2.id));
-			if(m1.id.equals(m2.id))
-				return m1.hashCode() - m2.hashCode();
-			return m1.id.compareTo(m2.id);
+			return super.compare(m1, m2);
 		}
 	}
 	
@@ -150,7 +170,7 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	protected List<Match>			allMatches		= null;
 	/**
 	 * An {@link Iterator} over {@link #allMatches} that keeps is used to remember the already-returned matches. It is
-	 * reset with {@link #resetIterator()} or when the list of matches has been completely itterated over and no
+	 * reset with {@link #resetIterator()} or when the list of matches has been completely iterated over and no
 	 * satisfactory match has been found.
 	 */
 	protected Iterator<Match>		matchIterator	= null;
@@ -203,12 +223,11 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	 * 
 	 * @return the instance itself.
 	 */
-	@SuppressWarnings("unchecked")
 	public GraphMatcherQuick initializeMatching()
 	{
-		matchQueue = initializeMatchQueue(graph, pattern, monitor);
-		addInitialMatches(graph, pattern, matchQueue, monitor, (Comparator<Match>) matchQueue.comparator());
-		allMatches = new ArrayList<Match>(matchQueue);
+		allMatches = new ArrayList<Match>();
+		matchQueue = initializeMatchQueue();
+		addInitialMatches();
 		initialState = true;
 		return this;
 	}
@@ -231,12 +250,13 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	 * Clears the match queue and the list of all matches.
 	 */
 	@Override
-	public void clearData()
+	public GraphMatcherQuick clearData()
 	{
 		matchQueue.clear();
 		allMatches.clear();
 		matchQueue = null;
 		allMatches = null;
+		return this;
 	}
 	
 	/**
@@ -271,6 +291,11 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 			while(matchIterator.hasNext())
 			{
 				Match m = matchIterator.next();
+				if(!m.isValid())
+				{
+					matchIterator.remove();
+					continue;
+				}
 				if(m.k <= kThreshold)
 					return m;
 			}
@@ -279,7 +304,7 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 						allMatches.size()) : "-");
 		matchIterator = null;
 		// existing matches exhausted from the beginning, or exhausted in the preceding while cycle
-		List<Match> result = growMatches(kThreshold, true, matchQueue, allMatches, monitor);
+		List<Match> result = growMatches(kThreshold, true);
 		monitor.dbg(D_G.D_MATCHING_PROGRESS, "iterating;queue;all: ==/ ", (matchIterator != null) ? "Y" : "N",
 				(matchQueue != null) ? new Integer(matchQueue.size()) : "-", (allMatches != null) ? new Integer(
 						allMatches.size()) : "-");
@@ -304,12 +329,17 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 		while(matchIterator.hasNext())
 		{
 			Match m = matchIterator.next();
+			if(!m.isValid())
+			{
+				matchIterator.remove();
+				continue;
+			}
 			if(m.k <= kThreshold)
 				result.add(m);
 		}
 		matchIterator = null;
 		// then check for any new ones
-		result.addAll(growMatches(k, false, matchQueue, allMatches, monitor));
+		result.addAll(growMatches(k, false));
 		return result;
 	}
 	
@@ -323,19 +353,13 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	 * The method initializes the match queue by creating an appropriate comparator (based on distances of edges to a
 	 * start vertex).
 	 * 
-	 * @param graph
-	 *            - the graph.
-	 * @param pattern
-	 *            - the pattern.
-	 * @param monitor
-	 *            - the monitoring instance.
 	 * @return an empty {@link PriorityQueue} with the appropriate comparator.
 	 */
-	public static PriorityQueue<Match> initializeMatchQueue(Graph graph, GraphPattern pattern, MonitorPack monitor)
+	protected PriorityQueue<Match> initializeMatchQueue()
 	{
-		Map<Node, Integer> distances = computeVertexDistances(pattern, monitor);
+		Map<Node, Integer> distances = computeVertexDistances();
 		
-		Comparator<Match> matchComparator = new MatchComparator(distances, monitor);
+		Comparator<Match> matchComparator = new MatchSingleComparator(distances, monitor);
 		
 		return new PriorityQueue<Match>(1, matchComparator);
 	}
@@ -345,13 +369,9 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	 * <p>
 	 * Then, computes the distances of each vertex in the pattern from the start vertex.
 	 * 
-	 * @param pattern
-	 *            - the pattern.
-	 * @param monitor
-	 *            - the monitoring instance.
 	 * @return the distance map.
 	 */
-	public static Map<Node, Integer> computeVertexDistances(final GraphPattern pattern, final MonitorPack monitor)
+	protected Map<Node, Integer> computeVertexDistances()
 	{
 		/**
 		 * Vertices ordered by out-degree (minus in-degree) (first is greatest).
@@ -409,52 +429,29 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	
 	/**
 	 * Add initial (i.e. all single-edge) matches to the match queue.
-	 * 
-	 * @param graph
-	 *            - the graph.
-	 * @param pattern
-	 *            - the pattern
-	 * @param matchQueue
-	 *            - the empty match queue.
-	 * @param monitor
-	 *            - the monitoring instance.
-	 * @param comparator
-	 *            - used for debugging. It can be the comparator used by the MatchQueue. Can be <code>null</code>.
 	 */
-	public static void addInitialMatches(Graph graph, GraphPattern pattern, PriorityQueue<Match> matchQueue,
-			final MonitorPack monitor, Comparator<Match> comparator)
+	protected void addInitialMatches()
 	{
-		Comparator<Edge> edgeComparator = new Comparator<Edge>() {
-			@Override
-			public int compare(Edge e1, Edge e2)
-			{
-				if(e1.getLabel() == null)
-					return -1;
-				if(e2.getLabel() == null)
-					return 1;
-				monitor.incrementEdgeLabelComparison();
-				if(!e1.getLabel().equals(e2.getLabel()))
-					return e1.getLabel().compareTo(e2.getLabel());
-				return e1.hashCode() - e2.hashCode();
-			}
-		};
+		@SuppressWarnings("unchecked")
+		Comparator<Match> comparator = (Comparator<Match>) matchQueue.comparator();
 		
 		/**
 		 * Ordered pattern edges, according to label.
 		 */
-		SortedSet<Edge> sortedEdges = new TreeSet<Edge>(edgeComparator);
+		SortedSet<Edge> sortedEdges = new TreeSet<Edge>(new EdgeComparator(monitor));
 		sortedEdges.addAll(pattern.getEdges());
 		
 		/**
 		 * Ordered graph edges, according to label.
 		 */
-		SortedSet<Edge> sortedGraphEdges = new TreeSet<Edge>(edgeComparator);
+		SortedSet<Edge> sortedGraphEdges = new TreeSet<Edge>(new EdgeComparator(monitor));
 		sortedGraphEdges.addAll(graph.getEdges());
 		
 		// for each edge in the pattern, create an id and build a match.
 		int edgeId = 0;
 		for(Edge eP : sortedEdges)
 		{
+			// no generic pattern edges in initial matches
 			if(!((eP instanceof EdgeP) && ((EdgeP) eP).isGeneric()))
 			{
 				int matchId = 0;
@@ -462,11 +459,10 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 				for(Edge e : sortedGraphEdges)
 				{
 					monitor.dbg(D_G.D_MATCHING_INITIAL, "trying edges: [] : []", eP, e);
-					if(isMatch(eP, e, monitor))
+					if(isMatch(eP, e))
 					{
-						Match m = new Match(graph, pattern, e, eP, edgeId + ":" + matchId);
+						Match m = addInitialMatch(e, eP, edgeId + ":" + matchId);
 						monitor.incrementMatchCount();
-						addInitialMatchToQueue(m, matchQueue, monitor);
 						monitor.lf("new initial match: [] [] : []", m.id, m.solvedPart.getEdges().iterator().next(),
 								m.matchedGraph.getEdges().iterator().next());
 						
@@ -478,7 +474,8 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 							if(comparator != null)
 								Arrays.sort(dbg_sorted, comparator);
 							for(Match mdbg : dbg_sorted)
-								dbg_match += mdbg.id + ", ";
+								if(mdbg.isValid())
+									dbg_match += mdbg.id + ", ";
 							monitor.dbg(D_G.D_MATCHING_INITIAL, dbg_match);
 						}
 						
@@ -498,33 +495,48 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 			if(monitor.getVisual() != null)
 				monitor.getVisual().feedLine("initial matches: " + matchQueue.size());
 			for(Match m : sorted)
-			{
-				string += m.toString() + ", \n";
-				if(monitor.getVisual() != null)
-					monitor.getVisual().feedLine(m, "initial match");
-			}
+				if(m.isValid())
+				{
+					string += m.toString() + ", \n";
+					if(monitor.getVisual() != null)
+						monitor.getVisual().feedLine(m, "initial match");
+				}
 		}
 		string += "]";
 		monitor.lf("initial matches []: []-------------------------", new Integer(matchQueue.size()), string);
 	}
 	
 	/**
-	 * Adds a single-edge match to the matching queue and add matches from the queue to its merge candidate list (as
-	 * well as adding the match to other matches' merge candidates)
+	 * Create a single-edge match and add it to the matching queue; also add matches from the queue to its merge
+	 * candidate list (as well as adding the match to other matches' merge candidates)
 	 * 
+	 * @param g
+	 *            - the graph.
+	 * @param p
+	 *            - the pattern.
+	 * @param e
+	 *            - the edge in the graph.
+	 * @param eP
+	 *            - the edge in the pattern.
+	 * @param matchID
+	 *            - the id for the new match.
 	 * @param m
 	 *            - the match to add to the queue.
 	 * @param queue
 	 *            - the match queue.
 	 * @param monitor
 	 *            - the monitoring instance.
+	 * @return the newly created and configured match.
 	 */
-	// used to be static, but needs performance evaluation
-	protected static void addInitialMatchToQueue(Match m, PriorityQueue<Match> queue, MonitorPack monitor)
+	protected Match addInitialMatch(Edge e, Edge eP, String matchID)
 	{
+		Match m = new Match(graph, pattern, e, eP, matchID);
+		
 		// take all matches already in the queue and see if they are compatible
-		for(Match mi : queue)
+		for(Match mi : matchQueue)
 		{
+			if(!mi.isValid())
+				continue;
 			boolean accept = false;
 			boolean reject = false;
 			// reject if: the two matches intersect (contain common pattern edges)
@@ -570,7 +582,9 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 			}
 		}
 		// add the match to the queue
-		queue.add(m);
+		matchQueue.add(m);
+		allMatches.add(m);
+		return m;
 	}
 	
 	/**
@@ -580,11 +594,9 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	 *            - the edge in the pattern (eP in EP).
 	 * @param e
 	 *            - the edge in the graph (eP in E).
-	 * @param monitor
-	 *            - the monitoring instance.
 	 * @return <code>true</code> if the edges match.
 	 */
-	protected static boolean isMatch(Edge eP, Edge e, MonitorPack monitor)
+	protected boolean isMatch(Edge eP, Edge e)
 	{
 		monitor.incrementEdgeReferenceOperation();
 		
@@ -621,21 +633,14 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	 * candidates. In case <code>stopAtFirstMatch</code> is <code>true</code>, the process is interrupted when the first
 	 * satisfactory match is created, and the match is returned.
 	 * 
-	 * @param kThreshold
+	 * @param threshold
 	 *            - the threshold for matches: satisfactory matches have a <i>k</i> lower than or equal to this number.
 	 * @param stopAtFirstMatch
 	 *            - if <code>true</code>, the method returns after the first satisfactory match is found.
-	 * @param matchQueue
-	 *            - the queue containing existing matches that still have merge candidates.
-	 * @param allMatches
-	 *            - the list of all existing matches, that will be updated with all newly generated matches.
-	 * @param monitor
-	 *            - the monitoring instance.
 	 * @return the list of satisfactory matches. If <code>stopAtFirstMatch</code> is <code>true</code>, the returned
 	 *         list will have at most one element.
 	 */
-	public static List<Match> growMatches(int kThreshold, boolean stopAtFirstMatch, PriorityQueue<Match> matchQueue,
-			List<Match> allMatches, MonitorPack monitor)
+	protected List<Match> growMatches(int threshold, boolean stopAtFirstMatch)
 	{
 		List<Match> result = new ArrayList<Match>();
 		/**
@@ -648,24 +653,26 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 		while(!matchQueue.isEmpty())
 		{
 			Match m = matchQueue.poll(); // matches are sorted according to the criteria above
+			if(!m.isValid())
+				continue;
 			for(Iterator<Match> itm = m.mergeCandidates.iterator(); itm.hasNext();)
 			{
 				// remove the candidate from the list, and the current match from the candidate's list
 				Match mc = itm.next();
 				itm.remove();
+				if(!mc.isValid())
+					continue;
 				mc.mergeCandidates.remove(m);
 				monitor.lf("merging \t []\n \t\t\t and \t\t []", m, mc);
-				Match mr = merge(m, mc, monitor);
+				Match mr = addMergeMatch(m, mc);
 				if(mr != null) // merge should never fail
 				{
 					monitor.lf("new match:\t []\n", mr);
 					if(monitor.getVisual() != null)
 						monitor.getVisual().feedLine(m, mc, mr, "new match [k=" + mr.k + "]");
-					matchQueue.add(mr);
-					allMatches.add(mr);
 					monitor.incrementMergeCount();
 					monitor.incrementMatchCount();
-					if(mr.k <= kThreshold)
+					if(mr.k <= threshold)
 					{
 						result.add(mr);
 						if(stopAtFirstMatch)
@@ -695,119 +702,31 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	 *            - the first match.
 	 * @param m2
 	 *            - the second match.
-	 * @param monitor
-	 *            - the monitoring instance.
 	 * @return the merged match.
 	 */
-	protected static Match merge(Match m1, Match m2, MonitorPack monitor)
+	protected Match addMergeMatch(Match m1, Match m2)
 	{
-		// must handle (create in the new match, based on the two matches:
-		// G and GP links -> in constructor
-		// GmP -> obtained by adding edges from m1.GmP and m2.GmP and their adjacent vertices
-		// G' -> obtained by adding the values of the edge and node functions, when adding edges in GmP
-		// GxP -> obtained by removing edges added to GmP and nodes
-		// k -> obtained by decrementing when adding edges
-		// node function -> reuniting the node functions of the two matches
-		// edge function -> reuniting the edge functions of the two matches
-		// frontier -> practically adding nodes from solved part, always checking if they are still on the frontier
-		// MC -> MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
-		// MO -> common outer candidates: MO = MO1 n MO2
-		// id TODO
+		Match newM = m1.merge(m2, null, null, monitor);
 		
-		GraphPattern pt = m1.patternLink;
-		// G and GP links -> set in constructor
-		Match newM = new Match(m1.targetGraphLink, pt);
-		
-		newM.unsolvedPart = new GraphPattern();
-		newM.unsolvedPart.addAll(pt.getNodes());
-		newM.unsolvedPart.addAll(pt.getEdges());
-		newM.k = newM.unsolvedPart.getEdges().size();
-		
-		Set<Edge> totalMatch = new HashSet<Edge>(); // there should be no duplicates as the solved parts should be
-													// disjoint.
-		totalMatch.addAll(m1.solvedPart.getEdges());
-		totalMatch.addAll(m2.solvedPart.getEdges());
-		
-		newM.solvedPart = new GraphPattern();
-		newM.nodeFunction = new HashMap<Node, Node>();
-		newM.edgeFunction = new HashMap<Edge, List<Edge>>();
-		newM.matchedGraph = new SimpleGraph();
-		newM.frontier = new HashMap<Node, AtomicInteger>();
-		for(Edge eP : totalMatch)
-		{
-			monitor.incrementEdgeReferenceOperation();
-			// GmP -> obtained by adding edges from m1.GmP and m2.GmP and their adjacent vertices
-			newM.solvedPart.addEdge(eP).addNode(eP.getFrom()).addNode(eP.getTo());
-			// GxP -> obtained by removing edges added to GmP and nodes
-			newM.unsolvedPart.removeEdge(eP).removeNode(eP.getFrom()).removeNode(eP.getTo());
-			// k -> obtained by decrementing when adding edges
-			newM.k--;
-			
-			Match sourceMatch = null; // which match does eP come from
-			if(m1.solvedPart.contains(eP))
-				sourceMatch = m1;
-			if(m2.solvedPart.contains(eP))
-			{
-				if(sourceMatch != null)
-				{
-					monitor.le("match-intersection pattern edge found: []", eP);
-					throw new IllegalArgumentException("match-intersection edge");
-				}
-				sourceMatch = m2;
-			}
-			if(sourceMatch == null)
-				throw new InternalError("edge not found in total match"); // impossible
-				
-			// node function -> reuniting the node functions of the two matches
-			newM.nodeFunction.put(eP.getFrom(), sourceMatch.nodeFunction.get(eP.getFrom()));
-			newM.nodeFunction.put(eP.getTo(), sourceMatch.nodeFunction.get(eP.getTo()));
-			// edge function -> reuniting the edge functions of the two matches
-			newM.edgeFunction.put(eP, sourceMatch.edgeFunction.get(eP));
-			// G' -> obtained by adding the values of the edge and node functions, when adding edges in GmP
-			for(Edge em : sourceMatch.edgeFunction.get(eP))
-				newM.matchedGraph.addEdge(em).addNode(em.getFrom()).addNode(em.getTo());
-			
-			// frontier -> practically adding nodes from solved part, always checking if they are still on the frontier
-			AtomicInteger fromIndex = newM.frontier.get(eP.getFrom());
-			if(fromIndex != null)
-				if(fromIndex.decrementAndGet() == 0)
-					newM.frontier.remove(eP.getFrom());
-				else
-					newM.frontier.put(eP.getFrom(), fromIndex);
-			else
-				newM.frontier
-						.put(eP.getFrom(),
-								new AtomicInteger(pt.getInEdges(eP.getFrom()).size()
-										+ pt.getOutEdges(eP.getFrom()).size() - 1));
-			AtomicInteger toIndex = newM.frontier.get(eP.getTo());
-			if(toIndex != null)
-				if(toIndex.decrementAndGet() == 0)
-					newM.frontier.remove(eP.getTo());
-				else
-					newM.frontier.put(eP.getTo(), toIndex);
-			else
-				newM.frontier.put(eP.getTo(),
-						new AtomicInteger(pt.getInEdges(eP.getTo()).size() + pt.getOutEdges(eP.getTo()).size() - 1));
-		}
-		// merge candidates: MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
-		// common merge candidates, and candidates of each match that were outer candidates for the other match
-		newM.mergeCandidates = new HashSet<Match>(m1.mergeCandidates);
-		Set<Match> partB = new HashSet<Match>(m1.mergeCandidates);
-		Set<Match> partC = new HashSet<Match>(m2.mergeCandidates);
-		newM.mergeCandidates.retainAll(m2.mergeCandidates);
-		partB.retainAll(m2.mergeOuterCandidates);
-		partC.retainAll(m1.mergeOuterCandidates);
-		newM.mergeCandidates.addAll(partB);
-		newM.mergeCandidates.addAll(partC);
-		
-		// merge outer candidates: common outer candidates: MO = MO1 n MO2
-		newM.mergeOuterCandidates = new HashSet<Match>(m1.mergeOuterCandidates);
-		newM.mergeOuterCandidates.retainAll(m2.mergeOuterCandidates);
-		
-		monitor.incrementEdgeReferenceOperation(m1.mergeCandidates.size() + m2.mergeCandidates.size()
-				+ m1.mergeOuterCandidates.size() + m2.mergeOuterCandidates.size());
+		// add to global lists
+		matchQueue.add(newM);
+		allMatches.add(newM);
 		
 		return newM;
+	}
+	
+	/**
+	 * Relay for the invalidation of a match, since matches should only be invalidated by classes extending this class.
+	 * 
+	 * @param m
+	 *            - the match to invalidate.
+	 * 
+	 * @since 1.5
+	 */
+	@SuppressWarnings("static-method")
+	protected void invalidateMatch(Match m)
+	{
+		m.invalidate();
 	}
 	
 	/**

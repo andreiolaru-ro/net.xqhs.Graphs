@@ -220,7 +220,7 @@ public class SimpleGraph extends Unit implements Graph
 		if(contains(node))
 			nodes.remove(node);
 		else
-			lw("node[" + node + "] not contained");
+			le("node[" + node + "] not contained");
 		return this;
 	}
 	
@@ -236,7 +236,7 @@ public class SimpleGraph extends Unit implements Graph
 			edges.remove(edge);
 		}
 		else
-			lw("edge [" + edge + "] not contained");
+			le("edge [" + edge + "] not contained");
 		return this;
 	}
 	
