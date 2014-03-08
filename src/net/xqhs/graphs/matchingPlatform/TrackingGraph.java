@@ -437,7 +437,7 @@ public class TrackingGraph extends SimpleGraph
 		super();
 		if(transactionsLink == null)
 			throw new IllegalArgumentException("A shadow graph must be linked to an existing transaction queue");
-		addAll(initialGraph);
+		addAll(initialGraph.getComponents());
 		sequence = new AtomicInteger(initialSequence);
 		transactionQueue = transactionsLink;
 		isShadow = true;
@@ -453,16 +453,29 @@ public class TrackingGraph extends SimpleGraph
 	
 	/**
 	 * Creates a new shadow graph of this graph, based on the current state of the graph.
+	 * <p>
+	 * While overriding this method may not be useful because a {@link TrackingGraph} is returned, extending classes may
+	 * use <code>createShadowQueue()</code> to get the shadow queue and create the graph themselves.
 	 * 
 	 * @return the newly created shadow graph.
 	 */
 	public TrackingGraph createShadow()
 	{
+		return new TrackingGraph(createShadowQueue(), sequence.get(), this);
+	}
+	
+	/**
+	 * Creates a new shadow queue to be used by a shadow graph. The queue is also added to the list of shadow queues.
+	 * 
+	 * @return the queue.
+	 */
+	protected Queue<Transaction> createShadowQueue()
+	{
 		if(shadowQueues == null)
 			shadowQueues = new ArrayList<Queue<Transaction>>();
 		Queue<Transaction> newQueue = new LinkedList<TrackingGraph.Transaction>();
 		shadowQueues.add(newQueue);
-		return new TrackingGraph(newQueue, sequence.get(), this);
+		return newQueue;
 	}
 	
 	/**
@@ -625,29 +638,25 @@ public class TrackingGraph extends SimpleGraph
 	}
 	
 	/**
-	 * Adds all the nodes and edges in the specified graph to the current graph. Although the node and edge instances
-	 * will be the same, there will exist no other relation to the specified graph.
+	 * Adds all the nodes and edges in the argument to the current graph, all in one transaction. Although the node and
+	 * edge instances will be the same, there will exist no other relation to the specified graph.
 	 * 
-	 * @param graph
-	 *            - the graph to take nodes and edges from.
+	 * @param components
+	 *            - the {@link GraphComponent} instances to add.
 	 * @return the graph itself.
 	 */
-	public TrackingGraph addAll(Graph graph)
+	@Override
+	public TrackingGraph addAll(Collection<? extends GraphComponent> components)
 	{
 		if(isShadow)
 			throw new UnsupportedOperationException(
 					"A shadow graph only takes modifications from its transaction queue.");
 		Transaction t = new Transaction();
-		for(Node node : graph.getNodes())
-			if(!contains(node))
-				t.put(node, Operation.ADD);
+		for(GraphComponent comp : components)
+			if(!contains(comp))
+				t.put(comp, Operation.ADD);
 			else
-				lw("node [" + node.toString() + "] already present. Not re-added.");
-		for(Edge edge : graph.getEdges())
-			if(!contains(edge))
-				t.put(edge, Operation.ADD);
-			else
-				lw("edge [" + edge.toString() + "] already present. Not re-added");
+				lw("node [" + comp.toString() + "] already present. Not re-added.");
 		applyTransactionInternal(t);
 		return this;
 	}
@@ -686,7 +695,7 @@ public class TrackingGraph extends SimpleGraph
 		if(transactionQueue.isEmpty())
 			// nowhere to increment
 			return null;
-		return transactionQueue.poll().toOperationMap();
+		return transactionQueue.peek().toOperationMap();
 	}
 	
 	/**
@@ -701,6 +710,9 @@ public class TrackingGraph extends SimpleGraph
 	
 	/**
 	 * Takes one transaction from the graph's transaction queue and applies it to the current state of the graph.
+	 * <p>
+	 * FIXME: if there are no elements in the queue, the sequence is not incremented. should check for dsynchronization;
+	 * is it possible?
 	 * 
 	 * @return the new current sequence number.
 	 * 
@@ -761,7 +773,7 @@ public class TrackingGraph extends SimpleGraph
 	
 	/**
 	 * The current implementation does not support reading nodes and edges, but all the edges and nodes from a graph can
-	 * be added with {@link #addAll(Graph)}.
+	 * be added with {@link #addAll(Collection)}.
 	 */
 	@Override
 	public SimpleGraph readFrom(InputStream input)
@@ -798,8 +810,17 @@ public class TrackingGraph extends SimpleGraph
 	 */
 	public String toString(String branchSeparator, String separatorIncrement, int limit)
 	{
-		return new TextGraphRepresentation(this).setLayout(branchSeparator, separatorIncrement, limit).update()
-				.toString();
+		String detail = "[" + sequence + "|";
+		boolean first = true;
+		for(Queue<Transaction> q : shadowQueues)
+		{
+			detail += (first ? "" : "/") + q.size();
+			first = false;
+		}
+		detail += "]";
+		return detail
+				+ new TextGraphRepresentation(this).setLayout(branchSeparator, separatorIncrement, limit).update()
+						.toString();
 	}
 	
 	/**

@@ -281,6 +281,14 @@ public class SimpleGraph extends Unit implements Graph
 	}
 	
 	@Override
+	public Collection<GraphComponent> getComponents()
+	{
+		Collection<GraphComponent> ret = new HashSet<GraphComponent>(nodes.keySet());
+		ret.addAll(edges);
+		return ret;
+	}
+	
+	@Override
 	public Collection<Edge> getOutEdges(Node node)
 	{
 		if(!contains(node))
@@ -306,6 +314,16 @@ public class SimpleGraph extends Unit implements Graph
 	public boolean contains(Edge e)
 	{
 		return edges.contains(e);
+	}
+	
+	@Override
+	public boolean contains(GraphComponent component)
+	{
+		if(component instanceof Node)
+			return contains((Node) component);
+		if(component instanceof Edge)
+			return contains((Edge) component);
+		throw new IllegalArgumentException("Given component is not one of Node, Edge.");
 	}
 	
 	@Override

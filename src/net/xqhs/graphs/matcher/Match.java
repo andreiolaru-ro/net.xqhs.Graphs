@@ -57,16 +57,39 @@ import net.xqhs.graphs.representation.text.TextGraphRepresentation;
  * ExP); the frontier also contains information on how many such edges exist for each node in the frontier.
  * <li>a set of matches that are candidates to merge with this match.
  * </ul>
+ * Version 1.5 brings integration of some of the processes related to matching into the implementation of Match, such as
+ * checking merge candidates, merging, etc.
  * 
  * @author Andrei Olaru
  */
 public class Match
 {
+	/**
+	 * Possible values for the situations in which two matches can be with regard to merging.
+	 * 
+	 * @author Andrei Olaru
+	 */
 	public static enum Candidacy {
+		/**
+		 * The two matches may be merged in the future (appropriate matches containing these two matches may be merged),
+		 * but not immediately (they have no common vertices). They are 'outer' merge candidates for each other.
+		 */
 		OUTER,
 		
+		/**
+		 * The two matches may be merged immediately (using {@link Match#merge(Match, Map, Map, MonitorPack)}) with no
+		 * further checks. They are merge candidates for each other.
+		 */
 		IMMEDIATE,
 		
+		/**
+		 * The two matches cannot be merged. This can be because:
+		 * <ul>
+		 * <li>they cover intersecting parts of the pattern;
+		 * <li>their matched subgraphs intersect;
+		 * <li>common vertices in the pattern do not have the same correspondent in the graph.
+		 * </ul>
+		 */
 		NONE,
 	}
 	
@@ -278,52 +301,126 @@ public class Match
 	 * 
 	 * @since 1.5
 	 */
-	protected boolean isValid()
+	public boolean isValid()
 	{
 		return valid;
 	}
 	
+	/**
+	 * Gets the <i>k</i> of the match -- the number of edges from the pattern that don't have a match in the matched
+	 * subgraph. Best k is <code>0</code>, worst k (single-edge match) is number of edges in the pattern minus 1.
+	 * 
+	 * @return the k of the match.
+	 */
 	public int getK()
 	{
 		return k;
 	}
 	
+	/**
+	 * @return the number of edges in the matched part (solved part) of the pattern.
+	 */
 	public int getSize()
 	{
 		return solvedPart.m();
 	}
 	
+	/**
+	 * The method checks whether another match can be considered as a candidate for merger with this match, and, if yes,
+	 * what kind (see {@link Candidacy}).
+	 * <p>
+	 * This version of the method relies on edge-to-containing-match and pattern-edge-to-containing-match indexes to
+	 * locate potential intersection in the matches.
+	 * 
+	 * @param mc
+	 *            - the other match.
+	 * @param eMatchIndex
+	 *            - the index of graph edge &rarr; matches that contain that edge.
+	 * @param ePMatchIndex
+	 *            - the index of graph pattern edge &rarr; matches that contain that edge.
+	 * @param monitor
+	 *            - the {@link MonitorPack} to use for performance measures.
+	 * @return the appropriate {@link Candidacy} value for this match and the match in the argument.
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if any of the arguments is <code>null</code>.
+	 */
 	public Candidacy getCandidacy(Match mc, Map<Edge, Set<Match>> eMatchIndex, Map<Edge, Set<Match>> ePMatchIndex,
 			MonitorPack monitor)
 	{
+		// TODO if any previous match invalidation could generate false negatives
+		if((mc == null) || (ePMatchIndex == null) || (eMatchIndex == null) || (monitor == null))
+			throw new IllegalArgumentException("Indexes must be non-null");
 		// check that match mc does not already contain any edges in this match
 		for(Edge eP : solvedPart.getEdges())
-			if(ePMatchIndex.get(eP).contains(mc))
+		{
+			monitor.incrementEdgeReferenceOperation();
+			if(ePMatchIndex.containsKey(eP) && ePMatchIndex.get(eP).contains(mc))
 				return Candidacy.NONE;
+		}
 		// check that the subgraph matched by mc does not already contain any edges in this match
 		for(Edge e : matchedGraph.getEdges())
-			if(eMatchIndex.get(e).contains(mc))
+		{
+			monitor.incrementEdgeReferenceOperation();
+			if(eMatchIndex.containsKey(e) && eMatchIndex.get(e).contains(mc))
 				return Candidacy.NONE;
+		}
 		return getCandidacyInternal(mc, monitor);
 	}
 	
+	/**
+	 * Internal method that tests candidacy status based solely on internal properties of the matches.
+	 * <p>
+	 * More precisely, it checks that nodes on the frontiers of moth matches have the same correspondent nodes in the
+	 * graph. It also checks if there is any intersection between the two frontiers, deciding between
+	 * {@link Candidacy#OUTER} (no intersection) and {@link Candidacy#IMMEDIATE}.
+	 * 
+	 * @param mc
+	 *            - the other match.
+	 * @param monitor
+	 *            - the {@link MonitorPack} to use for performance measures.
+	 * @return the appropriate {@link Candidacy} value for this match and the match in the argument.
+	 */
 	protected Candidacy getCandidacyInternal(Match mc, MonitorPack monitor)
 	{
 		boolean outer = true;
 		// iterate over frontier intersection, see if nodes correspond to the same target in the matched subgraph
 		Set<Node> frontierIntersection = new HashSet<Node>(frontier.keySet());
 		frontierIntersection.retainAll(mc.frontier.keySet());
+		monitor.incrementNodeReferenceOperation(frontier.size());
 		
 		for(Node node : frontierIntersection)
+		{
+			monitor.incrementNodeReferenceOperation();
 			if(nodeFunction.get(node) == mc.nodeFunction.get(node))
 				outer = false;
 			else
 				return Candidacy.NONE;
+		}
 		if(outer)
 			return Candidacy.OUTER;
 		return Candidacy.IMMEDIATE;
 	}
 	
+	/**
+	 * The method checks if the given match is a merge candidate for this match, and if it is, the matches are added to
+	 * the merge candidate lists of each other. This call <b>modifies</b> the matches (their candidate lists) in case
+	 * candidacy is not {@link Candidacy#NONE}.
+	 * 
+	 * @param mc
+	 *            - the other match.
+	 * @param eMatchIndex
+	 *            - the index of graph edge &rarr; matches that contain that edge.
+	 * @param ePMatchIndex
+	 *            - the index of graph pattern edge &rarr; matches that contain that edge.
+	 * @param monitor
+	 *            - the {@link MonitorPack} to use for performance measures.
+	 * @return the appropriate {@link Candidacy} value for this match and the match in the argument.
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if any of the arguments is <code>null</code> or if the other match is not between the same graph and
+	 *             pattern.
+	 */
 	public Candidacy considerCandidate(Match mc, Map<Edge, Set<Match>> eMatchIndex, Map<Edge, Set<Match>> ePMatchIndex,
 			MonitorPack monitor)
 	{
@@ -346,14 +443,24 @@ public class Match
 	/**
 	 * Merges two matches into a new one and returns the result.
 	 * <p>
-	 * Matches are expected to be disjoint (correct merge candidates), both as GmP and as G' (in terms of edges); also,
-	 * all common nodes in GmP must correspond to the same nodes in G' (this check should be done initially in
-	 * {@link #getCandidacy(Match, Map, Map, MonitorPack)}.
+	 * Matches are expected to be correct merge candidates, that is disjoint (in terms of edges), both as GmP (matched
+	 * part of pattern) and as G' (matched subgraph); also, all common nodes in GmP must correspond to the same nodes in
+	 * G' (this check should be done initially in {@link #getCandidacy(Match, Map, Map, MonitorPack)}.
 	 * <p>
-	 * <b>Attention:</b> matches are expected to be merge-able without checks.
+	 * <b>Attention:</b> matches are expected to be merge-able without any further checks.
+	 * <p>
+	 * If the passed indexes are not null, the match is added to the indexes.
 	 * 
 	 * @param m1
 	 *            - the other match.
+	 * @param eMatchIndex
+	 *            - the index of graph edge &rarr; matches that contain that edge. If not <code>null</code>, it is used
+	 *            for indexing the new match.
+	 * @param ePMatchIndex
+	 *            - the index of graph pattern edge &rarr; matches that contain that edge. If not <code>null</code>, it
+	 *            is used for indexing the new match.
+	 * @param monitor
+	 *            - the {@link MonitorPack} to use for performance measures.
 	 * @return the merged match.
 	 */
 	public Match merge(Match m1, Map<Edge, Set<Match>> eMatchIndex, Map<Edge, Set<Match>> ePMatchIndex,
@@ -395,7 +502,7 @@ public class Match
 		newM.frontier = new HashMap<Node, AtomicInteger>();
 		for(Edge eP : totalMatch)
 		{
-			monitor.incrementEdgeReferenceOperation();
+			monitor.incrementEdgeReferenceOperation(2);
 			// GmP -> obtained by adding edges from m1.GmP and m2.GmP and their adjacent vertices
 			newM.solvedPart.addEdge(eP).addNode(eP.getFrom()).addNode(eP.getTo());
 			// GxP -> obtained by removing edges added to GmP and nodes
@@ -434,6 +541,7 @@ public class Match
 						eMatchIndex.put(em, new HashSet<Match>());
 					eMatchIndex.get(em).add(newM);
 				}
+				monitor.incrementEdgeReferenceOperation(1);
 			}
 			if(ePMatchIndex != null)
 			// add to index
@@ -441,6 +549,7 @@ public class Match
 				if(!ePMatchIndex.containsKey(eP))
 					ePMatchIndex.put(eP, new HashSet<Match>());
 				ePMatchIndex.get(eP).add(newM);
+				monitor.incrementEdgeReferenceOperation(1);
 			}
 			
 			// frontier -> practically adding nodes from solved part, always checking if they are still on the frontier
@@ -464,6 +573,7 @@ public class Match
 			else
 				newM.frontier.put(eP.getTo(),
 						new AtomicInteger(pt.getInEdges(eP.getTo()).size() + pt.getOutEdges(eP.getTo()).size() - 1));
+			monitor.incrementNodeReferenceOperation(4); // 2 * (get + set)
 		}
 		// 'u' stands for reunion and 'n' for intersection
 		// merge candidates: MC = (MC n MC2) u (MC1 n MO2) u (MC2 n MO1)
@@ -513,6 +623,18 @@ public class Match
 	
 	@Override
 	public String toString()
+	{
+		String ret = "M[" + id + "]K=" + k + new TextGraphRepresentation(solvedPart).setLayout("", "", -1).update()
+				+ "|" + new TextGraphRepresentation(matchedGraph).setLayout("", "", -1).update();
+		return ret;
+	}
+	
+	/**
+	 * Provides a complete one-line representation of the match. Not to be confused with {@link #toStringLong()}.
+	 * 
+	 * @return the string representation.
+	 */
+	public String toStringExtended()
 	{
 		String ret = "match [" + id + "] (k=" + k + "): \t";
 		ret += new TextGraphRepresentation(matchedGraph).setLayout("", " ", 2).update() + "\t : \t";

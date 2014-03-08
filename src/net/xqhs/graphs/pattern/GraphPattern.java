@@ -44,6 +44,16 @@ public class GraphPattern extends SimpleGraph
 	}
 	
 	/**
+	 * Get the maximum possible <i>k</i> for matches of this pattern. Effectively, the number of edges in the pattern.
+	 * 
+	 * @return the maximum value of k for a match.
+	 */
+	public int maxK()
+	{
+		return m();
+	}
+	
+	/**
 	 * Adds a node to the graph, but offers support for indexing {@link NodeP} instances (see
 	 * <code>addNode(NodeP, boolean)</code>).
 	 * <p>

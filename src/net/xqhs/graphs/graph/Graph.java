@@ -104,6 +104,11 @@ public interface Graph
 	public Collection<Edge> getEdges();
 	
 	/**
+	 * @return the list of {@link GraphComponent} instances in the graph. May be an immutable collection.
+	 */
+	public Collection<GraphComponent> getComponents();
+	
+	/**
 	 * Retrieves the edges outgoing from the specified node.
 	 * 
 	 * @param node
@@ -124,21 +129,29 @@ public interface Graph
 	/**
 	 * @param node
 	 *            - the {@link Node} to search for
-	 * @return <code>true</code> if the node is contained in the graph
+	 * @return <code>true</code> if the node is contained in the graph.
 	 */
 	public boolean contains(Node node);
 	
 	/**
 	 * @param e
 	 *            - the {@link Edge} to search for
-	 * @return <code>true</code> if the edge is contained in the graph
+	 * @return <code>true</code> if the edge is contained in the graph.
 	 */
 	public boolean contains(Edge e);
 	
 	/**
+	 * @param component
+	 *            - the component search for. Must be an implementation of {@link GraphComponent} that the implementing
+	 *            class can recognize.
+	 * @return <code>true</code> if the component is contained; <code>false</code> otherwise.
+	 */
+	public boolean contains(GraphComponent component);
+	
+	/**
 	 * @param name
-	 *            - the name to search for
-	 * @return a {@link Collection} of {@link Node} instances with the required label
+	 *            - the name to search for.
+	 * @return a {@link Collection} of {@link Node} instances with the required label.
 	 */
 	public Collection<Node> getNodesNamed(String name);
 	

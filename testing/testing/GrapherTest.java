@@ -61,7 +61,7 @@ public class GrapherTest
 		
 		// testGraphTextReading("Emily/EmilyP");
 		
-		// testTextRepresentationReading("test");
+		// testTextRepresentationReading("conf/confPR");
 		
 		// testGraphicalContainerGraph(false);
 		
@@ -323,14 +323,14 @@ public class GrapherTest
 	@SuppressWarnings("unused")
 	private static void testTextRepresentationReading(String filename)
 	{
-		String filedir = "playground/IOTesting/";
+		String filedir = "playground/";
 		String filexext = ".txt";
 		
 		Graph G;
 		try
 		{
 			G = ((TextGraphRepresentation) new TextGraphRepresentation(new SimpleGraph()).setUnitName(
-					Unit.DEFAULT_UNIT_NAME).setLogLevel(Level.WARN)).readRepresentation(new FileInputStream(filedir
+					Unit.DEFAULT_UNIT_NAME).setLogLevel(Level.ALL)).readRepresentation(new FileInputStream(filedir
 					+ filename + filexext));
 		} catch(FileNotFoundException e)
 		{

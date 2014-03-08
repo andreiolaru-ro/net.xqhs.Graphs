@@ -1,0 +1,12 @@
+
+
+[Emily (-isa> user) -near> door1 (-isa> door) -to> bathroom]
+
+
+[?#1 (-isa> door) -to> ?#2 -isa> room]
+
+[Emily -near> ?#1 (-isa>door) -to> bathroom]
+
+[?#1 (-isa> user) (-near> ?#2 (-isa>door) -to> ?#3 -isa> room) -near> *?#3]
+
+

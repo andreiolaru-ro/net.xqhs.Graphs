@@ -2,6 +2,7 @@ package net.xqhs.graphs.matchingPlatform;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.SortedSet;
@@ -10,6 +11,7 @@ import java.util.TreeSet;
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.matcher.GraphMatcherQuick;
+import net.xqhs.graphs.matcher.GraphMatchingProcess;
 import net.xqhs.graphs.matcher.Match;
 import net.xqhs.graphs.matcher.Match.MatchComparator;
 import net.xqhs.graphs.matcher.MonitorPack;
@@ -17,13 +19,42 @@ import net.xqhs.graphs.pattern.EdgeP;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.util.Debug.D_G;
 
+/**
+ * The class extends {@link GraphMatcherQuick} (and therefore implements {@link GraphMatchingProcess}) to handle
+ * persistent matching -- matching in which the graph changes slightly from time to time. With each change, only
+ * affected matches should be removed or created.
+ * <p>
+ * The pattern is not allowed to change.
+ * 
+ * @author Andrei Olaru
+ */
 public class GraphMatcherPersistent extends GraphMatcherQuick
 {
+	/**
+	 * THe set of all matches, sorted by k (lowest k first).
+	 */
 	protected SortedSet<Match>		sortedMatches;
 	
+	/**
+	 * An index containing the matches that contain each graph edge. The index contains only the edges that are
+	 * contained in any matches.
+	 */
 	protected Map<Edge, Set<Match>>	eMatchIndex		= null;
+	/**
+	 * An index containing the matches that contain each pattern edge. The index contains only the edges that are
+	 * contained in any matches.
+	 */
 	protected Map<Edge, Set<Match>>	ePMatchIndex	= null;
 	
+	/**
+	 * Creates a new matcher for the specified graph and pattern. Any further changes to the graph will be signaled by
+	 * calling {@link #addMatches(Edge)} and {@link #removeMatches(Edge)}.
+	 * 
+	 * @param graph
+	 *            - the graph.
+	 * @param pattern
+	 *            - the pattern.
+	 */
 	protected GraphMatcherPersistent(Graph graph, GraphPattern pattern)
 	{
 		super(graph, pattern);
@@ -32,10 +63,10 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 	@Override
 	public GraphMatcherPersistent initializeMatching()
 	{
-		super.initializeMatching();
 		sortedMatches = new TreeSet<Match>(new MatchComparator(monitor));
 		eMatchIndex = new HashMap<Edge, Set<Match>>();
 		ePMatchIndex = new HashMap<Edge, Set<Match>>();
+		super.initializeMatching();
 		return this;
 	}
 	
@@ -49,6 +80,11 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		return this;
 	}
 	
+	/**
+	 * Completes the matching process, growing all matches to their maximum coverage.
+	 * 
+	 * @return the instance itself.
+	 */
 	public GraphMatcherPersistent completeMatches()
 	{
 		// it doesn't matter what k is used, all matches will be grown anyway.
@@ -56,8 +92,22 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		return this;
 	}
 	
+	/**
+	 * The method should be called for each new edge added to the graph. It is assumed that the graph contains the new
+	 * edge when the method is called.
+	 * <p>
+	 * The method creates the initial matches containing the new edge, adds their merge candidates, but does not grow
+	 * any matches. This can be requested through any of the match retrieval methods or by calling
+	 * {@link #completeMatches()}.
+	 * 
+	 * @param e
+	 *            - the new edge added to the graph.
+	 * @return the instance itself.
+	 */
 	public GraphMatcherPersistent addMatches(Edge e)
 	{
+		if((matchQueue == null) || (allMatches == null))
+			initializeMatching();
 		/**
 		 * Ordered pattern edges, according to label.
 		 */
@@ -85,8 +135,24 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		return this;
 	}
 	
+	/**
+	 * The method should be called for each edge removed from the graph. It is assumed that the graph doesn't contain
+	 * the edge anymore at the time the method is called.
+	 * <p>
+	 * The method only removes the edge from the edge &rarr; matches index, and marks the matches containing the edge as
+	 * invalid. Whenever an iteration finds the invalidated match, it will be removed from the containing collection.
+	 * This saves a large number of operations that would have been required by looping through the various lists and
+	 * indexes.
+	 * 
+	 * @param edge
+	 *            - the edge removed from the graph.
+	 * @return the instance itself.
+	 */
 	public GraphMatcherPersistent removeMatches(Edge edge)
 	{
+		if((matchQueue == null) || (allMatches == null))
+			// matching not initialized anyway (no matches)
+			return this;
 		if(!eMatchIndex.containsKey(edge))
 			throw new IllegalStateException("Edge not found.");
 		Set<Match> toRemove = eMatchIndex.get(edge);
@@ -110,7 +176,15 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		neighborEdgePs.addAll(pattern.getOutEdges(eP.getTo()));
 		Set<Match> nMatches = new HashSet<Match>();
 		for(Edge ne : neighborEdgePs)
-			nMatches.addAll(ePMatchIndex.get(ne));
+			if(ePMatchIndex.containsKey(ne))
+				for(Iterator<Match> it = ePMatchIndex.get(ne).iterator(); it.hasNext();)
+				{
+					Match mc = it.next();
+					if(mc.isValid())
+						nMatches.add(mc);
+					else
+						it.remove();
+				}
 		// add other matches to candidates list
 		for(Match mi : nMatches)
 			m.considerCandidate(mi, eMatchIndex, ePMatchIndex, monitor);

@@ -36,6 +36,7 @@ import net.xqhs.graphs.representation.linear.LinearGraphRepresentation;
 import net.xqhs.graphs.representation.linear.PathElement;
 import net.xqhs.graphs.representation.text.TextRepresentationElement.Symbol;
 import net.xqhs.graphs.representation.text.TextRepresentationElement.Type;
+import net.xqhs.graphs.util.ContentHolder;
 import net.xqhs.util.logging.LoggerSimple.Level;
 import net.xqhs.util.logging.Unit;
 import net.xqhs.util.logging.UnitComponent;
@@ -391,27 +392,62 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	 * 
 	 * @param rawInput
 	 *            - the input string.
-	 * @return the graph instance
+	 * @return the graph instance.
 	 * 
 	 * @throws IllegalArgumentException
 	 *             if the input is broken (referenced nodes not found, no target nodes for edges, etc.
 	 */
 	public Graph readRepresentation(String rawInput)
 	{
-		li("reading graph", rawInput);
+		return readRepresentation(new ContentHolder<String>(rawInput));
+	}
+	
+	/**
+	 * Same as {@link #readRepresentation(String)}, but taking the input from a {@link ContentHolder}, leaving any
+	 * un-consumed input in the holder.
+	 * 
+	 * @param input
+	 *            - the input, held be a {@link ContentHolder} instance.
+	 * @return the graph instance.
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if the input is broken (referenced nodes not found, no target nodes for edges, etc.
+	 */
+	public Graph readRepresentation(ContentHolder<String> input)
+	{
+		lf("reading graph", input.get());
+		if(input.get().trim().length() == 0)
+		{
+			le("input is empty.");
+			return null;
+		}
 		
-		boolean backwards = rawInput.indexOf(Symbol.EDGE_ENDING_BACKWARD.toString()) >= 0;
-		if((rawInput.indexOf(Symbol.EDGE_ENDING_FORWARD.toString()) >= 0) && backwards)
+		boolean backwards = input.get().indexOf(Symbol.EDGE_ENDING_BACKWARD.toString()) >= 0;
+		if(backwards && (input.get().indexOf(Symbol.EDGE_ENDING_FORWARD.toString()) >= 0))
 			return (Graph) lr(null, "Representation contains both forward and backward edges.");
 		
 		setBackwards(backwards);
 		
 		// read the representation, then connect
-		theRepresentation = TextRepresentationElement.readRepresentation(rawInput, this,
+		TextRepresentationElement rootRepr = TextRepresentationElement.readRepresentation(input, this,
 				(UnitComponent) new UnitComponent().setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(getUnitName())
 						.setLogLevel(Level.WARN));
+		theRepresentation = rootRepr;
 		lf("result: [] \n====================================", theRepresentation.toString());
 		
+		return buildGraph(rootRepr);
+	}
+	
+	/**
+	 * Based on the representation elements read from the input, the method assembles the represented graph.
+	 * 
+	 * @param rootRepresentation
+	 *            - the root {@link TextRepresentationElement} of the representation (normally same as
+	 *            #theRepresentation).
+	 * @return the built {@link Graph}.
+	 */
+	protected Graph buildGraph(TextRepresentationElement rootRepresentation)
+	{
 		// start building the graph: create a tree with the occasional links between branches or inside the same branch.
 		// the tree; the top of the stack is the current (deepest) level.
 		Stack<Queue<TextRepresentationElement>> tree = new Stack<Queue<TextRepresentationElement>>();
@@ -512,8 +548,17 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					{ // actual new node - edge is a normal BRANCH
 						targetNode = (SimpleNode) targetNodeEl.getRepresentedComponent();
 						if(!theGraph.getNodesNamed(targetNode.getLabel()).isEmpty())
-							throw new IllegalArgumentException("Node [" + targetNode.getLabel()
-									+ "] already present in the graph by not referred as internal link.");
+							if(targetNode instanceof NodeP)
+							{
+								Collection<Node> similarNodes = theGraph.getNodesNamed(targetNode.getLabel());
+								for(Node n : similarNodes)
+									if(((NodeP) n).genericIndex() == ((NodeP) targetNode).genericIndex())
+										throw new IllegalArgumentException("Node [" + targetNode.toString()
+												+ "] already present in the graph by not referred as internal link.");
+							}
+							else
+								throw new IllegalArgumentException("Node [" + targetNode.toString()
+										+ "] already present in the graph by not referred as internal link.");
 						nLevel = new LinkedList<TextRepresentationElement>();
 						nLevel.add(targetNodeEl);
 						tree.push(nLevel);

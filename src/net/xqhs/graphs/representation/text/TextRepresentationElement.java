@@ -495,6 +495,24 @@ public class TextRepresentationElement extends RepresentationElement
 	}
 	
 	/**
+	 * Same as {@link #readRepresentation(String, TextGraphRepresentation, UnitComponent)}, but using a content holder
+	 * and leaving all un-consumed input in the holder.
+	 * 
+	 * @param input
+	 *            - the input, held be a {@link ContentHolder} instance.
+	 * @param root
+	 *            - the root representation that the read element belongs to.
+	 * @param log
+	 *            - a {@link UnitComponent} to use for logging messages.
+	 * @return the root element (of type {@link Type#ELEMENT_CONTAINER}) of the representation.
+	 */
+	static protected TextRepresentationElement readRepresentation(ContentHolder<String> input,
+			TextGraphRepresentation root, UnitComponent log)
+	{
+		return readRepresentation(input, Type.ELEMENT_CONTAINER, true, root, log);
+	}
+	
+	/**
 	 * The method uses the input string to read the representation of an element, removing the representation from the
 	 * input and leaving other calls of the method to read the rest (if any).
 	 * <p>
@@ -504,7 +522,8 @@ public class TextRepresentationElement extends RepresentationElement
 	 * The <code>input</code> argument is modified by using {@link ContentHolder#set(Object)}.
 	 * 
 	 * @param input
-	 *            - the input, held be a {@link ContentHolder} instance.
+	 *            - the input, held be a {@link ContentHolder} instance. It is assumed to be a non-empty, correct
+	 *            representation.
 	 * @param type
 	 *            - the type of element to read from the input, as one of {@link Type}.
 	 * @param firstSibling
