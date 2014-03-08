@@ -12,10 +12,8 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.GraphComponent;
-import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 
@@ -509,6 +507,9 @@ public class TrackingGraph extends SimpleGraph
 	 * <p>
 	 * If <code>externalCall</code> is <code>true</code>, the method also creates a new transaction with the operation
 	 * and adds it to shadow queues and to the history. Otherwise, these operations are handled elsewhere.
+	 * <p>
+	 * This method should be overridden by any extending classes needing to do anything with the newly added components.
+	 * If it is the case, the overriding method should also check if they should throw the exception.
 	 * 
 	 * @param component
 	 *            - the component contained in the operation.
@@ -528,20 +529,16 @@ public class TrackingGraph extends SimpleGraph
 			throw new UnsupportedOperationException(
 					"A shadow graph only takes modifications from its transaction queue.");
 		if(externalCall)
-			addTransaction(new Transaction(component, operation));
+			if(((operation == Operation.ADD) && !contains(component))
+					|| ((operation == Operation.REMOVE) && contains(component)))
+				addTransaction(new Transaction(component, operation));
 		switch(operation)
 		{
 		case ADD:
-			if(component instanceof Node)
-				super.addNode((Node) component);
-			if(component instanceof Edge)
-				super.addEdge((Edge) component);
+			super.add(component);
 			break;
 		case REMOVE:
-			if(component instanceof Node)
-				super.removeNode((Node) component);
-			if(component instanceof Edge)
-				super.removeEdge((Edge) component);
+			super.remove(component);
 			break;
 		}
 		return this;
@@ -602,44 +599,16 @@ public class TrackingGraph extends SimpleGraph
 	}
 	
 	@Override
-	public SimpleGraph addNode(Node node)
+	public TrackingGraph add(GraphComponent component)
 	{
-		if(!contains(node))
-			return performOperation(node, Operation.ADD, true);
-		lw("node [" + node.toString() + "] already present. Not re-added.");
-		return this;
-	}
-	
-	@Override
-	public TrackingGraph addEdge(Edge edge)
-	{
-		if(!contains(edge))
-			return performOperation(edge, Operation.ADD, true);
-		lw("edge [" + edge.toString() + "] already present. Not re-added.");
-		return this;
-	}
-	
-	@Override
-	public TrackingGraph removeNode(Node node)
-	{
-		if(contains(node))
-			return performOperation(node, Operation.REMOVE, true);
-		lw("node [" + node + "] not contained");
-		return this;
-	}
-	
-	@Override
-	public TrackingGraph removeEdge(Edge edge)
-	{
-		if(contains(edge))
-			return performOperation(edge, Operation.REMOVE, true);
-		lw("edge[" + edge + "] not contained");
+		if(!contains(component))
+			return performOperation(component, Operation.ADD, true);
+		lw("component [] already present. Not re-added.", component);
 		return this;
 	}
 	
 	/**
-	 * Adds all the nodes and edges in the argument to the current graph, all in one transaction. Although the node and
-	 * edge instances will be the same, there will exist no other relation to the specified graph.
+	 * Adds all the nodes and edges in the argument to the current graph, all in one transaction.
 	 * 
 	 * @param components
 	 *            - the {@link GraphComponent} instances to add.
@@ -657,7 +626,41 @@ public class TrackingGraph extends SimpleGraph
 				t.put(comp, Operation.ADD);
 			else
 				lw("node [" + comp.toString() + "] already present. Not re-added.");
-		applyTransactionInternal(t);
+		if(!t.isEmpty())
+			applyTransactionInternal(t);
+		return this;
+	}
+	
+	@Override
+	public TrackingGraph remove(GraphComponent component)
+	{
+		if(contains(component))
+			return performOperation(component, Operation.REMOVE, true);
+		lw("component [] not contained", component);
+		return this;
+	}
+	
+	/**
+	 * Removes all the nodes and edges in the argument from the current graph, all in one transaction.
+	 * 
+	 * @param components
+	 *            - the {@link GraphComponent} instances to remove.
+	 * @return the graph itself.
+	 */
+	@Override
+	public TrackingGraph removeAll(Collection<? extends GraphComponent> components)
+	{
+		if(isShadow)
+			throw new UnsupportedOperationException(
+					"A shadow graph only takes modifications from its transaction queue.");
+		Transaction t = new Transaction();
+		for(GraphComponent comp : components)
+			if(contains(comp))
+				t.put(comp, Operation.REMOVE);
+			else
+				lw("node [" + comp.toString() + "] not present.");
+		if(!t.isEmpty())
+			applyTransactionInternal(t);
 		return this;
 	}
 	
@@ -812,11 +815,14 @@ public class TrackingGraph extends SimpleGraph
 	{
 		String detail = "[" + sequence + "|";
 		boolean first = true;
-		for(Queue<Transaction> q : shadowQueues)
-		{
-			detail += (first ? "" : "/") + q.size();
-			first = false;
-		}
+		if(shadowQueues != null)
+			for(Queue<Transaction> q : shadowQueues)
+			{
+				detail += (first ? "" : "/") + q.size();
+				first = false;
+			}
+		else
+			detail += "-";
 		detail += "]";
 		return detail
 				+ new TextGraphRepresentation(this).setLayout(branchSeparator, separatorIncrement, limit).update()

@@ -79,6 +79,14 @@ public interface Graph
 	public Graph remove(GraphComponent component);
 	
 	/**
+	 * @param components
+	 *            - the components to remove. Each must be an implementation of {@link GraphComponent} that the
+	 *            implementing class can recognize.
+	 * @return the graph itself, for chained calls.
+	 */
+	public Graph removeAll(Collection<? extends GraphComponent> components);
+	
+	/**
 	 * @return the number of nodes in the graph
 	 */
 	public int n();
@@ -125,20 +133,6 @@ public interface Graph
 	 * @return the edges going into the node.
 	 */
 	public Collection<Edge> getInEdges(Node node);
-	
-	/**
-	 * @param node
-	 *            - the {@link Node} to search for
-	 * @return <code>true</code> if the node is contained in the graph.
-	 */
-	public boolean contains(Node node);
-	
-	/**
-	 * @param e
-	 *            - the {@link Edge} to search for
-	 * @return <code>true</code> if the edge is contained in the graph.
-	 */
-	public boolean contains(Edge e);
 	
 	/**
 	 * @param component

@@ -143,29 +143,10 @@ public class SimpleGraph extends Unit implements Graph
 		return super.getUnitName();
 	}
 	
-	// FIXME: this does not stop different Node instances with the same label from being added
 	@Override
 	public SimpleGraph addNode(Node node)
 	{
-		if(node == null)
-			throw new IllegalArgumentException("null nodes not allowed");
-		if(!contains(node))
-		{
-			Set<Edge> outEdges = new HashSet<Edge>();
-			Set<Edge> inEdges = new HashSet<Edge>();
-			// connect with potentially existing edges
-			for(Edge e : edges)
-			{
-				if(e.getFrom() == node)
-					outEdges.add(e);
-				if(e.getTo() == node)
-					inEdges.add(e);
-			}
-			nodes.put(node, new NodeData(inEdges, outEdges));
-		}
-		else
-			lw("node [" + node.toString() + "] already present. Not re-added.");
-		return this;
+		return add(node);
 	}
 	
 	/**
@@ -179,31 +160,58 @@ public class SimpleGraph extends Unit implements Graph
 	@Override
 	public SimpleGraph addEdge(Edge edge)
 	{
-		if(edge == null)
-			throw new IllegalArgumentException("null edges not allowed");
-		if(!contains(edge))
-		{
-			edges.add(edge);
-			if(contains(edge.getFrom()))
-				// connect 'from' node
-				nodes.get(edge.getFrom()).getOutEdges().add(edge);
-			if(contains(edge.getTo()))
-				// connect 'to' node
-				nodes.get(edge.getTo()).getInEdges().add(edge);
-		}
-		else
-			lw("edge [" + edge.toString() + "] already present. Not re-added");
-		return this;
+		return add(edge);
 	}
 	
+	/**
+	 * This is the only method that actually adds a component to the graph. Any other methods call (should call) this
+	 * method.
+	 */
 	@Override
 	public SimpleGraph add(GraphComponent component)
 	{
+		if(component == null)
+			throw new IllegalArgumentException("null components not allowed");
+		
 		if(component instanceof Node)
-			return addNode((Node) component);
-		if(component instanceof Edge)
-			return addEdge((Edge) component);
-		throw new IllegalArgumentException("Given component is not one of Node, Edge.");
+		{
+			Node node = (Node) component;
+			if(!contains(node))
+			{
+				Set<Edge> outEdges = new HashSet<Edge>();
+				Set<Edge> inEdges = new HashSet<Edge>();
+				// connect with potentially existing edges
+				for(Edge e : edges)
+				{
+					if(e.getFrom() == node)
+						outEdges.add(e);
+					if(e.getTo() == node)
+						inEdges.add(e);
+				}
+				nodes.put(node, new NodeData(inEdges, outEdges));
+			}
+			else
+				lw("node [] already present. Not re-added.", node);
+		}
+		else if(component instanceof Edge)
+		{
+			Edge edge = (Edge) component;
+			if(!contains(edge))
+			{
+				edges.add(edge);
+				if(contains(edge.getFrom()))
+					// connect 'from' node
+					nodes.get(edge.getFrom()).getOutEdges().add(edge);
+				if(contains(edge.getTo()))
+					// connect 'to' node
+					nodes.get(edge.getTo()).getInEdges().add(edge);
+			}
+			else
+				lw("edge [] already present. Not re-added.", edge);
+		}
+		else
+			throw new IllegalArgumentException("Given component is not one of Node, Edge.");
+		return this;
 	}
 	
 	@Override
@@ -217,18 +225,31 @@ public class SimpleGraph extends Unit implements Graph
 	@Override
 	public SimpleGraph removeNode(Node node)
 	{
-		if(contains(node))
-			nodes.remove(node);
-		else
-			le("node[" + node + "] not contained");
-		return this;
+		return remove(node);
 	}
 	
 	@Override
 	public SimpleGraph removeEdge(Edge edge)
 	{
-		if(contains(edge))
+		return remove(edge);
+	}
+	
+	/**
+	 * This is the only method that actually removes a component from the graph. Any other methods call (should call)
+	 * this method.
+	 */
+	@Override
+	public SimpleGraph remove(GraphComponent component)
+	{
+		if(component == null)
+			throw new IllegalArgumentException("given components is null.");
+		if(!contains(component))
+			lr(this, "component [] not contained", component);
+		if(component instanceof Node)
+			nodes.remove(component);
+		else if(component instanceof Edge)
 		{
+			Edge edge = (Edge) component;
 			if(contains(edge.getFrom()))
 				nodes.get(edge.getFrom()).getOutEdges().remove(edge);
 			if(contains(edge.getTo()))
@@ -236,18 +257,16 @@ public class SimpleGraph extends Unit implements Graph
 			edges.remove(edge);
 		}
 		else
-			le("edge [" + edge + "] not contained");
+			throw new IllegalArgumentException("Given component is not one of Node, Edge.");
 		return this;
 	}
 	
 	@Override
-	public SimpleGraph remove(GraphComponent component)
+	public Graph removeAll(Collection<? extends GraphComponent> components)
 	{
-		if(component instanceof Node)
-			return removeNode((Node) component);
-		if(component instanceof Edge)
-			return removeEdge((Edge) component);
-		throw new IllegalArgumentException("Given component is not one of Node, Edge.");
+		for(GraphComponent comp : components)
+			remove(comp);
+		return this;
 	}
 	
 	@Override
@@ -305,24 +324,12 @@ public class SimpleGraph extends Unit implements Graph
 	}
 	
 	@Override
-	public boolean contains(Node node)
-	{
-		return nodes.containsKey(node);
-	}
-	
-	@Override
-	public boolean contains(Edge e)
-	{
-		return edges.contains(e);
-	}
-	
-	@Override
 	public boolean contains(GraphComponent component)
 	{
 		if(component instanceof Node)
-			return contains((Node) component);
+			return nodes.containsKey(component);
 		if(component instanceof Edge)
-			return contains((Edge) component);
+			return edges.contains(component);
 		throw new IllegalArgumentException("Given component is not one of Node, Edge.");
 	}
 	
@@ -471,7 +478,7 @@ public class SimpleGraph extends Unit implements Graph
 			String edgeReads[] = line.split(Character.toString(EDGE_SEPARATOR));
 			for(String edgeRead : edgeReads) // each element is an edge
 			{
-				log.lf("new edge: " + edgeRead);
+				log.lf("new edge: ", edgeRead);
 				
 				boolean bidirectional = true;
 				
@@ -523,7 +530,7 @@ public class SimpleGraph extends Unit implements Graph
 				if((edgeName != null) && (edgeName.length() == 0))
 					edgeName = null;
 				// log.trace("[" + parts1.toString() + "] [" + parts2.toString() + "]");
-				log.lf("[" + node1name + "] [" + node2name + "] [" + edgeName + "]");
+				log.lf("[] [] []", node1name, node2name, edgeName);
 				
 				if(getNodesNamed(node1name).isEmpty())
 				{

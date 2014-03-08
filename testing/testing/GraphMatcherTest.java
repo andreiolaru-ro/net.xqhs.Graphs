@@ -78,7 +78,7 @@ public class GraphMatcherTest
 		UnitComponent log = (UnitComponent) new UnitComponent().setUnitName(unitName).setLogLevel(Level.ALL);
 		log.lf("Hello World");
 		
-		String filename = "conf";
+		String filename = "conf/conf";
 		boolean visual = false;
 		
 		Map<String, Graph> testPack = loadTestGraphPattern(filename);
