@@ -271,17 +271,18 @@ public class Match
 		this.id = id;
 	}
 	
-	@Override
-	public boolean equals(Object obj)
-	{
-		return (obj instanceof Match) ? this.id.equals(((Match) obj).id) : false;
-	}
-	
-	@Override
-	public int hashCode()
-	{
-		return id.hashCode();
-	}
+	// TODO: fix this that gives bugs:
+	// @Override
+	// public boolean equals(Object obj)
+	// {
+	// return (obj instanceof Match) ? this.id.equals(((Match) obj).id) : false;
+	// }
+	//
+	// @Override
+	// public int hashCode()
+	// {
+	// return id.hashCode();
+	// }
 	
 	/**
 	 * Invalidates the match. The method can be used classes extending {@link GraphMatcherQuick} by calling
@@ -323,6 +324,22 @@ public class Match
 	public int getSize()
 	{
 		return solvedPart.m();
+	}
+	
+	/**
+	 * @return the {@link Graph} against which is the match.
+	 */
+	public Graph getGraph()
+	{
+		return targetGraphLink;
+	}
+	
+	/**
+	 * @return the {@link GraphPattern} of which is the match.
+	 */
+	public GraphPattern getPattern()
+	{
+		return patternLink;
 	}
 	
 	/**
@@ -437,6 +454,7 @@ public class Match
 			mergeOuterCandidates.add(mc);
 			mc.mergeOuterCandidates.add(this);
 		}
+		// System.out.println("[" + cand + "]: \t [" + this + "] \t\t [" + mc + "]");
 		return cand;
 	}
 	
@@ -479,14 +497,13 @@ public class Match
 		// MO -> common outer candidates: MO = MO1 n MO2
 		// id TODO
 		
-		GraphPattern pt = patternLink;
 		// G and GP links -> set in constructor
-		Match newM = new Match(targetGraphLink, pt);
+		Match newM = new Match(targetGraphLink, patternLink);
 		
 		// add whole pattern (same for both matches) as unsolved part
 		newM.unsolvedPart = new GraphPattern();
-		newM.unsolvedPart.addAll(pt.getNodes());
-		newM.unsolvedPart.addAll(pt.getEdges());
+		newM.unsolvedPart.addAll(patternLink.getNodes());
+		newM.unsolvedPart.addAll(patternLink.getEdges());
 		newM.k = newM.unsolvedPart.getEdges().size();
 		
 		// there should be no duplicates as the solved parts should be disjoint. This is checked further on.
@@ -518,6 +535,7 @@ public class Match
 				if(sourceMatch != null)
 				{
 					monitor.le("match-intersection pattern edge found: []", eP);
+					System.out.println("\t\t [" + this + "] \t\t [" + m1 + "]");
 					throw new IllegalArgumentException("match-intersection edge");
 				}
 				sourceMatch = m1;
@@ -560,10 +578,8 @@ public class Match
 				else
 					newM.frontier.put(eP.getFrom(), fromIndex);
 			else
-				newM.frontier
-						.put(eP.getFrom(),
-								new AtomicInteger(pt.getInEdges(eP.getFrom()).size()
-										+ pt.getOutEdges(eP.getFrom()).size() - 1));
+				newM.frontier.put(eP.getFrom(), new AtomicInteger(patternLink.getInEdges(eP.getFrom()).size()
+						+ patternLink.getOutEdges(eP.getFrom()).size() - 1));
 			AtomicInteger toIndex = newM.frontier.get(eP.getTo());
 			if(toIndex != null)
 				if(toIndex.decrementAndGet() == 0)
@@ -571,8 +587,8 @@ public class Match
 				else
 					newM.frontier.put(eP.getTo(), toIndex);
 			else
-				newM.frontier.put(eP.getTo(),
-						new AtomicInteger(pt.getInEdges(eP.getTo()).size() + pt.getOutEdges(eP.getTo()).size() - 1));
+				newM.frontier.put(eP.getTo(), new AtomicInteger(patternLink.getInEdges(eP.getTo()).size()
+						+ patternLink.getOutEdges(eP.getTo()).size() - 1));
 			monitor.incrementNodeReferenceOperation(4); // 2 * (get + set)
 		}
 		// 'u' stands for reunion and 'n' for intersection
@@ -624,8 +640,9 @@ public class Match
 	@Override
 	public String toString()
 	{
-		String ret = "M[" + id + "]K=" + k + new TextGraphRepresentation(solvedPart).setLayout("", "", -1).update()
-				+ "|" + new TextGraphRepresentation(matchedGraph).setLayout("", "", -1).update();
+		String ret = "M" + (valid ? "" : "[INVALID]") + "[" + id + "]K=" + k
+				+ new TextGraphRepresentation(solvedPart).setLayout("", "", -1).update() + "|"
+				+ new TextGraphRepresentation(matchedGraph).setLayout("", "", -1).update();
 		return ret;
 	}
 	

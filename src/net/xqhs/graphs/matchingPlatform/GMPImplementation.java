@@ -231,12 +231,21 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 	@Override
 	public int getMathingSequence()
 	{
+		if(matchingGraph == null)
+		{
+			// no matching has started yet, therefore synchronized
+			if(principalGraph == null)
+				return -1;
+			return principalGraph.getSequence();
+		}
 		return matchingGraph.getSequence();
 	}
 	
 	@Override
 	public int getGraphSequence()
 	{
+		if(principalGraph == null)
+			return -1;
 		return principalGraph.getSequence();
 	}
 	
@@ -244,5 +253,15 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 	public GraphMatchingProcess getMatcherAgainstGraph(GraphPattern pattern)
 	{
 		return GraphMatcherPersistent.getMatcher(principalGraph.createShadowGraph(), pattern, monitor);
+	}
+	
+	@Override
+	public void printindexes()
+	{
+		for(GraphMatcherPersistent gm : patterns.values())
+		{
+			System.out.println(gm.toString() + gm.eMatchIndex);
+			System.out.println(gm.toString() + gm.ePMatchIndex);
+		}
 	}
 }

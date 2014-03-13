@@ -18,13 +18,27 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
+import net.xqhs.graphs.context.CCMImplementation;
+import net.xqhs.graphs.context.ContextGraph;
+import net.xqhs.graphs.context.ContextPattern;
+import net.xqhs.graphs.context.ContinuousContextMatchingPlatform;
+import net.xqhs.graphs.context.ContinuousContextMatchingPlatform.MatchNotificationReceiver;
+import net.xqhs.graphs.context.Instant;
+import net.xqhs.graphs.context.Instant.Offset;
+import net.xqhs.graphs.context.Instant.TickReceiver;
+import net.xqhs.graphs.context.Instant.TimeKeeper;
+import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.GraphComponent;
+import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleGraph;
+import net.xqhs.graphs.matcher.Match;
 import net.xqhs.graphs.matcher.MonitorPack;
 import net.xqhs.graphs.matchingPlatform.GMPImplementation;
 import net.xqhs.graphs.matchingPlatform.GMPImplementation.PrincipalGraph;
@@ -37,6 +51,7 @@ import net.xqhs.graphs.matchingPlatform.TrackingGraph.Transaction;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.graphs.util.ContentHolder;
+import net.xqhs.util.logging.LoggerSimple;
 import net.xqhs.util.logging.LoggerSimple.Level;
 import net.xqhs.util.logging.UnitComponent;
 
@@ -47,6 +62,45 @@ import net.xqhs.util.logging.UnitComponent;
  */
 public class ContextGraphsTest
 {
+	/**
+	 * Time keeper having an integer time coordinate, incremented at request.
+	 * 
+	 * @author Andrei Olaru
+	 */
+	public static class IntTimeKeeper implements TimeKeeper
+	{
+		/**
+		 * Tick receivers.
+		 */
+		Set<TickReceiver>	receivers	= new HashSet<TickReceiver>();
+		/**
+		 * Time coordinate.
+		 */
+		long				now			= 0;
+		
+		@Override
+		public void registerTickReceiver(TickReceiver receiver, Offset tickLength)
+		{
+			receivers.add(receiver);
+		}
+		
+		@Override
+		public Instant now()
+		{
+			return new Instant(now);
+		}
+		
+		/**
+		 * Increments the time and notifies receivers (regardless of their tick length preference. //FIXME
+		 */
+		public void tickUp()
+		{
+			now++;
+			for(TickReceiver rcv : receivers)
+				rcv.tick(this, new Instant(now));
+		}
+	}
+	
 	/**
 	 * Log/unit name
 	 */
@@ -71,7 +125,9 @@ public class ContextGraphsTest
 		
 		// testTrackingGraph(-1);
 		
-		testPersistentMatching("playground/platform/bathroom-time-1");
+		// testPersistentMatching("playground/platform/bathroom-time-1");
+		
+		testContextMatching1("playground/platform/bathroom-time-1");
 		
 		log.doExit();
 	}
@@ -243,7 +299,7 @@ public class ContextGraphsTest
 	 * Tests {@link GMPImplementation} and {@link GraphMatcherPersistent}.
 	 * 
 	 * @param file
-	 *            input file containing the initial graph and all patterns.
+	 *            - input file containing the initial graph and all patterns.
 	 * 
 	 * @throws IOException
 	 */
@@ -327,5 +383,133 @@ public class ContextGraphsTest
 		// TODO: check adding patterns later
 		// TODO: check setting a new principal graph
 		printSeparator(2, "persistent");
+	}
+	
+	/**
+	 * Tests context matching.
+	 * 
+	 * @param file
+	 *            - input file containing the initial graph and all patterns.
+	 * @throws IOException
+	 */
+	protected static void testContextMatching1(String file) throws IOException
+	{
+		printSeparator(-2, "context");
+		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(new File(file))));
+		StringBuilder builder = new StringBuilder();
+		String line;
+		while((line = reader.readLine()) != null)
+		{
+			builder.append(line);
+			builder.append('\n');
+		}
+		ContentHolder<String> input = new ContentHolder<String>(builder.toString());
+		reader.close();
+		
+		// make ticker
+		IntTimeKeeper ticker = new IntTimeKeeper();
+		
+		// prepare CCM
+		MonitorPack monitor = new MonitorPack(); // .setLog(log);
+		ContinuousContextMatchingPlatform CCM = new CCMImplementation(ticker, monitor);
+		
+		// load graph
+		ContextGraph CG = new ContextGraph((CCMImplementation) CCM);
+		Graph g = new TextGraphRepresentation(new SimpleGraph()).readRepresentation(input);
+		log.li("graph: []", new TextGraphRepresentation(g).update());
+		
+		// load patterns
+		List<ContextPattern> GPs = new ArrayList<ContextPattern>();
+		while(input.get().length() > 0)
+		{
+			ContextPattern p = new ContextPattern();
+			TextGraphRepresentation repr = new TextGraphRepresentation(p);// .setUnitName("GPreader").setLogLevel(Level.ALL))
+			repr.readRepresentation(input);
+			log.li("new pattern: []", repr.toString());
+			GPs.add(p);
+			input.set(input.get().trim());
+		}
+		
+		// CCM setup
+		CCM.setMatchNotificationTarget(2, new MatchNotificationReceiver() {
+			@Override
+			public void receiveMatchNotification(ContinuousContextMatchingPlatform platform, Match m)
+			{
+				getLog().li("new match: []", m);
+			}
+		});
+		CCM.setMatchNotificationTarget(GPs.get(1), new MatchNotificationReceiver() {
+			@Override
+			public void receiveMatchNotification(ContinuousContextMatchingPlatform platform, Match m)
+			{
+				getLog().li("new match for pattern 1: []", m);
+			}
+		});
+		CCM.startContinuousMatching();
+		CCM.setContextGraph(CG);
+		for(ContextPattern pattern : GPs)
+			CCM.addContextPattern(pattern);
+		
+		long seed = 1394727231768L; // System.currentTimeMillis();
+		log.lf("seed: []", new Long(seed));
+		Random rand = new Random(seed);
+		GraphComponent comps[] = g.getComponents().toArray(new GraphComponent[0]);
+		boolean addedComps[] = new boolean[comps.length];
+		int added = 0;
+		for(int i = 0; i < comps.length; i++)
+			addedComps[i] = false;
+		for(int tick = 0; tick < 50; tick++)
+		{
+			printSeparator(0, "tick start [" + tick + "]");
+			
+			int nToAdd = Math.min(rand.nextInt(3) + 1, comps.length - added);
+			Transaction t = new Transaction();
+			for(int i = 0; i < nToAdd; i++)
+			{
+				int c = -1;
+				while((c < 0) || addedComps[c])
+					c = rand.nextInt(comps.length);
+				t.put(comps[c], Operation.ADD);
+				if(comps[c] instanceof Edge)
+				{
+					Edge e = (Edge) comps[c];
+					if(!CG.contains(e.getFrom()))
+						t.put(e.getFrom(), Operation.ADD);
+					if(!CG.contains(e.getTo()))
+						t.put(e.getTo(), Operation.ADD);
+				}
+				addedComps[c] = true;
+				added++;
+			}
+			
+			int nToRem = Math.min(rand.nextInt(1) + 1, CG.m() - nToAdd);
+			for(int i = 0; i < nToRem; i++)
+			{
+				int c = -1;
+				while((c < 0) || !addedComps[c] || t.containsKey(comps[c]) || (comps[c] instanceof Node))
+					c = rand.nextInt(comps.length);
+				t.put(comps[c], Operation.REMOVE);
+				addedComps[c] = false;
+				added--;
+			}
+			
+			log.lf("transaction: []", t);
+			CG.applyTransaction(t);
+			log.lf("CG: []", CG);
+			// CCM.printindexes();
+			log.lf(monitor.printStats());
+			ticker.tickUp();
+		}
+		
+		printSeparator(2, "context");
+	}
+	
+	/**
+	 * @return the log.
+	 */
+	protected static LoggerSimple getLog()
+	{
+		return log;
 	}
 }

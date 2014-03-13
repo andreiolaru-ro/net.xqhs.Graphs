@@ -31,6 +31,7 @@ import net.xqhs.graphs.pattern.EdgeP;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.VisualizableGraphComponent;
+import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.graphs.util.Debug.D_G;
 
 /**
@@ -727,6 +728,12 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 	protected void invalidateMatch(Match m)
 	{
 		m.invalidate();
+	}
+	
+	@Override
+	public String toString()
+	{
+		return new TextGraphRepresentation(pattern).update().toString() + "||.";
 	}
 	
 	/**

@@ -154,7 +154,8 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 			// matching not initialized anyway (no matches)
 			return this;
 		if(!eMatchIndex.containsKey(edge))
-			throw new IllegalStateException("Edge not found.");
+			// there were no matches containing the edge
+			return this;
 		Set<Match> toRemove = eMatchIndex.get(edge);
 		eMatchIndex.remove(edge);
 		for(Match m : toRemove)
@@ -175,9 +176,9 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		neighborEdgePs.addAll(pattern.getInEdges(eP.getTo()));
 		neighborEdgePs.addAll(pattern.getOutEdges(eP.getTo()));
 		Set<Match> nMatches = new HashSet<Match>();
-		for(Edge ne : neighborEdgePs)
-			if(ePMatchIndex.containsKey(ne))
-				for(Iterator<Match> it = ePMatchIndex.get(ne).iterator(); it.hasNext();)
+		for(Edge neP : neighborEdgePs)
+			if(ePMatchIndex.containsKey(neP))
+				for(Iterator<Match> it = ePMatchIndex.get(neP).iterator(); it.hasNext();)
 				{
 					Match mc = it.next();
 					if(mc.isValid())
