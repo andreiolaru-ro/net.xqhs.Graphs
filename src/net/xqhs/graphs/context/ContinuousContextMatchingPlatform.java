@@ -34,5 +34,6 @@ public interface ContinuousContextMatchingPlatform
 	
 	public boolean isContinuouslyMatching();
 	
-	public void printindexes();
+	// DEBUG ONLY
+	// public void printindexes();
 }

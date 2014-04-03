@@ -17,8 +17,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -37,6 +39,7 @@ import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.matcher.Match;
 import net.xqhs.graphs.matcher.MonitorPack;
@@ -127,7 +130,9 @@ public class ContextGraphsTest
 		
 		// testPersistentMatching("playground/platform/bathroom-time-1");
 		
-		testContextMatching1("playground/platform/bathroom-time-1");
+		// testContextMatching1("playground/platform/bathroom-time-1");
+		
+		testContextMatching2("playground/platform/house");
 		
 		log.doExit();
 	}
@@ -499,6 +504,170 @@ public class ContextGraphsTest
 			log.lf("CG: []", CG);
 			// CCM.printindexes();
 			log.lf(monitor.printStats());
+			ticker.tickUp();
+		}
+		
+		printSeparator(2, "context");
+	}
+	
+	/**
+	 * Tests context matching with some concrete scenarios.
+	 * 
+	 * @param file
+	 *            - input file containing the initial graph and all patterns.
+	 * @throws IOException
+	 */
+	protected static void testContextMatching2(String file) throws IOException
+	{
+		printSeparator(-2, "context");
+		
+		long seed = System.currentTimeMillis();
+		log.lf("seed: []", new Long(seed));
+		Random rand = new Random(seed);
+		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(new File(file))));
+		StringBuilder builder = new StringBuilder();
+		String line;
+		while((line = reader.readLine()) != null)
+		{
+			builder.append(line);
+			builder.append('\n');
+		}
+		ContentHolder<String> input = new ContentHolder<String>(builder.toString());
+		reader.close();
+		
+		// make ticker
+		IntTimeKeeper ticker = new IntTimeKeeper();
+		
+		// prepare CCM
+		MonitorPack monitor = new MonitorPack(); // .setLog(log);
+		ContinuousContextMatchingPlatform CCM = new CCMImplementation(ticker, monitor);
+		
+		// load graph
+		ContextGraph CG = new ContextGraph((CCMImplementation) CCM);
+		Graph g = new TextGraphRepresentation(new SimpleGraph()).readRepresentation(input);
+		log.li("graph: []", new TextGraphRepresentation(g).update());
+		
+		// load patterns
+		List<ContextPattern> GPs = new ArrayList<ContextPattern>();
+		while(input.get().length() > 0)
+		{
+			ContextPattern p = new ContextPattern();
+			TextGraphRepresentation repr = new TextGraphRepresentation(p);// .setUnitName("GPreader").setLogLevel(Level.ALL);
+			repr.readRepresentation(input);
+			log.li("new pattern: []", repr.toString());
+			GPs.add(p);
+			input.set(input.get().trim());
+		}
+		
+		// CCM setup
+		CCM.setMatchNotificationTarget(2, new MatchNotificationReceiver() {
+			@Override
+			public void receiveMatchNotification(ContinuousContextMatchingPlatform platform, Match m)
+			{
+				getLog().li("new match: []", m);
+			}
+		});
+		CCM.setMatchNotificationTarget(GPs.get(1), new MatchNotificationReceiver() {
+			@Override
+			public void receiveMatchNotification(ContinuousContextMatchingPlatform platform, Match m)
+			{
+				getLog().li("new match for pattern 1: []", m);
+			}
+		});
+		CCM.startContinuousMatching();
+		CCM.setContextGraph(CG);
+		for(ContextPattern pattern : GPs)
+			CCM.addContextPattern(pattern);
+		
+		long ntime = 60 * 24;
+		long wakeup = 60 * 7;
+		long sleep = 60 * 22;
+		
+		long lastBathroom = -6 * 60;
+		long lastShower = -12 * 60;
+		long lastMeal = -4 * 60;
+		// boolean emergency = true;
+		
+		Node Emily = g.getNodesNamed("Emily").iterator().next();
+		Node Living = g.getNodesNamed("Living").iterator().next();
+		Node Bathroom = g.getNodesNamed("Bathroom").iterator().next();
+		Node Hall = g.getNodesNamed("Hall").iterator().next();
+		Node Kitchen = g.getNodesNamed("Kitchen").iterator().next();
+		Edge e1 = new SimpleEdge(Emily, Living, "is-in");
+		g.add(Living);
+		g.add(e1);
+		
+		CG.addAll(g.getComponents());
+		
+		Deque<Transaction> todo = new LinkedList<TrackingGraph.Transaction>();
+		boolean justdone = false;
+		for(long tick = 0; tick < ntime; tick++)
+		{
+			if((tick % 60) == 0)
+			{
+				printSeparator(0, "tick start [" + tick / 60 + "] ");// + ((tick - lastBathroom) / (4 * .6)));
+				log.lf("CG: []", CG);
+				log.lf(monitor.printStats());
+			}
+			
+			if(!todo.isEmpty())
+			{
+				justdone = true;
+				Transaction t = todo.pollFirst();
+				CG.applyTransaction(t);
+			}
+			else if(justdone)
+			{
+				printSeparator(1, "done");
+				justdone = false;
+			}
+			
+			if(rand.nextInt(Math.max(1, (int) ((tick - lastBathroom) / (4 * 0.6)))) > 80)
+			{ // go to bathroom
+				printSeparator(-1, "bathroom");
+				Edge e2 = new SimpleEdge(Emily, Bathroom, "is-in");
+				Edge e3 = new SimpleEdge(Emily, Bathroom, "near");
+				todo.add(new Transaction().putR(e3, Operation.ADD));
+				todo.add(new Transaction().putR(e3, Operation.REMOVE).putR(e1, Operation.REMOVE)
+						.putR(e2, Operation.ADD));
+				todo.add(new Transaction());
+				todo.add(new Transaction());
+				todo.add(new Transaction().putR(e2, Operation.REMOVE).putR(e1, Operation.ADD));
+				lastBathroom = tick;
+			}
+			
+			if((tick > wakeup) && (tick < sleep)
+					&& (rand.nextInt(Math.max(1, (int) ((tick - lastMeal) / (10 * 0.6)))) > 80))
+			{ // go to eat
+				printSeparator(-1, "meal");
+				Edge e2 = new SimpleEdge(Emily, Hall, "is-in");
+				Edge e3 = new SimpleEdge(Emily, Kitchen, "is-in");
+				todo.add(new Transaction().putR(e1, Operation.REMOVE));
+				todo.add(new Transaction().putR(e2, Operation.ADD));
+				todo.add(new Transaction().putR(e2, Operation.REMOVE).putR(e3, Operation.ADD));
+				for(int i = 0; i < 30; i++)
+					todo.add(new Transaction());
+				todo.add(new Transaction().putR(e3, Operation.REMOVE).putR(e2, Operation.ADD));
+				todo.add(new Transaction().putR(e2, Operation.REMOVE).putR(e1, Operation.ADD));
+				lastMeal = tick;
+			}
+			
+			if((tick > wakeup) && (tick < sleep)
+					&& (rand.nextInt(Math.max(1, (int) ((tick - lastShower) / (14 * 0.6)))) > 80))
+			{ // go to shower
+				printSeparator(-1, "shower");
+				Edge e2 = new SimpleEdge(Emily, Bathroom, "is-in");
+				Edge e3 = new SimpleEdge(Emily, Bathroom, "near");
+				todo.add(new Transaction().putR(e3, Operation.ADD));
+				todo.add(new Transaction().putR(e3, Operation.REMOVE).putR(e1, Operation.REMOVE)
+						.putR(e2, Operation.ADD));
+				for(int i = 0; i < 20; i++)
+					todo.add(new Transaction());
+				todo.add(new Transaction().putR(e2, Operation.REMOVE).putR(e1, Operation.ADD));
+				lastShower = tick;
+			}
+			
 			ticker.tickUp();
 		}
 		

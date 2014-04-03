@@ -49,4 +49,18 @@ public class SimpleNode extends AbstractVisualizableGraphComponent implements No
 	{
 		return this.label;
 	}
+	
+	// @Override
+	// public boolean equals(Object obj)
+	// {
+	// if(!(obj instanceof SimpleNode))
+	// return false;
+	// return label.equals(((SimpleNode) obj).label);
+	// }
+	//
+	// @Override
+	// public int hashCode()
+	// {
+	// return label.hashCode();
+	// }
 }

@@ -135,9 +135,9 @@ public class CCMImplementation implements ContinuousContextMatchingPlatform
 		}
 	}
 	
-	@Override
-	public void printindexes()
-	{
-		matchingPlatform.printindexes();
-	}
+	// @Override
+	// public void printindexes()
+	// {
+	// matchingPlatform.printindexes();
+	// }
 }

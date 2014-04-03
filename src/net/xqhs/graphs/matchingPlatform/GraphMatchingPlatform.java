@@ -232,6 +232,7 @@ public interface GraphMatchingPlatform
 	 */
 	public GraphMatchingProcess getMatcherAgainstGraph(GraphPattern pattern);
 	
-	public void printindexes();
+	// DEBUG ONLY
+	// public void printindexes();
 	
 }

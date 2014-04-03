@@ -231,7 +231,7 @@ public class TrackingGraph extends SimpleGraph
 		 */
 		public Transaction putR(GraphComponent component, Operation operation)
 		{
-			multipleOperations.put(component, operation);
+			put(component, operation);
 			return this;
 		}
 		

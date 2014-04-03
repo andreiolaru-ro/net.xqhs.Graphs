@@ -454,7 +454,6 @@ public class Match
 			mergeOuterCandidates.add(mc);
 			mc.mergeOuterCandidates.add(this);
 		}
-		// System.out.println("[" + cand + "]: \t [" + this + "] \t\t [" + mc + "]");
 		return cand;
 	}
 	

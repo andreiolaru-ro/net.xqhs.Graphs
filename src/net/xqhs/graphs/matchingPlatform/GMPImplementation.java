@@ -173,6 +173,12 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 	@Override
 	public Set<Match> incrementSequence()
 	{
+		// FIXME take this out of here
+		int mem = 0;
+		for(GraphMatcherPersistent gm : patterns.values())
+			mem += gm.getMemory();
+		monitor.setMemoryIndication(mem);
+		
 		if(!matchingGraph.canIncrement())
 			return null;
 		Map<GraphComponent, Operation> operations = matchingGraph.getNextSequenceOperations();
@@ -255,13 +261,13 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 		return GraphMatcherPersistent.getMatcher(principalGraph.createShadowGraph(), pattern, monitor);
 	}
 	
-	@Override
-	public void printindexes()
-	{
-		for(GraphMatcherPersistent gm : patterns.values())
-		{
-			System.out.println(gm.toString() + gm.eMatchIndex);
-			System.out.println(gm.toString() + gm.ePMatchIndex);
-		}
-	}
+	// @Override
+	// public void printindexes()
+	// {
+	// for(GraphMatcherPersistent gm : patterns.values())
+	// {
+	// System.out.println(gm.toString() + gm.eMatchIndex);
+	// System.out.println(gm.toString() + gm.ePMatchIndex);
+	// }
+	// }
 }
