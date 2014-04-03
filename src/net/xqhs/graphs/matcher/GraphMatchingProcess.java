@@ -89,4 +89,12 @@ public interface GraphMatchingProcess
 	 * @return a {@link List} of complete matches of the pattern in the graph.
 	 */
 	public List<Match> getAllCompleteMatches();
+	
+	/**
+	 * The method creates all matches and returns the set of matches with the best (lowest) <i>k</i>. If any complete
+	 * matches exist, the returned list will contain all complete matches.
+	 * 
+	 * @return a {@link List} with the matches of lowest <i>k</i>.
+	 */
+	public List<Match> getBestMatches();
 }
