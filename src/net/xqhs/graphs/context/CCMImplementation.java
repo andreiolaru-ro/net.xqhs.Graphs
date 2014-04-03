@@ -13,8 +13,9 @@ import net.xqhs.graphs.matcher.MonitorPack;
 import net.xqhs.graphs.matchingPlatform.GMPImplementation;
 import net.xqhs.graphs.matchingPlatform.GraphMatchingPlatform;
 import net.xqhs.graphs.pattern.GraphPattern;
+import net.xqhs.util.logging.Unit;
 
-public class CCMImplementation implements ContinuousContextMatchingPlatform
+public class CCMImplementation extends Unit implements ContinuousContextMatchingPlatform
 {
 	class MatchNotificationTarget
 	{
