@@ -30,7 +30,8 @@ import net.xqhs.graphs.context.CCMImplementation;
 import net.xqhs.graphs.context.ContextGraph;
 import net.xqhs.graphs.context.ContextPattern;
 import net.xqhs.graphs.context.ContinuousContextMatchingPlatform;
-import net.xqhs.graphs.context.ContinuousContextMatchingPlatform.MatchNotificationReceiver;
+import net.xqhs.graphs.context.ContinuousMatchingProcess;
+import net.xqhs.graphs.context.ContinuousMatchingProcess.MatchNotificationReceiver;
 import net.xqhs.graphs.context.Instant;
 import net.xqhs.graphs.context.Instant.Offset;
 import net.xqhs.graphs.context.Instant.TickReceiver;
@@ -437,16 +438,16 @@ public class ContextGraphsTest
 		}
 		
 		// CCM setup
-		CCM.setMatchNotificationTarget(2, new MatchNotificationReceiver() {
+		CCM.addMatchNotificationTarget(2, new MatchNotificationReceiver() {
 			@Override
-			public void receiveMatchNotification(ContinuousContextMatchingPlatform platform, Match m)
+			public void receiveMatchNotification(ContinuousMatchingProcess platform, Match m)
 			{
 				getLog().li("new match: []", m);
 			}
 		});
-		CCM.setMatchNotificationTarget(GPs.get(1), new MatchNotificationReceiver() {
+		CCM.addMatchNotificationTarget(GPs.get(1), new MatchNotificationReceiver() {
 			@Override
-			public void receiveMatchNotification(ContinuousContextMatchingPlatform platform, Match m)
+			public void receiveMatchNotification(ContinuousMatchingProcess platform, Match m)
 			{
 				getLog().li("new match for pattern 1: []", m);
 			}
@@ -561,16 +562,16 @@ public class ContextGraphsTest
 		}
 		
 		// CCM setup
-		CCM.setMatchNotificationTarget(2, new MatchNotificationReceiver() {
+		CCM.addMatchNotificationTarget(2, new MatchNotificationReceiver() {
 			@Override
-			public void receiveMatchNotification(ContinuousContextMatchingPlatform platform, Match m)
+			public void receiveMatchNotification(ContinuousMatchingProcess platform, Match m)
 			{
 				getLog().li("new match: []", m);
 			}
 		});
-		CCM.setMatchNotificationTarget(GPs.get(1), new MatchNotificationReceiver() {
+		CCM.addMatchNotificationTarget(GPs.get(1), new MatchNotificationReceiver() {
 			@Override
-			public void receiveMatchNotification(ContinuousContextMatchingPlatform platform, Match m)
+			public void receiveMatchNotification(ContinuousMatchingProcess platform, Match m)
 			{
 				getLog().li("new match for pattern 1: []", m);
 			}

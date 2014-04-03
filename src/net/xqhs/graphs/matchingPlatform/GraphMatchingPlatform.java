@@ -221,13 +221,13 @@ public interface GraphMatchingPlatform
 	/**
 	 * Retrieves a {@link GraphMatchingPlatform} for the specified pattern and the <i>current</i> sequence of the
 	 * principal graph (not the matching sequence). Matching is done against a shadow of the principal graph. Any
-	 * changes to the principal graph will not be visible in the matching process.
+	 * subsequent changes to the principal graph will not be visible in the matching process.
 	 * <p>
 	 * Except for the snapshot of the principal graph, this method uses no resources of the platform. The return
 	 * matching process is independent of the platform's patterns and matching processes.
 	 * 
 	 * @param pattern
-	 *            - the pattern to match.
+	 *            - the pattern to match (can also be a normal graph).
 	 * @return the matching process.
 	 */
 	public GraphMatchingProcess getMatcherAgainstGraph(GraphPattern pattern);

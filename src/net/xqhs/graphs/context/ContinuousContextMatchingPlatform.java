@@ -13,31 +13,8 @@ import net.xqhs.graphs.pattern.GraphPattern;
  * 
  * @author Andrei Olaru
  */
-public interface ContinuousContextMatchingPlatform
+public interface ContinuousContextMatchingPlatform extends ContinuousMatchingProcess
 {
-	
-	/**
-	 * An implementation is able to act as a receiver for match notifications.
-	 * <p>
-	 * It is recommended that implementations return quickly from the receiver method and delegate any lengthy
-	 * processing to a different thread.
-	 * 
-	 * @author Andrei Olaru
-	 */
-	public interface MatchNotificationReceiver
-	{
-		/**
-		 * The method is called by a {@link ContinuousContextMatchingPlatform} when a match is detected that conforms to
-		 * the notification settings.
-		 * 
-		 * @param platform
-		 *            - the platform that issued the notification.
-		 * @param m
-		 *            - the match for which the notification has been issued.
-		 */
-		public void receiveMatchNotification(ContinuousContextMatchingPlatform platform, Match m);
-	}
-	
 	/**
 	 * Assigns a new context graph to this implementation. It will also set the time keeper of the graph to the time
 	 * keeper of the platform.
@@ -72,19 +49,62 @@ public interface ContinuousContextMatchingPlatform
 	 */
 	public ContinuousContextMatchingPlatform removeContextPattern(ContextPattern pattern);
 	
-	public ContinuousContextMatchingPlatform setMatchNotificationTarget(int thresholdK,
+	/**
+	 * Adds a notification target for matches of the specified pattern.
+	 * 
+	 * @param pattern
+	 *            - the {@link GraphPattern} whose new matches will be notified to the receiver.
+	 * @param receiver
+	 *            - the receiver of notifications.
+	 * @return the platform itself.
+	 */
+	public ContinuousContextMatchingPlatform addMatchNotificationTarget(GraphPattern pattern,
 			MatchNotificationReceiver receiver);
 	
-	public ContinuousContextMatchingPlatform setMatchNotificationTarget(GraphPattern pattern,
+	/**
+	 * Creates a new {@link ContinuousMatchingProcess}, unrelated to the platform except for the set of patterns, to
+	 * match all patterns against the specified {@link Graph} instance.
+	 * <p>
+	 * The matching process is started immediately
+	 * <p>
+	 * When matches of any <i>k</i> below or equal to the specified threshold are detected, the notification receiver is
+	 * invoked.
+	 * 
+	 * @param graph
+	 *            - the graph to match the patterns against.
+	 * @param thresholdK
+	 *            - the threshold <i>k</i> (see {@link Match}).
+	 * @param receiver
+	 *            - the receiver for match notifications.
+	 * @return the newly created and started {@link ContinuousMatchingProcess} instance.
+	 */
+	public ContinuousMatchingProcess startMatchingAgainstAllPatterns(Graph graph, int thresholdK,
 			MatchNotificationReceiver receiver);
 	
-	public ContinuousMatchingProcess startMatchingAgainstAllPatterns(Graph graph, MatchNotificationReceiver receiver);
-	
-	public ContinuousContextMatchingPlatform startContinuousMatching();
-	
-	public ContinuousContextMatchingPlatform stopContinuousMatching();
-	
-	public boolean isContinuouslyMatching();
+	/**
+	 * Creates a new {@link ContinuousMatchingProcess}, unrelated to the platform except for the current sequence of the
+	 * Context Graph (not the matching sequence), that matches the context graph against the specified pattern.
+	 * <p>
+	 * Matching is done against a shadow of the context graph. Any subsequent changes to the context graph will not be
+	 * visible in the matching process.
+	 * <p>
+	 * Except for the snapshot of the context graph, this method uses no resources of the platform.
+	 * <p>
+	 * The matching process is started immediately.
+	 * <p>
+	 * When matches of any <i>k</i> below or equal to the specified threshold are detected, the notification receiver is
+	 * invoked.
+	 * 
+	 * @param pattern
+	 *            - the pattern to match (can be a normal {@link Graph}).
+	 * @param thresholdK
+	 *            - the threshold <i>k</i> (see {@link Match}).
+	 * @param receiver
+	 *            - the receiver for match notifications.
+	 * @return the newly created and started {@link ContinuousMatchingProcess} instance.
+	 */
+	public ContinuousMatchingProcess startMatchingAgainstGraph(Graph pattern, int thresholdK,
+			MatchNotificationReceiver receiver);
 	
 	// DEBUG ONLY
 	// public void printindexes();
