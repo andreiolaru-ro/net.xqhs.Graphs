@@ -284,7 +284,7 @@ public class MonitorPack implements LoggerSimple
 		stats += "nodes Ops|Labels: " + performanceNodes + "|" + performanceNodesLabels + "; edges Ops|Labels: "
 				+ performanceEdges + "|" + performanceEdgesLabels + "; matches: " + matchCount + "; merges: "
 				+ mergeCount + "; memory: " + memory;
-		stats += "$$> " + performanceNodes + ", " + performanceNodesLabels + ", " + performanceEdges + ", "
+		stats += " $$> " + performanceNodes + ", " + performanceNodesLabels + ", " + performanceEdges + ", "
 				+ performanceEdgesLabels + ", " + matchCount + ", " + mergeCount + "," + memory + "<$$";
 		li(stats);
 		return stats;

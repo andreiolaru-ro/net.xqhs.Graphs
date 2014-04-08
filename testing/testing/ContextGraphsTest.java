@@ -56,15 +56,13 @@ import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.graphs.util.ContentHolder;
 import net.xqhs.util.logging.LoggerSimple;
-import net.xqhs.util.logging.LoggerSimple.Level;
-import net.xqhs.util.logging.UnitComponent;
 
 /**
  * Tester for complex graphs, hyper graphs, transaction graphs, context graphs, and matching platforms.
  * 
  * @author Andrei Olaru
  */
-public class ContextGraphsTest
+public class ContextGraphsTest extends Tester
 {
 	/**
 	 * Time keeper having an integer time coordinate, incremented at request.
@@ -106,24 +104,19 @@ public class ContextGraphsTest
 	}
 	
 	/**
-	 * Log/unit name
-	 */
-	private static String			unitName	= "contextTestMain";
-	/**
-	 * Log
-	 */
-	private static UnitComponent	log;
-	
-	/**
 	 * @param args
 	 *            unused
-	 * @throws IOException
-	 *             if file not found or other IO exceptions.
 	 */
-	public static void main(String args[]) throws IOException
+	@SuppressWarnings("unused")
+	public static void main(String args[])
 	{
-		log = (UnitComponent) new UnitComponent().setUnitName(unitName).setLogLevel(Level.ALL);
-		log.lf("Hello World");
+		new ContextGraphsTest();
+	}
+	
+	@Override
+	protected void doTesting()
+	{
+		super.doTesting();
 		
 		// testTransactions();
 		
@@ -134,36 +127,12 @@ public class ContextGraphsTest
 		// testContextMatching1("playground/platform/bathroom-time-1");
 		
 		testContextMatching2("playground/platform/house");
-		
-		log.doExit();
-	}
-	
-	/**
-	 * Prints a separator.
-	 * 
-	 * @param progress
-	 *            - negative for beginning of section; positive for ending of section; <code>0</code> for intermediate
-	 *            separator; Absolute value gives number of beginning/ending symbols.
-	 * @param section
-	 *            - name of the separated section.
-	 */
-	protected static void printSeparator(int progress, String section)
-	{
-		String arrows = "---";
-		if(progress != 0)
-		{
-			String arrow = (progress < 0) ? "v" : ((progress > 0) ? "^" : "-");
-			arrows = "";
-			for(int i = 0; i < Math.abs(progress); i++)
-				arrows += arrow;
-		}
-		log.li("================================= " + arrows + " [] =================", section);
 	}
 	
 	/**
 	 * Test adding operations to {@link Transaction} instances.
 	 */
-	protected static void testTransactions()
+	protected void testTransactions()
 	{
 		printSeparator(-2, "transactions");
 		Graph GT = GrapherTest.staticTest(1);
@@ -214,7 +183,7 @@ public class ContextGraphsTest
 	 * @param seedPre
 	 *            - pre-set random seed; <code>-1</code> if none.
 	 */
-	protected static void testTrackingGraph(long seedPre)
+	protected void testTrackingGraph(long seedPre)
 	{
 		printSeparator(-2, "tracking graph");
 		long seed = System.currentTimeMillis();
@@ -309,7 +278,7 @@ public class ContextGraphsTest
 	 * 
 	 * @throws IOException
 	 */
-	protected static void testPersistentMatching(String file) throws IOException
+	protected void testPersistentMatching(String file) throws IOException
 	{
 		printSeparator(-2, "persistent");
 		
@@ -398,7 +367,7 @@ public class ContextGraphsTest
 	 *            - input file containing the initial graph and all patterns.
 	 * @throws IOException
 	 */
-	protected static void testContextMatching1(String file) throws IOException
+	protected void testContextMatching1(String file) throws IOException
 	{
 		printSeparator(-2, "context");
 		
@@ -518,7 +487,7 @@ public class ContextGraphsTest
 	 *            - input file containing the initial graph and all patterns.
 	 * @throws IOException
 	 */
-	protected static void testContextMatching2(String file) throws IOException
+	protected void testContextMatching2(String file) throws IOException
 	{
 		printSeparator(-2, "context");
 		
@@ -678,7 +647,7 @@ public class ContextGraphsTest
 	/**
 	 * @return the log.
 	 */
-	protected static LoggerSimple getLog()
+	protected LoggerSimple getLog()
 	{
 		return log;
 	}
