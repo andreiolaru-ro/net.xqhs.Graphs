@@ -495,17 +495,6 @@ public class ContextGraphsTest extends Tester
 		log.lf("seed: []", new Long(seed));
 		Random rand = new Random(seed);
 		
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(new File(file))));
-		StringBuilder builder = new StringBuilder();
-		String line;
-		while((line = reader.readLine()) != null)
-		{
-			builder.append(line);
-			builder.append('\n');
-		}
-		ContentHolder<String> input = new ContentHolder<String>(builder.toString());
-		reader.close();
-		
 		// make ticker
 		IntTimeKeeper ticker = new IntTimeKeeper();
 		
@@ -515,8 +504,6 @@ public class ContextGraphsTest extends Tester
 		
 		// load graph
 		ContextGraph CG = new ContextGraph((CCMImplementation) CCM);
-		Graph g = new TextGraphRepresentation(new SimpleGraph()).readRepresentation(input);
-		log.li("graph: []", new TextGraphRepresentation(g).update());
 		
 		// load patterns
 		List<ContextPattern> GPs = new ArrayList<ContextPattern>();

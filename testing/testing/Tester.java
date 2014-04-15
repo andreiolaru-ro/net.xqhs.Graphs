@@ -1,7 +1,11 @@
 package testing;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,6 +13,7 @@ import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
+import net.xqhs.graphs.util.ContentHolder;
 import net.xqhs.util.logging.LoggerSimple;
 import net.xqhs.util.logging.LoggerSimple.Level;
 import net.xqhs.util.logging.UnitComponent;
@@ -23,29 +28,34 @@ public class Tester
 	/**
 	 * Name of the key in a testPack that designates the graph.
 	 */
-	protected static final String	NAME_GRAPH		= "graph";
+	protected static final String	NAME_GRAPH			= "graph";
 	/**
 	 * Name of the key in a testPack that designates the pattern, in case only one pattern exists.
 	 */
-	protected static final String	NAME_PATTERN	= "pattern";
+	protected static final String	NAME_PATTERN		= "pattern";
+	/**
+	 * Name of the prefix for the key in a testPack that designates a graph or pattern (will be visible as a
+	 * {@link Graph} instance.
+	 */
+	protected static final String	NAME_GENERAL_GRAPH	= "graph";
 	
 	/**
 	 * Directory with test files.
 	 */
-	static String					defaultFileDir	= "playground/";
+	static String					defaultFileDir		= "playground/";
 	/**
 	 * Extension of graph files.
 	 */
-	static String					defaultFileExt	= ".txt";
+	static String					defaultFileExt		= ".txt";
 	/**
 	 * Whatever is added after the file name to form the filename for the pattern.
 	 */
-	static String					patternpart		= "P";
+	static String					patternpart			= "P";
 	
 	/**
 	 * Log/unit name
 	 */
-	protected String				unitName		= "contextTestMain";
+	protected String				unitName			= "contextTestMain";
 	/**
 	 * Log
 	 */
@@ -74,6 +84,8 @@ public class Tester
 	/**
 	 * Loads a testPack formed of a graph and a pattern. It uses the specified filename for the graph and the filename
 	 * with {@value #patternpart} added for the pattern.
+	 * <p>
+	 * The representation is in one-edge-per-line fromat.
 	 * 
 	 * @param filename
 	 *            - the file name.
@@ -112,6 +124,36 @@ public class Tester
 		testPack.put(NAME_GRAPH, G);
 		testPack.put(NAME_PATTERN, GP);
 		return testPack;
+	}
+	
+	protected Map<String, Graph> loadGraphsAndPatterns(String filename, String fileDir, Level readLevel)
+			throws IOException
+	{
+		String file = filename + ((fileDir != null) ? fileDir : defaultFileDir) + defaultFileExt;
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(new File(file))));
+		StringBuilder builder = new StringBuilder();
+		String line;
+		while((line = reader.readLine()) != null)
+		{
+			builder.append(line);
+			builder.append('\n');
+		}
+		ContentHolder<String> input = new ContentHolder<String>(builder.toString());
+		reader.close();
+		
+		Map<String, Graph> graphs = new HashMap<String, Graph>();
+		int i = 0;
+		while(input.get().length() > 0)
+		{
+			Graph g = new SimpleGraph();
+			TextGraphRepresentation repr = (TextGraphRepresentation) new TextGraphRepresentation(g).setUnitName(
+					"Greader").setLogLevel(readLevel);
+			repr.readRepresentation(input);
+			log.li("graph new pattern: []", repr.toString());
+			graphs.put(NAME_GENERAL_GRAPH + "#" + i, g);
+			input.set(input.get().trim());
+		}
+		return graphs;
 	}
 	
 	/**
