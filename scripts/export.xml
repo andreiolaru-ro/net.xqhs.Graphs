@@ -50,10 +50,22 @@
 		<jar destfile="deploy/${project-name}.jar">
 			<fileset dir="bin" includes="net/" />
 			<fileset dir="." includes="src/,doc-${project-name}/,info-${project-name}/" />
+		</jar>
+		<copy todir="deploy/">
+		    <fileset dir="${libs.dir}"
+		         includes="**/*.jar"
+		         erroronmissingdir="false"
+		/>
+	    </copy>
+	</target>
+	
+	<target name="fullpack" depends="pack">
+		<jar destfile="deploy/${project-name}-full.jar">
+			<zipgroupfileset dir="." includes="deploy/${project-name}.jar" />
 			<zipgroupfileset dir="." includes="lib/" />
 		</jar>
 	</target>
 
-	<target name="complete-export" depends="javadoc,pack" />
+	<target name="complete-export" depends="javadoc,fullpack,pack" />
 
 </project>
