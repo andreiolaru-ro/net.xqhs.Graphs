@@ -104,7 +104,8 @@ public class GraphMatcherTest extends Tester
 			log.li("============== new match\n[]", m);
 		}
 		monitoring.printStats();
-		printSeparator(0, "individual matches [3]");
+		
+		printSeparator(0, "individual matches [3]"); // =================================
 		GMQ.resetIterator(3);
 		while(true)
 		{
@@ -114,9 +115,14 @@ public class GraphMatcherTest extends Tester
 			log.li("============== new match\n[]", m);
 		}
 		monitoring.printStats();
-		printSeparator(0, "all matches [3]");
+		
+		printSeparator(0, "all matches [3]"); // ============================
 		// GMQ.clearData();
 		log.li(GMQ.getAllMatches(3).toString()); // is a long line
+		monitoring.printStats();
+		
+		printSeparator(0, "best matches"); // ============================
+		log.li(GMQ.getBestMatches().toString()); // is a long line
 		monitoring.printStats();
 	}
 	
