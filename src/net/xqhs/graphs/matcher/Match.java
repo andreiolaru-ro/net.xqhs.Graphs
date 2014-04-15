@@ -343,6 +343,31 @@ public class Match
 	}
 	
 	/**
+	 * @return the "solved part" of the pattern.
+	 */
+	public GraphPattern getSolvedPart()
+	{
+		return solvedPart;
+	}
+	
+	/**
+	 * @return the "unsolved part" of the pattern. <b>WARNING</b> the returned graph may contain edges that have
+	 *         adjacent nodes outside of the graph.
+	 */
+	public GraphPattern getUnsolvedPart()
+	{
+		return unsolvedPart;
+	}
+	
+	/**
+	 * @return the subgraph matched by the "solved part" of the pattern.
+	 */
+	public Graph getMatchedGraph()
+	{
+		return matchedGraph;
+	}
+	
+	/**
 	 * The method checks whether another match can be considered as a candidate for merger with this match, and, if yes,
 	 * what kind (see {@link Candidacy}).
 	 * <p>
@@ -454,7 +479,6 @@ public class Match
 			mergeOuterCandidates.add(mc);
 			mc.mergeOuterCandidates.add(this);
 		}
-		// System.out.println("[" + cand + "]: \t [" + this + "] \t\t [" + mc + "]");
 		return cand;
 	}
 	

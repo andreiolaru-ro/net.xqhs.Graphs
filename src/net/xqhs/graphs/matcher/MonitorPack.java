@@ -22,31 +22,43 @@ public class MonitorPack implements LoggerSimple
 	/**
 	 * Matching visualizer to view the matching process.
 	 */
-	MatchingVisualizer	visual				= null;
+	MatchingVisualizer	visual					= null;
 	
 	/**
 	 * The log to use.
 	 */
-	LoggerSimple		log					= null;
+	LoggerSimple		log						= null;
 	
 	/**
-	 * Measures performance of the algorithm in terms of compared nodes.
+	 * Measures performance of the algorithm in terms of compared node references.
 	 */
-	AtomicInteger		performanceNodes	= new AtomicInteger();
+	AtomicInteger		performanceNodes		= new AtomicInteger();
 	/**
-	 * Measures performance of the algorithm in terms of compared edge labels and references.
+	 * Measures performance of the algorithm in terms of compared node labels.
 	 */
-	AtomicInteger		performanceEdges	= new AtomicInteger();
+	AtomicInteger		performanceNodesLabels	= new AtomicInteger();
+	/**
+	 * Measures performance of the algorithm in terms of compared edge references.
+	 */
+	AtomicInteger		performanceEdges		= new AtomicInteger();
+	/**
+	 * Measures performance of the algorithm in terms of compared edge labels.
+	 */
+	AtomicInteger		performanceEdgesLabels	= new AtomicInteger();
 	
 	/**
 	 * Measures the total number of matches created.
 	 */
-	AtomicInteger		matchCount			= new AtomicInteger();
+	AtomicInteger		matchCount				= new AtomicInteger();
 	
 	/**
 	 * Measures the total number of merges between matches.
 	 */
-	AtomicInteger		mergeCount			= new AtomicInteger();
+	AtomicInteger		mergeCount				= new AtomicInteger();
+	/**
+	 * Measures the amount of memory, as declared by the caller.
+	 */
+	AtomicInteger		memory					= new AtomicInteger();
 	
 	/**
 	 * Sets the log to use by this instance. All logging messages posted to this instance will be posted to the log
@@ -86,33 +98,57 @@ public class MonitorPack implements LoggerSimple
 	/**
 	 * @return the performanceNodes
 	 */
-	public AtomicInteger getPerformanceNodes()
+	public int getPerformanceNodes()
 	{
-		return performanceNodes;
+		return performanceNodes.get();
+	}
+	
+	/**
+	 * @return the performanceNodesLabels
+	 */
+	public int getPerformanceNodesLabels()
+	{
+		return performanceNodesLabels.get();
 	}
 	
 	/**
 	 * @return the performanceEdges
 	 */
-	public AtomicInteger getPerformanceEdges()
+	public int getPerformanceEdges()
 	{
-		return performanceEdges;
+		return performanceEdges.get();
+	}
+	
+	/**
+	 * @return the performanceEdgesLabels
+	 */
+	public int getPerformanceEdgesLabels()
+	{
+		return performanceEdgesLabels.get();
 	}
 	
 	/**
 	 * @return the matchCount
 	 */
-	public AtomicInteger getMatchCount()
+	public int getMatchCount()
 	{
-		return matchCount;
+		return matchCount.get();
 	}
 	
 	/**
 	 * @return the mergeCount
 	 */
-	public AtomicInteger getMergeCount()
+	public int getMergeCount()
 	{
-		return mergeCount;
+		return mergeCount.get();
+	}
+	
+	/**
+	 * @return the memory indication.
+	 */
+	public int getMemoryIndication()
+	{
+		return memory.get();
 	}
 	
 	/**
@@ -122,7 +158,7 @@ public class MonitorPack implements LoggerSimple
 	 */
 	public int incrementEdgeLabelComparison()
 	{
-		return performanceEdges.incrementAndGet();
+		return performanceEdgesLabels.incrementAndGet();
 	}
 	
 	/**
@@ -134,7 +170,7 @@ public class MonitorPack implements LoggerSimple
 	 */
 	public int incrementEdgeLabelComparison(int increment)
 	{
-		return performanceEdges.addAndGet(increment);
+		return performanceEdgesLabels.addAndGet(increment);
 	}
 	
 	/**
@@ -166,7 +202,7 @@ public class MonitorPack implements LoggerSimple
 	 */
 	public int incrementNodeLabelComparison()
 	{
-		return performanceNodes.incrementAndGet();
+		return performanceNodesLabels.incrementAndGet();
 	}
 	
 	/**
@@ -178,7 +214,7 @@ public class MonitorPack implements LoggerSimple
 	 */
 	public int incrementNodeLabelComparison(int increment)
 	{
-		return performanceNodes.addAndGet(increment);
+		return performanceNodesLabels.addAndGet(increment);
 	}
 	
 	/**
@@ -224,6 +260,20 @@ public class MonitorPack implements LoggerSimple
 	}
 	
 	/**
+	 * Sets the current memory consumption.
+	 * 
+	 * @param indication
+	 *            - the indication on the memory consumption.
+	 * @return the previously stored indication.
+	 */
+	public int setMemoryIndication(int indication)
+	{
+		int ret = memory.get();
+		memory.set(indication);
+		return ret;
+	}
+	
+	/**
 	 * Prints a one-line view of the performance indicators, as a log line (if any log exists).
 	 * 
 	 * @return the same string that was printed.
@@ -231,8 +281,11 @@ public class MonitorPack implements LoggerSimple
 	public String printStats()
 	{
 		String stats = "";
-		stats += "nodes Ops|Labels: " + performanceNodes + "; edges Ops|Labels: " + performanceEdges + "; matches: "
-				+ matchCount + "; merges: " + mergeCount;
+		stats += "nodes Ops|Labels: " + performanceNodes + "|" + performanceNodesLabels + "; edges Ops|Labels: "
+				+ performanceEdges + "|" + performanceEdgesLabels + "; matches: " + matchCount + "; merges: "
+				+ mergeCount + "; memory: " + memory;
+		stats += "$$> " + performanceNodes + ", " + performanceNodesLabels + ", " + performanceEdges + ", "
+				+ performanceEdgesLabels + ", " + matchCount + ", " + mergeCount + "," + memory + "<$$";
 		li(stats);
 		return stats;
 	}

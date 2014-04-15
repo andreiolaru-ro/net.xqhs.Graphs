@@ -68,7 +68,7 @@ public class CCMImplementation extends Unit implements ContinuousContextMatching
 	}
 	
 	@Override
-	public CCMImplementation setMatchNotificationTarget(int thresholdK, MatchNotificationReceiver receiver)
+	public CCMImplementation addMatchNotificationTarget(int thresholdK, MatchNotificationReceiver receiver)
 	{
 		if(!notificationTargets.containsKey(null))
 			notificationTargets.put(null, new HashSet<MatchNotificationTarget>());
@@ -77,7 +77,7 @@ public class CCMImplementation extends Unit implements ContinuousContextMatching
 	}
 	
 	@Override
-	public CCMImplementation setMatchNotificationTarget(GraphPattern pattern, MatchNotificationReceiver receiver)
+	public CCMImplementation addMatchNotificationTarget(GraphPattern pattern, MatchNotificationReceiver receiver)
 	{
 		if(!notificationTargets.containsKey(pattern))
 			notificationTargets.put(pattern, new HashSet<MatchNotificationTarget>());
@@ -86,7 +86,24 @@ public class CCMImplementation extends Unit implements ContinuousContextMatching
 	}
 	
 	@Override
-	public ContinuousMatchingProcess startMatchingAgainstAllPatterns(Graph graph, MatchNotificationReceiver receiver)
+	public ContinuousMatchingProcess removeMatchNotificationTarget(MatchNotificationReceiver receiver)
+	{
+		for(Set<MatchNotificationTarget> targetSet : notificationTargets.values())
+			targetSet.remove(receiver);
+		return this;
+	}
+	
+	@Override
+	public ContinuousMatchingProcess startMatchingAgainstAllPatterns(Graph graph, int thresholdK,
+			MatchNotificationReceiver receiver)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public ContinuousMatchingProcess startMatchingAgainstGraph(Graph pattern, int thresholdK,
+			MatchNotificationReceiver receiver)
 	{
 		// TODO Auto-generated method stub
 		return null;

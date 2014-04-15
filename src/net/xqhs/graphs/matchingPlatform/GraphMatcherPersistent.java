@@ -242,4 +242,20 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		}
 		return (GraphMatcherPersistent) new GraphMatcherPersistent(graph, pattern).setMonitor(monitoring);
 	}
+	
+	/**
+	 * @return an indication of the used memory (sizes of indexes).
+	 */
+	protected int getMemory()
+	{
+		int ret = (allMatches != null ? allMatches.size() : 0);
+		// ret += (matchQueue != null ? matchQueue.size() : 0);
+		// if(eMatchIndex != null)
+		// for(Set<Match> item : eMatchIndex.values())
+		// ret += item.size();
+		// if(ePMatchIndex != null)
+		// for(Set<Match> item : ePMatchIndex.values())
+		// ret += item.size();
+		return ret;
+	}
 }

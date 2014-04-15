@@ -350,6 +350,37 @@ public class GraphMatcherQuick implements GraphMatchingProcess
 		return getAllMatches(0);
 	}
 	
+	@Override
+	public List<Match> getBestMatches()
+	{
+		List<Match> ret = getAllCompleteMatches();
+		int bestK = 0;
+		if(ret.isEmpty())
+		{
+			bestK = pattern.m();
+			matchIterator = allMatches.iterator();
+			while(matchIterator.hasNext())
+			{
+				Match m = matchIterator.next();
+				if(!m.isValid())
+				{
+					matchIterator.remove();
+					continue;
+				}
+				if(m.k == bestK)
+					ret.add(m);
+				else if(m.k < bestK)
+				{
+					ret.clear();
+					ret.add(m);
+					bestK = m.k;
+				}
+			}
+		}
+		resetIterator(bestK);
+		return ret;
+	}
+	
 	/**
 	 * The method initializes the match queue by creating an appropriate comparator (based on distances of edges to a
 	 * start vertex).
