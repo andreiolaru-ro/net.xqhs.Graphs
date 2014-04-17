@@ -30,10 +30,10 @@ public class CCMImplementation extends Unit implements ContinuousContextMatching
 	}
 	
 	// MonitorPack monitor = new MonitorPack();
-	TimeKeeper										theTime;
-	GraphMatchingPlatform							matchingPlatform	= new GMPImplementation();
-	boolean											continuousMatching	= false;
-	Map<GraphPattern, Set<MatchNotificationTarget>>	notificationTargets	= new HashMap<GraphPattern, Set<MatchNotificationTarget>>();
+	TimeKeeper											theTime;
+	GraphMatchingPlatform								matchingPlatform	= new GMPImplementation();
+	boolean												continuousMatching	= false;
+	Map<ContextPattern, Set<MatchNotificationTarget>>	notificationTargets	= new HashMap<ContextPattern, Set<MatchNotificationTarget>>();
 	
 	public CCMImplementation(TimeKeeper time, MonitorPack monitorLink)
 	{
@@ -77,7 +77,7 @@ public class CCMImplementation extends Unit implements ContinuousContextMatching
 	}
 	
 	@Override
-	public CCMImplementation addMatchNotificationTarget(GraphPattern pattern, MatchNotificationReceiver receiver)
+	public CCMImplementation addMatchNotificationTarget(ContextPattern pattern, MatchNotificationReceiver receiver)
 	{
 		if(!notificationTargets.containsKey(pattern))
 			notificationTargets.put(pattern, new HashSet<MatchNotificationTarget>());
@@ -137,7 +137,7 @@ public class CCMImplementation extends Unit implements ContinuousContextMatching
 		{
 			Set<Match> matches = matchingPlatform.incrementSequence();
 			for(Match m : matches)
-				for(Entry<GraphPattern, Set<MatchNotificationTarget>> entry : notificationTargets.entrySet())
+				for(Entry<ContextPattern, Set<MatchNotificationTarget>> entry : notificationTargets.entrySet())
 					if((entry.getKey() == null) || (entry.getKey() == m.getPattern()))
 						for(MatchNotificationTarget tg : entry.getValue())
 							if((tg.k < 0) || (m.getK() <= tg.k))

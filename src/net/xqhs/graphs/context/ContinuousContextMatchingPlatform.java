@@ -58,7 +58,7 @@ public interface ContinuousContextMatchingPlatform extends ContinuousMatchingPro
 	 *            - the receiver of notifications.
 	 * @return the platform itself.
 	 */
-	public ContinuousContextMatchingPlatform addMatchNotificationTarget(GraphPattern pattern,
+	public ContinuousContextMatchingPlatform addMatchNotificationTarget(ContextPattern pattern,
 			MatchNotificationReceiver receiver);
 	
 	/**
