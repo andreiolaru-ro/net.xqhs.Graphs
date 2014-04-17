@@ -10,8 +10,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.SimpleGraph;
+import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.pattern.GraphPattern;
+import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.graphs.util.ContentHolder;
 import net.xqhs.util.logging.LoggerSimple;
@@ -126,10 +129,32 @@ public class Tester
 		return testPack;
 	}
 	
+	/**
+	 * Loads a group of graphs and/or patterns from a file. Graphs are returned as {@link Graph} implementations, so
+	 * they can be graphs, patterns, etc. In practice, {@link TextGraphRepresentation} is used, so all returns will be
+	 * {@link SimpleGraph} instances containing instances of {@link SimpleNode}, {@link NodeP}, and {@link SimpleEdge}.
+	 * <p>
+	 * Other implementations of graphs can use {@link Graph#addAll(java.util.Collection)} to import the read edges and
+	 * nodes.
+	 * <p>
+	 * TODO: include names in the files.
+	 * 
+	 * @param filename
+	 *            - the name of the file (no extension).
+	 * @param fileDir
+	 *            - the directory of the file. If <code>null</code>, the default is used. It will be assembled as a
+	 *            prefix to the file name.
+	 * @param readLevel
+	 *            - the log {@link Level} to use for reading the graphs. If <code>null</code>, no logging is output.
+	 * @return a {@link Map} of names for the graphs and read graphs. Names will have the prefix
+	 *         {@value #NAME_GENERAL_GRAPH} followed by # and the 0-based index of the graph in the file.
+	 * @throws IOException
+	 *             - if reading the file fails.
+	 */
 	protected Map<String, Graph> loadGraphsAndPatterns(String filename, String fileDir, Level readLevel)
 			throws IOException
 	{
-		String file = filename + ((fileDir != null) ? fileDir : defaultFileDir) + defaultFileExt;
+		String file = ((fileDir != null) ? fileDir : defaultFileDir) + filename + defaultFileExt;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(new File(file))));
 		StringBuilder builder = new StringBuilder();
 		String line;
@@ -147,11 +172,12 @@ public class Tester
 		{
 			Graph g = new SimpleGraph();
 			TextGraphRepresentation repr = (TextGraphRepresentation) new TextGraphRepresentation(g).setUnitName(
-					"Greader").setLogLevel(readLevel);
+					"Greader").setLogLevel((readLevel != null) ? readLevel : Level.OFF);
 			repr.readRepresentation(input);
 			log.li("graph new pattern: []", repr.toString());
 			graphs.put(NAME_GENERAL_GRAPH + "#" + i, g);
 			input.set(input.get().trim());
+			i++;
 		}
 		return graphs;
 	}

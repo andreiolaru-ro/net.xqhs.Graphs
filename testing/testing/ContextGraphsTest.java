@@ -11,11 +11,7 @@
  ******************************************************************************/
 package testing;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
@@ -41,7 +37,6 @@ import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleEdge;
-import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.matcher.Match;
 import net.xqhs.graphs.matcher.MonitorPack;
 import net.xqhs.graphs.matchingPlatform.GMPImplementation;
@@ -54,7 +49,6 @@ import net.xqhs.graphs.matchingPlatform.TrackingGraph.Operation;
 import net.xqhs.graphs.matchingPlatform.TrackingGraph.Transaction;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
-import net.xqhs.graphs.util.ContentHolder;
 import net.xqhs.util.logging.LoggerSimple;
 
 /**
@@ -104,6 +98,13 @@ public class ContextGraphsTest extends Tester
 	}
 	
 	/**
+	 * In a test pack returned by
+	 * {@link Tester#loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}, the name of the
+	 * graph (first in the file).
+	 */
+	protected static String	testGraphName	= Tester.NAME_GENERAL_GRAPH + "#" + 0;
+	
+	/**
 	 * @param args
 	 *            unused
 	 */
@@ -118,15 +119,24 @@ public class ContextGraphsTest extends Tester
 	{
 		super.doTesting();
 		
-		// testTransactions();
+		testTransactions();
 		
-		// testTrackingGraph(-1);
+		testTrackingGraph(-1);
 		
-		// testPersistentMatching("playground/platform/bathroom-time-1");
+		defaultFileDir = "playground/platform/";
 		
-		// testContextMatching1("playground/platform/bathroom-time-1");
-		
-		testContextMatching2("playground/platform/house");
+		try
+		{
+			testPersistentMatching("bathroom-time-1");
+			
+			testContextMatching1("bathroom-time-1");
+			
+			testContextMatching2("house");
+			
+		} catch(IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -282,32 +292,14 @@ public class ContextGraphsTest extends Tester
 	{
 		printSeparator(-2, "persistent");
 		
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(new File(file))));
-		StringBuilder builder = new StringBuilder();
-		String line;
-		while((line = reader.readLine()) != null)
-		{
-			builder.append(line);
-			builder.append('\n');
-		}
-		ContentHolder<String> input = new ContentHolder<String>(builder.toString());
-		reader.close();
+		Map<String, Graph> testPack = loadGraphsAndPatterns(file, null, null);
 		
 		// load graph
 		PlatformPrincipalGraph CG = new PrincipalGraph();
-		Graph g = new TextGraphRepresentation(new SimpleGraph()).readRepresentation(input);
+		Graph g = getTestGraph(testPack);
 		
 		// load patterns
-		List<GraphPattern> GPs = new ArrayList<GraphPattern>();
-		while(input.get().length() > 0)
-		{
-			GraphPattern p = new GraphPattern();
-			TextGraphRepresentation repr = new TextGraphRepresentation(p);// .setUnitName("GPreader").setLogLevel(Level.ALL))
-			repr.readRepresentation(input);
-			log.li("new pattern: []", repr.toString());
-			GPs.add(p);
-			input.set(input.get().trim());
-		}
+		List<GraphPattern> GPs = getGraphPatterns(testPack);
 		
 		// prepare GMP
 		MonitorPack monitor = new MonitorPack();// .setLog(log);
@@ -339,7 +331,7 @@ public class ContextGraphsTest extends Tester
 			ts.add(t);
 			added += toAdd;
 		}
-		printSeparator(2, "");
+		printSeparator(0, "");
 		for(Transaction t : ts)
 		{
 			((TrackingGraph) CG).applyTransaction(t);
@@ -352,7 +344,7 @@ public class ContextGraphsTest extends Tester
 					log.lf("matches for GP=[] k=[]: []", new TextGraphRepresentation(pattern).update().toString(),
 							new Integer(k), GMP.getMatches(pattern, k));
 			log.li(monitor.printStats());
-			printSeparator(2, "");
+			printSeparator(0, "");
 		}
 		// TODO: check removal of edges
 		// TODO: check adding patterns later
@@ -371,17 +363,6 @@ public class ContextGraphsTest extends Tester
 	{
 		printSeparator(-2, "context");
 		
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(new File(file))));
-		StringBuilder builder = new StringBuilder();
-		String line;
-		while((line = reader.readLine()) != null)
-		{
-			builder.append(line);
-			builder.append('\n');
-		}
-		ContentHolder<String> input = new ContentHolder<String>(builder.toString());
-		reader.close();
-		
 		// make ticker
 		IntTimeKeeper ticker = new IntTimeKeeper();
 		
@@ -389,22 +370,15 @@ public class ContextGraphsTest extends Tester
 		MonitorPack monitor = new MonitorPack(); // .setLog(log);
 		ContinuousContextMatchingPlatform CCM = new CCMImplementation(ticker, monitor);
 		
+		Map<String, Graph> testPack = loadGraphsAndPatterns(file, null, null);
+		
 		// load graph
 		ContextGraph CG = new ContextGraph((CCMImplementation) CCM);
-		Graph g = new TextGraphRepresentation(new SimpleGraph()).readRepresentation(input);
+		Graph g = getTestGraph(testPack);
 		log.li("graph: []", new TextGraphRepresentation(g).update());
 		
 		// load patterns
-		List<ContextPattern> GPs = new ArrayList<ContextPattern>();
-		while(input.get().length() > 0)
-		{
-			ContextPattern p = new ContextPattern();
-			TextGraphRepresentation repr = new TextGraphRepresentation(p);// .setUnitName("GPreader").setLogLevel(Level.ALL))
-			repr.readRepresentation(input);
-			log.li("new pattern: []", repr.toString());
-			GPs.add(p);
-			input.set(input.get().trim());
-		}
+		List<ContextPattern> GPs = getContextPatterns(testPack);
 		
 		// CCM setup
 		CCM.addMatchNotificationTarget(2, new MatchNotificationReceiver() {
@@ -489,7 +463,7 @@ public class ContextGraphsTest extends Tester
 	 */
 	protected void testContextMatching2(String file) throws IOException
 	{
-		printSeparator(-2, "context");
+		printSeparator(-2, "context2");
 		
 		long seed = System.currentTimeMillis();
 		log.lf("seed: []", new Long(seed));
@@ -502,20 +476,8 @@ public class ContextGraphsTest extends Tester
 		MonitorPack monitor = new MonitorPack(); // .setLog(log);
 		ContinuousContextMatchingPlatform CCM = new CCMImplementation(ticker, monitor);
 		
-		// load graph
-		ContextGraph CG = new ContextGraph((CCMImplementation) CCM);
-		
-		// load patterns
-		List<ContextPattern> GPs = new ArrayList<ContextPattern>();
-		while(input.get().length() > 0)
-		{
-			ContextPattern p = new ContextPattern();
-			TextGraphRepresentation repr = new TextGraphRepresentation(p);// .setUnitName("GPreader").setLogLevel(Level.ALL);
-			repr.readRepresentation(input);
-			log.li("new pattern: []", repr.toString());
-			GPs.add(p);
-			input.set(input.get().trim());
-		}
+		Map<String, Graph> testPack = loadGraphsAndPatterns(file, null, null);
+		Graph g = getTestGraph(testPack);
 		
 		// CCM setup
 		CCM.addMatchNotificationTarget(2, new MatchNotificationReceiver() {
@@ -525,16 +487,21 @@ public class ContextGraphsTest extends Tester
 				getLog().li("new match: []", m);
 			}
 		});
-		CCM.addMatchNotificationTarget(GPs.get(1), new MatchNotificationReceiver() {
-			@Override
-			public void receiveMatchNotification(ContinuousMatchingProcess platform, Match m)
-			{
-				getLog().li("new match for pattern 1: []", m);
-			}
-		});
+		
+		String notificationTargetName = Tester.NAME_GENERAL_GRAPH + "#" + 1;
+		CCM.addMatchNotificationTarget(
+				(ContextPattern) new ContextPattern().addAll(testPack.get(notificationTargetName).getComponents()),
+				new MatchNotificationReceiver() {
+					@Override
+					public void receiveMatchNotification(ContinuousMatchingProcess platform, Match m)
+					{
+						getLog().li("new match for pattern 1: []", m);
+					}
+				});
+		ContextGraph CG = new ContextGraph((CCMImplementation) CCM);
 		CCM.startContinuousMatching();
 		CCM.setContextGraph(CG);
-		for(ContextPattern pattern : GPs)
+		for(ContextPattern pattern : getContextPatterns(testPack))
 			CCM.addContextPattern(pattern);
 		
 		long ntime = 60 * 24;
@@ -628,7 +595,75 @@ public class ContextGraphsTest extends Tester
 			ticker.tickUp();
 		}
 		
-		printSeparator(2, "context");
+		printSeparator(2, "context2");
+	}
+	
+	/**
+	 * Extracts the graph from the test pack. It is identified by the key {@link #testGraphName}.
+	 * <p>
+	 * It does not return a {@link ContextGraph} because it is expected that the context graph will add the components
+	 * in the returned graph in some test-specific order.
+	 * 
+	 * @param testPack
+	 *            - the test pack, presumably created by
+	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
+	 * @return the graph.
+	 */
+	protected static Graph getTestGraph(Map<String, Graph> testPack)
+	{
+		return testPack.get(testGraphName);
+	}
+	
+	/**
+	 * Loads the list of graphs to serve as patterns, from a test pack. All graphs are considered, except for the one
+	 * named {@link #testGraphName}.
+	 * 
+	 * @param testPack
+	 *            - the test pack, presumably created by
+	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
+	 * @return a {@link List} of {@link Graph} instances.
+	 */
+	protected static List<Graph> getTestGraphs(Map<String, Graph> testPack)
+	{
+		List<Graph> ret = new ArrayList<Graph>();
+		for(String name : testPack.keySet())
+			if(!name.equals(testGraphName))
+				ret.add(testPack.get(name));
+		return ret;
+	}
+	
+	/**
+	 * Loads the list of patterns from a test pack. All graphs are considered, except for the one named
+	 * {@link #testGraphName}.
+	 * 
+	 * @param testPack
+	 *            - the test pack, presumably created by
+	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
+	 * @return a {@link List} of {@link GraphPattern} instances.
+	 */
+	protected static List<GraphPattern> getGraphPatterns(Map<String, Graph> testPack)
+	{
+		List<GraphPattern> ret = new ArrayList<GraphPattern>();
+		for(Graph gp : getTestGraphs(testPack))
+			ret.add((GraphPattern) new GraphPattern().addAll(gp.getComponents()));
+		return ret;
+	}
+	
+	/**
+	 * Gets a list of {@link ContextPattern} instances based on the patterns in a test pack. All patterns are
+	 * considered, except for the one named {@link #testGraphName}.
+	 * 
+	 * @param testPack
+	 *            - the test pack, presumably created by
+	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
+	 * @return a {@link List} of context patterns, in the order in which they were defined in the file.
+	 */
+	protected static List<ContextPattern> getContextPatterns(Map<String, Graph> testPack)
+	{
+		List<ContextPattern> ret = new ArrayList<ContextPattern>();
+		for(Graph gp : getTestGraphs(testPack))
+			ret.add((ContextPattern) new ContextPattern().addAll(gp.getComponents()));
+		return ret;
 	}
 	
 	/**
