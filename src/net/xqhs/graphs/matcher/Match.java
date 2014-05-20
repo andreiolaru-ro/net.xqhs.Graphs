@@ -368,6 +368,51 @@ public class Match
 	}
 	
 	/**
+	 * Retrieves the node in the matched subgraph that corresponds to the specified node from the solved part.
+	 * 
+	 * @param patternNode
+	 *            - the node in the solved part of the pattern.
+	 * @return the corresponding node in the matched subgraph.
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if the node is not found in the solved part of the pattern.
+	 * @throws IllegalStateException
+	 *             if the node is not found in the node function map.
+	 */
+	public Node getMatchedGraphNode(Node patternNode)
+	{
+		if(!solvedPart.contains(patternNode))
+			throw new IllegalArgumentException("Node [" + patternNode.toString()
+					+ "] not in the solved part of the match");
+		if(!nodeFunction.containsKey(patternNode))
+			throw new IllegalStateException("Internal error: pattern node not found in the node function.");
+		return nodeFunction.get(patternNode);
+	}
+	
+	/**
+	 * Retrieves the edges in the matched subgraph that correspond to the specified edge from the solved part. If the
+	 * pattern edge is not labeled with a regular expression, the returned list will contain only one edge.
+	 * 
+	 * @param patternEdge
+	 *            - the edge in the solved part of the pattern.
+	 * @return the corresponding sequence of edges in the matched subgraph.
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if the edge is not found in the solved part of the pattern.
+	 * @throws IllegalStateException
+	 *             if the edge is not found in the edge function map.
+	 */
+	public List<Edge> getMatchedGraphEdges(Edge patternEdge)
+	{
+		if(!solvedPart.contains(patternEdge))
+			throw new IllegalArgumentException("Edge [" + patternEdge.toString()
+					+ "] not in the solved part of the match");
+		if(!edgeFunction.containsKey(patternEdge))
+			throw new IllegalStateException("Internal error: pattern edge not found in the edge function.");
+		return edgeFunction.get(patternEdge);
+	}
+	
+	/**
 	 * The method checks whether another match can be considered as a candidate for merger with this match, and, if yes,
 	 * what kind (see {@link Candidacy}).
 	 * <p>
