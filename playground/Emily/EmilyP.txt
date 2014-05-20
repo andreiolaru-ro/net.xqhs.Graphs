@@ -1,4 +1,4 @@
 Emily -is-in-> Entry Hall;
 Wallet -is-on-> Emily;
-?#! -is-on-> Emily;
-?#! -isa-> Shopping bag;
+?#1 -is-on-> Emily;
+?#1 -isa-> Shopping bag;
