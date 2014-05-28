@@ -1,0 +1,6 @@
+?#1 -isa> user;
+?#1 -near> ?#2;
+?#2 -isa>door;
+?#2 -to> ?#3;
+?#3 -isa> room;
+?#1 -near> ?#3;

@@ -51,8 +51,10 @@ public class GraphMatcherTest extends Tester
 	{
 		super.doTesting();
 		
-		String filename = "conf/conf";
-		boolean visual = false;
+		// String filename = "conf/conf";
+		String filename = "Emily/Emily2";
+		
+		boolean visual = true;
 		
 		Map<String, Graph> testPack = loadTestGraphPattern(filename, null, Level.INFO);
 		

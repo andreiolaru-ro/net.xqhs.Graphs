@@ -1,0 +1,7 @@
+Emily -near> doorB;
+doorB -isa> door;
+Emily -isa> user;
+doorB -to> bathroom;
+Emily -is> 87;
+Emily -> schedule;
+schedule -contains> shopping;  
