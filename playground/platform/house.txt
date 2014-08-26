@@ -1,20 +1,20 @@
 
 
-[Emily (-isa> user) -has> clothes; Fridge (-contains> 614364641 -isa-> Milk Crate) -contains> 43641366 -isa> *Milk Crate;
+[context: Emily (-isa> user) -has> clothes; Fridge (-contains> 614364641 -isa-> Milk Crate) -contains> 43641366 -isa> *Milk Crate;
 Living -near-> Hall -near> Kitchen -near> *Hall; DoorOut -in> *Hall; DoorB (-isa->door)(-in> *Living) -to> Bathroom -isa> room
 ]
 
 
-[Emily -is-in> Living]
+[LIVINGROOM: Emily -is-in> Living]
 
-[Emily -is-in> Kitchen]
+[KITCHEN: Emily -is-in> Kitchen]
 
-[Emily -is-in> Hall]
+[HALL: Emily -is-in> Hall]
 
-[Emily -near> Bathroom]
+[BATHROOM: Emily -near> Bathroom]
 
-[?#1 (-isa> user) (-near> ?#2 (-isa>door) -to> ?#3) -near> *?#3 -isa> room]
+[DOORROOM: ?#1 (-isa> user) (-near> ?#2 (-isa>door) -to> ?#3) -near> *?#3 -isa> room]
 
-[Emily (-has> wallet) (-has> keys) (-has> city clothes) -near> doorOut]
+[GOINGOUT: Emily (-has> wallet) (-has> keys) (-has> city clothes) -near> doorOut]
 
-[Fridge (-contains> ?#1 -isa-> Milk Crate) -contains> ?#2 -isa> *Milk Crate]
+[TWO MILK CRATES: Fridge (-contains> ?#1 -isa-> Milk Crate) -contains> ?#2 -isa> *Milk Crate]

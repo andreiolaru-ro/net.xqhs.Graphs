@@ -49,7 +49,10 @@ import net.xqhs.graphs.matchingPlatform.TrackingGraph.Operation;
 import net.xqhs.graphs.matchingPlatform.TrackingGraph.Transaction;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
+import net.xqhs.graphs.representation.text.TextRepresentationElement.Symbol;
 import net.xqhs.util.logging.LoggerSimple;
+import net.xqhs.util.logging.LoggerSimple.Level;
+import net.xqhs.util.logging.logging.Logging;
 
 /**
  * Tester for complex graphs, hyper graphs, transaction graphs, context graphs, and matching platforms.
@@ -58,6 +61,28 @@ import net.xqhs.util.logging.LoggerSimple;
  */
 public class ContextGraphsTest extends Tester
 {
+	@SuppressWarnings("javadoc")
+	enum ActualState {
+		SLEEP, MEAL, WANDERING, SHOWER, BATHROOM, TV, NOTHING,
+		
+		;
+		
+		boolean exclusive()
+		{
+			return (this == SHOWER) || (this == BATHROOM);
+		}
+		
+		boolean mustContinue()
+		{
+			return (this == MEAL) || (this == TV) || (this == SLEEP);
+		}
+		
+		boolean idle()
+		{
+			return (this == WANDERING) || (this == NOTHING);
+		}
+	}
+	
 	/**
 	 * Time keeper having an integer time coordinate, incremented at request.
 	 * 
@@ -102,7 +127,16 @@ public class ContextGraphsTest extends Tester
 	 * {@link Tester#loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}, the name of the
 	 * graph (first in the file).
 	 */
-	protected static String	testGraphName	= Tester.NAME_GENERAL_GRAPH + "#" + 0;
+	protected static String	testGraphName		= Tester.NAME_GENERAL_GRAPH + "#" + 0;
+	
+	/**
+	 * Member used in context matching tester (2)
+	 */
+	long					lastBathroomTime	= 0;
+	/**
+	 * Member used in context matching tester (2)
+	 */
+	String					detectedState		= null;
 	
 	/**
 	 * @param args
@@ -119,17 +153,19 @@ public class ContextGraphsTest extends Tester
 	{
 		super.doTesting();
 		
-		testTransactions();
+		Logging.getMasterLogging().setLogLevel(Level.WARN);
 		
-		testTrackingGraph(-1);
+		// testTransactions();
+		
+		// testTrackingGraph(-1);
 		
 		defaultFileDir = "playground/platform/";
 		
 		try
 		{
-			testPersistentMatching("bathroom-time-1");
+			// testPersistentMatching("bathroom-time-1");
 			
-			testContextMatching1("bathroom-time-1");
+			// testContextMatching1("bathroom-time-1");
 			
 			testContextMatching2("house");
 			
@@ -465,12 +501,13 @@ public class ContextGraphsTest extends Tester
 	{
 		printSeparator(-2, "context2");
 		
-		long seed = System.currentTimeMillis();
+		// long seed = System.currentTimeMillis();
+		long seed = 1399038417008L;
 		log.lf("seed: []", new Long(seed));
 		Random rand = new Random(seed);
 		
 		// make ticker
-		IntTimeKeeper ticker = new IntTimeKeeper();
+		final IntTimeKeeper ticker = new IntTimeKeeper();
 		
 		// prepare CCM
 		MonitorPack monitor = new MonitorPack(); // .setLog(log);
@@ -484,20 +521,31 @@ public class ContextGraphsTest extends Tester
 			@Override
 			public void receiveMatchNotification(ContinuousMatchingProcess platform, Match m)
 			{
-				getLog().li("new match: []", m);
+				long h = ticker.now().toLong() / 60;
+				long min = ticker.now().toLong() % 60;
+				String time = (h >= 10 ? "" + h : "0" + h) + "." + (min >= 10 ? "" + min : "0" + min);
+				String pattern = m.getPattern().getDescription().toString();
+				if(!pattern.equals("LIVINGROOM"))
+					detectedState = pattern;
+				if((detectedState != null) && detectedState.equals("BATHROOM"))
+				{
+					lastBathroomTime = ticker.now().toLong();
+					// getLog().li("BATHROOM TIME");
+				}
+				getLog().li("new match: [][]", time, m);
 			}
 		});
 		
-		String notificationTargetName = Tester.NAME_GENERAL_GRAPH + "#" + 1;
-		CCM.addMatchNotificationTarget(
-				(ContextPattern) new ContextPattern().addAll(testPack.get(notificationTargetName).getComponents()),
-				new MatchNotificationReceiver() {
-					@Override
-					public void receiveMatchNotification(ContinuousMatchingProcess platform, Match m)
-					{
-						getLog().li("new match for pattern 1: []", m);
-					}
-				});
+		// String notificationTargetName = Tester.NAME_GENERAL_GRAPH + "#" + 1;
+		// CCM.addMatchNotificationTarget(
+		// (ContextPattern) new ContextPattern().addAll(testPack.get(notificationTargetName).getComponents()),
+		// new MatchNotificationReceiver() {
+		// @Override
+		// public void receiveMatchNotification(ContinuousMatchingProcess platform, Match m)
+		// {
+		// getLog().li("new match for pattern 1: []", m);
+		// }
+		// });
 		ContextGraph CG = new ContextGraph((CCMImplementation) CCM);
 		CCM.startContinuousMatching();
 		CCM.setContextGraph(CG);
@@ -511,6 +559,8 @@ public class ContextGraphsTest extends Tester
 		long lastBathroom = -6 * 60;
 		long lastShower = -12 * 60;
 		long lastMeal = -4 * 60;
+		long lastWander = -8 * 60;
+		
 		// boolean emergency = true;
 		
 		Node Emily = g.getNodesNamed("Emily").iterator().next();
@@ -518,19 +568,30 @@ public class ContextGraphsTest extends Tester
 		Node Bathroom = g.getNodesNamed("Bathroom").iterator().next();
 		Node Hall = g.getNodesNamed("Hall").iterator().next();
 		Node Kitchen = g.getNodesNamed("Kitchen").iterator().next();
-		Edge e1 = new SimpleEdge(Emily, Living, "is-in");
+		Edge locationLiving = new SimpleEdge(Emily, Living, "is-in");
+		Edge locationHall = new SimpleEdge(Emily, Hall, "is-in");
+		Edge locationKitchen = new SimpleEdge(Emily, Kitchen, "is-in");
+		Edge nearBathroom = new SimpleEdge(Emily, Bathroom, "near");
+		
+		Edge[] track = new Edge[] { locationKitchen, locationHall, locationLiving };
+		Edge cLocation = locationLiving;
 		g.add(Living);
-		g.add(e1);
+		g.add(cLocation);
 		
 		CG.addAll(g.getComponents());
 		
+		ActualState actualState = ActualState.SLEEP;
+		ActualState stackedState = null;
+		Edge stackedLocation = null;
 		Deque<Transaction> todo = new LinkedList<TrackingGraph.Transaction>();
+		Deque<Transaction> stackedTodos = new LinkedList<TrackingGraph.Transaction>();
 		boolean justdone = false;
 		for(long tick = 0; tick < ntime; tick++)
 		{
 			if((tick % 60) == 0)
 			{
-				printSeparator(0, "tick start [" + tick / 60 + "] ");// + ((tick - lastBathroom) / (4 * .6)));
+				// + ((tick - lastBathroom) / (4 * .6)));
+				printSeparator(0, "hour start [" + tick / 60 + "] [" + actualState + "][" + stackedState + "] ");
 				log.lf("CG: []", CG);
 				log.lf(monitor.printStats());
 			}
@@ -543,54 +604,144 @@ public class ContextGraphsTest extends Tester
 			}
 			else if(justdone)
 			{
-				printSeparator(1, "done");
+				printSeparator(1, "done " + actualState);
 				justdone = false;
+				
+				if(stackedState != null)
+				{
+					actualState = stackedState;
+					stackedState = null;
+					todo.addAll(stackedTodos);
+					stackedTodos.clear();
+				}
+				else
+					actualState = ActualState.NOTHING;
 			}
 			
-			if(rand.nextInt(Math.max(1, (int) ((tick - lastBathroom) / (4 * 0.6)))) > 80)
+			// current location and actual state
+			String actStateLog = "\t actual state: [" + actualState + "] \t detected state: [" + detectedState + "]";
+			long h = ticker.now().toLong() / 60;
+			long min = ticker.now().toLong() % 60;
+			actStateLog += "time:" + (h >= 10 ? "" + h : "0" + h) + "." + (min >= 10 ? "" + min : "0" + min);
+			boolean found = false;
+			for(Edge loc : track)
+				if(CG.contains(loc))
+				{
+					found = true;
+					if(loc != cLocation)
+					{
+						cLocation = loc;
+						String locS = cLocation.toString();
+						log.lf("location: []" + actStateLog,
+								locS.substring(locS.indexOf(Symbol.EDGE_ENDING_FORWARD.toString()) + 1).toUpperCase());
+					}
+				}
+			if(!found)
+			{
+				cLocation = null;
+				log.lf("location: [none]" + actStateLog);
+			}
+			
+			if(!actualState.exclusive()
+					&& (rand.nextInt(Math.max(1, (int) ((tick - lastBathroom) / (((tick < wakeup) ? 8 : 4) * 0.6)))) > 80))
 			{ // go to bathroom
 				printSeparator(-1, "bathroom");
-				Edge e2 = new SimpleEdge(Emily, Bathroom, "is-in");
-				Edge e3 = new SimpleEdge(Emily, Bathroom, "near");
-				todo.add(new Transaction().putR(e3, Operation.ADD));
-				todo.add(new Transaction().putR(e3, Operation.REMOVE).putR(e1, Operation.REMOVE)
-						.putR(e2, Operation.ADD));
+				if(actualState.mustContinue())
+				{
+					log.li("stacking []", actualState);
+					stackedState = actualState;
+					stackedTodos.addAll(todo);
+				}
+				actualState = ActualState.BATHROOM;
+				stackedLocation = cLocation;
+				todo.clear();
+				for(int i = 0; i < track.length - 1; i++)
+					if(track[i] == cLocation)
+					{
+						todo.add(new Transaction().putR(cLocation, Operation.REMOVE).putR(track[i + 1], Operation.ADD));
+						cLocation = track[i + 1];
+					}
+				todo.add(new Transaction().putR(nearBathroom, Operation.ADD));
+				todo.add(new Transaction().putR(nearBathroom, Operation.REMOVE).putR(locationLiving, Operation.REMOVE));
 				todo.add(new Transaction());
 				todo.add(new Transaction());
-				todo.add(new Transaction().putR(e2, Operation.REMOVE).putR(e1, Operation.ADD));
+				todo.add(new Transaction().putR(nearBathroom, Operation.ADD).putR(locationLiving, Operation.ADD));
+				todo.add(new Transaction().putR(nearBathroom, Operation.REMOVE));
+				for(int i = track.length - 1; i > 0; i--)
+				{
+					if(cLocation == stackedLocation)
+						break;
+					if(track[i] == cLocation)
+					{
+						todo.add(new Transaction().putR(cLocation, Operation.REMOVE).putR(track[i - 1], Operation.ADD));
+						cLocation = track[i - 1];
+					}
+				}
+				stackedLocation = null;
 				lastBathroom = tick;
 			}
 			
-			if((tick > wakeup) && (tick < sleep)
+			if(!actualState.exclusive() && (tick > wakeup) && (tick < sleep)
 					&& (rand.nextInt(Math.max(1, (int) ((tick - lastMeal) / (10 * 0.6)))) > 80))
 			{ // go to eat
 				printSeparator(-1, "meal");
-				Edge e2 = new SimpleEdge(Emily, Hall, "is-in");
-				Edge e3 = new SimpleEdge(Emily, Kitchen, "is-in");
-				todo.add(new Transaction().putR(e1, Operation.REMOVE));
-				todo.add(new Transaction().putR(e2, Operation.ADD));
-				todo.add(new Transaction().putR(e2, Operation.REMOVE).putR(e3, Operation.ADD));
+				actualState = ActualState.MEAL;
+				todo.clear();
+				for(int i = track.length - 1; i > 0; i--)
+					if(track[i] == cLocation)
+					{
+						todo.add(new Transaction().putR(cLocation, Operation.REMOVE).putR(track[i - 1], Operation.ADD));
+						cLocation = track[i - 1];
+					}
 				for(int i = 0; i < 30; i++)
 					todo.add(new Transaction());
-				todo.add(new Transaction().putR(e3, Operation.REMOVE).putR(e2, Operation.ADD));
-				todo.add(new Transaction().putR(e2, Operation.REMOVE).putR(e1, Operation.ADD));
+				todo.add(new Transaction().putR(locationKitchen, Operation.REMOVE).putR(locationHall, Operation.ADD));
+				todo.add(new Transaction().putR(locationHall, Operation.REMOVE).putR(locationLiving, Operation.ADD));
 				lastMeal = tick;
 			}
 			
-			if((tick > wakeup) && (tick < sleep)
-					&& (rand.nextInt(Math.max(1, (int) ((tick - lastShower) / (14 * 0.6)))) > 80))
+			if(actualState.idle() && (tick > wakeup) && (tick < sleep)
+					&& (rand.nextInt(Math.max(1, (int) ((tick - lastShower) / (20 * 0.6)))) > 80))
 			{ // go to shower
 				printSeparator(-1, "shower");
-				Edge e2 = new SimpleEdge(Emily, Bathroom, "is-in");
-				Edge e3 = new SimpleEdge(Emily, Bathroom, "near");
-				todo.add(new Transaction().putR(e3, Operation.ADD));
-				todo.add(new Transaction().putR(e3, Operation.REMOVE).putR(e1, Operation.REMOVE)
-						.putR(e2, Operation.ADD));
+				actualState = ActualState.SHOWER;
+				todo.clear();
+				for(int i = 0; i < track.length - 1; i++)
+					if(track[i] == cLocation)
+					{
+						todo.add(new Transaction().putR(cLocation, Operation.REMOVE).putR(track[i + 1], Operation.ADD));
+						cLocation = track[i + 1];
+					}
+				todo.add(new Transaction().putR(nearBathroom, Operation.ADD));
+				todo.add(new Transaction().putR(nearBathroom, Operation.REMOVE).putR(locationLiving, Operation.REMOVE));
 				for(int i = 0; i < 20; i++)
 					todo.add(new Transaction());
-				todo.add(new Transaction().putR(e2, Operation.REMOVE).putR(e1, Operation.ADD));
+				todo.add(new Transaction().putR(nearBathroom, Operation.ADD).putR(locationLiving, Operation.ADD));
+				todo.add(new Transaction().putR(nearBathroom, Operation.REMOVE));
 				lastShower = tick;
 			}
+			
+			if(actualState.idle() && (actualState != ActualState.WANDERING) && (tick > wakeup) && (tick < sleep)
+					&& (rand.nextInt(Math.max(1, (int) ((tick - lastWander) / (7 * 0.6)))) > 80))
+			{
+				printSeparator(-1, "wandering");
+				actualState = ActualState.WANDERING;
+				
+				for(int i = track.length - 1; i > 0; i--)
+					if(track[i] == cLocation)
+					{
+						todo.add(new Transaction().putR(cLocation, Operation.REMOVE).putR(track[i - 1], Operation.ADD));
+						cLocation = track[i - 1];
+					}
+				for(int i = 0; i < 5 + rand.nextInt(60); i++)
+					todo.add(new Transaction());
+				todo.add(new Transaction().putR(locationKitchen, Operation.REMOVE).putR(locationHall, Operation.ADD));
+				todo.add(new Transaction().putR(locationHall, Operation.REMOVE).putR(locationLiving, Operation.ADD));
+				lastWander = tick;
+			}
+			
+			if(actualState.idle() && (tick >= sleep))
+				actualState = ActualState.SLEEP;
 			
 			ticker.tickUp();
 		}
@@ -645,7 +796,7 @@ public class ContextGraphsTest extends Tester
 	{
 		List<GraphPattern> ret = new ArrayList<GraphPattern>();
 		for(Graph gp : getTestGraphs(testPack))
-			ret.add((GraphPattern) new GraphPattern().addAll(gp.getComponents()));
+			ret.add((GraphPattern) new GraphPattern().addAll(gp.getComponents()).setDescription(gp.getDescription()));
 		return ret;
 	}
 	
@@ -662,7 +813,8 @@ public class ContextGraphsTest extends Tester
 	{
 		List<ContextPattern> ret = new ArrayList<ContextPattern>();
 		for(Graph gp : getTestGraphs(testPack))
-			ret.add((ContextPattern) new ContextPattern().addAll(gp.getComponents()));
+			ret.add((ContextPattern) new ContextPattern().addAll(gp.getComponents())
+					.setDescription(gp.getDescription()));
 		return ret;
 	}
 	

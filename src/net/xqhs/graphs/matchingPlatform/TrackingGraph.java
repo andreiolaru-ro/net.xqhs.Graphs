@@ -14,6 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.GraphComponent;
+import net.xqhs.graphs.graph.GraphDescription;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 
@@ -776,12 +777,13 @@ public class TrackingGraph extends SimpleGraph
 	
 	/**
 	 * The current implementation does not support reading nodes and edges, but all the edges and nodes from a graph can
-	 * be added with {@link #addAll(Collection)}.
+	 * be added with {@link #addAll(Collection)}. The description can be added with
+	 * {@link #setDescription(GraphDescription)}.
 	 */
 	@Override
 	public SimpleGraph readFrom(InputStream input)
 	{
-		throw new UnsupportedOperationException("Reading graphs is not supported. Use method addGraph(Graph).");
+		throw new UnsupportedOperationException("Reading graphs is not supported. Use method addAll().");
 	}
 	
 	/**

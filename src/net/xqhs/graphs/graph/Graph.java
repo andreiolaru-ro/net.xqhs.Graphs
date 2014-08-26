@@ -27,6 +27,15 @@ import java.util.Collection;
 public interface Graph
 {
 	/**
+	 * Adds a description to the graph, as an instance of {@link GraphDescription}.
+	 * 
+	 * @param description
+	 *            - the description.
+	 * @return the graph itself.
+	 */
+	public Graph setDescription(GraphDescription description);
+	
+	/**
 	 * @param node
 	 *            - the {@link Node} to add.
 	 * @return the graph itself, for chaining calls.
@@ -85,6 +94,13 @@ public interface Graph
 	 * @return the graph itself, for chained calls.
 	 */
 	public Graph removeAll(Collection<? extends GraphComponent> components);
+	
+	/**
+	 * Retrieves the description of the graph.
+	 * 
+	 * @return the description, as a {@link GraphDescription} instance.
+	 */
+	public GraphDescription getDescription();
 	
 	/**
 	 * @return the number of nodes in the graph

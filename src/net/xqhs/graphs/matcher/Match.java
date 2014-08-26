@@ -709,8 +709,14 @@ public class Match
 	@Override
 	public String toString()
 	{
-		String ret = "M" + (valid ? "" : "[INVALID]") + "[" + id + "]K=" + k
-				+ new TextGraphRepresentation(solvedPart).setLayout("", "", -1).update() + "|"
+		String ret = "M"
+				+ (valid ? "" : "[INVALID]")
+				+ "["
+				+ id
+				+ "]K="
+				+ k
+				+ ((k > 0) ? new TextGraphRepresentation(solvedPart).setLayout("", "", -1).update()
+						: new TextGraphRepresentation(patternLink).setLayout("", "", -1).update()) + "|"
 				+ new TextGraphRepresentation(matchedGraph).setLayout("", "", -1).update();
 		return ret;
 	}

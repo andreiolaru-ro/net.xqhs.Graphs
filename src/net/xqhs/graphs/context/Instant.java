@@ -49,4 +49,14 @@ public class Instant
 		return time > instant.time;
 	}
 	
+	public long toLong()
+	{
+		return time;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return new Long(time).toString();
+	}
 }

@@ -106,26 +106,30 @@ public class SimpleGraph extends Unit implements Graph
 	/**
 	 * Separator between edges.
 	 */
-	public static char				EDGE_SEPARATOR	= ';';
+	public static char				EDGE_SEPARATOR		= ';';
 	/**
 	 * Character that marks the beginning and end of an edge. Edge labels may contain this character, but node labels
 	 * may not. At the destination end of the edge it may be replaced by {@link #EDGE_TARGET}. In case of bi-directional
 	 * unlabeled edges, the representation of an edge may contain only one character.
 	 */
-	public static char				EDGE_LINE		= '-';
+	public static char				EDGE_LINE			= '-';
 	/**
 	 * Character that marks the destination end of an oriented edge.
 	 */
-	public static char				EDGE_TARGET		= '>';
+	public static char				EDGE_TARGET			= '>';
 	
 	/**
-	 * The nodes
+	 * The description of the graph.
 	 */
-	protected Map<Node, NodeData>	nodes			= null;
+	protected GraphDescription		graphDescription	= null;
 	/**
-	 * The edges
+	 * The nodes.
 	 */
-	protected Set<Edge>				edges			= null;
+	protected Map<Node, NodeData>	nodes				= null;
+	/**
+	 * The edges.
+	 */
+	protected Set<Edge>				edges				= null;
 	
 	/**
 	 * Creates an empty graph.
@@ -141,6 +145,13 @@ public class SimpleGraph extends Unit implements Graph
 	public String getUnitName()
 	{
 		return super.getUnitName();
+	}
+	
+	@Override
+	public Graph setDescription(GraphDescription description)
+	{
+		graphDescription = description;
+		return this;
 	}
 	
 	@Override
@@ -267,6 +278,12 @@ public class SimpleGraph extends Unit implements Graph
 		for(GraphComponent comp : components)
 			remove(comp);
 		return this;
+	}
+	
+	@Override
+	public GraphDescription getDescription()
+	{
+		return graphDescription;
 	}
 	
 	@Override
@@ -398,8 +415,10 @@ public class SimpleGraph extends Unit implements Graph
 	@Override
 	public String toString()
 	{
-		String ret = "";
-		ret += "G[" + n() + ", " + m() + "] ";
+		String ret = "G";
+		if(graphDescription != null)
+			ret += graphDescription.toString();
+		ret += "[" + n() + ", " + m() + "] ";
 		List<Node> list = new ArrayList<Node>(nodes.keySet());
 		Collections.sort(list, new NodeAlphaComparator());
 		ret += list.toString();

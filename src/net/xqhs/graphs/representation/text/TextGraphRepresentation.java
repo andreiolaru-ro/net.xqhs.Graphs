@@ -59,6 +59,8 @@ import net.xqhs.util.logging.UnitComponent;
  * A 'backwards' representation is also possible, that may be adequate for some cases. Example:<br/>
  * <code>A (&lt;-inherits-from- B &lt;-inherits-from- C) &lt;-inherits-from- D</code>.
  * <p>
+ * If the representation contains a description for the graph, it will be read, interpreted, and added.
+ * <p>
  * For more details on the output and input formats, see {@link #displayRepresentation()} and
  * {@link #readRepresentation(String)}.
  * <p>
@@ -150,6 +152,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		
 		Set<PathElement> blackNodes = new HashSet<PathElement>(); // contains all 'visited' nodes
 		TextRepresentationElement textRepresentation = new TextRepresentationElement(this, Type.ELEMENT_CONTAINER);
+		textRepresentation.description = theGraph.getDescription();
 		
 		boolean first = true;
 		for(PathElement el : paths)
@@ -368,26 +371,30 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	 * settings. The rules below are given in general terms, using the constants in {@link Symbol}, and have in
 	 * parentheses the equivalent strings, using the default symbols.
 	 * <ul>
-	 * <li>subgraph are separated by {@link Symbol#SUBGRAPH_SEPARATOR} (;)
-	 * <li>node names / labels cannot contain {@link Symbol#EDGE_LIMIT}, {@link Symbol#EDGE_ENDING_FORWARD}, or
-	 * {@link Symbol#EDGE_ENDING_BACKWARD} (- &lt; &gt;)
-	 * <li>edge names / labels cannot contain ({@link Symbol#EDGE_ENDING_FORWARD} or {@link Symbol#EDGE_ENDING_BACKWARD}
-	 * (&lt; &gt;)
+	 * <li>if the input contains more than one graph, each graph should be contained between
+	 * {@link Symbol#ELEMENT_CONTAINER_IN} and {@link Symbol#ELEMENT_CONTAINER_OUT} ([]).
+	 * <li>if a description (e.g. name) for the graph is provided, it precedes the graph and is separated from the graph
+	 * by {@link Symbol#DESCRIPTION_SEPARATOR} (:).
+	 * <li>subgraph are separated by {@link Symbol#SUBGRAPH_SEPARATOR} (;).
+	 * <li>node names / labels cannot contain {@link Symbol#DESCRIPTION_SEPARATOR}, {@link Symbol#EDGE_LIMIT},
+	 * {@link Symbol#EDGE_ENDING_FORWARD}, or {@link Symbol#EDGE_ENDING_BACKWARD} (: - &lt; &gt;).
+	 * <li>edge names / labels cannot contain {@link Symbol#DESCRIPTION_SEPARATOR}, {@link Symbol#EDGE_ENDING_FORWARD}
+	 * or {@link Symbol#EDGE_ENDING_BACKWARD} (: &lt; &gt;).
 	 * <li>all edges are uni-directional, and all edges are either to the right, or to the left (for 'backwards'
 	 * representations).
-	 * <li>a labeled edge begins with a {@link Symbol#EDGE_LIMIT} (-) (or ends, if the representation is backwards)
+	 * <li>a labeled edge begins with a {@link Symbol#EDGE_LIMIT} (-) (or ends, if the representation is backwards).
 	 * <li>an edge in a forward representation ends with a {@link Symbol#EDGE_ENDING_FORWARD}, optionally preceded (no
-	 * whitespace) by {@link Symbol#EDGE_LIMIT} (&gt; or -&gt;)
+	 * whitespace) by {@link Symbol#EDGE_LIMIT} (&gt; or -&gt;).
 	 * <li>an edge in a backwards representation begins with {@link Symbol#EDGE_ENDING_BACKWARD}, optionally followed
-	 * (no whitespace) by {@link Symbol#EDGE_LIMIT} (&lt; or &lt;-)
+	 * (no whitespace) by {@link Symbol#EDGE_LIMIT} (&lt; or &lt;-).
 	 * <li>an unlabeled edge is either just the {@link Symbol#EDGE_ENDING_FORWARD} / {@link Symbol#EDGE_ENDING_BACKWARD}
-	 * , or contains a {@link Symbol#EDGE_LIMIT} as well (&gt; or -&gt; / &lt; or &lt;-)
+	 * , or contains a {@link Symbol#EDGE_LIMIT} as well (&gt; or -&gt; / &lt; or &lt;-).
 	 * <li>a subtree that is not the last subtree in a node that is the root of multiple subtrees is contained between
 	 * {@link Symbol#BRANCH_IN} and {@link Symbol#BRANCH_OUT} (parentheses).
 	 * <li>the target node (destination node in a backwards representation) of an edge is preceded (no whitespace) by
 	 * {@link Symbol#INTERNAL_LINK_PREFIX} if the node has already been present in the input before, and by
-	 * {@link Symbol#EXTERNAL_LINK_PREFIX} if it is not part of the current graph (FIXME currently not supported)
-	 * <li>all whitespace between elements are accepted and ignored (unless stated otherwise above)
+	 * {@link Symbol#EXTERNAL_LINK_PREFIX} if it is not part of the current graph (FIXME currently not supported).
+	 * <li>all whitespace between elements are accepted and ignored (unless stated otherwise above).
 	 * </ul>
 	 * All elements are attached to the existing elements in the represented graph, if any.
 	 * 
@@ -423,19 +430,21 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 			return null;
 		}
 		
+		// detect backwards-ness
 		boolean backwards = input.get().indexOf(Symbol.EDGE_ENDING_BACKWARD.toString()) >= 0;
 		if(backwards && (input.get().indexOf(Symbol.EDGE_ENDING_FORWARD.toString()) >= 0))
 			return (Graph) lr(null, "Representation contains both forward and backward edges.");
 		
 		setBackwards(backwards);
 		
-		// read the representation, then connect
+		// read the representation without connecting all the nodes and edges
 		TextRepresentationElement rootRepr = TextRepresentationElement.readRepresentation(input, this,
 				(UnitComponent) new UnitComponent().setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(getUnitName())
 						.setLogLevel(Level.WARN));
 		theRepresentation = rootRepr;
 		lf("result: [] \n====================================", theRepresentation.toString());
 		
+		// make all connections
 		return buildGraph(rootRepr);
 	}
 	
@@ -476,6 +485,9 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 				switch(type)
 				{
 				case ELEMENT_CONTAINER:
+					if(element.description != null)
+						theGraph.setDescription(element.description);
+					//$FALL-THROUGH$
 				case SUBGRAPH:
 					// nothing to do, just register children (content) for processing
 					lf("inspecting []", type);

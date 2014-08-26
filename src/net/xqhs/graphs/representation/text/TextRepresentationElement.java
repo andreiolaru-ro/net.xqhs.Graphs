@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 import net.xqhs.graphs.graph.Edge;
+import net.xqhs.graphs.graph.GraphDescription;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.pattern.NodeP;
@@ -91,6 +92,11 @@ public class TextRepresentationElement extends RepresentationElement
 		 * Symbol that marks the ending of a container element (i.e. of a graph).
 		 */
 		ELEMENT_CONTAINER_OUT("]"),
+		
+		/**
+		 * Symbol that separates the description of the graph (e.g. name) from the description of nodes and edges.
+		 */
+		DESCRIPTION_SEPARATOR(":"),
 		
 		/**
 		 * Separator between the representations of two subgraphs.
@@ -214,6 +220,10 @@ public class TextRepresentationElement extends RepresentationElement
 	 * The nested elements.
 	 */
 	List<TextRepresentationElement>	content						= null;
+	/**
+	 * Description for element containers.
+	 */
+	GraphDescription				description					= null;
 	
 	/**
 	 * Creates a text representation for an element container (a level in a multi-level representation).
@@ -410,7 +420,11 @@ public class TextRepresentationElement extends RepresentationElement
 			nextIndentLimit = indentLimit - 1;
 		
 		if(linkType == Type.ELEMENT_CONTAINER)
+		{
 			ret += Symbol.ELEMENT_CONTAINER_IN;
+			if(description != null)
+				ret += description.toString() + Symbol.DESCRIPTION_SEPARATOR + " ";
+		}
 		if(isEdgeType(linkType) && !isOnlyChild && !isLastChild)
 			ret += Symbol.BRANCH_IN;
 		
@@ -482,16 +496,16 @@ public class TextRepresentationElement extends RepresentationElement
 	 * 
 	 * @param input
 	 *            - the input, as a {@link String}.
-	 * @param root
-	 *            - the root representation that the read element belongs to.
+	 * @param representation
+	 *            - the representation that the read element belongs to.
 	 * @param log
 	 *            - a {@link UnitComponent} to use for logging messages.
 	 * @return the root element (of type {@link Type#ELEMENT_CONTAINER}) of the representation.
 	 */
-	static protected TextRepresentationElement readRepresentation(String input, TextGraphRepresentation root,
+	static protected TextRepresentationElement readRepresentation(String input, TextGraphRepresentation representation,
 			UnitComponent log)
 	{
-		return readRepresentation(new ContentHolder<String>(input), Type.ELEMENT_CONTAINER, true, root, log);
+		return readRepresentation(new ContentHolder<String>(input), Type.ELEMENT_CONTAINER, true, representation, log);
 	}
 	
 	/**
@@ -500,16 +514,16 @@ public class TextRepresentationElement extends RepresentationElement
 	 * 
 	 * @param input
 	 *            - the input, held be a {@link ContentHolder} instance.
-	 * @param root
-	 *            - the root representation that the read element belongs to.
+	 * @param representation
+	 *            - the representation that the read element belongs to.
 	 * @param log
 	 *            - a {@link UnitComponent} to use for logging messages.
 	 * @return the root element (of type {@link Type#ELEMENT_CONTAINER}) of the representation.
 	 */
 	static protected TextRepresentationElement readRepresentation(ContentHolder<String> input,
-			TextGraphRepresentation root, UnitComponent log)
+			TextGraphRepresentation representation, UnitComponent log)
 	{
-		return readRepresentation(input, Type.ELEMENT_CONTAINER, true, root, log);
+		return readRepresentation(input, Type.ELEMENT_CONTAINER, true, representation, log);
 	}
 	
 	/**
@@ -529,14 +543,14 @@ public class TextRepresentationElement extends RepresentationElement
 	 * @param firstSibling
 	 *            - <code>true</code> if this is the first instance in a list of sibling instances (first child of a
 	 *            parent).
-	 * @param root
-	 *            - the root representation that the read element belongs to.
+	 * @param representation
+	 *            - the representation that the read element belongs to.
 	 * @param log
 	 *            - a {@link UnitComponent} to use for logging messages.
 	 * @return the element read from the input, as a {@link TextRepresentationElement}.
 	 */
 	static protected TextRepresentationElement readRepresentation(ContentHolder<String> input, Type type,
-			boolean firstSibling, TextGraphRepresentation root, UnitComponent log)
+			boolean firstSibling, TextGraphRepresentation representation, UnitComponent log)
 	{
 		log.lf("reading [] from []", type, input);
 		TextRepresentationElement ret = null;
@@ -558,10 +572,24 @@ public class TextRepresentationElement extends RepresentationElement
 				str = str.substring(0, lastIndex);
 				input.set(str);
 			}
-			ret = new TextRepresentationElement(root, type);
+			ret = new TextRepresentationElement(representation, type);
+			
+			// detect description
+			int descrIndex = input.get().indexOf(Symbol.DESCRIPTION_SEPARATOR.toString());
+			if(descrIndex >= 0)
+			{
+				String descriptionString = input.get().substring(0, descrIndex).trim();
+				input.set(input.get().substring(descrIndex + Symbol.DESCRIPTION_SEPARATOR.toString().length()).trim());
+				if(!descriptionString.isEmpty())
+				{
+					log.lf("description detected: []", descriptionString);
+					ret.description = new GraphDescription().setDescription(descriptionString);
+				}
+			}
+			
 			while(input.get().length() > 0)
 				// input will be modified in the call below; each call reads a subgraph
-				ret.addSub(readRepresentation(input, Type.SUBGRAPH, (nChildren++ == 0), root, log));
+				ret.addSub(readRepresentation(input, Type.SUBGRAPH, (nChildren++ == 0), representation, log));
 			if(rest != null)
 				input.set(rest);
 			break;
@@ -574,9 +602,9 @@ public class TextRepresentationElement extends RepresentationElement
 			{
 				input.set(rez[0]);
 				log.li("create new subgraph");
-				ret = new TextRepresentationElement(root, Type.SUBGRAPH, firstSibling);
+				ret = new TextRepresentationElement(representation, Type.SUBGRAPH, firstSibling);
 				// a representation begins with a node
-				ret.addSub(readRepresentation(input, Type.NODE, true, root, log));
+				ret.addSub(readRepresentation(input, Type.NODE, true, representation, log));
 			}
 			if(rez.length > 1) // more subgraphs left
 				input.set(rez[1]);
@@ -619,7 +647,7 @@ public class TextRepresentationElement extends RepresentationElement
 			int firstIndex, lastIndex; // first and last index of the label of the edge, in branchstring
 			String nextNode; // the rest of the branch.
 			
-			if(!root.isBackwards())
+			if(!representation.isBackwards())
 			{ // - forward-edge [-]> next node
 				String rez[] = branchString.split(Symbol.EDGE_ENDING_FORWARD.toRegexp(), 2);
 				// rez now contains: edge representation | rest of the branch
@@ -686,8 +714,9 @@ public class TextRepresentationElement extends RepresentationElement
 			log.li("create new [][] edge: [].", edgeTypeChar, edgeType, edgeLabel);
 			SettableEdge edge = new SettableEdge(edgeLabel); // node names will be filled in later
 			// level is unused
-			ret = new TextRepresentationElement(root, edge, edgeType, -1, isLastChild, isLastChild && firstSibling);
-			ret.addSub(readRepresentation(input.set(nextNode), Type.NODE, true, root, log));
+			ret = new TextRepresentationElement(representation, edge, edgeType, -1, isLastChild, isLastChild
+					&& firstSibling);
+			ret.addSub(readRepresentation(input.set(nextNode), Type.NODE, true, representation, log));
 			input.set(rest);
 			break;
 		}
@@ -716,13 +745,13 @@ public class TextRepresentationElement extends RepresentationElement
 				// for internal links, this should not be a new node; it will be replaced later
 				node = new SimpleNode(nodeName);
 			}
-			ret = new TextRepresentationElement(root, node, Type.NODE);
+			ret = new TextRepresentationElement(representation, node, Type.NODE);
 			if(parts.length > 1)
 			{
 				// remember what was after the node name
 				input.set(input.get().substring(parts[0].length()));
 				while(input.get().length() > 0)
-					ret.addSub(readRepresentation(input, Type.BRANCH, (nChildren++ == 0), root, log));
+					ret.addSub(readRepresentation(input, Type.BRANCH, (nChildren++ == 0), representation, log));
 			}
 			break;
 		}
