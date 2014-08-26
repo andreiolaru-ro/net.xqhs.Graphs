@@ -11,6 +11,7 @@
  ******************************************************************************/
 package net.xqhs.graphs.graph;
 
+import java.io.Serializable;
 import net.xqhs.graphs.representation.AbstractVisualizableGraphComponent;
 
 /**
@@ -22,6 +23,11 @@ import net.xqhs.graphs.representation.AbstractVisualizableGraphComponent;
  */
 public class SimpleEdge extends AbstractVisualizableGraphComponent implements Edge
 {
+	/**
+	 * Unique serial id
+	 */
+	private static final long serialVersionUID = 3564476601107009433L;
+
 	/**
 	 * The label of the edge.
 	 */
@@ -58,7 +64,14 @@ public class SimpleEdge extends AbstractVisualizableGraphComponent implements Ed
 	{
 		return label;
 	}
-	
+
+	@Override
+	public Edge setLabel(String label)
+	{
+		this.label = label;
+		return this;
+	}
+
 	@Override
 	public Node getFrom()
 	{

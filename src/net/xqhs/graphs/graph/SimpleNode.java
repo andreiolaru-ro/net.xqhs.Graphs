@@ -11,6 +11,7 @@
  ******************************************************************************/
 package net.xqhs.graphs.graph;
 
+import java.io.Serializable;
 import net.xqhs.graphs.representation.AbstractVisualizableGraphComponent;
 
 /**
@@ -22,6 +23,11 @@ import net.xqhs.graphs.representation.AbstractVisualizableGraphComponent;
  */
 public class SimpleNode extends AbstractVisualizableGraphComponent implements Node
 {
+	/**
+	 * Unique serial id.
+	 */
+	private static final long serialVersionUID = 9073121395731771182L;
+
 	/**
 	 * The label of the node
 	 */
@@ -49,7 +55,14 @@ public class SimpleNode extends AbstractVisualizableGraphComponent implements No
 	{
 		return this.label;
 	}
-	
+
+	@Override
+	public Node setLabel(String label)
+	{
+		this.label = label;
+		return this;
+	}
+
 	// @Override
 	// public boolean equals(Object obj)
 	// {
