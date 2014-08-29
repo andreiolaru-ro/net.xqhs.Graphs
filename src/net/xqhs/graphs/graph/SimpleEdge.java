@@ -21,7 +21,7 @@ import net.xqhs.graphs.representation.AbstractVisualizableGraphComponent;
  * @author Andrei Olaru
  * 
  */
-public class SimpleEdge extends AbstractVisualizableGraphComponent implements Edge
+public class SimpleEdge extends AbstractVisualizableGraphComponent implements Edge, Serializable
 {
 	/**
 	 * Unique serial id

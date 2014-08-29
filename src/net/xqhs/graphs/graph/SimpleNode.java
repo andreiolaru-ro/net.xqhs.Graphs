@@ -21,7 +21,7 @@ import net.xqhs.graphs.representation.AbstractVisualizableGraphComponent;
  * @author Andrei Olaru
  * 
  */
-public class SimpleNode extends AbstractVisualizableGraphComponent implements Node
+public class SimpleNode extends AbstractVisualizableGraphComponent implements Node, Serializable
 {
 	/**
 	 * Unique serial id.
