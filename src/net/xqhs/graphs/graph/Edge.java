@@ -24,6 +24,14 @@ public interface Edge extends GraphComponent
 	 * @return the label of the edge
 	 */
 	public String getLabel();
+
+	/**
+	 * Set the label of this Edge.
+	 *
+	 * @param label the new label to be assigned to this edge.
+	 * @return this edge instance.
+	 */
+	public Edge setLabel(String label);
 	
 	/**
 	 * @return the source {@link Node}

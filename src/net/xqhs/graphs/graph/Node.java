@@ -24,4 +24,13 @@ public interface Node extends GraphComponent
 	 * @return the label of the node
 	 */
 	public String getLabel();
+
+	/**
+	 * Set the label of this node.
+	 *
+	 * @param label the new label to be assigned to this node.
+	 *
+	 * @return this node instance
+	 */
+	public Node setLabel(String label);
 }
