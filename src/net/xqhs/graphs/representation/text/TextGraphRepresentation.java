@@ -420,7 +420,8 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	 * @return the graph instance.
 	 *
 	 * @throws IllegalArgumentException
-	 *             if the input is broken (referenced nodes not found, no target nodes for edges, etc.
+	 *             if the input is broken (referenced nodes not found, no target nodes for edges, etc.); NOTE: the input
+	 *             will not be modified if this exception is thrown.
 	 */
 	public Graph readRepresentation(ContentHolder<String> input)
 	{
@@ -438,15 +439,23 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 
 		setBackwards(backwards);
 
-		// read the representation without connecting all the nodes and edges
-		TextRepresentationElement rootRepr = TextRepresentationElement.readRepresentation(input, this,
-				(UnitComponent) new UnitComponent().setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(getUnitName())
-				.setLogLevel(Level.WARN));
-		theRepresentation = rootRepr;
-		lf("result: [] \n====================================", theRepresentation.toString());
+		String inputSave = input.get();
+		try
+		{
+			// read the representation without connecting all the nodes and edges
+			TextRepresentationElement rootRepr = TextRepresentationElement.readRepresentation(input, this,
+					(UnitComponent) new UnitComponent().setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(getUnitName())
+							.setLogLevel(Level.WARN));
+			theRepresentation = rootRepr;
+			lf("result: [] \n====================================", theRepresentation.toString());
 
-		// make all connections
-		return buildGraph(rootRepr);
+			// make all connections
+			return buildGraph(rootRepr);
+		} catch(IllegalArgumentException e)
+		{
+			input.set(inputSave);
+			throw e;
+		}
 	}
 
 	/**
@@ -508,8 +517,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 							((GraphPattern) theGraph).addNode(node, false);
 						} catch(ClassCastException cce)
 						{
-							le("the provided graph is not a GraphPattern instance.");
-							return null;
+							throw new IllegalArgumentException("the provided graph is not a GraphPattern instance.");
 						}
 					else
 						theGraph.addNode(node);
@@ -551,7 +559,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 							for(Node candidateNode : theGraph.getNodesNamed(dummyTargetNode.getLabel()))
 								if(candidateNode instanceof NodeP
 										&& ((NodeP) dummyTargetNode).genericIndex() == ((NodeP) candidateNode)
-										.genericIndex())
+												.genericIndex())
 									targetNode = candidateNode;
 							if(targetNode == null)
 								throw new IllegalArgumentException("Target pattern node [" + dummyTargetNode

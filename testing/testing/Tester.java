@@ -23,7 +23,7 @@ import net.xqhs.util.logging.UnitComponent;
 
 /**
  * Parent class for testers.
- * 
+ *
  * @author Andrei Olaru
  */
 public class Tester
@@ -89,7 +89,7 @@ public class Tester
 	 * with {@value #patternpart} added for the pattern.
 	 * <p>
 	 * The representation is in one-edge-per-line fromat.
-	 * 
+	 *
 	 * @param filename
 	 *            - the file name.
 	 * @param fileDir
@@ -131,14 +131,15 @@ public class Tester
 	
 	/**
 	 * Loads a group of graphs and/or patterns from a file. Graphs are returned as {@link Graph} implementations, so
-	 * they can be graphs, patterns, etc. In practice, {@link TextGraphRepresentation} is used, so all returns will be
-	 * {@link SimpleGraph} instances containing instances of {@link SimpleNode}, {@link NodeP}, and {@link SimpleEdge}.
+	 * they can be graphs, patterns, etc. In practice, {@link TextGraphRepresentation} is used. All returns will be
+	 * {@link SimpleGraph} or {@link GraphPattern} instances containing instances of {@link SimpleNode}, {@link NodeP},
+	 * and {@link SimpleEdge}.
 	 * <p>
 	 * Other implementations of graphs can use {@link Graph#addAll(java.util.Collection)} to import the read edges and
 	 * nodes.
 	 * <p>
 	 * TODO: include names in the files.
-	 * 
+	 *
 	 * @param filename
 	 *            - the name of the file (no extension).
 	 * @param fileDir
@@ -171,10 +172,20 @@ public class Tester
 		while(input.get().length() > 0)
 		{
 			Graph g = new SimpleGraph();
-			TextGraphRepresentation repr = (TextGraphRepresentation) new TextGraphRepresentation(g).setUnitName(
-					"Greader").setLogLevel((readLevel != null) ? readLevel : Level.OFF);
-			repr.readRepresentation(input);
-			log.li("graph new pattern: []", repr.toString());
+			TextGraphRepresentation repr;
+			try
+			{
+				repr = (TextGraphRepresentation) new TextGraphRepresentation(g).setUnitName("Greader").setLogLevel(
+						(readLevel != null) ? readLevel : Level.OFF);
+				repr.readRepresentation(input);
+			} catch(IllegalArgumentException e)
+			{
+				g = new GraphPattern();
+				repr = (TextGraphRepresentation) new TextGraphRepresentation(g).setUnitName("Greader").setLogLevel(
+						(readLevel != null) ? readLevel : Level.OFF);
+				repr.readRepresentation(input);
+			}
+			log.li("new graph /  pattern: []", repr.toString());
 			graphs.put(NAME_GENERAL_GRAPH + "#" + i, g);
 			input.set(input.get().trim());
 			i++;
@@ -184,7 +195,7 @@ public class Tester
 	
 	/**
 	 * Prints all the graphs in a testPack.
-	 * 
+	 *
 	 * @param testPack
 	 *            - the testPack {@link Map} of graph name &rarr; {@link Graph} instance.
 	 * @param printSimple
@@ -214,7 +225,7 @@ public class Tester
 	
 	/**
 	 * Prints a separator.
-	 * 
+	 *
 	 * @param progress
 	 *            - negative for beginning of section; positive for ending of section; <code>0</code> for intermediate
 	 *            separator; Absolute value gives number of beginning/ending symbols.
