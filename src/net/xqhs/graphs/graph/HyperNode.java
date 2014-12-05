@@ -7,25 +7,30 @@ import net.xqhs.graphs.representation.text.TextGraphRepresentation;
  * {@link Graph} inside it.
  * <p>
  * The label of a hyper node is optional, therefore the node is initially created with a <code>null</code> label.
- * 
+ *
  * @author Andrei Olaru
  */
 public class HyperNode extends SimpleNode
 {
 	/**
+	 * The serial UID.
+	 */
+	private static final long	serialVersionUID	= 1L;
+	
+	/**
 	 * The {@link Graph} contained by this node.
 	 */
-	Graph					nodeContents;
+	Graph						nodeContents;
 	/**
 	 * The representation for the content of the node, which is returned on the call of {@link #toString()}.
 	 */
-	TextGraphRepresentation	representation;
-	
+	TextGraphRepresentation		representation;
+
 	/**
 	 * Creates a new {@link HyperNode} instance, by initializing it with its subordinate graph.
 	 * <p>
 	 * The label of the hyper node is optional, and it can be set using {@link #setLabel(String)};
-	 * 
+	 *
 	 * @param graph
 	 *            - the graph contained by this node.
 	 */
@@ -37,20 +42,21 @@ public class HyperNode extends SimpleNode
 		nodeContents = graph;
 		representation = new TextGraphRepresentation(nodeContents).setLayout("", "", 0);
 	}
-	
+
 	/**
 	 * Sets the label of the node.
-	 * 
+	 *
 	 * @param nodeLabel
 	 *            - the label.
 	 * @return the instance itself.
 	 */
+	@Override
 	public HyperNode setLabel(String nodeLabel)
 	{
 		label = nodeLabel;
 		return this;
 	}
-	
+
 	@Override
 	public String toString()
 	{

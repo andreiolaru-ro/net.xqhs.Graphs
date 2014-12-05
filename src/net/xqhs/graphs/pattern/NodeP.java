@@ -26,6 +26,11 @@ import net.xqhs.graphs.graph.SimpleNode;
 public class NodeP extends SimpleNode
 {
 	/**
+	 * The serial UID.
+	 */
+	private static final long	serialVersionUID	= 1L;
+	
+	/**
 	 * The label of all generic nodes.
 	 */
 	public static final String	NODEP_LABEL			= "?";
