@@ -501,10 +501,16 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					Node node = (Node) element.getRepresentedComponent();
 					lf("inspecting []: []", type, node);
 					li("adding to graph node []", node);
-					// FIXME: check casts
 					// FIXME: check if index already exists.
 					if((node instanceof NodeP) && ((NodeP) node).isGeneric() && ((NodeP) node).genericIndex() > 0)
-						((GraphPattern) theGraph).addNode(node, false);
+						try
+						{
+							((GraphPattern) theGraph).addNode(node, false);
+						} catch(ClassCastException cce)
+						{
+							le("the provided graph is not a GraphPattern instance.");
+							return null;
+						}
 					else
 						theGraph.addNode(node);
 
