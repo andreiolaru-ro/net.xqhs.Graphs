@@ -1,0 +1,3 @@
+[this is a graph: a -> b -edge> c -> *a]
+
+[this is a pattern: a -> ?#1 -edge> ?#2 -> *a]

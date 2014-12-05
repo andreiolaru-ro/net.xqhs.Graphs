@@ -21,6 +21,7 @@ import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Random;
 
 import javax.swing.JFrame;
@@ -57,7 +58,7 @@ public class GrapherTest extends Tester
 		Logging.getMasterLogging().setLogLevel(Level.WARN);
 		
 		// testTextRepresentation();
-
+		
 		// testSelfReading();
 
 		// testGraphTextReading("Emily/EmilyP");
@@ -73,6 +74,8 @@ public class GrapherTest extends Tester
 		// testMultilevelRepresentation();
 
 		// testDotConversion(new String[] { "alice", "aliceP", "conf", "confP", "book", "bookP" });
+		
+		testGraphDescriptions();
 
 	}
 
@@ -453,5 +456,19 @@ public class GrapherTest extends Tester
 			}
 		}
 
+	}
+
+	private void testGraphDescriptions()
+	{
+		try
+		{
+			Map<String, Graph> result = loadGraphsAndPatterns("IOTesting/described", defaultFileDir, null);
+			for(Entry<String, Graph> entry : result.entrySet())
+				log.li("result []: []\n []\n", entry.getKey(), entry.getValue(),
+						new TextGraphRepresentation(entry.getValue()).update().displayRepresentation());
+		} catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 }

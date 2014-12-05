@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright (C) 2013 Andrei Olaru.
- * 
+ *
  * This file is part of net.xqhs.Graphs.
- * 
+ *
  * net.xqhs.Graphs is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
- * 
+ *
  * net.xqhs.Graphs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
 package net.xqhs.graphs.graph;
@@ -41,14 +41,14 @@ import net.xqhs.util.logging.UnitComponent;
  * <p>
  * Warning: if a graph contains the edge, it does not necessarily contain any of the nodes of the edge. It may be that
  * the nodes have not been added to the graph. This is because this graph may be a subgraph of a larger graph.
- * 
+ *
  * @author Andrei Olaru
  */
 public class SimpleGraph extends Unit implements Graph
 {
 	/**
 	 * Protected structure holding two sets of edges -- incoming and outgoing.
-	 * 
+	 *
 	 * @author Andrei Olaru
 	 */
 	protected static class NodeData
@@ -61,10 +61,10 @@ public class SimpleGraph extends Unit implements Graph
 		 * Outgoing edges.
 		 */
 		Set<Edge>	outEdges;
-		
+
 		/**
 		 * Default constructor.
-		 * 
+		 *
 		 * @param in
 		 *            - incoming edges.
 		 * @param out
@@ -75,34 +75,34 @@ public class SimpleGraph extends Unit implements Graph
 			inEdges = in;
 			outEdges = out;
 		}
-		
+
 		/**
 		 * Retrieves incoming edges.
-		 * 
+		 *
 		 * @return incoming edges.
 		 */
 		public Set<Edge> getInEdges()
 		{
 			return inEdges;
 		}
-		
+
 		/**
 		 * Retrieves outgoing edges.
-		 * 
+		 *
 		 * @return outgoing edges.
 		 */
 		public Set<Edge> getOutEdges()
 		{
 			return outEdges;
 		}
-		
+
 		@Override
 		public String toString()
 		{
 			return "in:" + inEdges.toString() + ";out:" + outEdges.toString();
 		}
 	}
-	
+
 	/**
 	 * Separator between edges.
 	 */
@@ -117,7 +117,7 @@ public class SimpleGraph extends Unit implements Graph
 	 * Character that marks the destination end of an oriented edge.
 	 */
 	public static char				EDGE_TARGET			= '>';
-	
+
 	/**
 	 * The description of the graph.
 	 */
@@ -130,7 +130,7 @@ public class SimpleGraph extends Unit implements Graph
 	 * The edges.
 	 */
 	protected Set<Edge>				edges				= null;
-	
+
 	/**
 	 * Creates an empty graph.
 	 */
@@ -140,30 +140,30 @@ public class SimpleGraph extends Unit implements Graph
 		nodes = new HashMap<Node, SimpleGraph.NodeData>();
 		edges = new HashSet<Edge>();
 	}
-	
+
 	@Override
 	public String getUnitName()
 	{
 		return super.getUnitName();
 	}
-	
+
 	@Override
 	public Graph setDescription(GraphDescription description)
 	{
 		graphDescription = description;
 		return this;
 	}
-	
+
 	@Override
 	public SimpleGraph addNode(Node node)
 	{
 		return add(node);
 	}
-	
+
 	/**
 	 * Warning: the function will not add the nodes to the graph, only the edge between them. Nodes must be added
 	 * separately.
-	 * 
+	 *
 	 * @param edge
 	 *            : the edge to add
 	 * @return the updated graph
@@ -173,7 +173,7 @@ public class SimpleGraph extends Unit implements Graph
 	{
 		return add(edge);
 	}
-	
+
 	/**
 	 * This is the only method that actually adds a component to the graph. Any other methods call (should call) this
 	 * method.
@@ -183,7 +183,7 @@ public class SimpleGraph extends Unit implements Graph
 	{
 		if(component == null)
 			throw new IllegalArgumentException("null components not allowed");
-		
+
 		if(component instanceof Node)
 		{
 			Node node = (Node) component;
@@ -224,7 +224,7 @@ public class SimpleGraph extends Unit implements Graph
 			throw new IllegalArgumentException("Given component is not one of Node, Edge.");
 		return this;
 	}
-	
+
 	@Override
 	public SimpleGraph addAll(Collection<? extends GraphComponent> components)
 	{
@@ -232,19 +232,19 @@ public class SimpleGraph extends Unit implements Graph
 			add(comp);
 		return this;
 	}
-	
+
 	@Override
 	public SimpleGraph removeNode(Node node)
 	{
 		return remove(node);
 	}
-	
+
 	@Override
 	public SimpleGraph removeEdge(Edge edge)
 	{
 		return remove(edge);
 	}
-	
+
 	/**
 	 * This is the only method that actually removes a component from the graph. Any other methods call (should call)
 	 * this method.
@@ -271,7 +271,7 @@ public class SimpleGraph extends Unit implements Graph
 			throw new IllegalArgumentException("Given component is not one of Node, Edge.");
 		return this;
 	}
-	
+
 	@Override
 	public Graph removeAll(Collection<? extends GraphComponent> components)
 	{
@@ -279,43 +279,43 @@ public class SimpleGraph extends Unit implements Graph
 			remove(comp);
 		return this;
 	}
-	
+
 	@Override
 	public GraphDescription getDescription()
 	{
 		return graphDescription;
 	}
-	
+
 	@Override
 	public int n()
 	{
 		return nodes.size();
 	}
-	
+
 	@Override
 	public int m()
 	{
 		return edges.size();
 	}
-	
+
 	@Override
 	public int size()
 	{
 		return n();
 	}
-	
+
 	@Override
 	public Collection<Node> getNodes()
 	{
 		return Collections.unmodifiableCollection(nodes.keySet());
 	}
-	
+
 	@Override
 	public Collection<Edge> getEdges()
 	{
 		return Collections.unmodifiableCollection(edges);
 	}
-	
+
 	@Override
 	public Collection<GraphComponent> getComponents()
 	{
@@ -323,7 +323,7 @@ public class SimpleGraph extends Unit implements Graph
 		ret.addAll(edges);
 		return ret;
 	}
-	
+
 	@Override
 	public Collection<Edge> getOutEdges(Node node)
 	{
@@ -331,7 +331,7 @@ public class SimpleGraph extends Unit implements Graph
 			throw new IllegalArgumentException("node " + node + " is not in graph");
 		return Collections.unmodifiableCollection(nodes.get(node).getOutEdges());
 	}
-	
+
 	@Override
 	public Collection<Edge> getInEdges(Node node)
 	{
@@ -339,7 +339,7 @@ public class SimpleGraph extends Unit implements Graph
 			throw new IllegalArgumentException("node " + node + " is not in graph");
 		return Collections.unmodifiableCollection(nodes.get(node).getInEdges());
 	}
-	
+
 	@Override
 	public boolean contains(GraphComponent component)
 	{
@@ -349,7 +349,7 @@ public class SimpleGraph extends Unit implements Graph
 			return edges.contains(component);
 		throw new IllegalArgumentException("Given component is not one of Node, Edge.");
 	}
-	
+
 	@Override
 	public Collection<Node> getNodesNamed(String name)
 	{
@@ -359,10 +359,10 @@ public class SimpleGraph extends Unit implements Graph
 				ret.add(node);
 		return ret;
 	}
-	
+
 	/**
 	 * Simple Dijkstra algorithm to compute the distance between one node and all others.
-	 * 
+	 *
 	 * @param node
 	 *            : the source node.
 	 * @return the distances to the other nodes.
@@ -376,7 +376,7 @@ public class SimpleGraph extends Unit implements Graph
 		Set<Node> blackNodes = new HashSet<Node>();
 		grayNodes.add(node);
 		dists.put(node, new Integer(0));
-		
+
 		while(!grayNodes.isEmpty())
 		{
 			Node cNode = grayNodes.poll();
@@ -387,7 +387,7 @@ public class SimpleGraph extends Unit implements Graph
 			}
 			int dist = dists.get(cNode).intValue();
 			blackNodes.add(cNode);
-			
+
 			for(Edge e : getOutEdges(cNode))
 				if(!blackNodes.contains(e.getTo()))
 				{
@@ -405,10 +405,10 @@ public class SimpleGraph extends Unit implements Graph
 						dists.put(e.getFrom(), new Integer(dist + 1));
 				}
 		}
-		
+
 		return dists;
 	}
-	
+
 	/**
 	 * Returns a display of the graph that shows the number of nodes and edges, the list of nodes and the list of edges.
 	 */
@@ -417,7 +417,7 @@ public class SimpleGraph extends Unit implements Graph
 	{
 		String ret = "G";
 		if(graphDescription != null)
-			ret += graphDescription.toString();
+			ret += " " + graphDescription.toString() + " ";
 		ret += "[" + n() + ", " + m() + "] ";
 		List<Node> list = new ArrayList<Node>(nodes.keySet());
 		Collections.sort(list, new NodeAlphaComparator());
@@ -426,12 +426,12 @@ public class SimpleGraph extends Unit implements Graph
 			ret += "\n" + e.toString();
 		return ret;
 	}
-	
+
 	/**
 	 * Creates a representation of the {@link Graph} in DOT format.
 	 * <p>
 	 * See <a href = 'http://en.wikipedia.org/wiki/DOT_language'>http://en.wikipedia.org/wiki/DOT_language</a>
-	 * 
+	 *
 	 * @return the DOT representation
 	 */
 	// FIXME: override this method in GraphPattern to handle NodeP instances, instead of doing that here
@@ -464,7 +464,7 @@ public class SimpleGraph extends Unit implements Graph
 		ret += "}";
 		return ret;
 	}
-	
+
 	/**
 	 * Reads the structure of the graph as list of edges, adding all nodes appearing in the definition of edges.
 	 * <ul>
@@ -481,7 +481,7 @@ public class SimpleGraph extends Unit implements Graph
 	 * <li>all spaces between elements are accepted and ignored
 	 * </ul>
 	 * The newly read edges and nodes are added on the existing structure, if any.
-	 * 
+	 *
 	 * @param input
 	 *            - a stream to read from
 	 * @return the enriched {@link SimpleGraph} instance
@@ -498,9 +498,9 @@ public class SimpleGraph extends Unit implements Graph
 			for(String edgeRead : edgeReads) // each element is an edge
 			{
 				log.lf("new edge: ", edgeRead);
-				
+
 				boolean bidirectional = true;
-				
+
 				String[] parts1 = edgeRead.split(Character.toString(EDGE_LINE), 2); // identify first dash (beginning of
 																					// edge)
 				if(parts1.length < 2) // two parts: source node and edge name+destination node
@@ -522,10 +522,10 @@ public class SimpleGraph extends Unit implements Graph
 					log.le("input corrupted");
 					continue;
 				}
-				
+
 				Node node1 = null;
 				Node node2 = null;
-				
+
 				if(parts2.length == 2) // unidirectional edge
 				{
 					bidirectional = false;
@@ -550,7 +550,7 @@ public class SimpleGraph extends Unit implements Graph
 					edgeName = null;
 				// log.trace("[" + parts1.toString() + "] [" + parts2.toString() + "]");
 				log.lf("[] [] []", node1name, node2name, edgeName);
-				
+
 				if(getNodesNamed(node1name).isEmpty())
 				{
 					node1 = new SimpleNode(node1name);
@@ -558,7 +558,7 @@ public class SimpleGraph extends Unit implements Graph
 				}
 				else
 					node1 = getNodesNamed(node1name).iterator().next();
-				
+
 				if(getNodesNamed(node2name).isEmpty())
 				{
 					node2 = new SimpleNode(node2name);
@@ -566,7 +566,7 @@ public class SimpleGraph extends Unit implements Graph
 				}
 				else
 					node2 = getNodesNamed(node2name).iterator().next();
-				
+
 				addEdge(new SimpleEdge(node1, node2, edgeName));
 				if(bidirectional)
 					addEdge(new SimpleEdge(node2, node1, edgeName));
