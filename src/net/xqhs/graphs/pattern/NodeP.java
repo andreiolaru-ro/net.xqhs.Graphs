@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright (C) 2013 Andrei Olaru.
- * 
+ *
  * This file is part of net.xqhs.Graphs.
- * 
+ *
  * net.xqhs.Graphs is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
- * 
+ *
  * net.xqhs.Graphs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
 package net.xqhs.graphs.pattern;
@@ -19,9 +19,9 @@ import net.xqhs.graphs.graph.SimpleNode;
  * <p>
  * A generic node is characterized by a label equal to a specific symbol (usually a question mark) and an index, to
  * identify a specific generic node in a graph.
- * 
+ *
  * @author Andrei Olaru
- * 
+ *
  */
 public class NodeP extends SimpleNode
 {
@@ -37,13 +37,13 @@ public class NodeP extends SimpleNode
 	/**
 	 * Indicates that the node is generic.
 	 */
-	boolean						generic				= false;
+	protected boolean			generic				= false;
 	/**
 	 * Indicates the identifier of the generic node. It will be strictly positive for generic nodes.
 	 * <p>
 	 * <b>Note:</b> this can only be used in one graph at a time.
 	 */
-	int							labelIndex			= 0;
+	protected int				labelIndex			= 0;
 	
 	/**
 	 * Creates a new generic {@link NodeP}, with an uninitialized index.
@@ -61,7 +61,7 @@ public class NodeP extends SimpleNode
 	 * Creates a new generic {@link NodeP}, with a specified index.
 	 * <p>
 	 * <b>WARNING:</b> use this with great caution.
-	 * 
+	 *
 	 * @param genericIndex
 	 *            - be absolutely certain this is not the same index with other nodes in the graph
 	 */
@@ -75,7 +75,7 @@ public class NodeP extends SimpleNode
 	 * Creates a new, non-generic {@link NodeP}, with a specified label. It calls the constructor in {@link SimpleNode}.
 	 * <p>
 	 * It is assumed that the label is not equal to <code>NODEP_LABEL</code>.
-	 * 
+	 *
 	 * @param label
 	 *            - the label for the new node
 	 */
