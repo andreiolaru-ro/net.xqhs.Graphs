@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright (C) 2013 Andrei Olaru.
- * 
+ *
  * This file is part of net.xqhs.Graphs.
- * 
+ *
  * net.xqhs.Graphs is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
- * 
+ *
  * net.xqhs.Graphs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
 package net.xqhs.graphs.representation.text;
@@ -68,7 +68,7 @@ import net.xqhs.util.logging.UnitComponent;
  * Olaru, Context Matching for Ambient Intelligence Applications, Proceedings of SYNASC 2013, 15th International
  * Symposium on Symbolic and Numeric Algorithms for Scientific Computing, September 23-26, 2013 Timisoara, Romania, IEEE
  * CPS, 2013.
- * 
+ *
  * @author Andrei Olaru
  */
 public class TextGraphRepresentation extends LinearGraphRepresentation
@@ -85,7 +85,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	 * The default increment limit.
 	 */
 	public static final int		DEFAULT_INCREMENT_LIMIT		= -1;
-	
+
 	/**
 	 * Branch separator. See {@link #setLayout(String, String, int)}.
 	 */
@@ -98,11 +98,11 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	 * Increment limit. See {@link #setLayout(String, String, int)}.
 	 */
 	protected int				incrementLimit				= DEFAULT_INCREMENT_LIMIT;
-	
+
 	/**
 	 * Creates a new instance and links it to the specified graph. No processing will occur until {@link #update()} is
 	 * called.
-	 * 
+	 *
 	 * @param graph
 	 *            - the {@link Graph} instance that will be linked to this representation.
 	 */
@@ -110,11 +110,11 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	{
 		super(graph);
 	}
-	
+
 	/**
 	 * Configures the presentation of the linear graph representation. More precisely, configures what happens in the
 	 * output when a branch appears. See parameter descriptions for more details.
-	 * 
+	 *
 	 * @param branchSeparator
 	 *            - is added before each branch. Usually it is a newline.
 	 * @param separatorIncrement
@@ -134,13 +134,13 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		incrementLimit = limit;
 		return this;
 	}
-	
+
 	@Override
 	protected String setDefaultName(String name)
 	{
 		return super.setDefaultName(name) + "T";
 	}
-	
+
 	/**
 	 * The method relies on a call of <code>buildPaths()</code> in {@link LinearGraphRepresentation}. After the paths
 	 * are built, they are explored depth-first to directly build the text representation.
@@ -149,11 +149,11 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	protected void processGraph()
 	{
 		super.processGraph();
-		
+
 		Set<PathElement> blackNodes = new HashSet<PathElement>(); // contains all 'visited' nodes
 		TextRepresentationElement textRepresentation = new TextRepresentationElement(this, Type.ELEMENT_CONTAINER);
 		textRepresentation.description = theGraph.getDescription();
-		
+
 		boolean first = true;
 		for(PathElement el : paths)
 			// check all paths (subgraphs)
@@ -164,7 +164,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 						(VisualizableGraphComponent) el.getNode(), Type.NODE);
 				blackNodes.add(el);
 				nodeRepr.addSub(buildTextChildren(el, 1, blackNodes));
-				
+
 				TextRepresentationElement repr = new TextRepresentationElement(this, Type.SUBGRAPH, first);
 				repr.addSub(nodeRepr);
 				textRepresentation.addSub(repr);
@@ -172,28 +172,29 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 			}
 		this.theRepresentation = textRepresentation;
 	}
-	
+
 	/**
 	 * Explores the children of the given path element, to create the list of corresponding representation elements. It
 	 * recurses to completely explore the paths that start from the children.
-	 * 
+	 *
 	 * @param el
 	 *            - the element whose children to explore.
 	 * @param level
 	 *            - the current recursion level (starts at 1).
 	 * @param blackNodes
-	 *            - the set that contains the visited nodes, to which the method adds nodes that it visits.
+	 *            - the set that contains the visited nodes, to which the method adds nodes that it visits. The current
+	 *            node should already be in blackNodes.
 	 * @return a {@link List} of {@link TextRepresentationElement} instances that correspond to the children of the
 	 *         explored element.
 	 */
 	protected List<TextRepresentationElement> buildTextChildren(PathElement el, int level, Set<PathElement> blackNodes)
 	{
 		List<TextRepresentationElement> ret = new LinkedList<TextRepresentationElement>();
-		
+
 		int allchildren = el.getOtherChildren().size() + el.getChildren().size();
 		int remainingChildren = allchildren;
 		List<PathElement> others = new LinkedList<PathElement>(el.getOtherChildren());
-		
+
 		for(PathElement child : el.getChildren())
 		{
 			// attach 'other children' once they have been explored (in the past, or in the last recursive call)
@@ -217,7 +218,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					}
 				others.remove(0);
 			}
-			
+
 			remainingChildren--;
 			boolean first = true;
 			for(Edge edge : (isBackwards ? theGraph.getInEdges(el.getNode()) : theGraph.getOutEdges(el.getNode())))
@@ -239,7 +240,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					reprNode.addSub(buildTextChildren(child, level + 1, blackNodes));
 					ret.add(reprEdge);
 				}
-			
+
 			// handle hypernodes - the node is a whole graph
 			if(child.getNode() instanceof HyperNode)
 			{
@@ -253,7 +254,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 								(VisualizableGraphComponent) elsub.getNode(), Type.NODE);
 						blackNodes.add(elsub);
 						nodeRepr.addSub(buildTextChildren(elsub, 1, blackNodes));
-						
+
 						TextRepresentationElement repr = new TextRepresentationElement(this, Type.SUBGRAPH, first);
 						repr.addSub(nodeRepr);
 						textRepresentation.addSub(repr);
@@ -261,7 +262,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					}
 			}
 		}
-		
+
 		// attach 'other children' that have been explored in the last recursive call
 		while(!others.isEmpty())
 		{
@@ -284,10 +285,10 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 			blackNodes.add(other);
 			others.remove(0);
 		}
-		
+
 		return ret;
 	}
-	
+
 	/**
 	 * See {@link #displayRepresentation()}.
 	 */
@@ -296,19 +297,19 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	{
 		return displayRepresentation();
 	}
-	
+
 	@Override
 	public RepresentationElement getRepresentation()
 	{
 		return theRepresentation;
 	}
-	
+
 	@Override
 	public boolean isBackwards()
 	{
 		return isBackwards;
 	}
-	
+
 	/**
 	 * Returns a text representation of the associated graph.
 	 * <p>
@@ -337,10 +338,10 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		le("representation not computed (use update()).");
 		return null;
 	}
-	
+
 	/**
 	 * Reads the elements in the input into the represented graph. See {@link #readRepresentation(String)}.
-	 * 
+	 *
 	 * @param stream
 	 *            - the input stream.
 	 * @return the graph instance.
@@ -364,7 +365,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		}
 		return readRepresentation(builder.toString());
 	}
-	
+
 	/**
 	 * Reads the elements in the input into the represented graph. The representation must resemble one produced by
 	 * method {@link #toString()} of this class, but only in syntax, and not necessarily with the same whitespace
@@ -397,11 +398,11 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	 * <li>all whitespace between elements are accepted and ignored (unless stated otherwise above).
 	 * </ul>
 	 * All elements are attached to the existing elements in the represented graph, if any.
-	 * 
+	 *
 	 * @param rawInput
 	 *            - the input string.
 	 * @return the graph instance.
-	 * 
+	 *
 	 * @throws IllegalArgumentException
 	 *             if the input is broken (referenced nodes not found, no target nodes for edges, etc.
 	 */
@@ -409,15 +410,15 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	{
 		return readRepresentation(new ContentHolder<String>(rawInput));
 	}
-	
+
 	/**
 	 * Same as {@link #readRepresentation(String)}, but taking the input from a {@link ContentHolder}, leaving any
 	 * un-consumed input in the holder.
-	 * 
+	 *
 	 * @param input
 	 *            - the input, held be a {@link ContentHolder} instance.
 	 * @return the graph instance.
-	 * 
+	 *
 	 * @throws IllegalArgumentException
 	 *             if the input is broken (referenced nodes not found, no target nodes for edges, etc.
 	 */
@@ -429,28 +430,28 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 			le("input is empty.");
 			return null;
 		}
-		
+
 		// detect backwards-ness
 		boolean backwards = input.get().indexOf(Symbol.EDGE_ENDING_BACKWARD.toString()) >= 0;
 		if(backwards && (input.get().indexOf(Symbol.EDGE_ENDING_FORWARD.toString()) >= 0))
 			return (Graph) lr(null, "Representation contains both forward and backward edges.");
-		
+
 		setBackwards(backwards);
-		
+
 		// read the representation without connecting all the nodes and edges
 		TextRepresentationElement rootRepr = TextRepresentationElement.readRepresentation(input, this,
 				(UnitComponent) new UnitComponent().setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(getUnitName())
-						.setLogLevel(Level.WARN));
+				.setLogLevel(Level.WARN));
 		theRepresentation = rootRepr;
 		lf("result: [] \n====================================", theRepresentation.toString());
-		
+
 		// make all connections
 		return buildGraph(rootRepr);
 	}
-	
+
 	/**
 	 * Based on the representation elements read from the input, the method assembles the represented graph.
-	 * 
+	 *
 	 * @param rootRepresentation
 	 *            - the root {@link TextRepresentationElement} of the representation (normally same as
 	 *            #theRepresentation).
@@ -466,7 +467,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		// add the representation of the root element on the first level
 		cLevel.add((TextRepresentationElement) theRepresentation);
 		tree.add(cLevel);
-		
+
 		// very easy to build
 		// for each element, its direct children are added in a new level of the tree
 		// any internal links are to nodes that have been already defined (have been already inserted in the graph)
@@ -479,7 +480,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 			else
 			{
 				lf("[] element(s) left to inspect", new Integer(cLevel.size()));
-				
+
 				TextRepresentationElement element = cLevel.poll();
 				Type type = element.linkType;
 				switch(type)
@@ -506,12 +507,12 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 						((GraphPattern) theGraph).addNode(node, false);
 					else
 						theGraph.addNode(node);
-					
+
 					if(element.content.isEmpty())
 						break; // no edges
 					nLevel = new LinkedList<TextRepresentationElement>();
 					tree.push(nLevel);
-					
+
 					// add outgoing / incoming (for backwards) edges
 					for(TextRepresentationElement edgeEl : element.content)
 					{
@@ -530,7 +531,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 				{ // add a new edge
 					SettableEdge edge = (SettableEdge) element.getRepresentedComponent();
 					lf("inspecting []: []", type, edge);
-					
+
 					Node targetNode = null; // target node of the edge
 					if(element.content.isEmpty())
 						throw new IllegalArgumentException("Edge representation element contains no target");
@@ -544,7 +545,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 							for(Node candidateNode : theGraph.getNodesNamed(dummyTargetNode.getLabel()))
 								if(candidateNode instanceof NodeP
 										&& ((NodeP) dummyTargetNode).genericIndex() == ((NodeP) candidateNode)
-												.genericIndex())
+										.genericIndex())
 									targetNode = candidateNode;
 							if(targetNode == null)
 								throw new IllegalArgumentException("Target pattern node [" + dummyTargetNode
