@@ -146,6 +146,25 @@ public class GraphPattern extends SimpleGraph
 		return this;
 	}
 
+	/**
+	 * Retrieves the generic node with the specified index.
+	 *
+	 * @param index
+	 *            - the index to search. Must be strictly positive, otherwise an exception is thrown.
+	 * @return the generic node with the index, or <code>null</code> if the index is not in use.
+	 */
+	public NodeP getGenericNodeWithIndex(int index)
+	{
+		if(index <= 0)
+			throw new IllegalArgumentException("Index must be strictly positive");
+		if((index > maxIndex) || !genericIndexes.get(index))
+			return null;
+		for(Node node : nodes.keySet())
+			if((node instanceof NodeP) && (((NodeP) node).genericIndex() == index))
+				return (NodeP) node;
+		throw new IllegalStateException("Generic node should be present but not found");
+	}
+
 	@Override
 	public GraphPattern readFrom(InputStream input)
 	{

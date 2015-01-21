@@ -51,50 +51,50 @@ public class GrapherTest extends Tester
 	{
 		new GrapherTest();
 	}
-	
+
 	@Override
 	protected void doTesting()
 	{
 		super.doTesting();
-		
-		Logging.getMasterLogging().setLogLevel(Level.WARN);
-		
-		// testTextRepresentation();
-		
-		// testSelfReading();
-		
-		// testGraphTextReading("Emily/EmilyP");
 
+		Logging.getMasterLogging().setLogLevel(Level.WARN);
+
+		// testTextRepresentation();
+
+		// testSelfReading();
+
+		// testGraphTextReading("Emily/EmilyP");
+		
 		testTextRepresentationReading("conf/confPR");
-		
+
 		// testGraphicalContainerGraph(false);
-		
+
 		// testSpecialGraphs();
-		
+
 		// testHyperGraphs();
-		
+
 		// testMultilevelRepresentation();
-		
+
 		// testDotConversion(new String[] { "alice", "aliceP", "conf", "confP", "book", "bookP" });
-		
+
 		// testGraphDescriptions();
-		
+
 	}
-	
+
 	@SuppressWarnings("unused")
 	public static Graph staticTest(int version)
 	{
 		Graph G = new SimpleGraph();
-		
+
 		int nNodes = 9;
 		Node nodes[] = new Node[nNodes];
-		
+
 		for(int i = 0; i < nNodes; i++)
 		{
 			nodes[i] = new SimpleNode(Character.toString((char) ('A' + i)));
 			G.addNode(nodes[i]);
 		}
-		
+
 		switch(version)
 		{
 		case 2:
@@ -132,10 +132,10 @@ public class GrapherTest extends Tester
 			G.addEdge(new SimpleEdge(nodes[0], null, null));
 			break;
 		}
-		
+
 		return G;
 	}
-	
+
 	/**
 	 *
 	 * @param nodes
@@ -147,20 +147,20 @@ public class GrapherTest extends Tester
 	public Graph randomTest(int nNodes, int nEdges, long seedPre, boolean labelEdges)
 	{
 		Graph G = new SimpleGraph();
-		
+
 		long seed = System.currentTimeMillis();
 		if(seedPre >= 0)
 			seed = seedPre;
 		log.lf("seed was " + seed);
 		Random rand = new Random(seed);
 		Node nodes[] = new Node[nNodes];
-		
+
 		for(int i = 0; i < nNodes; i++)
 		{
 			nodes[i] = new SimpleNode(Character.toString((char) ('A' + i)));
 			G.addNode(nodes[i]);
 		}
-		
+
 		for(int i = 0; i < nEdges; i++)
 		{
 			int from = rand.nextInt(nNodes);
@@ -180,10 +180,10 @@ public class GrapherTest extends Tester
 			}
 			G.addEdge(new SimpleEdge(nodes[from], nodes[to], !labelEdges ? null : Character.toString((char) ('a' + i))));
 		}
-		
+
 		return G;
 	}
-	
+
 	public static String getUPMCTest()
 	{
 		String input = "";
@@ -199,22 +199,22 @@ public class GrapherTest extends Tester
 		input += "SchedulerUPMCAgent -has-parent> UniversityUPMCAgent;";
 		return input;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void testTextRepresentation()
 	{
 		// generate graph
 		Graph G;
 		G = staticTest(3); // 1 to 4
-		
+
 		// G = randomTest(6, 8, -1, true);
 		// G = randomTest(6, 8, 1307714367060L, false);
 		// G = randomTest(6, 8, 1310205248694L, false);
 		// G = randomTest(6, 8, 1310208355983L, false);
 		// G = randomTest(9, 8, 1310475944100L, false);
-		
+
 		// print out the graph
-		
+
 		TextGraphRepresentation GRa = new TextGraphRepresentation(G);
 		// GRa.setLayout("", " ", -1);
 		GRa.setLayout("\n", "\t", 3);
@@ -222,7 +222,7 @@ public class GrapherTest extends Tester
 		GRa.update();
 		log.li(GRa.toString());
 	}
-	
+
 	/**
 	 * Tests if the representation implementation can read what it wrote.
 	 */
@@ -235,7 +235,7 @@ public class GrapherTest extends Tester
 		GRa.setLayout("\n", "\t", 3);
 		GRa.update();
 		log.li(GRa.toString());
-		
+
 		// test reading
 		Graph GR = new TextGraphRepresentation(new SimpleGraph()).readRepresentation(GRa.toString());
 		TextGraphRepresentation GRR = new TextGraphRepresentation(GR).setLayout("", " ", 3);
@@ -244,7 +244,7 @@ public class GrapherTest extends Tester
 		log.li("\n\n [] \n", GRR.toString());
 		log.li(GRR.setLayout("\n", "\t", 3).toString().equals(GRa.toString()) ? "===OK" : "===NOPE");
 	}
-	
+
 	/**
 	 * Tests if the graph can read the simple representation provided.
 	 * <p>
@@ -256,7 +256,7 @@ public class GrapherTest extends Tester
 	private void testGraphTextReading(int variant)
 	{
 		String input = "";
-		
+
 		switch(variant)
 		{
 		case 0:
@@ -264,41 +264,41 @@ public class GrapherTest extends Tester
 			break;
 		case 1:
 			input =
-			
+
 			"Albert -in> London ;" +
-			
+
 			"" +
-			
+
 			"Albert -isa> User \n" +
-			
+
 			"Schedule -of> Albert \n" +
-			
+
 			"attend -part-of>Schedule \n" +
-			
+
 			"flight -part-of> attend \n" +
-			
+
 			"flight -from>LHR \n" +
-			
+
 			"flight -to> CDG \n" +
-			
+
 			"LHR -in> London \n" +
-			
+
 			"CDG -in> Paris \n" +
-			
+
 			"CNAM -in> Paris \n" +
-			
+
 			"AI Conf -venue> CNAM \n" +
-			
+
 			"AI Conf -isa> Activity \n" +
-			
+
 			"attend -isa> Activity \n" +
-			
+
 			"flight -isa> Activity \n" +
-			
+
 			"attend -> AI Conf \n" +
-			
+
 			"LHR -isa> airport \n" +
-			
+
 			"CDG -isa> airport \n";
 			break;
 		case 2:
@@ -309,10 +309,10 @@ public class GrapherTest extends Tester
 			input = getUPMCTest();
 			break;
 		}
-		
+
 		testGraphTextReading(new ByteArrayInputStream(input.getBytes()));
 	}
-	
+
 	/**
 	 * Tests if the graph can read the simple representation provided in the file.
 	 * <p>
@@ -327,7 +327,7 @@ public class GrapherTest extends Tester
 		testGraphTextReading(source);
 		source.close();
 	}
-	
+
 	/**
 	 * Tests if the graph can read the simple representation provided in the stream.
 	 *
@@ -337,12 +337,12 @@ public class GrapherTest extends Tester
 	{
 		Graph G = new SimpleGraph().readFrom(source);
 		log.li(G.toString());
-		
+
 		TextGraphRepresentation GR = (TextGraphRepresentation) new TextGraphRepresentation(G).setLayout("\n", "\t", 2)
 				.update();
 		log.li(GR.toString());
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void testSpecialGraphs()
 	{
@@ -350,7 +350,7 @@ public class GrapherTest extends Tester
 		printSeparator(0, null);
 		testTextRepresentationReading("IOtesting/special-recursive-plus");
 	}
-	
+
 	private void testTextRepresentationReading(String filename)
 	{
 		Graph G;
@@ -368,27 +368,28 @@ public class GrapherTest extends Tester
 		G.addNode(new NodeP());
 		// G.addNode(new SimpleNode(NodeP.NODEP_LABEL));
 		log.li("Read graph:", G.toString());
-		
+		log.li("Searched generic node:", ((GraphPattern) G).getGenericNodeWithIndex(3));
+
 		TextGraphRepresentation GR = (TextGraphRepresentation) new TextGraphRepresentation(G).setLayout("\n", "\t", -1)
 				.update();
 		log.li("Representation of read graph: ", GR.toString());
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void testGraphicalContainerGraph(boolean useRadial)
 	{
 		Graph G3 = new SimpleGraph().readFrom(new ByteArrayInputStream(getUPMCTest().getBytes()));
 		log.li(G3.toString());
 		log.li(new TextGraphRepresentation(G3).setLayout("\n", "\t", -1).setBackwards().update().toString());
-		
+
 		GraphicalGraphRepresentation G3RX = null;
 		if(!useRadial)
 			G3RX = new GraphicalGraphRepresentation(G3);
 		else
 			G3RX = new RadialGraphRepresentation(G3);
-		
+
 		G3RX.setBackwards().setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(unitName).setLogLevel(Level.ALL);
-		
+
 		JFrame acc = new JFrame(unitName);
 		acc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		acc.setLocation(100, 100);
@@ -396,7 +397,7 @@ public class GrapherTest extends Tester
 		acc.add(((GraphicalGraphRepresentation) G3RX.update()).displayRepresentation());
 		acc.setVisible(true);
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void testHyperGraphs()
 	{
@@ -408,18 +409,18 @@ public class GrapherTest extends Tester
 		Node hn2 = new HyperNode(new SimpleGraph().addNode(emily).addNode(room2)
 				.addEdge(new SimpleEdge(emily, room2, "is-in")));
 		Graph HG = new HyperGraph().addNode(hn1).addNode(hn2).addEdge(new SimpleEdge(hn1, hn2, null));
-		
+
 		TextGraphRepresentation HGR = new TextGraphRepresentation(HG).setLayout("\n", "\t", -1);
 		HGR.update();
 		log.li(HGR.toString());
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void testMultilevelRepresentation()
 	{
 		Graph G3 = new SimpleGraph().readFrom(new ByteArrayInputStream(getUPMCTest().getBytes()));
 		log.li(new TextGraphRepresentation(G3).setLayout("\n", "\t", -1).setBackwards().update().toString());
-		
+
 		String containers[] = { "AdministrationContainer", "RoomContainer", "AliceContainer" };
 		Map<Node, Node> agentLevel = new HashMap<Node, Node>();
 		for(Edge edge : G3.getEdges())
@@ -434,7 +435,7 @@ public class GrapherTest extends Tester
 		// MultilevelGraphRepresentation G3R = new TextMultilevelGraphRepresentation(G3, levels, null);
 		// log.li("\n\n" + G3R.toString() + "\n");
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void testDotConversion(String files[])
 	{
@@ -460,9 +461,9 @@ public class GrapherTest extends Tester
 				e.printStackTrace();
 			}
 		}
-		
+
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void testGraphDescriptions()
 	{
