@@ -28,7 +28,6 @@ import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.hypergraph.HyperNode;
-import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.GraphRepresentation;
 import net.xqhs.graphs.representation.RepresentationElement;
@@ -510,17 +509,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					Node node = (Node) element.getRepresentedComponent();
 					lf("inspecting []: []", type, node);
 					li("adding to graph node []", node);
-					// FIXME: check if index already exists.
-					if((node instanceof NodeP) && ((NodeP) node).isGeneric() && ((NodeP) node).genericIndex() > 0)
-						try
-						{
-							((GraphPattern) theGraph).addNode(node, false);
-						} catch(ClassCastException cce)
-						{
-							throw new IllegalArgumentException("the provided graph is not a GraphPattern instance.");
-						}
-					else
-						theGraph.addNode(node);
+					theGraph.addNode(node);
 
 					if(element.content.isEmpty())
 						break; // no edges
