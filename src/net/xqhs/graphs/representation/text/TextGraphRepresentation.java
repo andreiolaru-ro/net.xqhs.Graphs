@@ -25,9 +25,9 @@ import java.util.Stack;
 
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
-import net.xqhs.graphs.graph.HyperNode;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleNode;
+import net.xqhs.graphs.hypergraph.HyperNode;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.GraphRepresentation;

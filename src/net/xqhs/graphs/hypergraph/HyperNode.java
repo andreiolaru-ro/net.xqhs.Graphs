@@ -1,5 +1,8 @@
-package net.xqhs.graphs.graph;
+package net.xqhs.graphs.hypergraph;
 
+import net.xqhs.graphs.graph.Graph;
+import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 
 /**

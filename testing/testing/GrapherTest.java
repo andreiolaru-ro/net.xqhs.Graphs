@@ -28,12 +28,12 @@ import javax.swing.JFrame;
 
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.Graph;
-import net.xqhs.graphs.graph.HyperGraph;
-import net.xqhs.graphs.graph.HyperNode;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.graph.SimpleNode;
+import net.xqhs.graphs.hypergraph.HyperGraph;
+import net.xqhs.graphs.hypergraph.HyperNode;
 import net.xqhs.graphs.representation.graphical.GraphicalGraphRepresentation;
 import net.xqhs.graphs.representation.graphical.RadialGraphRepresentation;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
