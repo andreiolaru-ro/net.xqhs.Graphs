@@ -17,6 +17,8 @@ import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.matchingPlatform.GMPImplementation.PrincipalGraph;
 import net.xqhs.graphs.matchingPlatform.TrackingGraph;
+import net.xqhs.graphs.matchingPlatform.Transaction;
+import net.xqhs.graphs.matchingPlatform.Transaction.Operation;
 import net.xqhs.graphs.pattern.NodeP;
 
 // TODO: add canPerformOperation throughout the various Graph classes to be sure that the operation will be performed.
@@ -28,7 +30,7 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 		 * in milliseconds.
 		 */
 		Offset	initialValidity	= null;
-
+		
 		public ContextEdge(Node fromNode, Node toNode, String edgeLabel, Offset edgeValidity)
 		{
 			super(fromNode, toNode, edgeLabel);
@@ -37,36 +39,36 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 			initialValidity = edgeValidity;
 		}
 	}
-
+	
 	TimeKeeper									theTime	= null;
 	CCMImplementation							parent	= null;
 	PriorityQueue<Entry<Instant, ContextEdge>>	validityQueue;
-
+	
 	public ContextGraph(CCMImplementation platform)
 	{
 		super();
 		parent = platform;
 	}
-
+	
 	public ContextGraph(CCMImplementation platform, Queue<Transaction> transactionsLink, int initialSequence,
 			ContextGraph initialGraph)
 	{
 		super(transactionsLink, initialSequence, initialGraph);
 		parent = platform;
 	}
-
+	
 	@Override
 	public ContextGraph createShadowGraph()
 	{
 		return new ContextGraph(parent, createShadowQueue(), getSequence(), this);
 	}
-
+	
 	protected ContextGraph setTimeKeeper(TimeKeeper time)
 	{
 		theTime = time;
 		return this;
 	}
-
+	
 	@Override
 	protected ContextGraph performOperation(GraphComponent component, Operation operation, boolean externalCall)
 	{
@@ -92,7 +94,7 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 			parent.notifyContextChange();
 		return this;
 	}
-
+	
 	/**
 	 * Overrides {@link TrackingGraph#add(GraphComponent)} to not allow nodes with the same label (as per the theory of
 	 * context graphs) or generic nodes (having a label beginning with {@link NodeP#NODEP_LABEL}.
@@ -107,11 +109,11 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 		// TODO this is not efficient -- a index of labels should be used
 		if((component instanceof Node) && !getNodesNamed(((Node) component).getLabel()).isEmpty())
 			throw new IllegalArgumentException("Multiple nodes with the same name are not allowed");
-
+		
 		super.add(component);
 		return this;
 	}
-
+	
 	@Override
 	protected void addTransaction(Transaction t)
 	{
@@ -119,7 +121,7 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 		if(parent != null)
 			parent.notifyContextChange();
 	}
-
+	
 	@Override
 	public void tick(TimeKeeper ticker, Instant now)
 	{

@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright (C) 2013 Andrei Olaru.
- * 
+ *
  * This file is part of net.xqhs.Graphs.
- * 
+ *
  * net.xqhs.Graphs is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
- * 
+ *
  * net.xqhs.Graphs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
 package testing;
@@ -45,8 +45,8 @@ import net.xqhs.graphs.matchingPlatform.GraphMatcherPersistent;
 import net.xqhs.graphs.matchingPlatform.GraphMatchingPlatform;
 import net.xqhs.graphs.matchingPlatform.GraphMatchingPlatform.PlatformPrincipalGraph;
 import net.xqhs.graphs.matchingPlatform.TrackingGraph;
-import net.xqhs.graphs.matchingPlatform.TrackingGraph.Operation;
-import net.xqhs.graphs.matchingPlatform.TrackingGraph.Transaction;
+import net.xqhs.graphs.matchingPlatform.Transaction;
+import net.xqhs.graphs.matchingPlatform.Transaction.Operation;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.graphs.representation.text.TextRepresentationElement.Symbol;
@@ -56,7 +56,7 @@ import net.xqhs.util.logging.logging.Logging;
 
 /**
  * Tester for complex graphs, hyper graphs, transaction graphs, context graphs, and matching platforms.
- * 
+ *
  * @author Andrei Olaru
  */
 public class ContextGraphsTest extends Tester
@@ -64,28 +64,28 @@ public class ContextGraphsTest extends Tester
 	@SuppressWarnings("javadoc")
 	enum ActualState {
 		SLEEP, MEAL, WANDERING, SHOWER, BATHROOM, TV, NOTHING,
-		
+
 		;
-		
+
 		boolean exclusive()
 		{
 			return (this == SHOWER) || (this == BATHROOM);
 		}
-		
+
 		boolean mustContinue()
 		{
 			return (this == MEAL) || (this == TV) || (this == SLEEP);
 		}
-		
+
 		boolean idle()
 		{
 			return (this == WANDERING) || (this == NOTHING);
 		}
 	}
-	
+
 	/**
 	 * Time keeper having an integer time coordinate, incremented at request.
-	 * 
+	 *
 	 * @author Andrei Olaru
 	 */
 	public static class IntTimeKeeper implements TimeKeeper
@@ -98,19 +98,19 @@ public class ContextGraphsTest extends Tester
 		 * Time coordinate.
 		 */
 		long				now			= 0;
-		
+
 		@Override
 		public void registerTickReceiver(TickReceiver receiver, Offset tickLength)
 		{
 			receivers.add(receiver);
 		}
-		
+
 		@Override
 		public Instant now()
 		{
 			return new Instant(now);
 		}
-		
+
 		/**
 		 * Increments the time and notifies receivers (regardless of their tick length preference. //FIXME
 		 */
@@ -121,14 +121,14 @@ public class ContextGraphsTest extends Tester
 				rcv.tick(this, new Instant(now));
 		}
 	}
-	
+
 	/**
 	 * In a test pack returned by
 	 * {@link Tester#loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}, the name of the
 	 * graph (first in the file).
 	 */
 	protected static String	testGraphName		= Tester.NAME_GENERAL_GRAPH + "#" + 0;
-	
+
 	/**
 	 * Member used in context matching tester (2)
 	 */
@@ -137,7 +137,7 @@ public class ContextGraphsTest extends Tester
 	 * Member used in context matching tester (2)
 	 */
 	String					detectedState		= null;
-	
+
 	/**
 	 * @param args
 	 *            unused
@@ -147,34 +147,34 @@ public class ContextGraphsTest extends Tester
 	{
 		new ContextGraphsTest();
 	}
-	
+
 	@Override
 	protected void doTesting()
 	{
 		super.doTesting();
-		
+
 		Logging.getMasterLogging().setLogLevel(Level.WARN);
-		
+
 		// testTransactions();
-		
+
 		// testTrackingGraph(-1);
-		
+
 		defaultFileDir = "playground/platform/";
-		
+
 		try
 		{
 			// testPersistentMatching("bathroom-time-1");
-			
+
 			// testContextMatching1("bathroom-time-1");
-			
+
 			testContextMatching2("house");
-			
+
 		} catch(IOException e)
 		{
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Test adding operations to {@link Transaction} instances.
 	 */
@@ -186,7 +186,7 @@ public class ContextGraphsTest extends Tester
 		compsL.addAll(GT.getNodes());
 		compsL.addAll(GT.getEdges());
 		GraphComponent comps[] = compsL.toArray(new GraphComponent[0]);
-		
+
 		Transaction t = new Transaction(comps[0], Operation.ADD); // single direct
 		log.lf(t.toString());
 		t.put(comps[4], Operation.ADD); // single to multiple
@@ -196,11 +196,11 @@ public class ContextGraphsTest extends Tester
 		t.clear();
 		t.put(comps[0], Operation.REMOVE); // empty to single
 		log.lf(t.toString());
-		Map<GraphComponent, Operation> ops = new HashMap<GraphComponent, TrackingGraph.Operation>();
+		Map<GraphComponent, Operation> ops = new HashMap<GraphComponent, Operation>();
 		ops.put(comps[1], Operation.REMOVE);
 		ops.put(comps[3], Operation.ADD);
 		ops.put(comps[0], Operation.ADD);
-		Map<GraphComponent, Operation> ops2 = new HashMap<GraphComponent, TrackingGraph.Operation>();
+		Map<GraphComponent, Operation> ops2 = new HashMap<GraphComponent, Operation>();
 		ops2.put(comps[5], Operation.ADD);
 		ops2.put(comps[2], Operation.REMOVE);
 		ops2.put(comps[3], Operation.REMOVE);
@@ -222,10 +222,10 @@ public class ContextGraphsTest extends Tester
 		log.lf(t.toString());
 		printSeparator(2, "transactions");
 	}
-	
+
 	/**
 	 * Test correct workings of a tracking graph and shadows of the {@link TrackingGraph}.
-	 * 
+	 *
 	 * @param seedPre
 	 *            - pre-set random seed; <code>-1</code> if none.
 	 */
@@ -237,7 +237,7 @@ public class ContextGraphsTest extends Tester
 			seed = seedPre;
 		log.lf("seed was " + seed);
 		Random rand = new Random(seed);
-		
+
 		TrackingGraph TG = new TrackingGraph();
 		int nShadows = 3;
 		TrackingGraph shadows[] = new TrackingGraph[3];
@@ -245,7 +245,7 @@ public class ContextGraphsTest extends Tester
 			shadows[i] = TG.createShadow();
 		TrackingGraph lastShadow = shadows[nShadows - 1].createShadow();
 		log.lf("parent graph: [].", TG.toString());
-		
+
 		// generate additions
 		Graph GT = GrapherTest.staticTest(1);
 		List<GraphComponent> compsL = new ArrayList<GraphComponent>();
@@ -255,7 +255,7 @@ public class ContextGraphsTest extends Tester
 		boolean addedComps[] = new boolean[comps.length];
 		for(int i = 0; i < comps.length; i++)
 			addedComps[i] = false;
-		List<Transaction> ts = new ArrayList<TrackingGraph.Transaction>();
+		List<Transaction> ts = new ArrayList<Transaction>();
 		int added = 0;
 		while(added < comps.length)
 		{
@@ -272,14 +272,14 @@ public class ContextGraphsTest extends Tester
 			ts.add(t);
 			added += toAdd;
 		}
-		
+
 		// initial presentation
 		log.lf("=====");
 		log.lf("\t\t[][]", TG, new Integer(TG.getSequence()));
 		for(int i = 0; i < nShadows; i++)
 			log.lf("\t\t[][]", shadows[i], new Integer(shadows[i].getSequence()));
 		log.lf("\t\t[][]", lastShadow, new Integer(lastShadow.getSequence()));
-		
+
 		// start adding
 		for(Transaction t : ts)
 		{
@@ -315,34 +315,34 @@ public class ContextGraphsTest extends Tester
 		log.lf("\t\t[][]", lastShadow, new Integer(lastShadow.getSequence()));
 		printSeparator(2, "tracking graph");
 	}
-	
+
 	/**
 	 * Tests {@link GMPImplementation} and {@link GraphMatcherPersistent}.
-	 * 
+	 *
 	 * @param file
 	 *            - input file containing the initial graph and all patterns.
-	 * 
+	 *
 	 * @throws IOException
 	 */
 	protected void testPersistentMatching(String file) throws IOException
 	{
 		printSeparator(-2, "persistent");
-		
+
 		Map<String, Graph> testPack = loadGraphsAndPatterns(file, null, null);
-		
+
 		// load graph
 		PlatformPrincipalGraph CG = new PrincipalGraph();
 		Graph g = getTestGraph(testPack);
-		
+
 		// load patterns
 		List<GraphPattern> GPs = getGraphPatterns(testPack);
-		
+
 		// prepare GMP
 		MonitorPack monitor = new MonitorPack();// .setLog(log);
 		GraphMatchingPlatform GMP = new GMPImplementation().setMonitor(monitor).setPrincipalGraph(CG);
 		for(GraphPattern pattern : GPs)
 			GMP.addPattern(pattern);
-		
+
 		// prepare transactions
 		long seed = System.currentTimeMillis();
 		Random rand = new Random(seed);
@@ -350,7 +350,7 @@ public class ContextGraphsTest extends Tester
 		boolean addedComps[] = new boolean[comps.length];
 		for(int i = 0; i < comps.length; i++)
 			addedComps[i] = false;
-		List<Transaction> ts = new ArrayList<TrackingGraph.Transaction>();
+		List<Transaction> ts = new ArrayList<Transaction>();
 		int added = 0;
 		while(added < comps.length)
 		{
@@ -372,7 +372,7 @@ public class ContextGraphsTest extends Tester
 		{
 			((TrackingGraph) CG).applyTransaction(t);
 			log.li("CG: []", CG.toString());
-			
+
 			log.lf(GMP.incrementSequence().toString());
 			log.li(monitor.printStats());
 			for(GraphPattern pattern : GPs)
@@ -387,10 +387,10 @@ public class ContextGraphsTest extends Tester
 		// TODO: check setting a new principal graph
 		printSeparator(2, "persistent");
 	}
-	
+
 	/**
 	 * Tests context matching.
-	 * 
+	 *
 	 * @param file
 	 *            - input file containing the initial graph and all patterns.
 	 * @throws IOException
@@ -398,24 +398,24 @@ public class ContextGraphsTest extends Tester
 	protected void testContextMatching1(String file) throws IOException
 	{
 		printSeparator(-2, "context");
-		
+
 		// make ticker
 		IntTimeKeeper ticker = new IntTimeKeeper();
-		
+
 		// prepare CCM
 		MonitorPack monitor = new MonitorPack(); // .setLog(log);
 		ContinuousContextMatchingPlatform CCM = new CCMImplementation(ticker, monitor);
-		
+
 		Map<String, Graph> testPack = loadGraphsAndPatterns(file, null, null);
-		
+
 		// load graph
 		ContextGraph CG = new ContextGraph((CCMImplementation) CCM);
 		Graph g = getTestGraph(testPack);
 		log.li("graph: []", new TextGraphRepresentation(g).update());
-		
+
 		// load patterns
 		List<ContextPattern> GPs = getContextPatterns(testPack);
-		
+
 		// CCM setup
 		CCM.addMatchNotificationTarget(2, new MatchNotificationReceiver() {
 			@Override
@@ -435,7 +435,7 @@ public class ContextGraphsTest extends Tester
 		CCM.setContextGraph(CG);
 		for(ContextPattern pattern : GPs)
 			CCM.addContextPattern(pattern);
-		
+
 		long seed = 1394727231768L; // System.currentTimeMillis();
 		log.lf("seed: []", new Long(seed));
 		Random rand = new Random(seed);
@@ -447,7 +447,7 @@ public class ContextGraphsTest extends Tester
 		for(int tick = 0; tick < 50; tick++)
 		{
 			printSeparator(0, "tick start [" + tick + "]");
-			
+
 			int nToAdd = Math.min(rand.nextInt(3) + 1, comps.length - added);
 			Transaction t = new Transaction();
 			for(int i = 0; i < nToAdd; i++)
@@ -467,7 +467,7 @@ public class ContextGraphsTest extends Tester
 				addedComps[c] = true;
 				added++;
 			}
-			
+
 			int nToRem = Math.min(rand.nextInt(1) + 1, CG.m() - nToAdd);
 			for(int i = 0; i < nToRem; i++)
 			{
@@ -478,7 +478,7 @@ public class ContextGraphsTest extends Tester
 				addedComps[c] = false;
 				added--;
 			}
-			
+
 			log.lf("transaction: []", t);
 			CG.applyTransaction(t);
 			log.lf("CG: []", CG);
@@ -486,13 +486,13 @@ public class ContextGraphsTest extends Tester
 			log.lf(monitor.printStats());
 			ticker.tickUp();
 		}
-		
+
 		printSeparator(2, "context");
 	}
-	
+
 	/**
 	 * Tests context matching with some concrete scenarios.
-	 * 
+	 *
 	 * @param file
 	 *            - input file containing the initial graph and all patterns.
 	 * @throws IOException
@@ -500,22 +500,22 @@ public class ContextGraphsTest extends Tester
 	protected void testContextMatching2(String file) throws IOException
 	{
 		printSeparator(-2, "context2");
-		
+
 		// long seed = System.currentTimeMillis();
 		long seed = 1399038417008L;
 		log.lf("seed: []", new Long(seed));
 		Random rand = new Random(seed);
-		
+
 		// make ticker
 		final IntTimeKeeper ticker = new IntTimeKeeper();
-		
+
 		// prepare CCM
 		MonitorPack monitor = new MonitorPack(); // .setLog(log);
 		ContinuousContextMatchingPlatform CCM = new CCMImplementation(ticker, monitor);
-		
+
 		Map<String, Graph> testPack = loadGraphsAndPatterns(file, null, null);
 		Graph g = getTestGraph(testPack);
-		
+
 		// CCM setup
 		CCM.addMatchNotificationTarget(2, new MatchNotificationReceiver() {
 			@Override
@@ -535,7 +535,7 @@ public class ContextGraphsTest extends Tester
 				getLog().li("new match: [][]", time, m);
 			}
 		});
-		
+
 		// String notificationTargetName = Tester.NAME_GENERAL_GRAPH + "#" + 1;
 		// CCM.addMatchNotificationTarget(
 		// (ContextPattern) new ContextPattern().addAll(testPack.get(notificationTargetName).getComponents()),
@@ -551,18 +551,18 @@ public class ContextGraphsTest extends Tester
 		CCM.setContextGraph(CG);
 		for(ContextPattern pattern : getContextPatterns(testPack))
 			CCM.addContextPattern(pattern);
-		
+
 		long ntime = 60 * 24;
 		long wakeup = 60 * 7;
 		long sleep = 60 * 22;
-		
+
 		long lastBathroom = -6 * 60;
 		long lastShower = -12 * 60;
 		long lastMeal = -4 * 60;
 		long lastWander = -8 * 60;
-		
+
 		// boolean emergency = true;
-		
+
 		Node Emily = g.getNodesNamed("Emily").iterator().next();
 		Node Living = g.getNodesNamed("Living").iterator().next();
 		Node Bathroom = g.getNodesNamed("Bathroom").iterator().next();
@@ -572,19 +572,19 @@ public class ContextGraphsTest extends Tester
 		Edge locationHall = new SimpleEdge(Emily, Hall, "is-in");
 		Edge locationKitchen = new SimpleEdge(Emily, Kitchen, "is-in");
 		Edge nearBathroom = new SimpleEdge(Emily, Bathroom, "near");
-		
+
 		Edge[] track = new Edge[] { locationKitchen, locationHall, locationLiving };
 		Edge cLocation = locationLiving;
 		g.add(Living);
 		g.add(cLocation);
-		
+
 		CG.addAll(g.getComponents());
-		
+
 		ActualState actualState = ActualState.SLEEP;
 		ActualState stackedState = null;
 		Edge stackedLocation = null;
-		Deque<Transaction> todo = new LinkedList<TrackingGraph.Transaction>();
-		Deque<Transaction> stackedTodos = new LinkedList<TrackingGraph.Transaction>();
+		Deque<Transaction> todo = new LinkedList<Transaction>();
+		Deque<Transaction> stackedTodos = new LinkedList<Transaction>();
 		boolean justdone = false;
 		for(long tick = 0; tick < ntime; tick++)
 		{
@@ -595,7 +595,7 @@ public class ContextGraphsTest extends Tester
 				log.lf("CG: []", CG);
 				log.lf(monitor.printStats());
 			}
-			
+
 			if(!todo.isEmpty())
 			{
 				justdone = true;
@@ -606,7 +606,7 @@ public class ContextGraphsTest extends Tester
 			{
 				printSeparator(1, "done " + actualState);
 				justdone = false;
-				
+
 				if(stackedState != null)
 				{
 					actualState = stackedState;
@@ -617,7 +617,7 @@ public class ContextGraphsTest extends Tester
 				else
 					actualState = ActualState.NOTHING;
 			}
-			
+
 			// current location and actual state
 			String actStateLog = "\t actual state: [" + actualState + "] \t detected state: [" + detectedState + "]";
 			long h = ticker.now().toLong() / 60;
@@ -641,7 +641,7 @@ public class ContextGraphsTest extends Tester
 				cLocation = null;
 				log.lf("location: [none]" + actStateLog);
 			}
-			
+
 			if(!actualState.exclusive()
 					&& (rand.nextInt(Math.max(1, (int) ((tick - lastBathroom) / (((tick < wakeup) ? 8 : 4) * 0.6)))) > 80))
 			{ // go to bathroom
@@ -680,7 +680,7 @@ public class ContextGraphsTest extends Tester
 				stackedLocation = null;
 				lastBathroom = tick;
 			}
-			
+
 			if(!actualState.exclusive() && (tick > wakeup) && (tick < sleep)
 					&& (rand.nextInt(Math.max(1, (int) ((tick - lastMeal) / (10 * 0.6)))) > 80))
 			{ // go to eat
@@ -699,7 +699,7 @@ public class ContextGraphsTest extends Tester
 				todo.add(new Transaction().putR(locationHall, Operation.REMOVE).putR(locationLiving, Operation.ADD));
 				lastMeal = tick;
 			}
-			
+
 			if(actualState.idle() && (tick > wakeup) && (tick < sleep)
 					&& (rand.nextInt(Math.max(1, (int) ((tick - lastShower) / (20 * 0.6)))) > 80))
 			{ // go to shower
@@ -720,13 +720,13 @@ public class ContextGraphsTest extends Tester
 				todo.add(new Transaction().putR(nearBathroom, Operation.REMOVE));
 				lastShower = tick;
 			}
-			
+
 			if(actualState.idle() && (actualState != ActualState.WANDERING) && (tick > wakeup) && (tick < sleep)
 					&& (rand.nextInt(Math.max(1, (int) ((tick - lastWander) / (7 * 0.6)))) > 80))
 			{
 				printSeparator(-1, "wandering");
 				actualState = ActualState.WANDERING;
-				
+
 				for(int i = track.length - 1; i > 0; i--)
 					if(track[i] == cLocation)
 					{
@@ -739,22 +739,22 @@ public class ContextGraphsTest extends Tester
 				todo.add(new Transaction().putR(locationHall, Operation.REMOVE).putR(locationLiving, Operation.ADD));
 				lastWander = tick;
 			}
-			
+
 			if(actualState.idle() && (tick >= sleep))
 				actualState = ActualState.SLEEP;
-			
+
 			ticker.tickUp();
 		}
-		
+
 		printSeparator(2, "context2");
 	}
-	
+
 	/**
 	 * Extracts the graph from the test pack. It is identified by the key {@link #testGraphName}.
 	 * <p>
 	 * It does not return a {@link ContextGraph} because it is expected that the context graph will add the components
 	 * in the returned graph in some test-specific order.
-	 * 
+	 *
 	 * @param testPack
 	 *            - the test pack, presumably created by
 	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
@@ -764,11 +764,11 @@ public class ContextGraphsTest extends Tester
 	{
 		return testPack.get(testGraphName);
 	}
-	
+
 	/**
 	 * Loads the list of graphs to serve as patterns, from a test pack. All graphs are considered, except for the one
 	 * named {@link #testGraphName}.
-	 * 
+	 *
 	 * @param testPack
 	 *            - the test pack, presumably created by
 	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
@@ -782,11 +782,11 @@ public class ContextGraphsTest extends Tester
 				ret.add(testPack.get(name));
 		return ret;
 	}
-	
+
 	/**
 	 * Loads the list of patterns from a test pack. All graphs are considered, except for the one named
 	 * {@link #testGraphName}.
-	 * 
+	 *
 	 * @param testPack
 	 *            - the test pack, presumably created by
 	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
@@ -799,11 +799,11 @@ public class ContextGraphsTest extends Tester
 			ret.add((GraphPattern) new GraphPattern().addAll(gp.getComponents()).setDescription(gp.getDescription()));
 		return ret;
 	}
-	
+
 	/**
 	 * Gets a list of {@link ContextPattern} instances based on the patterns in a test pack. All patterns are
 	 * considered, except for the one named {@link #testGraphName}.
-	 * 
+	 *
 	 * @param testPack
 	 *            - the test pack, presumably created by
 	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
@@ -817,7 +817,7 @@ public class ContextGraphsTest extends Tester
 					.setDescription(gp.getDescription()));
 		return ret;
 	}
-	
+
 	/**
 	 * @return the log.
 	 */
