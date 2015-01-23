@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.PriorityQueue;
-import java.util.Queue;
 import java.util.Set;
 
 import net.xqhs.graphs.context.Instant.Offset;
@@ -17,7 +16,6 @@ import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.matchingPlatform.GMPImplementation.PrincipalGraph;
 import net.xqhs.graphs.matchingPlatform.TrackingGraph;
-import net.xqhs.graphs.matchingPlatform.Transaction;
 import net.xqhs.graphs.matchingPlatform.Transaction.Operation;
 import net.xqhs.graphs.pattern.NodeP;
 
@@ -41,31 +39,12 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 	}
 	
 	TimeKeeper									theTime	= null;
-	CCMImplementation							parent	= null;
 	PriorityQueue<Entry<Instant, ContextEdge>>	validityQueue;
-	
-	public ContextGraph(CCMImplementation platform)
-	{
-		super();
-		parent = platform;
-	}
-	
-	public ContextGraph(CCMImplementation platform, Queue<Transaction> transactionsLink, int initialSequence,
-			ContextGraph initialGraph)
-	{
-		super(transactionsLink, initialSequence, initialGraph);
-		parent = platform;
-	}
-	
-	@Override
-	public ContextGraph createShadowGraph()
-	{
-		return new ContextGraph(parent, createShadowQueue(), getSequence(), this);
-	}
 	
 	protected ContextGraph setTimeKeeper(TimeKeeper time)
 	{
 		theTime = time;
+		theTime.registerTickReceiver(this, null);
 		return this;
 	}
 	
@@ -90,8 +69,6 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 				break;
 			}
 		super.performOperation(component, operation, externalCall);
-		if((parent != null) && externalCall)
-			parent.notifyContextChange();
 		return this;
 	}
 	
@@ -112,14 +89,6 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 		
 		super.add(component);
 		return this;
-	}
-	
-	@Override
-	protected void addTransaction(Transaction t)
-	{
-		super.addTransaction(t);
-		if(parent != null)
-			parent.notifyContextChange();
 	}
 	
 	@Override
