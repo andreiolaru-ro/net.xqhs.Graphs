@@ -35,14 +35,24 @@ import net.xqhs.graphs.representation.text.TextGraphRepresentation;
  * <p>
  * For extending classes, all changes to the graph are made through {@link #performOperation} (to which all calls to
  * add, addAll, remove, removeAll are redirected). Therefore extending classes only need to handle changes to the graph
- * through {@link #performOperation}.
+ * through {@link #performOperation}. The third argument controls whether the operation will also be added as a
+ * transaction or not.
  *
  * @author Andrei Olaru
  */
 public class TrackingGraph extends SimpleGraph
 {
+	/**
+	 * Interface to be implemented by any class that can be notified of changes to the graph.
+	 *
+	 * @author Andrei Olaru
+	 */
 	public interface ChangeNotificationReceiver
 	{
+		/**
+		 * Method that will be called when a change to the graph is recorded. More precisely, when a transaction has
+		 * been applied.
+		 */
 		public void notifyChange();
 	}
 
@@ -67,6 +77,9 @@ public class TrackingGraph extends SimpleGraph
 	 */
 	protected List<Queue<Transaction>>			shadowQueues			= null;
 
+	/**
+	 * The set of entities that must receive notifications when transactions are applied to the graph.
+	 */
 	protected Set<ChangeNotificationReceiver>	notificationReceivers	= null;
 
 	/**
@@ -145,6 +158,12 @@ public class TrackingGraph extends SimpleGraph
 		return newQueue;
 	}
 
+	/**
+	 * The method registers a new receiver for change notifications.
+	 *
+	 * @param receiver
+	 *            - the receiver to notify.
+	 */
 	public void registerChangeNotificationReceiver(ChangeNotificationReceiver receiver)
 	{
 		if(notificationReceivers == null)
@@ -393,8 +412,8 @@ public class TrackingGraph extends SimpleGraph
 	/**
 	 * Takes one transaction from the graph's transaction queue and applies it to the current state of the graph.
 	 * <p>
-	 * FIXME: if there are no elements in the queue, the sequence is not incremented. should check for dsynchronization;
-	 * is it possible?
+	 * FIXME: if there are no elements in the queue, the sequence is not incremented. should check for
+	 * desynchronization; is it possible?
 	 *
 	 * @return the new current sequence number.
 	 *

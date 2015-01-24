@@ -1,6 +1,7 @@
 package net.xqhs.graphs.context;
 
 import java.util.AbstractMap;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -28,7 +29,7 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 		 * in milliseconds.
 		 */
 		Offset	initialValidity	= null;
-		
+
 		public ContextEdge(Node fromNode, Node toNode, String edgeLabel, Offset edgeValidity)
 		{
 			super(fromNode, toNode, edgeLabel);
@@ -37,17 +38,27 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 			initialValidity = edgeValidity;
 		}
 	}
-	
-	TimeKeeper									theTime	= null;
-	PriorityQueue<Entry<Instant, ContextEdge>>	validityQueue;
-	
+
+	TimeKeeper									theTime			= null;
+	PriorityQueue<Entry<Instant, ContextEdge>>	validityQueue	= new PriorityQueue<Entry<Instant, ContextEdge>>(1,
+																		new Comparator<Entry<Instant, ContextEdge>>() {
+																			@Override
+																			public int compare(
+																					Entry<Instant, ContextEdge> o1,
+																					Entry<Instant, ContextEdge> o2)
+																			{
+																				return (int) Math.signum(o1.getKey().time
+																						- o2.getKey().time);
+																			}
+																		});
+
 	protected ContextGraph setTimeKeeper(TimeKeeper time)
 	{
 		theTime = time;
 		theTime.registerTickReceiver(this, null);
 		return this;
 	}
-	
+
 	@Override
 	protected ContextGraph performOperation(GraphComponent component, Operation operation, boolean externalCall)
 	{
@@ -71,7 +82,7 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 		super.performOperation(component, operation, externalCall);
 		return this;
 	}
-	
+
 	/**
 	 * Overrides {@link TrackingGraph#add(GraphComponent)} to not allow nodes with the same label (as per the theory of
 	 * context graphs) or generic nodes (having a label beginning with {@link NodeP#NODEP_LABEL}.
@@ -86,19 +97,18 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 		// TODO this is not efficient -- a index of labels should be used
 		if((component instanceof Node) && !getNodesNamed(((Node) component).getLabel()).isEmpty())
 			throw new IllegalArgumentException("Multiple nodes with the same name are not allowed");
-		
+
 		super.add(component);
 		return this;
 	}
-	
+
 	@Override
 	public void tick(TimeKeeper ticker, Instant now)
 	{
 		Set<Edge> removals = new HashSet<Edge>();
-		while(validityQueue.peek().getKey().before(now))
-		{
-			removals.add(validityQueue.poll().getValue());
-		}
+		if(!validityQueue.isEmpty())
+			while(validityQueue.peek().getKey().before(now))
+				removals.add(validityQueue.poll().getValue());
 		removeAll(removals);
 	}
 }
