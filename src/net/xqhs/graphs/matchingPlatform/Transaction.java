@@ -32,16 +32,16 @@ public class Transaction implements Map<GraphComponent, Operation>
 		 * Addition of a {@link GraphComponent} to the graph.
 		 */
 		ADD,
-		
+
 		/**
 		 * Removal of a {@link GraphComponent} from the graph.
 		 */
 		REMOVE,
-		
+
 		// TODO
 		// CHANGE,
 	}
-
+	
 	/**
 	 * <code>true</code> if and inly if it is single-operation (is not true for empty transactions).
 	 */
@@ -62,7 +62,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 	 * For multi-operation transactions, the map of operations.
 	 */
 	Map<GraphComponent, Operation>	multipleOperations			= null;
-	
+
 	/**
 	 * Creates a single-operation transaction.
 	 *
@@ -78,14 +78,14 @@ public class Transaction implements Map<GraphComponent, Operation>
 		singleOperationComponent = component;
 		singleOperationOperation = operation;
 	}
-	
+
 	/**
 	 * Creates an empty transaction.
 	 */
 	public Transaction()
 	{
 	}
-	
+
 	/**
 	 * For single-operation transactions only, retrieves the component contained in the operation.
 	 *
@@ -97,10 +97,10 @@ public class Transaction implements Map<GraphComponent, Operation>
 	public GraphComponent getComponent()
 	{
 		if(!singleOperation)
-			throw new UnsupportedOperationException("Transaction contains multiple operations");
+			throw new UnsupportedOperationException("Transaction contains multiple or no operations");
 		return singleOperationComponent;
 	}
-	
+
 	/**
 	 * For single-operation transactions only, retrieves the operation to perform.
 	 *
@@ -112,10 +112,10 @@ public class Transaction implements Map<GraphComponent, Operation>
 	public Operation getOperation()
 	{
 		if(!singleOperation)
-			throw new UnsupportedOperationException("Transaction contains multiple operations");
+			throw new UnsupportedOperationException("Transaction contains multiple or no operations");
 		return singleOperationOperation;
 	}
-	
+
 	/**
 	 * @return <code>true</code> if the transaction contains exactly one operation.
 	 */
@@ -123,7 +123,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 	{
 		return singleOperation;
 	}
-	
+
 	/**
 	 * Compacts a multi-operation transaction in case it is in fact empty or single-operation.
 	 */
@@ -143,7 +143,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 			multipleOperations = null;
 		}
 	}
-	
+
 	/**
 	 * Converts an empty or single-operation transaction into a multi-operation transaction.
 	 */
@@ -159,7 +159,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 		singleOperationComponent = null;
 		singleOperationOperation = null;
 	}
-	
+
 	/**
 	 * Adds a new operation to the transaction.
 	 * <p>
@@ -189,7 +189,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 		}
 		return multipleOperations.put(component, operation);
 	}
-	
+
 	/**
 	 * The method is identical to {@link #put(GraphComponent, Operation)}, with the exception that it returns the
 	 * instance itself.
@@ -205,7 +205,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 		put(component, operation);
 		return this;
 	}
-	
+
 	@Override
 	public void putAll(Map<? extends GraphComponent, ? extends Operation> operations)
 	{
@@ -213,7 +213,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 		multipleOperations.putAll(operations);
 		compact();
 	}
-	
+
 	@Override
 	public Operation get(Object component)
 	{
@@ -227,7 +227,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 		}
 		return multipleOperations.get(component);
 	}
-	
+
 	@Override
 	public boolean containsKey(Object key)
 	{
@@ -235,7 +235,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 			return false;
 		return singleOperation ? (singleOperationComponent == key) : multipleOperations.containsKey(key);
 	}
-	
+
 	/**
 	 * The method is unsupported.
 	 */
@@ -244,7 +244,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 	{
 		throw new UnsupportedOperationException("Operation is unsupported");
 	}
-	
+
 	/**
 	 * The method is unsupported.
 	 */
@@ -253,7 +253,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 	{
 		throw new UnsupportedOperationException("Operation is unsupported");
 	}
-	
+
 	/**
 	 * Resets the transaction to an empty transaction.
 	 */
@@ -267,19 +267,19 @@ public class Transaction implements Map<GraphComponent, Operation>
 		multipleOperations.clear();
 		multipleOperations = null;
 	}
-	
+
 	@Override
 	public boolean isEmpty()
 	{
 		return empty;
 	}
-	
+
 	@Override
 	public int size()
 	{
 		return empty ? 0 : (singleOperation ? 1 : multipleOperations.size());
 	}
-	
+
 	/**
 	 * Unsupported operation for empty or single-operation transactions.
 	 */
@@ -290,7 +290,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 			throw new UnsupportedOperationException("Cannot iterate over empty or single-operation transactions.");
 		return multipleOperations.entrySet();
 	}
-	
+
 	/**
 	 * Unsupported operation for empty or single-operation transactions.
 	 */
@@ -301,7 +301,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 			throw new UnsupportedOperationException("Cannot iterate over empty or single-operation transactions.");
 		return multipleOperations.keySet();
 	}
-	
+
 	@Override
 	public Operation remove(Object component)
 	{
@@ -324,7 +324,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 		compact();
 		return ret;
 	}
-	
+
 	@Override
 	public String toString()
 	{
@@ -334,7 +334,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 			return singleOperationComponent + ": " + singleOperationOperation.toString();
 		return multipleOperations.toString();
 	}
-	
+
 	/**
 	 * Retrieves the operations in this transaction as a (copy) {@link Map} of {@link GraphComponent} &rarr;
 	 * {@link Operation}.

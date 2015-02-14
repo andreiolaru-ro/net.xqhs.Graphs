@@ -25,7 +25,7 @@ import net.xqhs.graphs.util.Debug.D_G;
  * affected matches should be removed or created.
  * <p>
  * The pattern is not allowed to change.
- * 
+ *
  * @author Andrei Olaru
  */
 public class GraphMatcherPersistent extends GraphMatcherQuick
@@ -34,7 +34,7 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 	 * THe set of all matches, sorted by k (lowest k first).
 	 */
 	protected SortedSet<Match>		sortedMatches;
-	
+
 	/**
 	 * An index containing the matches that contain each graph edge. The index contains only the edges that are
 	 * contained in any matches.
@@ -45,11 +45,11 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 	 * contained in any matches.
 	 */
 	protected Map<Edge, Set<Match>>	ePMatchIndex	= null;
-	
+
 	/**
 	 * Creates a new matcher for the specified graph and pattern. Any further changes to the graph will be signaled by
 	 * calling {@link #addMatches(Edge)} and {@link #removeMatches(Edge)}.
-	 * 
+	 *
 	 * @param graph
 	 *            - the graph.
 	 * @param pattern
@@ -59,7 +59,7 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 	{
 		super(graph, pattern);
 	}
-	
+
 	@Override
 	public GraphMatcherPersistent initializeMatching()
 	{
@@ -69,7 +69,7 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		super.initializeMatching();
 		return this;
 	}
-	
+
 	@Override
 	public GraphMatcherPersistent clearData()
 	{
@@ -79,10 +79,10 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		ePMatchIndex.clear();
 		return this;
 	}
-	
+
 	/**
 	 * Completes the matching process, growing all matches to their maximum coverage.
-	 * 
+	 *
 	 * @return the instance itself.
 	 */
 	public GraphMatcherPersistent completeMatches()
@@ -91,7 +91,7 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		getAllMatches(0);
 		return this;
 	}
-	
+
 	/**
 	 * The method should be called for each new edge added to the graph. It is assumed that the graph contains the new
 	 * edge when the method is called.
@@ -99,7 +99,7 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 	 * The method creates the initial matches containing the new edge, adds their merge candidates, but does not grow
 	 * any matches. This can be requested through any of the match retrieval methods or by calling
 	 * {@link #completeMatches()}.
-	 * 
+	 *
 	 * @param e
 	 *            - the new edge added to the graph.
 	 * @return the instance itself.
@@ -113,7 +113,7 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		 */
 		SortedSet<Edge> sortedEdges = new TreeSet<Edge>(new EdgeComparator(monitor));
 		sortedEdges.addAll(pattern.getEdges());
-		
+
 		int edgeId = 0; // TODO
 		int matchId = 0; // TODO
 		for(Edge eP : sortedEdges)
@@ -134,7 +134,7 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		}
 		return this;
 	}
-	
+
 	/**
 	 * The method should be called for each edge removed from the graph. It is assumed that the graph doesn't contain
 	 * the edge anymore at the time the method is called.
@@ -143,7 +143,7 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 	 * invalid. Whenever an iteration finds the invalidated match, it will be removed from the containing collection.
 	 * This saves a large number of operations that would have been required by looping through the various lists and
 	 * indexes.
-	 * 
+	 *
 	 * @param edge
 	 *            - the edge removed from the graph.
 	 * @return the instance itself.
@@ -163,12 +163,12 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		toRemove.clear();
 		return this;
 	}
-	
+
 	@Override
 	protected Match addInitialMatch(Edge e, Edge eP, String matchID)
 	{
 		Match m = new Match(graph, pattern, e, eP, matchID);
-		
+
 		// get neighbor edges in pattern and all matches containing these neighbor edges
 		Set<Edge> neighborEdgePs = new HashSet<Edge>();
 		neighborEdgePs.addAll(pattern.getInEdges(eP.getFrom()));
@@ -201,24 +201,24 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		allMatches.add(m);
 		return m;
 	}
-	
+
 	@Override
 	protected Match addMergeMatch(Match m1, Match m2)
 	{
 		// create
 		// add to indexes
 		Match newM = m1.merge(m2, eMatchIndex, ePMatchIndex, monitor);
-		
+
 		// add to global lists
 		matchQueue.add(newM);
 		allMatches.add(newM);
-		
+
 		return newM;
 	}
-	
+
 	/**
 	 * Returns a newly created {@link GraphMatcherQuick} instance for the specified graph and pattern.
-	 * 
+	 *
 	 * @param graph
 	 *            - the graph.
 	 * @param pattern
@@ -227,7 +227,7 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 	 *            - the monitoring instance. It must not be <code>null</code> but it can be a newly created instance
 	 *            with no configuration.
 	 * @return the {@link GraphMatcherQuick} instance.
-	 * 
+	 *
 	 * @throws IllegalArgumentException
 	 *             if the <code>monitoring</code> argument is <code>null</code>.
 	 */
@@ -242,13 +242,17 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		}
 		return (GraphMatcherPersistent) new GraphMatcherPersistent(graph, pattern).setMonitor(monitoring);
 	}
-	
+
 	/**
-	 * @return an indication of the used memory (sizes of indexes).
+	 * @return an indication of the used memory (currently, summed up sizes of matches).
 	 */
 	protected int getMemory()
 	{
-		int ret = (allMatches != null ? allMatches.size() : 0);
+		int ret = 0;
+		if(allMatches != null)
+			for(Match m : allMatches)
+				ret += m.getSize();
+
 		// ret += (matchQueue != null ? matchQueue.size() : 0);
 		// if(eMatchIndex != null)
 		// for(Set<Match> item : eMatchIndex.values())
@@ -257,5 +261,13 @@ public class GraphMatcherPersistent extends GraphMatcherQuick
 		// for(Set<Match> item : ePMatchIndex.values())
 		// ret += item.size();
 		return ret;
+	}
+
+	/**
+	 * @return the number of stored matches.
+	 */
+	protected int getStoredMatches()
+	{
+		return (allMatches != null ? allMatches.size() : 0);
 	}
 }

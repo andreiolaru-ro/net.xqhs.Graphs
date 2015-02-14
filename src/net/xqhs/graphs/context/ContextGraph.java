@@ -1,6 +1,7 @@
 package net.xqhs.graphs.context;
 
 import java.util.AbstractMap;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -20,9 +21,26 @@ import net.xqhs.graphs.matchingPlatform.TrackingGraph;
 import net.xqhs.graphs.matchingPlatform.Transaction.Operation;
 import net.xqhs.graphs.pattern.NodeP;
 
+/**
+ * When {@link ContextEdge} instances are added to a the graph, the behavior is different from when using underlying
+ * classes. That is, the edge is attached to the graph correctly even if the nodes adjacent to it are new instances (are
+ * not the ones from the graph). Moreover, if any nodes adjacent to it are not already in the graph (as found by label
+ * comparison), they will be added to the graph automatically.
+ * <p>
+ * When a {@link ContextEdge} instance is added to, or removed from the graph, it will also be added to / removed from
+ * the validity queue. WHen the validity of an edge expires, it is removed.
+ *
+ * @author Andrei Olaru
+ */
 // TODO: add canPerformOperation throughout the various Graph classes to be sure that the operation will be performed.
 public class ContextGraph extends PrincipalGraph implements TickReceiver
 {
+	/**
+	 * A context edge features, beside what is offered by {@link SimpleEdge}, a validity setting, so that it is able to
+	 * expire at a given time after being added to a {@link ContextGraph}.
+	 *
+	 * @author Andrei Olaru
+	 */
 	public static class ContextEdge extends SimpleEdge
 	{
 		/*
@@ -33,9 +51,35 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 		public ContextEdge(Node fromNode, Node toNode, String edgeLabel, Offset edgeValidity)
 		{
 			super(fromNode, toNode, edgeLabel);
-			if(edgeValidity != null)
+			if(edgeValidity == null)
 				throw new IllegalArgumentException("Edge validity must be an instantiated object.");
 			initialValidity = edgeValidity;
+		}
+
+		/**
+		 * This method is available internally for use by {@link ContextGraph}.
+		 *
+		 * @param sourceNode
+		 *            : the source node.
+		 * @return the instance itself.
+		 */
+		ContextEdge setFrom(Node sourceNode)
+		{
+			from = sourceNode;
+			return this;
+		}
+		
+		/**
+		 * This method is available internally for use by {@link ContextGraph}.
+		 *
+		 * @param destinationNode
+		 *            : the destination node.
+		 * @return the instance itself.
+		 */
+		ContextEdge setTo(Node destinationNode)
+		{
+			to = destinationNode;
+			return this;
 		}
 	}
 
@@ -70,8 +114,31 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 			switch(operation)
 			{
 			case ADD:
-				validityQueue.add(new AbstractMap.SimpleEntry<Instant, ContextEdge>(theTime.now().offset(
-						((ContextEdge) component).initialValidity), (ContextEdge) component));
+				// check nodes and edge (see class documentation)
+				ContextEdge e = (ContextEdge) component;
+				Node from = e.getFrom();
+				Node to = e.getTo();
+				Collection<Node> fromExisting = getNodesNamed(from.getLabel());
+				Collection<Node> toExisting = getNodesNamed(to.getLabel());
+
+				if(!fromExisting.isEmpty())
+					e.setFrom(fromExisting.iterator().next());
+				else
+					super.performOperation(e.getFrom(), Operation.ADD, externalCall);
+
+				if(!toExisting.isEmpty())
+					e.setTo(toExisting.iterator().next());
+				else
+					super.performOperation(e.getTo(), Operation.ADD, externalCall);
+
+				if(!fromExisting.isEmpty() && !toExisting.isEmpty())
+					for(Edge existing : nodes.get(e.getFrom()).getOutEdges())
+						if((existing.getTo() == e.getTo()) && (existing.getLabel().equals(e.getLabel())))
+							// edge is existing
+							return this;
+				
+				validityQueue.add(new AbstractMap.SimpleEntry<Instant, ContextEdge>(theTime.now().offsetInstant(
+						e.initialValidity), e));
 				break;
 			case REMOVE:
 				for(Iterator<Entry<Instant, ContextEdge>> it = validityQueue.iterator(); it.hasNext();)
@@ -106,9 +173,8 @@ public class ContextGraph extends PrincipalGraph implements TickReceiver
 	public void tick(TimeKeeper ticker, Instant now)
 	{
 		Set<Edge> removals = new HashSet<Edge>();
-		if(!validityQueue.isEmpty())
-			while(validityQueue.peek().getKey().before(now))
-				removals.add(validityQueue.poll().getValue());
+		while(!validityQueue.isEmpty() && validityQueue.peek().getKey().before(now))
+			removals.add(validityQueue.poll().getValue());
 		removeAll(removals);
 	}
 }

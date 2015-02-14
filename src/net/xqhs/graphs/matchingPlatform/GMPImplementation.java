@@ -20,6 +20,7 @@ import net.xqhs.graphs.matcher.Match;
 import net.xqhs.graphs.matcher.MonitorPack;
 import net.xqhs.graphs.matchingPlatform.Transaction.Operation;
 import net.xqhs.graphs.pattern.GraphPattern;
+import net.xqhs.graphs.util.Debug.D_G;
 import net.xqhs.util.logging.Unit;
 
 /**
@@ -33,7 +34,7 @@ import net.xqhs.util.logging.Unit;
  */
 public class GMPImplementation extends Unit implements GraphMatchingPlatform
 {
-
+	
 	/**
 	 * An implementation of {@link GraphMatchingPlatform.PlatformPrincipalGraph} and
 	 * {@link GraphMatchingPlatform.PlatformShadowGraph} that extends {@link TrackingGraph}.
@@ -49,7 +50,7 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 		{
 			super();
 		}
-
+		
 		/**
 		 * Protected constructor for constructing shadows of the principal graph.
 		 *
@@ -64,19 +65,19 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 		{
 			super(transactionsLink, initialSequence, initialGraph);
 		}
-
+		
 		@Override
 		public PlatformShadowGraph createShadowGraph()
 		{
 			return new PrincipalGraph(createShadowQueue(), getSequence(), this);
 		}
 	}
-
+	
 	/**
 	 * The {@link MonitorPack} instance to use for performance measuring.
 	 */
 	MonitorPack									monitor			= new MonitorPack();
-
+	
 	/**
 	 * The principal graph of the platform.
 	 */
@@ -90,7 +91,7 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 	 * graph with every sequence increment.
 	 */
 	PlatformShadowGraph							matchingGraph	= null;
-
+	
 	/**
 	 * Sets the {@link MonitorPack} instance to use for monitoring.
 	 *
@@ -106,7 +107,7 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 			monitor = monitorLink;
 		return this;
 	}
-
+	
 	@Override
 	public GMPImplementation setPrincipalGraph(PlatformPrincipalGraph graph)
 	{
@@ -124,13 +125,13 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 		}
 		return this;
 	}
-
+	
 	@Override
 	public PlatformPrincipalGraph getPrincipalGraph()
 	{
 		return principalGraph;
 	}
-
+	
 	@Override
 	public GMPImplementation addPattern(GraphPattern pattern)
 	{
@@ -148,7 +149,7 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 		}
 		return this;
 	}
-
+	
 	@Override
 	public GMPImplementation removePattern(GraphPattern pattern)
 	{
@@ -163,22 +164,27 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 		}
 		return this;
 	}
-
+	
 	@Override
 	public Collection<GraphPattern> getPatterns()
 	{
 		return Collections.unmodifiableCollection(patterns.keySet());
 	}
-
+	
 	@Override
 	public Set<Match> incrementSequence()
 	{
 		// FIXME take this out of here
 		int mem = 0;
+		int stored = 0;
 		for(GraphMatcherPersistent gm : patterns.values())
+		{
 			mem += gm.getMemory();
+			stored += gm.getStoredMatches();
+		}
 		monitor.setMemoryIndication(mem);
-
+		monitor.setStoredMatches(stored);
+		
 		if(!matchingGraph.canIncrement())
 			return null;
 		Map<GraphComponent, Operation> operations = matchingGraph.getNextSequenceOperations();
@@ -196,13 +202,17 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 			if((op.getValue() == Operation.ADD) && (op.getKey() instanceof Edge))
 				for(GraphMatcherPersistent gm : patterns.values())
 					gm.addMatches((Edge) op.getKey());
-
+		
 		Set<Match> ret = new HashSet<Match>();
 		for(GraphMatcherPersistent gm : patterns.values())
+		{
+			if(D_G.D_NO_SAVED_DATA.toBool())
+				gm.clearData();
 			ret.addAll(gm.getAllCompleteMatches());
+		}
 		return ret;
 	}
-
+	
 	// FIXME: if there are no elements in the queue, the sequence is not incremented. should check for
 	// desynchronization; is it possible?
 	@Override
@@ -218,13 +228,13 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 		}
 		return ret;
 	}
-
+	
 	@Override
 	public List<Entry<Integer, Set<Match>>> incrementSequenceFastForward()
 	{
 		return incrementSequence(-1);
 	}
-
+	
 	@Override
 	public Set<Match> getMatches(GraphPattern pattern, int maxK)
 	{
@@ -233,7 +243,7 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 		GraphMatchingProcess GM = patterns.get(pattern);
 		return new HashSet<Match>(GM.getAllMatches(maxK));
 	}
-
+	
 	@Override
 	public int getMathingSequence()
 	{
@@ -246,7 +256,7 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 		}
 		return matchingGraph.getSequence();
 	}
-
+	
 	@Override
 	public int getGraphSequence()
 	{
@@ -254,13 +264,13 @@ public class GMPImplementation extends Unit implements GraphMatchingPlatform
 			return -1;
 		return principalGraph.getSequence();
 	}
-
+	
 	@Override
 	public GraphMatchingProcess getMatcherAgainstGraph(GraphPattern pattern)
 	{
 		return GraphMatcherPersistent.getMatcher(principalGraph.createShadowGraph(), pattern, monitor);
 	}
-
+	
 	// @Override
 	// public void printindexes()
 	// {

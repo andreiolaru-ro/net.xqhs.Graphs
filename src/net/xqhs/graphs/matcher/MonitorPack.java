@@ -14,7 +14,7 @@ import net.xqhs.util.logging.LoggerSimple;
  * It offers the logging methods specified by {@link LoggerSimple}.
  * <p>
  * It maintains a link with an instance of {@link MatchingVisualizer}.
- * 
+ *
  * @author Andrei Olaru
  */
 public class MonitorPack implements LoggerSimple
@@ -59,11 +59,15 @@ public class MonitorPack implements LoggerSimple
 	 * Measures the amount of memory, as declared by the caller.
 	 */
 	AtomicInteger		memory					= new AtomicInteger();
+	/**
+	 * Measures the number of matches currently stored.
+	 */
+	AtomicInteger		storedMatches			= new AtomicInteger();
 	
 	/**
 	 * Sets the log to use by this instance. All logging messages posted to this instance will be posted to the log
 	 * specified in the argument.
-	 * 
+	 *
 	 * @param logger
 	 *            - an instance implementing {@link LoggerSimple}.
 	 * @return the instance itself.
@@ -76,7 +80,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Sets the {@link MatchingVisualizer} instance to use to visualize the matching process.
-	 * 
+	 *
 	 * @param visualizer
 	 *            - the {@link MatchingVisualizer} object to use.
 	 * @return the instance itself.
@@ -153,7 +157,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Increments the performance indicator.
-	 * 
+	 *
 	 * @return the current (updated) value.
 	 */
 	public int incrementEdgeLabelComparison()
@@ -163,7 +167,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Increments the performance indicator with the specified value.
-	 * 
+	 *
 	 * @param increment
 	 *            the increment.
 	 * @return the current (updated) value.
@@ -175,7 +179,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Increments the performance indicator.
-	 * 
+	 *
 	 * @return the current (updated) value.
 	 */
 	public int incrementEdgeReferenceOperation()
@@ -185,7 +189,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Increments the performance indicator with the specified value.
-	 * 
+	 *
 	 * @param increment
 	 *            the increment.
 	 * @return the current (updated) value.
@@ -197,7 +201,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Increments the performance indicator.
-	 * 
+	 *
 	 * @return the current (updated) value.
 	 */
 	public int incrementNodeLabelComparison()
@@ -207,7 +211,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Increments the performance indicator with the specified value.
-	 * 
+	 *
 	 * @param increment
 	 *            the increment.
 	 * @return the current (updated) value.
@@ -219,7 +223,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Increments the performance indicator.
-	 * 
+	 *
 	 * @return the current (updated) value.
 	 */
 	public int incrementNodeReferenceOperation()
@@ -229,7 +233,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Increments the performance indicator with the specified value.
-	 * 
+	 *
 	 * @param increment
 	 *            the increment.
 	 * @return the current (updated) value.
@@ -241,7 +245,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Increments the performance indicator.
-	 * 
+	 *
 	 * @return the current (updated) value.
 	 */
 	public int incrementMatchCount()
@@ -251,7 +255,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Increments the performance indicator.
-	 * 
+	 *
 	 * @return the current (updated) value.
 	 */
 	public int incrementMergeCount()
@@ -261,7 +265,7 @@ public class MonitorPack implements LoggerSimple
 	
 	/**
 	 * Sets the current memory consumption.
-	 * 
+	 *
 	 * @param indication
 	 *            - the indication on the memory consumption.
 	 * @return the previously stored indication.
@@ -274,8 +278,22 @@ public class MonitorPack implements LoggerSimple
 	}
 	
 	/**
+	 * Sets the current number of stored matches.
+	 *
+	 * @param matches
+	 *            - the number of stored matches.
+	 * @return the previously stored number.
+	 */
+	public int setStoredMatches(int matches)
+	{
+		int ret = storedMatches.get();
+		storedMatches.set(matches);
+		return ret;
+	}
+	
+	/**
 	 * Prints a one-line view of the performance indicators, as a log line (if any log exists).
-	 * 
+	 *
 	 * @return the same string that was printed.
 	 */
 	public String printStats()
@@ -283,9 +301,10 @@ public class MonitorPack implements LoggerSimple
 		String stats = "";
 		stats += "nodes Ops|Labels: " + performanceNodes + "|" + performanceNodesLabels + "; edges Ops|Labels: "
 				+ performanceEdges + "|" + performanceEdgesLabels + "; matches: " + matchCount + "; merges: "
-				+ mergeCount + "; memory: " + memory;
+				+ mergeCount + "; stored/memory: " + storedMatches + "/" + memory;
 		stats += " $$> " + performanceNodes + ", " + performanceNodesLabels + ", " + performanceEdges + ", "
-				+ performanceEdgesLabels + ", " + matchCount + ", " + mergeCount + "," + memory + "<$$";
+				+ performanceEdgesLabels + ", " + matchCount + ", " + mergeCount + ", " + storedMatches + ", " + memory
+				+ "<$$";
 		li(stats);
 		return stats;
 	}

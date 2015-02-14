@@ -1,5 +1,6 @@
 package net.xqhs.graphs.context;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -12,6 +13,7 @@ import net.xqhs.graphs.matcher.Match;
 import net.xqhs.graphs.matcher.MonitorPack;
 import net.xqhs.graphs.matchingPlatform.GMPImplementation;
 import net.xqhs.graphs.matchingPlatform.GraphMatchingPlatform;
+import net.xqhs.graphs.matchingPlatform.TrackingGraph;
 import net.xqhs.graphs.matchingPlatform.TrackingGraph.ChangeNotificationReceiver;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.util.logging.Unit;
@@ -154,6 +156,27 @@ public class CCMImplementation extends Unit implements ContinuousContextMatching
 		{
 			getMatching();
 		}
+	}
+
+	@Override
+	public TrackingGraph getContextGraphShadow()
+	{
+		return ((TrackingGraph) matchingPlatform.getPrincipalGraph()).createShadow();
+	}
+
+	@Override
+	public Collection<ContextPattern> getContextPatterns()
+	{
+		Collection<ContextPattern> ret = new HashSet<ContextPattern>();
+		for(GraphPattern p : matchingPlatform.getPatterns())
+			ret.add((ContextPattern) p);
+		return ret;
+	}
+
+	@Override
+	public TimeKeeper getTimeKeeper()
+	{
+		return theTime;
 	}
 
 	// @Override

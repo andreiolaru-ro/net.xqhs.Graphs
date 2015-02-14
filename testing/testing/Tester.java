@@ -6,9 +6,13 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import net.xqhs.graphs.context.ContextGraph;
+import net.xqhs.graphs.context.ContextPattern;
 import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.SimpleEdge;
 import net.xqhs.graphs.graph.SimpleGraph;
@@ -41,7 +45,12 @@ public class Tester
 	 * {@link Graph} instance.
 	 */
 	protected static final String	NAME_GENERAL_GRAPH	= "graph";
-	
+	/**
+	 * In a test pack returned by {@link #loadGraphsAndPatterns(String, String, Level)}, the name of the graph (first in
+	 * the file).
+	 */
+	protected static String			testGraphName		= null;
+
 	/**
 	 * Directory with test files.
 	 */
@@ -54,7 +63,7 @@ public class Tester
 	 * Whatever is added after the file name to form the filename for the pattern.
 	 */
 	static String					patternpart			= "P";
-	
+
 	/**
 	 * Log/unit name
 	 */
@@ -63,19 +72,19 @@ public class Tester
 	 * Log
 	 */
 	protected UnitComponent			log;
-	
+
 	/**
 	 * Creates a tester and runs it. It calls <code>doTesting()</code>. At the end the log is closed.
 	 */
 	public Tester()
 	{
 		log = (UnitComponent) new UnitComponent().setUnitName(unitName).setLogLevel(Level.ALL);
-		
+
 		doTesting();
-		
+
 		log.doExit();
 	}
-	
+
 	/**
 	 * Method to overload, which must contain the testing code. Call super to perform tests required by the super class.
 	 */
@@ -83,7 +92,7 @@ public class Tester
 	{
 		log.lf("Hello World");
 	}
-	
+
 	/**
 	 * Loads a testPack formed of a graph and a pattern. It uses the specified filename for the graph and the filename
 	 * with {@value #patternpart} added for the pattern.
@@ -101,7 +110,7 @@ public class Tester
 	protected Map<String, Graph> loadTestGraphPattern(String filename, String fileDir, Level readLevel)
 	{
 		Map<String, Graph> testPack = new HashMap<String, Graph>();
-		
+
 		SimpleGraph G;
 		try
 		{
@@ -112,7 +121,7 @@ public class Tester
 			e.printStackTrace();
 			return null;
 		}
-		
+
 		GraphPattern GP;
 		try
 		{
@@ -128,7 +137,7 @@ public class Tester
 		testPack.put(NAME_PATTERN, GP);
 		return testPack;
 	}
-	
+
 	/**
 	 * Loads a group of graphs and/or patterns from a file. Graphs are returned as {@link Graph} implementations, so
 	 * they can be graphs, patterns, etc. In practice, {@link TextGraphRepresentation} is used. All returns will be
@@ -166,7 +175,7 @@ public class Tester
 		}
 		ContentHolder<String> input = new ContentHolder<String>(builder.toString());
 		reader.close();
-		
+
 		Map<String, Graph> graphs = new HashMap<String, Graph>();
 		int i = 0;
 		while(input.get().length() > 0)
@@ -192,7 +201,76 @@ public class Tester
 		}
 		return graphs;
 	}
-	
+
+	/**
+	 * Extracts the graph from the test pack. It is identified by the key {@link #testGraphName}.
+	 * <p>
+	 * It does not return a {@link ContextGraph} because it is expected that the context graph will add the components
+	 * in the returned graph in some test-specific order.
+	 *
+	 * @param testPack
+	 *            - the test pack, presumably created by
+	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
+	 * @return the graph.
+	 */
+	protected static Graph getTestGraph(Map<String, Graph> testPack)
+	{
+		return testPack.get(testGraphName);
+	}
+
+	/**
+	 * Loads the list of graphs to serve as patterns, from a test pack. All graphs are considered, except for the one
+	 * named {@link #testGraphName}.
+	 *
+	 * @param testPack
+	 *            - the test pack, presumably created by
+	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
+	 * @return a {@link List} of {@link Graph} instances.
+	 */
+	protected static List<Graph> getTestGraphs(Map<String, Graph> testPack)
+	{
+		List<Graph> ret = new ArrayList<Graph>();
+		for(String name : testPack.keySet())
+			if(!name.equals(testGraphName))
+				ret.add(testPack.get(name));
+		return ret;
+	}
+
+	/**
+	 * Loads the list of patterns from a test pack. All graphs are considered, except for the one named
+	 * {@link #testGraphName}.
+	 *
+	 * @param testPack
+	 *            - the test pack, presumably created by
+	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
+	 * @return a {@link List} of {@link GraphPattern} instances.
+	 */
+	protected static List<GraphPattern> getGraphPatterns(Map<String, Graph> testPack)
+	{
+		List<GraphPattern> ret = new ArrayList<GraphPattern>();
+		for(Graph gp : getTestGraphs(testPack))
+			ret.add((GraphPattern) new GraphPattern().addAll(gp.getComponents()).setDescription(gp.getDescription()));
+		return ret;
+	}
+
+	/**
+	 * Gets a list of {@link ContextPattern} instances based on the patterns in a test pack. All patterns are
+	 * considered, except for the one named {@link #testGraphName}.
+	 *
+	 * @param testPack
+	 *            - the test pack, presumably created by
+	 *            {@link #loadGraphsAndPatterns(String, String, net.xqhs.util.logging.LoggerSimple.Level)}.
+	 * @return a {@link List} of context patterns, in the order in which they were defined in the file.
+	 */
+	protected static List<ContextPattern> getContextPatterns(Map<String, Graph> testPack)
+	{
+		List<ContextPattern> ret = new ArrayList<ContextPattern>();
+		for(Graph gp : getTestGraphs(testPack))
+			ret.add((ContextPattern) new ContextPattern().addAll(gp.getComponents())
+					.setDescription(gp.getDescription()));
+		return ret;
+	}
+
 	/**
 	 * Prints all the graphs in a testPack.
 	 *
@@ -222,7 +300,7 @@ public class Tester
 			log.li(GR.displayRepresentation());
 		}
 	}
-	
+
 	/**
 	 * Prints a separator.
 	 *
@@ -243,5 +321,13 @@ public class Tester
 				arrows += arrow;
 		}
 		log.li("================================= " + arrows + " [] =================", section);
+	}
+
+	/**
+	 * @return the log.
+	 */
+	protected LoggerSimple getLog()
+	{
+		return log;
 	}
 }
