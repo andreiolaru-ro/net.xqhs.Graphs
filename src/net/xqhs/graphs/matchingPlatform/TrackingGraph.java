@@ -55,43 +55,43 @@ public class TrackingGraph extends SimpleGraph
 		 */
 		public void notifyChange();
 	}
-
+	
 	/**
 	 * The current sequence of the graph. The sequence is incremented after each transaction. For shadow graphs, it
 	 * should mirror the master's sequence, but it is not the same instance.
 	 */
 	protected AtomicInteger						sequence				= new AtomicInteger(0);
-
+																		
 	/**
 	 * <code>true</code> if the graph is a shadow graph, <code>false</code> if it is not the shadow of any other graph.
 	 */
 	protected boolean							isShadow;
-
+												
 	/**
 	 * Only for shadow graphs, the {@link Queue} of transactions to perform. The queue is created by the master graph.
 	 */
 	protected Queue<Transaction>				transactionQueue;
-
+												
 	/**
 	 * The set of transaction queues for the shadow graphs of this graph. There is one for each shadow graph.
 	 */
 	protected List<Queue<Transaction>>			shadowQueues			= null;
-
+																		
 	/**
 	 * The set of entities that must receive notifications when transactions are applied to the graph.
 	 */
 	protected Set<ChangeNotificationReceiver>	notificationReceivers	= null;
-
+																		
 	/**
 	 * <code>true</code> if a history should be kept of all performed transactions.
 	 */
 	protected boolean							keepHistory				= false;
-
+																		
 	/**
 	 * If required by {@link #keepHistory}, the history of all transactions.
 	 */
 	protected List<Transaction>					history					= null;
-
+																		
 	/**
 	 * Creates a new graph that is not the shadow of any other graph.
 	 */
@@ -100,7 +100,7 @@ public class TrackingGraph extends SimpleGraph
 		super();
 		isShadow = false;
 	}
-
+	
 	/**
 	 * Creates a shadow graph, based on a transactions queue and, optionally, an initial sequence and an initial graph.
 	 *
@@ -122,7 +122,7 @@ public class TrackingGraph extends SimpleGraph
 		transactionQueue = transactionsLink;
 		isShadow = true;
 	}
-
+	
 	/**
 	 * @return <code>true</code> if the graph is the shadow of another graph.
 	 */
@@ -130,7 +130,7 @@ public class TrackingGraph extends SimpleGraph
 	{
 		return isShadow;
 	}
-
+	
 	/**
 	 * Creates a new shadow graph of this graph, based on the current state of the graph.
 	 * <p>
@@ -143,7 +143,7 @@ public class TrackingGraph extends SimpleGraph
 	{
 		return new TrackingGraph(createShadowQueue(), sequence.get(), this);
 	}
-
+	
 	/**
 	 * Creates a new shadow queue to be used by a shadow graph. The queue is also added to the list of shadow queues.
 	 *
@@ -159,6 +159,20 @@ public class TrackingGraph extends SimpleGraph
 	}
 
 	/**
+	 * Enables an outside entity to both access a shadow queue and receive notifications when changes are performed.
+	 *
+	 * @param receiver
+	 *            -- the receiver for the notifications
+	 * @return a newly created shadow queue.
+	 */
+	public Queue<Transaction> getShadowAndNotifications(ChangeNotificationReceiver receiver)
+	{
+		if(receiver != null)
+			registerChangeNotificationReceiver(receiver);
+		return createShadowQueue();
+	}
+	
+	/**
 	 * The method registers a new receiver for change notifications.
 	 *
 	 * @param receiver
@@ -170,7 +184,7 @@ public class TrackingGraph extends SimpleGraph
 			notificationReceivers = new HashSet<ChangeNotificationReceiver>();
 		notificationReceivers.add(receiver);
 	}
-
+	
 	/**
 	 * Sets history keeping. Clearing the history is controlled by the second parameter and is independent of the value
 	 * of the first.
@@ -196,7 +210,7 @@ public class TrackingGraph extends SimpleGraph
 		keepHistory = keep;
 		return this;
 	}
-
+	
 	/**
 	 * Internal method for performing one operation upon the current state of the graph.
 	 * <p>
@@ -214,7 +228,7 @@ public class TrackingGraph extends SimpleGraph
 	 *            - <code>true</code> if the method is called by an add or remove method, and the transaction should be
 	 *            added.
 	 * @return the graph itself.
-	 *
+	 * 		
 	 * @throws UnsupportedOperationException
 	 *             if the operation is applied from the exterior, to a shadow graph.
 	 */
@@ -238,7 +252,7 @@ public class TrackingGraph extends SimpleGraph
 		}
 		return this;
 	}
-
+	
 	/**
 	 * Handles adding of new transactions to the history and to shadow graphs queues.
 	 *
@@ -257,14 +271,14 @@ public class TrackingGraph extends SimpleGraph
 		if(keepHistory)
 			history.add(t);
 	}
-
+	
 	/**
 	 * Public method allowing the application of an already created transaction to the graph.
 	 *
 	 * @param t
 	 *            - the transaction to apply.
 	 * @return the graph itself.
-	 *
+	 * 		
 	 * @throws UnsupportedOperationException
 	 *             if the method is called for a shadow graph.
 	 */
@@ -276,7 +290,7 @@ public class TrackingGraph extends SimpleGraph
 		applyTransactionInternal(t);
 		return this;
 	}
-
+	
 	/**
 	 * Internal method for applying a transaction to the graph. The operation is performed and the transaction is added
 	 * to the history and shadow graph queues.
@@ -295,7 +309,7 @@ public class TrackingGraph extends SimpleGraph
 				performOperation(e.getKey(), e.getValue(), false);
 		addTransaction(t);
 	}
-
+	
 	@Override
 	public TrackingGraph add(GraphComponent component)
 	{
@@ -304,7 +318,7 @@ public class TrackingGraph extends SimpleGraph
 		lw("component [] already present. Not re-added.", component);
 		return this;
 	}
-
+	
 	/**
 	 * Adds all the nodes and edges in the argument to the current graph, all in one transaction.
 	 *
@@ -328,7 +342,7 @@ public class TrackingGraph extends SimpleGraph
 			applyTransactionInternal(t);
 		return this;
 	}
-
+	
 	@Override
 	public TrackingGraph remove(GraphComponent component)
 	{
@@ -337,7 +351,7 @@ public class TrackingGraph extends SimpleGraph
 		lw("component [] not contained", component);
 		return this;
 	}
-
+	
 	/**
 	 * Removes all the nodes and edges in the argument from the current graph, all in one transaction.
 	 *
@@ -361,7 +375,7 @@ public class TrackingGraph extends SimpleGraph
 			applyTransactionInternal(t);
 		return this;
 	}
-
+	
 	/**
 	 * @return the current sequence number.
 	 */
@@ -369,11 +383,11 @@ public class TrackingGraph extends SimpleGraph
 	{
 		return sequence.get();
 	}
-
+	
 	/**
 	 * @return <code>true</code> if there are transactions in the transaction queue that can be applied to the current
 	 *         state of the graph.
-	 *
+	 * 		
 	 * @throws IllegalStateException
 	 *             if the method is called on a graph that is not a shadow graph.
 	 */
@@ -383,7 +397,7 @@ public class TrackingGraph extends SimpleGraph
 			throw new IllegalStateException("Non-shadow graphs do not support this operation");
 		return !transactionQueue.isEmpty();
 	}
-
+	
 	/**
 	 * Retrieves the operations that will be applied at the next sequence increment.
 	 *
@@ -398,7 +412,7 @@ public class TrackingGraph extends SimpleGraph
 			return null;
 		return transactionQueue.peek().toOperationMap();
 	}
-
+	
 	/**
 	 * Internal method that applies one transaction to the graph.
 	 */
@@ -408,7 +422,7 @@ public class TrackingGraph extends SimpleGraph
 			throw new IllegalStateException("Illegal state reached.");
 		applyTransactionInternal(transactionQueue.poll());
 	}
-
+	
 	/**
 	 * Takes one transaction from the graph's transaction queue and applies it to the current state of the graph.
 	 * <p>
@@ -416,7 +430,7 @@ public class TrackingGraph extends SimpleGraph
 	 * desynchronization; is it possible?
 	 *
 	 * @return the new current sequence number.
-	 *
+	 * 		
 	 * @throws IllegalStateException
 	 *             if the method is called on a graph that is not a shadow graph.
 	 */
@@ -430,17 +444,17 @@ public class TrackingGraph extends SimpleGraph
 		incrementSequenceInternal();
 		return sequence.get();
 	}
-
+	
 	/**
 	 * Takes several transactions from the graph's transaction queue and applies them to the current state of the graph,
 	 * in order to reach the target sequence number.
 	 *
 	 * @param targetSequence
 	 *            - the sequence number to reach before stopping.
-	 *
+	 * 			
 	 * @return the new current sequence number. If there are enough transactions in the queue, it is equal to the
 	 *         <code>targetSequence</code>.
-	 *
+	 * 		
 	 * @throws IllegalStateException
 	 *             if the method is called on a graph that is not a shadow graph.
 	 */
@@ -454,12 +468,12 @@ public class TrackingGraph extends SimpleGraph
 			lw("Target sequence not reached.");
 		return sequence.get();
 	}
-
+	
 	/**
 	 * Brings the graph up to date with its master graph, transaction by transaction.
 	 *
 	 * @return the new current sequence number.
-	 *
+	 * 		
 	 * @throws IllegalStateException
 	 *             if the method is called on a graph that is not a shadow graph.
 	 */
@@ -471,7 +485,7 @@ public class TrackingGraph extends SimpleGraph
 			incrementSequenceInternal();
 		return sequence.get();
 	}
-
+	
 	/**
 	 * The current implementation does not support reading nodes and edges, but all the edges and nodes from a graph can
 	 * be added with {@link #addAll(Collection)}. The description can be added with
@@ -482,7 +496,7 @@ public class TrackingGraph extends SimpleGraph
 	{
 		throw new UnsupportedOperationException("Reading graphs is not supported. Use method addAll().");
 	}
-
+	
 	/**
 	 * The method returns a string representation of the graph as rendered by {@link TextGraphRepresentation} with
 	 * default layout parameters.
@@ -497,7 +511,7 @@ public class TrackingGraph extends SimpleGraph
 		return toString(TextGraphRepresentation.DEFAULT_BRANCH_SEPARATOR,
 				TextGraphRepresentation.DEFAULT_SEPARATOR_INCREMENT, TextGraphRepresentation.DEFAULT_INCREMENT_LIMIT);
 	}
-
+	
 	/**
 	 * The method returns a string representation of the graph as rendered by {@link TextGraphRepresentation} with the
 	 * specified parameters.
@@ -523,11 +537,10 @@ public class TrackingGraph extends SimpleGraph
 		else
 			detail += "-";
 		detail += "]";
-		return detail
-				+ new TextGraphRepresentation(this).setLayout(branchSeparator, separatorIncrement, limit).update()
-						.toString();
+		return detail + new TextGraphRepresentation(this).setLayout(branchSeparator, separatorIncrement, limit).update()
+				.toString();
 	}
-
+	
 	/**
 	 * Returns a basic string representation of the graph, as rendered by {@link SimpleGraph#toString()}.
 	 *
@@ -537,5 +550,5 @@ public class TrackingGraph extends SimpleGraph
 	{
 		return super.toString();
 	}
-
+	
 }
