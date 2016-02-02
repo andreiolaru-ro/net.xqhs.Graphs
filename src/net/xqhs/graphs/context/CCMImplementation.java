@@ -23,11 +23,21 @@ public class CCMImplementation extends Unit implements ContinuousContextMatching
 	class MatchNotificationTarget
 	{
 		int							k;
+		boolean						allMatches;
 		MatchNotificationReceiver	receiver;
 
 		public MatchNotificationTarget(int maxK, MatchNotificationReceiver notificationReceiver)
 		{
 			k = maxK;
+			allMatches = false;
+			receiver = notificationReceiver;
+		}
+		
+		public MatchNotificationTarget(MatchNotificationReceiver notificationReceiver)
+		{
+			k = -1;
+			allMatches = true;
+			// FIXME duplicate code
 			receiver = notificationReceiver;
 		}
 	}
@@ -71,6 +81,16 @@ public class CCMImplementation extends Unit implements ContinuousContextMatching
 		return this;
 	}
 
+	@Override
+	public ContinuousMatchingProcess addMatchNotificationTarget(MatchNotificationReceiver receiver)
+	{
+		// FIXME duplicate code
+		if(!notificationTargets.containsKey(null))
+			notificationTargets.put(null, new HashSet<MatchNotificationTarget>());
+		notificationTargets.get(null).add(new MatchNotificationTarget(receiver));
+		return this;
+	}
+	
 	@Override
 	public CCMImplementation addMatchNotificationTarget(int thresholdK, MatchNotificationReceiver receiver)
 	{
@@ -144,7 +164,7 @@ public class CCMImplementation extends Unit implements ContinuousContextMatching
 				for(Entry<ContextPattern, Set<MatchNotificationTarget>> entry : notificationTargets.entrySet())
 					if((entry.getKey() == null) || (entry.getKey() == m.getPattern()))
 						for(MatchNotificationTarget tg : entry.getValue())
-							if((tg.k < 0) || (m.getK() <= tg.k))
+							if(tg.allMatches || (m.getK() <= tg.k))
 								tg.receiver.receiveMatchNotification(this, m);
 		}
 	}
