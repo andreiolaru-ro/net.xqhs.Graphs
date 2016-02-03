@@ -2,6 +2,7 @@ package net.xqhs.graphs.matchingPlatform;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -15,8 +16,9 @@ import net.xqhs.graphs.matchingPlatform.Transaction.Operation;
  * The implementation is optimized so that single-operation transactions are represented in a more simple manner. The
  * conversion between single- and multi-operation transactions is done transparently.
  * <p>
- * The class implements most operations of {@link Map}, but some are available only if the transaction is
- * multi-operation.
+ * The class implements most methods in {@link Map}, but some methods may convert to the transaction to a
+ * multiple-operation transaction. As this takes time and memory, one should watch out for performance degradation.
+ * Converting it back can be done by calling {@link #compact()}.
  *
  * @author Andrei Olaru
  */
@@ -32,12 +34,12 @@ public class Transaction implements Map<GraphComponent, Operation>
 		 * Addition of a {@link GraphComponent} to the graph.
 		 */
 		ADD,
-
+		
 		/**
 		 * Removal of a {@link GraphComponent} from the graph.
 		 */
 		REMOVE,
-
+		
 		// TODO
 		// CHANGE,
 	}
@@ -62,7 +64,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 	 * For multi-operation transactions, the map of operations.
 	 */
 	Map<GraphComponent, Operation>	multipleOperations			= null;
-
+																
 	/**
 	 * Creates a single-operation transaction.
 	 *
@@ -78,59 +80,62 @@ public class Transaction implements Map<GraphComponent, Operation>
 		singleOperationComponent = component;
 		singleOperationOperation = operation;
 	}
-
+	
 	/**
 	 * Creates an empty transaction.
 	 */
 	public Transaction()
 	{
 	}
-
+	
 	/**
 	 * For single-operation transactions only, retrieves the component contained in the operation.
 	 *
 	 * @return the component.
-	 *
+	 * 		
 	 * @throws UnsupportedOperationException
 	 *             if the method is called for an empty or multi-operation transaction.
 	 */
 	public GraphComponent getComponent()
 	{
+		compact();
 		if(!singleOperation)
 			throw new UnsupportedOperationException("Transaction contains multiple or no operations");
 		return singleOperationComponent;
 	}
-
+	
 	/**
 	 * For single-operation transactions only, retrieves the operation to perform.
 	 *
 	 * @return the operation.
-	 *
+	 * 		
 	 * @throws UnsupportedOperationException
 	 *             if the method is called for an empty or multi-operation transaction.
 	 */
 	public Operation getOperation()
 	{
+		compact();
 		if(!singleOperation)
 			throw new UnsupportedOperationException("Transaction contains multiple or no operations");
 		return singleOperationOperation;
 	}
-
+	
 	/**
 	 * @return <code>true</code> if the transaction contains exactly one operation.
 	 */
 	public boolean isSingleOperation()
 	{
+		compact();
 		return singleOperation;
 	}
-
+	
 	/**
 	 * Compacts a multi-operation transaction in case it is in fact empty or single-operation.
 	 */
-	protected void compact()
+	public void compact()
 	{
-		if(empty || singleOperation || (multipleOperations == null))
-			throw new IllegalStateException("Should not have called compact in this state");
+		if(empty || singleOperation)
+			return;
 		empty = multipleOperations.isEmpty();
 		singleOperation = (multipleOperations.size() == 1);
 		if(empty)
@@ -140,10 +145,11 @@ public class Transaction implements Map<GraphComponent, Operation>
 			Entry<GraphComponent, Operation> e = multipleOperations.entrySet().iterator().next();
 			singleOperationComponent = e.getKey();
 			singleOperationOperation = e.getValue();
+			multipleOperations.clear();
 			multipleOperations = null;
 		}
 	}
-
+	
 	/**
 	 * Converts an empty or single-operation transaction into a multi-operation transaction.
 	 */
@@ -159,7 +165,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 		singleOperationComponent = null;
 		singleOperationOperation = null;
 	}
-
+	
 	/**
 	 * Adds a new operation to the transaction.
 	 * <p>
@@ -189,7 +195,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 		}
 		return multipleOperations.put(component, operation);
 	}
-
+	
 	/**
 	 * The method is identical to {@link #put(GraphComponent, Operation)}, with the exception that it returns the
 	 * instance itself.
@@ -205,7 +211,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 		put(component, operation);
 		return this;
 	}
-
+	
 	@Override
 	public void putAll(Map<? extends GraphComponent, ? extends Operation> operations)
 	{
@@ -213,7 +219,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 		multipleOperations.putAll(operations);
 		compact();
 	}
-
+	
 	@Override
 	public Operation get(Object component)
 	{
@@ -227,81 +233,7 @@ public class Transaction implements Map<GraphComponent, Operation>
 		}
 		return multipleOperations.get(component);
 	}
-
-	@Override
-	public boolean containsKey(Object key)
-	{
-		if(empty)
-			return false;
-		return singleOperation ? (singleOperationComponent == key) : multipleOperations.containsKey(key);
-	}
-
-	/**
-	 * The method is unsupported.
-	 */
-	@Override
-	public boolean containsValue(Object value)
-	{
-		throw new UnsupportedOperationException("Operation is unsupported");
-	}
-
-	/**
-	 * The method is unsupported.
-	 */
-	@Override
-	public Collection<Operation> values()
-	{
-		throw new UnsupportedOperationException("Operation is unsupported");
-	}
-
-	/**
-	 * Resets the transaction to an empty transaction.
-	 */
-	@Override
-	public void clear()
-	{
-		empty = true;
-		singleOperation = false;
-		singleOperationComponent = null;
-		singleOperationOperation = null;
-		multipleOperations.clear();
-		multipleOperations = null;
-	}
-
-	@Override
-	public boolean isEmpty()
-	{
-		return empty;
-	}
-
-	@Override
-	public int size()
-	{
-		return empty ? 0 : (singleOperation ? 1 : multipleOperations.size());
-	}
-
-	/**
-	 * Unsupported operation for empty or single-operation transactions.
-	 */
-	@Override
-	public Set<Entry<GraphComponent, Operation>> entrySet()
-	{
-		if(empty || singleOperation)
-			throw new UnsupportedOperationException("Cannot iterate over empty or single-operation transactions.");
-		return multipleOperations.entrySet();
-	}
-
-	/**
-	 * Unsupported operation for empty or single-operation transactions.
-	 */
-	@Override
-	public Set<GraphComponent> keySet()
-	{
-		if(empty || singleOperation)
-			throw new UnsupportedOperationException("Cannot iterate over empty or single-operation transactions.");
-		return multipleOperations.keySet();
-	}
-
+	
 	@Override
 	public Operation remove(Object component)
 	{
@@ -324,7 +256,98 @@ public class Transaction implements Map<GraphComponent, Operation>
 		compact();
 		return ret;
 	}
-
+	
+	@Override
+	public boolean containsKey(Object key)
+	{
+		if(empty)
+			return false;
+		return singleOperation ? (singleOperationComponent == key) : multipleOperations.containsKey(key);
+	}
+	
+	/**
+	 * The method is unsupported.
+	 */
+	@Override
+	public boolean containsValue(Object value)
+	{
+		throw new UnsupportedOperationException("Operation is unsupported");
+	}
+	
+	/**
+	 * The method is unsupported.
+	 */
+	@Override
+	public Collection<Operation> values()
+	{
+		throw new UnsupportedOperationException("Operation is unsupported");
+	}
+	
+	/**
+	 * Resets the transaction to an empty transaction.
+	 */
+	@Override
+	public void clear()
+	{
+		empty = true;
+		singleOperation = false;
+		singleOperationComponent = null;
+		singleOperationOperation = null;
+		multipleOperations.clear();
+		multipleOperations = null;
+	}
+	
+	@Override
+	public boolean isEmpty()
+	{
+		return empty;
+	}
+	
+	@Override
+	public int size()
+	{
+		return empty ? 0 : (singleOperation ? 1 : multipleOperations.size());
+	}
+	
+	/**
+	 * Returns all operations in the transaction, as pairs of component &rarr; operation.
+	 * <p>
+	 * <b>Performance warning</b>: if the transaction was previously an empty or single transaction, this will convert
+	 * it to a multiple-operation transaction, which takes time and memory. Consider using dedicated methods for single
+	 * transactions ({@link #getComponent()} and {@link #getOperation()}).
+	 */
+	@Override
+	public Set<Entry<GraphComponent, Operation>> entrySet()
+	{
+		toMultipleOperations();
+		return new HashSet<Entry<GraphComponent, Operation>>(multipleOperations.entrySet());
+	}
+	
+	/**
+	 * Alias for the {@link #entrySet()} method, returning all operations in the transaction, as pairs of component
+	 * &rarr; operation.
+	 *
+	 * @return the set of operations.
+	 */
+	public Set<Entry<GraphComponent, Operation>> getOperations()
+	{
+		return entrySet();
+	}
+	
+	/**
+	 * Returns all the graph components involved by a transaction (to be removed or added).
+	 * <p>
+	 * <b>Performance warning</b>: if the transaction was previously an empty or single transaction, this will convert
+	 * it to a multiple-operation transaction, which takes time and memory. Consider {@link #getOperation()} for single
+	 * transactions.
+	 */
+	@Override
+	public Set<GraphComponent> keySet()
+	{
+		toMultipleOperations();
+		return new HashSet<GraphComponent>(multipleOperations.keySet());
+	}
+	
 	@Override
 	public String toString()
 	{
@@ -334,18 +357,19 @@ public class Transaction implements Map<GraphComponent, Operation>
 			return singleOperationComponent + ": " + singleOperationOperation.toString();
 		return multipleOperations.toString();
 	}
-
+	
 	/**
 	 * Retrieves the operations in this transaction as a (copy) {@link Map} of {@link GraphComponent} &rarr;
 	 * {@link Operation}.
+	 * <p>
+	 * If the transaction was previously an empty or single transaction, this method converts it to a multiple-operation
+	 * transaction.
 	 *
 	 * @return the operations.
 	 */
 	public Map<GraphComponent, Operation> toOperationMap()
 	{
 		toMultipleOperations();
-		Map<GraphComponent, Operation> ret = new HashMap<GraphComponent, Operation>(multipleOperations);
-		compact();
-		return ret;
+		return new HashMap<GraphComponent, Operation>(multipleOperations);
 	}
 }
