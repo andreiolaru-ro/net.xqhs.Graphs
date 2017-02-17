@@ -1,0 +1,9 @@
+A Finnish bride traditionally went door-to-door collecting gifts in a pillowcase, accompanied by an older married man who represented long marriage.
+------------Like Tree in the Wind---------------(ROOT (S (NP (DT A) (JJ Finnish) (NN bride)) (ADVP (RB traditionally)) (VP (VBD went) (NP (NP (JJ door-to-door) (VBG collecting) (NNS gifts)) (PP (IN in) (NP (NP (DT a) (NN pillowcase)) (, ,) (VP (VBN accompanied) (PP (IN by) (NP (DT an) (JJR older) (JJ married) (NN man) (SBAR (WHNP (WP who)) (S (VP (VBD represented) (NP (JJ long) (NN marriage)))))))))))) (. .)))---
+mentions
+	A Finnish bride
+	door-to-door collecting gifts in a pillowcase , accompanied by an older married man who represented long marriage
+	a pillowcase , accompanied by an older married man who represented long marriage
+	an older married man who represented long marriage
+	long marriage
+------CorefChainz

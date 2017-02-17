@@ -1,0 +1,48 @@
+A pearl engagement ring is said to be bad luck because its shape echoes that of a tear.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, said-6)
+det(ring-4, A-1)
+compound(ring-4, pearl-2)
+compound(ring-4, engagement-3)
+nsubjpass(said-6, ring-4)
+nsubj:xsubj(luck-10, ring-4)
+auxpass(said-6, is-5)
+mark(luck-10, to-7)
+cop(luck-10, be-8)
+amod(luck-10, bad-9)
+xcomp(said-6, luck-10)
+dep(luck-10, because-11)
+nmod:poss(echoes-14, its-12)
+compound(echoes-14, shape-13)
+dep(because-11, echoes-14)
+dep(echoes-14, that-15)
+case(tear-18, of-16)
+det(tear-18, a-17)
+nmod:of(that-15, tear-18)
+punct(said-6, .-19)
+------CorefChainz
+CHAIN2-["A pearl engagement ring" in sentence 1, "its" in sentence 1]
+representative mention: "A pearl engagement ring" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> DT	 	-> A-1
+		 	-> NN	 	-> pearl-2
+		 	-> NN	 	-> engagement-3
+		 	-> NN	 	-> ring-4
+			 	-> VP	 	-> VBZ	 	-> is-5
+		 	-> VP	 	-> VBN	 	-> said-6
+		 	-> S	 	-> VP	 	-> TO	 	-> to-7
+		 	-> VP	 	-> VB	 	-> be-8
+		 	-> NP	 	-> JJ	 	-> bad-9
+		 	-> NN	 	-> luck-10
+			 	-> PP	 	-> IN	 	-> because-11
+		 	-> NP	 	-> PRP$	 	-> its-12
+		 	-> NN	 	-> shape-13
+		 	-> NNS	 	-> echoes-14
+				 	-> SBAR	 	-> WHNP	 	-> WDT	 	-> that-15
+			 	-> S	 	-> NP	 	-> IN	 	-> of-16
+		 	-> DT	 	-> a-17
+			 	-> VP	 	-> VB	 	-> tear-18
+										 	-> .	 	-> .-19
+			

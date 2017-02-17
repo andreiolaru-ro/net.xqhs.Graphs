@@ -1,0 +1,24 @@
+Most of the checks during opening can easily be defended by moves that favor development.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[16, 16] [., Most, be, by, can, checks, defended, development, during, easily, favor, moves, of, opening, that, the]
+easily-advmod->defended
+that-ref->moves
+checks-nmod:of->Most
+can-aux->defended
+of-case->checks
+during-case->opening
+moves-nsubj->favor
+be-auxpass->defended
+the-det->checks
+development-dobj->favor
+opening-nmod:during->Most
+favor-acl:relcl->moves
+Most-nsubjpass->defended
+by-case->moves
+moves-nmod:agent->defended
+.-punct->defended
+------CorefChainz

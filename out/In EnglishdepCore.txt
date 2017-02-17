@@ -1,0 +1,60 @@
+In English tradition, Wednesday is considered the "best day" to marry, although Monday is for wealth and Tuesday is for health.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, considered-7)
+case(tradition-3, In-1)
+compound(tradition-3, English-2)
+nmod:in(considered-7, tradition-3)
+punct(considered-7, ,-4)
+nsubjpass(considered-7, Wednesday-5)
+auxpass(considered-7, is-6)
+det(day-11, the-8)
+punct(day-11, ``-9)
+amod(day-11, best-10)
+xcomp(considered-7, day-11)
+punct(day-11, ''-12)
+mark(marry-14, to-13)
+acl:to(day-11, marry-14)
+punct(day-11, ,-15)
+mark(wealth-20, although-16)
+nsubj(wealth-20, Monday-17)
+cop(wealth-20, is-18)
+case(wealth-20, for-19)
+dep(day-11, wealth-20)
+cc(wealth-20, and-21)
+nsubj(health-25, Tuesday-22)
+cop(health-25, is-23)
+case(health-25, for-24)
+dep(day-11, health-25)
+conj:and(wealth-20, health-25)
+punct(considered-7, .-26)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> PP	 	-> IN	 	-> In-1
+		 	-> NP	 	-> NNP	 	-> English-2
+		 	-> NN	 	-> tradition-3
+				 	-> ,	 	-> ,-4
+		 	-> S	 	-> NP	 	-> NNP	 	-> Wednesday-5
+			 	-> VP	 	-> VBZ	 	-> is-6
+		 	-> VP	 	-> VBN	 	-> considered-7
+		 	-> NP	 	-> NP	 	-> DT	 	-> the-8
+		 	-> ``	 	-> ``-9
+		 	-> JJS	 	-> best-10
+			 	-> NP	 	-> NN	 	-> day-11
+				 	-> ''	 	-> ''-12
+		 	-> S	 	-> VP	 	-> TO	 	-> to-13
+		 	-> VP	 	-> VB	 	-> marry-14
+					 	-> ,	 	-> ,-15
+		 	-> SBAR	 	-> IN	 	-> although-16
+		 	-> S	 	-> NP	 	-> NNP	 	-> Monday-17
+			 	-> VP	 	-> VBZ	 	-> is-18
+		 	-> PP	 	-> IN	 	-> for-19
+		 	-> NP	 	-> NN	 	-> wealth-20
+										 	-> CC	 	-> and-21
+		 	-> S	 	-> NP	 	-> NNP	 	-> Tuesday-22
+			 	-> VP	 	-> VBZ	 	-> is-23
+		 	-> PP	 	-> IN	 	-> for-24
+		 	-> NP	 	-> NN	 	-> health-25
+						 	-> .	 	-> .-26
+			

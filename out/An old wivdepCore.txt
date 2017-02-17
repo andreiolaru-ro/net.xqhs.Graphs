@@ -1,0 +1,72 @@
+An old wives' tale: If the younger of two sisters marries first, the older sister must dance barefoot at the wedding or risk never landing a husband.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, tale-5)
+det(wives-3, An-1)
+amod(wives-3, old-2)
+nmod:poss(tale-5, wives-3)
+case(wives-3, '-4)
+punct(tale-5, :-6)
+mark(marries-13, If-7)
+det(younger-9, the-8)
+nsubj(marries-13, younger-9)
+case(sisters-12, of-10)
+nummod(sisters-12, two-11)
+nmod:of(younger-9, sisters-12)
+advcl:if(dance-20, marries-13)
+advmod(marries-13, first-14)
+punct(dance-20, ,-15)
+det(sister-18, the-16)
+amod(sister-18, older-17)
+nsubj(dance-20, sister-18)
+aux(dance-20, must-19)
+dep(tale-5, dance-20)
+dobj(dance-20, barefoot-21)
+case(wedding-24, at-22)
+det(wedding-24, the-23)
+nmod:at(dance-20, wedding-24)
+cc(wedding-24, or-25)
+nmod:at(dance-20, risk-26)
+conj:or(wedding-24, risk-26)
+neg(landing-28, never-27)
+advcl(dance-20, landing-28)
+det(husband-30, a-29)
+dobj(landing-28, husband-30)
+punct(tale-5, .-31)
+------CorefChainz
+CHAIN4-["two sisters" in sentence 1, "the older sister" in sentence 1]
+representative mention: "the older sister" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> NP	 	-> NP	 	-> NP	 	-> DT	 	-> An-1
+		 	-> JJ	 	-> old-2
+		 	-> NNS	 	-> wives-3
+		 	-> POS	 	-> '-4
+			 	-> NN	 	-> tale-5
+			 	-> :	 	-> :-6
+		 	-> S	 	-> SBAR	 	-> IN	 	-> If-7
+		 	-> S	 	-> NP	 	-> NP	 	-> DT	 	-> the-8
+		 	-> JJR	 	-> younger-9
+			 	-> PP	 	-> IN	 	-> of-10
+		 	-> NP	 	-> CD	 	-> two-11
+		 	-> NNS	 	-> sisters-12
+					 	-> VP	 	-> VBZ	 	-> marries-13
+		 	-> ADVP	 	-> RB	 	-> first-14
+						 	-> ,	 	-> ,-15
+		 	-> X	 	-> DT	 	-> the-16
+		 	-> JJR	 	-> older-17
+			 	-> NP	 	-> NN	 	-> sister-18
+			 	-> VP	 	-> MD	 	-> must-19
+		 	-> VP	 	-> VB	 	-> dance-20
+		 	-> NP	 	-> NN	 	-> barefoot-21
+			 	-> PP	 	-> IN	 	-> at-22
+		 	-> NP	 	-> NP	 	-> DT	 	-> the-23
+		 	-> NN	 	-> wedding-24
+		 	-> CC	 	-> or-25
+		 	-> NN	 	-> risk-26
+			 	-> VP	 	-> ADVP	 	-> RB	 	-> never-27
+			 	-> VBG	 	-> landing-28
+		 	-> NP	 	-> DT	 	-> a-29
+		 	-> NN	 	-> husband-30
+									 	-> .	 	-> .-31
+			

@@ -1,0 +1,10 @@
+In Asia, wearing robes with embroidered cranes symbolizes fidelity for the length of a marriage.
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN In) (NP (NNP Asia))) (, ,) (NP (NP (VBG wearing) (NNS robes)) (PP (IN with) (NP (JJ embroidered) (NNS cranes)))) (VP (VBZ symbolizes) (NP (NP (NN fidelity)) (PP (IN for) (NP (NP (DT the) (NN length)) (PP (IN of) (NP (DT a) (NN marriage))))))) (. .)))---
+mentions
+	Asia
+	wearing robes with embroidered cranes
+	embroidered cranes
+	fidelity for the length of a marriage
+	the length of a marriage
+	a marriage
+------CorefChainz

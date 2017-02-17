@@ -1,0 +1,33 @@
+For good luck, Egyptian women pinch the bride on her wedding day. Ouch!
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1For Governor: 3luck
+ Relation: amod Dependent: 2good Governor: 3luck
+ Relation: nmod:for Dependent: 3luck Governor: 7pinch
+ Relation: punct Dependent: 4, Governor: 7pinch
+ Relation: amod Dependent: 5Egyptian Governor: 6women
+ Relation: nsubj Dependent: 6women Governor: 7pinch
+ Relation: det Dependent: 8the Governor: 9bride
+ Relation: dobj Dependent: 9bride Governor: 7pinch
+ Relation: case Dependent: 10on Governor: 13day
+ Relation: nmod:poss Dependent: 11her Governor: 13day
+ Relation: compound Dependent: 12wedding Governor: 13day
+ Relation: nmod:on Dependent: 13day Governor: 7pinch
+ Relation: punct Dependent: 14. Governor: 7pinch
+G[0, 13] []
+women-nsubj->pinch
+bride-dobj->pinch
+For-case->luck
+luck-nmod:for->pinch
+the-det->bride
+,-punct->pinch
+her-nmod:poss->day
+day-nmod:on->pinch
+on-case->day
+Egyptian-amod->women
+.-punct->pinch
+good-amod->luck
+wedding-compound->day
+------CorefChainz

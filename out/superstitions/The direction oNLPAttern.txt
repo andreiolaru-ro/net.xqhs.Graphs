@@ -1,0 +1,47 @@
+The direction of an arrow indicates that the object at origin participates in the state of affairs described by the destination. 
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, indicates-6)
+det(direction-2, The-1)
+nsubj(indicates-6, direction-2)
+case(arrow-5, of-3)
+det(arrow-5, an-4)
+nmod:of(direction-2, arrow-5)
+mark(participates-12, that-7)
+det(object-9, the-8)
+nsubj(participates-12, object-9)
+case(origin-11, at-10)
+nmod:at(object-9, origin-11)
+ccomp(indicates-6, participates-12)
+case(state-15, in-13)
+det(state-15, the-14)
+nmod:in(participates-12, state-15)
+case(affairs-17, of-16)
+nmod:of(state-15, affairs-17)
+acl(affairs-17, described-18)
+case(destination-21, by-19)
+det(destination-21, the-20)
+nmod:by(described-18, destination-21)
+punct(indicates-6, .-22)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[15, 14] [?#1, ?#2, ?#3, ?#4, ?#5, affairs, arrow, described, destination, direction, indicates, object, origin, participates, state]
+?#5-the->object
+participates-ccomp : that ccomp->indicates
+origin-nmod:at : the nmod:at->?#5
+affairs-nmod:of->?#1
+?#4-nsubj->indicates
+?#1-the->state
+?#3-an->arrow
+described-acl->affairs
+?#3-nmod:of : an nmod:of : The nmod:of : an nmod:of->?#4
+?#5-nsubj->participates
+?#2-nmod:by : the nmod:by->described
+?#2-the->destination
+?#4-The->direction
+?#1-nmod:in : the nmod:in->participates

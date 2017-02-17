@@ -1,0 +1,131 @@
+In many cultures around the world—including Celtic, Hindu and Egyptian weddings—the hands of a bride and groom are literally tied together to demonstrate the couple's commitment to each other and their new bond as a married couple (giving us the popular phrase "tying the knot").
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1In Governor: 3cultures
+ Relation: amod Dependent: 2many Governor: 3cultures
+ Relation: nmod:in Dependent: 3cultures Governor: 25tied
+ Relation: case Dependent: 4around Governor: 6world
+ Relation: det Dependent: 5the Governor: 6world
+ Relation: nmod:around Dependent: 6world Governor: 3cultures
+ Relation: punct Dependent: 7-- Governor: 3cultures
+ Relation: case Dependent: 8including Governor: 9Celtic
+ Relation: nmod:including Dependent: 9Celtic Governor: 3cultures
+ Relation: punct Dependent: 10, Governor: 9Celtic
+ Relation: nmod:including Dependent: 11Hindu Governor: 3cultures
+ Relation: conj:and Dependent: 11Hindu Governor: 9Celtic
+ Relation: cc Dependent: 12and Governor: 9Celtic
+ Relation: amod Dependent: 13Egyptian Governor: 14weddings
+ Relation: nmod:including Dependent: 14weddings Governor: 3cultures
+ Relation: conj:and Dependent: 14weddings Governor: 9Celtic
+ Relation: punct Dependent: 15-- Governor: 3cultures
+ Relation: det Dependent: 16the Governor: 17hands
+ Relation: nsubjpass Dependent: 17hands Governor: 25tied
+ Relation: nsubj:xsubj Dependent: 17hands Governor: 28demonstrate
+ Relation: case Dependent: 18of Governor: 20bride
+ Relation: det Dependent: 19a Governor: 20bride
+ Relation: nmod:of Dependent: 20bride Governor: 17hands
+ Relation: cc Dependent: 21and Governor: 20bride
+ Relation: nmod:of Dependent: 22groom Governor: 17hands
+ Relation: conj:and Dependent: 22groom Governor: 20bride
+ Relation: auxpass Dependent: 23are Governor: 25tied
+ Relation: advmod Dependent: 24literally Governor: 25tied
+ Relation: advmod Dependent: 26together Governor: 25tied
+ Relation: mark Dependent: 27to Governor: 28demonstrate
+ Relation: xcomp Dependent: 28demonstrate Governor: 25tied
+ Relation: det Dependent: 29the Governor: 30couple
+ Relation: nmod:poss Dependent: 30couple Governor: 32commitment
+ Relation: case Dependent: 31's Governor: 30couple
+ Relation: dobj Dependent: 32commitment Governor: 28demonstrate
+ Relation: case Dependent: 33to Governor: 35other
+ Relation: det Dependent: 34each Governor: 35other
+ Relation: nmod:to Dependent: 35other Governor: 32commitment
+ Relation: cc Dependent: 36and Governor: 32commitment
+ Relation: nmod:poss Dependent: 37their Governor: 39bond
+ Relation: amod Dependent: 38new Governor: 39bond
+ Relation: dobj Dependent: 39bond Governor: 28demonstrate
+ Relation: conj:and Dependent: 39bond Governor: 32commitment
+ Relation: case Dependent: 40as Governor: 43couple
+ Relation: det Dependent: 41a Governor: 43couple
+ Relation: amod Dependent: 42married Governor: 43couple
+ Relation: nmod:as Dependent: 43couple Governor: 39bond
+ Relation: punct Dependent: 44-LRB- Governor: 45giving
+ Relation: acl Dependent: 45giving Governor: 43couple
+ Relation: iobj Dependent: 46us Governor: 45giving
+ Relation: det Dependent: 47the Governor: 49phrase
+ Relation: amod Dependent: 48popular Governor: 49phrase
+ Relation: dobj Dependent: 49phrase Governor: 45giving
+ Relation: punct Dependent: 50`` Governor: 49phrase
+ Relation: root Dependent: 51tying Governor: 50``
+ Relation: det Dependent: 52the Governor: 53knot
+ Relation: dobj Dependent: 53knot Governor: 51tying
+ Relation: punct Dependent: 54'' Governor: 51tying
+ Relation: punct Dependent: 55-RRB- Governor: 51tying
+ Relation: punct Dependent: 56. Governor: 51tying
+G[0, 60] []
+groom-nmod:of->hands
+-RRB--punct->tying
+hands-nsubjpass->tied
+,-punct->Celtic
+.-punct->tying
+In-case->cultures
+demonstrate-xcomp->tied
+'s-case->couple
+knot-dobj->tying
+many-amod->cultures
+married-amod->couple
+weddings-conj:and->Celtic
+other-nmod:to->commitment
+couple-nmod:poss->commitment
+Hindu-conj:and->Celtic
+the-det->hands
+and-cc->bride
+world-nmod:around->cultures
+a-det->couple
+to-case->other
+commitment-dobj->demonstrate
+together-advmod->tied
+the-det->knot
+as-case->couple
+''-punct->tying
+Celtic-nmod:including->cultures
+and-cc->commitment
+---punct->cultures
+the-det->phrase
+and-cc->Celtic
+the-det->world
+``-punct->phrase
+Egyptian-amod->weddings
+including-case->Celtic
+weddings-nmod:including->cultures
+us-iobj->giving
+-LRB--punct->giving
+each-det->other
+bride-nmod:of->hands
+phrase-dobj->giving
+a-det->bride
+around-case->world
+popular-amod->phrase
+to-mark->demonstrate
+bond-dobj->demonstrate
+their-nmod:poss->bond
+Hindu-nmod:including->cultures
+tying-root->``
+---punct->cultures
+are-auxpass->tied
+hands-nsubj:xsubj->demonstrate
+groom-conj:and->bride
+of-case->bride
+the-det->couple
+bond-conj:and->commitment
+literally-advmod->tied
+couple-nmod:as->bond
+giving-acl->couple
+cultures-nmod:in->tied
+new-amod->bond
+------CorefChainz
+CHAIN10-["the couple 's" in sentence 1, "their" in sentence 1]
+representative mention: "the couple 's" in sentence 1
+CHAIN13-["Hindu" in sentence 1, "us" in sentence 1]
+representative mention: "Hindu" in sentence 1

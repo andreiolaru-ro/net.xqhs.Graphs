@@ -1,0 +1,25 @@
+A pearl engagement ring is said to be bad luck because its shape echoes that of a tear.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, said-6)
+det(ring-4, A-1)
+compound(ring-4, pearl-2)
+compound(ring-4, engagement-3)
+nsubjpass(said-6, ring-4)
+nsubj:xsubj(luck-10, ring-4)
+auxpass(said-6, is-5)
+mark(luck-10, to-7)
+cop(luck-10, be-8)
+amod(luck-10, bad-9)
+xcomp(said-6, luck-10)
+dep(luck-10, because-11)
+nmod:poss(echoes-14, its-12)
+compound(echoes-14, shape-13)
+dep(because-11, echoes-14)
+dep(echoes-14, that-15)
+case(tear-18, of-16)
+det(tear-18, a-17)
+nmod:of(that-15, tear-18)
+punct(said-6, .-19)
+

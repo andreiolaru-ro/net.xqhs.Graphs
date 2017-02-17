@@ -1,0 +1,56 @@
+During opening, Rooks are the last pieces to be developed, because they are effective when they settle on open or half-open files
+------CorefChainz
+CHAIN4-["they" in sentence 1, "they" in sentence 1]
+representative mention: "they" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, pieces-8)
+case(opening-2, During-1)
+nmod:during(pieces-8, opening-2)
+punct(pieces-8, ,-3)
+nsubj(pieces-8, Rooks-4)
+cop(pieces-8, are-5)
+det(pieces-8, the-6)
+amod(pieces-8, last-7)
+mark(developed-11, to-9)
+auxpass(developed-11, be-10)
+acl:to(pieces-8, developed-11)
+punct(pieces-8, ,-12)
+mark(effective-16, because-13)
+nsubj(effective-16, they-14)
+cop(effective-16, are-15)
+advcl:because(pieces-8, effective-16)
+advmod(settle-19, when-17)
+nsubj(settle-19, they-18)
+advcl(effective-16, settle-19)
+case(files-24, on-20)
+amod(files-24, open-21)
+cc(open-21, or-22)
+conj:or(open-21, half-open-23)
+amod(files-24, half-open-23)
+nmod:on(settle-19, files-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[18, 18] [?#1, Rooks, be, because, developed, effective, files, half-open, last, open, opening, or, pieces, settle, they, they, to, when]
+settle-advcl->effective
+Rooks-nsubj->?#1
+effective-advcl->?#1
+be-auxpass->developed
+they-nsubj->settle
+or-cc->open
+they-nsubj->effective
+last-amod->?#1
+to-mark->developed
+half-open-amod->files
+open-amod->files
+because-mark->effective
+when-advmod->settle
+files-nmod->settle
+developed-acl->?#1
+?#1-the->pieces
+opening-nmod->?#1
+half-open-conj->open

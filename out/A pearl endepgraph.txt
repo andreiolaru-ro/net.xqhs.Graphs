@@ -1,0 +1,47 @@
+A pearl engagement ring is said to be bad luck because its shape echoes that of a tear.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1A Governor: 4ring
+ Relation: compound Dependent: 2pearl Governor: 4ring
+ Relation: compound Dependent: 3engagement Governor: 4ring
+ Relation: nsubjpass Dependent: 4ring Governor: 6said
+ Relation: nsubj:xsubj Dependent: 4ring Governor: 10luck
+ Relation: auxpass Dependent: 5is Governor: 6said
+ Relation: mark Dependent: 7to Governor: 10luck
+ Relation: cop Dependent: 8be Governor: 10luck
+ Relation: amod Dependent: 9bad Governor: 10luck
+ Relation: xcomp Dependent: 10luck Governor: 6said
+ Relation: dep Dependent: 11because Governor: 10luck
+ Relation: nmod:poss Dependent: 12its Governor: 14echoes
+ Relation: compound Dependent: 13shape Governor: 14echoes
+ Relation: dep Dependent: 14echoes Governor: 11because
+ Relation: dep Dependent: 15that Governor: 14echoes
+ Relation: case Dependent: 16of Governor: 18tear
+ Relation: det Dependent: 17a Governor: 18tear
+ Relation: nmod:of Dependent: 18tear Governor: 15that
+ Relation: punct Dependent: 19. Governor: 6said
+G[0, 19] []
+luck-xcomp->said
+ring-nsubjpass->said
+of-case->tear
+be-cop->luck
+tear-nmod:of->that
+bad-amod->luck
+its-nmod:poss->echoes
+that-dep->echoes
+.-punct->said
+pearl-compound->ring
+echoes-dep->because
+a-det->tear
+engagement-compound->ring
+A-det->ring
+shape-compound->echoes
+is-auxpass->said
+ring-nsubj:xsubj->luck
+to-mark->luck
+because-dep->luck
+------CorefChainz
+CHAIN2-["A pearl engagement ring" in sentence 1, "its" in sentence 1]
+representative mention: "A pearl engagement ring" in sentence 1

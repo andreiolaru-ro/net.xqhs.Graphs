@@ -1,0 +1,55 @@
+In Japan, white was always the color of choice for bridal ensembles—long before Queen Victoria popularized it in the Western world.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1In Governor: 2Japan
+ Relation: nmod:in Dependent: 2Japan Governor: 8color
+ Relation: punct Dependent: 3, Governor: 8color
+ Relation: nsubj Dependent: 4white Governor: 8color
+ Relation: cop Dependent: 5was Governor: 8color
+ Relation: advmod Dependent: 6always Governor: 8color
+ Relation: det Dependent: 7the Governor: 8color
+ Relation: case Dependent: 9of Governor: 10choice
+ Relation: nmod:of Dependent: 10choice Governor: 8color
+ Relation: case Dependent: 11for Governor: 13ensembles
+ Relation: amod Dependent: 12bridal Governor: 13ensembles
+ Relation: nmod:for Dependent: 13ensembles Governor: 8color
+ Relation: punct Dependent: 14-- Governor: 8color
+ Relation: amod Dependent: 15long Governor: 8color
+ Relation: mark Dependent: 16before Governor: 19popularized
+ Relation: compound Dependent: 17Queen Governor: 18Victoria
+ Relation: nsubj Dependent: 18Victoria Governor: 19popularized
+ Relation: advcl:before Dependent: 19popularized Governor: 15long
+ Relation: dobj Dependent: 20it Governor: 19popularized
+ Relation: case Dependent: 21in Governor: 24world
+ Relation: det Dependent: 22the Governor: 24world
+ Relation: amod Dependent: 23Western Governor: 24world
+ Relation: nmod:in Dependent: 24world Governor: 19popularized
+ Relation: punct Dependent: 25. Governor: 8color
+G[0, 24] []
+Victoria-nsubj->popularized
+long-amod->color
+it-dobj->popularized
+always-advmod->color
+,-punct->color
+popularized-advcl:before->long
+before-mark->popularized
+in-case->world
+of-case->choice
+Queen-compound->Victoria
+for-case->ensembles
+bridal-amod->ensembles
+ensembles-nmod:for->color
+.-punct->color
+white-nsubj->color
+was-cop->color
+---punct->color
+choice-nmod:of->color
+the-det->world
+In-case->Japan
+Japan-nmod:in->color
+world-nmod:in->popularized
+the-det->color
+Western-amod->world
+------CorefChainz

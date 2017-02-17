@@ -1,0 +1,16 @@
+Legend says single women will dream of their future husbands if they sleep with a slice of groom's cake under their pillows.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NNP Legend)) (VP (VBZ says) (SBAR (S (NP (JJ single) (NNS women)) (VP (MD will) (VP (VB dream) (PP (IN of) (NP (PRP$ their) (JJ future) (NNS husbands))) (SBAR (IN if) (S (NP (PRP they)) (VP (VBP sleep) (PP (IN with) (NP (NP (DT a) (NN slice)) (PP (IN of) (NP (NP (NN groom) (POS 's)) (NN cake))))) (PP (IN under) (NP (PRP$ their) (NNS pillows))))))))))) (. .)))---
+mentions
+	Legend
+	single women
+	their
+	their future husbands
+	they
+	a slice of groom 's cake
+	groom 's
+	groom 's cake
+	their
+	their pillows
+------CorefChainz
+CHAIN8-["single women" in sentence 1, "their" in sentence 1, "they" in sentence 1, "their" in sentence 1]
+representative mention: "single women" in sentence 1

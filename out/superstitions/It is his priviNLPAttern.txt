@@ -1,0 +1,225 @@
+It is his privilege to help man endure by lifting his heart, by reminding him of the courage and honor and hope and pride and compassion and pity and sacrifice which have been the glory of his past.
+------CorefChainz
+CHAIN15-["his" in sentence 1, "his" in sentence 1, "him" in sentence 1, "his" in sentence 1]
+representative mention: "his" in sentence 1
+It-PRP 
+is-VBZ 
+his-PRP$ 
+privilege-NN 
+to-TO 
+help-VB 
+man-NN 
+endure-NNS 
+by-IN 
+lifting-VBG 
+his-PRP$ 
+heart-NN 
+,-, 
+by-IN 
+reminding-VBG 
+him-PRP 
+of-IN 
+the-DT 
+courage-NN 
+and-CC 
+honor-NN 
+and-CC 
+hope-NN 
+and-CC 
+pride-NN 
+and-CC 
+compassion-NN 
+and-CC 
+pity-NN 
+and-CC 
+sacrifice-VB 
+which-WDT 
+have-VBP 
+been-VBN 
+the-DT 
+glory-NN 
+of-IN 
+his-PRP$ 
+past-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> It
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> PRP$ 	-> his
+	 	-> NN 	-> privilege
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VP 	-> VB 	-> help
+	 	-> NP 	-> NN 	-> man
+	 	-> NNS 	-> endure
+		 	-> PP 	-> IN 	-> by
+	 	-> S 	-> VP 	-> VBG 	-> lifting
+	 	-> NP 	-> PRP$ 	-> his
+	 	-> NN 	-> heart
+					 	-> , 	-> ,
+	 	-> PP 	-> IN 	-> by
+	 	-> S 	-> VP 	-> VBG 	-> reminding
+	 	-> NP 	-> PRP 	-> him
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> courage
+	 	-> CC 	-> and
+	 	-> NN 	-> honor
+		 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> NN 	-> hope
+	 	-> CC 	-> and
+	 	-> NN 	-> pride
+		 	-> CC 	-> and
+	 	-> NP 	-> NN 	-> compassion
+	 	-> CC 	-> and
+	 	-> NN 	-> pity
+									 	-> CC 	-> and
+	 	-> VP 	-> VB 	-> sacrifice
+	 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> VP 	-> VBP 	-> have
+	 	-> VP 	-> VBN 	-> been
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> glory
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> PRP$ 	-> his
+	 	-> NN 	-> past
+														 	-> . 	-> .
+			
+Dependensee repr
+nsubj(privilege-4, It-1)
+cop(privilege-4, is-2)
+nmod:poss(privilege-4, his-3)
+root(ROOT-0, privilege-4)
+mark(help-6, to-5)
+acl(privilege-4, help-6)
+compound(endure-8, man-7)
+dobj(help-6, endure-8)
+mark(lifting-10, by-9)
+advcl(help-6, lifting-10)
+nmod:poss(heart-12, his-11)
+dobj(lifting-10, heart-12)
+mark(reminding-15, by-14)
+advcl(help-6, reminding-15)
+dobj(reminding-15, him-16)
+case(courage-19, of-17)
+det(courage-19, the-18)
+nmod:of(reminding-15, courage-19)
+cc(courage-19, and-20)
+nmod:of(reminding-15, honor-21)
+conj:and(courage-19, honor-21)
+cc(courage-19, and-22)
+nmod:of(reminding-15, hope-23)
+conj:and(courage-19, hope-23)
+cc(hope-23, and-24)
+conj:and(courage-19, pride-25)
+conj:and(hope-23, pride-25)
+cc(hope-23, and-26)
+conj:and(courage-19, compassion-27)
+conj:and(hope-23, compassion-27)
+cc(compassion-27, and-28)
+conj:and(hope-23, pity-29)
+conj:and(compassion-27, pity-29)
+cc(help-6, and-30)
+acl(privilege-4, sacrifice-31)
+conj:and(help-6, sacrifice-31)
+nsubj(glory-36, which-32)
+aux(glory-36, have-33)
+cop(glory-36, been-34)
+det(glory-36, the-35)
+ccomp(sacrifice-31, glory-36)
+case(past-39, of-37)
+nmod:poss(past-39, his-38)
+nmod:of(glory-36, past-39)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, privilege-4)
+nsubj(privilege-4, It-1)
+cop(privilege-4, is-2)
+nmod:poss(privilege-4, his-3)
+mark(help-6, to-5)
+acl:to(privilege-4, help-6)
+nsubj(endure-8, man-7)
+ccomp(help-6, endure-8)
+mark(lifting-10, by-9)
+advcl:by(endure-8, lifting-10)
+nmod:poss(heart-12, his-11)
+dobj(lifting-10, heart-12)
+punct(help-6, ,-13)
+mark(reminding-15, by-14)
+advcl:by(help-6, reminding-15)
+dobj(reminding-15, him-16)
+case(courage-19, of-17)
+det(courage-19, the-18)
+nmod:of(reminding-15, courage-19)
+nsubj(glory-36, courage-19)
+cc(courage-19, and-20)
+nmod:of(reminding-15, honor-21)
+conj:and(courage-19, honor-21)
+nsubj(glory-36, honor-21)
+cc(courage-19, and-22)
+nmod:of(reminding-15, hope-23)
+conj:and(courage-19, hope-23)
+nsubj(glory-36, hope-23)
+cc(courage-19, and-24)
+nmod:of(reminding-15, pride-25)
+conj:and(courage-19, pride-25)
+nsubj(glory-36, pride-25)
+cc(courage-19, and-26)
+nmod:of(reminding-15, compassion-27)
+conj:and(courage-19, compassion-27)
+nsubj(glory-36, compassion-27)
+cc(courage-19, and-28)
+nmod:of(reminding-15, pity-29)
+conj:and(courage-19, pity-29)
+nsubj(glory-36, pity-29)
+cc(pity-29, and-30)
+conj:and(courage-19, sacrifice-31)
+conj:and(pity-29, sacrifice-31)
+ref(courage-19, which-32)
+aux(glory-36, have-33)
+cop(glory-36, been-34)
+det(glory-36, the-35)
+acl:relcl(courage-19, glory-36)
+case(past-39, of-37)
+nmod:poss(past-39, his-38)
+nmod:of(glory-36, past-39)
+punct(privilege-4, .-40)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[22, 34] [?#1, It, compassion, courage, endure, glory, heart, help, him, his, his, his, honor, hope, lifting, man, past, pity, pride, privilege, reminding, sacrifice]
+heart-->lifting
+compassion-:of->reminding
+compassion-:and->courage
+reminding-:by->help
+glory-:relcl->courage
+endure-->help
+pity-:of->reminding
+pride-->glory
+It- : is  : is ->privilege
+hope-->glory
+man-->endure
+courage-->glory
+his-:poss->past
+honor-:and->courage
+lifting-:by->endure
+pity- : have  : been  : been ->glory
+honor-:of->reminding
+pity-:and->courage
+his-:poss->heart
+pride-:and->courage
+?#1-->him
+sacrifice-:and->pity
+hope-:of->reminding
+his-:poss->privilege
+courage-:of->reminding
+honor-->glory
+pride-:of->reminding
+sacrifice-:and : which :and->courage
+compassion-->glory
+hope-:and->courage
+past-:of->glory
+help-:to->privilege
+?#1-->his
+?#1-->reminding

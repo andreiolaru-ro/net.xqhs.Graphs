@@ -1,0 +1,15 @@
+The bride stands to the groom's left during a Christian ceremony, because in bygone days the groom needed his right hand free to fight off other suitors.
+------------Like Tree in the Wind---------------(ROOT (S (NP (DT The) (NN bride)) (VP (VBZ stands) (PP (TO to) (NP (NP (DT the) (NN groom) (POS 's)) (ADJP (VBN left) (PP (IN during) (NP (NP (DT a) (JJ Christian) (NN ceremony)) (, ,) (SBAR (IN because) (S (PP (IN in) (NP (JJ bygone) (NNS days))) (NP (DT the) (NN groom)) (VP (VBD needed) (S (NP (PRP$ his) (JJ right) (NN hand)) (ADJP (JJ free) (S (VP (TO to) (VP (VB fight) (PRT (RP off))))))))))))) (JJ other) (NNS suitors)))) (. .)))---
+mentions
+	Christian
+	The bride
+	the groom 's
+	a Christian ceremony , because in bygone days the groom needed his right hand free to fight off
+	bygone days
+	the groom
+	his
+	his right hand
+	to the groom 's left during a Christian ceremony , because in bygone days the groom needed his right hand free to fight off other suitors
+------CorefChainz
+CHAIN6-["the groom 's" in sentence 1, "the groom" in sentence 1, "his" in sentence 1]
+representative mention: "the groom 's" in sentence 1

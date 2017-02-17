@@ -1,0 +1,24 @@
+For good luck, Egyptian women pinch the bride on her wedding day. Ouch!
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, pinch-7)
+case(luck-3, For-1)
+amod(luck-3, good-2)
+nmod:for(pinch-7, luck-3)
+punct(pinch-7, ,-4)
+amod(women-6, Egyptian-5)
+nsubj(pinch-7, women-6)
+det(bride-9, the-8)
+dobj(pinch-7, bride-9)
+case(day-13, on-10)
+nmod:poss(day-13, her-11)
+compound(day-13, wedding-12)
+nmod:on(pinch-7, day-13)
+punct(pinch-7, .-14)
+
+---
+enhanced dependencies
+root(ROOT-0, Ouch-1)
+punct(Ouch-1, !-2)
+

@@ -1,0 +1,56 @@
+Diamonds set in gold or silver became popular as betrothal rings among wealthy Venetians toward the end of the fifteenth century.
+Diamonds-NNS 
+set-VBN 
+in-IN 
+gold-NN 
+or-CC 
+silver-NN 
+became-VBD 
+popular-JJ 
+as-IN 
+betrothal-JJ 
+rings-NNS 
+among-IN 
+wealthy-JJ 
+Venetians-NNS 
+toward-IN 
+the-DT 
+end-NN 
+of-IN 
+the-DT 
+fifteenth-JJ 
+century-NN 
+.-. 
+Dependensee repr
+nsubj(became-7, Diamonds-1)
+acl(Diamonds-1, set-2)
+case(gold-4, in-3)
+nmod:in(set-2, gold-4)
+cc(gold-4, or-5)
+nmod:in(set-2, silver-6)
+conj:or(gold-4, silver-6)
+root(ROOT-0, became-7)
+xcomp(became-7, popular-8)
+case(rings-11, as-9)
+amod(rings-11, betrothal-10)
+nmod:as(popular-8, rings-11)
+case(Venetians-14, among-12)
+amod(Venetians-14, wealthy-13)
+nmod:among(rings-11, Venetians-14)
+case(end-17, toward-15)
+det(end-17, the-16)
+nmod:toward(became-7, end-17)
+case(century-21, of-18)
+det(century-21, the-19)
+amod(century-21, fifteenth-20)
+nmod:of(end-17, century-21)
+---
+coref chains
+---
+mentions
+	Diamonds set in gold or silver
+	gold
+	silver
+	betrothal rings among wealthy Venetians
+	wealthy Venetians
+	the end of the fifteenth century

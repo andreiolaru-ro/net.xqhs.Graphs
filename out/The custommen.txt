@@ -1,0 +1,14 @@
+The custom of tiered cakes emerged from a game where the bride and groom attempted to kiss over an ever-higher cake without knocking it over.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (DT The) (NN custom)) (PP (IN of) (NP (JJ tiered) (NNS cakes)))) (VP (VBD emerged) (PP (IN from) (NP (DT a) (NN game))) (SBAR (WHADVP (WRB where)) (S (NP (DT the) (NN bride) (CC and) (NN groom)) (VP (VBD attempted) (PP (TO to) (NP (NN kiss))) (PP (IN over) (NP (DT an) (JJ ever-higher) (NN cake))) (PP (IN without) (S (VP (VBG knocking) (NP (PRP it)) (PRT (RP over))))))))) (. .)))---
+mentions
+	The custom of tiered cakes
+	tiered cakes
+	a game
+	the bride
+	groom
+	to kiss
+	an ever-higher cake
+	it
+------CorefChainz
+CHAIN7-["an ever-higher cake" in sentence 1, "it" in sentence 1]
+representative mention: "an ever-higher cake" in sentence 1

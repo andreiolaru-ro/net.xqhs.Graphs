@@ -1,0 +1,17 @@
+Middle Eastern brides paint henna on their hands and feet to protect themselves from the evil eye. Find out about Muslim wedding rituals.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NNP Middle) (NNP Eastern) (NNS brides)) (VP (VBP paint) (NP (NN henna)) (PP (IN on) (NP (PRP$ their) (NNS hands) (CC and) (NNS feet))) (S (VP (TO to) (VP (VB protect) (NP (PRP themselves)) (PP (IN from) (NP (DT the) (JJ evil) (NN eye))))))) (. .)))(ROOT (S (VP (VB Find) (PRT (RP out)) (PP (IN about) (NP (JJ Muslim) (NN wedding) (NNS rituals)))) (. .)))---
+mentions
+	Middle Eastern brides
+	henna
+	their
+	their hands and feet
+	feet
+	themselves
+	the evil eye
+---
+mentions
+	Muslim
+	Muslim wedding rituals
+------CorefChainz
+CHAIN5-["Middle Eastern brides" in sentence 1, "their" in sentence 1, "themselves" in sentence 1]
+representative mention: "Middle Eastern brides" in sentence 1

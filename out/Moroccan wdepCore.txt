@@ -1,0 +1,58 @@
+Moroccan women take a milk bath to purify themselves before their wedding ceremony. See more Moroccan wedding customs.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, take-3)
+amod(women-2, Moroccan-1)
+nsubj(take-3, women-2)
+det(bath-6, a-4)
+compound(bath-6, milk-5)
+dobj(take-3, bath-6)
+mark(purify-8, to-7)
+advcl:to(take-3, purify-8)
+dobj(purify-8, themselves-9)
+case(ceremony-13, before-10)
+nmod:poss(ceremony-13, their-11)
+compound(ceremony-13, wedding-12)
+nmod:before(purify-8, ceremony-13)
+punct(take-3, .-14)
+---
+qqroot(ROOT-0, take-3)
+amod(women-2, Moroccan-1)
+nsubj(take-3, women-2)
+det(bath-6, a-4)
+compound(bath-6, milk-5)
+dobj(take-3, bath-6)
+mark(purify-8, to-7)
+advcl:to(take-3, purify-8)
+dobj(purify-8, themselves-9)
+case(ceremony-13, before-10)
+nmod:poss(ceremony-13, their-11)
+compound(ceremony-13, wedding-12)
+nmod:before(purify-8, ceremony-13)
+punct(take-3, .-14)
+root(ROOT-0, See-1)
+advmod(Moroccan-3, more-2)
+amod(customs-5, Moroccan-3)
+compound(customs-5, wedding-4)
+dobj(See-1, customs-5)
+punct(See-1, .-6)
+------CorefChainz
+CHAIN3-["Moroccan women" in sentence 1, "themselves" in sentence 1, "their" in sentence 1]
+representative mention: "Moroccan women" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> JJ	 	-> Moroccan-1
+		 	-> NNS	 	-> women-2
+			 	-> VP	 	-> VBP	 	-> take-3
+		 	-> S	 	-> NP	 	-> DT	 	-> a-4
+		 	-> NN	 	-> milk-5
+		 	-> NN	 	-> bath-6
+			 	-> VP	 	-> TO	 	-> to-7
+		 	-> VP	 	-> VB	 	-> purify-8
+		 	-> NP	 	-> PRP	 	-> themselves-9
+			 	-> PP	 	-> IN	 	-> before-10
+		 	-> NP	 	-> PRP$	 	-> their-11
+		 	-> NN	 	-> wedding-12
+		 	-> NN	 	-> ceremony-13
+								 	-> .	 	-> .-14
+			

@@ -1,0 +1,74 @@
+Some say the world will end in fire, some say in ice.
+------CorefChainz
+Some-DT 
+say-VBP 
+the-DT 
+world-NN 
+will-MD 
+end-VB 
+in-IN 
+fire-NN 
+,-, 
+some-DT 
+say-VBP 
+in-IN 
+ice-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> DT 	-> Some
+		 	-> VP 	-> VBP 	-> say
+	 	-> SBAR 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> world
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> end
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NN 	-> fire
+									 	-> , 	-> ,
+	 	-> NP 	-> DT 	-> some
+		 	-> VP 	-> VBP 	-> say
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NN 	-> ice
+				 	-> . 	-> .
+			
+Dependensee repr
+nsubj(say-2, Some-1)
+ccomp(say-11, say-2)
+det(world-4, the-3)
+nsubj(end-6, world-4)
+aux(end-6, will-5)
+ccomp(say-2, end-6)
+case(fire-8, in-7)
+nmod:in(end-6, fire-8)
+nsubj(say-11, some-10)
+root(ROOT-0, say-11)
+case(ice-13, in-12)
+nmod:in(say-11, ice-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, say-11)
+nsubj(say-2, Some-1)
+ccomp(say-11, say-2)
+det(world-4, the-3)
+nsubj(end-6, world-4)
+aux(end-6, will-5)
+ccomp(say-2, end-6)
+case(fire-8, in-7)
+nmod:in(end-6, fire-8)
+punct(say-11, ,-9)
+nsubj(say-11, some-10)
+case(ice-13, in-12)
+nmod:in(say-11, ice-13)
+punct(say-11, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 7] [Some, end, fire, ice, say, say, some, world]
+fire-:in->end
+world- : will ->end
+end-->say
+say-->say
+ice-:in->say
+some-->say
+Some-->say

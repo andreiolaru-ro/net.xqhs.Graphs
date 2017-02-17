@@ -1,0 +1,39 @@
+In Asia, wearing robes with embroidered cranes symbolizes fidelity for the length of a marriage.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1In Governor: 2Asia
+ Relation: nmod:in Dependent: 2Asia Governor: 9symbolizes
+ Relation: punct Dependent: 3, Governor: 9symbolizes
+ Relation: csubj Dependent: 4wearing Governor: 9symbolizes
+ Relation: dobj Dependent: 5robes Governor: 4wearing
+ Relation: case Dependent: 6with Governor: 8cranes
+ Relation: amod Dependent: 7embroidered Governor: 8cranes
+ Relation: nmod:with Dependent: 8cranes Governor: 4wearing
+ Relation: dobj Dependent: 10fidelity Governor: 9symbolizes
+ Relation: case Dependent: 11for Governor: 13length
+ Relation: det Dependent: 12the Governor: 13length
+ Relation: nmod:for Dependent: 13length Governor: 9symbolizes
+ Relation: case Dependent: 14of Governor: 16marriage
+ Relation: det Dependent: 15a Governor: 16marriage
+ Relation: nmod:of Dependent: 16marriage Governor: 13length
+ Relation: punct Dependent: 17. Governor: 9symbolizes
+G[0, 16] []
+of-case->marriage
+embroidered-amod->cranes
+the-det->length
+length-nmod:for->symbolizes
+.-punct->symbolizes
+Asia-nmod:in->symbolizes
+cranes-nmod:with->wearing
+,-punct->symbolizes
+a-det->marriage
+marriage-nmod:of->length
+In-case->Asia
+wearing-csubj->symbolizes
+for-case->length
+with-case->cranes
+robes-dobj->wearing
+fidelity-dobj->symbolizes
+------CorefChainz

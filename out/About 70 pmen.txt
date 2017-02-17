@@ -1,0 +1,11 @@
+About 70 percent of all brides sport the traditional diamond on the fourth finger of their left hand.
+------------Like Tree in the Wind---------------(ROOT (NP (NP (NP (QP (RB About) (CD 70)) (NN percent)) (PP (IN of) (NP (DT all) (NNS brides) (NN sport)))) (NP (NP (DT the) (JJ traditional) (NN diamond)) (PP (IN on) (NP (NP (DT the) (JJ fourth) (NN finger)) (PP (IN of) (NP (PRP$ their) (JJ left) (NN hand)))))) (. .)))---
+mentions
+	70 percent
+	fourth
+	all brides sport
+	the traditional diamond on the fourth finger of their left hand
+	the fourth finger of their left hand
+	their
+	their left hand
+------CorefChainz

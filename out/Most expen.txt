@@ -1,0 +1,83 @@
+Most expensive wedding ever? The marriage of Sheik Rashid Bin Saeed Al Maktoum's son to Princess Salama in Dubai in May 1981. The price tag? $44 million.
+Most-RBS 
+expensive-JJ 
+wedding-RB 
+ever-RB 
+?-. 
+The-DT 
+marriage-NN 
+of-IN 
+Sheik-NNP 
+Rashid-NNP 
+Bin-NNP 
+Saeed-VBD 
+Al-NNP 
+Maktoum-NNP 
+'s-POS 
+son-NN 
+to-TO 
+Princess-NNP 
+Salama-NNP 
+in-IN 
+Dubai-NNP 
+in-IN 
+May-NNP 
+1981-CD 
+.-. 
+The-DT 
+price-NN 
+tag-NN 
+?-. 
+$-$ 
+44-CD 
+million-CD 
+.-. 
+Dependensee repr
+advmod(expensive-2, Most-1)
+root(ROOT-0, expensive-2)
+dep(ever-4, wedding-3)
+dep(Saeed-12, ever-4)
+det(marriage-7, The-6)
+nsubj(Saeed-12, marriage-7)
+case(Bin-11, of-8)
+compound(Bin-11, Sheik-9)
+compound(Bin-11, Rashid-10)
+nmod:of(marriage-7, Bin-11)
+dep(expensive-2, Saeed-12)
+compound(Maktoum-14, Al-13)
+nmod:poss(son-16, Maktoum-14)
+case(Maktoum-14, 's-15)
+dobj(Saeed-12, son-16)
+case(Salama-19, to-17)
+compound(Salama-19, Princess-18)
+nmod:to(Saeed-12, Salama-19)
+case(Dubai-21, in-20)
+nmod:in(Salama-19, Dubai-21)
+case(May-23, in-22)
+nmod:in(Dubai-21, May-23)
+nummod(May-23, 1981-24)
+det(tag-28, The-26)
+compound(tag-28, price-27)
+dep(Salama-19, tag-28)
+amod(Salama-19, $-30)
+compound($-30, 44-31)
+compound($-30, million-32)
+---
+coref chains
+---
+mentions
+	Most expensive wedding
+---
+mentions
+	Sheik Rashid Bin Saeed Al Maktoum 's
+	Dubai
+	May 1981
+	Sheik Rashid Bin Saeed Al Maktoum 's son
+	to Princess Salama in Dubai
+	The marriage of Sheik Rashid Bin Saeed Al Maktoum 's son to Princess Salama in Dubai in May 1981
+---
+mentions
+	The price tag
+---
+mentions
+	$ 44 million

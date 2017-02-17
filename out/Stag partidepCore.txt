@@ -1,0 +1,52 @@
+Stag parties were first held by ancient Spartan soldiers, who kissed their bachelor days goodbye with a raucous party.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, held-5)
+compound(parties-2, Stag-1)
+nsubjpass(held-5, parties-2)
+auxpass(held-5, were-3)
+advmod(held-5, first-4)
+case(soldiers-9, by-6)
+amod(soldiers-9, ancient-7)
+amod(soldiers-9, Spartan-8)
+nmod:agent(held-5, soldiers-9)
+nsubj(kissed-12, soldiers-9)
+punct(soldiers-9, ,-10)
+ref(soldiers-9, who-11)
+acl:relcl(soldiers-9, kissed-12)
+nmod:poss(days-15, their-13)
+compound(days-15, bachelor-14)
+nmod:tmod(kissed-12, days-15)
+dobj(kissed-12, goodbye-16)
+case(party-20, with-17)
+det(party-20, a-18)
+amod(party-20, raucous-19)
+nmod:with(goodbye-16, party-20)
+punct(held-5, .-21)
+------CorefChainz
+CHAIN3-["Stag parties" in sentence 1, "their" in sentence 1]
+representative mention: "Stag parties" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NNP	 	-> Stag-1
+		 	-> NNS	 	-> parties-2
+			 	-> VP	 	-> VBD	 	-> were-3
+		 	-> ADVP	 	-> RB	 	-> first-4
+			 	-> VP	 	-> VBN	 	-> held-5
+		 	-> PP	 	-> IN	 	-> by-6
+		 	-> NP	 	-> NP	 	-> JJ	 	-> ancient-7
+		 	-> JJ	 	-> Spartan-8
+		 	-> NNS	 	-> soldiers-9
+			 	-> ,	 	-> ,-10
+		 	-> SBAR	 	-> WHNP	 	-> WP	 	-> who-11
+			 	-> S	 	-> VP	 	-> VBD	 	-> kissed-12
+		 	-> NP	 	-> PRP$	 	-> their-13
+		 	-> NN	 	-> bachelor-14
+		 	-> NNS	 	-> days-15
+		 	-> NN	 	-> goodbye-16
+			 	-> PP	 	-> IN	 	-> with-17
+		 	-> NP	 	-> DT	 	-> a-18
+		 	-> JJ	 	-> raucous-19
+		 	-> NN	 	-> party-20
+											 	-> .	 	-> .-21
+			

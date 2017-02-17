@@ -1,0 +1,57 @@
+One man's trash is another man's gold.
+------CorefChainz
+One-CD 
+man-NN 
+'s-POS 
+trash-NN 
+is-VBZ 
+another-DT 
+man-NN 
+'s-POS 
+gold-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> CD 	-> One
+	 	-> NN 	-> man
+	 	-> POS 	-> 's
+		 	-> NN 	-> trash
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> man
+	 	-> POS 	-> 's
+		 	-> NN 	-> gold
+			 	-> . 	-> .
+			
+Dependensee repr
+nummod(man-2, One-1)
+nmod:poss(trash-4, man-2)
+case(man-2, 's-3)
+nsubj(gold-9, trash-4)
+cop(gold-9, is-5)
+det(man-7, another-6)
+nmod:poss(gold-9, man-7)
+case(man-7, 's-8)
+root(ROOT-0, gold-9)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, gold-9)
+nummod(man-2, One-1)
+nmod:poss(trash-4, man-2)
+case(man-2, 's-3)
+nsubj(gold-9, trash-4)
+cop(gold-9, is-5)
+det(man-7, another-6)
+nmod:poss(gold-9, man-7)
+case(man-7, 's-8)
+punct(gold-9, .-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[6, 5] [?#1, One, gold, man, man, trash]
+?#1- : 's ->man
+trash- : is ->gold
+One-->man
+?#1-:poss->gold
+man-:poss : 's :poss->trash

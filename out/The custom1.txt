@@ -1,0 +1,32 @@
+The custom of tiered cakes emerged from a game where the bride and groom attempted to kiss over an ever-higher cake without knocking it over.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, emerged-6)
+det(custom-2, The-1)
+nsubj(emerged-6, custom-2)
+case(cakes-5, of-3)
+amod(cakes-5, tiered-4)
+nmod:of(custom-2, cakes-5)
+case(game-9, from-7)
+det(game-9, a-8)
+nmod:from(emerged-6, game-9)
+advmod(attempted-15, where-10)
+det(bride-12, the-11)
+nsubj(attempted-15, bride-12)
+cc(bride-12, and-13)
+conj:and(bride-12, groom-14)
+nsubj(attempted-15, groom-14)
+acl:relcl(game-9, attempted-15)
+case(kiss-17, to-16)
+nmod:to(attempted-15, kiss-17)
+case(cake-21, over-18)
+det(cake-21, an-19)
+amod(cake-21, ever-higher-20)
+nmod:over(attempted-15, cake-21)
+mark(knocking-23, without-22)
+advcl:without(attempted-15, knocking-23)
+dobj(knocking-23, it-24)
+compound:prt(knocking-23, over-25)
+punct(emerged-6, .-26)
+

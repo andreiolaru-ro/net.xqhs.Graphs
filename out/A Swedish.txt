@@ -1,0 +1,90 @@
+A Swedish bride puts a silver coin from her father and a gold coin from her mother in each shoe to ensure that she'll never do without. Learn more about Swedish wedding traditions.
+A-DT 
+Swedish-JJ 
+bride-NN 
+puts-VBZ 
+a-DT 
+silver-JJ 
+coin-NN 
+from-IN 
+her-PRP$ 
+father-NN 
+and-CC 
+a-DT 
+gold-JJ 
+coin-NN 
+from-IN 
+her-PRP$ 
+mother-NN 
+in-IN 
+each-DT 
+shoe-NN 
+to-TO 
+ensure-VB 
+that-IN 
+she-PRP 
+'ll-MD 
+never-RB 
+do-VB 
+without-IN 
+.-. 
+Learn-JJ 
+more-JJR 
+about-IN 
+Swedish-JJ 
+wedding-NN 
+traditions-NNS 
+.-. 
+Dependensee repr
+det(bride-3, A-1)
+amod(bride-3, Swedish-2)
+nsubj(puts-4, bride-3)
+root(ROOT-0, puts-4)
+det(coin-7, a-5)
+amod(coin-7, silver-6)
+dobj(puts-4, coin-7)
+case(father-10, from-8)
+nmod:poss(father-10, her-9)
+nmod:from(puts-4, father-10)
+cc(father-10, and-11)
+det(coin-14, a-12)
+amod(coin-14, gold-13)
+nmod:from(puts-4, coin-14)
+conj:and(father-10, coin-14)
+case(mother-17, from-15)
+nmod:poss(mother-17, her-16)
+nmod:from(coin-14, mother-17)
+case(shoe-20, in-18)
+det(shoe-20, each-19)
+nmod:in(mother-17, shoe-20)
+mark(ensure-22, to-21)
+acl(shoe-20, ensure-22)
+mark(do-27, that-23)
+nsubj(do-27, she-24)
+aux(do-27, 'll-25)
+neg(do-27, never-26)
+ccomp(ensure-22, do-27)
+nmod(do-27, without-28)
+amod(more-31, Learn-30)
+dep(coin-14, more-31)
+case(traditions-35, about-32)
+amod(traditions-35, Swedish-33)
+compound(traditions-35, wedding-34)
+nmod:about(more-31, traditions-35)
+---
+coref chains
+	CHAIN8-["A Swedish bride" in sentence 1, "her" in sentence 1, "her" in sentence 1, "she" in sentence 1]
+---
+mentions
+	A Swedish bride
+	a silver coin
+	her
+	her father
+	a gold coin
+	her
+	her mother in each shoe to ensure that she 'll never do without
+	each shoe to ensure that she 'll never do without
+	she
+---
+mentions
+	Swedish wedding traditions

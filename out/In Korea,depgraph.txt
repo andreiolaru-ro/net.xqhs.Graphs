@@ -1,0 +1,41 @@
+In Korea, brides don bright hues of red and yellow to take their vows.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1In Governor: 2Korea
+ Relation: nmod:in Dependent: 2Korea Governor: 5don
+ Relation: punct Dependent: 3, Governor: 5don
+ Relation: nsubj Dependent: 4brides Governor: 5don
+ Relation: amod Dependent: 6bright Governor: 7hues
+ Relation: dobj Dependent: 7hues Governor: 5don
+ Relation: case Dependent: 8of Governor: 9red
+ Relation: nmod:of Dependent: 9red Governor: 7hues
+ Relation: cc Dependent: 10and Governor: 9red
+ Relation: nmod:of Dependent: 11yellow Governor: 7hues
+ Relation: conj:and Dependent: 11yellow Governor: 9red
+ Relation: mark Dependent: 12to Governor: 13take
+ Relation: advcl:to Dependent: 13take Governor: 5don
+ Relation: nmod:poss Dependent: 14their Governor: 15vows
+ Relation: dobj Dependent: 15vows Governor: 13take
+ Relation: punct Dependent: 16. Governor: 5don
+G[0, 16] []
+yellow-nmod:of->hues
+,-punct->don
+brides-nsubj->don
+to-mark->take
+vows-dobj->take
+their-nmod:poss->vows
+and-cc->red
+hues-dobj->don
+red-nmod:of->hues
+yellow-conj:and->red
+take-advcl:to->don
+.-punct->don
+of-case->red
+Korea-nmod:in->don
+In-case->Korea
+bright-amod->hues
+------CorefChainz
+CHAIN3-["brides" in sentence 1, "their" in sentence 1]
+representative mention: "brides" in sentence 1

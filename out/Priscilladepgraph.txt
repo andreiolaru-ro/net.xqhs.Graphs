@@ -1,0 +1,47 @@
+Priscilla Presley's engagement ring was a whopping 3 1/2-carat rock surrounded by a detachable row of smaller diamonds.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: compound Dependent: 1Priscilla Governor: 2Presley
+ Relation: nmod:poss Dependent: 2Presley Governor: 5ring
+ Relation: case Dependent: 3's Governor: 2Presley
+ Relation: compound Dependent: 4engagement Governor: 5ring
+ Relation: nsubj Dependent: 5ring Governor: 12rock
+ Relation: cop Dependent: 6was Governor: 12rock
+ Relation: det Dependent: 7a Governor: 12rock
+ Relation: amod Dependent: 8whopping Governor: 12rock
+ Relation: nummod Dependent: 93 1/2 Governor: 12rock
+ Relation: punct Dependent: 10- Governor: 12rock
+ Relation: compound Dependent: 11carat Governor: 12rock
+ Relation: acl Dependent: 13surrounded Governor: 12rock
+ Relation: case Dependent: 14by Governor: 17row
+ Relation: det Dependent: 15a Governor: 17row
+ Relation: amod Dependent: 16detachable Governor: 17row
+ Relation: nmod:by Dependent: 17row Governor: 13surrounded
+ Relation: case Dependent: 18of Governor: 20diamonds
+ Relation: amod Dependent: 19smaller Governor: 20diamonds
+ Relation: nmod:of Dependent: 20diamonds Governor: 17row
+ Relation: punct Dependent: 21. Governor: 12rock
+G[0, 20] []
+Priscilla-compound->Presley
+.-punct->rock
+engagement-compound->ring
+a-det->rock
+was-cop->rock
+whopping-amod->rock
+--punct->rock
+detachable-amod->row
+Presley-nmod:poss->ring
+a-det->row
+3 1/2-nummod->rock
+of-case->diamonds
+diamonds-nmod:of->row
+by-case->row
+ring-nsubj->rock
+'s-case->Presley
+carat-compound->rock
+smaller-amod->diamonds
+row-nmod:by->surrounded
+surrounded-acl->rock
+------CorefChainz

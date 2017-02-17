@@ -1,0 +1,40 @@
+She believes that someone believes her belief that he believes his desire for her.
+------CorefChainz
+CHAIN5-["someone" in sentence 1, "he" in sentence 1, "his" in sentence 1]
+representative mention: "someone" in sentence 1
+CHAIN7-["She" in sentence 1, "her" in sentence 1, "her" in sentence 1]
+representative mention: "She" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, believes-2)
+nsubj(believes-2, She-1)
+mark(believes-5, that-3)
+nsubj(believes-5, someone-4)
+ccomp(believes-2, believes-5)
+nmod:poss(belief-7, her-6)
+dobj(believes-5, belief-7)
+mark(believes-10, that-8)
+nsubj(believes-10, he-9)
+ccomp(belief-7, believes-10)
+nmod:poss(desire-12, his-11)
+dobj(believes-10, desire-12)
+case(her-14, for-13)
+nmod:for(desire-12, her-14)
+punct(believes-2, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 10] [She, belief, believes, believes, believes, desire, someone]
+desire-dobj->believes
+believes-ccomp->belief
+believes-ccomp->believes
+someone-he :nsubj->believes
+someone-his :nmod:poss->desire
+belief-dobj->believes
+She-her :nmod:poss->belief
+She-nsubj->believes
+someone-nsubj->believes
+She-her :nmod:for->desire

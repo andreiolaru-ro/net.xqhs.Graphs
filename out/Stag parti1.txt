@@ -1,0 +1,27 @@
+Stag parties were first held by ancient Spartan soldiers, who kissed their bachelor days goodbye with a raucous party.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, held-5)
+compound(parties-2, Stag-1)
+nsubjpass(held-5, parties-2)
+auxpass(held-5, were-3)
+advmod(held-5, first-4)
+case(soldiers-9, by-6)
+amod(soldiers-9, ancient-7)
+amod(soldiers-9, Spartan-8)
+nmod:agent(held-5, soldiers-9)
+nsubj(kissed-12, soldiers-9)
+punct(soldiers-9, ,-10)
+ref(soldiers-9, who-11)
+acl:relcl(soldiers-9, kissed-12)
+nmod:poss(days-15, their-13)
+compound(days-15, bachelor-14)
+nmod:tmod(kissed-12, days-15)
+dobj(kissed-12, goodbye-16)
+case(party-20, with-17)
+det(party-20, a-18)
+amod(party-20, raucous-19)
+nmod:with(goodbye-16, party-20)
+punct(held-5, .-21)
+

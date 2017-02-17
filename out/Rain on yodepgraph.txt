@@ -1,0 +1,37 @@
+Rain on your wedding day is actually considered good luck, according to Hindu tradition.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: nsubjpass Dependent: 1Rain Governor: 8considered
+ Relation: case Dependent: 2on Governor: 5day
+ Relation: nmod:poss Dependent: 3your Governor: 5day
+ Relation: compound Dependent: 4wedding Governor: 5day
+ Relation: nmod:on Dependent: 5day Governor: 1Rain
+ Relation: auxpass Dependent: 6is Governor: 8considered
+ Relation: advmod Dependent: 7actually Governor: 8considered
+ Relation: amod Dependent: 9good Governor: 10luck
+ Relation: xcomp Dependent: 10luck Governor: 8considered
+ Relation: punct Dependent: 11, Governor: 8considered
+ Relation: case Dependent: 12according Governor: 15tradition
+ Relation: mwe Dependent: 13to Governor: 12according
+ Relation: compound Dependent: 14Hindu Governor: 15tradition
+ Relation: nmod:according_to Dependent: 15tradition Governor: 8considered
+ Relation: punct Dependent: 16. Governor: 8considered
+G[0, 15] []
+your-nmod:poss->day
+actually-advmod->considered
+Hindu-compound->tradition
+tradition-nmod:according_to->considered
+on-case->day
+.-punct->considered
+day-nmod:on->Rain
+to-mwe->according
+Rain-nsubjpass->considered
+according-case->tradition
+wedding-compound->day
+good-amod->luck
+is-auxpass->considered
+luck-xcomp->considered
+,-punct->considered
+------CorefChainz

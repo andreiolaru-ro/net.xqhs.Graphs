@@ -1,0 +1,39 @@
+In the symbolic language of jewels, a sapphire in a wedding ring means marital happiness.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1In Governor: 4language
+ Relation: det Dependent: 2the Governor: 4language
+ Relation: amod Dependent: 3symbolic Governor: 4language
+ Relation: nmod:in Dependent: 4language Governor: 14means
+ Relation: case Dependent: 5of Governor: 6jewels
+ Relation: nmod:of Dependent: 6jewels Governor: 4language
+ Relation: punct Dependent: 7, Governor: 14means
+ Relation: det Dependent: 8a Governor: 9sapphire
+ Relation: nsubj Dependent: 9sapphire Governor: 14means
+ Relation: case Dependent: 10in Governor: 13ring
+ Relation: det Dependent: 11a Governor: 13ring
+ Relation: compound Dependent: 12wedding Governor: 13ring
+ Relation: nmod:in Dependent: 13ring Governor: 9sapphire
+ Relation: amod Dependent: 15marital Governor: 16happiness
+ Relation: dobj Dependent: 16happiness Governor: 14means
+ Relation: punct Dependent: 17. Governor: 14means
+G[0, 16] []
+wedding-compound->ring
+in-case->ring
+In-case->language
+the-det->language
+language-nmod:in->means
+jewels-nmod:of->language
+happiness-dobj->means
+a-det->ring
+a-det->sapphire
+ring-nmod:in->sapphire
+,-punct->means
+symbolic-amod->language
+marital-amod->happiness
+.-punct->means
+sapphire-nsubj->means
+of-case->jewels
+------CorefChainz

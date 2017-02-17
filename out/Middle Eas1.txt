@@ -1,0 +1,34 @@
+Middle Eastern brides paint henna on their hands and feet to protect themselves from the evil eye. Find out about Muslim wedding rituals.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, paint-4)
+compound(brides-3, Middle-1)
+compound(brides-3, Eastern-2)
+nsubj(paint-4, brides-3)
+dobj(paint-4, henna-5)
+case(hands-8, on-6)
+nmod:poss(hands-8, their-7)
+nmod:on(paint-4, hands-8)
+cc(hands-8, and-9)
+nmod:on(paint-4, feet-10)
+conj:and(hands-8, feet-10)
+mark(protect-12, to-11)
+advcl:to(paint-4, protect-12)
+dobj(protect-12, themselves-13)
+case(eye-17, from-14)
+det(eye-17, the-15)
+amod(eye-17, evil-16)
+nmod:from(protect-12, eye-17)
+punct(paint-4, .-18)
+
+---
+enhanced dependencies
+root(ROOT-0, Find-1)
+compound:prt(Find-1, out-2)
+case(rituals-6, about-3)
+amod(rituals-6, Muslim-4)
+compound(rituals-6, wedding-5)
+nmod:about(Find-1, rituals-6)
+punct(Find-1, .-7)
+

@@ -1,0 +1,28 @@
+Moroccan women take a milk bath to purify themselves before their wedding ceremony. See more Moroccan wedding customs.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, take-3)
+amod(women-2, Moroccan-1)
+nsubj(take-3, women-2)
+det(bath-6, a-4)
+compound(bath-6, milk-5)
+dobj(take-3, bath-6)
+mark(purify-8, to-7)
+advcl:to(take-3, purify-8)
+dobj(purify-8, themselves-9)
+case(ceremony-13, before-10)
+nmod:poss(ceremony-13, their-11)
+compound(ceremony-13, wedding-12)
+nmod:before(purify-8, ceremony-13)
+punct(take-3, .-14)
+
+---
+enhanced dependencies
+root(ROOT-0, See-1)
+advmod(Moroccan-3, more-2)
+amod(customs-5, Moroccan-3)
+compound(customs-5, wedding-4)
+dobj(See-1, customs-5)
+punct(See-1, .-6)
+

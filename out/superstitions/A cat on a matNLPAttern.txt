@@ -1,0 +1,27 @@
+A cat on a mat is a happy pet.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, pet-9)
+det(cat-2, A-1)
+nsubj(pet-9, cat-2)
+case(mat-5, on-3)
+det(mat-5, a-4)
+nmod:on(cat-2, mat-5)
+cop(pet-9, is-6)
+det(pet-9, a-7)
+amod(pet-9, happy-8)
+punct(pet-9, .-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 6] [?#1, ?#2, ?#3, cat, happy, mat, pet]
+?#1-nmod->?#2
+happy-amod->?#3
+?#1-a->mat
+?#3-a->pet
+?#2-A->cat
+?#2-nsubj->?#3

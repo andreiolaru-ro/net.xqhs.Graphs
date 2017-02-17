@@ -1,0 +1,14 @@
+The tradition of a wedding cake comes from ancient Rome, where revelers broke a loaf of bread over a bride's head for fertility's sake.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (DT The) (NN tradition)) (PP (IN of) (NP (DT a) (NN wedding) (NN cake)))) (VP (VBZ comes) (PP (IN from) (NP (JJ ancient) (NNP Rome))) (, ,) (SBAR (WHADVP (WRB where)) (S (NP (NNS revelers)) (VP (VBD broke) (NP (NP (DT a) (NN loaf)) (PP (IN of) (NP (NN bread)))) (PP (IN over) (NP (NP (NP (DT a) (NN bride) (POS 's)) (NN head)) (PP (IN for) (NP (NP (NN fertility) (POS 's)) (NN sake))))))))) (. .)))---
+mentions
+	The tradition of a wedding cake
+	a wedding cake
+	ancient Rome
+	revelers
+	a loaf of bread
+	bread
+	a bride 's
+	a bride 's head for fertility 's sake
+	fertility 's
+	fertility 's sake
+------CorefChainz

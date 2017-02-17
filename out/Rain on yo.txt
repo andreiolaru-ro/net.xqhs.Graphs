@@ -1,0 +1,42 @@
+Rain on your wedding day is actually considered good luck, according to Hindu tradition.
+Rain-NN 
+on-IN 
+your-PRP$ 
+wedding-NN 
+day-NN 
+is-VBZ 
+actually-RB 
+considered-VBN 
+good-JJ 
+luck-NN 
+,-, 
+according-VBG 
+to-TO 
+Hindu-NNP 
+tradition-NN 
+.-. 
+Dependensee repr
+nsubjpass(considered-8, Rain-1)
+case(day-5, on-2)
+nmod:poss(day-5, your-3)
+compound(day-5, wedding-4)
+nmod:on(Rain-1, day-5)
+auxpass(considered-8, is-6)
+advmod(considered-8, actually-7)
+root(ROOT-0, considered-8)
+amod(luck-10, good-9)
+dobj(considered-8, luck-10)
+case(tradition-15, according-12)
+mwe(according-12, to-13)
+compound(tradition-15, Hindu-14)
+nmod:according_to(considered-8, tradition-15)
+---
+coref chains
+---
+mentions
+	Hindu
+	Rain on your wedding day
+	your
+	your wedding day
+	good luck
+	according to Hindu tradition

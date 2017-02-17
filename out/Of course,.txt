@@ -1,0 +1,87 @@
+Of course, Jackie Kennedy's bridesmaids were far from frumpy. She chose pink silk faille and red satin gowns created by designer Ann Lowe (also the creator of Jackie's dress).
+Of-IN 
+course-NN 
+,-, 
+Jackie-NNP 
+Kennedy-NNP 
+'s-POS 
+bridesmaids-NNS 
+were-VBD 
+far-RB 
+from-IN 
+frumpy-NNP 
+.-. 
+She-PRP 
+chose-VBD 
+pink-JJ 
+silk-NN 
+faille-NN 
+and-CC 
+red-JJ 
+satin-NN 
+gowns-NNS 
+created-VBN 
+by-IN 
+designer-NN 
+Ann-NNP 
+Lowe-NNP 
+-LRB---LRB- 
+also-RB 
+the-DT 
+creator-NN 
+of-IN 
+Jackie-NNP 
+'s-POS 
+dress-NN 
+-RRB---RRB- 
+.-. 
+Dependensee repr
+case(course-2, Of-1)
+nmod:of(were-8, course-2)
+compound(Kennedy-5, Jackie-4)
+nmod:poss(bridesmaids-7, Kennedy-5)
+case(Kennedy-5, 's-6)
+nsubj(were-8, bridesmaids-7)
+root(ROOT-0, were-8)
+case(frumpy-11, far-9)
+mwe(far-9, from-10)
+nmod:far_from(were-8, frumpy-11)
+nsubj(chose-14, She-13)
+acl:relcl(frumpy-11, chose-14)
+amod(faille-17, pink-15)
+compound(faille-17, silk-16)
+dobj(chose-14, faille-17)
+cc(faille-17, and-18)
+amod(gowns-21, red-19)
+compound(gowns-21, satin-20)
+dobj(chose-14, gowns-21)
+conj:and(faille-17, gowns-21)
+acl(faille-17, created-22)
+case(Lowe-26, by-23)
+compound(Lowe-26, designer-24)
+compound(Lowe-26, Ann-25)
+nmod:by(created-22, Lowe-26)
+dep(creator-30, also-28)
+det(creator-30, the-29)
+dep(Lowe-26, creator-30)
+case(dress-34, of-31)
+nmod:poss(dress-34, Jackie-32)
+case(Jackie-32, 's-33)
+nmod:of(creator-30, dress-34)
+---
+coref chains
+	CHAIN9-["Jackie Kennedy 's" in sentence 1, "She" in sentence 2, "Jackie 's" in sentence 2]
+---
+mentions
+	Jackie Kennedy 's
+	course
+	Jackie Kennedy 's bridesmaids
+---
+mentions
+	Jackie 's
+	pink silk faille and red satin gowns created by designer Ann Lowe -LRB- also the creator of Jackie 's dress -RRB-
+	red satin gowns
+	designer Ann Lowe
+	the creator of Jackie 's dress
+	Jackie 's dress
+	She

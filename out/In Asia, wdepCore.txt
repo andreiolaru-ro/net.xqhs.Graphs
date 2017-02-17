@@ -1,0 +1,41 @@
+In Asia, wearing robes with embroidered cranes symbolizes fidelity for the length of a marriage.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, symbolizes-9)
+case(Asia-2, In-1)
+nmod:in(symbolizes-9, Asia-2)
+punct(symbolizes-9, ,-3)
+csubj(symbolizes-9, wearing-4)
+dobj(wearing-4, robes-5)
+case(cranes-8, with-6)
+amod(cranes-8, embroidered-7)
+nmod:with(wearing-4, cranes-8)
+dobj(symbolizes-9, fidelity-10)
+case(length-13, for-11)
+det(length-13, the-12)
+nmod:for(symbolizes-9, length-13)
+case(marriage-16, of-14)
+det(marriage-16, a-15)
+nmod:of(length-13, marriage-16)
+punct(symbolizes-9, .-17)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> PP	 	-> IN	 	-> In-1
+		 	-> NP	 	-> NNP	 	-> Asia-2
+				 	-> ,	 	-> ,-3
+		 	-> NP	 	-> NP	 	-> VBG	 	-> wearing-4
+		 	-> NNS	 	-> robes-5
+			 	-> PP	 	-> IN	 	-> with-6
+		 	-> NP	 	-> JJ	 	-> embroidered-7
+		 	-> NNS	 	-> cranes-8
+					 	-> VP	 	-> VBZ	 	-> symbolizes-9
+		 	-> NP	 	-> NP	 	-> NN	 	-> fidelity-10
+			 	-> PP	 	-> IN	 	-> for-11
+		 	-> NP	 	-> NP	 	-> DT	 	-> the-12
+		 	-> NN	 	-> length-13
+			 	-> PP	 	-> IN	 	-> of-14
+		 	-> NP	 	-> DT	 	-> a-15
+		 	-> NN	 	-> marriage-16
+								 	-> .	 	-> .-17
+			

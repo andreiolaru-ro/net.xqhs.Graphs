@@ -1,0 +1,11 @@
+Snake rings dotted with ruby eyes were popular wedding bands in Victorian England—the coils winding into a circle symbolized eternity.
+------------Like Tree in the Wind---------------(ROOT (S (S (NP (NP (NNP Snake) (NNS rings)) (VP (VBN dotted) (PP (IN with) (NP (JJ ruby) (NNS eyes))))) (VP (VBD were) (NP (NP (JJ popular) (NN wedding) (NNS bands)) (PP (IN in) (NP (JJ Victorian) (NNP England)))))) (: --) (S (NP (NP (DT the) (NNS coils)) (VP (VBG winding) (PP (IN into) (NP (DT a) (NN circle))))) (VP (VBD symbolized) (NP (NN eternity)))) (. .)))---
+mentions
+	Victorian England
+	Snake rings dotted with ruby eyes
+	ruby eyes
+	popular wedding bands in Victorian England -- the coils winding into a circle symbolized eternity
+	the coils winding into a circle
+	a circle
+	eternity
+------CorefChainz

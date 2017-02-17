@@ -1,0 +1,10 @@
+On her wedding day, Grace Kelly wore a dress with a bodice made from beautiful 125-year-old lace.
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN On) (NP (PRP$ her) (NN wedding) (NN day))) (, ,) (NP (NNP Grace) (NNP Kelly)) (VP (VBD wore) (NP (DT a) (NN dress)) (PP (IN with) (NP (NP (DT a) (NN bodice)) (VP (VBN made) (PP (IN from) (NP (JJ beautiful) (JJ 125-year-old) (NN lace))))))) (. .)))---
+mentions
+	Grace Kelly
+	her
+	her wedding day
+	a dress
+	a bodice made from beautiful 125-year-old lace
+	beautiful 125-year-old lace
+------CorefChainz

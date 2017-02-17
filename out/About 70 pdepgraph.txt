@@ -1,0 +1,43 @@
+About 70 percent of all brides sport the traditional diamond on the fourth finger of their left hand.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: advmod Dependent: 1About Governor: 270
+ Relation: nummod Dependent: 270 Governor: 3percent
+ Relation: case Dependent: 4of Governor: 7sport
+ Relation: det Dependent: 5all Governor: 7sport
+ Relation: compound Dependent: 6brides Governor: 7sport
+ Relation: nmod:of Dependent: 7sport Governor: 3percent
+ Relation: det Dependent: 8the Governor: 10diamond
+ Relation: amod Dependent: 9traditional Governor: 10diamond
+ Relation: dep Dependent: 10diamond Governor: 3percent
+ Relation: case Dependent: 11on Governor: 14finger
+ Relation: det Dependent: 12the Governor: 14finger
+ Relation: amod Dependent: 13fourth Governor: 14finger
+ Relation: nmod:on Dependent: 14finger Governor: 10diamond
+ Relation: case Dependent: 15of Governor: 18hand
+ Relation: nmod:poss Dependent: 16their Governor: 18hand
+ Relation: amod Dependent: 17left Governor: 18hand
+ Relation: nmod:of Dependent: 18hand Governor: 14finger
+ Relation: punct Dependent: 19. Governor: 3percent
+G[0, 18] []
+all-det->sport
+on-case->finger
+of-case->hand
+About-advmod->70
+diamond-dep->percent
+their-nmod:poss->hand
+hand-nmod:of->finger
+traditional-amod->diamond
+the-det->finger
+70-nummod->percent
+fourth-amod->finger
+.-punct->percent
+finger-nmod:on->diamond
+of-case->sport
+brides-compound->sport
+left-amod->hand
+sport-nmod:of->percent
+the-det->diamond
+------CorefChainz

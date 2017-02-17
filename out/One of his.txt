@@ -1,0 +1,63 @@
+One of history's earliest engagement rings was given to Princess Mary, daughter of Henry VIII. She was two-years-old at the time.
+One-CD 
+of-IN 
+history-NN 
+'s-POS 
+earliest-JJS 
+engagement-NN 
+rings-NNS 
+was-VBD 
+given-VBN 
+to-TO 
+Princess-NNP 
+Mary-NNP 
+,-, 
+daughter-NN 
+of-IN 
+Henry-NNP 
+VIII-NNP 
+.-. 
+She-PRP 
+was-VBD 
+two-years-old-VBN 
+at-IN 
+the-DT 
+time-NN 
+.-. 
+Dependensee repr
+nsubjpass(given-9, One-1)
+case(rings-7, of-2)
+nmod:poss(rings-7, history-3)
+case(history-3, 's-4)
+amod(rings-7, earliest-5)
+compound(rings-7, engagement-6)
+nmod:of(One-1, rings-7)
+auxpass(given-9, was-8)
+root(ROOT-0, given-9)
+case(Mary-12, to-10)
+compound(Mary-12, Princess-11)
+nmod:to(given-9, Mary-12)
+appos(Mary-12, daughter-14)
+case(VIII-17, of-15)
+compound(VIII-17, Henry-16)
+nmod:of(daughter-14, VIII-17)
+nsubjpass(two-years-old-21, She-19)
+auxpass(two-years-old-21, was-20)
+acl:relcl(VIII-17, two-years-old-21)
+case(time-24, at-22)
+det(time-24, the-23)
+nmod:at(two-years-old-21, time-24)
+---
+coref chains
+---
+mentions
+	One
+	Henry VIII
+	history 's
+	history 's earliest engagement rings
+	to Princess Mary , daughter of Henry VIII
+	daughter of Henry VIII
+---
+mentions
+	the time
+	She

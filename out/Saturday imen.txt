@@ -1,0 +1,14 @@
+Saturday is the unluckiest wedding day, according to English folklore. Funny—it's the most popular day of the week to marry!
+------------Like Tree in the Wind---------------(ROOT (S (NP (NNP Saturday)) (VP (VBZ is) (NP (DT the) (JJS unluckiest) (NN wedding) (NN day)) (, ,) (PP (VBG according) (PP (TO to) (NP (NNP English) (NN folklore))))) (. .)))(ROOT (NP (NP (JJ Funny)) (: --) (S (NP (PRP it)) (VP (VBZ 's) (NP (NP (DT the) (ADJP (RBS most) (JJ popular)) (NN day)) (PP (IN of) (NP (DT the) (NN week) (S (VP (TO to) (VP (VB marry))))))))) (. !)))---
+mentions
+	Saturday
+	the unluckiest wedding day , according to English folklore
+	according to English folklore
+---
+mentions
+	it
+	the most popular day of the week to marry
+	the week to marry
+------CorefChainz
+CHAIN3-["the unluckiest wedding day , according to English folklore" in sentence 1, "it" in sentence 2]
+representative mention: "the unluckiest wedding day , according to English folklore" in sentence 1

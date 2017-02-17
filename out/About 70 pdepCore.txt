@@ -1,0 +1,45 @@
+About 70 percent of all brides sport the traditional diamond on the fourth finger of their left hand.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, percent-3)
+advmod(70-2, About-1)
+nummod(percent-3, 70-2)
+case(sport-7, of-4)
+det(sport-7, all-5)
+compound(sport-7, brides-6)
+nmod:of(percent-3, sport-7)
+det(diamond-10, the-8)
+amod(diamond-10, traditional-9)
+dep(percent-3, diamond-10)
+case(finger-14, on-11)
+det(finger-14, the-12)
+amod(finger-14, fourth-13)
+nmod:on(diamond-10, finger-14)
+case(hand-18, of-15)
+nmod:poss(hand-18, their-16)
+amod(hand-18, left-17)
+nmod:of(finger-14, hand-18)
+punct(percent-3, .-19)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> NP	 	-> NP	 	-> NP	 	-> QP	 	-> RB	 	-> About-1
+		 	-> CD	 	-> 70-2
+			 	-> NN	 	-> percent-3
+			 	-> PP	 	-> IN	 	-> of-4
+		 	-> NP	 	-> DT	 	-> all-5
+		 	-> NNS	 	-> brides-6
+		 	-> NN	 	-> sport-7
+					 	-> NP	 	-> NP	 	-> DT	 	-> the-8
+		 	-> JJ	 	-> traditional-9
+		 	-> NN	 	-> diamond-10
+			 	-> PP	 	-> IN	 	-> on-11
+		 	-> NP	 	-> NP	 	-> DT	 	-> the-12
+		 	-> JJ	 	-> fourth-13
+		 	-> NN	 	-> finger-14
+			 	-> PP	 	-> IN	 	-> of-15
+		 	-> NP	 	-> PRP$	 	-> their-16
+		 	-> JJ	 	-> left-17
+		 	-> NN	 	-> hand-18
+							 	-> .	 	-> .-19
+			

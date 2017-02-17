@@ -1,0 +1,43 @@
+In the symbolic language of jewels, a sapphire in a wedding ring means marital happiness.
+In-IN 
+the-DT 
+symbolic-JJ 
+language-NN 
+of-IN 
+jewels-NNS 
+,-, 
+a-DT 
+sapphire-NN 
+in-IN 
+a-DT 
+wedding-NN 
+ring-NN 
+means-VBZ 
+marital-JJ 
+happiness-NN 
+.-. 
+Dependensee repr
+case(language-4, In-1)
+det(language-4, the-2)
+amod(language-4, symbolic-3)
+nmod:in(means-14, language-4)
+case(jewels-6, of-5)
+nmod:of(language-4, jewels-6)
+det(sapphire-9, a-8)
+nsubj(means-14, sapphire-9)
+case(ring-13, in-10)
+det(ring-13, a-11)
+compound(ring-13, wedding-12)
+nmod:in(sapphire-9, ring-13)
+root(ROOT-0, means-14)
+amod(happiness-16, marital-15)
+dobj(means-14, happiness-16)
+---
+coref chains
+---
+mentions
+	the symbolic language of jewels
+	jewels
+	a sapphire in a wedding ring
+	a wedding ring
+	marital happiness

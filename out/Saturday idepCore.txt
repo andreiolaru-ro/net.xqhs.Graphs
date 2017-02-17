@@ -1,0 +1,60 @@
+Saturday is the unluckiest wedding day, according to English folklore. Funny—it's the most popular day of the week to marry!
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, day-6)
+nsubj(day-6, Saturday-1)
+cop(day-6, is-2)
+det(day-6, the-3)
+amod(day-6, unluckiest-4)
+compound(day-6, wedding-5)
+punct(day-6, ,-7)
+case(folklore-11, according-8)
+mwe(according-8, to-9)
+compound(folklore-11, English-10)
+nmod:according_to(day-6, folklore-11)
+punct(day-6, .-12)
+---
+qqroot(ROOT-0, day-6)
+nsubj(day-6, Saturday-1)
+cop(day-6, is-2)
+det(day-6, the-3)
+amod(day-6, unluckiest-4)
+compound(day-6, wedding-5)
+punct(day-6, ,-7)
+case(folklore-11, according-8)
+mwe(according-8, to-9)
+compound(folklore-11, English-10)
+nmod:according_to(day-6, folklore-11)
+punct(day-6, .-12)
+root(ROOT-0, Funny-1)
+punct(day-8, ---2)
+nsubj(day-8, it-3)
+cop(day-8, 's-4)
+det(day-8, the-5)
+advmod(popular-7, most-6)
+amod(day-8, popular-7)
+dep(Funny-1, day-8)
+case(week-11, of-9)
+det(week-11, the-10)
+nmod:of(day-8, week-11)
+mark(marry-13, to-12)
+acl:to(day-8, marry-13)
+punct(Funny-1, !-14)
+------CorefChainz
+CHAIN3-["the unluckiest wedding day , according to English folklore" in sentence 1, "it" in sentence 2]
+representative mention: "the unluckiest wedding day , according to English folklore" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NNP	 	-> Saturday-1
+			 	-> VP	 	-> VBZ	 	-> is-2
+		 	-> NP	 	-> DT	 	-> the-3
+		 	-> JJS	 	-> unluckiest-4
+		 	-> NN	 	-> wedding-5
+		 	-> NN	 	-> day-6
+			 	-> ,	 	-> ,-7
+		 	-> PP	 	-> VBG	 	-> according-8
+		 	-> PP	 	-> TO	 	-> to-9
+		 	-> NP	 	-> NNP	 	-> English-10
+		 	-> NN	 	-> folklore-11
+						 	-> .	 	-> .-12
+			

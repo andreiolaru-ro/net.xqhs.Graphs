@@ -1,0 +1,8 @@
+In Denmark, brides and grooms traditionally cross-dressed to confuse evil spirits.
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN In) (NP (NNP Denmark))) (, ,) (NP (NNS brides) (CC and) (NNS grooms)) (ADVP (RB traditionally)) (VP (VBD cross-dressed) (S (VP (TO to) (VP (VB confuse) (NP (JJ evil) (NNS spirits)))))) (. .)))---
+mentions
+	Denmark
+	brides and grooms
+	grooms
+	evil spirits
+------CorefChainz

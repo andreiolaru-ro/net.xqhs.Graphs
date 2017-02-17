@@ -1,0 +1,51 @@
+Valentines Day and New Year's Eve are the two busiest "marriage" days in Las Vegas—elopement central!
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: compound Dependent: 1Valentines Governor: 2Day
+ Relation: nsubj Dependent: 2Day Governor: 13marriage
+ Relation: cc Dependent: 3and Governor: 2Day
+ Relation: amod Dependent: 4New Governor: 5Year
+ Relation: nmod:poss Dependent: 5Year Governor: 7Eve
+ Relation: case Dependent: 6's Governor: 5Year
+ Relation: conj:and Dependent: 7Eve Governor: 2Day
+ Relation: nsubj Dependent: 7Eve Governor: 13marriage
+ Relation: cop Dependent: 8are Governor: 13marriage
+ Relation: det Dependent: 9the Governor: 13marriage
+ Relation: nummod Dependent: 10two Governor: 13marriage
+ Relation: amod Dependent: 11busiest Governor: 13marriage
+ Relation: punct Dependent: 12`` Governor: 13marriage
+ Relation: punct Dependent: 14'' Governor: 13marriage
+ Relation: dep Dependent: 15days Governor: 13marriage
+ Relation: case Dependent: 16in Governor: 18Vegas
+ Relation: compound Dependent: 17Las Governor: 18Vegas
+ Relation: nmod:in Dependent: 18Vegas Governor: 15days
+ Relation: punct Dependent: 19-- Governor: 13marriage
+ Relation: nmod:npmod Dependent: 20elopement Governor: 21central
+ Relation: amod Dependent: 21central Governor: 13marriage
+ Relation: punct Dependent: 22! Governor: 13marriage
+G[0, 22] []
+'s-case->Year
+New-amod->Year
+elopement-nmod:npmod->central
+Vegas-nmod:in->days
+Eve-nsubj->marriage
+busiest-amod->marriage
+!-punct->marriage
+Las-compound->Vegas
+Year-nmod:poss->Eve
+``-punct->marriage
+Day-nsubj->marriage
+---punct->marriage
+Eve-conj:and->Day
+and-cc->Day
+are-cop->marriage
+two-nummod->marriage
+''-punct->marriage
+in-case->Vegas
+Valentines-compound->Day
+the-det->marriage
+days-dep->marriage
+central-amod->marriage
+------CorefChainz

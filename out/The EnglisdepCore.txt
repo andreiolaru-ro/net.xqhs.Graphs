@@ -1,0 +1,52 @@
+The English believe a spider found in a wedding dress means good luck. Yikes!
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, believe-3)
+det(English-2, The-1)
+nsubj(believe-3, English-2)
+det(spider-5, a-4)
+nsubj(means-11, spider-5)
+acl(spider-5, found-6)
+case(dress-10, in-7)
+det(dress-10, a-8)
+compound(dress-10, wedding-9)
+nmod:in(found-6, dress-10)
+ccomp(believe-3, means-11)
+amod(luck-13, good-12)
+dobj(means-11, luck-13)
+punct(believe-3, .-14)
+---
+qqroot(ROOT-0, believe-3)
+det(English-2, The-1)
+nsubj(believe-3, English-2)
+det(spider-5, a-4)
+nsubj(means-11, spider-5)
+acl(spider-5, found-6)
+case(dress-10, in-7)
+det(dress-10, a-8)
+compound(dress-10, wedding-9)
+nmod:in(found-6, dress-10)
+ccomp(believe-3, means-11)
+amod(luck-13, good-12)
+dobj(means-11, luck-13)
+punct(believe-3, .-14)
+root(ROOT-0, Yikes-1)
+punct(Yikes-1, !-2)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> DT	 	-> The-1
+		 	-> NNP	 	-> English-2
+			 	-> VP	 	-> VB	 	-> believe-3
+		 	-> SBAR	 	-> S	 	-> NP	 	-> NP	 	-> DT	 	-> a-4
+		 	-> NN	 	-> spider-5
+			 	-> VP	 	-> VBN	 	-> found-6
+		 	-> PP	 	-> IN	 	-> in-7
+		 	-> NP	 	-> DT	 	-> a-8
+		 	-> NN	 	-> wedding-9
+		 	-> NN	 	-> dress-10
+						 	-> VP	 	-> VBZ	 	-> means-11
+		 	-> NP	 	-> JJ	 	-> good-12
+		 	-> NN	 	-> luck-13
+							 	-> .	 	-> .-14
+			

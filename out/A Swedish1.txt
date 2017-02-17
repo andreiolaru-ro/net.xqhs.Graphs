@@ -1,0 +1,46 @@
+A Swedish bride puts a silver coin from her father and a gold coin from her mother in each shoe to ensure that she'll never do without. Learn more about Swedish wedding traditions.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, puts-4)
+det(bride-3, A-1)
+amod(bride-3, Swedish-2)
+nsubj(puts-4, bride-3)
+det(coin-7, a-5)
+amod(coin-7, silver-6)
+dobj(puts-4, coin-7)
+nsubj:xsubj(ensure-22, coin-7)
+case(father-10, from-8)
+nmod:poss(father-10, her-9)
+nmod:from(puts-4, father-10)
+cc(father-10, and-11)
+det(coin-14, a-12)
+compound(coin-14, gold-13)
+nmod:from(puts-4, coin-14)
+conj:and(father-10, coin-14)
+case(mother-17, from-15)
+nmod:poss(mother-17, her-16)
+nmod:from(puts-4, mother-17)
+case(shoe-20, in-18)
+det(shoe-20, each-19)
+nmod:in(mother-17, shoe-20)
+mark(ensure-22, to-21)
+xcomp(puts-4, ensure-22)
+mark(do-27, that-23)
+nsubj(do-27, she-24)
+aux(do-27, 'll-25)
+neg(do-27, never-26)
+ccomp(ensure-22, do-27)
+advmod(do-27, without-28)
+punct(puts-4, .-29)
+
+---
+enhanced dependencies
+root(ROOT-0, Learn-1)
+dobj(Learn-1, more-2)
+case(traditions-6, about-3)
+amod(traditions-6, Swedish-4)
+compound(traditions-6, wedding-5)
+nmod:about(more-2, traditions-6)
+punct(Learn-1, .-7)
+

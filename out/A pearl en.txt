@@ -1,0 +1,50 @@
+A pearl engagement ring is said to be bad luck because its shape echoes that of a tear.
+A-DT 
+pearl-NN 
+engagement-NN 
+ring-NN 
+is-VBZ 
+said-VBN 
+to-TO 
+be-VB 
+bad-JJ 
+luck-NN 
+because-IN 
+its-PRP$ 
+shape-NN 
+echoes-VBZ 
+that-DT 
+of-IN 
+a-DT 
+tear-NN 
+.-. 
+Dependensee repr
+det(ring-4, A-1)
+compound(ring-4, pearl-2)
+compound(ring-4, engagement-3)
+nsubjpass(said-6, ring-4)
+nsubj:xsubj(luck-10, ring-4)
+auxpass(said-6, is-5)
+root(ROOT-0, said-6)
+mark(luck-10, to-7)
+cop(luck-10, be-8)
+amod(luck-10, bad-9)
+xcomp(said-6, luck-10)
+mark(echoes-14, because-11)
+nmod:poss(shape-13, its-12)
+nsubj(echoes-14, shape-13)
+advcl(luck-10, echoes-14)
+dobj(echoes-14, that-15)
+case(tear-18, of-16)
+det(tear-18, a-17)
+nmod:of(that-15, tear-18)
+---
+coref chains
+	CHAIN2-["A pearl engagement ring" in sentence 1, "its" in sentence 1]
+---
+mentions
+	A pearl engagement ring
+	bad luck because its shape echoes
+	its
+	its shape echoes
+	a

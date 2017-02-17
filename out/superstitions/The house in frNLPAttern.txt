@@ -1,0 +1,38 @@
+The house in front of the hill never gets any sunlight and is severely cracked.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, gets-9)
+det(house-2, The-1)
+nsubj(gets-9, house-2)
+nsubjpass(cracked-15, house-2)
+case(hill-7, in-3)
+mwe(in-3, front-4)
+mwe(in-3, of-5)
+det(hill-7, the-6)
+nmod:in_front_of(house-2, hill-7)
+neg(gets-9, never-8)
+det(sunlight-11, any-10)
+dobj(gets-9, sunlight-11)
+cc(gets-9, and-12)
+auxpass(cracked-15, is-13)
+advmod(cracked-15, severely-14)
+conj:and(gets-9, cracked-15)
+punct(gets-9, .-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[10, 10] [?#1, ?#2, ?#3, cracked, gets, hill, house, never, severely, sunlight]
+never-neg->gets
+?#1-nsubjpass->cracked
+?#1-The->house
+cracked-conj:and->gets
+?#3-dobj->gets
+?#2-nmod:in_front_of->?#1
+?#2-the->hill
+?#1-nsubj->gets
+?#3-any->sunlight
+severely-advmod->cracked

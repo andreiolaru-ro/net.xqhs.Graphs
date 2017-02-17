@@ -1,0 +1,28 @@
+Valentines Day and New Year's Eve are the two busiest "marriage" days in Las Vegas—elopement central!
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, marriage-13)
+compound(Day-2, Valentines-1)
+nsubj(marriage-13, Day-2)
+cc(Day-2, and-3)
+amod(Year-5, New-4)
+nmod:poss(Eve-7, Year-5)
+case(Year-5, 's-6)
+conj:and(Day-2, Eve-7)
+nsubj(marriage-13, Eve-7)
+cop(marriage-13, are-8)
+det(marriage-13, the-9)
+nummod(marriage-13, two-10)
+amod(marriage-13, busiest-11)
+punct(marriage-13, ``-12)
+punct(marriage-13, ''-14)
+dep(marriage-13, days-15)
+case(Vegas-18, in-16)
+compound(Vegas-18, Las-17)
+nmod:in(days-15, Vegas-18)
+punct(marriage-13, ---19)
+nmod:npmod(central-21, elopement-20)
+amod(marriage-13, central-21)
+punct(marriage-13, !-22)
+

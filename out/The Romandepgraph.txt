@@ -1,0 +1,47 @@
+The Roman goddess Juno rules over marriage, the hearth and childbirth, hence the popularity of June weddings.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1The Governor: 5rules
+ Relation: compound Dependent: 2Roman Governor: 5rules
+ Relation: compound Dependent: 3goddess Governor: 5rules
+ Relation: compound Dependent: 4Juno Governor: 5rules
+ Relation: case Dependent: 6over Governor: 7marriage
+ Relation: nmod:over Dependent: 7marriage Governor: 5rules
+ Relation: punct Dependent: 8, Governor: 5rules
+ Relation: det Dependent: 9the Governor: 10hearth
+ Relation: appos Dependent: 10hearth Governor: 5rules
+ Relation: cc Dependent: 11and Governor: 10hearth
+ Relation: appos Dependent: 12childbirth Governor: 5rules
+ Relation: conj:and Dependent: 12childbirth Governor: 10hearth
+ Relation: punct Dependent: 13, Governor: 5rules
+ Relation: advmod Dependent: 14hence Governor: 16popularity
+ Relation: det Dependent: 15the Governor: 16popularity
+ Relation: appos Dependent: 16popularity Governor: 5rules
+ Relation: case Dependent: 17of Governor: 19weddings
+ Relation: compound Dependent: 18June Governor: 19weddings
+ Relation: nmod:of Dependent: 19weddings Governor: 16popularity
+ Relation: punct Dependent: 20. Governor: 5rules
+G[0, 20] []
+Roman-compound->rules
+popularity-appos->rules
+of-case->weddings
+childbirth-appos->rules
+the-det->hearth
+June-compound->weddings
+Juno-compound->rules
+hence-advmod->popularity
+goddess-compound->rules
+over-case->marriage
+childbirth-conj:and->hearth
+,-punct->rules
+marriage-nmod:over->rules
+.-punct->rules
+weddings-nmod:of->popularity
+the-det->popularity
+The-det->rules
+hearth-appos->rules
+,-punct->rules
+and-cc->hearth
+------CorefChainz

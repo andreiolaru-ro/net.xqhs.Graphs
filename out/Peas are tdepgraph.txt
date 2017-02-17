@@ -1,0 +1,27 @@
+Peas are thrown at Czech newlyweds instead of rice.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: nsubjpass Dependent: 1Peas Governor: 3thrown
+ Relation: auxpass Dependent: 2are Governor: 3thrown
+ Relation: case Dependent: 4at Governor: 6newlyweds
+ Relation: compound Dependent: 5Czech Governor: 6newlyweds
+ Relation: nmod:at Dependent: 6newlyweds Governor: 3thrown
+ Relation: cc Dependent: 7instead Governor: 6newlyweds
+ Relation: mwe Dependent: 8of Governor: 7instead
+ Relation: nmod:at Dependent: 9rice Governor: 3thrown
+ Relation: conj:negcc Dependent: 9rice Governor: 6newlyweds
+ Relation: punct Dependent: 10. Governor: 3thrown
+G[0, 10] []
+.-punct->thrown
+instead-cc->newlyweds
+rice-nmod:at->thrown
+of-mwe->instead
+newlyweds-nmod:at->thrown
+Czech-compound->newlyweds
+are-auxpass->thrown
+at-case->newlyweds
+rice-conj:negcc->newlyweds
+Peas-nsubjpass->thrown
+------CorefChainz

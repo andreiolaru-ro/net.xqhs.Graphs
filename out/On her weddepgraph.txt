@@ -1,0 +1,43 @@
+On her wedding day, Grace Kelly wore a dress with a bodice made from beautiful 125-year-old lace.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1On Governor: 4day
+ Relation: nmod:poss Dependent: 2her Governor: 4day
+ Relation: compound Dependent: 3wedding Governor: 4day
+ Relation: nmod:on Dependent: 4day Governor: 8wore
+ Relation: punct Dependent: 5, Governor: 8wore
+ Relation: compound Dependent: 6Grace Governor: 7Kelly
+ Relation: nsubj Dependent: 7Kelly Governor: 8wore
+ Relation: det Dependent: 9a Governor: 10dress
+ Relation: dobj Dependent: 10dress Governor: 8wore
+ Relation: case Dependent: 11with Governor: 13bodice
+ Relation: det Dependent: 12a Governor: 13bodice
+ Relation: nmod:with Dependent: 13bodice Governor: 8wore
+ Relation: acl Dependent: 14made Governor: 13bodice
+ Relation: case Dependent: 15from Governor: 18lace
+ Relation: amod Dependent: 16beautiful Governor: 18lace
+ Relation: amod Dependent: 17125-year-old Governor: 18lace
+ Relation: nmod:from Dependent: 18lace Governor: 14made
+ Relation: punct Dependent: 19. Governor: 8wore
+G[0, 18] []
+her-nmod:poss->day
+wedding-compound->day
+with-case->bodice
+a-det->bodice
+bodice-nmod:with->wore
+day-nmod:on->wore
+made-acl->bodice
+Kelly-nsubj->wore
+125-year-old-amod->lace
+lace-nmod:from->made
+,-punct->wore
+from-case->lace
+.-punct->wore
+Grace-compound->Kelly
+On-case->day
+dress-dobj->wore
+a-det->dress
+beautiful-amod->lace
+------CorefChainz

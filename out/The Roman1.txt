@@ -1,0 +1,26 @@
+The Roman goddess Juno rules over marriage, the hearth and childbirth, hence the popularity of June weddings.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, rules-5)
+det(rules-5, The-1)
+compound(rules-5, Roman-2)
+compound(rules-5, goddess-3)
+compound(rules-5, Juno-4)
+case(marriage-7, over-6)
+nmod:over(rules-5, marriage-7)
+punct(rules-5, ,-8)
+det(hearth-10, the-9)
+appos(rules-5, hearth-10)
+cc(hearth-10, and-11)
+appos(rules-5, childbirth-12)
+conj:and(hearth-10, childbirth-12)
+punct(rules-5, ,-13)
+advmod(popularity-16, hence-14)
+det(popularity-16, the-15)
+appos(rules-5, popularity-16)
+case(weddings-19, of-17)
+compound(weddings-19, June-18)
+nmod:of(popularity-16, weddings-19)
+punct(rules-5, .-20)
+

@@ -1,0 +1,20 @@
+Angela's killer slit her throat with a knife
+------CorefChainz
+CHAIN2-["Angela 's" in sentence 1, "her" in sentence 1]
+representative mention: "Angela 's" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 8] ['s, Angela, a, her, killer, knife, slit, throat, with]
+throat-dobj->slit
+Angela-nmod:poss->killer
+with-case->knife
+killer-nsubj->slit
+her-nmod:poss->throat
+'s-case->Angela
+knife-nmod:with->slit
+a-det->knife
+------CorefChainz
+CHAIN2-["Angela 's" in sentence 1, "her" in sentence 1]
+representative mention: "Angela 's" in sentence 1

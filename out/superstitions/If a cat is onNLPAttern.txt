@@ -1,0 +1,37 @@
+If a cat is on a mat, then it is a happy pet.
+------CorefChainz
+CHAIN2-["a cat" in sentence 1, "it" in sentence 1]
+representative mention: "a cat" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, pet-14)
+mark(mat-7, If-1)
+det(cat-3, a-2)
+nsubj(mat-7, cat-3)
+cop(mat-7, is-4)
+case(mat-7, on-5)
+det(mat-7, a-6)
+advcl:on(pet-14, mat-7)
+punct(pet-14, ,-8)
+advmod(it-10, then-9)
+nsubj(pet-14, it-10)
+cop(pet-14, is-11)
+det(pet-14, a-12)
+amod(pet-14, happy-13)
+punct(pet-14, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 9] [?#1, ?#2, ?#3, If, cat, happy, mat, pet, then]
+?#3-nsubj->?#1
+?#1-advcl->?#2
+?#3-a->cat
+If-mark->?#1
+?#2-a->pet
+?#3-it :nsubj->?#2
+then-advmod :it->?#3
+happy-amod->?#2
+?#1-a->mat

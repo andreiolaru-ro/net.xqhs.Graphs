@@ -1,0 +1,33 @@
+On average, 7,000 couples marry each day in the United States.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, marry-6)
+case(average-2, On-1)
+nmod:on(marry-6, average-2)
+punct(marry-6, ,-3)
+nummod(couples-5, 7,000-4)
+nsubj(marry-6, couples-5)
+det(day-8, each-7)
+nmod:tmod(marry-6, day-8)
+case(States-12, in-9)
+det(States-12, the-10)
+compound(States-12, United-11)
+nmod:in(marry-6, States-12)
+punct(marry-6, .-13)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> PP	 	-> IN	 	-> On-1
+		 	-> NP	 	-> NN	 	-> average-2
+				 	-> ,	 	-> ,-3
+		 	-> NP	 	-> CD	 	-> 7,000-4
+		 	-> NNS	 	-> couples-5
+			 	-> VP	 	-> VB	 	-> marry-6
+		 	-> NP	 	-> DT	 	-> each-7
+		 	-> NN	 	-> day-8
+			 	-> PP	 	-> IN	 	-> in-9
+		 	-> NP	 	-> DT	 	-> the-10
+		 	-> NNP	 	-> United-11
+		 	-> NNPS	 	-> States-12
+					 	-> .	 	-> .-13
+			

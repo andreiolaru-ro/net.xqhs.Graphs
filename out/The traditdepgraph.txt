@@ -1,0 +1,61 @@
+The tradition of a wedding cake comes from ancient Rome, where revelers broke a loaf of bread over a bride's head for fertility's sake.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1The Governor: 2tradition
+ Relation: nsubj Dependent: 2tradition Governor: 7comes
+ Relation: case Dependent: 3of Governor: 6cake
+ Relation: det Dependent: 4a Governor: 6cake
+ Relation: compound Dependent: 5wedding Governor: 6cake
+ Relation: nmod:of Dependent: 6cake Governor: 2tradition
+ Relation: case Dependent: 8from Governor: 10Rome
+ Relation: amod Dependent: 9ancient Governor: 10Rome
+ Relation: nmod:from Dependent: 10Rome Governor: 7comes
+ Relation: punct Dependent: 11, Governor: 10Rome
+ Relation: advmod Dependent: 12where Governor: 14broke
+ Relation: nsubj Dependent: 13revelers Governor: 14broke
+ Relation: acl:relcl Dependent: 14broke Governor: 10Rome
+ Relation: det Dependent: 15a Governor: 16loaf
+ Relation: dobj Dependent: 16loaf Governor: 14broke
+ Relation: case Dependent: 17of Governor: 18bread
+ Relation: nmod:of Dependent: 18bread Governor: 16loaf
+ Relation: case Dependent: 19over Governor: 23head
+ Relation: det Dependent: 20a Governor: 21bride
+ Relation: nmod:poss Dependent: 21bride Governor: 23head
+ Relation: case Dependent: 22's Governor: 21bride
+ Relation: nmod:over Dependent: 23head Governor: 14broke
+ Relation: case Dependent: 24for Governor: 27sake
+ Relation: nmod:poss Dependent: 25fertility Governor: 27sake
+ Relation: case Dependent: 26's Governor: 25fertility
+ Relation: nmod:for Dependent: 27sake Governor: 23head
+ Relation: punct Dependent: 28. Governor: 7comes
+G[0, 27] []
+'s-case->bride
+revelers-nsubj->broke
+head-nmod:over->broke
+of-case->cake
+where-advmod->broke
+over-case->head
+a-det->cake
+'s-case->fertility
+tradition-nsubj->comes
+fertility-nmod:poss->sake
+wedding-compound->cake
+a-det->loaf
+from-case->Rome
+ancient-amod->Rome
+Rome-nmod:from->comes
+.-punct->comes
+loaf-dobj->broke
+sake-nmod:for->head
+for-case->sake
+bride-nmod:poss->head
+bread-nmod:of->loaf
+cake-nmod:of->tradition
+,-punct->Rome
+of-case->bread
+broke-acl:relcl->Rome
+The-det->tradition
+a-det->bride
+------CorefChainz

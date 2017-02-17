@@ -1,0 +1,74 @@
+Engagement and wedding rings are worn on the fourth finger of the left hand because it was once thought that a vein in that finger led directly to the heart.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, worn-6)
+compound(rings-4, Engagement-1)
+cc(Engagement-1, and-2)
+conj:and(Engagement-1, wedding-3)
+compound(rings-4, wedding-3)
+nsubjpass(worn-6, rings-4)
+auxpass(worn-6, are-5)
+case(finger-10, on-7)
+det(finger-10, the-8)
+amod(finger-10, fourth-9)
+nmod:on(worn-6, finger-10)
+case(hand-14, of-11)
+det(hand-14, the-12)
+amod(hand-14, left-13)
+nmod:of(finger-10, hand-14)
+mark(thought-19, because-15)
+nsubjpass(thought-19, it-16)
+auxpass(thought-19, was-17)
+advmod(thought-19, once-18)
+advcl:because(worn-6, thought-19)
+mark(led-26, that-20)
+det(vein-22, a-21)
+nsubj(led-26, vein-22)
+case(finger-25, in-23)
+det(finger-25, that-24)
+nmod:in(vein-22, finger-25)
+ccomp(thought-19, led-26)
+advmod(led-26, directly-27)
+case(heart-30, to-28)
+det(heart-30, the-29)
+nmod:to(led-26, heart-30)
+punct(worn-6, .-31)
+------CorefChainz
+CHAIN5-["Engagement and wedding rings" in sentence 1, "it" in sentence 1]
+representative mention: "Engagement and wedding rings" in sentence 1
+CHAIN7-["the fourth finger of the left hand" in sentence 1, "that finger" in sentence 1]
+representative mention: "the fourth finger of the left hand" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NN	 	-> Engagement-1
+		 	-> CC	 	-> and-2
+		 	-> NN	 	-> wedding-3
+		 	-> NNS	 	-> rings-4
+			 	-> VP	 	-> VBP	 	-> are-5
+		 	-> VP	 	-> VBN	 	-> worn-6
+		 	-> PP	 	-> IN	 	-> on-7
+		 	-> NP	 	-> NP	 	-> DT	 	-> the-8
+		 	-> JJ	 	-> fourth-9
+		 	-> NN	 	-> finger-10
+			 	-> PP	 	-> IN	 	-> of-11
+		 	-> NP	 	-> DT	 	-> the-12
+		 	-> JJ	 	-> left-13
+		 	-> NN	 	-> hand-14
+						 	-> SBAR	 	-> IN	 	-> because-15
+		 	-> S	 	-> NP	 	-> PRP	 	-> it-16
+			 	-> VP	 	-> VBD	 	-> was-17
+		 	-> ADVP	 	-> RB	 	-> once-18
+			 	-> VP	 	-> VBN	 	-> thought-19
+		 	-> SBAR	 	-> IN	 	-> that-20
+		 	-> S	 	-> NP	 	-> NP	 	-> DT	 	-> a-21
+		 	-> NN	 	-> vein-22
+			 	-> PP	 	-> IN	 	-> in-23
+		 	-> NP	 	-> DT	 	-> that-24
+		 	-> NN	 	-> finger-25
+					 	-> VP	 	-> VBD	 	-> led-26
+		 	-> ADVP	 	-> RB	 	-> directly-27
+			 	-> PP	 	-> TO	 	-> to-28
+		 	-> NP	 	-> DT	 	-> the-29
+		 	-> NN	 	-> heart-30
+													 	-> .	 	-> .-31
+			

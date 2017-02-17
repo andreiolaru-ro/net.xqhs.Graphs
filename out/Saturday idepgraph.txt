@@ -1,0 +1,31 @@
+Saturday is the unluckiest wedding day, according to English folklore. Funny—it's the most popular day of the week to marry!
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: nsubj Dependent: 1Saturday Governor: 6day
+ Relation: cop Dependent: 2is Governor: 6day
+ Relation: det Dependent: 3the Governor: 6day
+ Relation: amod Dependent: 4unluckiest Governor: 6day
+ Relation: compound Dependent: 5wedding Governor: 6day
+ Relation: punct Dependent: 7, Governor: 6day
+ Relation: case Dependent: 8according Governor: 11folklore
+ Relation: mwe Dependent: 9to Governor: 8according
+ Relation: compound Dependent: 10English Governor: 11folklore
+ Relation: nmod:according_to Dependent: 11folklore Governor: 6day
+ Relation: punct Dependent: 12. Governor: 6day
+G[0, 11] []
+,-punct->day
+is-cop->day
+the-det->day
+unluckiest-amod->day
+to-mwe->according
+according-case->folklore
+Saturday-nsubj->day
+folklore-nmod:according_to->day
+.-punct->day
+wedding-compound->day
+English-compound->folklore
+------CorefChainz
+CHAIN3-["the unluckiest wedding day , according to English folklore" in sentence 1, "it" in sentence 2]
+representative mention: "the unluckiest wedding day , according to English folklore" in sentence 1

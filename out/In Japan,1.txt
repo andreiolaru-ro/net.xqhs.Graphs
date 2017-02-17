@@ -1,0 +1,30 @@
+In Japan, white was always the color of choice for bridal ensembles—long before Queen Victoria popularized it in the Western world.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, color-8)
+case(Japan-2, In-1)
+nmod:in(color-8, Japan-2)
+punct(color-8, ,-3)
+nsubj(color-8, white-4)
+cop(color-8, was-5)
+advmod(color-8, always-6)
+det(color-8, the-7)
+case(choice-10, of-9)
+nmod:of(color-8, choice-10)
+case(ensembles-13, for-11)
+amod(ensembles-13, bridal-12)
+nmod:for(color-8, ensembles-13)
+punct(color-8, ---14)
+amod(color-8, long-15)
+mark(popularized-19, before-16)
+compound(Victoria-18, Queen-17)
+nsubj(popularized-19, Victoria-18)
+advcl:before(long-15, popularized-19)
+dobj(popularized-19, it-20)
+case(world-24, in-21)
+det(world-24, the-22)
+amod(world-24, Western-23)
+nmod:in(popularized-19, world-24)
+punct(color-8, .-25)
+

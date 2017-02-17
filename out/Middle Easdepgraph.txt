@@ -1,0 +1,45 @@
+Middle Eastern brides paint henna on their hands and feet to protect themselves from the evil eye. Find out about Muslim wedding rituals.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: compound Dependent: 1Middle Governor: 3brides
+ Relation: compound Dependent: 2Eastern Governor: 3brides
+ Relation: nsubj Dependent: 3brides Governor: 4paint
+ Relation: dobj Dependent: 5henna Governor: 4paint
+ Relation: case Dependent: 6on Governor: 8hands
+ Relation: nmod:poss Dependent: 7their Governor: 8hands
+ Relation: nmod:on Dependent: 8hands Governor: 4paint
+ Relation: cc Dependent: 9and Governor: 8hands
+ Relation: nmod:on Dependent: 10feet Governor: 4paint
+ Relation: conj:and Dependent: 10feet Governor: 8hands
+ Relation: mark Dependent: 11to Governor: 12protect
+ Relation: advcl:to Dependent: 12protect Governor: 4paint
+ Relation: dobj Dependent: 13themselves Governor: 12protect
+ Relation: case Dependent: 14from Governor: 17eye
+ Relation: det Dependent: 15the Governor: 17eye
+ Relation: amod Dependent: 16evil Governor: 17eye
+ Relation: nmod:from Dependent: 17eye Governor: 12protect
+ Relation: punct Dependent: 18. Governor: 4paint
+G[0, 18] []
+.-punct->paint
+hands-nmod:on->paint
+eye-nmod:from->protect
+the-det->eye
+themselves-dobj->protect
+brides-nsubj->paint
+feet-nmod:on->paint
+henna-dobj->paint
+feet-conj:and->hands
+to-mark->protect
+Eastern-compound->brides
+from-case->eye
+protect-advcl:to->paint
+on-case->hands
+their-nmod:poss->hands
+evil-amod->eye
+Middle-compound->brides
+and-cc->hands
+------CorefChainz
+CHAIN5-["Middle Eastern brides" in sentence 1, "their" in sentence 1, "themselves" in sentence 1]
+representative mention: "Middle Eastern brides" in sentence 1

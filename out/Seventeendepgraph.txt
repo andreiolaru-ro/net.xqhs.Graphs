@@ -1,0 +1,37 @@
+Seventeen tons of gold are made into wedding rings each year in the United States.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: nummod Dependent: 1Seventeen Governor: 2tons
+ Relation: det:qmod Dependent: 2tons Governor: 4gold
+ Relation: mwe Dependent: 3of Governor: 2tons
+ Relation: nsubjpass Dependent: 4gold Governor: 6made
+ Relation: auxpass Dependent: 5are Governor: 6made
+ Relation: case Dependent: 7into Governor: 9rings
+ Relation: compound Dependent: 8wedding Governor: 9rings
+ Relation: nmod:into Dependent: 9rings Governor: 6made
+ Relation: det Dependent: 10each Governor: 11year
+ Relation: nmod:tmod Dependent: 11year Governor: 6made
+ Relation: case Dependent: 12in Governor: 15States
+ Relation: det Dependent: 13the Governor: 15States
+ Relation: compound Dependent: 14United Governor: 15States
+ Relation: nmod:in Dependent: 15States Governor: 6made
+ Relation: punct Dependent: 16. Governor: 6made
+G[0, 15] []
+are-auxpass->made
+United-compound->States
+wedding-compound->rings
+gold-nsubjpass->made
+year-nmod:tmod->made
+the-det->States
+rings-nmod:into->made
+each-det->year
+States-nmod:in->made
+.-punct->made
+in-case->States
+Seventeen-nummod->tons
+into-case->rings
+of-mwe->tons
+tons-det:qmod->gold
+------CorefChainz

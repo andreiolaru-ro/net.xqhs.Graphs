@@ -1,0 +1,35 @@
+Ancient Greeks and Romans thought the veil protected the bride from evil spirits. Brides have worn veils ever since.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: amod Dependent: 1Ancient Governor: 2Greeks
+ Relation: nsubj Dependent: 2Greeks Governor: 5thought
+ Relation: cc Dependent: 3and Governor: 2Greeks
+ Relation: conj:and Dependent: 4Romans Governor: 2Greeks
+ Relation: nsubj Dependent: 4Romans Governor: 5thought
+ Relation: det Dependent: 6the Governor: 7veil
+ Relation: nsubj Dependent: 7veil Governor: 8protected
+ Relation: ccomp Dependent: 8protected Governor: 5thought
+ Relation: det Dependent: 9the Governor: 10bride
+ Relation: dobj Dependent: 10bride Governor: 8protected
+ Relation: case Dependent: 11from Governor: 13spirits
+ Relation: amod Dependent: 12evil Governor: 13spirits
+ Relation: nmod:from Dependent: 13spirits Governor: 8protected
+ Relation: punct Dependent: 14. Governor: 5thought
+G[0, 14] []
+spirits-nmod:from->protected
+Romans-nsubj->thought
+the-det->bride
+bride-dobj->protected
+Romans-conj:and->Greeks
+veil-nsubj->protected
+Greeks-nsubj->thought
+evil-amod->spirits
+and-cc->Greeks
+the-det->veil
+.-punct->thought
+protected-ccomp->thought
+from-case->spirits
+Ancient-amod->Greeks
+------CorefChainz

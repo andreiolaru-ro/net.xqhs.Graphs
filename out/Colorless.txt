@@ -1,0 +1,7 @@
+Colorless green ideas sleep furiously
+Colorless-JJ 
+green-JJ 
+ideas-NNS 
+sleep-VBP 
+furiously-RB 
+Dependensee repr

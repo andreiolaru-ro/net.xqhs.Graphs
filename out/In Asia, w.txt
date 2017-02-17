@@ -1,0 +1,44 @@
+In Asia, wearing robes with embroidered cranes symbolizes fidelity for the length of a marriage.
+In-IN 
+Asia-NNP 
+,-, 
+wearing-VBG 
+robes-NNS 
+with-IN 
+embroidered-JJ 
+cranes-NNS 
+symbolizes-VBZ 
+fidelity-RB 
+for-IN 
+the-DT 
+length-NN 
+of-IN 
+a-DT 
+marriage-NN 
+.-. 
+Dependensee repr
+case(Asia-2, In-1)
+nmod:in(symbolizes-9, Asia-2)
+amod(robes-5, wearing-4)
+nsubj(symbolizes-9, robes-5)
+case(cranes-8, with-6)
+amod(cranes-8, embroidered-7)
+nmod:with(robes-5, cranes-8)
+root(ROOT-0, symbolizes-9)
+advmod(symbolizes-9, fidelity-10)
+case(length-13, for-11)
+det(length-13, the-12)
+nmod:for(symbolizes-9, length-13)
+case(marriage-16, of-14)
+det(marriage-16, a-15)
+nmod:of(length-13, marriage-16)
+---
+coref chains
+---
+mentions
+	Asia
+	wearing robes with embroidered cranes
+	embroidered cranes
+	fidelity for the length of a marriage
+	the length of a marriage
+	a marriage

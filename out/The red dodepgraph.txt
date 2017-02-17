@@ -1,0 +1,15 @@
+The red dog  is barking at the blue gate
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 8] [The, at, barking, blue, dog, gate, is, red, the]
+the-det->gate
+red-amod->dog
+dog-nsubj->barking
+The-det->dog
+is-aux->barking
+at-case->gate
+blue-amod->gate
+gate-nmod:at->barking
+------CorefChainz

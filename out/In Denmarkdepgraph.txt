@@ -1,0 +1,37 @@
+In Denmark, brides and grooms traditionally cross-dressed to confuse evil spirits.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1In Governor: 2Denmark
+ Relation: nmod:in Dependent: 2Denmark Governor: 8cross-dressed
+ Relation: punct Dependent: 3, Governor: 8cross-dressed
+ Relation: nsubj Dependent: 4brides Governor: 8cross-dressed
+ Relation: nsubj:xsubj Dependent: 4brides Governor: 10confuse
+ Relation: cc Dependent: 5and Governor: 4brides
+ Relation: conj:and Dependent: 6grooms Governor: 4brides
+ Relation: nsubj Dependent: 6grooms Governor: 8cross-dressed
+ Relation: nsubj:xsubj Dependent: 6grooms Governor: 10confuse
+ Relation: advmod Dependent: 7traditionally Governor: 8cross-dressed
+ Relation: mark Dependent: 9to Governor: 10confuse
+ Relation: xcomp Dependent: 10confuse Governor: 8cross-dressed
+ Relation: amod Dependent: 11evil Governor: 12spirits
+ Relation: dobj Dependent: 12spirits Governor: 10confuse
+ Relation: punct Dependent: 13. Governor: 8cross-dressed
+G[0, 15] []
+brides-nsubj->cross-dressed
+to-mark->confuse
+confuse-xcomp->cross-dressed
+brides-nsubj:xsubj->confuse
+In-case->Denmark
+grooms-nsubj->cross-dressed
+spirits-dobj->confuse
+evil-amod->spirits
+.-punct->cross-dressed
+Denmark-nmod:in->cross-dressed
+and-cc->brides
+grooms-nsubj:xsubj->confuse
+,-punct->cross-dressed
+traditionally-advmod->cross-dressed
+grooms-conj:and->brides
+------CorefChainz

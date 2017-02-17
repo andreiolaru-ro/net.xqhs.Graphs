@@ -1,0 +1,11 @@
+A pearl engagement ring is said to be bad luck because its shape echoes that of a tear.
+------------Like Tree in the Wind---------------(ROOT (S (NP (DT A) (NN pearl) (NN engagement) (NN ring)) (VP (VBZ is) (VP (VBN said) (S (VP (TO to) (VP (VB be) (NP (JJ bad) (NN luck)) (PP (IN because) (NP (PRP$ its) (NN shape) (NNS echoes))) (SBAR (WHNP (WDT that)) (S (NP (IN of) (DT a)) (VP (VB tear))))))))) (. .)))---
+mentions
+	A pearl engagement ring
+	bad luck because its shape echoes
+	its
+	its shape echoes
+	a
+------CorefChainz
+CHAIN2-["A pearl engagement ring" in sentence 1, "its" in sentence 1]
+representative mention: "A pearl engagement ring" in sentence 1

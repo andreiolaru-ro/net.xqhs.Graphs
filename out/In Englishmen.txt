@@ -1,0 +1,11 @@
+In English tradition, Wednesday is considered the "best day" to marry, although Monday is for wealth and Tuesday is for health.
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN In) (NP (NNP English) (NN tradition))) (, ,) (S (NP (NNP Wednesday)) (VP (VBZ is) (VP (VBN considered) (NP (NP (DT the) (`` ``) (JJS best)) (NP (NN day))) ('' '') (S (VP (TO to) (VP (VB marry)))) (, ,) (SBAR (IN although) (S (NP (NNP Monday)) (VP (VBZ is) (PP (IN for) (NP (NN wealth))))))))) (CC and) (S (NP (NNP Tuesday)) (VP (VBZ is) (PP (IN for) (NP (NN health))))) (. .)))---
+mentions
+	Wednesday
+	day
+	Monday
+	Tuesday
+	English tradition
+	wealth
+	health
+------CorefChainz

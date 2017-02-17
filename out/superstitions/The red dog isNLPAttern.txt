@@ -1,0 +1,28 @@
+The red dog is barking at the green gate.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, barking-5)
+det(dog-3, The-1)
+amod(dog-3, red-2)
+nsubj(barking-5, dog-3)
+aux(barking-5, is-4)
+case(gate-9, at-6)
+det(gate-9, the-7)
+amod(gate-9, green-8)
+nmod:at(barking-5, gate-9)
+punct(barking-5, .-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 7] [?#1, ?#2, barking, dog, gate, green, is, red]
+?#1-nmod->barking
+red-amod->?#2
+?#2-nsubj->barking
+?#2-The->dog
+is-aux->barking
+?#1-the->gate
+green-amod->?#1

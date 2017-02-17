@@ -1,0 +1,11 @@
+Valentines Day and New Year's Eve are the two busiest "marriage" days in Las Vegas—elopement central!
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (NNS Valentines) (NN Day)) (CC and) (NP (NP (JJ New) (NN Year) (POS 's)) (NNP Eve))) (VP (VBP are) (NP (NP (NP (DT the) (CD two) (JJS busiest)) (NP (NP (`` ``) (NN marriage) ('' '') (NNS days)) (PP (IN in) (NP (NNP Las) (NNP Vegas))))) (: --) (NP (NN elopement) (JJ central)))) (. !)))---
+mentions
+	two
+	Las Vegas
+	Valentines Day and New Year 's Eve
+	New Year 's
+	New Year 's Eve
+	marriage '' days in Las Vegas
+	elopement central
+------CorefChainz

@@ -1,0 +1,82 @@
+She believes someone believes her belief that he believes his desire for her.
+------CorefChainz
+CHAIN5-["someone" in sentence 1, "he" in sentence 1, "his" in sentence 1]
+representative mention: "someone" in sentence 1
+CHAIN7-["She" in sentence 1, "her" in sentence 1, "her" in sentence 1]
+representative mention: "She" in sentence 1
+She-PRP 
+believes-VBZ 
+someone-NN 
+believes-VBZ 
+her-PRP$ 
+belief-NN 
+that-IN 
+he-PRP 
+believes-VBZ 
+his-PRP$ 
+desire-NN 
+for-IN 
+her-PRP 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> She
+		 	-> VP 	-> VBZ 	-> believes
+	 	-> SBAR 	-> S 	-> NP 	-> NN 	-> someone
+		 	-> VP 	-> VBZ 	-> believes
+	 	-> NP 	-> PRP$ 	-> her
+	 	-> NN 	-> belief
+		 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> PRP 	-> he
+		 	-> VP 	-> VBZ 	-> believes
+	 	-> NP 	-> PRP$ 	-> his
+	 	-> NN 	-> desire
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> PRP 	-> her
+										 	-> . 	-> .
+			
+Dependensee repr
+nsubj(believes-2, She-1)
+root(ROOT-0, believes-2)
+nsubj(believes-4, someone-3)
+ccomp(believes-2, believes-4)
+nmod:poss(belief-6, her-5)
+dobj(believes-4, belief-6)
+mark(believes-9, that-7)
+nsubj(believes-9, he-8)
+ccomp(believes-4, believes-9)
+nmod:poss(desire-11, his-10)
+dobj(believes-9, desire-11)
+case(her-13, for-12)
+nmod:for(believes-9, her-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, believes-2)
+nsubj(believes-2, She-1)
+nsubj(believes-4, someone-3)
+ccomp(believes-2, believes-4)
+nmod:poss(belief-6, her-5)
+dobj(believes-4, belief-6)
+mark(believes-9, that-7)
+nsubj(believes-9, he-8)
+ccomp(belief-6, believes-9)
+nmod:poss(desire-11, his-10)
+dobj(believes-9, desire-11)
+case(her-13, for-12)
+nmod:for(desire-11, her-13)
+punct(believes-2, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[11, 10] [She, belief, believes, believes, believes, desire, he, her, her, his, someone]
+her-nmod:poss->belief
+his-nmod:poss->desire
+belief-dobj->believes
+someone-nsubj->believes
+her-nmod:for->desire
+desire-dobj->believes
+She-nsubj->believes
+he-nsubj->believes
+believes-ccomp : that  : that ccomp->belief
+believes-ccomp->believes

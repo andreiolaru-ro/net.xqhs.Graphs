@@ -1,0 +1,41 @@
+One of history's earliest engagement rings was given to Princess Mary, daughter of Henry VIII. She was two-years-old at the time.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: nsubjpass Dependent: 1One Governor: 9given
+ Relation: case Dependent: 2of Governor: 7rings
+ Relation: nmod:poss Dependent: 3history Governor: 7rings
+ Relation: case Dependent: 4's Governor: 3history
+ Relation: amod Dependent: 5earliest Governor: 7rings
+ Relation: compound Dependent: 6engagement Governor: 7rings
+ Relation: nmod:of Dependent: 7rings Governor: 1One
+ Relation: auxpass Dependent: 8was Governor: 9given
+ Relation: case Dependent: 10to Governor: 12Mary
+ Relation: compound Dependent: 11Princess Governor: 12Mary
+ Relation: nmod:to Dependent: 12Mary Governor: 9given
+ Relation: punct Dependent: 13, Governor: 12Mary
+ Relation: appos Dependent: 14daughter Governor: 12Mary
+ Relation: case Dependent: 15of Governor: 17VIII
+ Relation: compound Dependent: 16Henry Governor: 17VIII
+ Relation: nmod:of Dependent: 17VIII Governor: 14daughter
+ Relation: punct Dependent: 18. Governor: 9given
+G[0, 17] []
+VIII-nmod:of->daughter
+.-punct->given
+One-nsubjpass->given
+'s-case->history
+engagement-compound->rings
+of-case->VIII
+Mary-nmod:to->given
+of-case->rings
+,-punct->Mary
+history-nmod:poss->rings
+Henry-compound->VIII
+to-case->Mary
+daughter-appos->Mary
+was-auxpass->given
+Princess-compound->Mary
+rings-nmod:of->One
+earliest-amod->rings
+------CorefChainz

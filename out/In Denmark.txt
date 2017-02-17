@@ -1,0 +1,37 @@
+In Denmark, brides and grooms traditionally cross-dressed to confuse evil spirits.
+In-IN 
+Denmark-NNP 
+,-, 
+brides-NNS 
+and-CC 
+grooms-NNS 
+traditionally-RB 
+cross-dressed-VBD 
+to-TO 
+confuse-VB 
+evil-JJ 
+spirits-NNS 
+.-. 
+Dependensee repr
+case(Denmark-2, In-1)
+nmod:in(cross-dressed-8, Denmark-2)
+nsubj(cross-dressed-8, brides-4)
+nsubj:xsubj(confuse-10, brides-4)
+cc(brides-4, and-5)
+conj:and(brides-4, grooms-6)
+nsubj(cross-dressed-8, grooms-6)
+nsubj:xsubj(confuse-10, grooms-6)
+advmod(cross-dressed-8, traditionally-7)
+root(ROOT-0, cross-dressed-8)
+mark(confuse-10, to-9)
+xcomp(cross-dressed-8, confuse-10)
+amod(spirits-12, evil-11)
+dobj(confuse-10, spirits-12)
+---
+coref chains
+---
+mentions
+	Denmark
+	brides and grooms
+	grooms
+	evil spirits

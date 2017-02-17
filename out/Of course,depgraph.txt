@@ -1,0 +1,31 @@
+Of course, Jackie Kennedy's bridesmaids were far from frumpy. She chose pink silk faille and red satin gowns created by designer Ann Lowe (also the creator of Jackie's dress).
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1Of Governor: 2course
+ Relation: nmod:of Dependent: 2course Governor: 11frumpy
+ Relation: punct Dependent: 3, Governor: 11frumpy
+ Relation: compound Dependent: 4Jackie Governor: 5Kennedy
+ Relation: nmod:poss Dependent: 5Kennedy Governor: 7bridesmaids
+ Relation: case Dependent: 6's Governor: 5Kennedy
+ Relation: nsubj Dependent: 7bridesmaids Governor: 11frumpy
+ Relation: cop Dependent: 8were Governor: 11frumpy
+ Relation: case Dependent: 9far Governor: 11frumpy
+ Relation: mwe Dependent: 10from Governor: 9far
+ Relation: punct Dependent: 12. Governor: 11frumpy
+G[0, 11] []
+Jackie-compound->Kennedy
+far-case->frumpy
+from-mwe->far
+,-punct->frumpy
+Kennedy-nmod:poss->bridesmaids
+course-nmod:of->frumpy
+'s-case->Kennedy
+.-punct->frumpy
+bridesmaids-nsubj->frumpy
+Of-case->course
+were-cop->frumpy
+------CorefChainz
+CHAIN9-["Jackie Kennedy 's" in sentence 1, "She" in sentence 2, "Jackie 's" in sentence 2]
+representative mention: "Jackie Kennedy 's" in sentence 1

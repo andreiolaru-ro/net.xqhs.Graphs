@@ -1,0 +1,28 @@
+Peas are thrown at Czech newlyweds instead of rice.
+Peas-NNS 
+are-VBP 
+thrown-VBN 
+at-IN 
+Czech-JJ 
+newlyweds-NNS 
+instead-RB 
+of-IN 
+rice-NN 
+.-. 
+Dependensee repr
+nsubjpass(thrown-3, Peas-1)
+auxpass(thrown-3, are-2)
+root(ROOT-0, thrown-3)
+case(newlyweds-6, at-4)
+amod(newlyweds-6, Czech-5)
+nmod:at(thrown-3, newlyweds-6)
+case(rice-9, instead-7)
+mwe(instead-7, of-8)
+nmod:instead_of(newlyweds-6, rice-9)
+---
+coref chains
+---
+mentions
+	Peas
+	Czech newlyweds instead of rice
+	instead of rice

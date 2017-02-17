@@ -1,0 +1,12 @@
+The Roman goddess Juno rules over marriage, the hearth and childbirth, hence the popularity of June weddings.
+------------Like Tree in the Wind---------------(ROOT (NP (NP (DT The) (NNP Roman) (NN goddess) (NN Juno) (NNS rules)) (PP (IN over) (NP (NN marriage))) (, ,) (NP (DT the) (NN hearth) (CC and) (NN childbirth)) (, ,) (NP (NP (RB hence) (DT the) (NN popularity)) (PP (IN of) (NP (NNP June) (NNS weddings)))) (. .)))---
+mentions
+	Roman
+	June
+	The Roman goddess Juno rules over marriage , the hearth and childbirth , hence the popularity of June weddings
+	marriage
+	the hearth and childbirth
+	childbirth
+	hence the popularity of June weddings
+	June weddings
+------CorefChainz

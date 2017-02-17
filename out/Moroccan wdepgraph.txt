@@ -1,0 +1,35 @@
+Moroccan women take a milk bath to purify themselves before their wedding ceremony. See more Moroccan wedding customs.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: amod Dependent: 1Moroccan Governor: 2women
+ Relation: nsubj Dependent: 2women Governor: 3take
+ Relation: det Dependent: 4a Governor: 6bath
+ Relation: compound Dependent: 5milk Governor: 6bath
+ Relation: dobj Dependent: 6bath Governor: 3take
+ Relation: mark Dependent: 7to Governor: 8purify
+ Relation: advcl:to Dependent: 8purify Governor: 3take
+ Relation: dobj Dependent: 9themselves Governor: 8purify
+ Relation: case Dependent: 10before Governor: 13ceremony
+ Relation: nmod:poss Dependent: 11their Governor: 13ceremony
+ Relation: compound Dependent: 12wedding Governor: 13ceremony
+ Relation: nmod:before Dependent: 13ceremony Governor: 8purify
+ Relation: punct Dependent: 14. Governor: 3take
+G[0, 13] []
+before-case->ceremony
+their-nmod:poss->ceremony
+wedding-compound->ceremony
+women-nsubj->take
+to-mark->purify
+Moroccan-amod->women
+.-punct->take
+themselves-dobj->purify
+a-det->bath
+bath-dobj->take
+ceremony-nmod:before->purify
+milk-compound->bath
+purify-advcl:to->take
+------CorefChainz
+CHAIN3-["Moroccan women" in sentence 1, "themselves" in sentence 1, "their" in sentence 1]
+representative mention: "Moroccan women" in sentence 1

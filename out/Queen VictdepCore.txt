@@ -1,0 +1,54 @@
+Queen Victoria's wedding cake weighed a whopping 300 pounds.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, weighed-6)
+compound(Victoria-2, Queen-1)
+nmod:poss(cake-5, Victoria-2)
+case(Victoria-2, 's-3)
+compound(cake-5, wedding-4)
+nsubj(weighed-6, cake-5)
+det(pounds-10, a-7)
+amod(pounds-10, whopping-8)
+nummod(pounds-10, 300-9)
+dobj(weighed-6, pounds-10)
+punct(weighed-6, .-11)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> S	 	-> NP	 	-> NNP	 	-> Queen-1
+		 	-> NNP	 	-> Victoria-2
+			 	-> VP	 	-> VBD	 	-> started-3
+		 	-> NP	 	-> NP	 	-> DT	 	-> the-4
+		 	-> JJ	 	-> Western-5
+		 	-> NN	 	-> world-6
+		 	-> POS	 	-> 's-7
+			 	-> JJ	 	-> white-8
+		 	-> NN	 	-> wedding-9
+		 	-> NN	 	-> dress-10
+		 	-> NN	 	-> trend-11
+			 	-> PP	 	-> IN	 	-> in-12
+		 	-> NP	 	-> CD	 	-> 1840-13
+						 	-> :	 	-> ---14
+		 	-> S	 	-> SBAR	 	-> IN	 	-> before-15
+		 	-> FRAG	 	-> ADVP	 	-> RB	 	-> then-16
+					 	-> ,	 	-> ,-17
+		 	-> NP	 	-> NNS	 	-> brides-18
+			 	-> ADVP	 	-> RB	 	-> simply-19
+			 	-> VP	 	-> VBD	 	-> wore-20
+		 	-> NP	 	-> PRP$	 	-> their-21
+		 	-> JJS	 	-> best-22
+		 	-> NN	 	-> dress-23
+					 	-> .	 	-> .-24
+			
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NP	 	-> NNP	 	-> Queen-1
+		 	-> NNP	 	-> Victoria-2
+		 	-> POS	 	-> 's-3
+			 	-> NN	 	-> wedding-4
+		 	-> NN	 	-> cake-5
+			 	-> VP	 	-> VBD	 	-> weighed-6
+		 	-> NP	 	-> DT	 	-> a-7
+		 	-> JJ	 	-> whopping-8
+		 	-> CD	 	-> 300-9
+		 	-> NNS	 	-> pounds-10
+				 	-> .	 	-> .-11
+			

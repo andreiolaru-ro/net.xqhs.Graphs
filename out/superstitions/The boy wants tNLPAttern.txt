@@ -1,0 +1,36 @@
+The boy wants the girl to believe he wants her.
+------CorefChainz
+CHAIN2-["The boy" in sentence 1, "he" in sentence 1]
+representative mention: "The boy" in sentence 1
+CHAIN3-["the girl" in sentence 1, "her" in sentence 1]
+representative mention: "the girl" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, wants-3)
+det(boy-2, The-1)
+nsubj(wants-3, boy-2)
+det(girl-5, the-4)
+dobj(wants-3, girl-5)
+nsubj:xsubj(believe-7, girl-5)
+mark(believe-7, to-6)
+xcomp(wants-3, believe-7)
+nsubj(wants-9, he-8)
+ccomp(believe-7, wants-9)
+dobj(wants-9, her-10)
+punct(wants-3, .-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 9] [?#1, ?#2, boy, girl, to believe, wants, wants]
+to believe-xcomp->wants
+?#2-dobj->wants
+wants-ccomp->to believe
+?#1-The->boy
+?#2-nsubj:xsubj->to believe
+?#2-her :dobj->wants
+?#2-the->girl
+?#1-he :nsubj->wants
+?#1-nsubj->wants

@@ -1,0 +1,10 @@
+Seventeen tons of gold are made into wedding rings each year in the United States.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (CD Seventeen) (NNS tons)) (PP (IN of) (NP (NN gold)))) (VP (VBP are) (VP (VBN made) (PP (IN into) (NP (NN wedding) (NNS rings))) (NP-TMP (DT each) (NN year)) (PP (IN in) (NP (DT the) (NNP United) (NNPS States))))) (. .)))---
+mentions
+	Seventeen
+	Seventeen tons of gold
+	gold
+	wedding rings
+	each year
+	the United States
+------CorefChainz

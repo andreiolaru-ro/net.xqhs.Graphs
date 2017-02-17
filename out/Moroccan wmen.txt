@@ -1,0 +1,14 @@
+Moroccan women take a milk bath to purify themselves before their wedding ceremony. See more Moroccan wedding customs.
+------------Like Tree in the Wind---------------(ROOT (S (NP (JJ Moroccan) (NNS women)) (VP (VBP take) (S (NP (DT a) (NN milk) (NN bath)) (VP (TO to) (VP (VB purify) (NP (PRP themselves)) (PP (IN before) (NP (PRP$ their) (NN wedding) (NN ceremony))))))) (. .)))(ROOT (S (VP (VB See) (NP (ADJP (RBR more) (JJ Moroccan)) (NN wedding) (NNS customs))) (. .)))---
+mentions
+	Moroccan women
+	a milk bath
+	themselves
+	their
+	their wedding ceremony
+---
+mentions
+	more Moroccan wedding customs
+------CorefChainz
+CHAIN3-["Moroccan women" in sentence 1, "themselves" in sentence 1, "their" in sentence 1]
+representative mention: "Moroccan women" in sentence 1

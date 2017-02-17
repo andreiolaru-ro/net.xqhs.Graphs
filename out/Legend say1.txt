@@ -1,0 +1,29 @@
+Legend says single women will dream of their future husbands if they sleep with a slice of groom's cake under their pillows.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, says-2)
+nsubj(says-2, Legend-1)
+amod(women-4, single-3)
+nsubj(dream-6, women-4)
+aux(dream-6, will-5)
+ccomp(says-2, dream-6)
+case(husbands-10, of-7)
+nmod:poss(husbands-10, their-8)
+amod(husbands-10, future-9)
+nmod:of(dream-6, husbands-10)
+mark(sleep-13, if-11)
+nsubj(sleep-13, they-12)
+advcl:if(dream-6, sleep-13)
+case(slice-16, with-14)
+det(slice-16, a-15)
+nmod:with(sleep-13, slice-16)
+case(cake-20, of-17)
+nmod:poss(cake-20, groom-18)
+case(groom-18, 's-19)
+nmod:of(slice-16, cake-20)
+case(pillows-23, under-21)
+nmod:poss(pillows-23, their-22)
+nmod:under(sleep-13, pillows-23)
+punct(says-2, .-24)
+

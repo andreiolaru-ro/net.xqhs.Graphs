@@ -1,0 +1,55 @@
+Hey, brides, tuck a sugar cube into your glove—according to Greek culture, the sugar will sweeten your union.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: discourse Dependent: 1Hey Governor: 5tuck
+ Relation: punct Dependent: 2, Governor: 5tuck
+ Relation: nsubj Dependent: 3brides Governor: 5tuck
+ Relation: punct Dependent: 4, Governor: 5tuck
+ Relation: det Dependent: 6a Governor: 8cube
+ Relation: compound Dependent: 7sugar Governor: 8cube
+ Relation: dobj Dependent: 8cube Governor: 5tuck
+ Relation: case Dependent: 9into Governor: 11glove
+ Relation: nmod:poss Dependent: 10your Governor: 11glove
+ Relation: nmod:into Dependent: 11glove Governor: 5tuck
+ Relation: punct Dependent: 12-- Governor: 5tuck
+ Relation: case Dependent: 13according Governor: 16culture
+ Relation: mwe Dependent: 14to Governor: 13according
+ Relation: amod Dependent: 15Greek Governor: 16culture
+ Relation: nmod:according_to Dependent: 16culture Governor: 21sweeten
+ Relation: punct Dependent: 17, Governor: 21sweeten
+ Relation: det Dependent: 18the Governor: 19sugar
+ Relation: nsubj Dependent: 19sugar Governor: 21sweeten
+ Relation: aux Dependent: 20will Governor: 21sweeten
+ Relation: parataxis Dependent: 21sweeten Governor: 5tuck
+ Relation: nmod:poss Dependent: 22your Governor: 23union
+ Relation: dobj Dependent: 23union Governor: 21sweeten
+ Relation: punct Dependent: 24. Governor: 5tuck
+G[0, 23] []
+your-nmod:poss->glove
+sugar-compound->cube
+.-punct->tuck
+,-punct->tuck
+according-case->culture
+to-mwe->according
+sugar-nsubj->sweeten
+---punct->tuck
+sweeten-parataxis->tuck
+your-nmod:poss->union
+,-punct->sweeten
+cube-dobj->tuck
+culture-nmod:according_to->sweeten
+a-det->cube
+Hey-discourse->tuck
+into-case->glove
+,-punct->tuck
+glove-nmod:into->tuck
+Greek-amod->culture
+the-det->sugar
+will-aux->sweeten
+union-dobj->sweeten
+brides-nsubj->tuck
+------CorefChainz
+CHAIN6-["your" in sentence 1, "your" in sentence 1]
+representative mention: "your" in sentence 1

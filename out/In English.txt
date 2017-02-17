@@ -1,0 +1,60 @@
+In English tradition, Wednesday is considered the "best day" to marry, although Monday is for wealth and Tuesday is for health.
+In-IN 
+English-JJ 
+tradition-NN 
+,-, 
+Wednesday-NNP 
+is-VBZ 
+considered-VBN 
+the-DT 
+``-`` 
+best-JJS 
+day-NN 
+''-'' 
+to-TO 
+marry-VB 
+,-, 
+although-IN 
+Monday-NNP 
+is-VBZ 
+for-IN 
+wealth-NN 
+and-CC 
+Tuesday-NNP 
+is-VBZ 
+for-IN 
+health-NN 
+.-. 
+Dependensee repr
+case(tradition-3, In-1)
+amod(tradition-3, English-2)
+nmod:in(considered-7, tradition-3)
+nsubjpass(considered-7, Wednesday-5)
+auxpass(considered-7, is-6)
+root(ROOT-0, considered-7)
+det(best-10, the-8)
+dobj(considered-7, best-10)
+dep(best-10, day-11)
+mark(marry-14, to-13)
+advcl(considered-7, marry-14)
+mark(wealth-20, although-16)
+nsubj(wealth-20, Monday-17)
+cop(wealth-20, is-18)
+case(wealth-20, for-19)
+advcl(considered-7, wealth-20)
+cc(considered-7, and-21)
+nsubj(health-25, Tuesday-22)
+cop(health-25, is-23)
+case(health-25, for-24)
+conj:and(considered-7, health-25)
+---
+coref chains
+---
+mentions
+	Wednesday
+	day
+	Monday
+	Tuesday
+	English tradition
+	wealth
+	health

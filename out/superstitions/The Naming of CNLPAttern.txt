@@ -1,0 +1,43 @@
+The Naming of Cats is a difficult matter, it isn't just one of your holiday games.
+------CorefChainz
+CHAIN4-["The Naming of Cats" in sentence 1, "it" in sentence 1]
+representative mention: "The Naming of Cats" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, one-14)
+det(Naming-2, The-1)
+nsubj(matter-8, Naming-2)
+case(Cats-4, of-3)
+nmod:of(Naming-2, Cats-4)
+cop(matter-8, is-5)
+det(matter-8, a-6)
+amod(matter-8, difficult-7)
+advcl(one-14, matter-8)
+punct(one-14, ,-9)
+nsubj(one-14, it-10)
+cop(one-14, is-11)
+neg(one-14, n't-12)
+advmod(one-14, just-13)
+case(games-18, of-15)
+nmod:poss(games-18, your-16)
+compound(games-18, holiday-17)
+nmod:of(one-14, games-18)
+punct(one-14, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[11, 11] [?#1, ?#2, Cats, Naming, difficult, holiday games, just, matter, n't, one, your]
+?#2-it :nsubj->one
+?#2-The->Naming
+?#1-advcl->one
+just-advmod->one
+n't-neg : is neg->one
+?#1-a->matter
+holiday games-nmod:of->one
+your-nmod:poss->holiday games
+Cats-nmod:of : The nmod:of->?#2
+difficult-amod : is  : a amod->?#1
+?#2-nsubj->?#1

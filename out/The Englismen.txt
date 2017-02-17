@@ -1,0 +1,10 @@
+The English believe a spider found in a wedding dress means good luck. Yikes!
+------------Like Tree in the Wind---------------(ROOT (S (NP (DT The) (NNP English)) (VP (VB believe) (SBAR (S (NP (NP (DT a) (NN spider)) (VP (VBN found) (PP (IN in) (NP (DT a) (NN wedding) (NN dress))))) (VP (VBZ means) (NP (JJ good) (NN luck)))))) (. .)))(ROOT (FRAG (ADVP (RB Yikes)) (. !)))---
+mentions
+	The English
+	a spider found in a wedding dress
+	a wedding dress
+	good luck
+---
+mentions
+------CorefChainz

@@ -1,0 +1,35 @@
+The somethingblue in a bridal ensemble symbolizes purity, fidelity and love.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1The Governor: 2somethingblue
+ Relation: nsubj Dependent: 2somethingblue Governor: 7symbolizes
+ Relation: case Dependent: 3in Governor: 6ensemble
+ Relation: det Dependent: 4a Governor: 6ensemble
+ Relation: amod Dependent: 5bridal Governor: 6ensemble
+ Relation: nmod:in Dependent: 6ensemble Governor: 2somethingblue
+ Relation: dobj Dependent: 8purity Governor: 7symbolizes
+ Relation: punct Dependent: 9, Governor: 8purity
+ Relation: dobj Dependent: 10fidelity Governor: 7symbolizes
+ Relation: conj:and Dependent: 10fidelity Governor: 8purity
+ Relation: cc Dependent: 11and Governor: 8purity
+ Relation: dobj Dependent: 12love Governor: 7symbolizes
+ Relation: conj:and Dependent: 12love Governor: 8purity
+ Relation: punct Dependent: 13. Governor: 7symbolizes
+G[0, 14] []
+in-case->ensemble
+a-det->ensemble
+.-punct->symbolizes
+ensemble-nmod:in->somethingblue
+purity-dobj->symbolizes
+,-punct->purity
+love-dobj->symbolizes
+and-cc->purity
+somethingblue-nsubj->symbolizes
+love-conj:and->purity
+fidelity-dobj->symbolizes
+bridal-amod->ensemble
+The-det->somethingblue
+fidelity-conj:and->purity
+------CorefChainz

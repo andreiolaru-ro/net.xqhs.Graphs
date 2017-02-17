@@ -1,0 +1,25 @@
+To know John is to love him.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, know-2)
+mark(know-2, To-1)
+nsubj(is-4, John-3)
+nsubj:xsubj(love-6, John-3)
+ccomp(know-2, is-4)
+mark(love-6, to-5)
+xcomp(is-4, love-6)
+dobj(love-6, him-7)
+punct(know-2, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[5, 5] [John, him, is, know, love]
+is-ccomp : To ccomp->know
+love-xcomp : to xcomp->is
+John-nsubj->is
+him-dobj->love
+John-nsubj:xsubj->love

@@ -1,0 +1,10 @@
+Rain on your wedding day is actually considered good luck, according to Hindu tradition.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (NN Rain)) (PP (IN on) (NP (PRP$ your) (NN wedding) (NN day)))) (VP (VBZ is) (ADVP (RB actually)) (VP (VBN considered) (NP (JJ good) (NN luck)) (, ,) (PP (VBG according) (PP (TO to) (NP (NNP Hindu) (NN tradition)))))) (. .)))---
+mentions
+	Hindu
+	Rain on your wedding day
+	your
+	your wedding day
+	good luck
+	according to Hindu tradition
+------CorefChainz

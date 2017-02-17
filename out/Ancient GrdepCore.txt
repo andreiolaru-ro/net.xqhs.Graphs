@@ -1,0 +1,59 @@
+Ancient Greeks and Romans thought the veil protected the bride from evil spirits. Brides have worn veils ever since.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, thought-5)
+amod(Greeks-2, Ancient-1)
+nsubj(thought-5, Greeks-2)
+cc(Greeks-2, and-3)
+conj:and(Greeks-2, Romans-4)
+nsubj(thought-5, Romans-4)
+det(veil-7, the-6)
+nsubj(protected-8, veil-7)
+ccomp(thought-5, protected-8)
+det(bride-10, the-9)
+dobj(protected-8, bride-10)
+case(spirits-13, from-11)
+amod(spirits-13, evil-12)
+nmod:from(protected-8, spirits-13)
+punct(thought-5, .-14)
+---
+qqroot(ROOT-0, thought-5)
+amod(Greeks-2, Ancient-1)
+nsubj(thought-5, Greeks-2)
+cc(Greeks-2, and-3)
+conj:and(Greeks-2, Romans-4)
+nsubj(thought-5, Romans-4)
+det(veil-7, the-6)
+nsubj(protected-8, veil-7)
+ccomp(thought-5, protected-8)
+det(bride-10, the-9)
+dobj(protected-8, bride-10)
+case(spirits-13, from-11)
+amod(spirits-13, evil-12)
+nmod:from(protected-8, spirits-13)
+punct(thought-5, .-14)
+root(ROOT-0, worn-3)
+nsubj(worn-3, Brides-1)
+aux(worn-3, have-2)
+dobj(worn-3, veils-4)
+advmod(since-6, ever-5)
+advmod(worn-3, since-6)
+punct(worn-3, .-7)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NP	 	-> JJ	 	-> Ancient-1
+		 	-> NNPS	 	-> Greeks-2
+			 	-> CC	 	-> and-3
+		 	-> NP	 	-> NNPS	 	-> Romans-4
+				 	-> VP	 	-> VBD	 	-> thought-5
+		 	-> SBAR	 	-> S	 	-> NP	 	-> DT	 	-> the-6
+		 	-> NN	 	-> veil-7
+			 	-> VP	 	-> VBD	 	-> protected-8
+		 	-> NP	 	-> DT	 	-> the-9
+		 	-> NN	 	-> bride-10
+			 	-> PP	 	-> IN	 	-> from-11
+		 	-> NP	 	-> JJ	 	-> evil-12
+		 	-> NNS	 	-> spirits-13
+								 	-> .	 	-> .-14
+			

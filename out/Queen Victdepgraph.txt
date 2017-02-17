@@ -1,0 +1,27 @@
+Queen Victoria's wedding cake weighed a whopping 300 pounds.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: compound Dependent: 1Queen Governor: 2Victoria
+ Relation: nmod:poss Dependent: 2Victoria Governor: 5cake
+ Relation: case Dependent: 3's Governor: 2Victoria
+ Relation: compound Dependent: 4wedding Governor: 5cake
+ Relation: nsubj Dependent: 5cake Governor: 6weighed
+ Relation: det Dependent: 7a Governor: 10pounds
+ Relation: amod Dependent: 8whopping Governor: 10pounds
+ Relation: nummod Dependent: 9300 Governor: 10pounds
+ Relation: dobj Dependent: 10pounds Governor: 6weighed
+ Relation: punct Dependent: 11. Governor: 6weighed
+G[0, 10] []
+whopping-amod->pounds
+Queen-compound->Victoria
+wedding-compound->cake
+.-punct->weighed
+cake-nsubj->weighed
+'s-case->Victoria
+a-det->pounds
+300-nummod->pounds
+pounds-dobj->weighed
+Victoria-nmod:poss->cake
+------CorefChainz

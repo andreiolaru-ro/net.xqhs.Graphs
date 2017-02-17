@@ -1,0 +1,18 @@
+Ancient Romans studied pig entrails to determine the luckiest time to marry.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, studied-3)
+amod(Romans-2, Ancient-1)
+nsubj(studied-3, Romans-2)
+compound(entrails-5, pig-4)
+dobj(studied-3, entrails-5)
+mark(determine-7, to-6)
+advcl:to(studied-3, determine-7)
+det(time-10, the-8)
+amod(time-10, luckiest-9)
+dobj(determine-7, time-10)
+mark(marry-12, to-11)
+acl:to(time-10, marry-12)
+punct(studied-3, .-13)
+

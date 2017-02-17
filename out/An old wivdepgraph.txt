@@ -1,0 +1,71 @@
+An old wives' tale: If the younger of two sisters marries first, the older sister must dance barefoot at the wedding or risk never landing a husband.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1An Governor: 3wives
+ Relation: amod Dependent: 2old Governor: 3wives
+ Relation: nmod:poss Dependent: 3wives Governor: 5tale
+ Relation: case Dependent: 4' Governor: 3wives
+ Relation: punct Dependent: 6: Governor: 5tale
+ Relation: mark Dependent: 7If Governor: 13marries
+ Relation: det Dependent: 8the Governor: 9younger
+ Relation: nsubj Dependent: 9younger Governor: 13marries
+ Relation: case Dependent: 10of Governor: 12sisters
+ Relation: nummod Dependent: 11two Governor: 12sisters
+ Relation: nmod:of Dependent: 12sisters Governor: 9younger
+ Relation: advcl:if Dependent: 13marries Governor: 20dance
+ Relation: advmod Dependent: 14first Governor: 13marries
+ Relation: punct Dependent: 15, Governor: 20dance
+ Relation: det Dependent: 16the Governor: 18sister
+ Relation: amod Dependent: 17older Governor: 18sister
+ Relation: nsubj Dependent: 18sister Governor: 20dance
+ Relation: aux Dependent: 19must Governor: 20dance
+ Relation: dep Dependent: 20dance Governor: 5tale
+ Relation: dobj Dependent: 21barefoot Governor: 20dance
+ Relation: case Dependent: 22at Governor: 24wedding
+ Relation: det Dependent: 23the Governor: 24wedding
+ Relation: nmod:at Dependent: 24wedding Governor: 20dance
+ Relation: cc Dependent: 25or Governor: 24wedding
+ Relation: nmod:at Dependent: 26risk Governor: 20dance
+ Relation: conj:or Dependent: 26risk Governor: 24wedding
+ Relation: neg Dependent: 27never Governor: 28landing
+ Relation: advcl Dependent: 28landing Governor: 20dance
+ Relation: det Dependent: 29a Governor: 30husband
+ Relation: dobj Dependent: 30husband Governor: 28landing
+ Relation: punct Dependent: 31. Governor: 5tale
+G[0, 31] []
+wedding-nmod:at->dance
+barefoot-dobj->dance
+or-cc->wedding
+marries-advcl:if->dance
+If-mark->marries
+younger-nsubj->marries
+older-amod->sister
+An-det->wives
+old-amod->wives
+:-punct->tale
+never-neg->landing
+a-det->husband
+.-punct->tale
+at-case->wedding
+risk-conj:or->wedding
+risk-nmod:at->dance
+dance-dep->tale
+the-det->sister
+the-det->wedding
+the-det->younger
+husband-dobj->landing
+of-case->sisters
+,-punct->dance
+two-nummod->sisters
+wives-nmod:poss->tale
+'-case->wives
+landing-advcl->dance
+first-advmod->marries
+must-aux->dance
+sisters-nmod:of->younger
+sister-nsubj->dance
+------CorefChainz
+CHAIN4-["two sisters" in sentence 1, "the older sister" in sentence 1]
+representative mention: "the older sister" in sentence 1

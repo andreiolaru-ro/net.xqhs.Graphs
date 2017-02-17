@@ -1,0 +1,51 @@
+Stag parties were first held by ancient Spartan soldiers, who kissed their bachelor days goodbye with a raucous party.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: compound Dependent: 1Stag Governor: 2parties
+ Relation: nsubjpass Dependent: 2parties Governor: 5held
+ Relation: auxpass Dependent: 3were Governor: 5held
+ Relation: advmod Dependent: 4first Governor: 5held
+ Relation: case Dependent: 6by Governor: 9soldiers
+ Relation: amod Dependent: 7ancient Governor: 9soldiers
+ Relation: amod Dependent: 8Spartan Governor: 9soldiers
+ Relation: nmod:agent Dependent: 9soldiers Governor: 5held
+ Relation: nsubj Dependent: 9soldiers Governor: 12kissed
+ Relation: punct Dependent: 10, Governor: 9soldiers
+ Relation: ref Dependent: 11who Governor: 9soldiers
+ Relation: acl:relcl Dependent: 12kissed Governor: 9soldiers
+ Relation: nmod:poss Dependent: 13their Governor: 15days
+ Relation: compound Dependent: 14bachelor Governor: 15days
+ Relation: nmod:tmod Dependent: 15days Governor: 12kissed
+ Relation: dobj Dependent: 16goodbye Governor: 12kissed
+ Relation: case Dependent: 17with Governor: 20party
+ Relation: det Dependent: 18a Governor: 20party
+ Relation: amod Dependent: 19raucous Governor: 20party
+ Relation: nmod:with Dependent: 20party Governor: 16goodbye
+ Relation: punct Dependent: 21. Governor: 5held
+G[0, 21] []
+party-nmod:with->goodbye
+Spartan-amod->soldiers
+.-punct->held
+bachelor-compound->days
+a-det->party
+ancient-amod->soldiers
+,-punct->soldiers
+soldiers-nmod:agent->held
+first-advmod->held
+kissed-acl:relcl->soldiers
+with-case->party
+by-case->soldiers
+days-nmod:tmod->kissed
+goodbye-dobj->kissed
+Stag-compound->parties
+raucous-amod->party
+were-auxpass->held
+soldiers-nsubj->kissed
+their-nmod:poss->days
+who-ref->soldiers
+parties-nsubjpass->held
+------CorefChainz
+CHAIN3-["Stag parties" in sentence 1, "their" in sentence 1]
+representative mention: "Stag parties" in sentence 1

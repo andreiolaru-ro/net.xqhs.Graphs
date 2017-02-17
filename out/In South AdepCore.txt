@@ -1,0 +1,66 @@
+In South Africa, the parents of both bride and groom traditionally carried fire from their hearths to light a new fire in the newlyweds' hearth.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, carried-13)
+case(Africa-3, In-1)
+compound(Africa-3, South-2)
+nmod:in(carried-13, Africa-3)
+punct(carried-13, ,-4)
+det(parents-6, the-5)
+nsubj(carried-13, parents-6)
+case(bride-9, of-7)
+cc:preconj(bride-9, both-8)
+nmod:of(parents-6, bride-9)
+cc(bride-9, and-10)
+nmod:of(parents-6, groom-11)
+conj:and(bride-9, groom-11)
+advmod(carried-13, traditionally-12)
+dobj(carried-13, fire-14)
+case(hearths-17, from-15)
+nmod:poss(hearths-17, their-16)
+nmod:from(carried-13, hearths-17)
+mark(light-19, to-18)
+advcl:to(carried-13, light-19)
+det(fire-22, a-20)
+amod(fire-22, new-21)
+dobj(light-19, fire-22)
+case(hearth-27, in-23)
+det(newlyweds-25, the-24)
+nmod:poss(hearth-27, newlyweds-25)
+case(newlyweds-25, '-26)
+nmod:in(fire-22, hearth-27)
+punct(carried-13, .-28)
+------CorefChainz
+CHAIN9-["the parents of both bride and groom" in sentence 1, "their" in sentence 1, "the newlyweds '" in sentence 1]
+representative mention: "the parents of both bride and groom" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> PP	 	-> IN	 	-> In-1
+		 	-> NP	 	-> NNP	 	-> South-2
+		 	-> NNP	 	-> Africa-3
+				 	-> ,	 	-> ,-4
+		 	-> NP	 	-> NP	 	-> DT	 	-> the-5
+		 	-> NNS	 	-> parents-6
+			 	-> PP	 	-> IN	 	-> of-7
+		 	-> NP	 	-> DT	 	-> both-8
+		 	-> NN	 	-> bride-9
+		 	-> CC	 	-> and-10
+		 	-> NN	 	-> groom-11
+					 	-> ADVP	 	-> RB	 	-> traditionally-12
+			 	-> VP	 	-> VBD	 	-> carried-13
+		 	-> NP	 	-> NN	 	-> fire-14
+			 	-> PP	 	-> IN	 	-> from-15
+		 	-> NP	 	-> PRP$	 	-> their-16
+		 	-> NNS	 	-> hearths-17
+				 	-> S	 	-> VP	 	-> TO	 	-> to-18
+		 	-> VP	 	-> VB	 	-> light-19
+		 	-> NP	 	-> NP	 	-> DT	 	-> a-20
+		 	-> JJ	 	-> new-21
+		 	-> NN	 	-> fire-22
+			 	-> PP	 	-> IN	 	-> in-23
+		 	-> NP	 	-> NP	 	-> DT	 	-> the-24
+		 	-> NNS	 	-> newlyweds-25
+		 	-> POS	 	-> '-26
+			 	-> NN	 	-> hearth-27
+									 	-> .	 	-> .-28
+			

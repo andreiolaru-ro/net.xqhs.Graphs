@@ -1,0 +1,63 @@
+Saturday is the unluckiest wedding day, according to English folklore. Funny—it's the most popular day of the week to marry!
+Saturday-NNP 
+is-VBZ 
+the-DT 
+unluckiest-JJ 
+wedding-NN 
+day-NN 
+,-, 
+according-VBG 
+to-TO 
+English-NNP 
+folklore-NNP 
+.-. 
+Funny-NNP 
+---: 
+it-PRP 
+'s-VBZ 
+the-DT 
+most-RBS 
+popular-JJ 
+day-NN 
+of-IN 
+the-DT 
+week-NN 
+to-TO 
+marry-VB 
+!-. 
+Dependensee repr
+nsubj(day-6, Saturday-1)
+cop(day-6, is-2)
+det(day-6, the-3)
+amod(day-6, unluckiest-4)
+compound(day-6, wedding-5)
+root(ROOT-0, day-6)
+case(Funny-13, according-8)
+mwe(according-8, to-9)
+compound(Funny-13, English-10)
+compound(Funny-13, folklore-11)
+nmod:according_to(day-6, Funny-13)
+nsubj(day-20, it-15)
+cop(day-20, 's-16)
+det(day-20, the-17)
+advmod(popular-19, most-18)
+amod(day-20, popular-19)
+parataxis(day-6, day-20)
+case(week-23, of-21)
+det(week-23, the-22)
+nmod:of(day-20, week-23)
+mark(marry-25, to-24)
+acl(week-23, marry-25)
+---
+coref chains
+	CHAIN3-["the unluckiest wedding day , according to English folklore" in sentence 1, "it" in sentence 2]
+---
+mentions
+	Saturday
+	the unluckiest wedding day , according to English folklore
+	according to English folklore
+---
+mentions
+	it
+	the most popular day of the week to marry
+	the week to marry

@@ -1,0 +1,9 @@
+In the symbolic language of jewels, a sapphire in a wedding ring means marital happiness.
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN In) (NP (NP (DT the) (JJ symbolic) (NN language)) (PP (IN of) (NP (NNS jewels))))) (, ,) (NP (NP (DT a) (NN sapphire)) (PP (IN in) (NP (DT a) (NN wedding) (NN ring)))) (VP (VBZ means) (NP (JJ marital) (NN happiness))) (. .)))---
+mentions
+	the symbolic language of jewels
+	jewels
+	a sapphire in a wedding ring
+	a wedding ring
+	marital happiness
+------CorefChainz

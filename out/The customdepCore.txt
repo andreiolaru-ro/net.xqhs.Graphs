@@ -1,0 +1,62 @@
+The custom of tiered cakes emerged from a game where the bride and groom attempted to kiss over an ever-higher cake without knocking it over.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, emerged-6)
+det(custom-2, The-1)
+nsubj(emerged-6, custom-2)
+case(cakes-5, of-3)
+amod(cakes-5, tiered-4)
+nmod:of(custom-2, cakes-5)
+case(game-9, from-7)
+det(game-9, a-8)
+nmod:from(emerged-6, game-9)
+advmod(attempted-15, where-10)
+det(bride-12, the-11)
+nsubj(attempted-15, bride-12)
+cc(bride-12, and-13)
+conj:and(bride-12, groom-14)
+nsubj(attempted-15, groom-14)
+acl:relcl(game-9, attempted-15)
+case(kiss-17, to-16)
+nmod:to(attempted-15, kiss-17)
+case(cake-21, over-18)
+det(cake-21, an-19)
+amod(cake-21, ever-higher-20)
+nmod:over(attempted-15, cake-21)
+mark(knocking-23, without-22)
+advcl:without(attempted-15, knocking-23)
+dobj(knocking-23, it-24)
+compound:prt(knocking-23, over-25)
+punct(emerged-6, .-26)
+------CorefChainz
+CHAIN7-["an ever-higher cake" in sentence 1, "it" in sentence 1]
+representative mention: "an ever-higher cake" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NP	 	-> DT	 	-> The-1
+		 	-> NN	 	-> custom-2
+			 	-> PP	 	-> IN	 	-> of-3
+		 	-> NP	 	-> JJ	 	-> tiered-4
+		 	-> NNS	 	-> cakes-5
+					 	-> VP	 	-> VBD	 	-> emerged-6
+		 	-> PP	 	-> IN	 	-> from-7
+		 	-> NP	 	-> DT	 	-> a-8
+		 	-> NN	 	-> game-9
+				 	-> SBAR	 	-> WHADVP	 	-> WRB	 	-> where-10
+			 	-> S	 	-> NP	 	-> DT	 	-> the-11
+		 	-> NN	 	-> bride-12
+		 	-> CC	 	-> and-13
+		 	-> NN	 	-> groom-14
+			 	-> VP	 	-> VBD	 	-> attempted-15
+		 	-> PP	 	-> TO	 	-> to-16
+		 	-> NP	 	-> NN	 	-> kiss-17
+				 	-> PP	 	-> IN	 	-> over-18
+		 	-> NP	 	-> DT	 	-> an-19
+		 	-> JJ	 	-> ever-higher-20
+		 	-> NN	 	-> cake-21
+				 	-> PP	 	-> IN	 	-> without-22
+		 	-> S	 	-> VP	 	-> VBG	 	-> knocking-23
+		 	-> NP	 	-> PRP	 	-> it-24
+			 	-> PRT	 	-> RP	 	-> over-25
+										 	-> .	 	-> .-26
+			

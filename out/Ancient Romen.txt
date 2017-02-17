@@ -1,0 +1,7 @@
+Ancient Romans studied pig entrails to determine the luckiest time to marry.
+------------Like Tree in the Wind---------------(ROOT (S (NP (JJ Ancient) (NNPS Romans)) (VP (VBD studied) (NP (NN pig) (NNS entrails)) (S (VP (TO to) (VP (VB determine) (NP (DT the) (JJS luckiest) (NN time)) (S (VP (TO to) (VP (VB marry)))))))) (. .)))---
+mentions
+	Ancient Romans
+	pig entrails
+	the luckiest time
+------CorefChainz

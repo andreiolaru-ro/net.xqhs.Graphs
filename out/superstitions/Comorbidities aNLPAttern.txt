@@ -1,0 +1,42 @@
+Comorbidities are common and increase with age—monitoring for hidden physical and other mental disorders is essential.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, common-3)
+nsubj(common-3, Comorbidities-1)
+cop(common-3, are-2)
+cc(common-3, and-4)
+conj:and(common-3, increase-5)
+case(age-7, with-6)
+nmod:with(increase-5, age-7)
+punct(common-3, ---8)
+csubj(essential-18, monitoring-9)
+case(physical-12, for-10)
+amod(physical-12, hidden-11)
+nmod:for(monitoring-9, physical-12)
+cc(physical-12, and-13)
+amod(disorders-16, other-14)
+amod(disorders-16, mental-15)
+nmod:for(monitoring-9, disorders-16)
+conj:and(physical-12, disorders-16)
+cop(essential-18, is-17)
+parataxis(common-3, essential-18)
+punct(common-3, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[11, 11] [Comorbidities, age, common, disorders, essential, hidden, increase, mental, monitoring, other, physical]
+hidden-amod->physical
+mental-amod->disorders
+monitoring-csubj : is csubj->essential
+other-amod->disorders
+increase-conj:and->common
+Comorbidities-nsubj : are nsubj->common
+age-nmod:with->increase
+disorders-nmod:for->monitoring
+physical-nmod:for->monitoring
+essential-parataxis->common
+disorders-conj:and->physical

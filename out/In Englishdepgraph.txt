@@ -1,0 +1,59 @@
+In English tradition, Wednesday is considered the "best day" to marry, although Monday is for wealth and Tuesday is for health.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1In Governor: 3tradition
+ Relation: compound Dependent: 2English Governor: 3tradition
+ Relation: nmod:in Dependent: 3tradition Governor: 7considered
+ Relation: punct Dependent: 4, Governor: 7considered
+ Relation: nsubjpass Dependent: 5Wednesday Governor: 7considered
+ Relation: auxpass Dependent: 6is Governor: 7considered
+ Relation: det Dependent: 8the Governor: 11day
+ Relation: punct Dependent: 9`` Governor: 11day
+ Relation: amod Dependent: 10best Governor: 11day
+ Relation: xcomp Dependent: 11day Governor: 7considered
+ Relation: punct Dependent: 12'' Governor: 11day
+ Relation: mark Dependent: 13to Governor: 14marry
+ Relation: acl:to Dependent: 14marry Governor: 11day
+ Relation: punct Dependent: 15, Governor: 11day
+ Relation: mark Dependent: 16although Governor: 20wealth
+ Relation: nsubj Dependent: 17Monday Governor: 20wealth
+ Relation: cop Dependent: 18is Governor: 20wealth
+ Relation: case Dependent: 19for Governor: 20wealth
+ Relation: dep Dependent: 20wealth Governor: 11day
+ Relation: cc Dependent: 21and Governor: 20wealth
+ Relation: nsubj Dependent: 22Tuesday Governor: 25health
+ Relation: cop Dependent: 23is Governor: 25health
+ Relation: case Dependent: 24for Governor: 25health
+ Relation: dep Dependent: 25health Governor: 11day
+ Relation: conj:and Dependent: 25health Governor: 20wealth
+ Relation: punct Dependent: 26. Governor: 7considered
+G[0, 26] []
+to-mark->marry
+is-cop->health
+,-punct->considered
+Wednesday-nsubjpass->considered
+Tuesday-nsubj->health
+best-amod->day
+marry-acl:to->day
+is-cop->wealth
+for-case->wealth
+wealth-dep->day
+In-case->tradition
+day-xcomp->considered
+and-cc->wealth
+the-det->day
+``-punct->day
+tradition-nmod:in->considered
+Monday-nsubj->wealth
+.-punct->considered
+for-case->health
+health-conj:and->wealth
+,-punct->day
+although-mark->wealth
+is-auxpass->considered
+health-dep->day
+''-punct->day
+English-compound->tradition
+------CorefChainz

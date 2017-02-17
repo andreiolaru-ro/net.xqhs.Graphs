@@ -1,0 +1,128 @@
+In many cultures around the world—including Celtic, Hindu and Egyptian weddings—the hands of a bride and groom are literally tied together to demonstrate the couple's commitment to each other and their new bond as a married couple (giving us the popular phrase "tying the knot").
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, tied-25)
+case(cultures-3, In-1)
+amod(cultures-3, many-2)
+nmod:in(tied-25, cultures-3)
+case(world-6, around-4)
+det(world-6, the-5)
+nmod:around(cultures-3, world-6)
+punct(cultures-3, ---7)
+case(Celtic-9, including-8)
+nmod:including(cultures-3, Celtic-9)
+punct(Celtic-9, ,-10)
+nmod:including(cultures-3, Hindu-11)
+conj:and(Celtic-9, Hindu-11)
+cc(Celtic-9, and-12)
+amod(weddings-14, Egyptian-13)
+nmod:including(cultures-3, weddings-14)
+conj:and(Celtic-9, weddings-14)
+punct(cultures-3, ---15)
+det(hands-17, the-16)
+nsubjpass(tied-25, hands-17)
+nsubj:xsubj(demonstrate-28, hands-17)
+case(bride-20, of-18)
+det(bride-20, a-19)
+nmod:of(hands-17, bride-20)
+cc(bride-20, and-21)
+nmod:of(hands-17, groom-22)
+conj:and(bride-20, groom-22)
+auxpass(tied-25, are-23)
+advmod(tied-25, literally-24)
+advmod(tied-25, together-26)
+mark(demonstrate-28, to-27)
+xcomp(tied-25, demonstrate-28)
+det(couple-30, the-29)
+nmod:poss(commitment-32, couple-30)
+case(couple-30, 's-31)
+dobj(demonstrate-28, commitment-32)
+case(other-35, to-33)
+det(other-35, each-34)
+nmod:to(commitment-32, other-35)
+cc(commitment-32, and-36)
+nmod:poss(bond-39, their-37)
+amod(bond-39, new-38)
+dobj(demonstrate-28, bond-39)
+conj:and(commitment-32, bond-39)
+case(couple-43, as-40)
+det(couple-43, a-41)
+amod(couple-43, married-42)
+nmod:as(bond-39, couple-43)
+punct(giving-45, -LRB--44)
+acl(couple-43, giving-45)
+iobj(giving-45, us-46)
+det(phrase-49, the-47)
+amod(phrase-49, popular-48)
+dobj(giving-45, phrase-49)
+punct(phrase-49, ``-50)
+root(``-50, tying-51)
+det(knot-53, the-52)
+dobj(tying-51, knot-53)
+punct(tying-51, ''-54)
+punct(tying-51, -RRB--55)
+punct(tying-51, .-56)
+------CorefChainz
+CHAIN10-["the couple 's" in sentence 1, "their" in sentence 1]
+representative mention: "the couple 's" in sentence 1
+CHAIN13-["Hindu" in sentence 1, "us" in sentence 1]
+representative mention: "Hindu" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> PP	 	-> IN	 	-> In-1
+		 	-> NP	 	-> NP	 	-> JJ	 	-> many-2
+		 	-> NNS	 	-> cultures-3
+			 	-> PP	 	-> IN	 	-> around-4
+		 	-> NP	 	-> DT	 	-> the-5
+		 	-> NN	 	-> world-6
+						 	-> PRN	 	-> :	 	-> ---7
+		 	-> PP	 	-> VBG	 	-> including-8
+		 	-> NP	 	-> NP	 	-> NNP	 	-> Celtic-9
+			 	-> ,	 	-> ,-10
+		 	-> NP	 	-> NNP	 	-> Hindu-11
+			 	-> CC	 	-> and-12
+		 	-> NP	 	-> JJ	 	-> Egyptian-13
+		 	-> NNS	 	-> weddings-14
+					 	-> :	 	-> ---15
+			 	-> NP	 	-> NP	 	-> DT	 	-> the-16
+		 	-> NNS	 	-> hands-17
+			 	-> PP	 	-> IN	 	-> of-18
+		 	-> NP	 	-> DT	 	-> a-19
+		 	-> NN	 	-> bride-20
+		 	-> CC	 	-> and-21
+		 	-> NN	 	-> groom-22
+					 	-> VP	 	-> VBP	 	-> are-23
+		 	-> ADVP	 	-> RB	 	-> literally-24
+			 	-> VP	 	-> VBN	 	-> tied-25
+		 	-> ADVP	 	-> RB	 	-> together-26
+			 	-> S	 	-> VP	 	-> TO	 	-> to-27
+		 	-> VP	 	-> VB	 	-> demonstrate-28
+		 	-> NP	 	-> NP	 	-> DT	 	-> the-29
+		 	-> NN	 	-> couple-30
+		 	-> POS	 	-> 's-31
+			 	-> NN	 	-> commitment-32
+			 	-> PP	 	-> TO	 	-> to-33
+		 	-> NP	 	-> DT	 	-> each-34
+		 	-> JJ	 	-> other-35
+		 	-> CC	 	-> and-36
+		 	-> PRP$	 	-> their-37
+		 	-> JJ	 	-> new-38
+		 	-> NN	 	-> bond-39
+				 	-> PP	 	-> IN	 	-> as-40
+		 	-> NP	 	-> NP	 	-> DT	 	-> a-41
+		 	-> JJ	 	-> married-42
+		 	-> NN	 	-> couple-43
+			 	-> PRN	 	-> -LRB-	 	-> -LRB--44
+		 	-> S	 	-> VP	 	-> VBG	 	-> giving-45
+		 	-> NP	 	-> PRP	 	-> us-46
+			 	-> NP	 	-> NP	 	-> DT	 	-> the-47
+		 	-> JJ	 	-> popular-48
+		 	-> NN	 	-> phrase-49
+			 	-> VP	 	-> ``	 	-> ``-50
+		 	-> VBG	 	-> tying-51
+		 	-> NP	 	-> DT	 	-> the-52
+		 	-> NN	 	-> knot-53
+		 	-> ''	 	-> ''-54
+							 	-> -RRB-	 	-> -RRB--55
+										 	-> .	 	-> .-56
+			

@@ -1,0 +1,47 @@
+Brides carry or wear "something old" on their wedding day to symbolize continuity with the past.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: nsubj Dependent: 1Brides Governor: 2carry
+ Relation: nsubj Dependent: 1Brides Governor: 4wear
+ Relation: cc Dependent: 3or Governor: 2carry
+ Relation: conj:or Dependent: 4wear Governor: 2carry
+ Relation: punct Dependent: 5`` Governor: 2carry
+ Relation: root Dependent: 6something Governor: 5``
+ Relation: amod Dependent: 7old Governor: 6something
+ Relation: punct Dependent: 8'' Governor: 7old
+ Relation: case Dependent: 9on Governor: 12day
+ Relation: nmod:poss Dependent: 10their Governor: 12day
+ Relation: compound Dependent: 11wedding Governor: 12day
+ Relation: nmod:on Dependent: 12day Governor: 6something
+ Relation: mark Dependent: 13to Governor: 14symbolize
+ Relation: acl:to Dependent: 14symbolize Governor: 6something
+ Relation: dobj Dependent: 15continuity Governor: 14symbolize
+ Relation: case Dependent: 16with Governor: 18past
+ Relation: det Dependent: 17the Governor: 18past
+ Relation: nmod:with Dependent: 18past Governor: 14symbolize
+ Relation: punct Dependent: 19. Governor: 6something
+G[0, 19] []
+old-amod->something
+their-nmod:poss->day
+to-mark->symbolize
+with-case->past
+on-case->day
+continuity-dobj->symbolize
+.-punct->something
+wear-conj:or->carry
+Brides-nsubj->carry
+something-root->``
+Brides-nsubj->wear
+''-punct->old
+past-nmod:with->symbolize
+symbolize-acl:to->something
+``-punct->carry
+the-det->past
+day-nmod:on->something
+or-cc->carry
+wedding-compound->day
+------CorefChainz
+CHAIN2-["Brides" in sentence 1, "their" in sentence 1]
+representative mention: "Brides" in sentence 1

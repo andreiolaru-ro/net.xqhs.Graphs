@@ -1,0 +1,33 @@
+The tradition of a wedding cake comes from ancient Rome, where revelers broke a loaf of bread over a bride's head for fertility's sake.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, comes-7)
+det(tradition-2, The-1)
+nsubj(comes-7, tradition-2)
+case(cake-6, of-3)
+det(cake-6, a-4)
+compound(cake-6, wedding-5)
+nmod:of(tradition-2, cake-6)
+case(Rome-10, from-8)
+amod(Rome-10, ancient-9)
+nmod:from(comes-7, Rome-10)
+punct(Rome-10, ,-11)
+advmod(broke-14, where-12)
+nsubj(broke-14, revelers-13)
+acl:relcl(Rome-10, broke-14)
+det(loaf-16, a-15)
+dobj(broke-14, loaf-16)
+case(bread-18, of-17)
+nmod:of(loaf-16, bread-18)
+case(head-23, over-19)
+det(bride-21, a-20)
+nmod:poss(head-23, bride-21)
+case(bride-21, 's-22)
+nmod:over(broke-14, head-23)
+case(sake-27, for-24)
+nmod:poss(sake-27, fertility-25)
+case(fertility-25, 's-26)
+nmod:for(head-23, sake-27)
+punct(comes-7, .-28)
+

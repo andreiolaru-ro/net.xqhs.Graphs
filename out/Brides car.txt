@@ -1,0 +1,49 @@
+Brides carry or wear "something old" on their wedding day to symbolize continuity with the past.
+Brides-NNS 
+carry-VBP 
+or-CC 
+wear-VBP 
+``-`` 
+something-NN 
+old-JJ 
+''-'' 
+on-IN 
+their-PRP$ 
+wedding-NN 
+day-NN 
+to-TO 
+symbolize-VB 
+continuity-NN 
+with-IN 
+the-DT 
+past-NN 
+.-. 
+Dependensee repr
+nsubj(carry-2, Brides-1)
+nsubj(wear-4, Brides-1)
+root(ROOT-0, carry-2)
+cc(carry-2, or-3)
+conj:or(carry-2, wear-4)
+dobj(carry-2, something-6)
+amod(something-6, old-7)
+case(day-12, on-9)
+nmod:poss(day-12, their-10)
+compound(day-12, wedding-11)
+nmod:on(something-6, day-12)
+mark(symbolize-14, to-13)
+advcl(carry-2, symbolize-14)
+dobj(symbolize-14, continuity-15)
+case(past-18, with-16)
+det(past-18, the-17)
+nmod:with(symbolize-14, past-18)
+---
+coref chains
+	CHAIN2-["Brides" in sentence 1, "their" in sentence 1]
+---
+mentions
+	Brides
+	something old '' on their wedding day
+	their
+	their wedding day
+	continuity
+	the past

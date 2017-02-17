@@ -1,0 +1,93 @@
+The book you are looking for was last seen on the blue table in front of the TV
+------CorefChainz
+The-DT 
+book-NN 
+you-PRP 
+are-VBP 
+looking-VBG 
+for-IN 
+was-VBD 
+last-RB 
+seen-VBN 
+on-IN 
+the-DT 
+blue-JJ 
+table-NN 
+in-IN 
+front-NN 
+of-IN 
+the-DT 
+TV-NN 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> book
+		 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBG 	-> looking
+	 	-> PP 	-> IN 	-> for
+							 	-> VP 	-> VBD 	-> was
+	 	-> ADVP 	-> RB 	-> last
+		 	-> VP 	-> VBN 	-> seen
+	 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> blue
+	 	-> NN 	-> table
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> NN 	-> front
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> TV
+											
+Dependensee repr
+det(book-2, The-1)
+nsubjpass(seen-9, book-2)
+nsubj(looking-5, you-3)
+aux(looking-5, are-4)
+acl:relcl(book-2, looking-5)
+nmod(looking-5, for-6)
+auxpass(seen-9, was-7)
+advmod(seen-9, last-8)
+root(ROOT-0, seen-9)
+case(table-13, on-10)
+det(table-13, the-11)
+amod(table-13, blue-12)
+nmod:on(seen-9, table-13)
+case(TV-18, in-14)
+mwe(in-14, front-15)
+mwe(in-14, of-16)
+det(TV-18, the-17)
+nmod:in_front_of(table-13, TV-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, seen-9)
+det(book-2, The-1)
+nsubjpass(seen-9, book-2)
+nsubj(looking-5, you-3)
+aux(looking-5, are-4)
+acl:relcl(book-2, looking-5)
+nmod(looking-5, for-6)
+auxpass(seen-9, was-7)
+advmod(seen-9, last-8)
+case(table-13, on-10)
+det(table-13, the-11)
+amod(table-13, blue-12)
+nmod:on(seen-9, table-13)
+case(TV-18, in-14)
+mwe(in-14, front-15)
+mwe(in-14, of-16)
+det(TV-18, the-17)
+nmod:in_front_of(table-13, TV-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 8] [TV, blue, book, for, last, looking, seen, table, you]
+TV-nmod:in_front_of : in nmod:in_front_of->table
+blue-amod->table
+table-nmod:on->seen
+for-nmod->looking
+book-nsubjpass->seen
+you-nsubj : are nsubj->looking
+last-advmod : was advmod->seen
+looking-acl:relcl->book

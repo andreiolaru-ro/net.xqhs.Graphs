@@ -1,0 +1,43 @@
+Seventeen tons of gold are made into wedding rings each year in the United States.
+Seventeen-CD 
+tons-NNS 
+of-IN 
+gold-NN 
+are-VBP 
+made-VBN 
+into-IN 
+wedding-NN 
+rings-NNS 
+each-DT 
+year-NN 
+in-IN 
+the-DT 
+United-NNP 
+States-NNPS 
+.-. 
+Dependensee repr
+nummod(tons-2, Seventeen-1)
+nsubjpass(made-6, tons-2)
+case(gold-4, of-3)
+nmod:of(tons-2, gold-4)
+auxpass(made-6, are-5)
+root(ROOT-0, made-6)
+case(rings-9, into-7)
+compound(rings-9, wedding-8)
+nmod:into(made-6, rings-9)
+det(year-11, each-10)
+nmod:tmod(made-6, year-11)
+case(States-15, in-12)
+det(States-15, the-13)
+compound(States-15, United-14)
+nmod:in(made-6, States-15)
+---
+coref chains
+---
+mentions
+	Seventeen
+	Seventeen tons of gold
+	gold
+	wedding rings
+	each year
+	the United States

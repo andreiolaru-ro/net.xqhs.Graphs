@@ -1,0 +1,7 @@
+Aquamarine represents marital harmony and is said to ensure a long, happy marriage.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NN Aquamarine)) (VP (VP (VBZ represents) (NP (JJ marital) (NN harmony))) (CC and) (VP (VBZ is) (VP (VBN said) (S (VP (TO to) (VP (VB ensure) (NP (DT a) (ADJP (RB long)) (, ,) (ADJP (JJ happy)) (NN marriage)))))))) (. .)))---
+mentions
+	Aquamarine
+	marital harmony
+	a long , happy marriage
+------CorefChainz

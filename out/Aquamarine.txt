@@ -1,0 +1,39 @@
+Aquamarine represents marital harmony and is said to ensure a long, happy marriage.
+Aquamarine-NNP 
+represents-VBZ 
+marital-JJ 
+harmony-NN 
+and-CC 
+is-VBZ 
+said-VBN 
+to-TO 
+ensure-VB 
+a-DT 
+long-JJ 
+,-, 
+happy-JJ 
+marriage-NN 
+.-. 
+Dependensee repr
+nsubj(represents-2, Aquamarine-1)
+nsubjpass(said-7, Aquamarine-1)
+nsubj:xsubj(ensure-9, Aquamarine-1)
+root(ROOT-0, represents-2)
+amod(harmony-4, marital-3)
+dobj(represents-2, harmony-4)
+cc(represents-2, and-5)
+auxpass(said-7, is-6)
+conj:and(represents-2, said-7)
+mark(ensure-9, to-8)
+xcomp(said-7, ensure-9)
+det(marriage-14, a-10)
+amod(happy-13, long-11)
+amod(marriage-14, happy-13)
+dobj(ensure-9, marriage-14)
+---
+coref chains
+---
+mentions
+	Aquamarine
+	marital harmony
+	a long , happy marriage

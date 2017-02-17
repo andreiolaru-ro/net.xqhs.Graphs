@@ -1,0 +1,15 @@
+Colorless green ideas sleep furiously
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: amod Dependent: 1Colorless Governor: 3ideas
+ Relation: amod Dependent: 2green Governor: 3ideas
+ Relation: nsubj Dependent: 3ideas Governor: 4sleep
+ Relation: advmod Dependent: 5furiously Governor: 4sleep
+G[8, 4] [Colorless, furiously, green, ideas, ideas, ideas, sleep, sleep]
+Colorless-amod->ideas
+green-amod->ideas
+furiously-advmod->sleep
+ideas-nsubj->sleep
+------CorefChainz

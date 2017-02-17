@@ -1,0 +1,61 @@
+The custom of tiered cakes emerged from a game where the bride and groom attempted to kiss over an ever-higher cake without knocking it over.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1The Governor: 2custom
+ Relation: nsubj Dependent: 2custom Governor: 6emerged
+ Relation: case Dependent: 3of Governor: 5cakes
+ Relation: amod Dependent: 4tiered Governor: 5cakes
+ Relation: nmod:of Dependent: 5cakes Governor: 2custom
+ Relation: case Dependent: 7from Governor: 9game
+ Relation: det Dependent: 8a Governor: 9game
+ Relation: nmod:from Dependent: 9game Governor: 6emerged
+ Relation: advmod Dependent: 10where Governor: 15attempted
+ Relation: det Dependent: 11the Governor: 12bride
+ Relation: nsubj Dependent: 12bride Governor: 15attempted
+ Relation: cc Dependent: 13and Governor: 12bride
+ Relation: conj:and Dependent: 14groom Governor: 12bride
+ Relation: nsubj Dependent: 14groom Governor: 15attempted
+ Relation: acl:relcl Dependent: 15attempted Governor: 9game
+ Relation: case Dependent: 16to Governor: 17kiss
+ Relation: nmod:to Dependent: 17kiss Governor: 15attempted
+ Relation: case Dependent: 18over Governor: 21cake
+ Relation: det Dependent: 19an Governor: 21cake
+ Relation: amod Dependent: 20ever-higher Governor: 21cake
+ Relation: nmod:over Dependent: 21cake Governor: 15attempted
+ Relation: mark Dependent: 22without Governor: 23knocking
+ Relation: advcl:without Dependent: 23knocking Governor: 15attempted
+ Relation: dobj Dependent: 24it Governor: 23knocking
+ Relation: compound:prt Dependent: 25over Governor: 23knocking
+ Relation: punct Dependent: 26. Governor: 6emerged
+G[0, 26] []
+where-advmod->attempted
+over-case->cake
+ever-higher-amod->cake
+groom-conj:and->bride
+.-punct->emerged
+of-case->cakes
+attempted-acl:relcl->game
+it-dobj->knocking
+bride-nsubj->attempted
+groom-nsubj->attempted
+to-case->kiss
+game-nmod:from->emerged
+cake-nmod:over->attempted
+cakes-nmod:of->custom
+a-det->game
+over-compound:prt->knocking
+knocking-advcl:without->attempted
+from-case->game
+and-cc->bride
+kiss-nmod:to->attempted
+custom-nsubj->emerged
+an-det->cake
+without-mark->knocking
+The-det->custom
+the-det->bride
+tiered-amod->cakes
+------CorefChainz
+CHAIN7-["an ever-higher cake" in sentence 1, "it" in sentence 1]
+representative mention: "an ever-higher cake" in sentence 1

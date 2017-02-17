@@ -1,0 +1,11 @@
+For good luck, Egyptian women pinch the bride on her wedding day. Ouch!
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN For) (NP (JJ good) (NN luck))) (, ,) (NP (JJ Egyptian) (NNS women)) (VP (VBP pinch) (NP (NP (DT the) (NN bride)) (PP (IN on) (NP (PRP$ her) (NN wedding) (NN day))))) (. .)))(ROOT (FRAG (ADVP (RB Ouch)) (. !)))---
+mentions
+	good luck
+	Egyptian women
+	the bride on her wedding day
+	her
+	her wedding day
+---
+mentions
+------CorefChainz

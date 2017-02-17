@@ -1,0 +1,28 @@
+Peas are thrown at Czech newlyweds instead of rice.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, thrown-3)
+nsubjpass(thrown-3, Peas-1)
+auxpass(thrown-3, are-2)
+case(newlyweds-6, at-4)
+compound(newlyweds-6, Czech-5)
+nmod:at(thrown-3, newlyweds-6)
+cc(newlyweds-6, instead-7)
+mwe(instead-7, of-8)
+nmod:at(thrown-3, rice-9)
+conj:negcc(newlyweds-6, rice-9)
+punct(thrown-3, .-10)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NNS	 	-> Peas-1
+			 	-> VP	 	-> VBP	 	-> are-2
+		 	-> VP	 	-> VBN	 	-> thrown-3
+		 	-> PP	 	-> IN	 	-> at-4
+		 	-> NP	 	-> NP	 	-> NNP	 	-> Czech-5
+		 	-> NNS	 	-> newlyweds-6
+			 	-> PP	 	-> RB	 	-> instead-7
+		 	-> IN	 	-> of-8
+		 	-> NP	 	-> NN	 	-> rice-9
+								 	-> .	 	-> .-10
+			

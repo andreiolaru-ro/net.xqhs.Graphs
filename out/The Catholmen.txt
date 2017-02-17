@@ -1,0 +1,11 @@
+The Catholic tradition of "posting the banns" to announce a marriage originated as a way to ensure the bride and groom were not related.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (DT The) (NNP Catholic) (NN tradition)) (PP (IN of) (`` ``) (S (VP (VBG posting) (NP (DT the) (NNS banns) ('' '') (S (VP (TO to) (VP (VB announce) (NP (DT a) (NN marriage)))))))))) (VP (VBD originated) (SBAR (IN as) (S (NP (DT a) (NN way) (S (VP (TO to) (VP (VB ensure) (NP (DT the) (NN bride) (CC and) (NN groom)))))) (VP (VBD were) (RB not) (ADJP (JJ related)))))) (. .)))---
+mentions
+	Catholic
+	The Catholic tradition of `` posting the banns '' to announce a marriage
+	the banns '' to announce a marriage
+	a marriage
+	a way to ensure the bride and groom
+	the bride
+	groom
+------CorefChainz

@@ -1,0 +1,47 @@
+The groom carries the bride across the threshold to bravely protect her from evil spirits lurking below.
+The-DT 
+groom-NN 
+carries-VBZ 
+the-DT 
+bride-NN 
+across-IN 
+the-DT 
+threshold-NN 
+to-TO 
+bravely-RB 
+protect-VB 
+her-PRP 
+from-IN 
+evil-JJ 
+spirits-NNS 
+lurking-CD 
+below-IN 
+.-. 
+Dependensee repr
+det(groom-2, The-1)
+nsubj(carries-3, groom-2)
+root(ROOT-0, carries-3)
+det(bride-5, the-4)
+dobj(carries-3, bride-5)
+case(threshold-8, across-6)
+det(threshold-8, the-7)
+nmod:across(carries-3, threshold-8)
+mark(protect-11, to-9)
+advmod(protect-11, bravely-10)
+acl(threshold-8, protect-11)
+dobj(protect-11, her-12)
+case(spirits-15, from-13)
+amod(spirits-15, evil-14)
+nmod:from(protect-11, spirits-15)
+advmod(spirits-15, lurking-16)
+case(lurking-16, below-17)
+---
+coref chains
+	CHAIN3-["the bride" in sentence 1, "her" in sentence 1]
+---
+mentions
+	The groom
+	the bride
+	the threshold to bravely protect her from evil spirits lurking below
+	her
+	evil spirits lurking below

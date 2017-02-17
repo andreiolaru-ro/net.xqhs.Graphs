@@ -1,0 +1,30 @@
+A lady must cross her legs while seated in public.
+------CorefChainz
+CHAIN1-["A lady" in sentence 1, "her" in sentence 1]
+representative mention: "A lady" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, cross-4)
+det(lady-2, A-1)
+nsubj(cross-4, lady-2)
+aux(cross-4, must-3)
+nmod:poss(legs-6, her-5)
+dobj(cross-4, legs-6)
+mark(seated-8, while-7)
+advcl:while(cross-4, seated-8)
+case(public-10, in-9)
+nmod:in(seated-8, public-10)
+punct(cross-4, .-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[6, 6] [?#1, cross, lady, legs, public, seated]
+legs-dobj->cross
+seated-advcl:while->cross
+?#1-nsubj : must nsubj->cross
+?#1-A->lady
+?#1-her :nmod:poss->legs
+public-nmod:in->seated

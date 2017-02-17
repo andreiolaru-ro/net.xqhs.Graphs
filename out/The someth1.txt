@@ -1,0 +1,20 @@
+The somethingblue in a bridal ensemble symbolizes purity, fidelity and love.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, symbolizes-7)
+det(somethingblue-2, The-1)
+nsubj(symbolizes-7, somethingblue-2)
+case(ensemble-6, in-3)
+det(ensemble-6, a-4)
+amod(ensemble-6, bridal-5)
+nmod:in(somethingblue-2, ensemble-6)
+dobj(symbolizes-7, purity-8)
+punct(purity-8, ,-9)
+dobj(symbolizes-7, fidelity-10)
+conj:and(purity-8, fidelity-10)
+cc(purity-8, and-11)
+dobj(symbolizes-7, love-12)
+conj:and(purity-8, love-12)
+punct(symbolizes-7, .-13)
+

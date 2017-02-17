@@ -1,0 +1,9 @@
+The somethingblue in a bridal ensemble symbolizes purity, fidelity and love.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (DT The) (NN somethingblue)) (PP (IN in) (NP (DT a) (JJ bridal) (NN ensemble)))) (VP (VBZ symbolizes) (NP (NN purity) (, ,) (NN fidelity) (CC and) (NN love))) (. .)))---
+mentions
+	The somethingblue in a bridal ensemble
+	a bridal ensemble
+	purity
+	fidelity
+	love
+------CorefChainz

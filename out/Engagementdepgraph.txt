@@ -1,0 +1,73 @@
+Engagement and wedding rings are worn on the fourth finger of the left hand because it was once thought that a vein in that finger led directly to the heart.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: compound Dependent: 1Engagement Governor: 4rings
+ Relation: cc Dependent: 2and Governor: 1Engagement
+ Relation: conj:and Dependent: 3wedding Governor: 1Engagement
+ Relation: compound Dependent: 3wedding Governor: 4rings
+ Relation: nsubjpass Dependent: 4rings Governor: 6worn
+ Relation: auxpass Dependent: 5are Governor: 6worn
+ Relation: case Dependent: 7on Governor: 10finger
+ Relation: det Dependent: 8the Governor: 10finger
+ Relation: amod Dependent: 9fourth Governor: 10finger
+ Relation: nmod:on Dependent: 10finger Governor: 6worn
+ Relation: case Dependent: 11of Governor: 14hand
+ Relation: det Dependent: 12the Governor: 14hand
+ Relation: amod Dependent: 13left Governor: 14hand
+ Relation: nmod:of Dependent: 14hand Governor: 10finger
+ Relation: mark Dependent: 15because Governor: 19thought
+ Relation: nsubjpass Dependent: 16it Governor: 19thought
+ Relation: auxpass Dependent: 17was Governor: 19thought
+ Relation: advmod Dependent: 18once Governor: 19thought
+ Relation: advcl:because Dependent: 19thought Governor: 6worn
+ Relation: mark Dependent: 20that Governor: 26led
+ Relation: det Dependent: 21a Governor: 22vein
+ Relation: nsubj Dependent: 22vein Governor: 26led
+ Relation: case Dependent: 23in Governor: 25finger
+ Relation: det Dependent: 24that Governor: 25finger
+ Relation: nmod:in Dependent: 25finger Governor: 22vein
+ Relation: ccomp Dependent: 26led Governor: 19thought
+ Relation: advmod Dependent: 27directly Governor: 26led
+ Relation: case Dependent: 28to Governor: 30heart
+ Relation: det Dependent: 29the Governor: 30heart
+ Relation: nmod:to Dependent: 30heart Governor: 26led
+ Relation: punct Dependent: 31. Governor: 6worn
+G[0, 31] []
+thought-advcl:because->worn
+in-case->finger
+on-case->finger
+once-advmod->thought
+hand-nmod:of->finger
+a-det->vein
+directly-advmod->led
+fourth-amod->finger
+heart-nmod:to->led
+are-auxpass->worn
+and-cc->Engagement
+that-mark->led
+led-ccomp->thought
+of-case->hand
+it-nsubjpass->thought
+Engagement-compound->rings
+to-case->heart
+the-det->heart
+.-punct->worn
+vein-nsubj->led
+left-amod->hand
+because-mark->thought
+wedding-compound->rings
+the-det->hand
+wedding-conj:and->Engagement
+rings-nsubjpass->worn
+was-auxpass->thought
+finger-nmod:on->worn
+that-det->finger
+the-det->finger
+finger-nmod:in->vein
+------CorefChainz
+CHAIN5-["Engagement and wedding rings" in sentence 1, "it" in sentence 1]
+representative mention: "Engagement and wedding rings" in sentence 1
+CHAIN7-["the fourth finger of the left hand" in sentence 1, "that finger" in sentence 1]
+representative mention: "the fourth finger of the left hand" in sentence 1

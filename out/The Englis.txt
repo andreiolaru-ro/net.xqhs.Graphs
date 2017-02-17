@@ -1,0 +1,42 @@
+The English believe a spider found in a wedding dress means good luck. Yikes!
+The-DT 
+English-NNP 
+believe-VBP 
+a-DT 
+spider-NN 
+found-VBN 
+in-IN 
+a-DT 
+wedding-NN 
+dress-NN 
+means-VBZ 
+good-JJ 
+luck-NN 
+.-. 
+Yikes-NNP 
+!-. 
+Dependensee repr
+det(English-2, The-1)
+nsubj(believe-3, English-2)
+root(ROOT-0, believe-3)
+det(spider-5, a-4)
+nsubj(means-11, spider-5)
+acl(spider-5, found-6)
+case(dress-10, in-7)
+det(dress-10, a-8)
+compound(dress-10, wedding-9)
+nmod:in(found-6, dress-10)
+ccomp(believe-3, means-11)
+xcomp(means-11, good-12)
+compound(Yikes-15, luck-13)
+dep(good-12, Yikes-15)
+---
+coref chains
+---
+mentions
+	The English
+	a spider found in a wedding dress
+	a wedding dress
+	good luck
+---
+mentions

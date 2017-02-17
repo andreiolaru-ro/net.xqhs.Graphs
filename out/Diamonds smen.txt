@@ -1,0 +1,10 @@
+Diamonds set in gold or silver became popular as betrothal rings among wealthy Venetians toward the end of the fifteenth century.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (NNS Diamonds)) (VP (VBN set) (PP (IN in) (NP (NN gold) (CC or) (NN silver))))) (VP (VBD became) (ADJP (JJ popular) (PP (IN as) (NP (NP (NN betrothal) (NNS rings)) (PP (IN among) (NP (JJ wealthy) (NNPS Venetians)))))) (PP (IN toward) (NP (NP (DT the) (NN end)) (PP (IN of) (NP (DT the) (JJ fifteenth) (NN century)))))) (. .)))---
+mentions
+	Diamonds set in gold or silver
+	gold
+	silver
+	betrothal rings among wealthy Venetians
+	wealthy Venetians
+	the end of the fifteenth century
+------CorefChainz

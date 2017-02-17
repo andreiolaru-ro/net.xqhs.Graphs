@@ -1,0 +1,69 @@
+A Swedish bride puts a silver coin from her father and a gold coin from her mother in each shoe to ensure that she'll never do without. Learn more about Swedish wedding traditions.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1A Governor: 3bride
+ Relation: amod Dependent: 2Swedish Governor: 3bride
+ Relation: nsubj Dependent: 3bride Governor: 4puts
+ Relation: det Dependent: 5a Governor: 7coin
+ Relation: amod Dependent: 6silver Governor: 7coin
+ Relation: dobj Dependent: 7coin Governor: 4puts
+ Relation: nsubj:xsubj Dependent: 7coin Governor: 22ensure
+ Relation: case Dependent: 8from Governor: 10father
+ Relation: nmod:poss Dependent: 9her Governor: 10father
+ Relation: nmod:from Dependent: 10father Governor: 4puts
+ Relation: cc Dependent: 11and Governor: 10father
+ Relation: det Dependent: 12a Governor: 14coin
+ Relation: compound Dependent: 13gold Governor: 14coin
+ Relation: nmod:from Dependent: 14coin Governor: 4puts
+ Relation: conj:and Dependent: 14coin Governor: 10father
+ Relation: case Dependent: 15from Governor: 17mother
+ Relation: nmod:poss Dependent: 16her Governor: 17mother
+ Relation: nmod:from Dependent: 17mother Governor: 4puts
+ Relation: case Dependent: 18in Governor: 20shoe
+ Relation: det Dependent: 19each Governor: 20shoe
+ Relation: nmod:in Dependent: 20shoe Governor: 17mother
+ Relation: mark Dependent: 21to Governor: 22ensure
+ Relation: xcomp Dependent: 22ensure Governor: 4puts
+ Relation: mark Dependent: 23that Governor: 27do
+ Relation: nsubj Dependent: 24she Governor: 27do
+ Relation: aux Dependent: 25'll Governor: 27do
+ Relation: neg Dependent: 26never Governor: 27do
+ Relation: ccomp Dependent: 27do Governor: 22ensure
+ Relation: advmod Dependent: 28without Governor: 27do
+ Relation: punct Dependent: 29. Governor: 4puts
+G[0, 30] []
+from-case->mother
+her-nmod:poss->mother
+ensure-xcomp->puts
+a-det->coin
+from-case->father
+bride-nsubj->puts
+to-mark->ensure
+'ll-aux->do
+silver-amod->coin
+Swedish-amod->bride
+that-mark->do
+without-advmod->do
+father-nmod:from->puts
+coin-nmod:from->puts
+each-det->shoe
+coin-nsubj:xsubj->ensure
+mother-nmod:from->puts
+coin-dobj->puts
+never-neg->do
+her-nmod:poss->father
+do-ccomp->ensure
+in-case->shoe
+shoe-nmod:in->mother
+A-det->bride
+a-det->coin
+coin-conj:and->father
+she-nsubj->do
+gold-compound->coin
+and-cc->father
+.-punct->puts
+------CorefChainz
+CHAIN9-["A Swedish bride" in sentence 1, "her" in sentence 1, "her" in sentence 1, "she" in sentence 1]
+representative mention: "A Swedish bride" in sentence 1

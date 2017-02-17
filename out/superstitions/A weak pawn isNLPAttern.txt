@@ -1,0 +1,158 @@
+A weak pawn is one that is not defended by another pawn, which means, that it must be defended by other pieces, when it is under attack.
+------CorefChainz
+CHAIN5-["A weak pawn" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "A weak pawn" in sentence 1
+A-DT 
+weak-JJ 
+pawn-NN 
+is-VBZ 
+one-CD 
+that-WDT 
+is-VBZ 
+not-RB 
+defended-VBN 
+by-IN 
+another-DT 
+pawn-NN 
+,-, 
+which-WDT 
+means-VBZ 
+,-, 
+that-IN 
+it-PRP 
+must-MD 
+be-VB 
+defended-VBN 
+by-IN 
+other-JJ 
+pieces-NNS 
+,-, 
+when-WRB 
+it-PRP 
+is-VBZ 
+under-IN 
+attack-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> A
+	 	-> JJ 	-> weak
+	 	-> NN 	-> pawn
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> CD 	-> one
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> VP 	-> VBZ 	-> is
+	 	-> RB 	-> not
+	 	-> VP 	-> VBN 	-> defended
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> pawn
+		 	-> , 	-> ,
+	 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> VP 	-> VBZ 	-> means
+	 	-> , 	-> ,
+	 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> defended
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> JJ 	-> other
+	 	-> NNS 	-> pieces
+		 	-> , 	-> ,
+	 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> VBZ 	-> is
+	 	-> PP 	-> IN 	-> under
+	 	-> NP 	-> NN 	-> attack
+																								 	-> . 	-> .
+			
+Dependensee repr
+det(pawn-3, A-1)
+amod(pawn-3, weak-2)
+nsubj(one-5, pawn-3)
+cop(one-5, is-4)
+root(ROOT-0, one-5)
+nsubjpass(defended-9, one-5)
+ref(one-5, that-6)
+auxpass(defended-9, is-7)
+neg(defended-9, not-8)
+acl:relcl(one-5, defended-9)
+case(pawn-12, by-10)
+det(pawn-12, another-11)
+nmod:agent(defended-9, pawn-12)
+nsubj(means-15, pawn-12)
+ref(pawn-12, which-14)
+acl:relcl(pawn-12, means-15)
+mark(defended-21, that-17)
+nsubjpass(defended-21, it-18)
+aux(defended-21, must-19)
+auxpass(defended-21, be-20)
+ccomp(means-15, defended-21)
+case(pieces-24, by-22)
+amod(pieces-24, other-23)
+nmod:agent(defended-21, pieces-24)
+advmod(attack-30, when-26)
+nsubj(attack-30, it-27)
+cop(attack-30, is-28)
+case(attack-30, under-29)
+acl:relcl(pieces-24, attack-30)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, one-5)
+det(pawn-3, A-1)
+amod(pawn-3, weak-2)
+nsubj(one-5, pawn-3)
+cop(one-5, is-4)
+nsubjpass(defended-9, one-5)
+ref(one-5, that-6)
+auxpass(defended-9, is-7)
+neg(defended-9, not-8)
+acl:relcl(one-5, defended-9)
+case(pawn-12, by-10)
+det(pawn-12, another-11)
+nmod:agent(defended-9, pawn-12)
+nsubj(means-15, pawn-12)
+punct(pawn-12, ,-13)
+ref(pawn-12, which-14)
+acl:relcl(pawn-12, means-15)
+punct(one-5, ,-16)
+mark(defended-21, that-17)
+nsubjpass(defended-21, it-18)
+aux(defended-21, must-19)
+auxpass(defended-21, be-20)
+ccomp(one-5, defended-21)
+case(pieces-24, by-22)
+amod(pieces-24, other-23)
+nmod:agent(defended-21, pieces-24)
+punct(defended-21, ,-25)
+advmod(attack-30, when-26)
+nsubj(attack-30, it-27)
+cop(attack-30, is-28)
+case(attack-30, under-29)
+advcl:under(defended-21, attack-30)
+punct(one-5, .-31)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[16, 19] [?#1, ?#2, attack, defended, defended, it, it, means, not, one, other, pawn, pawn, pieces, weak, when]
+defended-relcl->one
+?#1-A->pawn
+it-  : is  ->attack
+weak- ->?#1
+?#2-another->pawn
+defended- ->one
+one- ->defended
+?#1-  : is  : that  : that  : that  ->one
+it-==->?#1
+not-  : is  ->defended
+it-  : that  : must  : be  ->defended
+attack-under->defended
+it-==->?#1
+means-relcl : which  : which relcl->?#2
+other- ->pieces
+when- ->attack
+?#2-agent : by agent->defended
+pieces-agent : by  : by agent->defended
+?#2- ->means

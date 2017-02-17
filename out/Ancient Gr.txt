@@ -1,0 +1,56 @@
+Ancient Greeks and Romans thought the veil protected the bride from evil spirits. Brides have worn veils ever since.
+Ancient-VBG 
+Greeks-NNPS 
+and-CC 
+Romans-NNPS 
+thought-VBD 
+the-DT 
+veil-NN 
+protected-VBD 
+the-DT 
+bride-NN 
+from-IN 
+evil-JJ 
+spirits-NNS 
+.-. 
+Brides-NNP 
+have-VBP 
+worn-VBN 
+veils-NNS 
+ever-RB 
+since-IN 
+.-. 
+Dependensee repr
+dep(worn-17, Ancient-1)
+nsubj(thought-5, Greeks-2)
+cc(Greeks-2, and-3)
+conj:and(Greeks-2, Romans-4)
+nsubj(thought-5, Romans-4)
+ccomp(Ancient-1, thought-5)
+det(veil-7, the-6)
+nsubj(protected-8, veil-7)
+ccomp(thought-5, protected-8)
+det(bride-10, the-9)
+dobj(protected-8, bride-10)
+case(spirits-13, from-11)
+amod(spirits-13, evil-12)
+nmod:from(protected-8, spirits-13)
+nsubj(worn-17, Brides-15)
+aux(worn-17, have-16)
+root(ROOT-0, worn-17)
+dobj(worn-17, veils-18)
+advmod(worn-17, ever-19)
+case(ever-19, since-20)
+---
+coref chains
+---
+mentions
+	Romans
+	Ancient Greeks and Romans
+	the veil
+	the bride
+	evil spirits
+---
+mentions
+	veils
+	Brides

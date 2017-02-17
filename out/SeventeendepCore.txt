@@ -1,0 +1,39 @@
+Seventeen tons of gold are made into wedding rings each year in the United States.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, made-6)
+nummod(tons-2, Seventeen-1)
+det:qmod(gold-4, tons-2)
+mwe(tons-2, of-3)
+nsubjpass(made-6, gold-4)
+auxpass(made-6, are-5)
+case(rings-9, into-7)
+compound(rings-9, wedding-8)
+nmod:into(made-6, rings-9)
+det(year-11, each-10)
+nmod:tmod(made-6, year-11)
+case(States-15, in-12)
+det(States-15, the-13)
+compound(States-15, United-14)
+nmod:in(made-6, States-15)
+punct(made-6, .-16)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NP	 	-> CD	 	-> Seventeen-1
+		 	-> NNS	 	-> tons-2
+			 	-> PP	 	-> IN	 	-> of-3
+		 	-> NP	 	-> NN	 	-> gold-4
+					 	-> VP	 	-> VBP	 	-> are-5
+		 	-> VP	 	-> VBN	 	-> made-6
+		 	-> PP	 	-> IN	 	-> into-7
+		 	-> NP	 	-> NN	 	-> wedding-8
+		 	-> NNS	 	-> rings-9
+				 	-> NP-TMP	 	-> DT	 	-> each-10
+		 	-> NN	 	-> year-11
+			 	-> PP	 	-> IN	 	-> in-12
+		 	-> NP	 	-> DT	 	-> the-13
+		 	-> NNP	 	-> United-14
+		 	-> NNPS	 	-> States-15
+						 	-> .	 	-> .-16
+			

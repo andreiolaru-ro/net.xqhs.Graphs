@@ -1,0 +1,42 @@
+For good luck, Egyptian women pinch the bride on her wedding day. Ouch!
+For-IN 
+good-JJ 
+luck-NN 
+,-, 
+Egyptian-JJ 
+women-NNS 
+pinch-VB 
+the-DT 
+bride-NN 
+on-IN 
+her-PRP$ 
+wedding-NN 
+day-NN 
+.-. 
+Ouch-NNP 
+!-. 
+Dependensee repr
+case(luck-3, For-1)
+amod(luck-3, good-2)
+nmod:for(pinch-7, luck-3)
+amod(women-6, Egyptian-5)
+nsubj(pinch-7, women-6)
+root(ROOT-0, pinch-7)
+det(bride-9, the-8)
+nsubj(Ouch-15, bride-9)
+case(wedding-12, on-10)
+nmod:poss(wedding-12, her-11)
+nmod:on(bride-9, wedding-12)
+compound(Ouch-15, day-13)
+xcomp(pinch-7, Ouch-15)
+---
+coref chains
+---
+mentions
+	good luck
+	Egyptian women
+	the bride on her wedding day
+	her
+	her wedding day
+---
+mentions

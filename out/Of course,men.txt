@@ -1,0 +1,18 @@
+Of course, Jackie Kennedy's bridesmaids were far from frumpy. She chose pink silk faille and red satin gowns created by designer Ann Lowe (also the creator of Jackie's dress).
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN Of) (NP (NN course))) (, ,) (NP (NP (NNP Jackie) (NNP Kennedy) (POS 's)) (NNS bridesmaids)) (VP (VBD were) (ADVP (RB far) (PP (IN from) (NP (JJ frumpy))))) (. .)))(ROOT (S (NP (PRP She)) (VP (VBD chose) (NP (NP (JJ pink) (NN silk) (NN faille) (CC and) (JJ red) (NN satin) (NNS gowns)) (VP (VBN created) (PP (IN by) (NP (NP (NN designer) (NNP Ann) (NNP Lowe)) (PRN (-LRB- -LRB-) (ADVP (RB also)) (NP (NP (DT the) (NN creator)) (PP (IN of) (NP (NP (NNP Jackie) (POS 's)) (NN dress)))) (-RRB- -RRB-))))))) (. .)))---
+mentions
+	Jackie Kennedy 's
+	course
+	Jackie Kennedy 's bridesmaids
+---
+mentions
+	Jackie 's
+	pink silk faille and red satin gowns created by designer Ann Lowe -LRB- also the creator of Jackie 's dress -RRB-
+	red satin gowns
+	designer Ann Lowe
+	the creator of Jackie 's dress
+	Jackie 's dress
+	She
+------CorefChainz
+CHAIN9-["Jackie Kennedy 's" in sentence 1, "She" in sentence 2, "Jackie 's" in sentence 2]
+representative mention: "Jackie Kennedy 's" in sentence 1

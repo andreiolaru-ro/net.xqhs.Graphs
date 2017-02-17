@@ -1,0 +1,42 @@
+In Korea, brides don bright hues of red and yellow to take their vows.
+In-IN 
+Korea-NNP 
+,-, 
+brides-NNS 
+don-VB 
+bright-JJ 
+hues-NNS 
+of-IN 
+red-NN 
+and-CC 
+yellow-NN 
+to-TO 
+take-VB 
+their-PRP$ 
+vows-NN 
+.-. 
+Dependensee repr
+case(Korea-2, In-1)
+nmod:in(don-5, Korea-2)
+nsubj(don-5, brides-4)
+root(ROOT-0, don-5)
+amod(hues-7, bright-6)
+dobj(don-5, hues-7)
+case(red-9, of-8)
+nmod:of(hues-7, red-9)
+cc(red-9, and-10)
+nmod:of(hues-7, yellow-11)
+conj:and(red-9, yellow-11)
+mark(take-13, to-12)
+advcl(don-5, take-13)
+nmod:poss(vows-15, their-14)
+dobj(take-13, vows-15)
+---
+coref chains
+	CHAIN3-["brides" in sentence 1, "their" in sentence 1]
+---
+mentions
+	Korea
+	brides
+	bright hues of red and yellow
+	their

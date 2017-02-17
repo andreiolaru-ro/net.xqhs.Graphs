@@ -1,0 +1,54 @@
+Moroccan women take a milk bath to purify themselves before their wedding ceremony. See more Moroccan wedding customs.
+Moroccan-NN 
+women-NNS 
+take-VBP 
+a-DT 
+milk-NN 
+bath-NN 
+to-TO 
+purify-VB 
+themselves-PRP 
+before-IN 
+their-PRP$ 
+wedding-NN 
+ceremony-NN 
+.-. 
+See-VB 
+more-JJR 
+Moroccan-JJ 
+wedding-NN 
+customs-NNS 
+.-. 
+Dependensee repr
+compound(women-2, Moroccan-1)
+nsubj(take-3, women-2)
+root(ROOT-0, take-3)
+det(bath-6, a-4)
+compound(bath-6, milk-5)
+dobj(take-3, bath-6)
+nsubj:xsubj(purify-8, bath-6)
+mark(purify-8, to-7)
+xcomp(take-3, purify-8)
+dobj(purify-8, themselves-9)
+mark(ceremony-13, before-10)
+nmod:poss(ceremony-13, their-11)
+compound(ceremony-13, wedding-12)
+advcl(purify-8, ceremony-13)
+dep(purify-8, See-15)
+amod(customs-19, more-16)
+amod(customs-19, Moroccan-17)
+compound(customs-19, wedding-18)
+dobj(See-15, customs-19)
+---
+coref chains
+	CHAIN3-["Moroccan women" in sentence 1, "themselves" in sentence 1, "their" in sentence 1]
+---
+mentions
+	Moroccan women
+	a milk bath
+	themselves
+	their
+	their wedding ceremony
+---
+mentions
+	more Moroccan wedding customs

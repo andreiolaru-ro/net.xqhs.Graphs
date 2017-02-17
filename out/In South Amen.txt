@@ -1,0 +1,26 @@
+In South Africa, the parents of both bride and groom traditionally carried fire from their hearths to light a new fire in the newlyweds' hearth.
+------------Like Tree in the Wind---------------
+(	ROOT 
+(	S 	(PP (IN In) (NP (NNP South) (NNP Africa))	) 
+	(, ,) 
+	(NP 	(	NP (DT the) (NNS parents)	)	(	PP 	(IN of) 	(NP (DT both) (NN bride) (CC and) (NN groom))	)	) 
+		(	ADVP 	(RB traditionally)	) 
+(	VP 	(VBD carried)	 (NP (NN fire))	 (PP (IN from) (NP (PRP$ their) (NNS hearths))	) 
+ (S	 (VP (TO to) (	VP 	(VB light) 	(NP (NP (DT a) (JJ new) (NN fire)) 
+	(PP (IN in) 	(NP (NP (DT the) (NNS newlyweds) (POS ')) (NN hearth)))	))))) (. .)))
+ ---
+mentions
+	South Africa
+	the parents of both bride and groom
+	both
+	both bride
+	groom
+	fire
+	their
+	their hearths
+	a new fire in the newlyweds ' hearth
+	the newlyweds '
+	the newlyweds ' hearth
+------CorefChainz
+CHAIN9-["the parents of both bride and groom" in sentence 1, "their" in sentence 1, "the newlyweds '" in sentence 1]
+representative mention: "the parents of both bride and groom" in sentence 1

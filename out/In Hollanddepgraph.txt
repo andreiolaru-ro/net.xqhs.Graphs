@@ -1,0 +1,49 @@
+In Holland, a pine tree is planted outside the newlyweds' home as a symbol of fertility and luck.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1In Governor: 2Holland
+ Relation: nmod:in Dependent: 2Holland Governor: 8planted
+ Relation: punct Dependent: 3, Governor: 8planted
+ Relation: det Dependent: 4a Governor: 6tree
+ Relation: amod Dependent: 5pine Governor: 6tree
+ Relation: nsubjpass Dependent: 6tree Governor: 8planted
+ Relation: auxpass Dependent: 7is Governor: 8planted
+ Relation: case Dependent: 9outside Governor: 13home
+ Relation: det Dependent: 10the Governor: 11newlyweds
+ Relation: nmod:poss Dependent: 11newlyweds Governor: 13home
+ Relation: case Dependent: 12' Governor: 11newlyweds
+ Relation: nmod:outside Dependent: 13home Governor: 8planted
+ Relation: case Dependent: 14as Governor: 16symbol
+ Relation: det Dependent: 15a Governor: 16symbol
+ Relation: nmod:as Dependent: 16symbol Governor: 8planted
+ Relation: case Dependent: 17of Governor: 18fertility
+ Relation: nmod:of Dependent: 18fertility Governor: 16symbol
+ Relation: cc Dependent: 19and Governor: 18fertility
+ Relation: nmod:of Dependent: 20luck Governor: 16symbol
+ Relation: conj:and Dependent: 20luck Governor: 18fertility
+ Relation: punct Dependent: 21. Governor: 8planted
+G[0, 21] []
+a-det->tree
+luck-conj:and->fertility
+.-punct->planted
+In-case->Holland
+outside-case->home
+'-case->newlyweds
+symbol-nmod:as->planted
+of-case->fertility
+pine-amod->tree
+tree-nsubjpass->planted
+a-det->symbol
+Holland-nmod:in->planted
+newlyweds-nmod:poss->home
+luck-nmod:of->symbol
+is-auxpass->planted
+home-nmod:outside->planted
+the-det->newlyweds
+as-case->symbol
+fertility-nmod:of->symbol
+and-cc->fertility
+,-punct->planted
+------CorefChainz

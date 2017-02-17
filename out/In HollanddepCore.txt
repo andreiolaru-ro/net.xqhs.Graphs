@@ -1,0 +1,50 @@
+In Holland, a pine tree is planted outside the newlyweds' home as a symbol of fertility and luck.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, planted-8)
+case(Holland-2, In-1)
+nmod:in(planted-8, Holland-2)
+punct(planted-8, ,-3)
+det(tree-6, a-4)
+amod(tree-6, pine-5)
+nsubjpass(planted-8, tree-6)
+auxpass(planted-8, is-7)
+case(home-13, outside-9)
+det(newlyweds-11, the-10)
+nmod:poss(home-13, newlyweds-11)
+case(newlyweds-11, '-12)
+nmod:outside(planted-8, home-13)
+case(symbol-16, as-14)
+det(symbol-16, a-15)
+nmod:as(planted-8, symbol-16)
+case(fertility-18, of-17)
+nmod:of(symbol-16, fertility-18)
+cc(fertility-18, and-19)
+nmod:of(symbol-16, luck-20)
+conj:and(fertility-18, luck-20)
+punct(planted-8, .-21)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> PP	 	-> IN	 	-> In-1
+		 	-> NP	 	-> NNP	 	-> Holland-2
+				 	-> ,	 	-> ,-3
+		 	-> NP	 	-> DT	 	-> a-4
+			 	-> VP	 	-> VBP	 	-> pine-5
+		 	-> SBAR	 	-> S	 	-> NP	 	-> NN	 	-> tree-6
+			 	-> VP	 	-> VBZ	 	-> is-7
+		 	-> VP	 	-> VBN	 	-> planted-8
+		 	-> PP	 	-> IN	 	-> outside-9
+		 	-> NP	 	-> NP	 	-> DT	 	-> the-10
+		 	-> NNS	 	-> newlyweds-11
+		 	-> POS	 	-> '-12
+			 	-> NN	 	-> home-13
+				 	-> PP	 	-> IN	 	-> as-14
+		 	-> NP	 	-> NP	 	-> DT	 	-> a-15
+		 	-> NN	 	-> symbol-16
+			 	-> PP	 	-> IN	 	-> of-17
+		 	-> NP	 	-> NN	 	-> fertility-18
+		 	-> CC	 	-> and-19
+		 	-> NN	 	-> luck-20
+											 	-> .	 	-> .-21
+			

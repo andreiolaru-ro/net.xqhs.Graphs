@@ -1,0 +1,16 @@
+Annotator dependencies
+PROPERTY NAME	ANNOTATOR CLASS NAME	REQUIREMENTS
+tokenize	TokenizerAnnotator	None
+cleanxml	CleanXmlAnnotator	tokenize
+ssplit	WordsToSentenceAnnotator	tokenize
+pos	POSTaggerAnnotator	tokenize, ssplit
+lemma	MorphaAnnotator	tokenize, ssplit, pos
+ner	NERClassifierCombiner	tokenize, ssplit, pos, lemma
+regexner	RegexNERAnnotator	?
+sentiment	SentimentAnnotator	?
+parse	ParserAnnotator	tokenize, ssplit
+depparse	DependencyParseAnnotator	tokenize, ssplit, pos
+dcoref	DeterministicCorefAnnotator	tokenize, ssplit, pos, lemma, ner, parse
+relation	RelationExtractorAnnotator	tokenize, ssplit, pos, lemma, ner, depparse
+natlog	NaturalLogicAnnotator	tokenize, ssplit, pos, lemma, depparse (Can also use parse)
+quote	QuoteAnnotator	None

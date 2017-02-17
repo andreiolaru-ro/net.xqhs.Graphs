@@ -1,0 +1,23 @@
+The groom carries the bride across the threshold to bravely protect her from evil spirits lurking below.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, carries-3)
+det(groom-2, The-1)
+nsubj(carries-3, groom-2)
+det(bride-5, the-4)
+dobj(carries-3, bride-5)
+case(threshold-8, across-6)
+det(threshold-8, the-7)
+nmod:across(bride-5, threshold-8)
+mark(protect-11, to-9)
+advmod(protect-11, bravely-10)
+acl:to(bride-5, protect-11)
+dobj(protect-11, her-12)
+case(spirits-15, from-13)
+amod(spirits-15, evil-14)
+nmod:from(protect-11, spirits-15)
+acl(spirits-15, lurking-16)
+advmod(lurking-16, below-17)
+punct(carries-3, .-18)
+

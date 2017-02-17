@@ -1,0 +1,19 @@
+Most expensive wedding ever? The marriage of Sheik Rashid Bin Saeed Al Maktoum's son to Princess Salama in Dubai in May 1981. The price tag? $44 million.
+------------Like Tree in the Wind---------------(ROOT (FRAG (NP (NP (ADJP (RBS Most) (JJ expensive)) (NN wedding)) (NP (RB ever))) (. ?)))(ROOT (NP (NP (DT The) (NN marriage)) (PP (IN of) (NP (NP (NNP Sheik) (NNP Rashid) (NNP Bin) (NNP Saeed) (NNP Al) (NNP Maktoum) (POS 's)) (NN son))) (PP (TO to) (NP (NP (NNP Princess) (NNP Salama)) (PP (IN in) (NP (NNP Dubai))))) (PP (IN in) (NP (NNP May) (CD 1981))) (. .)))(ROOT (FRAG (NP (DT The) (NN price) (NN tag)) (. ?)))(ROOT (NP (NP ($ $) (CD 44)) (QP (CD million)) (. .)))---
+mentions
+	Most expensive wedding
+---
+mentions
+	Sheik Rashid Bin Saeed Al Maktoum 's
+	Dubai
+	May 1981
+	Sheik Rashid Bin Saeed Al Maktoum 's son
+	to Princess Salama in Dubai
+	The marriage of Sheik Rashid Bin Saeed Al Maktoum 's son to Princess Salama in Dubai in May 1981
+---
+mentions
+	The price tag
+---
+mentions
+	$ 44 million
+------CorefChainz

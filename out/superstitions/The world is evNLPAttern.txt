@@ -1,0 +1,27 @@
+The world is everything that is the case.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, everything-4)
+det(world-2, The-1)
+nsubj(everything-4, world-2)
+cop(everything-4, is-3)
+nsubj(case-8, everything-4)
+ref(everything-4, that-5)
+cop(case-8, is-6)
+det(case-8, the-7)
+acl:relcl(everything-4, case-8)
+punct(everything-4, .-9)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[6, 6] [?#1, ?#2, case, everything, that, world]
+?#2-nsubj : is nsubj->everything
+?#1-the : is  : the the->case
+everything-nsubj->?#1
+that-ref->everything
+?#2-The : The The->world
+?#1-acl:relcl->everything

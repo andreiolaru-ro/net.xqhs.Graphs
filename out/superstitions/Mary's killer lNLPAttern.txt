@@ -1,0 +1,36 @@
+Mary's killer left a note written in her blood on the wall.
+------CorefChainz
+CHAIN3-["Mary 's" in sentence 1, "her" in sentence 1]
+representative mention: "Mary 's" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, left-4)
+nmod:poss(killer-3, Mary-1)
+case(Mary-1, 's-2)
+nsubj(left-4, killer-3)
+det(note-6, a-5)
+dobj(left-4, note-6)
+acl(note-6, written-7)
+case(blood-10, in-8)
+nmod:poss(blood-10, her-9)
+nmod:in(written-7, blood-10)
+case(wall-13, on-11)
+det(wall-13, the-12)
+nmod:on(written-7, wall-13)
+punct(left-4, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 9] [?#1, ?#2, Mary, blood, killer, left, note, wall, written]
+Mary-nmod:poss->killer
+blood-nmod->written
+written-acl->?#1
+?#2-the->wall
+killer-nsubj->left
+?#1-a->note
+Mary-her :nmod:poss->blood
+?#1-dobj->left
+?#2-nmod->written

@@ -1,3 +1,7 @@
 /bin
 /doc-Graphs
 /bin-java6
+/lib/stanford-corenlp-3.7.0-models.jar
+/lib/stanford-corenlp-3.7.0.jar
+/lib/stanford-parser-3.6.0-models.jar
+/lib/src

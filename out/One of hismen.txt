@@ -1,0 +1,14 @@
+One of history's earliest engagement rings was given to Princess Mary, daughter of Henry VIII. She was two-years-old at the time.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (CD One)) (PP (IN of) (NP (NP (NN history) (POS 's)) (JJS earliest) (NN engagement) (NNS rings)))) (VP (VBD was) (VP (VBN given) (PP (TO to) (NP (NP (NNP Princess) (NNP Mary)) (, ,) (NP (NP (NN daughter)) (PP (IN of) (NP (NNP Henry) (NNP VIII)))))))) (. .)))(ROOT (S (NP (PRP She)) (VP (VBD was) (ADJP (JJ two-years-old) (PP (IN at) (NP (DT the) (NN time))))) (. .)))---
+mentions
+	One
+	Henry VIII
+	history 's
+	history 's earliest engagement rings
+	to Princess Mary , daughter of Henry VIII
+	daughter of Henry VIII
+---
+mentions
+	the time
+	She
+------CorefChainz

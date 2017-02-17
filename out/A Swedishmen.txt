@@ -1,0 +1,18 @@
+A Swedish bride puts a silver coin from her father and a gold coin from her mother in each shoe to ensure that she'll never do without. Learn more about Swedish wedding traditions.
+------------Like Tree in the Wind---------------(ROOT (S (NP (DT A) (JJ Swedish) (NN bride)) (VP (VBZ puts) (NP (DT a) (NN silver) (NN coin)) (PP (IN from) (NP (NP (PRP$ her) (NN father)) (CC and) (NP (DT a) (NN gold) (NN coin)))) (PP (IN from) (NP (NP (PRP$ her) (NN mother)) (PP (IN in) (NP (DT each) (NN shoe) (S (VP (TO to) (VP (VB ensure) (SBAR (IN that) (S (NP (PRP she)) (VP (MD 'll) (ADVP (RB never)) (VP (VB do) (PP (IN without)))))))))))))) (. .)))(ROOT (S (VP (VB Learn) (ADVP (RBR more)) (PP (IN about) (NP (JJ Swedish) (NN wedding) (NNS traditions)))) (. .)))---
+mentions
+	A Swedish bride
+	a silver coin
+	her
+	her father
+	a gold coin
+	her
+	her mother in each shoe to ensure that she 'll never do without
+	each shoe to ensure that she 'll never do without
+	she
+---
+mentions
+	Swedish wedding traditions
+------CorefChainz
+CHAIN8-["A Swedish bride" in sentence 1, "her" in sentence 1, "her" in sentence 1, "she" in sentence 1]
+representative mention: "A Swedish bride" in sentence 1

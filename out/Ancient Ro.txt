@@ -1,0 +1,34 @@
+Ancient Romans studied pig entrails to determine the luckiest time to marry.
+Ancient-JJ 
+Romans-NNPS 
+studied-VBD 
+pig-NN 
+entrails-NNS 
+to-TO 
+determine-VB 
+the-DT 
+luckiest-JJ 
+time-NN 
+to-TO 
+marry-VB 
+.-. 
+Dependensee repr
+amod(Romans-2, Ancient-1)
+nsubj(studied-3, Romans-2)
+root(ROOT-0, studied-3)
+compound(entrails-5, pig-4)
+dobj(studied-3, entrails-5)
+mark(determine-7, to-6)
+advcl(studied-3, determine-7)
+det(time-10, the-8)
+amod(time-10, luckiest-9)
+dobj(determine-7, time-10)
+mark(marry-12, to-11)
+advcl(determine-7, marry-12)
+---
+coref chains
+---
+mentions
+	Ancient Romans
+	pig entrails
+	the luckiest time

@@ -1,0 +1,28 @@
+Snake rings dotted with ruby eyes were popular wedding bands in Victorian England—the coils winding into a circle symbolized eternity.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, bands-10)
+compound(rings-2, Snake-1)
+nsubj(bands-10, rings-2)
+acl(rings-2, dotted-3)
+case(eyes-6, with-4)
+amod(eyes-6, ruby-5)
+nmod:with(dotted-3, eyes-6)
+cop(bands-10, were-7)
+amod(bands-10, popular-8)
+compound(bands-10, wedding-9)
+case(England-13, in-11)
+amod(England-13, Victorian-12)
+nmod:in(bands-10, England-13)
+punct(bands-10, ---14)
+det(coils-16, the-15)
+nsubj(symbolized-21, coils-16)
+acl(coils-16, winding-17)
+case(circle-20, into-18)
+det(circle-20, a-19)
+nmod:into(winding-17, circle-20)
+parataxis(bands-10, symbolized-21)
+dobj(symbolized-21, eternity-22)
+punct(bands-10, .-23)
+

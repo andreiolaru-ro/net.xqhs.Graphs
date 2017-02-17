@@ -1,0 +1,49 @@
+Priscilla Presley's engagement ring was a whopping 3 1/2-carat rock surrounded by a detachable row of smaller diamonds.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, rock-12)
+compound(Presley-2, Priscilla-1)
+nmod:poss(ring-5, Presley-2)
+case(Presley-2, 's-3)
+compound(ring-5, engagement-4)
+nsubj(rock-12, ring-5)
+cop(rock-12, was-6)
+det(rock-12, a-7)
+amod(rock-12, whopping-8)
+nummod(rock-12, 3Â 1/2-9)
+punct(rock-12, --10)
+compound(rock-12, carat-11)
+acl(rock-12, surrounded-13)
+case(row-17, by-14)
+det(row-17, a-15)
+amod(row-17, detachable-16)
+nmod:by(surrounded-13, row-17)
+case(diamonds-20, of-18)
+amod(diamonds-20, smaller-19)
+nmod:of(row-17, diamonds-20)
+punct(rock-12, .-21)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NP	 	-> NNP	 	-> Priscilla-1
+		 	-> NNP	 	-> Presley-2
+		 	-> POS	 	-> 's-3
+			 	-> NN	 	-> engagement-4
+		 	-> NN	 	-> ring-5
+			 	-> VP	 	-> VBD	 	-> was-6
+		 	-> NP	 	-> NP	 	-> DT	 	-> a-7
+		 	-> JJ	 	-> whopping-8
+		 	-> CD	 	-> 3 1/2-9
+			 	-> :	 	-> --10
+		 	-> NP	 	-> NP	 	-> NN	 	-> carat-11
+		 	-> NN	 	-> rock-12
+			 	-> VP	 	-> VBN	 	-> surrounded-13
+		 	-> PP	 	-> IN	 	-> by-14
+		 	-> NP	 	-> NP	 	-> DT	 	-> a-15
+		 	-> JJ	 	-> detachable-16
+		 	-> NN	 	-> row-17
+			 	-> PP	 	-> IN	 	-> of-18
+		 	-> NP	 	-> JJR	 	-> smaller-19
+		 	-> NNS	 	-> diamonds-20
+										 	-> .	 	-> .-21
+			

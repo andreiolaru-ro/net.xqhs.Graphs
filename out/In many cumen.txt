@@ -1,0 +1,24 @@
+In many cultures around the world—including Celtic, Hindu and Egyptian weddings—the hands of a bride and groom are literally tied together to demonstrate the couple's commitment to each other and their new bond as a married couple (giving us the popular phrase "tying the knot").
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN In) (NP (NP (JJ many) (NNS cultures)) (PP (IN around) (NP (DT the) (NN world))))) (PRN (: --) (PP (VBG including) (NP (NP (NNP Celtic)) (, ,) (NP (NNP Hindu)) (CC and) (NP (JJ Egyptian) (NNS weddings)))) (: --)) (NP (NP (DT the) (NNS hands)) (PP (IN of) (NP (DT a) (NN bride) (CC and) (NN groom)))) (VP (VBP are) (ADVP (RB literally)) (VP (VBN tied) (ADVP (RB together)) (S (VP (TO to) (VP (VB demonstrate) (NP (NP (DT the) (NN couple) (POS 's)) (NN commitment)) (PP (TO to) (NP (DT each) (JJ other) (CC and) (PRP$ their) (JJ new) (NN bond))) (PP (IN as) (NP (NP (DT a) (JJ married) (NN couple)) (PRN (-LRB- -LRB-) (S (VP (VBG giving) (NP (PRP us)) (NP (NP (DT the) (JJ popular) (NN phrase)) (VP (`` ``) (VBG tying) (NP (DT the) (NN knot) ('' '')))))) (-RRB- -RRB-))))))))) (. .)))---
+mentions
+	Celtic
+	Hindu
+	many cultures around the world
+	the world
+	Egyptian weddings
+	the hands of a bride and groom
+	a bride
+	groom
+	the couple 's
+	the couple 's commitment
+	their
+	their new bond
+	a married couple
+	us
+	the popular phrase `` tying the knot ''
+	the knot
+------CorefChainz
+CHAIN10-["the couple 's" in sentence 1, "their" in sentence 1]
+representative mention: "the couple 's" in sentence 1
+CHAIN13-["Hindu" in sentence 1, "us" in sentence 1]
+representative mention: "Hindu" in sentence 1

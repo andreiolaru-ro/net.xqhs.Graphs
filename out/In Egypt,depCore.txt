@@ -1,0 +1,57 @@
+In Egypt, the bride's family traditionally does all the cooking for a week after the wedding, so the couple can relax.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, does-9)
+case(Egypt-2, In-1)
+nmod:in(does-9, Egypt-2)
+punct(does-9, ,-3)
+det(bride-5, the-4)
+nmod:poss(family-7, bride-5)
+case(bride-5, 's-6)
+nsubj(does-9, family-7)
+advmod(does-9, traditionally-8)
+det:predet(cooking-12, all-10)
+det(cooking-12, the-11)
+dobj(does-9, cooking-12)
+case(week-15, for-13)
+det(week-15, a-14)
+nmod:for(does-9, week-15)
+case(wedding-18, after-16)
+det(wedding-18, the-17)
+nmod:after(week-15, wedding-18)
+punct(does-9, ,-19)
+mark(relax-24, so-20)
+det(couple-22, the-21)
+nsubj(relax-24, couple-22)
+aux(relax-24, can-23)
+advcl:so(does-9, relax-24)
+punct(does-9, .-25)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> PP	 	-> IN	 	-> In-1
+		 	-> NP	 	-> NNP	 	-> Egypt-2
+				 	-> ,	 	-> ,-3
+		 	-> S	 	-> NP	 	-> NP	 	-> DT	 	-> the-4
+		 	-> NN	 	-> bride-5
+		 	-> POS	 	-> 's-6
+			 	-> NN	 	-> family-7
+			 	-> ADVP	 	-> RB	 	-> traditionally-8
+			 	-> VP	 	-> VBZ	 	-> does-9
+		 	-> NP	 	-> PDT	 	-> all-10
+		 	-> DT	 	-> the-11
+		 	-> NN	 	-> cooking-12
+			 	-> PP	 	-> IN	 	-> for-13
+		 	-> NP	 	-> NP	 	-> DT	 	-> a-14
+		 	-> NN	 	-> week-15
+			 	-> PP	 	-> IN	 	-> after-16
+		 	-> NP	 	-> DT	 	-> the-17
+		 	-> NN	 	-> wedding-18
+								 	-> ,	 	-> ,-19
+		 	-> IN	 	-> so-20
+		 	-> S	 	-> NP	 	-> DT	 	-> the-21
+		 	-> NN	 	-> couple-22
+			 	-> VP	 	-> MD	 	-> can-23
+		 	-> VP	 	-> VB	 	-> relax-24
+					 	-> .	 	-> .-25
+			

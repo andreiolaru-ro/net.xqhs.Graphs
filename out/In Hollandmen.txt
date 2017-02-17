@@ -1,0 +1,12 @@
+In Holland, a pine tree is planted outside the newlyweds' home as a symbol of fertility and luck.
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN In) (NP (NNP Holland))) (, ,) (NP (DT a)) (VP (VBP pine) (SBAR (S (NP (NN tree)) (VP (VBZ is) (VP (VBN planted) (PP (IN outside) (NP (NP (DT the) (NNS newlyweds) (POS ')) (NN home))) (PP (IN as) (NP (NP (DT a) (NN symbol)) (PP (IN of) (NP (NN fertility) (CC and) (NN luck)))))))))) (. .)))---
+mentions
+	Holland
+	a
+	tree
+	the newlyweds '
+	the newlyweds ' home
+	a symbol of fertility and luck
+	fertility and luck
+	luck
+------CorefChainz

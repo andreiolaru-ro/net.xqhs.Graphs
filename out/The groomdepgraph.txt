@@ -1,0 +1,41 @@
+The groom carries the bride across the threshold to bravely protect her from evil spirits lurking below.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1The Governor: 2groom
+ Relation: nsubj Dependent: 2groom Governor: 3carries
+ Relation: det Dependent: 4the Governor: 5bride
+ Relation: dobj Dependent: 5bride Governor: 3carries
+ Relation: case Dependent: 6across Governor: 8threshold
+ Relation: det Dependent: 7the Governor: 8threshold
+ Relation: nmod:across Dependent: 8threshold Governor: 5bride
+ Relation: mark Dependent: 9to Governor: 11protect
+ Relation: advmod Dependent: 10bravely Governor: 11protect
+ Relation: acl:to Dependent: 11protect Governor: 5bride
+ Relation: dobj Dependent: 12her Governor: 11protect
+ Relation: case Dependent: 13from Governor: 15spirits
+ Relation: amod Dependent: 14evil Governor: 15spirits
+ Relation: nmod:from Dependent: 15spirits Governor: 11protect
+ Relation: acl Dependent: 16lurking Governor: 15spirits
+ Relation: advmod Dependent: 17below Governor: 16lurking
+ Relation: punct Dependent: 18. Governor: 3carries
+G[0, 17] []
+across-case->threshold
+lurking-acl->spirits
+protect-acl:to->bride
+bravely-advmod->protect
+.-punct->carries
+spirits-nmod:from->protect
+The-det->groom
+below-advmod->lurking
+bride-dobj->carries
+from-case->spirits
+the-det->threshold
+to-mark->protect
+her-dobj->protect
+threshold-nmod:across->bride
+the-det->bride
+groom-nsubj->carries
+evil-amod->spirits
+------CorefChainz

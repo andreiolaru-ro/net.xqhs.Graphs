@@ -1,0 +1,54 @@
+If salt is spilled, some must be thrown over the shoulder in order to prevent bad luck. /n
+If-IN 
+salt-NN 
+is-VBZ 
+spilled-VBN 
+,-, 
+some-DT 
+must-MD 
+be-VB 
+thrown-VBN 
+over-IN 
+the-DT 
+shoulder-NN 
+in-IN 
+order-NN 
+to-TO 
+prevent-VB 
+bad-JJ 
+luck-NNP 
+.-. 
+/-: 
+n-NN 
+Dependensee repr
+mark(spilled-4, If-1)
+nsubjpass(spilled-4, salt-2)
+auxpass(spilled-4, is-3)
+advcl(thrown-9, spilled-4)
+nsubjpass(thrown-9, some-6)
+nsubj:xsubj(prevent-16, some-6)
+aux(thrown-9, must-7)
+auxpass(thrown-9, be-8)
+root(ROOT-0, thrown-9)
+case(shoulder-12, over-10)
+det(shoulder-12, the-11)
+nmod:over(thrown-9, shoulder-12)
+acl(shoulder-12, in-13)
+mwe(in-13, order-14)
+mark(prevent-16, to-15)
+xcomp(thrown-9, prevent-16)
+dobj(prevent-16, bad-17)
+dep(n-21, luck-18)
+dep(prevent-16, n-21)
+---
+coref chains
+---
+mentions
+	salt
+	some
+	the shoulder in order
+	order
+	bad luck
+---
+mentions
+	n

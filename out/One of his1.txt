@@ -1,0 +1,33 @@
+One of history's earliest engagement rings was given to Princess Mary, daughter of Henry VIII. She was two-years-old at the time.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, given-9)
+nsubjpass(given-9, One-1)
+case(rings-7, of-2)
+nmod:poss(rings-7, history-3)
+case(history-3, 's-4)
+amod(rings-7, earliest-5)
+compound(rings-7, engagement-6)
+nmod:of(One-1, rings-7)
+auxpass(given-9, was-8)
+case(Mary-12, to-10)
+compound(Mary-12, Princess-11)
+nmod:to(given-9, Mary-12)
+punct(Mary-12, ,-13)
+appos(Mary-12, daughter-14)
+case(VIII-17, of-15)
+compound(VIII-17, Henry-16)
+nmod:of(daughter-14, VIII-17)
+punct(given-9, .-18)
+
+---
+enhanced dependencies
+root(ROOT-0, two-years-old-3)
+nsubj(two-years-old-3, She-1)
+cop(two-years-old-3, was-2)
+case(time-6, at-4)
+det(time-6, the-5)
+nmod:at(two-years-old-3, time-6)
+punct(two-years-old-3, .-7)
+

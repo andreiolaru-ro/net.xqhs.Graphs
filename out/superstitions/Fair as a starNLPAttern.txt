@@ -1,0 +1,31 @@
+Fair as a star when only one is shining in the sky
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, Fair-1)
+case(star-4, as-2)
+det(star-4, a-3)
+nmod:as(Fair-1, star-4)
+advmod(shining-9, when-5)
+advmod(one-7, only-6)
+nsubj(shining-9, one-7)
+aux(shining-9, is-8)
+advcl(Fair-1, shining-9)
+case(sky-12, in-10)
+det(sky-12, the-11)
+nmod:in(shining-9, sky-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 8] [?#1, ?#2, Fair, one, only, shining, sky, star, when]
+when-advmod->shining
+?#1-nmod:as->Fair
+?#2-nmod:in->shining
+shining-advcl->Fair
+one-nsubj : is nsubj->shining
+?#1-a : as a->star
+only-advmod->one
+?#2-the : in the->sky

@@ -1,0 +1,17 @@
+Engagement and wedding rings are worn on the fourth finger of the left hand because it was once thought that a vein in that finger led directly to the heart.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NN Engagement) (CC and) (NN wedding) (NNS rings)) (VP (VBP are) (VP (VBN worn) (PP (IN on) (NP (NP (DT the) (JJ fourth) (NN finger)) (PP (IN of) (NP (DT the) (JJ left) (NN hand))))) (SBAR (IN because) (S (NP (PRP it)) (VP (VBD was) (ADVP (RB once)) (VP (VBN thought) (SBAR (IN that) (S (NP (NP (DT a) (NN vein)) (PP (IN in) (NP (DT that) (NN finger)))) (VP (VBD led) (ADVP (RB directly)) (PP (TO to) (NP (DT the) (NN heart)))))))))))) (. .)))---
+mentions
+	fourth
+	wedding
+	Engagement and wedding rings
+	the fourth finger of the left hand
+	the left hand
+	it
+	a vein in that finger
+	that finger
+	to the heart
+------CorefChainz
+CHAIN5-["the left hand" in sentence 1, "it" in sentence 1]
+representative mention: "the left hand" in sentence 1
+CHAIN7-["the fourth finger of the left hand" in sentence 1, "that finger" in sentence 1]
+representative mention: "the fourth finger of the left hand" in sentence 1

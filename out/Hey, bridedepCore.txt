@@ -1,0 +1,57 @@
+Hey, brides, tuck a sugar cube into your glove—according to Greek culture, the sugar will sweeten your union.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, tuck-5)
+discourse(tuck-5, Hey-1)
+punct(tuck-5, ,-2)
+nsubj(tuck-5, brides-3)
+punct(tuck-5, ,-4)
+det(cube-8, a-6)
+compound(cube-8, sugar-7)
+dobj(tuck-5, cube-8)
+case(glove-11, into-9)
+nmod:poss(glove-11, your-10)
+nmod:into(tuck-5, glove-11)
+punct(tuck-5, ---12)
+case(culture-16, according-13)
+mwe(according-13, to-14)
+amod(culture-16, Greek-15)
+nmod:according_to(sweeten-21, culture-16)
+punct(sweeten-21, ,-17)
+det(sugar-19, the-18)
+nsubj(sweeten-21, sugar-19)
+aux(sweeten-21, will-20)
+parataxis(tuck-5, sweeten-21)
+nmod:poss(union-23, your-22)
+dobj(sweeten-21, union-23)
+punct(tuck-5, .-24)
+------CorefChainz
+CHAIN6-["your" in sentence 1, "your" in sentence 1]
+representative mention: "your" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> INTJ	 	-> UH	 	-> Hey-1
+			 	-> ,	 	-> ,-2
+		 	-> NP	 	-> NNS	 	-> brides-3
+			 	-> ,	 	-> ,-4
+		 	-> VP	 	-> VB	 	-> tuck-5
+		 	-> NP	 	-> DT	 	-> a-6
+		 	-> NN	 	-> sugar-7
+		 	-> NN	 	-> cube-8
+			 	-> PP	 	-> IN	 	-> into-9
+		 	-> NP	 	-> NP	 	-> PRP$	 	-> your-10
+		 	-> NN	 	-> glove-11
+			 	-> :	 	-> ---12
+		 	-> S	 	-> PP	 	-> VBG	 	-> according-13
+		 	-> PP	 	-> TO	 	-> to-14
+		 	-> NP	 	-> JJ	 	-> Greek-15
+		 	-> NN	 	-> culture-16
+					 	-> ,	 	-> ,-17
+		 	-> NP	 	-> DT	 	-> the-18
+		 	-> NN	 	-> sugar-19
+			 	-> VP	 	-> MD	 	-> will-20
+		 	-> VP	 	-> VB	 	-> sweeten-21
+		 	-> NP	 	-> PRP$	 	-> your-22
+		 	-> NN	 	-> union-23
+									 	-> .	 	-> .-24
+			

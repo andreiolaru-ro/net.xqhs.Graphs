@@ -1,0 +1,15 @@
+Most expensive wedding ever? The marriage of Sheik Rashid Bin Saeed Al Maktoum's son to Princess Salama in Dubai in May 1981. The price tag? $44 million.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: advmod Dependent: 1Most Governor: 2expensive
+ Relation: amod Dependent: 2expensive Governor: 3wedding
+ Relation: advmod Dependent: 4ever Governor: 3wedding
+ Relation: punct Dependent: 5? Governor: 3wedding
+G[0, 4] []
+expensive-amod->wedding
+ever-advmod->wedding
+?-punct->wedding
+Most-advmod->expensive
+------CorefChainz

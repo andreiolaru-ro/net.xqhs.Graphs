@@ -1,0 +1,48 @@
+Brides carry or wear "something old" on their wedding day to symbolize continuity with the past.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, carry-2)
+nsubj(carry-2, Brides-1)
+nsubj(wear-4, Brides-1)
+cc(carry-2, or-3)
+conj:or(carry-2, wear-4)
+punct(carry-2, ``-5)
+root(``-5, something-6)
+amod(something-6, old-7)
+punct(old-7, ''-8)
+case(day-12, on-9)
+nmod:poss(day-12, their-10)
+compound(day-12, wedding-11)
+nmod:on(something-6, day-12)
+mark(symbolize-14, to-13)
+acl:to(something-6, symbolize-14)
+dobj(symbolize-14, continuity-15)
+case(past-18, with-16)
+det(past-18, the-17)
+nmod:with(symbolize-14, past-18)
+punct(something-6, .-19)
+------CorefChainz
+CHAIN2-["Brides" in sentence 1, "their" in sentence 1]
+representative mention: "Brides" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NNS	 	-> Brides-1
+			 	-> VP	 	-> VBP	 	-> carry-2
+		 	-> CC	 	-> or-3
+		 	-> VBP	 	-> wear-4
+		 	-> NP	 	-> ``	 	-> ``-5
+		 	-> NP	 	-> NN	 	-> something-6
+		 	-> JJ	 	-> old-7
+			 	-> ''	 	-> ''-8
+		 	-> PP	 	-> IN	 	-> on-9
+		 	-> NP	 	-> PRP$	 	-> their-10
+		 	-> NN	 	-> wedding-11
+		 	-> NN	 	-> day-12
+					 	-> S	 	-> VP	 	-> TO	 	-> to-13
+		 	-> VP	 	-> VB	 	-> symbolize-14
+		 	-> NP	 	-> NN	 	-> continuity-15
+			 	-> PP	 	-> IN	 	-> with-16
+		 	-> NP	 	-> DT	 	-> the-17
+		 	-> NN	 	-> past-18
+								 	-> .	 	-> .-19
+			

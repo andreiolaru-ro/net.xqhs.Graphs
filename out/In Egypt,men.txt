@@ -1,0 +1,11 @@
+In Egypt, the bride's family traditionally does all the cooking for a week after the wedding, so the couple can relax.
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN In) (NP (NNP Egypt))) (, ,) (S (NP (NP (DT the) (NN bride) (POS 's)) (NN family)) (ADVP (RB traditionally)) (VP (VBZ does) (NP (PDT all) (DT the) (NN cooking)) (PP (IN for) (NP (NP (DT a) (NN week)) (PP (IN after) (NP (DT the) (NN wedding))))))) (, ,) (IN so) (S (NP (DT the) (NN couple)) (VP (MD can) (VP (VB relax)))) (. .)))---
+mentions
+	Egypt
+	the bride 's
+	the bride 's family
+	all the cooking
+	a week after the wedding
+	the wedding
+	the couple
+------CorefChainz

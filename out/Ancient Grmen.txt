@@ -1,0 +1,13 @@
+Ancient Greeks and Romans thought the veil protected the bride from evil spirits. Brides have worn veils ever since.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (JJ Ancient) (NNPS Greeks)) (CC and) (NP (NNPS Romans))) (VP (VBD thought) (SBAR (S (NP (DT the) (NN veil)) (VP (VBD protected) (NP (DT the) (NN bride)) (PP (IN from) (NP (JJ evil) (NNS spirits))))))) (. .)))(ROOT (S (NP (NNS Brides)) (VP (VBP have) (VP (VBN worn) (NP (NNS veils)) (ADVP (RB ever) (IN since)))) (. .)))---
+mentions
+	Romans
+	Ancient Greeks and Romans
+	the veil
+	the bride
+	evil spirits
+---
+mentions
+	veils
+	Brides
+------CorefChainz

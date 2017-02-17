@@ -1,0 +1,54 @@
+A Finnish bride traditionally went door-to-door collecting gifts in a pillowcase, accompanied by an older married man who represented long marriage.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, went-5)
+det(bride-3, A-1)
+amod(bride-3, Finnish-2)
+nsubj(went-5, bride-3)
+advmod(went-5, traditionally-4)
+amod(gifts-8, door-to-door-6)
+amod(gifts-8, collecting-7)
+dobj(went-5, gifts-8)
+case(pillowcase-11, in-9)
+det(pillowcase-11, a-10)
+nmod:in(went-5, pillowcase-11)
+punct(went-5, ,-12)
+dep(went-5, accompanied-13)
+case(man-18, by-14)
+det(man-18, an-15)
+amod(man-18, older-16)
+amod(man-18, married-17)
+nmod:by(accompanied-13, man-18)
+nsubj(represented-20, man-18)
+ref(man-18, who-19)
+acl:relcl(man-18, represented-20)
+amod(marriage-22, long-21)
+dobj(represented-20, marriage-22)
+punct(went-5, .-23)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> DT	 	-> A-1
+		 	-> JJ	 	-> Finnish-2
+		 	-> NN	 	-> bride-3
+			 	-> ADVP	 	-> RB	 	-> traditionally-4
+			 	-> VP	 	-> VBD	 	-> went-5
+		 	-> NP	 	-> NP	 	-> JJ	 	-> door-to-door-6
+		 	-> VBG	 	-> collecting-7
+		 	-> NNS	 	-> gifts-8
+			 	-> PP	 	-> IN	 	-> in-9
+		 	-> NP	 	-> NP	 	-> DT	 	-> a-10
+		 	-> NN	 	-> pillowcase-11
+			 	-> ,	 	-> ,-12
+		 	-> VP	 	-> VBN	 	-> accompanied-13
+		 	-> PP	 	-> IN	 	-> by-14
+		 	-> NP	 	-> DT	 	-> an-15
+		 	-> JJR	 	-> older-16
+		 	-> JJ	 	-> married-17
+		 	-> NN	 	-> man-18
+		 	-> SBAR	 	-> WHNP	 	-> WP	 	-> who-19
+			 	-> S	 	-> VP	 	-> VBD	 	-> represented-20
+		 	-> NP	 	-> JJ	 	-> long-21
+		 	-> NN	 	-> marriage-22
+													 	-> .	 	-> .-23
+			

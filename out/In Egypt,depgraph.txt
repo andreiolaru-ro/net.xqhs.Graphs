@@ -1,0 +1,55 @@
+In Egypt, the bride's family traditionally does all the cooking for a week after the wedding, so the couple can relax.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1In Governor: 2Egypt
+ Relation: nmod:in Dependent: 2Egypt Governor: 9does
+ Relation: punct Dependent: 3, Governor: 9does
+ Relation: det Dependent: 4the Governor: 5bride
+ Relation: nmod:poss Dependent: 5bride Governor: 7family
+ Relation: case Dependent: 6's Governor: 5bride
+ Relation: nsubj Dependent: 7family Governor: 9does
+ Relation: advmod Dependent: 8traditionally Governor: 9does
+ Relation: det:predet Dependent: 10all Governor: 12cooking
+ Relation: det Dependent: 11the Governor: 12cooking
+ Relation: dobj Dependent: 12cooking Governor: 9does
+ Relation: case Dependent: 13for Governor: 15week
+ Relation: det Dependent: 14a Governor: 15week
+ Relation: nmod:for Dependent: 15week Governor: 9does
+ Relation: case Dependent: 16after Governor: 18wedding
+ Relation: det Dependent: 17the Governor: 18wedding
+ Relation: nmod:after Dependent: 18wedding Governor: 15week
+ Relation: punct Dependent: 19, Governor: 9does
+ Relation: mark Dependent: 20so Governor: 24relax
+ Relation: det Dependent: 21the Governor: 22couple
+ Relation: nsubj Dependent: 22couple Governor: 24relax
+ Relation: aux Dependent: 23can Governor: 24relax
+ Relation: advcl:so Dependent: 24relax Governor: 9does
+ Relation: punct Dependent: 25. Governor: 9does
+G[0, 24] []
+for-case->week
+Egypt-nmod:in->does
+cooking-dobj->does
+a-det->week
+wedding-nmod:after->week
+In-case->Egypt
+the-det->cooking
+traditionally-advmod->does
+so-mark->relax
+relax-advcl:so->does
+the-det->couple
+,-punct->does
+family-nsubj->does
+,-punct->does
+can-aux->relax
+all-det:predet->cooking
+the-det->wedding
+couple-nsubj->relax
+.-punct->does
+'s-case->bride
+after-case->wedding
+bride-nmod:poss->family
+the-det->bride
+week-nmod:for->does
+------CorefChainz

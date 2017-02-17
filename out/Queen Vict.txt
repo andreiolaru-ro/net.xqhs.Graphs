@@ -1,0 +1,60 @@
+Queen Victoria started the Western world's white wedding dress trend in 1840—before then, brides simply wore their best dress.
+Queen-NNP 
+Victoria-NNP 
+started-VBD 
+the-DT 
+Western-JJ 
+world-NN 
+'s-POS 
+white-JJ 
+wedding-NN 
+dress-NN 
+trend-NN 
+in-IN 
+1840-CD 
+---: 
+before-IN 
+then-RB 
+,-, 
+brides-NNS 
+simply-RB 
+wore-VBD 
+their-PRP$ 
+best-JJS 
+dress-NN 
+.-. 
+Dependensee repr
+compound(Victoria-2, Queen-1)
+nsubj(started-3, Victoria-2)
+root(ROOT-0, started-3)
+det(world-6, the-4)
+amod(world-6, Western-5)
+nmod:poss(trend-11, world-6)
+case(world-6, 's-7)
+amod(trend-11, white-8)
+compound(trend-11, wedding-9)
+compound(trend-11, dress-10)
+dobj(started-3, trend-11)
+case(1840-13, in-12)
+nmod:in(started-3, 1840-13)
+mark(then-16, before-15)
+advcl(wore-20, then-16)
+nsubj(wore-20, brides-18)
+advmod(wore-20, simply-19)
+parataxis(started-3, wore-20)
+nmod:poss(dress-23, their-21)
+amod(dress-23, best-22)
+dobj(wore-20, dress-23)
+---
+coref chains
+	CHAIN6-["brides" in sentence 1, "their" in sentence 1]
+---
+mentions
+	Western
+	1840
+	Queen Victoria
+	the Western world 's
+	the Western world 's white wedding dress trend
+	brides
+	their
+	their best dress

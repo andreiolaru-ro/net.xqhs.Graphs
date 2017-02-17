@@ -1,0 +1,16 @@
+Queen Victoria's wedding cake weighed a whopping 300 pounds.
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, weighed-6)
+compound(Victoria-2, Queen-1)
+nmod:poss(cake-5, Victoria-2)
+case(Victoria-2, 's-3)
+compound(cake-5, wedding-4)
+nsubj(weighed-6, cake-5)
+det(pounds-10, a-7)
+amod(pounds-10, whopping-8)
+nummod(pounds-10, 300-9)
+dobj(weighed-6, pounds-10)
+punct(weighed-6, .-11)
+

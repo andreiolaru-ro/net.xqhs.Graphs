@@ -1,0 +1,31 @@
+On average, 7,000 couples marry each day in the United States.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1On Governor: 2average
+ Relation: nmod:on Dependent: 2average Governor: 6marry
+ Relation: punct Dependent: 3, Governor: 6marry
+ Relation: nummod Dependent: 47,000 Governor: 5couples
+ Relation: nsubj Dependent: 5couples Governor: 6marry
+ Relation: det Dependent: 7each Governor: 8day
+ Relation: nmod:tmod Dependent: 8day Governor: 6marry
+ Relation: case Dependent: 9in Governor: 12States
+ Relation: det Dependent: 10the Governor: 12States
+ Relation: compound Dependent: 11United Governor: 12States
+ Relation: nmod:in Dependent: 12States Governor: 6marry
+ Relation: punct Dependent: 13. Governor: 6marry
+G[0, 12] []
+On-case->average
+day-nmod:tmod->marry
+in-case->States
+,-punct->marry
+couples-nsubj->marry
+average-nmod:on->marry
+7,000-nummod->couples
+States-nmod:in->marry
+each-det->day
+United-compound->States
+the-det->States
+.-punct->marry
+------CorefChainz

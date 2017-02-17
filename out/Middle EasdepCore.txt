@@ -1,0 +1,73 @@
+Middle Eastern brides paint henna on their hands and feet to protect themselves from the evil eye. Find out about Muslim wedding rituals.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, paint-4)
+compound(brides-3, Middle-1)
+compound(brides-3, Eastern-2)
+nsubj(paint-4, brides-3)
+dobj(paint-4, henna-5)
+case(hands-8, on-6)
+nmod:poss(hands-8, their-7)
+nmod:on(paint-4, hands-8)
+cc(hands-8, and-9)
+nmod:on(paint-4, feet-10)
+conj:and(hands-8, feet-10)
+mark(protect-12, to-11)
+advcl:to(paint-4, protect-12)
+dobj(protect-12, themselves-13)
+case(eye-17, from-14)
+det(eye-17, the-15)
+amod(eye-17, evil-16)
+nmod:from(protect-12, eye-17)
+punct(paint-4, .-18)
+---
+qqroot(ROOT-0, paint-4)
+compound(brides-3, Middle-1)
+compound(brides-3, Eastern-2)
+nsubj(paint-4, brides-3)
+dobj(paint-4, henna-5)
+case(hands-8, on-6)
+nmod:poss(hands-8, their-7)
+nmod:on(paint-4, hands-8)
+cc(hands-8, and-9)
+nmod:on(paint-4, feet-10)
+conj:and(hands-8, feet-10)
+mark(protect-12, to-11)
+advcl:to(paint-4, protect-12)
+dobj(protect-12, themselves-13)
+case(eye-17, from-14)
+det(eye-17, the-15)
+amod(eye-17, evil-16)
+nmod:from(protect-12, eye-17)
+punct(paint-4, .-18)
+root(ROOT-0, Find-1)
+compound:prt(Find-1, out-2)
+case(rituals-6, about-3)
+amod(rituals-6, Muslim-4)
+compound(rituals-6, wedding-5)
+nmod:about(Find-1, rituals-6)
+punct(Find-1, .-7)
+------CorefChainz
+CHAIN5-["Middle Eastern brides" in sentence 1, "their" in sentence 1, "themselves" in sentence 1]
+representative mention: "Middle Eastern brides" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NNP	 	-> Middle-1
+		 	-> NNP	 	-> Eastern-2
+		 	-> NNS	 	-> brides-3
+			 	-> VP	 	-> VBP	 	-> paint-4
+		 	-> NP	 	-> NN	 	-> henna-5
+			 	-> PP	 	-> IN	 	-> on-6
+		 	-> NP	 	-> PRP$	 	-> their-7
+		 	-> NNS	 	-> hands-8
+		 	-> CC	 	-> and-9
+		 	-> NNS	 	-> feet-10
+				 	-> S	 	-> VP	 	-> TO	 	-> to-11
+		 	-> VP	 	-> VB	 	-> protect-12
+		 	-> NP	 	-> PRP	 	-> themselves-13
+			 	-> PP	 	-> IN	 	-> from-14
+		 	-> NP	 	-> DT	 	-> the-15
+		 	-> JJ	 	-> evil-16
+		 	-> NN	 	-> eye-17
+								 	-> .	 	-> .-18
+			

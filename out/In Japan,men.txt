@@ -1,0 +1,12 @@
+In Japan, white was always the color of choice for bridal ensembles—long before Queen Victoria popularized it in the Western world.
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN In) (NP (NNP Japan))) (, ,) (NP (JJ white)) (VP (VBD was) (ADVP (RB always)) (NP (NP (DT the) (NN color)) (PP (IN of) (NP (NP (NP (NN choice)) (PP (IN for) (NP (JJ bridal) (NNS ensembles)))) (: --) (ADVP (JJ long))))) (SBAR (IN before) (S (NP (NNP Queen) (NNP Victoria)) (VP (VBD popularized) (NP (PRP it)) (PP (IN in) (NP (DT the) (JJ Western) (NN world))))))) (. .)))---
+mentions
+	Japan
+	Western
+	always the color of choice for bridal ensembles -- long before Queen Victoria popularized it in the Western world
+	choice for bridal ensembles -- long
+	bridal ensembles
+	Queen Victoria
+	it
+	the Western world
+------CorefChainz

@@ -1,0 +1,8 @@
+Queen Victoria's wedding cake weighed a whopping 300 pounds.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (NNP Queen) (NNP Victoria) (POS 's)) (NN wedding) (NN cake)) (VP (VBD weighed) (NP (DT a) (JJ whopping) (CD 300) (NNS pounds))) (. .)))---
+mentions
+	300
+	Queen Victoria 's
+	Queen Victoria 's wedding cake
+	a whopping 300 pounds
+------CorefChainz

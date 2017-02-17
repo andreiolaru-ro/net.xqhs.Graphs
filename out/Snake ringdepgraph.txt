@@ -1,0 +1,51 @@
+Snake rings dotted with ruby eyes were popular wedding bands in Victorian England—the coils winding into a circle symbolized eternity.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: compound Dependent: 1Snake Governor: 2rings
+ Relation: nsubj Dependent: 2rings Governor: 10bands
+ Relation: acl Dependent: 3dotted Governor: 2rings
+ Relation: case Dependent: 4with Governor: 6eyes
+ Relation: amod Dependent: 5ruby Governor: 6eyes
+ Relation: nmod:with Dependent: 6eyes Governor: 3dotted
+ Relation: cop Dependent: 7were Governor: 10bands
+ Relation: amod Dependent: 8popular Governor: 10bands
+ Relation: compound Dependent: 9wedding Governor: 10bands
+ Relation: case Dependent: 11in Governor: 13England
+ Relation: amod Dependent: 12Victorian Governor: 13England
+ Relation: nmod:in Dependent: 13England Governor: 10bands
+ Relation: punct Dependent: 14-- Governor: 10bands
+ Relation: det Dependent: 15the Governor: 16coils
+ Relation: nsubj Dependent: 16coils Governor: 21symbolized
+ Relation: acl Dependent: 17winding Governor: 16coils
+ Relation: case Dependent: 18into Governor: 20circle
+ Relation: det Dependent: 19a Governor: 20circle
+ Relation: nmod:into Dependent: 20circle Governor: 17winding
+ Relation: parataxis Dependent: 21symbolized Governor: 10bands
+ Relation: dobj Dependent: 22eternity Governor: 21symbolized
+ Relation: punct Dependent: 23. Governor: 10bands
+G[0, 22] []
+symbolized-parataxis->bands
+rings-nsubj->bands
+eyes-nmod:with->dotted
+popular-amod->bands
+Snake-compound->rings
+were-cop->bands
+.-punct->bands
+in-case->England
+Victorian-amod->England
+eternity-dobj->symbolized
+wedding-compound->bands
+the-det->coils
+with-case->eyes
+winding-acl->coils
+into-case->circle
+ruby-amod->eyes
+England-nmod:in->bands
+coils-nsubj->symbolized
+a-det->circle
+dotted-acl->rings
+---punct->bands
+circle-nmod:into->winding
+------CorefChainz

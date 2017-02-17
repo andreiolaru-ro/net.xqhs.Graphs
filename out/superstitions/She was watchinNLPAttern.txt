@@ -1,0 +1,26 @@
+She was watching a movie or reading.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, watching-3)
+nsubj(watching-3, She-1)
+aux(watching-3, was-2)
+det(movie-5, a-4)
+dobj(watching-3, movie-5)
+cc(movie-5, or-6)
+dobj(watching-3, reading-7)
+conj:or(movie-5, reading-7)
+punct(watching-3, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[6, 6] [?#1, She, movie, reading, was, watching]
+reading-dobj->watching
+She-nsubj->watching
+was-aux->watching
+?#1-dobj->watching
+?#1-a->movie
+reading-conj->?#1

@@ -1,0 +1,71 @@
+The bride stands to the groom's left during a Christian ceremony, because in bygone days the groom needed his right hand free to fight off other suitors.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, stands-3)
+det(bride-2, The-1)
+nsubj(stands-3, bride-2)
+nsubj:xsubj(to-4, bride-2)
+xcomp(stands-3, to-4)
+det(groom-6, the-5)
+dobj(to-4, groom-6)
+case(groom-6, 's-7)
+acl(groom-6, left-8)
+case(ceremony-12, during-9)
+det(ceremony-12, a-10)
+amod(ceremony-12, Christian-11)
+nmod:during(left-8, ceremony-12)
+punct(left-8, ,-13)
+mark(needed-20, because-14)
+case(days-17, in-15)
+amod(days-17, bygone-16)
+nmod:in(needed-20, days-17)
+det(groom-19, the-18)
+nsubj(needed-20, groom-19)
+advcl:because(left-8, needed-20)
+nmod:poss(hand-23, his-21)
+amod(hand-23, right-22)
+nsubj(free-24, hand-23)
+nsubj:xsubj(fight-26, hand-23)
+xcomp(needed-20, free-24)
+mark(fight-26, to-25)
+xcomp(free-24, fight-26)
+compound:prt(fight-26, off-27)
+amod(suitors-29, other-28)
+dobj(fight-26, suitors-29)
+punct(stands-3, .-30)
+------CorefChainz
+CHAIN6-["the groom" in sentence 1, "his" in sentence 1]
+representative mention: "the groom" in sentence 1
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> DT	 	-> The-1
+		 	-> NN	 	-> bride-2
+			 	-> VP	 	-> VBZ	 	-> stands-3
+		 	-> PP	 	-> TO	 	-> to-4
+		 	-> NP	 	-> NP	 	-> DT	 	-> the-5
+		 	-> NN	 	-> groom-6
+		 	-> POS	 	-> 's-7
+			 	-> ADJP	 	-> VBN	 	-> left-8
+		 	-> PP	 	-> IN	 	-> during-9
+		 	-> NP	 	-> NP	 	-> DT	 	-> a-10
+		 	-> JJ	 	-> Christian-11
+		 	-> NN	 	-> ceremony-12
+			 	-> ,	 	-> ,-13
+		 	-> SBAR	 	-> IN	 	-> because-14
+		 	-> S	 	-> PP	 	-> IN	 	-> in-15
+		 	-> NP	 	-> JJ	 	-> bygone-16
+		 	-> NNS	 	-> days-17
+				 	-> NP	 	-> DT	 	-> the-18
+		 	-> NN	 	-> groom-19
+			 	-> VP	 	-> VBD	 	-> needed-20
+		 	-> S	 	-> NP	 	-> PRP$	 	-> his-21
+		 	-> JJ	 	-> right-22
+		 	-> NN	 	-> hand-23
+			 	-> ADJP	 	-> JJ	 	-> free-24
+		 	-> S	 	-> VP	 	-> TO	 	-> to-25
+		 	-> VP	 	-> VB	 	-> fight-26
+		 	-> PRT	 	-> RP	 	-> off-27
+														 	-> JJ	 	-> other-28
+		 	-> NNS	 	-> suitors-29
+					 	-> .	 	-> .-30
+			

@@ -1,0 +1,13 @@
+An old wives' tale: If the younger of two sisters marries first, the older sister must dance barefoot at the wedding or risk never landing a husband.
+------------Like Tree in the Wind---------------(ROOT (NP (NP (NP (DT An) (JJ old) (NNS wives) (POS ')) (NN tale)) (: :) (S (SBAR (IN If) (S (NP (NP (DT the) (JJR younger)) (PP (IN of) (NP (CD two) (NNS sisters)))) (VP (VBZ marries) (ADVP (RB first))))) (, ,) (X (DT the) (JJR older)) (NP (NN sister)) (VP (MD must) (VP (VB dance) (NP (NN barefoot)) (PP (IN at) (NP (NP (DT the) (NN wedding) (CC or) (NN risk)) (VP (ADVP (RB never)) (VBG landing) (NP (DT a) (NN husband)))))))) (. .)))---
+mentions
+	two
+	An old wives '
+	An old wives ' tale
+	two sisters
+	sister
+	barefoot
+	the wedding
+	risk
+	a husband
+------CorefChainz

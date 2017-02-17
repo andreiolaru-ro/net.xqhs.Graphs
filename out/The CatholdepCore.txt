@@ -1,0 +1,62 @@
+The Catholic tradition of "posting the banns" to announce a marriage originated as a way to ensure the bride and groom were not related.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, related-26)
+det(tradition-3, The-1)
+compound(tradition-3, Catholic-2)
+nsubj(related-26, tradition-3)
+mark(posting-6, of-4)
+punct(posting-6, ``-5)
+acl:of(tradition-3, posting-6)
+det(banns-8, the-7)
+dobj(posting-6, banns-8)
+punct(posting-6, ''-9)
+mark(announce-11, to-10)
+advcl:to(posting-6, announce-11)
+det(marriage-13, a-12)
+nsubj(originated-14, marriage-13)
+ccomp(announce-11, originated-14)
+case(way-17, as-15)
+det(way-17, a-16)
+nmod:as(originated-14, way-17)
+mark(ensure-19, to-18)
+acl:to(way-17, ensure-19)
+det(bride-21, the-20)
+dobj(ensure-19, bride-21)
+cc(bride-21, and-22)
+dobj(ensure-19, groom-23)
+conj:and(bride-21, groom-23)
+cop(related-26, were-24)
+neg(related-26, not-25)
+punct(related-26, .-27)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NP	 	-> DT	 	-> The-1
+		 	-> NNP	 	-> Catholic-2
+		 	-> NN	 	-> tradition-3
+			 	-> PP	 	-> IN	 	-> of-4
+		 	-> ``	 	-> ``-5
+		 	-> S	 	-> VP	 	-> VBG	 	-> posting-6
+		 	-> NP	 	-> DT	 	-> the-7
+		 	-> NNS	 	-> banns-8
+		 	-> ''	 	-> ''-9
+		 	-> S	 	-> VP	 	-> TO	 	-> to-10
+		 	-> VP	 	-> VB	 	-> announce-11
+		 	-> NP	 	-> DT	 	-> a-12
+		 	-> NN	 	-> marriage-13
+											 	-> VP	 	-> VBD	 	-> originated-14
+		 	-> SBAR	 	-> IN	 	-> as-15
+		 	-> S	 	-> NP	 	-> DT	 	-> a-16
+		 	-> NN	 	-> way-17
+		 	-> S	 	-> VP	 	-> TO	 	-> to-18
+		 	-> VP	 	-> VB	 	-> ensure-19
+		 	-> NP	 	-> DT	 	-> the-20
+		 	-> NN	 	-> bride-21
+		 	-> CC	 	-> and-22
+		 	-> NN	 	-> groom-23
+							 	-> VP	 	-> VBD	 	-> were-24
+		 	-> RB	 	-> not-25
+		 	-> ADJP	 	-> JJ	 	-> related-26
+							 	-> .	 	-> .-27
+			

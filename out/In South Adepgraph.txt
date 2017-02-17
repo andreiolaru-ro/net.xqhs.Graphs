@@ -1,0 +1,65 @@
+In South Africa, the parents of both bride and groom traditionally carried fire from their hearths to light a new fire in the newlyweds' hearth.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: case Dependent: 1In Governor: 3Africa
+ Relation: compound Dependent: 2South Governor: 3Africa
+ Relation: nmod:in Dependent: 3Africa Governor: 13carried
+ Relation: punct Dependent: 4, Governor: 13carried
+ Relation: det Dependent: 5the Governor: 6parents
+ Relation: nsubj Dependent: 6parents Governor: 13carried
+ Relation: case Dependent: 7of Governor: 9bride
+ Relation: cc:preconj Dependent: 8both Governor: 9bride
+ Relation: nmod:of Dependent: 9bride Governor: 6parents
+ Relation: cc Dependent: 10and Governor: 9bride
+ Relation: nmod:of Dependent: 11groom Governor: 6parents
+ Relation: conj:and Dependent: 11groom Governor: 9bride
+ Relation: advmod Dependent: 12traditionally Governor: 13carried
+ Relation: dobj Dependent: 14fire Governor: 13carried
+ Relation: case Dependent: 15from Governor: 17hearths
+ Relation: nmod:poss Dependent: 16their Governor: 17hearths
+ Relation: nmod:from Dependent: 17hearths Governor: 13carried
+ Relation: mark Dependent: 18to Governor: 19light
+ Relation: advcl:to Dependent: 19light Governor: 13carried
+ Relation: det Dependent: 20a Governor: 22fire
+ Relation: amod Dependent: 21new Governor: 22fire
+ Relation: dobj Dependent: 22fire Governor: 19light
+ Relation: case Dependent: 23in Governor: 27hearth
+ Relation: det Dependent: 24the Governor: 25newlyweds
+ Relation: nmod:poss Dependent: 25newlyweds Governor: 27hearth
+ Relation: case Dependent: 26' Governor: 25newlyweds
+ Relation: nmod:in Dependent: 27hearth Governor: 22fire
+ Relation: punct Dependent: 28. Governor: 13carried
+G[0, 28] []
+South-compound->Africa
+in-case->hearth
+groom-nmod:of->parents
+hearth-nmod:in->fire
+of-case->bride
+to-mark->light
+'-case->newlyweds
+the-det->newlyweds
+fire-dobj->carried
+fire-dobj->light
+light-advcl:to->carried
+parents-nsubj->carried
+Africa-nmod:in->carried
+hearths-nmod:from->carried
+their-nmod:poss->hearths
+new-amod->fire
+bride-nmod:of->parents
+the-det->parents
+both-cc:preconj->bride
+a-det->fire
+In-case->Africa
+from-case->hearths
+groom-conj:and->bride
+.-punct->carried
+newlyweds-nmod:poss->hearth
+and-cc->bride
+traditionally-advmod->carried
+,-punct->carried
+------CorefChainz
+CHAIN9-["the parents of both bride and groom" in sentence 1, "their" in sentence 1, "the newlyweds '" in sentence 1]
+representative mention: "the parents of both bride and groom" in sentence 1

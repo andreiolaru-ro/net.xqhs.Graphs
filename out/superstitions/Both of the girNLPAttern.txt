@@ -1,0 +1,23 @@
+Both of the girls are reading.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, reading-6)
+det:qmod(girls-4, Both-1)
+mwe(Both-1, of-2)
+det(girls-4, the-3)
+nsubj(reading-6, girls-4)
+aux(reading-6, are-5)
+punct(reading-6, .-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[6, 5] [?#1, Both, are, girls, of, reading]
+?#1-the->girls
+are-aux->reading
+Both-det:qmod->?#1
+of-mwe->Both
+?#1-nsubj->reading

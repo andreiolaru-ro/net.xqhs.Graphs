@@ -1,0 +1,45 @@
+On her wedding day, Grace Kelly wore a dress with a bodice made from beautiful 125-year-old lace.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, wore-8)
+case(day-4, On-1)
+nmod:poss(day-4, her-2)
+compound(day-4, wedding-3)
+nmod:on(wore-8, day-4)
+punct(wore-8, ,-5)
+compound(Kelly-7, Grace-6)
+nsubj(wore-8, Kelly-7)
+det(dress-10, a-9)
+dobj(wore-8, dress-10)
+case(bodice-13, with-11)
+det(bodice-13, a-12)
+nmod:with(wore-8, bodice-13)
+acl(bodice-13, made-14)
+case(lace-18, from-15)
+amod(lace-18, beautiful-16)
+amod(lace-18, 125-year-old-17)
+nmod:from(made-14, lace-18)
+punct(wore-8, .-19)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> PP	 	-> IN	 	-> On-1
+		 	-> NP	 	-> PRP$	 	-> her-2
+		 	-> NN	 	-> wedding-3
+		 	-> NN	 	-> day-4
+				 	-> ,	 	-> ,-5
+		 	-> NP	 	-> NNP	 	-> Grace-6
+		 	-> NNP	 	-> Kelly-7
+			 	-> VP	 	-> VBD	 	-> wore-8
+		 	-> NP	 	-> DT	 	-> a-9
+		 	-> NN	 	-> dress-10
+			 	-> PP	 	-> IN	 	-> with-11
+		 	-> NP	 	-> NP	 	-> DT	 	-> a-12
+		 	-> NN	 	-> bodice-13
+			 	-> VP	 	-> VBN	 	-> made-14
+		 	-> PP	 	-> IN	 	-> from-15
+		 	-> NP	 	-> JJ	 	-> beautiful-16
+		 	-> JJ	 	-> 125-year-old-17
+		 	-> NN	 	-> lace-18
+								 	-> .	 	-> .-19
+			

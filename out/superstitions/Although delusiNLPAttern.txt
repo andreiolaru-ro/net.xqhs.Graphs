@@ -1,0 +1,72 @@
+Although delusions are not well understood by science yet, and appear to be complex mental events, their manifestation is pretty simple – false, illogical, or irrational beliefs.
+------CorefChainz
+CHAIN3-["delusions" in sentence 1, "their" in sentence 1]
+representative mention: "delusions" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, simple-23)
+mark(understood-6, Although-1)
+nsubjpass(understood-6, delusions-2)
+nsubj(appear-12, delusions-2)
+nsubj:xsubj(events-17, delusions-2)
+auxpass(understood-6, are-3)
+neg(understood-6, not-4)
+advmod(understood-6, well-5)
+advcl:although(simple-23, understood-6)
+case(science-8, by-7)
+nmod:agent(understood-6, science-8)
+advmod(understood-6, yet-9)
+punct(understood-6, ,-10)
+cc(understood-6, and-11)
+conj:and(understood-6, appear-12)
+advcl:although(simple-23, appear-12)
+mark(events-17, to-13)
+cop(events-17, be-14)
+amod(events-17, complex-15)
+amod(events-17, mental-16)
+xcomp(appear-12, events-17)
+punct(simple-23, ,-18)
+nmod:poss(manifestation-20, their-19)
+nsubj(simple-23, manifestation-20)
+cop(simple-23, is-21)
+advmod(simple-23, pretty-22)
+punct(simple-23, ---24)
+amod(beliefs-31, false-25)
+punct(false-25, ,-26)
+conj:or(false-25, illogical-27)
+amod(beliefs-31, illogical-27)
+punct(false-25, ,-28)
+cc(false-25, or-29)
+conj:or(false-25, irrational-30)
+amod(beliefs-31, irrational-30)
+dep(simple-23, beliefs-31)
+punct(simple-23, .-32)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[17, 22] [appear, beliefs, complex, delusions, events, false, illogical, irrational, manifestation, mental, not, pretty, science, simple, understood, well, yet]
+illogical-conj:or->false
+mental-amod->events
+complex-amod->events
+events-xcomp->appear
+not-neg->understood
+delusions-nsubj:xsubj->events
+irrational-conj:or->false
+manifestation-nsubj->simple
+illogical-amod->beliefs
+understood-advcl:although->simple
+beliefs-dep->simple
+false-amod->beliefs
+well-advmod->understood
+science-nmod:agent->understood
+appear-advcl:although->simple
+delusions-nsubjpass->understood
+yet-advmod->understood
+delusions-their :nmod:poss->manifestation
+delusions-nsubj->appear
+appear-conj:and->understood
+irrational-amod->beliefs
+pretty-advmod->simple

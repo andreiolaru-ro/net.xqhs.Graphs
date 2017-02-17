@@ -1,0 +1,51 @@
+Diamonds set in gold or silver became popular as betrothal rings among wealthy Venetians toward the end of the fifteenth century.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: nsubj Dependent: 1Diamonds Governor: 7became
+ Relation: acl Dependent: 2set Governor: 1Diamonds
+ Relation: case Dependent: 3in Governor: 4gold
+ Relation: nmod:in Dependent: 4gold Governor: 2set
+ Relation: cc Dependent: 5or Governor: 4gold
+ Relation: nmod:in Dependent: 6silver Governor: 2set
+ Relation: conj:or Dependent: 6silver Governor: 4gold
+ Relation: xcomp Dependent: 8popular Governor: 7became
+ Relation: case Dependent: 9as Governor: 11rings
+ Relation: compound Dependent: 10betrothal Governor: 11rings
+ Relation: nmod:as Dependent: 11rings Governor: 7became
+ Relation: case Dependent: 12among Governor: 14Venetians
+ Relation: amod Dependent: 13wealthy Governor: 14Venetians
+ Relation: nmod:among Dependent: 14Venetians Governor: 11rings
+ Relation: case Dependent: 15toward Governor: 17end
+ Relation: det Dependent: 16the Governor: 17end
+ Relation: nmod:toward Dependent: 17end Governor: 7became
+ Relation: case Dependent: 18of Governor: 21century
+ Relation: det Dependent: 19the Governor: 21century
+ Relation: amod Dependent: 20fifteenth Governor: 21century
+ Relation: nmod:of Dependent: 21century Governor: 17end
+ Relation: punct Dependent: 22. Governor: 7became
+G[0, 22] []
+in-case->gold
+silver-nmod:in->set
+toward-case->end
+gold-nmod:in->set
+rings-nmod:as->became
+wealthy-amod->Venetians
+set-acl->Diamonds
+silver-conj:or->gold
+of-case->century
+the-det->century
+popular-xcomp->became
+fifteenth-amod->century
+betrothal-compound->rings
+Venetians-nmod:among->rings
+or-cc->gold
+among-case->Venetians
+century-nmod:of->end
+as-case->rings
+the-det->end
+end-nmod:toward->became
+.-punct->became
+Diamonds-nsubj->became
+------CorefChainz

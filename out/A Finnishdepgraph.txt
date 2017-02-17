@@ -1,0 +1,53 @@
+A Finnish bride traditionally went door-to-door collecting gifts in a pillowcase, accompanied by an older married man who represented long marriage.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1A Governor: 3bride
+ Relation: amod Dependent: 2Finnish Governor: 3bride
+ Relation: nsubj Dependent: 3bride Governor: 5went
+ Relation: advmod Dependent: 4traditionally Governor: 5went
+ Relation: amod Dependent: 6door-to-door Governor: 8gifts
+ Relation: amod Dependent: 7collecting Governor: 8gifts
+ Relation: dobj Dependent: 8gifts Governor: 5went
+ Relation: case Dependent: 9in Governor: 11pillowcase
+ Relation: det Dependent: 10a Governor: 11pillowcase
+ Relation: nmod:in Dependent: 11pillowcase Governor: 5went
+ Relation: punct Dependent: 12, Governor: 5went
+ Relation: dep Dependent: 13accompanied Governor: 5went
+ Relation: case Dependent: 14by Governor: 18man
+ Relation: det Dependent: 15an Governor: 18man
+ Relation: amod Dependent: 16older Governor: 18man
+ Relation: amod Dependent: 17married Governor: 18man
+ Relation: nmod:by Dependent: 18man Governor: 13accompanied
+ Relation: nsubj Dependent: 18man Governor: 20represented
+ Relation: ref Dependent: 19who Governor: 18man
+ Relation: acl:relcl Dependent: 20represented Governor: 18man
+ Relation: amod Dependent: 21long Governor: 22marriage
+ Relation: dobj Dependent: 22marriage Governor: 20represented
+ Relation: punct Dependent: 23. Governor: 5went
+G[0, 23] []
+A-det->bride
+represented-acl:relcl->man
+married-amod->man
+in-case->pillowcase
+Finnish-amod->bride
+who-ref->man
+traditionally-advmod->went
+door-to-door-amod->gifts
+bride-nsubj->went
+collecting-amod->gifts
+long-amod->marriage
+accompanied-dep->went
+an-det->man
+a-det->pillowcase
+man-nmod:by->accompanied
+,-punct->went
+by-case->man
+marriage-dobj->represented
+older-amod->man
+man-nsubj->represented
+gifts-dobj->went
+.-punct->went
+pillowcase-nmod:in->went
+------CorefChainz

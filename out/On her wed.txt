@@ -1,0 +1,48 @@
+On her wedding day, Grace Kelly wore a dress with a bodice made from beautiful 125-year-old lace.
+On-IN 
+her-PRP$ 
+wedding-NN 
+day-NN 
+,-, 
+Grace-NNP 
+Kelly-NNP 
+wore-VBD 
+a-DT 
+dress-NN 
+with-IN 
+a-DT 
+bodice-NN 
+made-VBN 
+from-IN 
+beautiful-JJ 
+125-year-old-JJ 
+lace-NN 
+.-. 
+Dependensee repr
+case(day-4, On-1)
+nmod:poss(day-4, her-2)
+compound(day-4, wedding-3)
+nmod:on(wore-8, day-4)
+compound(Kelly-7, Grace-6)
+nsubj(wore-8, Kelly-7)
+root(ROOT-0, wore-8)
+det(dress-10, a-9)
+dobj(wore-8, dress-10)
+case(bodice-13, with-11)
+det(bodice-13, a-12)
+nmod:with(wore-8, bodice-13)
+acl(bodice-13, made-14)
+case(lace-18, from-15)
+amod(lace-18, beautiful-16)
+amod(lace-18, 125-year-old-17)
+nmod:from(made-14, lace-18)
+---
+coref chains
+---
+mentions
+	Grace Kelly
+	her
+	her wedding day
+	a dress
+	a bodice made from beautiful 125-year-old lace
+	beautiful 125-year-old lace

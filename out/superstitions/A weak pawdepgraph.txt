@@ -1,0 +1,32 @@
+A weak pawn is one that is not defended by another pawn, which means, that it must be defended by pieces, when it is under attack
+------CorefChainz
+CHAIN5-["A weak pawn" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "A weak pawn" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[19, 20] [attack, be, defended, defended, is, it, it, means, must, not, one, pawn, pawn, pieces, that, that, weak, when, which]
+attack-advcl->defended
+be-auxpass->defended
+which-ref->pawn
+must-aux->defended
+defended-ccomp->one
+pawn-nsubj->one
+when-advmod->attack
+is-auxpass->defended
+one-nsubjpass->defended
+means-acl:relcl->pawn
+that-mark->defended
+it-nsubj->attack
+that-ref->one
+it-nsubjpass->defended
+not-neg->defended
+pawn-nsubj->means
+pawn-nmod->defended
+pieces-nmod->defended
+defended-acl:relcl->one
+weak-amod->pawn
+------CorefChainz
+CHAIN5-["A weak pawn" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "A weak pawn" in sentence 1

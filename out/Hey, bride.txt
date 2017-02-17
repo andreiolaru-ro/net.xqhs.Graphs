@@ -1,0 +1,58 @@
+Hey, brides, tuck a sugar cube into your glove—according to Greek culture, the sugar will sweeten your union.
+Hey-UH 
+,-, 
+brides-VBZ 
+,-, 
+tuck-VBP 
+a-DT 
+sugar-NN 
+cube-NN 
+into-IN 
+your-PRP$ 
+glove-NN 
+---: 
+according-VBG 
+to-TO 
+Greek-JJ 
+culture-NN 
+,-, 
+the-DT 
+sugar-NN 
+will-MD 
+sweeten-VB 
+your-PRP$ 
+union-NN 
+.-. 
+Dependensee repr
+discourse(tuck-5, Hey-1)
+ccomp(tuck-5, brides-3)
+root(ROOT-0, tuck-5)
+det(cube-8, a-6)
+compound(cube-8, sugar-7)
+dobj(tuck-5, cube-8)
+case(glove-11, into-9)
+nmod:poss(glove-11, your-10)
+nmod:into(tuck-5, glove-11)
+case(culture-16, according-13)
+mwe(according-13, to-14)
+amod(culture-16, Greek-15)
+nmod:according_to(sweeten-21, culture-16)
+det(sugar-19, the-18)
+nsubj(sweeten-21, sugar-19)
+aux(sweeten-21, will-20)
+parataxis(tuck-5, sweeten-21)
+nmod:poss(union-23, your-22)
+dobj(sweeten-21, union-23)
+---
+coref chains
+	CHAIN6-["your" in sentence 1, "your" in sentence 1]
+---
+mentions
+	brides
+	a sugar cube
+	your
+	your glove
+	according to Greek culture
+	the sugar
+	your
+	your union

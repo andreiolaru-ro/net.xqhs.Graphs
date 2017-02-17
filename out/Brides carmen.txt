@@ -1,0 +1,12 @@
+Brides carry or wear "something old" on their wedding day to symbolize continuity with the past.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NNS Brides)) (VP (VBP carry) (CC or) (VBP wear) (NP (`` ``) (NP (NN something) (JJ old)) ('' '') (PP (IN on) (NP (PRP$ their) (NN wedding) (NN day)))) (S (VP (TO to) (VP (VB symbolize) (NP (NN continuity)) (PP (IN with) (NP (DT the) (NN past))))))) (. .)))---
+mentions
+	Brides
+	something old '' on their wedding day
+	their
+	their wedding day
+	continuity
+	the past
+------CorefChainz
+CHAIN2-["Brides" in sentence 1, "their" in sentence 1]
+representative mention: "Brides" in sentence 1

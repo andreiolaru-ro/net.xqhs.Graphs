@@ -1,0 +1,63 @@
+The tradition of a wedding cake comes from ancient Rome, where revelers broke a loaf of bread over a bride's head for fertility's sake.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, comes-7)
+det(tradition-2, The-1)
+nsubj(comes-7, tradition-2)
+case(cake-6, of-3)
+det(cake-6, a-4)
+compound(cake-6, wedding-5)
+nmod:of(tradition-2, cake-6)
+case(Rome-10, from-8)
+amod(Rome-10, ancient-9)
+nmod:from(comes-7, Rome-10)
+punct(Rome-10, ,-11)
+advmod(broke-14, where-12)
+nsubj(broke-14, revelers-13)
+acl:relcl(Rome-10, broke-14)
+det(loaf-16, a-15)
+dobj(broke-14, loaf-16)
+case(bread-18, of-17)
+nmod:of(loaf-16, bread-18)
+case(head-23, over-19)
+det(bride-21, a-20)
+nmod:poss(head-23, bride-21)
+case(bride-21, 's-22)
+nmod:over(broke-14, head-23)
+case(sake-27, for-24)
+nmod:poss(sake-27, fertility-25)
+case(fertility-25, 's-26)
+nmod:for(head-23, sake-27)
+punct(comes-7, .-28)
+------CorefChainz
+------------ Phrase skeleton---------------ROOT	 	-> S	 	-> NP	 	-> NP	 	-> DT	 	-> The-1
+		 	-> NN	 	-> tradition-2
+			 	-> PP	 	-> IN	 	-> of-3
+		 	-> NP	 	-> DT	 	-> a-4
+		 	-> NN	 	-> wedding-5
+		 	-> NN	 	-> cake-6
+					 	-> VP	 	-> VBZ	 	-> comes-7
+		 	-> PP	 	-> IN	 	-> from-8
+		 	-> NP	 	-> JJ	 	-> ancient-9
+		 	-> NNP	 	-> Rome-10
+				 	-> ,	 	-> ,-11
+		 	-> SBAR	 	-> WHADVP	 	-> WRB	 	-> where-12
+			 	-> S	 	-> NP	 	-> NNS	 	-> revelers-13
+			 	-> VP	 	-> VBD	 	-> broke-14
+		 	-> NP	 	-> NP	 	-> DT	 	-> a-15
+		 	-> NN	 	-> loaf-16
+			 	-> PP	 	-> IN	 	-> of-17
+		 	-> NP	 	-> NN	 	-> bread-18
+					 	-> PP	 	-> IN	 	-> over-19
+		 	-> NP	 	-> NP	 	-> NP	 	-> DT	 	-> a-20
+		 	-> NN	 	-> bride-21
+		 	-> POS	 	-> 's-22
+			 	-> NN	 	-> head-23
+			 	-> PP	 	-> IN	 	-> for-24
+		 	-> NP	 	-> NP	 	-> NN	 	-> fertility-25
+		 	-> POS	 	-> 's-26
+			 	-> NN	 	-> sake-27
+										 	-> .	 	-> .-28
+			

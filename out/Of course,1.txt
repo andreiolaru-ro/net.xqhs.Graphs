@@ -1,0 +1,45 @@
+Of course, Jackie Kennedy's bridesmaids were far from frumpy. She chose pink silk faille and red satin gowns created by designer Ann Lowe (also the creator of Jackie's dress).
+Enhanced PLUS PLUS dependencies
+---
+enhanced dependencies
+root(ROOT-0, frumpy-11)
+case(course-2, Of-1)
+nmod:of(frumpy-11, course-2)
+punct(frumpy-11, ,-3)
+compound(Kennedy-5, Jackie-4)
+nmod:poss(bridesmaids-7, Kennedy-5)
+case(Kennedy-5, 's-6)
+nsubj(frumpy-11, bridesmaids-7)
+cop(frumpy-11, were-8)
+case(frumpy-11, far-9)
+mwe(far-9, from-10)
+punct(frumpy-11, .-12)
+
+---
+enhanced dependencies
+root(ROOT-0, chose-2)
+nsubj(chose-2, She-1)
+amod(faille-5, pink-3)
+compound(faille-5, silk-4)
+dobj(chose-2, faille-5)
+cc(faille-5, and-6)
+amod(gowns-9, red-7)
+compound(gowns-9, satin-8)
+dobj(chose-2, gowns-9)
+conj:and(faille-5, gowns-9)
+acl(faille-5, created-10)
+case(Lowe-14, by-11)
+compound(Lowe-14, designer-12)
+compound(Lowe-14, Ann-13)
+nmod:by(created-10, Lowe-14)
+punct(creator-18, -LRB--15)
+advmod(creator-18, also-16)
+det(creator-18, the-17)
+dep(Lowe-14, creator-18)
+case(dress-22, of-19)
+nmod:poss(dress-22, Jackie-20)
+case(Jackie-20, 's-21)
+nmod:of(creator-18, dress-22)
+punct(creator-18, -RRB--23)
+punct(chose-2, .-24)
+

@@ -1,0 +1,11 @@
+The groom carries the bride across the threshold to bravely protect her from evil spirits lurking below.
+------------Like Tree in the Wind---------------(ROOT (S (NP (DT The) (NN groom)) (VP (VBZ carries) (NP (DT the) (NN bride)) (PP (IN across) (NP (DT the) (NN threshold) (S (VP (TO to) (VP (ADVP (RB bravely)) (VB protect) (NP (PRP$ her)) (PP (IN from) (NP (NP (JJ evil) (NNS spirits)) (VP (VBG lurking) (PP (IN below))))))))))) (. .)))---
+mentions
+	The groom
+	the bride
+	the threshold to bravely protect her from evil spirits lurking below
+	her
+	evil spirits lurking below
+------CorefChainz
+CHAIN3-["the bride" in sentence 1, "her" in sentence 1]
+representative mention: "the bride" in sentence 1

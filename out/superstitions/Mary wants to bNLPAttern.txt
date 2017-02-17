@@ -1,0 +1,25 @@
+Mary wants to buy a book.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, wants-2)
+nsubj(wants-2, Mary-1)
+nsubj:xsubj(buy-4, Mary-1)
+mark(buy-4, to-3)
+xcomp(wants-2, buy-4)
+det(book-6, a-5)
+dobj(buy-4, book-6)
+punct(wants-2, .-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[6, 6] [?#1, Mary, book, buy, to, wants]
+?#1-dobj->buy
+to-mark->buy
+Mary-nsubj:xsubj->buy
+Mary-nsubj->wants
+?#1-a->book
+buy-xcomp->wants

@@ -1,0 +1,9 @@
+On average, 7,000 couples marry each day in the United States.
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN On) (NP (NN average))) (, ,) (NP (CD 7,000) (NNS couples)) (VP (VB marry) (NP (DT each) (NN day)) (PP (IN in) (NP (DT the) (NNP United) (NNPS States)))) (. .)))---
+mentions
+	7,000
+	average
+	7,000 couples
+	each day
+	the United States
+------CorefChainz

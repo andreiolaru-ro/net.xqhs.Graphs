@@ -1,0 +1,71 @@
+The bride stands to the groom's left during a Christian ceremony, because in bygone days the groom needed his right hand free to fight off other suitors.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1The Governor: 2bride
+ Relation: nsubj Dependent: 2bride Governor: 3stands
+ Relation: nsubj:xsubj Dependent: 2bride Governor: 4to
+ Relation: xcomp Dependent: 4to Governor: 3stands
+ Relation: det Dependent: 5the Governor: 6groom
+ Relation: dobj Dependent: 6groom Governor: 4to
+ Relation: case Dependent: 7's Governor: 6groom
+ Relation: acl Dependent: 8left Governor: 6groom
+ Relation: case Dependent: 9during Governor: 12ceremony
+ Relation: det Dependent: 10a Governor: 12ceremony
+ Relation: amod Dependent: 11Christian Governor: 12ceremony
+ Relation: nmod:during Dependent: 12ceremony Governor: 8left
+ Relation: punct Dependent: 13, Governor: 8left
+ Relation: mark Dependent: 14because Governor: 20needed
+ Relation: case Dependent: 15in Governor: 17days
+ Relation: amod Dependent: 16bygone Governor: 17days
+ Relation: nmod:in Dependent: 17days Governor: 20needed
+ Relation: det Dependent: 18the Governor: 19groom
+ Relation: nsubj Dependent: 19groom Governor: 20needed
+ Relation: advcl:because Dependent: 20needed Governor: 8left
+ Relation: nmod:poss Dependent: 21his Governor: 23hand
+ Relation: amod Dependent: 22right Governor: 23hand
+ Relation: nsubj Dependent: 23hand Governor: 24free
+ Relation: nsubj:xsubj Dependent: 23hand Governor: 26fight
+ Relation: xcomp Dependent: 24free Governor: 20needed
+ Relation: mark Dependent: 25to Governor: 26fight
+ Relation: xcomp Dependent: 26fight Governor: 24free
+ Relation: compound:prt Dependent: 27off Governor: 26fight
+ Relation: amod Dependent: 28other Governor: 29suitors
+ Relation: dobj Dependent: 29suitors Governor: 26fight
+ Relation: punct Dependent: 30. Governor: 3stands
+G[0, 31] []
+The-det->bride
+off-compound:prt->fight
+groom-dobj->to
+a-det->ceremony
+bygone-amod->days
+during-case->ceremony
+Christian-amod->ceremony
+suitors-dobj->fight
+days-nmod:in->needed
+right-amod->hand
+hand-nsubj:xsubj->fight
+.-punct->stands
+ceremony-nmod:during->left
+the-det->groom
+to-mark->fight
+other-amod->suitors
+because-mark->needed
+the-det->groom
+his-nmod:poss->hand
+hand-nsubj->free
+to-xcomp->stands
+in-case->days
+bride-nsubj->stands
+bride-nsubj:xsubj->to
+'s-case->groom
+needed-advcl:because->left
+,-punct->left
+groom-nsubj->needed
+free-xcomp->needed
+fight-xcomp->free
+left-acl->groom
+------CorefChainz
+CHAIN6-["the groom" in sentence 1, "his" in sentence 1]
+representative mention: "the groom" in sentence 1

@@ -1,0 +1,33 @@
+The English believe a spider found in a wedding dress means good luck. Yikes!
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1The Governor: 2English
+ Relation: nsubj Dependent: 2English Governor: 3believe
+ Relation: det Dependent: 4a Governor: 5spider
+ Relation: nsubj Dependent: 5spider Governor: 11means
+ Relation: acl Dependent: 6found Governor: 5spider
+ Relation: case Dependent: 7in Governor: 10dress
+ Relation: det Dependent: 8a Governor: 10dress
+ Relation: compound Dependent: 9wedding Governor: 10dress
+ Relation: nmod:in Dependent: 10dress Governor: 6found
+ Relation: ccomp Dependent: 11means Governor: 3believe
+ Relation: amod Dependent: 12good Governor: 13luck
+ Relation: dobj Dependent: 13luck Governor: 11means
+ Relation: punct Dependent: 14. Governor: 3believe
+G[0, 13] []
+luck-dobj->means
+spider-nsubj->means
+.-punct->believe
+means-ccomp->believe
+English-nsubj->believe
+good-amod->luck
+The-det->English
+dress-nmod:in->found
+a-det->spider
+found-acl->spider
+in-case->dress
+a-det->dress
+wedding-compound->dress
+------CorefChainz

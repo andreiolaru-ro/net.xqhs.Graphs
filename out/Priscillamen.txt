@@ -1,0 +1,10 @@
+Priscilla Presley's engagement ring was a whopping 3 1/2-carat rock surrounded by a detachable row of smaller diamonds.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NP (NNP Priscilla) (NNP Presley) (POS 's)) (NN engagement) (NN ring)) (VP (VBD was) (NP (NP (DT a) (JJ whopping) (CD 3 1/2)) (: -) (NP (NP (NN carat) (NN rock)) (VP (VBN surrounded) (PP (IN by) (NP (NP (DT a) (JJ detachable) (NN row)) (PP (IN of) (NP (JJR smaller) (NNS diamonds))))))))) (. .)))---
+mentions
+	Priscilla Presley 's
+	3 1/2
+	Priscilla Presley 's engagement ring
+	carat rock surrounded by a detachable row of smaller diamonds
+	a detachable row of smaller diamonds
+	smaller diamonds
+------CorefChainz

@@ -1,0 +1,39 @@
+Aquamarine represents marital harmony and is said to ensure a long, happy marriage.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: nsubj Dependent: 1Aquamarine Governor: 2represents
+ Relation: nsubjpass Dependent: 1Aquamarine Governor: 7said
+ Relation: nsubj:xsubj Dependent: 1Aquamarine Governor: 9ensure
+ Relation: amod Dependent: 3marital Governor: 4harmony
+ Relation: dobj Dependent: 4harmony Governor: 2represents
+ Relation: cc Dependent: 5and Governor: 2represents
+ Relation: auxpass Dependent: 6is Governor: 7said
+ Relation: conj:and Dependent: 7said Governor: 2represents
+ Relation: mark Dependent: 8to Governor: 9ensure
+ Relation: xcomp Dependent: 9ensure Governor: 7said
+ Relation: det Dependent: 10a Governor: 14marriage
+ Relation: amod Dependent: 11long Governor: 14marriage
+ Relation: punct Dependent: 12, Governor: 14marriage
+ Relation: amod Dependent: 13happy Governor: 14marriage
+ Relation: dobj Dependent: 14marriage Governor: 9ensure
+ Relation: punct Dependent: 15. Governor: 2represents
+G[0, 16] []
+marital-amod->harmony
+to-mark->ensure
+Aquamarine-nsubjpass->said
+a-det->marriage
+long-amod->marriage
+happy-amod->marriage
+and-cc->represents
+ensure-xcomp->said
+Aquamarine-nsubj->represents
+is-auxpass->said
+harmony-dobj->represents
+said-conj:and->represents
+marriage-dobj->ensure
+,-punct->marriage
+.-punct->represents
+Aquamarine-nsubj:xsubj->ensure
+------CorefChainz

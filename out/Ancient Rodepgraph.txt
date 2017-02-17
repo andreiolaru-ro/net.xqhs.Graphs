@@ -1,0 +1,31 @@
+Ancient Romans studied pig entrails to determine the luckiest time to marry.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: amod Dependent: 1Ancient Governor: 2Romans
+ Relation: nsubj Dependent: 2Romans Governor: 3studied
+ Relation: compound Dependent: 4pig Governor: 5entrails
+ Relation: dobj Dependent: 5entrails Governor: 3studied
+ Relation: mark Dependent: 6to Governor: 7determine
+ Relation: advcl:to Dependent: 7determine Governor: 3studied
+ Relation: det Dependent: 8the Governor: 10time
+ Relation: amod Dependent: 9luckiest Governor: 10time
+ Relation: dobj Dependent: 10time Governor: 7determine
+ Relation: mark Dependent: 11to Governor: 12marry
+ Relation: acl:to Dependent: 12marry Governor: 10time
+ Relation: punct Dependent: 13. Governor: 3studied
+G[0, 12] []
+Romans-nsubj->studied
+pig-compound->entrails
+.-punct->studied
+Ancient-amod->Romans
+determine-advcl:to->studied
+to-mark->marry
+to-mark->determine
+luckiest-amod->time
+time-dobj->determine
+the-det->time
+marry-acl:to->time
+entrails-dobj->studied
+------CorefChainz

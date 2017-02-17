@@ -1,0 +1,62 @@
+The world is like an apple spinning silently in space.
+------CorefChainz
+The-DT 
+world-NN 
+is-VBZ 
+like-IN 
+an-DT 
+apple-NN 
+spinning-VBG 
+silently-RB 
+in-IN 
+space-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> world
+		 	-> VP 	-> VBZ 	-> is
+	 	-> PP 	-> IN 	-> like
+	 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> apple
+		 	-> VP 	-> VBG 	-> spinning
+	 	-> ADVP 	-> RB 	-> silently
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NN 	-> space
+							 	-> . 	-> .
+			
+Dependensee repr
+det(world-2, The-1)
+nsubj(apple-6, world-2)
+cop(apple-6, is-3)
+case(apple-6, like-4)
+det(apple-6, an-5)
+root(ROOT-0, apple-6)
+acl(apple-6, spinning-7)
+advmod(spinning-7, silently-8)
+case(space-10, in-9)
+nmod:in(spinning-7, space-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, apple-6)
+det(world-2, The-1)
+nsubj(apple-6, world-2)
+cop(apple-6, is-3)
+case(apple-6, like-4)
+det(apple-6, an-5)
+acl(apple-6, spinning-7)
+advmod(spinning-7, silently-8)
+case(space-10, in-9)
+nmod:in(spinning-7, space-10)
+punct(apple-6, .-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 6] [?#1, ?#2, apple, silently, space, spinning, world]
+?#1-The->world
+silently-advmod->spinning
+space-nmod:in->spinning
+?#1-nsubj : is  : like nsubj->?#2
+?#2-an->apple
+spinning-acl->?#2

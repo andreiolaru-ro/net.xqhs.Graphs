@@ -1,0 +1,48 @@
+We are what we pretend to be, so we must be careful about what we pretend to be.
+------CorefChainz
+CHAIN1-["We" in sentence 1, "we" in sentence 1, "we" in sentence 1, "we" in sentence 1]
+representative mention: "We" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, are-2)
+nsubj(are-2, We-1)
+dobj(pretend-5, what-3)
+nsubj:xsubj(be-7, what-3)
+nsubj(pretend-5, we-4)
+ccomp(are-2, pretend-5)
+mark(be-7, to-6)
+xcomp(pretend-5, be-7)
+punct(are-2, ,-8)
+dep(are-2, so-9)
+nsubj(careful-13, we-10)
+aux(careful-13, must-11)
+cop(careful-13, be-12)
+parataxis(are-2, careful-13)
+mark(pretend-17, about-14)
+dobj(pretend-17, what-15)
+nsubj:xsubj(be-19, what-15)
+nsubj(pretend-17, we-16)
+advcl:about(careful-13, pretend-17)
+mark(be-19, to-18)
+xcomp(pretend-17, be-19)
+punct(are-2, .-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 13] [We, are, be, be, careful, pretend, pretend, what, what]
+what-nsubj:xsubj->be
+be-xcomp : to xcomp->pretend
+We-we :nsubj->pretend
+pretend-advcl:about : must  : be advcl:about->careful
+We-nsubj->are
+what-dobj->pretend
+what-nsubj:xsubj->be
+be-xcomp : to xcomp->pretend
+We-we :nsubj->careful
+careful-parataxis->are
+what-dobj->pretend
+We-we :nsubj->pretend
+pretend-ccomp : so  : so ccomp->are

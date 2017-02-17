@@ -1,0 +1,16 @@
+Elisabeth combed her hair yesterday
+------CorefChainz
+CHAIN1-["Elisabeth" in sentence 1, "her" in sentence 1]
+representative mention: "Elisabeth" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[4, 4] [Elisabeth, combed, hair, yesterday]
+hair-dobj->combed
+Elisabeth-hernmod:poss->hair
+yesterday-nmod:tmod->combed
+Elisabeth-nsubj->combed
+------CorefChainz
+CHAIN1-["Elisabeth" in sentence 1, "her" in sentence 1]
+representative mention: "Elisabeth" in sentence 1

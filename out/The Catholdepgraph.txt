@@ -1,0 +1,61 @@
+The Catholic tradition of "posting the banns" to announce a marriage originated as a way to ensure the bride and groom were not related.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: det Dependent: 1The Governor: 3tradition
+ Relation: compound Dependent: 2Catholic Governor: 3tradition
+ Relation: nsubj Dependent: 3tradition Governor: 26related
+ Relation: mark Dependent: 4of Governor: 6posting
+ Relation: punct Dependent: 5`` Governor: 6posting
+ Relation: acl:of Dependent: 6posting Governor: 3tradition
+ Relation: det Dependent: 7the Governor: 8banns
+ Relation: dobj Dependent: 8banns Governor: 6posting
+ Relation: punct Dependent: 9'' Governor: 6posting
+ Relation: mark Dependent: 10to Governor: 11announce
+ Relation: advcl:to Dependent: 11announce Governor: 6posting
+ Relation: det Dependent: 12a Governor: 13marriage
+ Relation: nsubj Dependent: 13marriage Governor: 14originated
+ Relation: ccomp Dependent: 14originated Governor: 11announce
+ Relation: case Dependent: 15as Governor: 17way
+ Relation: det Dependent: 16a Governor: 17way
+ Relation: nmod:as Dependent: 17way Governor: 14originated
+ Relation: mark Dependent: 18to Governor: 19ensure
+ Relation: acl:to Dependent: 19ensure Governor: 17way
+ Relation: det Dependent: 20the Governor: 21bride
+ Relation: dobj Dependent: 21bride Governor: 19ensure
+ Relation: cc Dependent: 22and Governor: 21bride
+ Relation: dobj Dependent: 23groom Governor: 19ensure
+ Relation: conj:and Dependent: 23groom Governor: 21bride
+ Relation: cop Dependent: 24were Governor: 26related
+ Relation: neg Dependent: 25not Governor: 26related
+ Relation: punct Dependent: 27. Governor: 26related
+G[0, 27] []
+.-punct->related
+the-det->bride
+ensure-acl:to->way
+a-det->marriage
+the-det->banns
+and-cc->bride
+posting-acl:of->tradition
+groom-dobj->ensure
+as-case->way
+of-mark->posting
+groom-conj:and->bride
+``-punct->posting
+Catholic-compound->tradition
+to-mark->ensure
+''-punct->posting
+announce-advcl:to->posting
+marriage-nsubj->originated
+bride-dobj->ensure
+not-neg->related
+tradition-nsubj->related
+way-nmod:as->originated
+The-det->tradition
+a-det->way
+to-mark->announce
+banns-dobj->posting
+were-cop->related
+originated-ccomp->announce
+------CorefChainz

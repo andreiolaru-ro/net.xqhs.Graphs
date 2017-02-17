@@ -1,0 +1,55 @@
+Legend says single women will dream of their future husbands if they sleep with a slice of groom's cake under their pillows.
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+ Relation: nsubj Dependent: 1Legend Governor: 2says
+ Relation: amod Dependent: 3single Governor: 4women
+ Relation: nsubj Dependent: 4women Governor: 6dream
+ Relation: aux Dependent: 5will Governor: 6dream
+ Relation: ccomp Dependent: 6dream Governor: 2says
+ Relation: case Dependent: 7of Governor: 10husbands
+ Relation: nmod:poss Dependent: 8their Governor: 10husbands
+ Relation: amod Dependent: 9future Governor: 10husbands
+ Relation: nmod:of Dependent: 10husbands Governor: 6dream
+ Relation: mark Dependent: 11if Governor: 13sleep
+ Relation: nsubj Dependent: 12they Governor: 13sleep
+ Relation: advcl:if Dependent: 13sleep Governor: 6dream
+ Relation: case Dependent: 14with Governor: 16slice
+ Relation: det Dependent: 15a Governor: 16slice
+ Relation: nmod:with Dependent: 16slice Governor: 13sleep
+ Relation: case Dependent: 17of Governor: 20cake
+ Relation: nmod:poss Dependent: 18groom Governor: 20cake
+ Relation: case Dependent: 19's Governor: 18groom
+ Relation: nmod:of Dependent: 20cake Governor: 16slice
+ Relation: case Dependent: 21under Governor: 23pillows
+ Relation: nmod:poss Dependent: 22their Governor: 23pillows
+ Relation: nmod:under Dependent: 23pillows Governor: 13sleep
+ Relation: punct Dependent: 24. Governor: 2says
+G[0, 23] []
+under-case->pillows
+a-det->slice
+sleep-advcl:if->dream
+slice-nmod:with->sleep
+Legend-nsubj->says
+single-amod->women
+'s-case->groom
+pillows-nmod:under->sleep
+.-punct->says
+of-case->cake
+will-aux->dream
+dream-ccomp->says
+their-nmod:poss->pillows
+they-nsubj->sleep
+their-nmod:poss->husbands
+cake-nmod:of->slice
+women-nsubj->dream
+of-case->husbands
+with-case->slice
+husbands-nmod:of->dream
+if-mark->sleep
+groom-nmod:poss->cake
+future-amod->husbands
+------CorefChainz
+CHAIN8-["single women" in sentence 1, "their" in sentence 1, "they" in sentence 1, "their" in sentence 1]
+representative mention: "single women" in sentence 1

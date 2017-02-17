@@ -1,0 +1,12 @@
+Stag parties were first held by ancient Spartan soldiers, who kissed their bachelor days goodbye with a raucous party.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NNP Stag) (NNS parties)) (VP (VBD were) (ADVP (RB first)) (VP (VBN held) (PP (IN by) (NP (NP (JJ ancient) (JJ Spartan) (NNS soldiers)) (, ,) (SBAR (WHNP (WP who)) (S (VP (VBD kissed) (NP (PRP$ their) (NN bachelor) (NNS days) (NN goodbye)) (PP (IN with) (NP (DT a) (JJ raucous) (NN party)))))))))) (. .)))---
+mentions
+	Spartan
+	Stag parties
+	ancient Spartan soldiers , who kissed their bachelor days goodbye with a raucous party
+	their
+	their bachelor days goodbye
+	a raucous party
+------CorefChainz
+CHAIN3-["Stag parties" in sentence 1, "their" in sentence 1]
+representative mention: "Stag parties" in sentence 1

@@ -1,0 +1,14 @@
+Hey, brides, tuck a sugar cube into your glove—according to Greek culture, the sugar will sweeten your union.
+------------Like Tree in the Wind---------------(ROOT (S (INTJ (UH Hey)) (, ,) (NP (NNS brides)) (, ,) (VP (VB tuck) (NP (DT a) (NN sugar) (NN cube)) (PP (IN into) (NP (NP (PRP$ your) (NN glove)) (: --) (S (PP (VBG according) (PP (TO to) (NP (JJ Greek) (NN culture)))) (, ,) (NP (DT the) (NN sugar)) (VP (MD will) (VP (VB sweeten) (NP (PRP$ your) (NN union)))))))) (. .)))---
+mentions
+	brides
+	a sugar cube
+	your
+	your glove
+	according to Greek culture
+	the sugar
+	your
+	your union
+------CorefChainz
+CHAIN6-["your" in sentence 1, "your" in sentence 1]
+representative mention: "your" in sentence 1

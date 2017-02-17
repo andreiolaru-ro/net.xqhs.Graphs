@@ -1,0 +1,67 @@
+Middle Eastern brides paint henna on their hands and feet to protect themselves from the evil eye. Find out about Muslim wedding rituals.
+Middle-NNP 
+Eastern-NNP 
+brides-NNS 
+paint-VBP 
+henna-JJ 
+on-IN 
+their-PRP$ 
+hands-NNS 
+and-CC 
+feet-NNS 
+to-TO 
+protect-VB 
+themselves-PRP 
+from-IN 
+the-DT 
+evil-JJ 
+eye-NN 
+.-. 
+Find-VBP 
+out-RP 
+about-IN 
+Muslim-JJ 
+wedding-NN 
+rituals-NNS 
+.-. 
+Dependensee repr
+compound(Eastern-2, Middle-1)
+nsubj(Find-19, Eastern-2)
+nsubj(paint-4, brides-3)
+acl:relcl(Eastern-2, paint-4)
+dep(paint-4, henna-5)
+case(hands-8, on-6)
+nmod:poss(hands-8, their-7)
+nmod:on(henna-5, hands-8)
+cc(hands-8, and-9)
+nmod:on(henna-5, feet-10)
+conj:and(hands-8, feet-10)
+mark(protect-12, to-11)
+dep(henna-5, protect-12)
+dobj(protect-12, themselves-13)
+case(eye-17, from-14)
+det(eye-17, the-15)
+amod(eye-17, evil-16)
+nmod:from(protect-12, eye-17)
+root(ROOT-0, Find-19)
+compound:prt(Find-19, out-20)
+case(rituals-24, about-21)
+amod(rituals-24, Muslim-22)
+compound(rituals-24, wedding-23)
+nmod:about(Find-19, rituals-24)
+---
+coref chains
+	CHAIN5-["Middle Eastern brides" in sentence 1, "their" in sentence 1, "themselves" in sentence 1]
+---
+mentions
+	Middle Eastern brides
+	henna
+	their
+	their hands and feet
+	feet
+	themselves
+	the evil eye
+---
+mentions
+	Muslim
+	Muslim wedding rituals

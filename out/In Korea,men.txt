@@ -1,0 +1,10 @@
+In Korea, brides don bright hues of red and yellow to take their vows.
+------------Like Tree in the Wind---------------(ROOT (S (PP (IN In) (NP (NNP Korea))) (, ,) (NP (NNS brides)) (VP (VBP don) (S (NP (NP (JJ bright) (NNS hues)) (PP (IN of) (NP (JJ red) (CC and) (JJ yellow)))) (VP (TO to) (VP (VB take) (SBAR (S (NP (PRP$ their)) (VP (VBZ vows)))))))) (. .)))---
+mentions
+	Korea
+	brides
+	bright hues of red and yellow
+	their
+------CorefChainz
+CHAIN3-["brides" in sentence 1, "their" in sentence 1]
+representative mention: "brides" in sentence 1

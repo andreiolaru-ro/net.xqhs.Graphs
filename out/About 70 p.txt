@@ -1,0 +1,50 @@
+About 70 percent of all brides sport the traditional diamond on the fourth finger of their left hand.
+About-RB 
+70-CD 
+percent-NN 
+of-IN 
+all-DT 
+brides-NNS 
+sport-VBD 
+the-DT 
+traditional-JJ 
+diamond-NN 
+on-IN 
+the-DT 
+fourth-JJ 
+finger-NN 
+of-IN 
+their-PRP$ 
+left-JJ 
+hand-NN 
+.-. 
+Dependensee repr
+advmod(70-2, About-1)
+nummod(percent-3, 70-2)
+nsubj(sport-7, percent-3)
+case(brides-6, of-4)
+det(brides-6, all-5)
+nmod:of(percent-3, brides-6)
+root(ROOT-0, sport-7)
+det(diamond-10, the-8)
+amod(diamond-10, traditional-9)
+dobj(sport-7, diamond-10)
+case(finger-14, on-11)
+det(finger-14, the-12)
+amod(finger-14, fourth-13)
+nmod:on(sport-7, finger-14)
+case(hand-18, of-15)
+nmod:poss(hand-18, their-16)
+amod(hand-18, left-17)
+nmod:of(finger-14, hand-18)
+---
+coref chains
+---
+mentions
+	70 percent
+	fourth
+	all brides sport
+	the traditional diamond on the fourth finger of their left hand
+	the fourth finger of their left hand
+	their
+	their left hand

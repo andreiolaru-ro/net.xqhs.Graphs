@@ -1,0 +1,7 @@
+Peas are thrown at Czech newlyweds instead of rice.
+------------Like Tree in the Wind---------------(ROOT (S (NP (NNS Peas)) (VP (VBP are) (VP (VBN thrown) (PP (IN at) (NP (NP (NNP Czech) (NNS newlyweds)) (PP (RB instead) (IN of) (NP (NN rice))))))) (. .)))---
+mentions
+	Peas
+	Czech newlyweds instead of rice
+	instead of rice
+------CorefChainz
