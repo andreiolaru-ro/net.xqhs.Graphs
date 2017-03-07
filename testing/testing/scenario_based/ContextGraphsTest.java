@@ -9,7 +9,7 @@
  *
  * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
-package testing;
+package testing.scenario_based;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,6 +52,8 @@ import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.graphs.representation.text.TextRepresentationElement.Symbol;
 import net.xqhs.util.logging.LoggerSimple.Level;
 import net.xqhs.util.logging.logging.Logging;
+import testing.GrapherTest;
+import testing.Tester;
 
 /**
  * Tester for complex graphs, hyper graphs, transaction graphs, context graphs, and matching platforms.

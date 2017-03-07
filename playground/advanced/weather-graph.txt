@@ -1,0 +1,31 @@
+if bidirectional edges allowed:
+	nodes with no dashes
+	edges with no spaces
+else
+	all identifiers with no spaces
+? #
+( ) - >   (<)
+[ ] :
+| ^ *
+
+
+Context
+	-> [Today's Forecast:where->?Location#1] -> Rain
+			/or/
+	-> [Today's Forecast : where->?Location#1 : what -> Rain]
+			/or/
+	(-> ?Forcast (-date-> today) (-location-> ?Location#1)-forecast-> Rain )
+	-> ?User
+		(-> Schedule -> ?Activity ^[-is-in-> Home] (-is-in-> ?Location)*-is-in-> ?Location#1)
+		(-part-of-> [Leaving House:who->?User])
+		-has-> Umbrella
+		
+
+[Leaving House:who: ?who -part-of-> Leaving -isa-> Activity]
+
+[Today's Forecast For:root:where:what:
+	?#root
+		(-date-> today)
+		(-location-> ?#where -isa-> Location)
+		-forecast-> ?#what
+	]

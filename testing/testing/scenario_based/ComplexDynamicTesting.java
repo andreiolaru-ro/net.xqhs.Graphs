@@ -1,4 +1,4 @@
-package testing;
+package testing.scenario_based;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,7 +32,8 @@ import net.xqhs.graphs.matchingPlatform.Transaction.Operation;
 import net.xqhs.graphs.util.Debug.D_G;
 import net.xqhs.util.logging.LoggerSimple.Level;
 import net.xqhs.util.logging.logging.Logging;
-import testing.ContextGraphsTest.IntTimeKeeper;
+import testing.Tester;
+import testing.scenario_based.ContextGraphsTest.IntTimeKeeper;
 
 @SuppressWarnings("javadoc")
 public class ComplexDynamicTesting extends Tester

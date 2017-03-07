@@ -50,11 +50,11 @@ public class Tester
 	 * the file).
 	 */
 	protected static String			testGraphName		= null;
-
+														
 	/**
 	 * Directory with test files.
 	 */
-	static String					defaultFileDir		= "playground/";
+	protected static String			defaultFileDir		= "playground/";
 	/**
 	 * Extension of graph files.
 	 */
@@ -63,7 +63,7 @@ public class Tester
 	 * Whatever is added after the file name to form the filename for the pattern.
 	 */
 	static String					patternpart			= "P";
-
+														
 	/**
 	 * Log/unit name
 	 */
@@ -72,19 +72,19 @@ public class Tester
 	 * Log
 	 */
 	protected UnitComponent			log;
-
+									
 	/**
 	 * Creates a tester and runs it. It calls <code>doTesting()</code>. At the end the log is closed.
 	 */
 	public Tester()
 	{
 		log = (UnitComponent) new UnitComponent().setUnitName(unitName).setLogLevel(Level.ALL);
-
+		
 		doTesting();
-
+		
 		log.doExit();
 	}
-
+	
 	/**
 	 * Method to overload, which must contain the testing code. Call super to perform tests required by the super class.
 	 */
@@ -92,7 +92,7 @@ public class Tester
 	{
 		log.lf("Hello World");
 	}
-
+	
 	/**
 	 * Loads a testPack formed of a graph and a pattern. It uses the specified filename for the graph and the filename
 	 * with {@value #patternpart} added for the pattern.
@@ -110,7 +110,7 @@ public class Tester
 	protected Map<String, Graph> loadTestGraphPattern(String filename, String fileDir, Level readLevel)
 	{
 		Map<String, Graph> testPack = new HashMap<String, Graph>();
-
+		
 		SimpleGraph G;
 		try
 		{
@@ -121,13 +121,13 @@ public class Tester
 			e.printStackTrace();
 			return null;
 		}
-
+		
 		GraphPattern GP;
 		try
 		{
 			GP = (GraphPattern) ((SimpleGraph) new GraphPattern().setUnitName("GP").setLogLevel(readLevel)
-					.setLink(unitName)).readFrom(new FileInputStream(defaultFileDir + filename + patternpart
-					+ defaultFileExt));
+					.setLink(unitName))
+							.readFrom(new FileInputStream(defaultFileDir + filename + patternpart + defaultFileExt));
 		} catch(FileNotFoundException e)
 		{
 			e.printStackTrace();
@@ -137,7 +137,7 @@ public class Tester
 		testPack.put(NAME_PATTERN, GP);
 		return testPack;
 	}
-
+	
 	/**
 	 * Loads a group of graphs and/or patterns from a file. Graphs are returned as {@link Graph} implementations, so
 	 * they can be graphs, patterns, etc. In practice, {@link TextGraphRepresentation} is used. All returns will be
@@ -175,7 +175,7 @@ public class Tester
 		}
 		ContentHolder<String> input = new ContentHolder<String>(builder.toString());
 		reader.close();
-
+		
 		Map<String, Graph> graphs = new HashMap<String, Graph>();
 		int i = 0;
 		while(input.get().length() > 0)
@@ -184,14 +184,14 @@ public class Tester
 			TextGraphRepresentation repr;
 			try
 			{
-				repr = (TextGraphRepresentation) new TextGraphRepresentation(g).setUnitName("Greader").setLogLevel(
-						(readLevel != null) ? readLevel : Level.OFF);
+				repr = (TextGraphRepresentation) new TextGraphRepresentation(g).setUnitName("Greader")
+						.setLogLevel((readLevel != null) ? readLevel : Level.OFF);
 				repr.readRepresentation(input);
 			} catch(IllegalArgumentException e)
 			{
 				g = new GraphPattern();
-				repr = (TextGraphRepresentation) new TextGraphRepresentation(g).setUnitName("Greader").setLogLevel(
-						(readLevel != null) ? readLevel : Level.OFF);
+				repr = (TextGraphRepresentation) new TextGraphRepresentation(g).setUnitName("Greader")
+						.setLogLevel((readLevel != null) ? readLevel : Level.OFF);
 				repr.readRepresentation(input);
 			}
 			log.li("new graph /  pattern: []", repr.toString());
@@ -201,7 +201,7 @@ public class Tester
 		}
 		return graphs;
 	}
-
+	
 	/**
 	 * Extracts the graph from the test pack. It is identified by the key {@link #testGraphName}.
 	 * <p>
@@ -217,7 +217,7 @@ public class Tester
 	{
 		return testPack.get(testGraphName);
 	}
-
+	
 	/**
 	 * Loads the list of graphs to serve as patterns, from a test pack. All graphs are considered, except for the one
 	 * named {@link #testGraphName}.
@@ -235,7 +235,7 @@ public class Tester
 				ret.add(testPack.get(name));
 		return ret;
 	}
-
+	
 	/**
 	 * Loads the list of patterns from a test pack. All graphs are considered, except for the one named
 	 * {@link #testGraphName}.
@@ -252,7 +252,7 @@ public class Tester
 			ret.add((GraphPattern) new GraphPattern().addAll(gp.getComponents()).setDescription(gp.getDescription()));
 		return ret;
 	}
-
+	
 	/**
 	 * Gets a list of {@link ContextPattern} instances based on the patterns in a test pack. All patterns are
 	 * considered, except for the one named {@link #testGraphName}.
@@ -270,7 +270,7 @@ public class Tester
 					.setDescription(gp.getDescription()));
 		return ret;
 	}
-
+	
 	/**
 	 * Prints all the graphs in a testPack.
 	 *
@@ -300,7 +300,7 @@ public class Tester
 			log.li(GR.displayRepresentation());
 		}
 	}
-
+	
 	/**
 	 * Prints a separator.
 	 *
@@ -322,7 +322,7 @@ public class Tester
 		}
 		log.li("================================= " + arrows + " [] =================", section);
 	}
-
+	
 	/**
 	 * @return the log.
 	 */
