@@ -1,0 +1,100 @@
+ In logical syntax the meaning of a sign should never play a role. It must be possible to establish logical syntax without mentioning the meaning of a sign: only the description of expressions may be presupposed.
+------CorefChainz
+CHAIN6-["the meaning of a sign" in sentence 1, "the meaning of a sign" in sentence 2]
+representative mention: "the meaning of a sign" in sentence 1
+CHAIN7-["a sign" in sentence 1, "a sign" in sentence 2]
+representative mention: "a sign" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, play-11)
+case(syntax-3, In-1)
+det(meaning-5, the-4)
+case(sign-8, of-6)
+det(sign-8, a-7)
+aux(play-11, should-9)
+punct(play-11, .-14)
+det(role-13, a-12)
+amod(syntax-3, logical-2)
+nmod:in(play-11, syntax-3)
+nsubj(play-11, meaning-5)
+nmod:of(meaning-5, sign-8)
+neg(play-11, never-10)
+dobj(play-11, role-13)
+---
+qqroot(ROOT-0, play-11)
+case(syntax-3, In-1)
+det(meaning-5, the-4)
+case(sign-8, of-6)
+det(sign-8, a-7)
+aux(play-11, should-9)
+punct(play-11, .-14)
+det(role-13, a-12)
+amod(syntax-3, logical-2)
+nmod:in(play-11, syntax-3)
+nsubj(play-11, meaning-5)
+nmod:of(meaning-5, sign-8)
+neg(play-11, never-10)
+dobj(play-11, role-13)
+root(ROOT-0, possible-4)
+aux(possible-4, must-2)
+cop(possible-4, be-3)
+punct(possible-4, .-25)
+punct(possible-4, :-16)
+mark(establish-6, to-5)
+mark(mentioning-10, without-9)
+det(meaning-12, the-11)
+case(sign-15, of-13)
+det(sign-15, a-14)
+det(description-19, the-18)
+case(expressions-21, of-20)
+aux(presupposed-24, may-22)
+auxpass(presupposed-24, be-23)
+nsubj(possible-4, It-1)
+nsubj:xsubj(establish-6, It-1)
+xcomp(possible-4, establish-6)
+amod(syntax-8, logical-7)
+dobj(establish-6, syntax-8)
+advcl:without(establish-6, mentioning-10)
+dobj(mentioning-10, meaning-12)
+nmod:of(meaning-12, sign-15)
+advmod(description-19, only-17)
+nsubjpass(presupposed-24, description-19)
+nmod:of(description-19, expressions-21)
+parataxis(possible-4, presupposed-24)
+G[25, 24] [?1, ?2, ?3, ?4, ?5, ?6, It1, description2147483647, establish6, expressions21, logical7, logical2, meaning2147483647, meaning2147483647, mentioning10, never10, only17, play11, possible4, presupposed24, role2147483647, sign2147483647, sign2147483647, syntax8, syntax3]
+establish6-  : to ->possible4
+syntax3-in->play11
+?2-of->?4
+?4- ->play11
+?6-a->sign2147483647
+?3-a->role2147483647
+logical2-  : In ->syntax3
+never10-  : should ->play11
+It1-  : must  : be ->possible4
+syntax8- ->establish6
+?2-a->sign2147483647
+?4-the->meaning2147483647
+mentioning10-without->establish6
+?1- ->mentioning10
+?5-  : may  : be ->presupposed24
+?3- ->play11
+?6-of->?1
+only17- ->?5
+logical7- ->syntax8
+?1-the->meaning2147483647
+?5-the->description2147483647
+presupposed24- ->possible4
+It1-xsubj->establish6
+expressions21-of->?5
+------CorefChainz
+CHAIN6-["the meaning of a sign" in sentence 1, "the meaning of a sign" in sentence 2]
+representative mention: "the meaning of a sign" in sentence 1
+CHAIN7-["a sign" in sentence 1, "a sign" in sentence 2]
+representative mention: "a sign" in sentence 1

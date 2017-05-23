@@ -1,0 +1,134 @@
+ A proposition possesses essential and accidental features. Accidental features are those that result from the particular way in which the propositional sign is produced. Essential features are those without which the proposition could not express its sense.
+------CorefChainz
+CHAIN7-["A proposition" in sentence 1, "the proposition" in sentence 3, "its" in sentence 3]
+representative mention: "A proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, possesses-3)
+det(proposition-2, A-1)
+punct(possesses-3, .-8)
+cc(essential-4, and-5)
+nsubj(possesses-3, proposition-2)
+amod(features-7, essential-4)
+conj:and(essential-4, accidental-6)
+amod(features-7, accidental-6)
+dobj(possesses-3, features-7)
+---
+qqroot(ROOT-0, possesses-3)
+det(proposition-2, A-1)
+punct(possesses-3, .-8)
+cc(essential-4, and-5)
+nsubj(possesses-3, proposition-2)
+amod(features-7, essential-4)
+conj:and(essential-4, accidental-6)
+amod(features-7, accidental-6)
+dobj(possesses-3, features-7)
+root(ROOT-0, those-4)
+cop(those-4, are-3)
+punct(those-4, .-18)
+case(way-10, from-7)
+det(way-10, the-8)
+case(which-12, in-11)
+det(sign-15, the-13)
+auxpass(produced-17, is-16)
+amod(features-2, Accidental-1)
+nsubj(those-4, features-2)
+nsubj(result-6, those-4)
+ref(those-4, that-5)
+acl:relcl(those-4, result-6)
+amod(way-10, particular-9)
+nmod:from(result-6, way-10)
+nmod:in(produced-17, way-10)
+ref(way-10, which-12)
+amod(sign-15, propositional-14)
+nsubjpass(produced-17, sign-15)
+acl:relcl(way-10, produced-17)
+---
+qqroot(ROOT-0, possesses-3)
+det(proposition-2, A-1)
+punct(possesses-3, .-8)
+cc(essential-4, and-5)
+nsubj(possesses-3, proposition-2)
+amod(features-7, essential-4)
+conj:and(essential-4, accidental-6)
+amod(features-7, accidental-6)
+dobj(possesses-3, features-7)
+root(ROOT-0, those-4)
+cop(those-4, are-3)
+punct(those-4, .-18)
+case(way-10, from-7)
+det(way-10, the-8)
+case(which-12, in-11)
+det(sign-15, the-13)
+auxpass(produced-17, is-16)
+amod(features-2, Accidental-1)
+nsubj(those-4, features-2)
+nsubj(result-6, those-4)
+ref(those-4, that-5)
+acl:relcl(those-4, result-6)
+amod(way-10, particular-9)
+nmod:from(result-6, way-10)
+nmod:in(produced-17, way-10)
+ref(way-10, which-12)
+amod(sign-15, propositional-14)
+nsubjpass(produced-17, sign-15)
+acl:relcl(way-10, produced-17)
+root(ROOT-0, those-4)
+cop(those-4, are-3)
+punct(those-4, .-14)
+case(which-6, without-5)
+det(proposition-8, the-7)
+aux(express-11, could-9)
+amod(features-2, Essential-1)
+nsubj(those-4, features-2)
+nmod:without(express-11, those-4)
+ref(those-4, which-6)
+nsubj(express-11, proposition-8)
+neg(express-11, not-10)
+acl:relcl(those-4, express-11)
+nmod:poss(sense-13, its-12)
+dobj(express-11, sense-13)
+G[29, 32] [?1, ?2, ?3, ?4, Accidental1, Essential1, accidental6, essential4, express11, features2, features7, features2, its12, not10, particular9, possesses3, produced17, proposition2147483647, proposition2147483647, propositional14, result6, sense13, sign2147483647, that5, those4, those4, way2147483647, which12, which6]
+that5- ->those4
+features2-  : are ->those4
+result6-relcl->those4
+sense13- ->express11
+which12-  : in ->?2
+?3- ->possesses3
+?3-A->proposition2147483647
+which6-  : without ->those4
+Essential1- ->features2
+particular9- ->?2
+?4-  : could  : could ->express11
+which12- ->features2
+accidental6- ->features7
+those4- ->result6
+features2-  : are ->those4
+?2-from->result6
+essential4- ->features7
+features7- ->possesses3
+propositional14- ->?1
+?1-the->sign2147483647
+Accidental1- ->features2
+express11-relcl->those4
+accidental6-and->essential4
+not10- ->express11
+?4- ->features2
+those4-without->express11
+?4-the->proposition2147483647
+?1-  : is ->produced17
+its12-poss->sense13
+?2-the->way2147483647
+produced17-relcl->?2
+?2-in->produced17
+------CorefChainz
+CHAIN7-["A proposition" in sentence 1, "the proposition" in sentence 3, "its" in sentence 3]
+representative mention: "A proposition" in sentence 1

@@ -1,0 +1,156 @@
+ The general validity of logic might be called essential, in contrast with the accidental general validity of such propositions as 'All men are mortal'. Propositions like Russell's 'axiom of reducibility' are not logical propositions, and this explains our feeling that, even if they were true, their truth could only be the result of a fortunate accident.
+------CorefChainz
+CHAIN16-["All men" in sentence 1, "they" in sentence 2, "their" in sentence 2]
+representative mention: "All men" in sentence 1
+CHAIN12-["The general validity of logic" in sentence 1, "the accidental general validity of such propositions as ` All men are mortal '" in sentence 1, "this" in sentence 2]
+representative mention: "the accidental general validity of such propositions as ` All men are mortal '" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, called-8)
+det(validity-3, The-1)
+case(logic-5, of-4)
+aux(called-8, might-6)
+auxpass(called-8, be-7)
+punct(called-8, ,-10)
+punct(called-8, .-28)
+case(contrast-12, in-11)
+case(validity-17, with-13)
+det(validity-17, the-14)
+case(propositions-20, of-18)
+det(men-24, All-23)
+case(mortal-26, as-21)
+cop(mortal-26, are-25)
+punct(mortal-26, `-22)
+punct(mortal-26, '-27)
+amod(validity-3, general-2)
+nsubjpass(called-8, validity-3)
+nmod:of(validity-3, logic-5)
+xcomp(called-8, essential-9)
+nmod:in(called-8, contrast-12)
+amod(validity-17, accidental-15)
+amod(validity-17, general-16)
+nmod:with(contrast-12, validity-17)
+amod(propositions-20, such-19)
+nmod:of(validity-17, propositions-20)
+nsubj(mortal-26, men-24)
+acl:as(propositions-20, mortal-26)
+---
+qqroot(ROOT-0, called-8)
+det(validity-3, The-1)
+case(logic-5, of-4)
+aux(called-8, might-6)
+auxpass(called-8, be-7)
+punct(called-8, ,-10)
+punct(called-8, .-28)
+case(contrast-12, in-11)
+case(validity-17, with-13)
+det(validity-17, the-14)
+case(propositions-20, of-18)
+det(men-24, All-23)
+case(mortal-26, as-21)
+cop(mortal-26, are-25)
+punct(mortal-26, `-22)
+punct(mortal-26, '-27)
+amod(validity-3, general-2)
+nsubjpass(called-8, validity-3)
+nmod:of(validity-3, logic-5)
+xcomp(called-8, essential-9)
+nmod:in(called-8, contrast-12)
+amod(validity-17, accidental-15)
+amod(validity-17, general-16)
+nmod:with(contrast-12, validity-17)
+amod(propositions-20, such-19)
+nmod:of(validity-17, propositions-20)
+nsubj(mortal-26, men-24)
+acl:as(propositions-20, mortal-26)
+root(ROOT-0, propositions-13)
+punct(Propositions-1, '-9)
+case(Russell-3, 's-4)
+case(axiom-6, like-2)
+punct(axiom-6, `-5)
+case(reducibility-8, of-7)
+cc(propositions-13, and-15)
+cop(propositions-13, are-10)
+punct(propositions-13, .-39)
+punct(propositions-13, ,-14)
+cop(true-26, were-25)
+mark(true-26, if-23)
+aux(result-34, could-30)
+cop(result-34, be-32)
+det(result-34, the-33)
+mark(result-34, that-20)
+punct(result-34, ,-21)
+punct(result-34, ,-27)
+case(accident-38, of-35)
+det(accident-38, a-36)
+nsubj(propositions-13, Propositions-1)
+nmod:poss(axiom-6, Russell-3)
+nmod:like(Propositions-1, axiom-6)
+nmod:of(axiom-6, reducibility-8)
+neg(propositions-13, not-11)
+amod(propositions-13, logical-12)
+nsubj(explains-17, this-16)
+conj:and(propositions-13, explains-17)
+nmod:poss(feeling-19, our-18)
+dobj(explains-17, feeling-19)
+advmod(true-26, even-22)
+nsubj(true-26, they-24)
+advcl:if(result-34, true-26)
+nmod:poss(truth-29, their-28)
+nsubj(result-34, truth-29)
+advmod(result-34, only-31)
+ccomp(feeling-19, result-34)
+amod(accident-38, fortunate-37)
+nmod:of(result-34, accident-38)
+G[38, 39] [?1, ?2, ?3, ?4, ?5, Propositions1, Russell3, accident2147483647, accidental15, axiom6, called8, contrast12, essential9, even22, explains17, feeling19, fortunate37, general16, general2, logic5, logical12, men2147483647, mortal26, not11, only31, our18, propositions20, propositions13, reducibility8, result2147483647, such19, their28, they24, this16, true26, truth29, validity2147483647, validity2147483647]
+mortal26-as->propositions20
+even22- ->true26
+they24-  : were ->true26
+essential9-  : be ->called8
+contrast12-in->called8
+their28- ->they24
+?4-  : are ->mortal26
+?5-  : might  : might ->called8
+true26-if->?2
+this16- ->explains17
+?1-a->accident2147483647
+such19- ->propositions20
+only31-  : be ->?2
+fortunate37- ->?1
+Propositions1- ->propositions13
+logical12- ->propositions13
+?1-of->?2
+?4-All->men2147483647
+truth29-  : could  : could ->?2
+their28-poss->truth29
+Russell3-poss : 's ->axiom6
+?3-the->validity2147483647
+?2-  : that ->feeling19
+Russell3- ->?3
+logic5-of->?5
+our18-poss->feeling19
+not11-  : are ->propositions13
+explains17-and->propositions13
+?2-the->result2147483647
+?3-with->contrast12
+accidental15- ->?3
+axiom6-like->Propositions1
+general16- ->?3
+?5-The->validity2147483647
+propositions20-of->?3
+reducibility8-of->axiom6
+feeling19- ->explains17
+general2- ->?5
+this16- ->?3
+------CorefChainz
+CHAIN16-["All men" in sentence 1, "they" in sentence 2, "their" in sentence 2]
+representative mention: "All men" in sentence 1
+CHAIN12-["The general validity of logic" in sentence 1, "the accidental general validity of such propositions as ` All men are mortal '" in sentence 1, "this" in sentence 2]
+representative mention: "the accidental general validity of such propositions as ` All men are mortal '" in sentence 1

@@ -1,0 +1,241 @@
+ It is possible to imagine a world in which the axiom of reducibility is not valid. It is clear, however, that logic has nothing to do with the question whether our world really is like that or not.
+------CorefChainz
+CHAIN4-["the axiom of reducibility" in sentence 1, "It" in sentence 2]
+representative mention: "the axiom of reducibility" in sentence 1
+CHAIN9-["a world in which the axiom of reducibility is not valid" in sentence 1, "our world" in sentence 2]
+representative mention: "a world in which the axiom of reducibility is not valid" in sentence 1
+It-PRP 
+is-VBZ 
+possible-JJ 
+to-TO 
+imagine-VB 
+a-DT 
+world-NN 
+in-IN 
+which-WDT 
+the-DT 
+axiom-NN 
+of-IN 
+reducibility-NN 
+is-VBZ 
+not-RB 
+valid-JJ 
+.-. 
+It-PRP 
+is-VBZ 
+clear-JJ 
+,-, 
+however-RB 
+,-, 
+that-IN 
+logic-NN 
+has-VBZ 
+nothing-NN 
+to-TO 
+do-VB 
+with-IN 
+the-DT 
+question-NN 
+whether-IN 
+our-PRP$ 
+world-NN 
+really-RB 
+is-VBZ 
+like-IN 
+that-DT 
+or-CC 
+not-RB 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> It
+		 	-> VP 	-> VBZ 	-> is
+	 	-> ADJP 	-> JJ 	-> possible
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> imagine
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> world
+		 	-> SBAR 	-> WHPP 	-> IN 	-> in
+	 	-> WHNP 	-> WDT 	-> which
+			 	-> S 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> axiom
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> reducibility
+				 	-> VP 	-> VBZ 	-> is
+	 	-> RB 	-> not
+	 	-> ADJP 	-> JJ 	-> valid
+			 	-> . 	-> .
+				 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> It
+		 	-> VP 	-> VBZ 	-> is
+	 	-> ADJP 	-> JJ 	-> clear
+		 	-> , 	-> ,
+	 	-> ADVP 	-> RB 	-> however
+		 	-> , 	-> ,
+	 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> NN 	-> logic
+		 	-> VP 	-> VBZ 	-> has
+	 	-> NP 	-> NN 	-> nothing
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> do
+	 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> question
+													 	-> SBAR 	-> IN 	-> whether
+	 	-> S 	-> NP 	-> PRP$ 	-> our
+	 	-> NN 	-> world
+		 	-> ADVP 	-> RB 	-> really
+		 	-> VP 	-> VBZ 	-> is
+	 	-> PP 	-> IN 	-> like
+	 	-> NP 	-> DT 	-> that
+					 	-> CC 	-> or
+	 	-> RB 	-> not
+							 	-> . 	-> .
+			
+Dependensee repr
+nsubj(possible-3, It-1)
+nsubj:xsubj(imagine-5, It-1)
+cop(possible-3, is-2)
+root(ROOT-0, possible-3)
+mark(imagine-5, to-4)
+xcomp(possible-3, imagine-5)
+det(world-7, a-6)
+dobj(imagine-5, world-7)
+nmod:in(valid-16, world-7)
+case(which-9, in-8)
+ref(world-7, which-9)
+det(axiom-11, the-10)
+nsubj(valid-16, axiom-11)
+case(reducibility-13, of-12)
+nmod:of(axiom-11, reducibility-13)
+cop(valid-16, is-14)
+neg(valid-16, not-15)
+acl:relcl(world-7, valid-16)
+nsubj(clear-20, It-18)
+cop(clear-20, is-19)
+dep(imagine-5, clear-20)
+advmod(clear-20, however-22)
+mark(has-26, that-24)
+nsubj(has-26, logic-25)
+ccomp(clear-20, has-26)
+dobj(has-26, nothing-27)
+mark(do-29, to-28)
+acl(nothing-27, do-29)
+case(question-32, with-30)
+det(question-32, the-31)
+nmod:with(do-29, question-32)
+mark(that-39, whether-33)
+nmod:poss(world-35, our-34)
+nsubj(that-39, world-35)
+advmod(that-39, really-36)
+cop(that-39, is-37)
+case(that-39, like-38)
+ccomp(imagine-5, that-39)
+cc(that-39, or-40)
+ccomp(imagine-5, not-41)
+conj:or(that-39, not-41)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, possible-3)
+cop(possible-3, is-2)
+punct(possible-3, .-17)
+mark(imagine-5, to-4)
+det(world-7, a-6)
+case(which-9, in-8)
+det(axiom-11, the-10)
+case(reducibility-13, of-12)
+cop(valid-16, is-14)
+nsubj(possible-3, It-1)
+nsubj:xsubj(imagine-5, It-1)
+xcomp(possible-3, imagine-5)
+dobj(imagine-5, world-7)
+nmod:in(valid-16, world-7)
+ref(world-7, which-9)
+nsubj(valid-16, axiom-11)
+nmod:of(axiom-11, reducibility-13)
+neg(valid-16, not-15)
+acl:relcl(world-7, valid-16)
+---
+qqroot(ROOT-0, possible-3)
+cop(possible-3, is-2)
+punct(possible-3, .-17)
+mark(imagine-5, to-4)
+det(world-7, a-6)
+case(which-9, in-8)
+det(axiom-11, the-10)
+case(reducibility-13, of-12)
+cop(valid-16, is-14)
+nsubj(possible-3, It-1)
+nsubj:xsubj(imagine-5, It-1)
+xcomp(possible-3, imagine-5)
+dobj(imagine-5, world-7)
+nmod:in(valid-16, world-7)
+ref(world-7, which-9)
+nsubj(valid-16, axiom-11)
+nmod:of(axiom-11, reducibility-13)
+neg(valid-16, not-15)
+acl:relcl(world-7, valid-16)
+root(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, ,-4)
+punct(clear-3, ,-6)
+punct(clear-3, .-25)
+mark(has-9, that-7)
+mark(do-12, to-11)
+case(question-15, with-13)
+det(question-15, the-14)
+case(that-22, like-21)
+cc(that-22, or-23)
+cop(that-22, is-20)
+mark(that-22, whether-16)
+nsubj(clear-3, It-1)
+advmod(clear-3, however-5)
+nsubj(has-9, logic-8)
+ccomp(clear-3, has-9)
+dobj(has-9, nothing-10)
+acl:to(nothing-10, do-12)
+nmod:with(do-12, question-15)
+nmod:poss(world-18, our-17)
+nsubj(that-22, world-18)
+advmod(that-22, really-19)
+ccomp(question-15, that-22)
+ccomp(question-15, not-24)
+conj:or(that-22, not-24)
+G[25, 28] [?#1, ?#2, ?#3, It, It, axiom, clear, do, has, however, imagine, logic, not, not, nothing, our, possible, question, really, reducibility, that, valid, which, world, world]
+?#1- ->imagine
+?#3-with->do
+It-  : is ->clear
+valid-relcl->?#1
+really-  : is  : like ->that
+do-to->nothing
+however- ->clear
+?#3-the->question
+our-poss->world
+?#1-a->world
+?#2- ->valid
+not- ->?#3
+which-  : in ->?#1
+not-or->that
+world- ->?#1
+?#2-the->axiom
+imagine-  : to ->possible
+reducibility-of->?#2
+It- ->?#2
+not-  : is ->valid
+?#1-in->valid
+that-  : whether ->?#3
+nothing- ->has
+world- ->that
+It-  : is ->possible
+logic-  : that ->has
+It-xsubj->imagine
+has- ->clear
+------CorefChainz
+CHAIN4-["the axiom of reducibility" in sentence 1, "It" in sentence 2]
+representative mention: "the axiom of reducibility" in sentence 1
+CHAIN9-["a world in which the axiom of reducibility is not valid" in sentence 1, "our world" in sentence 2]
+representative mention: "a world in which the axiom of reducibility is not valid" in sentence 1

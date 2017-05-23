@@ -1,0 +1,40 @@
+ Each item can be the case or not the case while everything else remains the same.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, case-6)
+det(item-2, Each-1)
+aux(case-6, can-3)
+cc(case-6, or-7)
+cop(case-6, be-4)
+det(case-6, the-5)
+punct(case-6, .-17)
+det(case-10, the-9)
+mark(remains-14, while-11)
+det(same-16, the-15)
+nsubj(case-6, item-2)
+neg(case-10, not-8)
+conj:or(case-6, case-10)
+nsubj(remains-14, everything-12)
+amod(everything-12, else-13)
+advcl:while(case-6, remains-14)
+xcomp(remains-14, same-16)
+G[12, 11] [?1, ?2, ?3, ?4, case2147483647, case2147483647, else13, everything12, item2147483647, not8, remains14, same2147483647]
+else13- ->everything12
+?3-Each->item2147483647
+not8- ->?2
+?1- ->remains14
+everything12- ->remains14
+?1-the->same2147483647
+?2-or->?4
+remains14-while->?4
+?2-the->case2147483647
+?3-  : can  : be ->?4
+?4-the->case2147483647
+------CorefChainz

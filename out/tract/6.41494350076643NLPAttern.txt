@@ -1,0 +1,22 @@
+ All propositions are of equal value.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, value-6)
+det(propositions-2, All-1)
+case(value-6, of-4)
+cop(value-6, are-3)
+punct(value-6, .-7)
+nsubj(value-6, propositions-2)
+amod(value-6, equal-5)
+G[4, 3] [?#1, equal, propositions, value]
+?#1-All->propositions
+equal-  : of ->value
+?#1-  : are ->value
+------CorefChainz

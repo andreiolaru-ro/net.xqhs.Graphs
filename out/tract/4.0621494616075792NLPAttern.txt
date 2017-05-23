@@ -1,0 +1,289 @@
+ Can we not make ourselves understood with false propositions just as we have done up till now with true ones?--So long as it is known that they are meant to be false.--No! For a proposition is true if we use it to say that things stand in a certain way, and they do; and if by 'p' we mean Pp and things stand as we mean that they do, then, construed in the new way, 'p' is true and not false.
+------CorefChainz
+CHAIN20-["we" in sentence 1, "ourselves" in sentence 1, "we" in sentence 1, "we" in sentence 4, "we" in sentence 4, "we" in sentence 4]
+representative mention: "we" in sentence 1
+CHAIN21-["they" in sentence 4, "they" in sentence 4]
+representative mention: "they" in sentence 4
+CHAIN12-["a proposition" in sentence 4, "it" in sentence 4]
+representative mention: "a proposition" in sentence 4
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, make-4)
+aux(make-4, Can-1)
+punct(make-4, ?-21)
+case(propositions-9, with-7)
+aux(done-14, have-13)
+mark(done-14, as-11)
+case(now-17, till-16)
+case(ones-20, with-18)
+nsubj(make-4, we-2)
+neg(make-4, not-3)
+nsubj(understood-6, ourselves-5)
+xcomp(make-4, understood-6)
+amod(propositions-9, false-8)
+nmod:with(understood-6, propositions-9)
+advmod(done-14, just-10)
+nsubj(done-14, we-12)
+advcl:as(understood-6, done-14)
+compound:prt(done-14, up-15)
+nmod:till(done-14, now-17)
+amod(ones-20, true-19)
+nmod:with(now-17, ones-20)
+---
+qqroot(ROOT-0, make-4)
+aux(make-4, Can-1)
+punct(make-4, ?-21)
+case(propositions-9, with-7)
+aux(done-14, have-13)
+mark(done-14, as-11)
+case(now-17, till-16)
+case(ones-20, with-18)
+nsubj(make-4, we-2)
+neg(make-4, not-3)
+nsubj(understood-6, ourselves-5)
+xcomp(make-4, understood-6)
+amod(propositions-9, false-8)
+nmod:with(understood-6, propositions-9)
+advmod(done-14, just-10)
+nsubj(done-14, we-12)
+advcl:as(understood-6, done-14)
+compound:prt(done-14, up-15)
+nmod:till(done-14, now-17)
+amod(ones-20, true-19)
+nmod:with(now-17, ones-20)
+root(ROOT-0, long-3)
+punct(long-3, .-15)
+punct(long-3, ---1)
+auxpass(known-7, is-6)
+mark(known-7, as-4)
+auxpass(meant-11, are-10)
+mark(meant-11, that-8)
+cop(false-14, be-13)
+mark(false-14, to-12)
+advmod(long-3, So-2)
+nsubjpass(known-7, it-5)
+advcl:as(long-3, known-7)
+nsubjpass(meant-11, they-9)
+nsubj:xsubj(false-14, they-9)
+ccomp(known-7, meant-11)
+xcomp(meant-11, false-14)
+---
+qqroot(ROOT-0, make-4)
+aux(make-4, Can-1)
+punct(make-4, ?-21)
+case(propositions-9, with-7)
+aux(done-14, have-13)
+mark(done-14, as-11)
+case(now-17, till-16)
+case(ones-20, with-18)
+nsubj(make-4, we-2)
+neg(make-4, not-3)
+nsubj(understood-6, ourselves-5)
+xcomp(make-4, understood-6)
+amod(propositions-9, false-8)
+nmod:with(understood-6, propositions-9)
+advmod(done-14, just-10)
+nsubj(done-14, we-12)
+advcl:as(understood-6, done-14)
+compound:prt(done-14, up-15)
+nmod:till(done-14, now-17)
+amod(ones-20, true-19)
+nmod:with(now-17, ones-20)
+root(ROOT-0, long-3)
+punct(long-3, .-15)
+punct(long-3, ---1)
+auxpass(known-7, is-6)
+mark(known-7, as-4)
+auxpass(meant-11, are-10)
+mark(meant-11, that-8)
+cop(false-14, be-13)
+mark(false-14, to-12)
+advmod(long-3, So-2)
+nsubjpass(known-7, it-5)
+advcl:as(long-3, known-7)
+nsubjpass(meant-11, they-9)
+nsubj:xsubj(false-14, they-9)
+ccomp(known-7, meant-11)
+xcomp(meant-11, false-14)
+root(ROOT-0, No-2)
+punct(No-2, ---1)
+punct(No-2, !-3)
+---
+qqroot(ROOT-0, make-4)
+aux(make-4, Can-1)
+punct(make-4, ?-21)
+case(propositions-9, with-7)
+aux(done-14, have-13)
+mark(done-14, as-11)
+case(now-17, till-16)
+case(ones-20, with-18)
+nsubj(make-4, we-2)
+neg(make-4, not-3)
+nsubj(understood-6, ourselves-5)
+xcomp(make-4, understood-6)
+amod(propositions-9, false-8)
+nmod:with(understood-6, propositions-9)
+advmod(done-14, just-10)
+nsubj(done-14, we-12)
+advcl:as(understood-6, done-14)
+compound:prt(done-14, up-15)
+nmod:till(done-14, now-17)
+amod(ones-20, true-19)
+nmod:with(now-17, ones-20)
+root(ROOT-0, long-3)
+punct(long-3, .-15)
+punct(long-3, ---1)
+auxpass(known-7, is-6)
+mark(known-7, as-4)
+auxpass(meant-11, are-10)
+mark(meant-11, that-8)
+cop(false-14, be-13)
+mark(false-14, to-12)
+advmod(long-3, So-2)
+nsubjpass(known-7, it-5)
+advcl:as(long-3, known-7)
+nsubjpass(meant-11, they-9)
+nsubj:xsubj(false-14, they-9)
+ccomp(known-7, meant-11)
+xcomp(meant-11, false-14)
+root(ROOT-0, No-2)
+punct(No-2, ---1)
+punct(No-2, !-3)
+root(ROOT-0, true-5)
+case(proposition-3, For-1)
+det(proposition-3, a-2)
+cc(true-5, and-20)
+cc(true-5, and-24)
+cop(true-5, is-4)
+punct(true-5, .-59)
+punct(true-5, ,-19)
+punct(true-5, ;-23)
+mark(use-8, if-6)
+mark(say-11, to-10)
+mark(stand-14, that-12)
+case(way-18, in-15)
+det(way-18, a-16)
+case(p-28, by-26)
+punct(p-28, `-27)
+mark(mean-31, if-25)
+punct(mean-31, '-29)
+cc(Pp-32, and-33)
+mark(mean-38, as-36)
+punct(mean-38, ,-42)
+punct(mean-38, ,-44)
+mark(do-41, that-39)
+case(way-49, in-46)
+det(way-49, the-47)
+cc(true-55, and-56)
+cop(true-55, is-54)
+punct(true-55, ,-50)
+punct(true-55, `-51)
+punct(true-55, '-53)
+nmod:for(true-5, proposition-3)
+nsubj(use-8, we-7)
+advcl:if(true-5, use-8)
+dobj(use-8, it-9)
+nsubj:xsubj(say-11, it-9)
+xcomp(use-8, say-11)
+nsubj(stand-14, things-13)
+ccomp(say-11, stand-14)
+amod(way-18, certain-17)
+nmod:in(stand-14, way-18)
+nsubj(do-22, they-21)
+conj:and(true-5, do-22)
+nmod:by(mean-31, p-28)
+nsubj(mean-31, we-30)
+advcl:if(true-55, mean-31)
+nsubj(stand-35, Pp-32)
+conj:and(Pp-32, things-34)
+nsubj(stand-35, things-34)
+ccomp(mean-31, stand-35)
+nsubj(mean-38, we-37)
+advcl:as(stand-35, mean-38)
+nsubj(do-41, they-40)
+ccomp(mean-38, do-41)
+advmod(mean-38, then-43)
+dep(mean-38, construed-45)
+amod(way-49, new-48)
+nmod:in(construed-45, way-49)
+nsubj(true-55, p-52)
+nsubj(false-58, p-52)
+conj:and(true-5, true-55)
+neg(false-58, not-57)
+conj:and(true-5, false-58)
+conj:and(true-55, false-58)
+G[55, 58] [?1, ?2, ?3, No2, Pp32, So2, certain17, construed45, do22, do41, done14, false58, false8, false14, it9, it5, just10, known7, long3, make4, mean38, mean31, meant11, new48, not3, not57, now17, ones20, ourselves5, p28, p52, proposition2147483647, propositions9, say11, stand35, stand14, then43, they9, they21, they40, things13, things34, true55, true19, true5, understood6, up15, use8, way2147483647, way2147483647, we7, we2, we37, we30, we12]
+not3- ->make4
+not57- ->false58
+just10- ->done14
+understood6- ->make4
+mean31-if->true55
+now17-till->done14
+say11- ->use8
+false14-  : to  : be ->meant11
+use8-if->true5
+do41-  : that  : that ->mean38
+they9-xsubj->false14
+known7-as->long3
+they21- ->do22
+false58-and->true55
+?1-the->way2147483647
+?3-for : For  : is ->true5
+we7- ->use8
+stand35- ->mean31
+we30- ->mean31
+they40- ->do41
+stand14-  : that  : that ->say11
+things34- ->stand35
+done14-as->understood6
+Pp32- ->stand35
+?1-in->construed45
+So2- ->long3
+false58-and->true5
+it9-xsubj : to ->say11
+?3-a->proposition2147483647
+it9- ->use8
+new48- ->?1
+p28-by->mean31
+true55-and->true5
+?2-in->stand14
+p52-  : is ->true55
+p52- ->false58
+certain17- ->?2
+it5-  : is ->known7
+false8- ->propositions9
+propositions9-with->understood6
+things34-and->Pp32
+we12-  : have ->done14
+they9-  : are ->meant11
+meant11-  : that  : that ->known7
+up15-prt->done14
+we37- ->mean38
+ones20-with->now17
+it9- ->not3
+construed45- ->mean38
+do22-and->true5
+?2-a->way2147483647
+then43- ->mean38
+ourselves5- ->understood6
+true19- ->ones20
+things13- ->stand14
+mean38-as->stand35
+it5- ->So2
+we2-  : Can ->make4
+------CorefChainz
+CHAIN20-["we" in sentence 1, "ourselves" in sentence 1, "we" in sentence 1, "we" in sentence 4, "we" in sentence 4, "we" in sentence 4]
+representative mention: "we" in sentence 1
+CHAIN21-["they" in sentence 4, "they" in sentence 4]
+representative mention: "they" in sentence 4
+CHAIN12-["a proposition" in sentence 4, "it" in sentence 4]
+representative mention: "a proposition" in sentence 4

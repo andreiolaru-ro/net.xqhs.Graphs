@@ -1,0 +1,37 @@
+ A picture has logico-pictorial form in common with what it depicts.
+------CorefChainz
+CHAIN2-["A picture" in sentence 1, "it" in sentence 1]
+representative mention: "A picture" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, has-3)
+det(picture-2, A-1)
+punct(has-3, .-12)
+case(common-7, in-6)
+mark(depicts-11, with-8)
+nsubj(has-3, picture-2)
+amod(form-5, logico-pictorial-4)
+dobj(has-3, form-5)
+nmod:in(has-3, common-7)
+dobj(depicts-11, what-9)
+nsubj(depicts-11, it-10)
+acl:with(common-7, depicts-11)
+G[9, 9] [?1, common7, depicts11, form5, has3, it10, logico-pictorial4, picture2147483647, what9]
+?1-A->picture2147483647
+logico-pictorial4- ->form5
+it10- ->?1
+what9- ->depicts11
+form5- ->has3
+it10- ->depicts11
+?1- ->has3
+common7-in->has3
+depicts11-with->common7
+------CorefChainz
+CHAIN2-["A picture" in sentence 1, "it" in sentence 1]
+representative mention: "A picture" in sentence 1

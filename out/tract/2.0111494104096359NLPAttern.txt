@@ -1,0 +1,84 @@
+ It is essential to things that they should be possible constituents of states of affairs.
+------CorefChainz
+It-PRP 
+is-VBZ 
+essential-JJ 
+to-TO 
+things-NNS 
+that-IN 
+they-PRP 
+should-MD 
+be-VB 
+possible-JJ 
+constituents-NNS 
+of-IN 
+states-NNS 
+of-IN 
+affairs-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> It
+		 	-> VP 	-> VBZ 	-> is
+	 	-> ADJP 	-> JJ 	-> essential
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NNS 	-> things
+				 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> MD 	-> should
+	 	-> VP 	-> VB 	-> be
+	 	-> NP 	-> NP 	-> JJ 	-> possible
+	 	-> NNS 	-> constituents
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NNS 	-> states
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NNS 	-> affairs
+											 	-> . 	-> .
+			
+Dependensee repr
+nsubj(essential-3, It-1)
+cop(essential-3, is-2)
+root(ROOT-0, essential-3)
+case(things-5, to-4)
+nmod:to(essential-3, things-5)
+mark(constituents-11, that-6)
+nsubj(constituents-11, they-7)
+aux(constituents-11, should-8)
+cop(constituents-11, be-9)
+amod(constituents-11, possible-10)
+ccomp(essential-3, constituents-11)
+case(states-13, of-12)
+nmod:of(constituents-11, states-13)
+case(affairs-15, of-14)
+nmod:of(states-13, affairs-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, essential-3)
+cop(essential-3, is-2)
+punct(essential-3, .-16)
+case(things-5, to-4)
+aux(constituents-11, should-8)
+cop(constituents-11, be-9)
+mark(constituents-11, that-6)
+case(states-13, of-12)
+case(affairs-15, of-14)
+nsubj(essential-3, It-1)
+nmod:to(essential-3, things-5)
+nsubj(constituents-11, they-7)
+amod(constituents-11, possible-10)
+ccomp(things-5, constituents-11)
+nmod:of(constituents-11, states-13)
+nmod:of(states-13, affairs-15)
+G[8, 7] [It, affairs, constituents, essential, possible, states, they, things]
+possible-  : be ->constituents
+constituents-  : that  : that ->things
+It-  : is ->essential
+things-to->essential
+states-of->constituents
+affairs-of->states
+they-  : should ->constituents
+------CorefChainz

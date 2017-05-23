@@ -1,0 +1,69 @@
+ Roughly speaking, to say of two things that they are identical is nonsense, and to say of one thing that it is identical with itself is to say nothing at all.
+------CorefChainz
+CHAIN7-["one thing" in sentence 1, "it" in sentence 1, "itself" in sentence 1]
+representative mention: "one thing" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, speaking-2)
+punct(speaking-2, .-34)
+cc(say-5, and-16)
+mark(say-5, to-4)
+punct(say-5, ,-3)
+punct(say-5, ,-15)
+case(things-8, of-6)
+cop(identical-12, are-11)
+mark(identical-12, things-8)
+cop(nonsense-14, is-13)
+mark(say-18, to-17)
+case(thing-21, of-19)
+cop(identical-25, is-24)
+mark(identical-25, that-22)
+case(itself-27, with-26)
+mark(say-30, to-29)
+case(all-33, at-32)
+advmod(speaking-2, Roughly-1)
+xcomp(speaking-2, say-5)
+nummod(things-8, two-7)
+nmod:of(say-5, things-8)
+ref(things-8, that-9)
+nsubj(identical-12, they-10)
+csubj(nonsense-14, identical-12)
+acl:relcl(things-8, nonsense-14)
+xcomp(speaking-2, say-18)
+conj:and(say-5, say-18)
+nummod(thing-21, one-20)
+nmod:of(say-18, thing-21)
+nsubj(identical-25, it-23)
+csubj(is-28, identical-25)
+nmod:with(identical-25, itself-27)
+ccomp(say-18, is-28)
+xcomp(is-28, say-30)
+dobj(say-30, nothing-31)
+nmod:at(nothing-31, all-33)
+G[18, 17] [Roughly1, all33, identical12, identical25, is28, it23, itself27, nonsense14, nothing31, one20, say30, say5, say18, speaking2, that9, they10, thing21, two7]
+itself27-with->identical25
+it23- ->thing21
+say5-  : to ->speaking2
+say30-  : to ->is28
+say18-and->say5
+nothing31- ->say30
+say18- ->speaking2
+Roughly1- ->speaking2
+itself27- ->thing21
+all33-at->nothing31
+one20- ->thing21
+is28- ->say18
+identical25- ->is28
+thing21-of : to ->say18
+identical12-  : is ->nonsense14
+it23-  : that  : is ->identical25
+they10-  : things  : are ->identical12
+------CorefChainz
+CHAIN7-["one thing" in sentence 1, "it" in sentence 1, "itself" in sentence 1]
+representative mention: "one thing" in sentence 1

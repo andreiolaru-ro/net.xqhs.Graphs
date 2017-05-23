@@ -1,0 +1,90 @@
+ So instead of '(-----T)(E, ....)', I write 'N(E)'. N(E) is the negation of all the values of the propositional variable E.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, So-1)
+punct(So-1, .-24)
+mwe(instead-2, of-3)
+punct(T-7, -LRB--5)
+punct(T-7, -RRB--8)
+case(E-10, instead-2)
+punct(E-10, '-4)
+punct(E-10, -LRB--9)
+punct(E-10, ,-11)
+punct(E-10, ...-12)
+punct(E-10, -RRB--13)
+punct(E-10, '-14)
+punct(E-10, ,-15)
+punct(write-17, `-18)
+punct(write-17, '-23)
+punct(E-21, -LRB--20)
+punct(E-21, -RRB--22)
+nummod(T-7, ------6)
+appos(E-10, T-7)
+nmod:instead_of(So-1, E-10)
+nsubj(write-17, I-16)
+acl:relcl(E-10, write-17)
+dobj(write-17, N-19)
+appos(N-19, E-21)
+---
+qqroot(ROOT-0, So-1)
+punct(So-1, .-24)
+mwe(instead-2, of-3)
+punct(T-7, -LRB--5)
+punct(T-7, -RRB--8)
+case(E-10, instead-2)
+punct(E-10, '-4)
+punct(E-10, -LRB--9)
+punct(E-10, ,-11)
+punct(E-10, ...-12)
+punct(E-10, -RRB--13)
+punct(E-10, '-14)
+punct(E-10, ,-15)
+punct(write-17, `-18)
+punct(write-17, '-23)
+punct(E-21, -LRB--20)
+punct(E-21, -RRB--22)
+nummod(T-7, ------6)
+appos(E-10, T-7)
+nmod:instead_of(So-1, E-10)
+nsubj(write-17, I-16)
+acl:relcl(E-10, write-17)
+dobj(write-17, N-19)
+appos(N-19, E-21)
+root(ROOT-0, negation-7)
+punct(E-3, -RRB--4)
+punct(E-3, -LRB--2)
+cop(negation-7, is-5)
+det(negation-7, the-6)
+case(values-11, of-8)
+det(values-11, the-10)
+case(E.-16, of-12)
+det(E.-16, the-13)
+nsubj(negation-7, N-1)
+appos(N-1, E-3)
+det:predet(values-11, all-9)
+nmod:of(negation-7, values-11)
+amod(E.-16, propositional-14)
+amod(E.-16, variable-15)
+nmod:of(values-11, E.-16)
+G[15, 12] [?1, ?2, ?3, E21, E3, E10, E.2147483647, N19, N1, So1, T7, instead of2, negation2147483647, values2147483647, write17]
+?1-the->negation2147483647
+N19- ->write17
+?2-of->?3
+?3-of->?1
+?3-the->values2147483647
+N1-  : is ->?1
+E21- ->N19
+E10-instead_of : instead of ->So1
+write17-relcl->E10
+E3- ->N1
+T7- ->E10
+?2-the->E.2147483647
+------CorefChainz

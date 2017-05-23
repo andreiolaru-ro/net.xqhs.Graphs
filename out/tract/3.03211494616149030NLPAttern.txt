@@ -1,0 +1,69 @@
+ Though a state of affairs that would contravene the laws of physics can be represented by us spatially, one that would contravene the laws of geometry cannot.
+------CorefChainz
+CHAIN6-["the laws of physics" in sentence 1, "the laws of geometry" in sentence 1]
+representative mention: "the laws of physics" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, can-28)
+det(state-3, a-2)
+case(affairs-5, of-4)
+aux(contravene-8, would-7)
+det(laws-10, the-9)
+case(physics-12, of-11)
+aux(represented-15, can-13)
+auxpass(represented-15, be-14)
+mark(represented-15, Though-1)
+case(us-17, by-16)
+aux(contravene-23, would-22)
+det(laws-25, the-24)
+case(geometry-27, of-26)
+punct(can-28, ,-19)
+punct(can-28, .-30)
+nsubj(contravene-8, state-3)
+nsubjpass(represented-15, state-3)
+nmod:of(state-3, affairs-5)
+ref(state-3, that-6)
+acl:relcl(state-3, contravene-8)
+dobj(contravene-8, laws-10)
+nmod:of(laws-10, physics-12)
+advcl:though(can-28, represented-15)
+nmod:agent(represented-15, us-17)
+advmod(represented-15, spatially-18)
+nsubj(contravene-23, one-20)
+nsubj(can-28, one-20)
+ref(one-20, that-21)
+acl:relcl(one-20, contravene-23)
+dobj(contravene-23, laws-25)
+nmod:of(laws-25, geometry-27)
+neg(can-28, not-29)
+G[19, 21] [?1, ?2, ?3, affairs5, can28, contravene23, contravene8, geometry27, laws2147483647, laws2147483647, not29, one20, physics12, represented15, spatially18, state2147483647, that21, that6, us17]
+geometry27-of->?3
+one20- ->can28
+?3- ->contravene23
+?2- ->contravene8
+not29- ->can28
+contravene8-relcl->?2
+?3- ->?1
+?1-  : would ->contravene8
+one20- ->contravene23
+?2-a->state2147483647
+?3-the->laws2147483647
+us17-agent : can  : be  : by ->represented15
+represented15-though->can28
+spatially18- ->represented15
+that21- ->one20
+contravene23-relcl : would  : would ->one20
+?1-the->laws2147483647
+that6- ->?2
+affairs5-of->?2
+?2-  : Though ->represented15
+physics12-of->?1
+------CorefChainz
+CHAIN6-["the laws of physics" in sentence 1, "the laws of geometry" in sentence 1]
+representative mention: "the laws of physics" in sentence 1

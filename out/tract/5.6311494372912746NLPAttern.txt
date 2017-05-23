@@ -1,0 +1,292 @@
+ There is no such thing as the subject that thinks or entertains ideas. If I wrote a book called The World as l found it , I should have to include a report on my body, and should have to say which parts were subordinate to my will, and which were not, etc., this being a method of isolating the subject, or rather of showing that in an important sense there is no subject; for it alone could not be mentioned in that book.--
+------CorefChainz
+CHAIN17-["the subject that thinks or entertains ideas" in sentence 1, "the subject" in sentence 2]
+representative mention: "the subject that thinks or entertains ideas" in sentence 1
+CHAIN21-["a book called The World" in sentence 2, "it" in sentence 2, "it" in sentence 2, "that book" in sentence 2]
+representative mention: "a book called The World" in sentence 2
+CHAIN11-["I" in sentence 2, "I" in sentence 2, "my" in sentence 2, "my" in sentence 2]
+representative mention: "I" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-2)
+punct(is-2, .-14)
+case(subject-8, as-6)
+det(subject-8, the-7)
+cc(thinks-10, or-11)
+expl(is-2, There-1)
+neg(thing-5, no-3)
+amod(thing-5, such-4)
+nsubj(is-2, thing-5)
+nmod:as(thing-5, subject-8)
+nsubj(thinks-10, subject-8)
+nsubj(entertains-12, subject-8)
+ref(subject-8, that-9)
+acl:relcl(subject-8, thinks-10)
+acl:relcl(subject-8, entertains-12)
+conj:or(thinks-10, entertains-12)
+dobj(thinks-10, ideas-13)
+---
+qqroot(ROOT-0, is-2)
+punct(is-2, .-14)
+case(subject-8, as-6)
+det(subject-8, the-7)
+cc(thinks-10, or-11)
+expl(is-2, There-1)
+neg(thing-5, no-3)
+amod(thing-5, such-4)
+nsubj(is-2, thing-5)
+nmod:as(thing-5, subject-8)
+nsubj(thinks-10, subject-8)
+nsubj(entertains-12, subject-8)
+ref(subject-8, that-9)
+acl:relcl(subject-8, thinks-10)
+acl:relcl(subject-8, entertains-12)
+conj:or(thinks-10, entertains-12)
+dobj(thinks-10, ideas-13)
+root(ROOT-0, have-16)
+mark(wrote-3, If-1)
+det(book-5, a-4)
+det(World-8, The-7)
+mark(found-11, as-9)
+aux(have-16, should-15)
+cc(have-16, and-25)
+punct(have-16, ;-67)
+punct(have-16, ,-24)
+punct(have-16, ,-13)
+punct(have-16, .-78)
+mark(include-18, to-17)
+det(report-20, a-19)
+case(body-23, on-21)
+aux(have-27, should-26)
+mark(say-29, to-28)
+det(parts-31, which-30)
+cop(subordinate-33, were-32)
+case(will-36, to-34)
+cc(will-36, and-38)
+punct(will-36, ,-37)
+cop(method-48, were-40)
+cop(method-48, being-46)
+det(method-48, a-47)
+punct(method-48, ,-42)
+punct(method-48, ,-44)
+mark(isolating-50, of-49)
+cc(subject-52, or-54)
+det(subject-52, the-51)
+punct(subject-52, ,-53)
+mwe(rather-55, of-56)
+mark(showing-57, rather-55)
+case(sense-62, in-59)
+det(sense-62, an-60)
+mark(is-64, that-58)
+case(it-69, for-68)
+aux(mentioned-74, could-71)
+auxpass(mentioned-74, be-73)
+case(book-77, in-75)
+det(book-77, that-76)
+nsubj(wrote-3, I-2)
+advcl:if(have-16, wrote-3)
+dobj(wrote-3, book-5)
+acl(book-5, called-6)
+xcomp(called-6, World-8)
+nsubj(found-11, l-10)
+advcl:as(wrote-3, found-11)
+dobj(found-11, it-12)
+nsubj(have-16, I-14)
+nsubj:xsubj(include-18, I-14)
+nsubj(have-27, I-14)
+nsubj:xsubj(say-29, I-14)
+xcomp(have-16, include-18)
+dobj(include-18, report-20)
+nmod:poss(body-23, my-22)
+nmod:on(report-20, body-23)
+conj:and(have-16, have-27)
+xcomp(have-27, say-29)
+nsubj(subordinate-33, parts-31)
+ccomp(say-29, subordinate-33)
+nmod:poss(will-36, my-35)
+nmod:to(subordinate-33, will-36)
+nsubj(method-48, which-39)
+neg(method-48, not-41)
+advmod(method-48, etc.-43)
+nsubj(method-48, this-45)
+nmod:to(subordinate-33, method-48)
+conj:and(will-36, method-48)
+acl:of(method-48, isolating-50)
+dobj(isolating-50, subject-52)
+dobj(isolating-50, showing-57)
+conj:or(subject-52, showing-57)
+amod(sense-62, important-61)
+nmod:in(is-64, sense-62)
+expl(is-64, there-63)
+ccomp(showing-57, is-64)
+neg(subject-66, no-65)
+nsubj(is-64, subject-66)
+nmod:for(mentioned-74, it-69)
+advmod(it-69, alone-70)
+neg(mentioned-74, not-72)
+parataxis(have-16, mentioned-74)
+nmod:in(mentioned-74, book-77)
+---
+qqroot(ROOT-0, is-2)
+punct(is-2, .-14)
+case(subject-8, as-6)
+det(subject-8, the-7)
+cc(thinks-10, or-11)
+expl(is-2, There-1)
+neg(thing-5, no-3)
+amod(thing-5, such-4)
+nsubj(is-2, thing-5)
+nmod:as(thing-5, subject-8)
+nsubj(thinks-10, subject-8)
+nsubj(entertains-12, subject-8)
+ref(subject-8, that-9)
+acl:relcl(subject-8, thinks-10)
+acl:relcl(subject-8, entertains-12)
+conj:or(thinks-10, entertains-12)
+dobj(thinks-10, ideas-13)
+root(ROOT-0, have-16)
+mark(wrote-3, If-1)
+det(book-5, a-4)
+det(World-8, The-7)
+mark(found-11, as-9)
+aux(have-16, should-15)
+cc(have-16, and-25)
+punct(have-16, ;-67)
+punct(have-16, ,-24)
+punct(have-16, ,-13)
+punct(have-16, .-78)
+mark(include-18, to-17)
+det(report-20, a-19)
+case(body-23, on-21)
+aux(have-27, should-26)
+mark(say-29, to-28)
+det(parts-31, which-30)
+cop(subordinate-33, were-32)
+case(will-36, to-34)
+cc(will-36, and-38)
+punct(will-36, ,-37)
+cop(method-48, were-40)
+cop(method-48, being-46)
+det(method-48, a-47)
+punct(method-48, ,-42)
+punct(method-48, ,-44)
+mark(isolating-50, of-49)
+cc(subject-52, or-54)
+det(subject-52, the-51)
+punct(subject-52, ,-53)
+mwe(rather-55, of-56)
+mark(showing-57, rather-55)
+case(sense-62, in-59)
+det(sense-62, an-60)
+mark(is-64, that-58)
+case(it-69, for-68)
+aux(mentioned-74, could-71)
+auxpass(mentioned-74, be-73)
+case(book-77, in-75)
+det(book-77, that-76)
+nsubj(wrote-3, I-2)
+advcl:if(have-16, wrote-3)
+dobj(wrote-3, book-5)
+acl(book-5, called-6)
+xcomp(called-6, World-8)
+nsubj(found-11, l-10)
+advcl:as(wrote-3, found-11)
+dobj(found-11, it-12)
+nsubj(have-16, I-14)
+nsubj:xsubj(include-18, I-14)
+nsubj(have-27, I-14)
+nsubj:xsubj(say-29, I-14)
+xcomp(have-16, include-18)
+dobj(include-18, report-20)
+nmod:poss(body-23, my-22)
+nmod:on(report-20, body-23)
+conj:and(have-16, have-27)
+xcomp(have-27, say-29)
+nsubj(subordinate-33, parts-31)
+ccomp(say-29, subordinate-33)
+nmod:poss(will-36, my-35)
+nmod:to(subordinate-33, will-36)
+nsubj(method-48, which-39)
+neg(method-48, not-41)
+advmod(method-48, etc.-43)
+nsubj(method-48, this-45)
+nmod:to(subordinate-33, method-48)
+conj:and(will-36, method-48)
+acl:of(method-48, isolating-50)
+dobj(isolating-50, subject-52)
+dobj(isolating-50, showing-57)
+conj:or(subject-52, showing-57)
+amod(sense-62, important-61)
+nmod:in(is-64, sense-62)
+expl(is-64, there-63)
+ccomp(showing-57, is-64)
+neg(subject-66, no-65)
+nsubj(is-64, subject-66)
+nmod:for(mentioned-74, it-69)
+advmod(it-69, alone-70)
+neg(mentioned-74, not-72)
+parataxis(have-16, mentioned-74)
+nmod:in(mentioned-74, book-77)
+root(ROOT-0, ---1)
+G[39, 46] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, World2147483647, body23, book2147483647, book2147483647, called6, entertains12, found11, have16, have27, include18, is64, is2, isolating50, it69, mentioned74, method2147483647, parts2147483647, rather of55, report2147483647, say29, sense2147483647, showing57, subject2147483647, subject2147483647, subject66, subordinate33, thing5, thinks10, will36, wrote3]
+subject66- ->is64
+?8- ->include18
+is64-  : that ->showing57
+?2-an->sense2147483647
+?3-a->book2147483647
+showing57- ->isolating50
+?5-that->book2147483647
+?7- ->entertains12
+say29-  : should  : to ->have27
+?1-which->parts2147483647
+body23-on->?8
+found11-as->wrote3
+?7- ->thinks10
+will36-==->is2
+?8-a->report2147483647
+thing5- ->is2
+?7-as->thing5
+?6- ->isolating50
+showing57-or : rather of ->?6
+?9-and : were ->will36
+will36-to->subordinate33
+?4-The->World2147483647
+?5- ->?3
+?3-  : If ->wrote3
+isolating50-of : being ->?9
+mentioned74- ->have16
+called6- ->?3
+have27-and->have16
+subordinate33- ->say29
+thinks10-relcl->?7
+?9-to->subordinate33
+?2-in->is64
+it69- ->?3
+?7-the->subject2147483647
+entertains12- ->?3
+?4- ->called6
+wrote3-if->have16
+?6- ->?4
+include18-  : should  : to ->have16
+?6-the->subject2147483647
+?1-  : were ->subordinate33
+?5-in->mentioned74
+entertains12-or->thinks10
+?9-a->method2147483647
+it69-for : could  : be  : be ->mentioned74
+entertains12-relcl->?7
+------CorefChainz
+CHAIN17-["the subject that thinks or entertains ideas" in sentence 1, "the subject" in sentence 2]
+representative mention: "the subject that thinks or entertains ideas" in sentence 1
+CHAIN21-["a book called The World" in sentence 2, "it" in sentence 2, "it" in sentence 2, "that book" in sentence 2]
+representative mention: "a book called The World" in sentence 2
+CHAIN11-["I" in sentence 2, "I" in sentence 2, "my" in sentence 2, "my" in sentence 2]
+representative mention: "I" in sentence 2

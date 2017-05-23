@@ -1,0 +1,47 @@
+ It is impossible to tell from the picture alone whether it is true or false.
+------CorefChainz
+CHAIN2-["It" in sentence 1, "it" in sentence 1]
+representative mention: "It" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, impossible-3)
+cop(impossible-3, is-2)
+punct(impossible-3, .-16)
+mark(tell-5, to-4)
+case(picture-8, from-6)
+det(picture-8, the-7)
+cc(true-13, or-14)
+cop(true-13, is-12)
+mark(true-13, whether-10)
+nsubj(impossible-3, It-1)
+nsubj:xsubj(tell-5, It-1)
+xcomp(impossible-3, tell-5)
+nmod:from(tell-5, picture-8)
+advmod(picture-8, alone-9)
+nsubj(true-13, it-11)
+nsubj(false-15, it-11)
+ccomp(tell-5, true-13)
+ccomp(tell-5, false-15)
+conj:or(true-13, false-15)
+G[9, 12] [?1, It1, alone9, false15, impossible3, it11, picture2147483647, tell5, true13]
+alone9- ->?1
+it11- ->false15
+?1-the->picture2147483647
+it11-  : whether  : is ->true13
+It1-xsubj->tell5
+tell5-  : to ->impossible3
+?1-from->tell5
+false15- ->tell5
+It1-  : is ->impossible3
+false15-or->true13
+it11- ->It1
+true13- ->tell5
+------CorefChainz
+CHAIN2-["It" in sentence 1, "it" in sentence 1]
+representative mention: "It" in sentence 1

@@ -1,0 +1,24 @@
+ A picture is a model of reality.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, model-5)
+det(picture-2, A-1)
+cop(model-5, is-3)
+det(model-5, a-4)
+punct(model-5, .-8)
+case(reality-7, of-6)
+nsubj(model-5, picture-2)
+nmod:of(model-5, reality-7)
+G[5, 4] [?1, ?2, model2147483647, picture2147483647, reality7]
+reality7-of->?2
+?1-  : is ->?2
+?2-a->model2147483647
+?1-A->picture2147483647
+------CorefChainz

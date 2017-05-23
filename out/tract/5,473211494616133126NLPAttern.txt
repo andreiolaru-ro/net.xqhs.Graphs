@@ -1,0 +1,148 @@
+ Occam's maxim is, of course, not an arbitrary rule, nor one that is justified by its success in practice: its point is that unnecessary units in a sign-language mean nothing. Signs that serve one purpose are logically equivalent, and signs that serve none are logically meaningless.
+------CorefChainz
+CHAIN8-["its" in sentence 1, "its" in sentence 1]
+representative mention: "its" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, rule-12)
+case(Occam-1, 's-2)
+case(course-7, of-6)
+cc(rule-12, nor-14)
+cop(rule-12, is-4)
+det(rule-12, an-10)
+punct(rule-12, ,-5)
+punct(rule-12, ,-8)
+punct(rule-12, ,-13)
+punct(one-15, :-24)
+auxpass(justified-18, is-17)
+case(success-21, by-19)
+case(practice-23, in-22)
+punct(units-30, .-36)
+case(nothing-35, in-31)
+compound(nothing-35, mean-34)
+det(nothing-35, a-32)
+nmod:poss(maxim-3, Occam-1)
+nsubj(rule-12, maxim-3)
+nmod:of(rule-12, course-7)
+neg(rule-12, not-9)
+amod(rule-12, arbitrary-11)
+conj:nor(rule-12, one-15)
+nsubjpass(justified-18, one-15)
+ref(one-15, that-16)
+acl:relcl(one-15, justified-18)
+nmod:poss(success-21, its-20)
+nmod:agent(justified-18, success-21)
+nmod:in(success-21, practice-23)
+nmod:poss(point-26, its-25)
+nsubj(is-27, point-26)
+parataxis(one-15, is-27)
+dep(is-27, that-28)
+amod(units-30, unnecessary-29)
+root(that-28, units-30)
+amod(nothing-35, sign-language-33)
+nmod:in(units-30, nothing-35)
+---
+qqroot(ROOT-0, rule-12)
+case(Occam-1, 's-2)
+case(course-7, of-6)
+cc(rule-12, nor-14)
+cop(rule-12, is-4)
+det(rule-12, an-10)
+punct(rule-12, ,-5)
+punct(rule-12, ,-8)
+punct(rule-12, ,-13)
+punct(one-15, :-24)
+auxpass(justified-18, is-17)
+case(success-21, by-19)
+case(practice-23, in-22)
+punct(units-30, .-36)
+case(nothing-35, in-31)
+compound(nothing-35, mean-34)
+det(nothing-35, a-32)
+nmod:poss(maxim-3, Occam-1)
+nsubj(rule-12, maxim-3)
+nmod:of(rule-12, course-7)
+neg(rule-12, not-9)
+amod(rule-12, arbitrary-11)
+conj:nor(rule-12, one-15)
+nsubjpass(justified-18, one-15)
+ref(one-15, that-16)
+acl:relcl(one-15, justified-18)
+nmod:poss(success-21, its-20)
+nmod:agent(justified-18, success-21)
+nmod:in(success-21, practice-23)
+nmod:poss(point-26, its-25)
+nsubj(is-27, point-26)
+parataxis(one-15, is-27)
+dep(is-27, that-28)
+amod(units-30, unnecessary-29)
+root(that-28, units-30)
+amod(nothing-35, sign-language-33)
+nmod:in(units-30, nothing-35)
+root(ROOT-0, equivalent-8)
+cc(equivalent-8, and-10)
+cop(equivalent-8, are-6)
+punct(equivalent-8, ,-9)
+punct(equivalent-8, .-18)
+cop(meaningless-17, are-15)
+nsubj(serve-3, Signs-1)
+nsubj(equivalent-8, Signs-1)
+ref(Signs-1, that-2)
+acl:relcl(Signs-1, serve-3)
+nummod(purpose-5, one-4)
+dobj(serve-3, purpose-5)
+advmod(equivalent-8, logically-7)
+nsubj(serve-13, signs-11)
+nsubj(meaningless-17, signs-11)
+ref(signs-11, that-12)
+acl:relcl(signs-11, serve-13)
+dobj(serve-13, none-14)
+advmod(meaningless-17, logically-16)
+conj:and(equivalent-8, meaningless-17)
+G[35, 36] [?1, ?2, Occam1, Signs1, arbitrary11, course7, equivalent8, is27, its20, its25, justified18, logically7, logically16, maxim3, mean nothing2147483647, meaningless17, none14, not9, one4, one15, point26, practice23, purpose5, rule2147483647, serve3, serve13, sign-language33, signs11, success21, that28, that16, that12, that2, units30, unnecessary29]
+course7-of->?1
+unnecessary29- ->units30
+that16- ->one15
+point26- ->is27
+serve13-relcl->signs11
+?1-an->rule2147483647
+serve3-relcl->Signs1
+sign-language33- ->?2
+logically7-  : are ->equivalent8
+one15- ->justified18
+?2-in->units30
+none14- ->serve13
+?2-a->mean nothing2147483647
+not9- ->?1
+units30- ->that28
+is27- ->one15
+that2- ->Signs1
+signs11- ->meaningless17
+one15-nor->?1
+Signs1- ->equivalent8
+logically16-  : are ->meaningless17
+meaningless17-and->equivalent8
+maxim3-  : is ->?1
+practice23-in->success21
+one4- ->purpose5
+purpose5- ->serve3
+that12- ->signs11
+its25-poss->point26
+signs11- ->serve13
+success21-agent : by  : by ->justified18
+that28- ->is27
+justified18-relcl : is  : is ->one15
+Occam1-poss : 's ->maxim3
+its20-poss->success21
+arbitrary11- ->?1
+Signs1- ->serve3
+------CorefChainz
+CHAIN8-["its" in sentence 1, "its" in sentence 1]
+representative mention: "its" in sentence 1

@@ -1,0 +1,22 @@
+ The propositions of logic are tautologies.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, tautologies-6)
+det(propositions-2, The-1)
+case(logic-4, of-3)
+cop(tautologies-6, are-5)
+punct(tautologies-6, .-7)
+nsubj(tautologies-6, propositions-2)
+nmod:of(propositions-2, logic-4)
+G[4, 3] [?1, logic4, propositions2147483647, tautologies6]
+logic4-of->?1
+?1-The->propositions2147483647
+?1-  : are ->tautologies6
+------CorefChainz

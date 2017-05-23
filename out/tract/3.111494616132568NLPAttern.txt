@@ -1,0 +1,106 @@
+ We use the perceptible sign of a proposition (spoken or written, etc.) as a projection of a possible situation. The method of projection is to think of the sense of the proposition.
+------CorefChainz
+CHAIN7-["a proposition" in sentence 1, "the proposition" in sentence 2]
+representative mention: "a proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, use-2)
+punct(use-2, .-23)
+det(sign-5, the-3)
+case(proposition-8, of-6)
+det(proposition-8, a-7)
+cc(spoken-10, or-11)
+punct(spoken-10, -LRB--9)
+punct(spoken-10, ,-13)
+punct(spoken-10, -RRB--15)
+case(projection-18, as-16)
+det(projection-18, a-17)
+case(situation-22, of-19)
+det(situation-22, a-20)
+nsubj(use-2, We-1)
+amod(sign-5, perceptible-4)
+dobj(use-2, sign-5)
+nmod:of(sign-5, proposition-8)
+dep(proposition-8, spoken-10)
+dep(proposition-8, written-12)
+conj:or(spoken-10, written-12)
+dep(spoken-10, etc.-14)
+nmod:as(use-2, projection-18)
+amod(situation-22, possible-21)
+nmod:of(projection-18, situation-22)
+---
+qqroot(ROOT-0, use-2)
+punct(use-2, .-23)
+det(sign-5, the-3)
+case(proposition-8, of-6)
+det(proposition-8, a-7)
+cc(spoken-10, or-11)
+punct(spoken-10, -LRB--9)
+punct(spoken-10, ,-13)
+punct(spoken-10, -RRB--15)
+case(projection-18, as-16)
+det(projection-18, a-17)
+case(situation-22, of-19)
+det(situation-22, a-20)
+nsubj(use-2, We-1)
+amod(sign-5, perceptible-4)
+dobj(use-2, sign-5)
+nmod:of(sign-5, proposition-8)
+dep(proposition-8, spoken-10)
+dep(proposition-8, written-12)
+conj:or(spoken-10, written-12)
+dep(spoken-10, etc.-14)
+nmod:as(use-2, projection-18)
+amod(situation-22, possible-21)
+nmod:of(projection-18, situation-22)
+root(ROOT-0, is-5)
+det(method-2, The-1)
+case(projection-4, of-3)
+punct(is-5, .-14)
+mark(think-7, to-6)
+case(sense-10, of-8)
+det(sense-10, the-9)
+case(proposition-13, of-11)
+det(proposition-13, the-12)
+nsubj(is-5, method-2)
+nsubj:xsubj(think-7, method-2)
+nmod:of(method-2, projection-4)
+xcomp(is-5, think-7)
+nmod:of(think-7, sense-10)
+nmod:of(sense-10, proposition-13)
+G[24, 25] [?1, ?2, ?3, ?4, ?5, ?6, ?7, We1, etc.14, is5, method2147483647, perceptible4, possible21, projection2147483647, projection4, proposition2147483647, proposition2147483647, sense2147483647, sign2147483647, situation2147483647, spoken10, think7, use2, written12]
+etc.14- ->spoken10
+?5-a->proposition2147483647
+?1-a->situation2147483647
+?4-of->think7
+?2-as->use2
+?3-The->method2147483647
+?6- ->?5
+?3-xsubj->think7
+?6-the->proposition2147483647
+We1- ->use2
+?1-of->?2
+written12-or->spoken10
+written12- ->?5
+?5-of->?7
+projection4-of->?3
+?4-the->sense2147483647
+?7-the->sign2147483647
+think7-  : to ->is5
+?2-a->projection2147483647
+?3- ->is5
+perceptible4- ->?7
+?7- ->use2
+?6-of->?4
+spoken10- ->?5
+possible21- ->?1
+------CorefChainz
+CHAIN7-["a proposition" in sentence 1, "the proposition" in sentence 2]
+representative mention: "a proposition" in sentence 1

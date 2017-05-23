@@ -1,0 +1,29 @@
+ The totality of existing states of affairs is the world.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, world-10)
+det(totality-2, The-1)
+case(states-5, of-3)
+case(affairs-7, of-6)
+cop(world-10, is-8)
+det(world-10, the-9)
+punct(world-10, .-11)
+nsubj(world-10, totality-2)
+amod(states-5, existing-4)
+nmod:of(totality-2, states-5)
+nmod:of(states-5, affairs-7)
+G[7, 6] [?1, ?2, affairs7, existing4, states5, totality2147483647, world2147483647]
+affairs7-of->states5
+?2-The->totality2147483647
+states5-of->?2
+?2-  : is ->?1
+existing4- ->states5
+?1-the->world2147483647
+------CorefChainz

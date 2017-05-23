@@ -1,0 +1,23 @@
+ All deductions are made a priori.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, made-4)
+det(deductions-2, All-1)
+auxpass(made-4, are-3)
+punct(made-4, .-7)
+det(priori-6, a-5)
+nsubjpass(made-4, deductions-2)
+dobj(made-4, priori-6)
+G[5, 4] [?1, ?2, deductions2147483647, made4, priori2147483647]
+?1-All->deductions2147483647
+?2-a->priori2147483647
+?1-  : are ->made4
+?2- ->made4
+------CorefChainz

@@ -1,0 +1,71 @@
+ Nor does analysis resolve the sign for a complex in an arbitrary way, so that it would have a different resolution every time that it was incorporated in a different proposition.
+------CorefChainz
+CHAIN7-["the sign for a complex in an arbitrary way" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "the sign for a complex in an arbitrary way" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, resolve-4)
+aux(resolve-4, does-2)
+cc(resolve-4, Nor-1)
+punct(resolve-4, .-33)
+punct(resolve-4, ,-14)
+det(sign-6, the-5)
+case(complex-9, for-7)
+det(complex-9, a-8)
+case(way-13, in-10)
+det(way-13, an-11)
+mwe(so-15, that-16)
+aux(have-19, would-18)
+mark(have-19, so-15)
+det(resolution-22, a-20)
+det(time-24, every-23)
+auxpass(incorporated-28, was-27)
+mark(incorporated-28, that-25)
+case(proposition-32, in-29)
+det(proposition-32, a-30)
+nsubj(resolve-4, analysis-3)
+dobj(resolve-4, sign-6)
+nmod:for(sign-6, complex-9)
+amod(way-13, arbitrary-12)
+nmod:in(sign-6, way-13)
+nsubj(have-19, it-17)
+advcl:so_that(resolve-4, have-19)
+amod(resolution-22, different-21)
+dobj(have-19, resolution-22)
+nmod:tmod(have-19, time-24)
+nsubjpass(incorporated-28, it-26)
+ccomp(have-19, incorporated-28)
+amod(proposition-32, different-31)
+nmod:in(incorporated-28, proposition-32)
+G[22, 22] [?1, ?2, ?3, ?4, ?5, ?6, analysis3, arbitrary12, complex2147483647, different31, different21, have19, incorporated28, it17, it26, proposition2147483647, resolution2147483647, resolve4, sign2147483647, so that15, time2147483647, way2147483647]
+incorporated28- ->have19
+it17- ->?5
+different31- ->?3
+?6-for->?5
+analysis3-  : Nor  : does ->resolve4
+?5- ->resolve4
+it17-  : so that  : would ->have19
+it26-  : that  : was ->incorporated28
+arbitrary12- ->?1
+?4- ->have19
+different21- ->?4
+?4-a->resolution2147483647
+?1-in->?5
+?2-every->time2147483647
+have19-so_that->resolve4
+?3-a->proposition2147483647
+it26- ->?5
+?3-in->incorporated28
+?6-a->complex2147483647
+?2-tmod->have19
+?1-an->way2147483647
+?5-the->sign2147483647
+------CorefChainz
+CHAIN7-["the sign for a complex in an arbitrary way" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "the sign for a complex in an arbitrary way" in sentence 1

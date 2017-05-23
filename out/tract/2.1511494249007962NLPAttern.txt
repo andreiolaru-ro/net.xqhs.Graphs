@@ -1,0 +1,49 @@
+ Pictorial form is the possibility that things are related to one another in the same way as the elements of the picture.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, possibility-5)
+cop(possibility-5, is-3)
+det(possibility-5, the-4)
+punct(possibility-5, .-23)
+cop(related-9, are-8)
+mark(related-9, that-6)
+case(one-11, to-10)
+case(way-16, in-13)
+det(way-16, the-14)
+case(elements-19, as-17)
+det(elements-19, the-18)
+case(picture-22, of-20)
+det(picture-22, the-21)
+amod(form-2, Pictorial-1)
+nsubj(possibility-5, form-2)
+nsubj(related-9, things-7)
+ccomp(possibility-5, related-9)
+nmod:to(related-9, one-11)
+dep(one-11, another-12)
+amod(way-16, same-15)
+nmod:in(one-11, way-16)
+nmod:as(related-9, elements-19)
+nmod:of(elements-19, picture-22)
+G[15, 14] [?#1, ?#2, ?#3, ?#4, Pictorial, another, elements, form, one, picture, possibility, related, same, things, way]
+?#2-the->picture
+same- ->?#4
+another- ->one
+?#4-the->way
+things-  : are ->related
+form-  : is ->?#1
+?#3-the->elements
+?#4-in->one
+?#3-as->related
+?#2-of->?#3
+related-  : that  : that ->?#1
+?#1-the->possibility
+Pictorial- ->form
+one-to->related
+------CorefChainz

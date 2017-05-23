@@ -1,0 +1,41 @@
+ Proof in logic is merely a mechanical expedient to facilitate the recognition of tautologies in complicated cases.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, expedient-8)
+case(logic-3, in-2)
+cop(expedient-8, is-4)
+det(expedient-8, a-6)
+punct(expedient-8, .-18)
+mark(facilitate-10, to-9)
+det(recognition-12, the-11)
+case(tautologies-14, of-13)
+case(cases-17, in-15)
+nsubj(expedient-8, Proof-1)
+nmod:in(Proof-1, logic-3)
+advmod(expedient-8, merely-5)
+amod(expedient-8, mechanical-7)
+acl:to(expedient-8, facilitate-10)
+dobj(facilitate-10, recognition-12)
+nmod:of(recognition-12, tautologies-14)
+amod(cases-17, complicated-16)
+nmod:in(recognition-12, cases-17)
+G[12, 11] [?1, ?2, Proof1, cases17, complicated16, expedient2147483647, facilitate10, logic3, mechanical7, merely5, recognition2147483647, tautologies14]
+facilitate10-to->?2
+complicated16- ->cases17
+?1- ->facilitate10
+cases17-in->?1
+merely5-  : is ->?2
+?2-a->expedient2147483647
+tautologies14-of->?1
+Proof1- ->?2
+mechanical7- ->?2
+logic3-in->Proof1
+?1-the->recognition2147483647
+------CorefChainz

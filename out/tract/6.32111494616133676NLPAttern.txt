@@ -1,0 +1,109 @@
+ Indeed people even surmised that there must be a 'law of least action' before they knew exactly how it went. (Here, as always, what is certain a priori proves to be something purely logical.)
+------CorefChainz
+CHAIN3-["people" in sentence 1, "they" in sentence 1]
+representative mention: "people" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, surmised-4)
+punct(surmised-4, .-23)
+aux(law-11, must-7)
+cop(law-11, be-8)
+det(law-11, a-9)
+mark(law-11, that-5)
+punct(law-11, `-10)
+case(least-13, of-12)
+punct(least-13, '-15)
+mark(knew-18, before-16)
+advmod(surmised-4, Indeed-1)
+nsubj(surmised-4, people-2)
+advmod(surmised-4, even-3)
+expl(law-11, there-6)
+ccomp(surmised-4, law-11)
+nmod:of(law-11, least-13)
+dep(least-13, action-14)
+nsubj(knew-18, they-17)
+advcl:before(law-11, knew-18)
+advmod(went-22, exactly-19)
+advmod(went-22, how-20)
+nsubj(went-22, it-21)
+ccomp(knew-18, went-22)
+---
+qqroot(ROOT-0, surmised-4)
+punct(surmised-4, .-23)
+aux(law-11, must-7)
+cop(law-11, be-8)
+det(law-11, a-9)
+mark(law-11, that-5)
+punct(law-11, `-10)
+case(least-13, of-12)
+punct(least-13, '-15)
+mark(knew-18, before-16)
+advmod(surmised-4, Indeed-1)
+nsubj(surmised-4, people-2)
+advmod(surmised-4, even-3)
+expl(law-11, there-6)
+ccomp(surmised-4, law-11)
+nmod:of(law-11, least-13)
+dep(least-13, action-14)
+nsubj(knew-18, they-17)
+advcl:before(law-11, knew-18)
+advmod(went-22, exactly-19)
+advmod(went-22, how-20)
+nsubj(went-22, it-21)
+ccomp(knew-18, went-22)
+root(ROOT-0, certain-9)
+case(always-5, as-4)
+cop(certain-9, is-8)
+punct(certain-9, ,-3)
+punct(certain-9, -RRB--19)
+punct(certain-9, ,-6)
+punct(certain-9, -LRB--1)
+punct(certain-9, .-18)
+det(priori-11, a-10)
+cop(something-15, be-14)
+mark(something-15, to-13)
+advmod(certain-9, Here-2)
+advcl:as(certain-9, always-5)
+nsubj(certain-9, what-7)
+nsubj(proves-12, priori-11)
+nsubj:xsubj(something-15, priori-11)
+ccomp(certain-9, proves-12)
+xcomp(proves-12, something-15)
+advmod(logical-17, purely-16)
+amod(something-15, logical-17)
+G[25, 25] [?1, ?2, Here2, Indeed1, action14, always5, certain9, even3, exactly19, how20, it21, knew18, law2147483647, least13, logical17, people2, priori2147483647, proves12, purely16, something15, surmised4, there6, they17, went22, what7]
+went22- ->knew18
+even3- ->surmised4
+proves12- ->certain9
+how20- ->went22
+what7-  : is ->certain9
+it21- ->went22
+exactly19- ->went22
+people2- ->surmised4
+?2-a->law2147483647
+least13-of->?2
+they17- ->people2
+something15-  : to  : be ->proves12
+?2-  : that  : that ->surmised4
+they17- ->knew18
+logical17- ->something15
+Here2- ->certain9
+Indeed1- ->surmised4
+?1-xsubj->something15
+knew18-before->?2
+action14- ->least13
+purely16- ->logical17
+always5-as->certain9
+?1-a->priori2147483647
+?1- ->proves12
+there6-  : must  : be ->?2
+------CorefChainz
+CHAIN3-["people" in sentence 1, "they" in sentence 1]
+representative mention: "people" in sentence 1

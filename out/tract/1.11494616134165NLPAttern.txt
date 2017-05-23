@@ -1,0 +1,30 @@
+ The world is the totality of facts, not of things.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, totality-5)
+det(world-2, The-1)
+cop(totality-5, is-3)
+det(totality-5, the-4)
+punct(totality-5, .-12)
+case(facts-7, of-6)
+punct(facts-7, ,-8)
+case(things-11, of-10)
+nsubj(totality-5, world-2)
+nmod:of(totality-5, facts-7)
+neg(things-11, not-9)
+nmod:of(facts-7, things-11)
+G[7, 6] [?1, ?2, facts7, not9, things11, totality2147483647, world2147483647]
+things11-of->facts7
+facts7-of->?1
+?2-  : is ->?1
+not9- ->things11
+?2-The->world2147483647
+?1-the->totality2147483647
+------CorefChainz

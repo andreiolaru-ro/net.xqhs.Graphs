@@ -1,0 +1,128 @@
+ Every truth-function is a result of successive applications to elementary propositions of the operation '(-----T)(E, ....)'. This operation negates all the propositions in the right-hand pair of brackets, and I call it the negation of those propositions.
+------CorefChainz
+CHAIN12-["the operation ' -LRB- ----- T -RRB-" in sentence 1, "This operation" in sentence 2, "it" in sentence 2]
+representative mention: "the operation ' -LRB- ----- T -RRB-" in sentence 1
+CHAIN14-["all the propositions in the right-hand pair of brackets" in sentence 2, "those propositions" in sentence 2]
+representative mention: "all the propositions in the right-hand pair of brackets" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, result-5)
+det(truth-function-2, Every-1)
+cop(result-5, is-3)
+det(result-5, a-4)
+punct(result-5, .-26)
+case(applications-8, of-6)
+punct(applications-8, '-25)
+case(propositions-11, to-9)
+case(operation-14, of-12)
+det(operation-14, the-13)
+punct(operation-14, '-15)
+punct(T-18, -LRB--16)
+punct(T-18, -RRB--19)
+punct(E-21, -LRB--20)
+punct(E-21, ,-22)
+punct(E-21, ...-23)
+punct(E-21, -RRB--24)
+nsubj(result-5, truth-function-2)
+amod(applications-8, successive-7)
+nmod:of(result-5, applications-8)
+amod(propositions-11, elementary-10)
+nmod:to(applications-8, propositions-11)
+nmod:of(propositions-11, operation-14)
+nummod(T-18, ------17)
+appos(operation-14, T-18)
+appos(propositions-11, E-21)
+---
+qqroot(ROOT-0, result-5)
+det(truth-function-2, Every-1)
+cop(result-5, is-3)
+det(result-5, a-4)
+punct(result-5, .-26)
+case(applications-8, of-6)
+punct(applications-8, '-25)
+case(propositions-11, to-9)
+case(operation-14, of-12)
+det(operation-14, the-13)
+punct(operation-14, '-15)
+punct(T-18, -LRB--16)
+punct(T-18, -RRB--19)
+punct(E-21, -LRB--20)
+punct(E-21, ,-22)
+punct(E-21, ...-23)
+punct(E-21, -RRB--24)
+nsubj(result-5, truth-function-2)
+amod(applications-8, successive-7)
+nmod:of(result-5, applications-8)
+amod(propositions-11, elementary-10)
+nmod:to(applications-8, propositions-11)
+nmod:of(propositions-11, operation-14)
+nummod(T-18, ------17)
+appos(operation-14, T-18)
+appos(propositions-11, E-21)
+root(ROOT-0, negates-3)
+det(operation-2, This-1)
+cc(negates-3, and-14)
+punct(negates-3, .-23)
+punct(negates-3, ,-13)
+det(propositions-6, the-5)
+case(pair-10, in-7)
+det(pair-10, the-8)
+case(brackets-12, of-11)
+det(negation-19, the-18)
+case(propositions-22, of-20)
+det(propositions-22, those-21)
+nsubj(negates-3, operation-2)
+det:predet(propositions-6, all-4)
+dobj(negates-3, propositions-6)
+amod(pair-10, right-hand-9)
+nmod:in(propositions-6, pair-10)
+nmod:of(pair-10, brackets-12)
+nsubj(call-16, I-15)
+conj:and(negates-3, call-16)
+nsubj(negation-19, it-17)
+xcomp(call-16, negation-19)
+nmod:of(negation-19, propositions-22)
+G[30, 31] [-----, ?#1, ?#2, ?#3, ?#4, ?#5, ?#6, ?#7, ?#8, E, I, T, all, applications, brackets, call, elementary, it, negates, negation, operation, operation, pair, propositions, propositions, propositions, result, right-hand, successive, truth-function]
+?#1-Every->truth-function
+?#5- ->call
+propositions-to->applications
+?#1-  : is ->?#7
+?#5-the->negation
+I- ->call
+?#6- ->negates
+successive- ->applications
+?#2-of->?#5
+T- ->?#4
+call-and->negates
+E- ->propositions
+brackets-of->?#3
+elementary- ->propositions
+right-hand- ->?#3
+?#4-of->propositions
+?#2- ->?#8
+?#8-the->propositions
+?#6-This->operation
+it- ->?#4
+?#4-the->operation
+?#8- ->negates
+------ ->T
+?#1- ->?#4
+?#3-the->pair
+?#7-a->result
+?#3-in->?#8
+all-predet->?#8
+applications-of->?#7
+it- ->?#5
+?#2-those->propositions
+------CorefChainz
+CHAIN12-["the operation ' -LRB- ----- T -RRB-" in sentence 1, "This operation" in sentence 2, "it" in sentence 2]
+representative mention: "the operation ' -LRB- ----- T -RRB-" in sentence 1
+CHAIN14-["all the propositions in the right-hand pair of brackets" in sentence 2, "those propositions" in sentence 2]
+representative mention: "all the propositions in the right-hand pair of brackets" in sentence 2

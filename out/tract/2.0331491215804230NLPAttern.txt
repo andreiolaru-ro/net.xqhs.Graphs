@@ -1,0 +1,44 @@
+ Form is the possibility of structure.
+------CorefChainz
+Form-NN 
+is-VBZ 
+the-DT 
+possibility-NN 
+of-IN 
+structure-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NN 	-> Form
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> possibility
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> structure
+					 	-> . 	-> .
+			
+Dependensee repr
+nsubj(possibility-4, Form-1)
+cop(possibility-4, is-2)
+det(possibility-4, the-3)
+root(ROOT-0, possibility-4)
+case(structure-6, of-5)
+nmod:of(possibility-4, structure-6)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, possibility-4)
+nsubj(possibility-4, Form-1)
+nmod:of(possibility-4, structure-6)
+cop(possibility-4, is--2147483648)
+det(possibility-4, the--2147483648)
+punct(possibility-4, .--2147483648)
+case(structure-6, of--2147483648)
+G[4, 3] [?#1, Form, possibility, structure]
+structure-of->?#1
+Form-  : is  : the  ->?#1
+?#1-the->possibility
+------CorefChainz

@@ -1,0 +1,77 @@
+ The minimal unit for a probability proposition is this: The circumstances--of which I have no further knowledge--give such and such a degree of probability to the occurrence of a particular event.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, this-9)
+det(unit-3, The-1)
+case(proposition-7, for-4)
+compound(proposition-7, probability-6)
+det(proposition-7, a-5)
+cop(this-9, is-8)
+punct(this-9, .-37)
+punct(this-9, :-10)
+det(circumstances-12, The-11)
+punct(circumstances-12, ---21)
+punct(circumstances-12, ---13)
+case(which-15, of-14)
+cc(such-23, and-24)
+det(degree-27, a-26)
+case(probability-29, of-28)
+case(occurrence-32, to-30)
+det(occurrence-32, the-31)
+case(event-36, of-33)
+det(event-36, a-34)
+amod(unit-3, minimal-2)
+nsubj(this-9, unit-3)
+nmod:for(unit-3, proposition-7)
+nmod:of(have-17, circumstances-12)
+nsubj(give-22, circumstances-12)
+ref(circumstances-12, which-15)
+nsubj(have-17, I-16)
+acl:relcl(circumstances-12, have-17)
+neg(knowledge-20, no-18)
+amod(knowledge-20, further-19)
+dobj(have-17, knowledge-20)
+parataxis(this-9, give-22)
+amod(degree-27, such-23)
+conj:and(such-23, such-25)
+amod(degree-27, such-25)
+dobj(give-22, degree-27)
+nmod:of(degree-27, probability-29)
+nmod:to(give-22, occurrence-32)
+amod(event-36, particular-35)
+nmod:of(occurrence-32, event-36)
+G[25, 26] [?1, ?2, ?3, ?4, ?5, ?6, I16, circumstances2147483647, degree2147483647, event2147483647, further19, give22, have17, knowledge20, minimal2, no18, occurrence2147483647, particular35, probability29, probability proposition2147483647, such23, such25, this9, unit2147483647, which15]
+give22- ->this9
+?4-the->occurrence2147483647
+knowledge20- ->have17
+?6-a->probability proposition2147483647
+I16- ->have17
+?1-The->unit2147483647
+?3- ->give22
+?2-a->degree2147483647
+particular35- ->?5
+such25-and->such23
+?1-  : is ->this9
+minimal2- ->?1
+such25- ->?2
+?6-for->?1
+?5-of->?4
+have17-relcl->?3
+further19- ->knowledge20
+?3-The->circumstances2147483647
+?2- ->give22
+?5-a->event2147483647
+such23- ->?2
+probability29-of->?2
+?3-of->have17
+which15-  : of ->?3
+no18- ->knowledge20
+?4-to->give22
+------CorefChainz

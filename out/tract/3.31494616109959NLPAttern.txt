@@ -1,0 +1,42 @@
+ Only propositions have sense; only in the nexus of a proposition does a name have meaning.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-3)
+punct(have-3, .-18)
+punct(have-3, ;-5)
+case(nexus-9, in-7)
+det(nexus-9, the-8)
+case(proposition-12, of-10)
+det(proposition-12, a-11)
+det(name-15, a-14)
+aux(have-16, does-13)
+advmod(propositions-2, Only-1)
+nsubj(have-3, propositions-2)
+dobj(have-3, sense-4)
+advmod(nexus-9, only-6)
+nmod:in(have-16, nexus-9)
+nmod:of(nexus-9, proposition-12)
+nsubj(have-16, name-15)
+parataxis(have-3, have-16)
+dobj(have-16, meaning-17)
+G[13, 12] [?1, ?2, ?3, Only1, have16, have3, meaning17, name2147483647, nexus2147483647, only6, proposition2147483647, propositions2, sense4]
+?1-the->nexus2147483647
+Only1- ->propositions2
+only6- ->?1
+?2-a->proposition2147483647
+meaning17- ->have16
+sense4- ->have3
+?1-in->have16
+?3-  : does ->have16
+propositions2- ->have3
+have16- ->have3
+?2-of->?1
+?3-a->name2147483647
+------CorefChainz

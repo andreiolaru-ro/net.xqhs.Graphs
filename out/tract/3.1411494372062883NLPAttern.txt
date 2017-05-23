@@ -1,0 +1,93 @@
+ A proposition is not a blend of words.(Just as a theme in music is not a blend of notes.) A proposition is articulate.
+------CorefChainz
+CHAIN5-["A proposition" in sentence 1, "A proposition" in sentence 3]
+representative mention: "A proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, blend-6)
+det(proposition-2, A-1)
+cop(blend-6, is-3)
+det(blend-6, a-5)
+punct(blend-6, .-9)
+case(words-8, of-7)
+nsubj(blend-6, proposition-2)
+neg(blend-6, not-4)
+nmod:of(blend-6, words-8)
+---
+qqroot(ROOT-0, blend-6)
+det(proposition-2, A-1)
+cop(blend-6, is-3)
+det(blend-6, a-5)
+punct(blend-6, .-9)
+case(words-8, of-7)
+nsubj(blend-6, proposition-2)
+neg(blend-6, not-4)
+nmod:of(blend-6, words-8)
+root(ROOT-0, blend-11)
+case(theme-5, as-3)
+det(theme-5, a-4)
+case(music-7, in-6)
+cop(blend-11, is-8)
+det(blend-11, a-10)
+punct(blend-11, .-14)
+punct(blend-11, -RRB--15)
+punct(blend-11, -LRB--1)
+case(notes-13, of-12)
+advmod(theme-5, Just-2)
+nmod:as(blend-11, theme-5)
+nmod:in(theme-5, music-7)
+neg(blend-11, not-9)
+nmod:of(blend-11, notes-13)
+---
+qqroot(ROOT-0, blend-6)
+det(proposition-2, A-1)
+cop(blend-6, is-3)
+det(blend-6, a-5)
+punct(blend-6, .-9)
+case(words-8, of-7)
+nsubj(blend-6, proposition-2)
+neg(blend-6, not-4)
+nmod:of(blend-6, words-8)
+root(ROOT-0, blend-11)
+case(theme-5, as-3)
+det(theme-5, a-4)
+case(music-7, in-6)
+cop(blend-11, is-8)
+det(blend-11, a-10)
+punct(blend-11, .-14)
+punct(blend-11, -RRB--15)
+punct(blend-11, -LRB--1)
+case(notes-13, of-12)
+advmod(theme-5, Just-2)
+nmod:as(blend-11, theme-5)
+nmod:in(theme-5, music-7)
+neg(blend-11, not-9)
+nmod:of(blend-11, notes-13)
+root(ROOT-0, articulate-4)
+det(proposition-2, A-1)
+aux(articulate-4, is-3)
+punct(articulate-4, .-5)
+nsubj(articulate-4, proposition-2)
+G[14, 11] [?1, ?2, ?3, ?4, ?5, articulate4, blend2147483647, blend2147483647, music7, notes13, proposition2147483647, proposition2147483647, theme2147483647, words8]
+?2-a->blend2147483647
+?1-A->proposition2147483647
+?4-a->theme2147483647
+?5-A->proposition2147483647
+?4-as : is ->?2
+notes13-of->?2
+?3-a->blend2147483647
+?1-  : is ->?3
+?5-  : is ->articulate4
+words8-of->?3
+music7-in->?4
+------CorefChainz
+CHAIN5-["A proposition" in sentence 1, "A proposition" in sentence 3]
+representative mention: "A proposition" in sentence 1

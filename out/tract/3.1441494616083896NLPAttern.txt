@@ -1,0 +1,27 @@
+ Situations can be described but not given names.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, described-4)
+aux(described-4, can-2)
+auxpass(described-4, be-3)
+cc(described-4, but-5)
+punct(described-4, .-9)
+nsubjpass(described-4, Situations-1)
+nsubjpass(given-7, Situations-1)
+neg(given-7, not-6)
+conj:but(described-4, given-7)
+dobj(given-7, names-8)
+G[5, 5] [Situations1, described4, given7, names8, not6]
+not6- ->given7
+given7-but->described4
+Situations1- ->given7
+names8- ->given7
+Situations1-  : can  : be ->described4
+------CorefChainz

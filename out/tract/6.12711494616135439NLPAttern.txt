@@ -1,0 +1,259 @@
+ It is clear that the number of the 'primitive propositions of logic' is arbitrary, since one could derive logic from a single primitive proposition, e.g. by simply constructing the logical product of Frege's primitive propositions. (Frege would perhaps say that we should then no longer have an immediately self-evident primitive proposition. But it is remarkable that a thinker as rigorous as Frege appealed to the degree of self-evidence as the criterion of a logical proposition.)
+------CorefChainz
+CHAIN13-["Frege 's" in sentence 1, "Frege" in sentence 2, "Frege" in sentence 3]
+representative mention: "Frege 's" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, ,-17)
+punct(clear-3, .-41)
+det(number-6, the-5)
+case(propositions-11, of-7)
+det(propositions-11, the-8)
+punct(propositions-11, `-9)
+case(logic-13, of-12)
+cop(arbitrary-16, is-15)
+mark(arbitrary-16, that-4)
+punct(arbitrary-16, '-14)
+aux(derive-21, could-20)
+mark(derive-21, since-18)
+punct(derive-21, ,-28)
+case(proposition-27, from-23)
+det(proposition-27, a-24)
+mark(constructing-32, by-30)
+det(product-35, the-33)
+case(Frege-37, 's-38)
+case(propositions-40, of-36)
+nsubj(clear-3, It-1)
+nsubj(arbitrary-16, number-6)
+amod(propositions-11, primitive-10)
+nmod:of(number-6, propositions-11)
+nmod:of(propositions-11, logic-13)
+ccomp(clear-3, arbitrary-16)
+nsubj(derive-21, one-19)
+advcl:since(clear-3, derive-21)
+dobj(derive-21, logic-22)
+amod(proposition-27, single-25)
+amod(proposition-27, primitive-26)
+nmod:from(derive-21, proposition-27)
+advmod(derive-21, e.g.-29)
+advmod(constructing-32, simply-31)
+advcl:by(e.g.-29, constructing-32)
+amod(product-35, logical-34)
+dobj(constructing-32, product-35)
+nmod:poss(propositions-40, Frege-37)
+amod(propositions-40, primitive-39)
+nmod:of(product-35, propositions-40)
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, ,-17)
+punct(clear-3, .-41)
+det(number-6, the-5)
+case(propositions-11, of-7)
+det(propositions-11, the-8)
+punct(propositions-11, `-9)
+case(logic-13, of-12)
+cop(arbitrary-16, is-15)
+mark(arbitrary-16, that-4)
+punct(arbitrary-16, '-14)
+aux(derive-21, could-20)
+mark(derive-21, since-18)
+punct(derive-21, ,-28)
+case(proposition-27, from-23)
+det(proposition-27, a-24)
+mark(constructing-32, by-30)
+det(product-35, the-33)
+case(Frege-37, 's-38)
+case(propositions-40, of-36)
+nsubj(clear-3, It-1)
+nsubj(arbitrary-16, number-6)
+amod(propositions-11, primitive-10)
+nmod:of(number-6, propositions-11)
+nmod:of(propositions-11, logic-13)
+ccomp(clear-3, arbitrary-16)
+nsubj(derive-21, one-19)
+advcl:since(clear-3, derive-21)
+dobj(derive-21, logic-22)
+amod(proposition-27, single-25)
+amod(proposition-27, primitive-26)
+nmod:from(derive-21, proposition-27)
+advmod(derive-21, e.g.-29)
+advmod(constructing-32, simply-31)
+advcl:by(e.g.-29, constructing-32)
+amod(product-35, logical-34)
+dobj(constructing-32, product-35)
+nmod:poss(propositions-40, Frege-37)
+amod(propositions-40, primitive-39)
+nmod:of(product-35, propositions-40)
+root(ROOT-0, say-5)
+aux(say-5, would-3)
+punct(say-5, -LRB--1)
+punct(say-5, .-18)
+aux(longer-11, should-8)
+mark(longer-11, that-6)
+det(proposition-17, an-13)
+nsubj(say-5, Frege-2)
+advmod(say-5, perhaps-4)
+nsubj(longer-11, we-7)
+advmod(longer-11, then-9)
+neg(longer-11, no-10)
+ccomp(say-5, longer-11)
+ccomp(longer-11, have-12)
+advmod(self-evident-15, immediately-14)
+amod(proposition-17, self-evident-15)
+amod(proposition-17, primitive-16)
+dobj(have-12, proposition-17)
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, ,-17)
+punct(clear-3, .-41)
+det(number-6, the-5)
+case(propositions-11, of-7)
+det(propositions-11, the-8)
+punct(propositions-11, `-9)
+case(logic-13, of-12)
+cop(arbitrary-16, is-15)
+mark(arbitrary-16, that-4)
+punct(arbitrary-16, '-14)
+aux(derive-21, could-20)
+mark(derive-21, since-18)
+punct(derive-21, ,-28)
+case(proposition-27, from-23)
+det(proposition-27, a-24)
+mark(constructing-32, by-30)
+det(product-35, the-33)
+case(Frege-37, 's-38)
+case(propositions-40, of-36)
+nsubj(clear-3, It-1)
+nsubj(arbitrary-16, number-6)
+amod(propositions-11, primitive-10)
+nmod:of(number-6, propositions-11)
+nmod:of(propositions-11, logic-13)
+ccomp(clear-3, arbitrary-16)
+nsubj(derive-21, one-19)
+advcl:since(clear-3, derive-21)
+dobj(derive-21, logic-22)
+amod(proposition-27, single-25)
+amod(proposition-27, primitive-26)
+nmod:from(derive-21, proposition-27)
+advmod(derive-21, e.g.-29)
+advmod(constructing-32, simply-31)
+advcl:by(e.g.-29, constructing-32)
+amod(product-35, logical-34)
+dobj(constructing-32, product-35)
+nmod:poss(propositions-40, Frege-37)
+amod(propositions-40, primitive-39)
+nmod:of(product-35, propositions-40)
+root(ROOT-0, say-5)
+aux(say-5, would-3)
+punct(say-5, -LRB--1)
+punct(say-5, .-18)
+aux(longer-11, should-8)
+mark(longer-11, that-6)
+det(proposition-17, an-13)
+nsubj(say-5, Frege-2)
+advmod(say-5, perhaps-4)
+nsubj(longer-11, we-7)
+advmod(longer-11, then-9)
+neg(longer-11, no-10)
+ccomp(say-5, longer-11)
+ccomp(longer-11, have-12)
+advmod(self-evident-15, immediately-14)
+amod(proposition-17, self-evident-15)
+amod(proposition-17, primitive-16)
+dobj(have-12, proposition-17)
+root(ROOT-0, remarkable-4)
+cc(remarkable-4, But-1)
+cop(remarkable-4, is-3)
+det(thinker-7, a-6)
+punct(thinker-7, .-25)
+punct(thinker-7, -RRB--26)
+mark(appealed-12, as-10)
+case(degree-15, to-13)
+det(degree-15, the-14)
+case(self-evidence-17, of-16)
+case(criterion-20, as-18)
+det(criterion-20, the-19)
+case(proposition-24, of-21)
+det(proposition-24, a-22)
+nsubj(remarkable-4, it-2)
+dep(remarkable-4, that-5)
+root(that-5, thinker-7)
+advmod(rigorous-9, as-8)
+amod(thinker-7, rigorous-9)
+nsubj(appealed-12, Frege-11)
+advcl:as(rigorous-9, appealed-12)
+nmod:to(appealed-12, degree-15)
+nmod:of(degree-15, self-evidence-17)
+nmod:as(degree-15, criterion-20)
+amod(proposition-24, logical-23)
+nmod:of(criterion-20, proposition-24)
+G[55, 54] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, Frege11, Frege2, Frege37, It1, appealed12, arbitrary16, as8, clear3, constructing32, criterion2147483647, degree2147483647, derive21, e.g.29, have12, immediately14, it2, logic13, logic22, logical34, logical23, longer11, no10, number2147483647, one19, perhaps4, primitive10, primitive16, primitive26, primitive39, product2147483647, proposition2147483647, proposition2147483647, proposition2147483647, propositions2147483647, propositions40, remarkable4, rigorous9, say5, self-evidence17, self-evident15, simply31, single25, that5, then9, thinker2147483647, we7]
+?5-an->proposition2147483647
+?4-as->?6
+it2-  : But  : is ->remarkable4
+?4-the->criterion2147483647
+primitive39- ->propositions40
+Frege37-poss : 's ->propositions40
+have12- ->longer11
+that5- ->remarkable4
+appealed12-as->rigorous9
+Frege11- ->appealed12
+?2-the->propositions2147483647
+propositions40-of->?8
+arbitrary16-  : that ->clear3
+primitive10- ->?2
+logical34- ->?8
+?1- ->that5
+it2- ->Frege37
+primitive26- ->?7
+Frege2-  : would  : would ->say5
+perhaps4- ->say5
+longer11-  : that  : that ->say5
+self-evidence17-of->?6
+?6-to->appealed12
+?9-of->?4
+single25- ->?7
+?7-a->proposition2147483647
+derive21-since->clear3
+rigorous9- ->?1
+?8- ->constructing32
+?9-a->proposition2147483647
+e.g.29- ->derive21
+logical23- ->?9
+one19-  : could ->derive21
+no10- ->longer11
+?1-a->thinker2147483647
+primitive16- ->?5
+logic22- ->derive21
+?2- ->Frege37
+?2-of->?3
+as8- ->rigorous9
+?3-  : is ->arbitrary16
+?3-the->number2147483647
+we7-  : should  : should ->longer11
+It1-  : is ->clear3
+then9- ->longer11
+?8-the->product2147483647
+constructing32-by->e.g.29
+self-evident15- ->?5
+?6-the->degree2147483647
+logic13-of->?2
+immediately14- ->self-evident15
+?7-from->derive21
+simply31- ->constructing32
+?5- ->have12
+------CorefChainz
+CHAIN13-["Frege 's" in sentence 1, "Frege" in sentence 2, "Frege" in sentence 3]
+representative mention: "Frege 's" in sentence 1

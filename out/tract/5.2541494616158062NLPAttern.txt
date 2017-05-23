@@ -1,0 +1,37 @@
+ An operation can vanish (e.g. negation in 'PPp' : PPp = p).
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, vanish-4)
+det(operation-2, An-1)
+aux(vanish-4, can-3)
+punct(vanish-4, .-17)
+punct(negation-7, -RRB--16)
+punct(negation-7, -LRB--5)
+punct(negation-7, :-12)
+case(PPp-10, in-8)
+punct(PPp-10, `-9)
+punct(PPp-10, '-11)
+nsubj(vanish-4, operation-2)
+dep(negation-7, e.g.-6)
+dep(vanish-4, negation-7)
+nmod:in(negation-7, PPp-10)
+dep(negation-7, PPp-13)
+amod(PPp-13, =-14)
+dep(=-14, p-15)
+G[9, 8] [=14, ?1, PPp13, PPp10, e.g.6, negation7, operation2147483647, p15, vanish4]
+PPp10-in->negation7
+PPp13- ->negation7
+?1-  : can ->vanish4
+e.g.6- ->negation7
+?1-An->operation2147483647
+=14- ->PPp13
+negation7- ->vanish4
+p15- ->=14
+------CorefChainz

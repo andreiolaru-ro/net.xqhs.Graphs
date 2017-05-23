@@ -1,0 +1,96 @@
+ In that case we could not sketch any picture of the world (true or false).
+------CorefChainz
+In-IN 
+that-DT 
+case-NN 
+we-PRP 
+could-MD 
+not-RB 
+sketch-VB 
+any-DT 
+picture-NN 
+of-IN 
+the-DT 
+world-NN 
+-LRB---LRB- 
+true-JJ 
+or-CC 
+false-JJ 
+-RRB---RRB- 
+.-. 
+ROOT 	-> S 	-> PP 	-> IN 	-> In
+	 	-> NP 	-> DT 	-> that
+	 	-> NN 	-> case
+			 	-> NP 	-> PRP 	-> we
+		 	-> VP 	-> MD 	-> could
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> sketch
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> picture
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> world
+		 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> ADJP 	-> JJ 	-> true
+	 	-> CC 	-> or
+	 	-> JJ 	-> false
+		 	-> -RRB- 	-> -RRB-
+							 	-> . 	-> .
+			
+Dependensee repr
+case(case-3, In-1)
+det(case-3, that-2)
+nmod:in(sketch-7, case-3)
+nsubj(sketch-7, we-4)
+aux(sketch-7, could-5)
+neg(sketch-7, not-6)
+root(ROOT-0, sketch-7)
+det(picture-9, any-8)
+dobj(sketch-7, picture-9)
+case(world-12, of-10)
+det(world-12, the-11)
+nmod:of(picture-9, world-12)
+dep(world-12, true-14)
+cc(true-14, or-15)
+dep(world-12, false-16)
+conj:or(true-14, false-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, sketch-7)
+case(case-3, In-1)
+det(case-3, that-2)
+aux(sketch-7, could-5)
+punct(sketch-7, .-18)
+det(picture-9, any-8)
+case(world-12, of-10)
+det(world-12, the-11)
+cc(true-14, or-15)
+punct(true-14, -RRB--17)
+punct(true-14, -LRB--13)
+nmod:in(sketch-7, case-3)
+nsubj(sketch-7, we-4)
+neg(sketch-7, not-6)
+dobj(sketch-7, picture-9)
+nmod:of(picture-9, world-12)
+dep(world-12, true-14)
+dep(world-12, false-16)
+conj:or(true-14, false-16)
+G[11, 11] [?#1, ?#2, ?#3, case, false, not, picture, sketch, true, we, world]
+true- ->?#2
+?#2-of->?#3
+?#1-that->case
+?#2-the->world
+?#3- ->sketch
+?#3-any->picture
+we-  : could  : could  ->sketch
+not- ->sketch
+false- ->?#2
+false-or->true
+?#1-in : In in->sketch
+------CorefChainz

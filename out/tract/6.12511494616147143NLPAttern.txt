@@ -1,0 +1,25 @@
+ Hence there can never be surprises in logic.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, surprises-6)
+aux(surprises-6, can-3)
+cop(surprises-6, be-5)
+punct(surprises-6, .-9)
+case(logic-8, in-7)
+advmod(surprises-6, Hence-1)
+expl(surprises-6, there-2)
+neg(surprises-6, never-4)
+nmod:in(surprises-6, logic-8)
+G[5, 4] [Hence1, logic8, never4, surprises6, there2]
+Hence1- ->surprises6
+never4-  : be ->surprises6
+there2-  : can  : can ->surprises6
+logic8-in->surprises6
+------CorefChainz

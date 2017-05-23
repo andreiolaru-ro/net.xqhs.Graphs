@@ -1,0 +1,107 @@
+ We can represent truth-possibilities by schemata of the following kind ('T' means 'true', 'F' means 'false'; the rows of 'T's' and 'F's' under the row of elementary propositions symbolize their truth-possibilities in a way that can easily be understood):
+------CorefChainz
+CHAIN11-["T 's ' and ` F 's ' under the row of elementary propositions" in sentence 1, "their" in sentence 1]
+representative mention: "T 's ' and ` F 's ' under the row of elementary propositions" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, represent-3)
+aux(represent-3, can-2)
+punct(represent-3, :-58)
+case(schemata-6, by-5)
+case(kind-10, of-7)
+det(kind-10, the-8)
+punct(means-15, `-16)
+punct(means-15, '-18)
+punct(means-15, ,-19)
+punct(means-15, `-20)
+punct(means-15, '-22)
+punct(means-15, -LRB--11)
+punct(means-15, `-12)
+punct(means-15, '-14)
+punct(means-23, ;-27)
+punct(false-25, `-24)
+punct(false-25, '-26)
+det(rows-29, the-28)
+punct(rows-29, -RRB--57)
+case(T-32, 's-33)
+cc(T-32, and-35)
+punct(T-32, '-34)
+punct(T-32, '-39)
+punct(T-32, `-31)
+case(F-37, 's-38)
+punct(F-37, `-36)
+case(row-42, under-40)
+det(row-42, the-41)
+case(propositions-45, of-43)
+mark(symbolize-46, of-30)
+case(way-51, in-49)
+det(way-51, a-50)
+aux(understood-56, can-53)
+auxpass(understood-56, be-55)
+nsubj(represent-3, We-1)
+dobj(represent-3, truth-possibilities-4)
+nmod:by(means-23, schemata-6)
+amod(kind-10, following-9)
+nmod:of(means-23, kind-10)
+nsubj(means-15, T-13)
+dep(means-23, means-15)
+dep(means-15, true-17)
+dep(means-15, F-21)
+xcomp(represent-3, means-23)
+xcomp(means-23, false-25)
+parataxis(means-23, rows-29)
+nsubj(symbolize-46, T-32)
+conj:and(T-32, F-37)
+nsubj(symbolize-46, F-37)
+nmod:under(T-32, row-42)
+amod(propositions-45, elementary-44)
+nmod:of(row-42, propositions-45)
+acl:of(rows-29, symbolize-46)
+nmod:poss(truth-possibilities-48, their-47)
+dobj(symbolize-46, truth-possibilities-48)
+nmod:in(symbolize-46, way-51)
+nsubjpass(understood-56, way-51)
+ref(way-51, that-52)
+advmod(understood-56, easily-54)
+acl:relcl(way-51, understood-56)
+G[29, 31] [?1, ?2, ?3, ?4, F37, F21, T32, T13, We1, easily54, elementary44, false25, following9, kind2147483647, means23, means15, propositions45, represent3, row2147483647, rows2147483647, schemata6, symbolize46, that52, their47, true17, truth-possibilities48, truth-possibilities4, understood56, way2147483647]
+?2-of->means23
+that52- ->?3
+their47-poss->truth-possibilities48
+truth-possibilities48- ->symbolize46
+means23- ->represent3
+F37-and : 's ->T32
+understood56-relcl->?3
+?4- ->means23
+T13- ->means15
+?3-a->way2147483647
+We1-  : can ->represent3
+means15- ->means23
+false25- ->means23
+F21- ->means15
+true17- ->means15
+truth-possibilities4- ->represent3
+propositions45-of->?1
+following9- ->?2
+?1-the->row2147483647
+?4-the->rows2147483647
+?2-the->kind2147483647
+easily54-  : can  : be ->understood56
+T32- ->symbolize46
+their47- ->T32
+F37- ->symbolize46
+?3- ->understood56
+?3-in->symbolize46
+schemata6-by->means23
+elementary44- ->propositions45
+?1-under->T32
+symbolize46-of->?4
+------CorefChainz
+CHAIN11-["T 's ' and ` F 's ' under the row of elementary propositions" in sentence 1, "their" in sentence 1]
+representative mention: "T 's ' and ` F 's ' under the row of elementary propositions" in sentence 1

@@ -1,0 +1,70 @@
+ It used to be said that God could create anything except what would be contrary to the laws of logic.The truth is that we could not say what an 'illogical' world would look like.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, used-2)
+mwe(contrary-15, to-16)
+punct(used-2, .-37)
+auxpass(said-5, be-4)
+mark(said-5, to-3)
+aux(create-9, could-8)
+mark(create-9, that-6)
+aux(laws-18, would-13)
+case(laws-18, contrary-15)
+cop(laws-18, be-14)
+det(laws-18, the-17)
+mark(laws-18, except-11)
+case(truth-21, of-19)
+compound(truth-21, logic.The-20)
+aux(say-27, could-25)
+mark(say-27, that-23)
+det(world-33, an-29)
+punct(world-33, '-32)
+punct(world-33, `-30)
+aux(look-35, would-34)
+nsubj(used-2, It-1)
+nsubjpass:xsubj(said-5, It-1)
+xcomp(used-2, said-5)
+nsubj(create-9, God-7)
+ccomp(said-5, create-9)
+dobj(create-9, anything-10)
+nsubj(laws-18, what-12)
+advcl:contrary_to(create-9, laws-18)
+nmod:of(laws-18, truth-21)
+dep(used-2, is-22)
+nsubj(say-27, we-24)
+neg(say-27, not-26)
+ccomp(is-22, say-27)
+dobj(look-35, what-28)
+amod(world-33, illogical-31)
+nsubj(look-35, world-33)
+ccomp(say-27, look-35)
+advmod(look-35, like-36)
+G[21, 20] [?1, ?2, God7, It1, anything10, contrary to15, create9, illogical31, is22, laws2147483647, like36, logic.The truth21, look35, not26, said5, say27, used2, we24, what28, what12, world2147483647]
+like36- ->look35
+what28- ->look35
+said5-  : to  : be ->used2
+is22- ->used2
+It1- ->used2
+what12-  : except  : would  : be  : contrary ->?2
+?2-the->laws2147483647
+God7-  : could ->create9
+anything10- ->create9
+?2-contrary_to->create9
+not26- ->say27
+we24-  : could  : could ->say27
+create9-  : that  : that ->said5
+say27-  : that  : that ->is22
+look35- ->say27
+logic.The truth21-of->?2
+illogical31- ->?1
+?1-an->world2147483647
+It1-xsubj->said5
+?1-  : would ->look35
+------CorefChainz

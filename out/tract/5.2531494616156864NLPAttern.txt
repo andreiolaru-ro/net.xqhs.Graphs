@@ -1,0 +1,46 @@
+ One operation can counteract the effect of another. Operations can cancel one another.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, counteract-4)
+aux(counteract-4, can-3)
+punct(counteract-4, .-9)
+det(effect-6, the-5)
+case(another-8, of-7)
+nummod(operation-2, One-1)
+nsubj(counteract-4, operation-2)
+dobj(counteract-4, effect-6)
+nmod:of(effect-6, another-8)
+---
+qqroot(ROOT-0, counteract-4)
+aux(counteract-4, can-3)
+punct(counteract-4, .-9)
+det(effect-6, the-5)
+case(another-8, of-7)
+nummod(operation-2, One-1)
+nsubj(counteract-4, operation-2)
+dobj(counteract-4, effect-6)
+nmod:of(effect-6, another-8)
+root(ROOT-0, cancel-3)
+aux(cancel-3, can-2)
+punct(cancel-3, .-6)
+nsubj(cancel-3, Operations-1)
+nummod(another-5, one-4)
+dobj(cancel-3, another-5)
+G[10, 8] [?1, One1, Operations1, another5, another8, cancel3, counteract4, effect2147483647, one4, operation2]
+another5- ->cancel3
+Operations1-  : can ->cancel3
+?1-the->effect2147483647
+one4- ->another5
+One1- ->operation2
+operation2-  : can ->counteract4
+?1- ->counteract4
+another8-of->?1
+------CorefChainz

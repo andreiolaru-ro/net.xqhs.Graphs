@@ -1,0 +1,162 @@
+ If the truth of one proposition follows from the truth of others, this finds expression in relations in which the forms of the propositions stand to one another: nor is it necessary for us to set up these relations between them, by combining them with one another in a single proposition; on the contrary, the relations are internal, and their existence is an immediate result of the existence of the propositions.
+------CorefChainz
+CHAIN21-["these relations between them" in sentence 1, "the relations" in sentence 1]
+representative mention: "these relations between them" in sentence 1
+CHAIN22-["one proposition" in sentence 1, "the propositions" in sentence 1, "them" in sentence 1, "them" in sentence 1, "a single proposition" in sentence 1, "their" in sentence 1, "the propositions" in sentence 1]
+representative mention: "a single proposition" in sentence 1
+CHAIN13-["the truth of one proposition" in sentence 1, "it" in sentence 1]
+representative mention: "the truth of one proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, finds-15)
+det(truth-3, the-2)
+case(proposition-6, of-4)
+mark(follows-7, If-1)
+case(truth-10, from-8)
+det(truth-10, the-9)
+case(others-12, of-11)
+cc(finds-15, nor-31)
+punct(finds-15, ;-55)
+punct(finds-15, ,-13)
+punct(finds-15, :-30)
+punct(finds-15, .-78)
+case(relations-18, in-17)
+case(which-20, in-19)
+det(forms-22, the-21)
+case(propositions-25, of-23)
+det(propositions-25, the-24)
+case(one-28, to-27)
+aux(set-38, is-32)
+mark(set-38, for-35)
+mark(set-38, to-37)
+punct(set-38, ,-44)
+det(relations-41, these-40)
+case(them-43, between-42)
+mark(combining-46, by-45)
+case(one-49, with-48)
+case(proposition-54, in-51)
+det(proposition-54, a-52)
+case(contrary-58, on-56)
+det(contrary-58, the-57)
+det(relations-61, the-60)
+cc(internal-63, and-65)
+cop(internal-63, are-62)
+punct(internal-63, ,-64)
+punct(internal-63, ,-59)
+cop(result-71, is-68)
+det(result-71, an-69)
+case(existence-74, of-72)
+det(existence-74, the-73)
+case(propositions-77, of-75)
+det(propositions-77, the-76)
+nsubj(follows-7, truth-3)
+nummod(proposition-6, one-5)
+nmod:of(truth-3, proposition-6)
+advcl:if(finds-15, follows-7)
+nmod:from(follows-7, truth-10)
+nmod:of(truth-10, others-12)
+nsubj(finds-15, this-14)
+dobj(finds-15, expression-16)
+nmod:in(expression-16, relations-18)
+nmod:in(stand-26, relations-18)
+ref(relations-18, which-20)
+nsubj(stand-26, forms-22)
+nmod:of(forms-22, propositions-25)
+acl:relcl(relations-18, stand-26)
+nmod:to(stand-26, one-28)
+dep(one-28, another-29)
+nsubj(set-38, it-33)
+dep(set-38, necessary-34)
+nsubj(set-38, us-36)
+conj:nor(finds-15, set-38)
+compound:prt(set-38, up-39)
+dobj(set-38, relations-41)
+nmod:between(relations-41, them-43)
+advcl:by(set-38, combining-46)
+dobj(combining-46, them-47)
+nmod:with(combining-46, one-49)
+dep(one-49, another-50)
+amod(proposition-54, single-53)
+nmod:in(one-49, proposition-54)
+nmod:on(internal-63, contrary-58)
+nsubj(internal-63, relations-61)
+parataxis(finds-15, internal-63)
+nmod:poss(existence-67, their-66)
+nsubj(result-71, existence-67)
+amod(result-71, immediate-70)
+parataxis(finds-15, result-71)
+conj:and(internal-63, result-71)
+nmod:of(result-71, existence-74)
+nmod:of(existence-74, propositions-77)
+G[49, 58] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, another29, another50, combining46, contrary2147483647, existence67, existence2147483647, expression16, finds15, follows7, forms2147483647, immediate70, internal63, it33, necessary34, one28, one5, one49, others12, proposition6, proposition2147483647, propositions2147483647, propositions2147483647, relations2147483647, relations18, relations2147483647, result2147483647, set38, single53, stand26, their66, them43, them47, this14, truth2147483647, truth2147483647, up39, us36, which20]
+?9-of->?7
+relations18-in->expression16
+follows7-if->finds15
+?4-and->internal63
+stand26-relcl->relations18
+their66- ->?8
+?11-of->?4
+set38-nor->finds15
+?9-the->propositions2147483647
+?8-a->proposition2147483647
+?6-these->relations2147483647
+necessary34-  : for  : for ->set38
+?1-the->contrary2147483647
+?4- ->finds15
+?3-the->truth2147483647
+another50- ->one49
+them47- ->combining46
+proposition6-of->?3
+them43-between->?6
+?10-of->?11
+?5-from->follows7
+this14- ->finds15
+them47- ->?8
+them43- ->?8
+immediate70- ->?4
+another29- ->one28
+?2- ->?6
+internal63- ->finds15
+one49-with->combining46
+one28-to->stand26
+?9- ->?8
+existence67-  : is ->?4
+?3-  : If ->follows7
+others12-of->?5
+?5-the->truth2147483647
+?8-in->one49
+?10- ->?8
+?7-the->forms2147483647
+us36-  : to ->set38
+up39-prt->set38
+?2-  : are ->internal63
+expression16- ->finds15
+one5- ->proposition6
+?10-the->propositions2147483647
+relations18-in->stand26
+?7- ->stand26
+proposition6- ->?8
+it33-  : is ->set38
+?1-on->internal63
+it33- ->?3
+?2-the->relations2147483647
+combining46-by->set38
+?4-an->result2147483647
+?6- ->set38
+which20-  : in ->relations18
+their66-poss->existence67
+single53- ->?8
+?11-the->existence2147483647
+------CorefChainz
+CHAIN21-["these relations between them" in sentence 1, "the relations" in sentence 1]
+representative mention: "these relations between them" in sentence 1
+CHAIN22-["one proposition" in sentence 1, "the propositions" in sentence 1, "them" in sentence 1, "them" in sentence 1, "a single proposition" in sentence 1, "their" in sentence 1, "the propositions" in sentence 1]
+representative mention: "a single proposition" in sentence 1
+CHAIN13-["the truth of one proposition" in sentence 1, "it" in sentence 1]
+representative mention: "the truth of one proposition" in sentence 1

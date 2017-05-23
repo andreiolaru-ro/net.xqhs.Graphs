@@ -1,0 +1,315 @@
+ A fully generalized proposition, like every other proposition, is composite. (This is shown by the fact that in '(dx, O) . Ox' we have to mention 'O' and 's' separately. They both, independently, stand in signifying relations to the world, just as is the case in ungeneralized propositions.) It is a mark of a composite symbol that it has something in common with other symbols.
+------CorefChainz
+CHAIN19-["A fully generalized proposition" in sentence 1, "This" in sentence 2, "It" in sentence 5, "it" in sentence 5]
+representative mention: "A fully generalized proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, composite-12)
+det(proposition-4, A-1)
+case(proposition-9, like-6)
+det(proposition-9, every-7)
+cop(composite-12, is-11)
+punct(composite-12, ,-5)
+punct(composite-12, ,-10)
+punct(composite-12, .-13)
+advmod(generalized-3, fully-2)
+amod(proposition-4, generalized-3)
+nsubj(composite-12, proposition-4)
+amod(proposition-9, other-8)
+nmod:like(composite-12, proposition-9)
+---
+qqroot(ROOT-0, composite-12)
+det(proposition-4, A-1)
+case(proposition-9, like-6)
+det(proposition-9, every-7)
+cop(composite-12, is-11)
+punct(composite-12, ,-5)
+punct(composite-12, ,-10)
+punct(composite-12, .-13)
+advmod(generalized-3, fully-2)
+amod(proposition-4, generalized-3)
+nsubj(composite-12, proposition-4)
+amod(proposition-9, other-8)
+nmod:like(composite-12, proposition-9)
+root(ROOT-0, shown-4)
+auxpass(shown-4, is-3)
+punct(shown-4, .-16)
+punct(shown-4, -LRB--1)
+case(fact-7, by-5)
+det(fact-7, the-6)
+case(dx-12, in-9)
+punct(dx-12, '-10)
+punct(dx-12, -LRB--11)
+mark(O-14, that-8)
+punct(O-14, ,-13)
+punct(O-14, -RRB--15)
+nsubjpass(shown-4, This-2)
+nmod:agent(shown-4, fact-7)
+nmod:in(O-14, dx-12)
+ccomp(fact-7, O-14)
+---
+qqroot(ROOT-0, composite-12)
+det(proposition-4, A-1)
+case(proposition-9, like-6)
+det(proposition-9, every-7)
+cop(composite-12, is-11)
+punct(composite-12, ,-5)
+punct(composite-12, ,-10)
+punct(composite-12, .-13)
+advmod(generalized-3, fully-2)
+amod(proposition-4, generalized-3)
+nsubj(composite-12, proposition-4)
+amod(proposition-9, other-8)
+nmod:like(composite-12, proposition-9)
+root(ROOT-0, shown-4)
+auxpass(shown-4, is-3)
+punct(shown-4, .-16)
+punct(shown-4, -LRB--1)
+case(fact-7, by-5)
+det(fact-7, the-6)
+case(dx-12, in-9)
+punct(dx-12, '-10)
+punct(dx-12, -LRB--11)
+mark(O-14, that-8)
+punct(O-14, ,-13)
+punct(O-14, -RRB--15)
+nsubjpass(shown-4, This-2)
+nmod:agent(shown-4, fact-7)
+nmod:in(O-14, dx-12)
+ccomp(fact-7, O-14)
+root(ROOT-0, have-4)
+punct(have-4, .-14)
+punct(have-4, '-2)
+mark(mention-6, to-5)
+cc(O-8, and-10)
+punct(O-8, `-7)
+punct(O-8, '-9)
+punct(separately-13, '-12)
+nsubj(have-4, Ox-1)
+nsubj:xsubj(mention-6, Ox-1)
+nsubj(have-4, we-3)
+nsubj:xsubj(mention-6, we-3)
+xcomp(have-4, mention-6)
+dobj(mention-6, O-8)
+dep(separately-13, 's-11)
+dobj(mention-6, separately-13)
+conj:and(O-8, separately-13)
+---
+qqroot(ROOT-0, composite-12)
+det(proposition-4, A-1)
+case(proposition-9, like-6)
+det(proposition-9, every-7)
+cop(composite-12, is-11)
+punct(composite-12, ,-5)
+punct(composite-12, ,-10)
+punct(composite-12, .-13)
+advmod(generalized-3, fully-2)
+amod(proposition-4, generalized-3)
+nsubj(composite-12, proposition-4)
+amod(proposition-9, other-8)
+nmod:like(composite-12, proposition-9)
+root(ROOT-0, shown-4)
+auxpass(shown-4, is-3)
+punct(shown-4, .-16)
+punct(shown-4, -LRB--1)
+case(fact-7, by-5)
+det(fact-7, the-6)
+case(dx-12, in-9)
+punct(dx-12, '-10)
+punct(dx-12, -LRB--11)
+mark(O-14, that-8)
+punct(O-14, ,-13)
+punct(O-14, -RRB--15)
+nsubjpass(shown-4, This-2)
+nmod:agent(shown-4, fact-7)
+nmod:in(O-14, dx-12)
+ccomp(fact-7, O-14)
+root(ROOT-0, have-4)
+punct(have-4, .-14)
+punct(have-4, '-2)
+mark(mention-6, to-5)
+cc(O-8, and-10)
+punct(O-8, `-7)
+punct(O-8, '-9)
+punct(separately-13, '-12)
+nsubj(have-4, Ox-1)
+nsubj:xsubj(mention-6, Ox-1)
+nsubj(have-4, we-3)
+nsubj:xsubj(mention-6, we-3)
+xcomp(have-4, mention-6)
+dobj(mention-6, O-8)
+dep(separately-13, 's-11)
+dobj(mention-6, separately-13)
+conj:and(O-8, separately-13)
+root(ROOT-0, stand-6)
+det(They-1, both-2)
+punct(They-1, ,-3)
+punct(stand-6, ,-13)
+punct(stand-6, ,-5)
+punct(stand-6, .-22)
+punct(stand-6, -RRB--23)
+mark(signifying-8, in-7)
+case(world-12, to-10)
+det(world-12, the-11)
+cop(case-18, is-16)
+det(case-18, the-17)
+case(propositions-21, in-19)
+nsubj(stand-6, They-1)
+advmod(stand-6, independently-4)
+advcl:in(stand-6, signifying-8)
+dobj(signifying-8, relations-9)
+nmod:to(signifying-8, world-12)
+advmod(as-15, just-14)
+advmod(case-18, as-15)
+ccomp(stand-6, case-18)
+amod(propositions-21, ungeneralized-20)
+nmod:in(case-18, propositions-21)
+---
+qqroot(ROOT-0, composite-12)
+det(proposition-4, A-1)
+case(proposition-9, like-6)
+det(proposition-9, every-7)
+cop(composite-12, is-11)
+punct(composite-12, ,-5)
+punct(composite-12, ,-10)
+punct(composite-12, .-13)
+advmod(generalized-3, fully-2)
+amod(proposition-4, generalized-3)
+nsubj(composite-12, proposition-4)
+amod(proposition-9, other-8)
+nmod:like(composite-12, proposition-9)
+root(ROOT-0, shown-4)
+auxpass(shown-4, is-3)
+punct(shown-4, .-16)
+punct(shown-4, -LRB--1)
+case(fact-7, by-5)
+det(fact-7, the-6)
+case(dx-12, in-9)
+punct(dx-12, '-10)
+punct(dx-12, -LRB--11)
+mark(O-14, that-8)
+punct(O-14, ,-13)
+punct(O-14, -RRB--15)
+nsubjpass(shown-4, This-2)
+nmod:agent(shown-4, fact-7)
+nmod:in(O-14, dx-12)
+ccomp(fact-7, O-14)
+root(ROOT-0, have-4)
+punct(have-4, .-14)
+punct(have-4, '-2)
+mark(mention-6, to-5)
+cc(O-8, and-10)
+punct(O-8, `-7)
+punct(O-8, '-9)
+punct(separately-13, '-12)
+nsubj(have-4, Ox-1)
+nsubj:xsubj(mention-6, Ox-1)
+nsubj(have-4, we-3)
+nsubj:xsubj(mention-6, we-3)
+xcomp(have-4, mention-6)
+dobj(mention-6, O-8)
+dep(separately-13, 's-11)
+dobj(mention-6, separately-13)
+conj:and(O-8, separately-13)
+root(ROOT-0, stand-6)
+det(They-1, both-2)
+punct(They-1, ,-3)
+punct(stand-6, ,-13)
+punct(stand-6, ,-5)
+punct(stand-6, .-22)
+punct(stand-6, -RRB--23)
+mark(signifying-8, in-7)
+case(world-12, to-10)
+det(world-12, the-11)
+cop(case-18, is-16)
+det(case-18, the-17)
+case(propositions-21, in-19)
+nsubj(stand-6, They-1)
+advmod(stand-6, independently-4)
+advcl:in(stand-6, signifying-8)
+dobj(signifying-8, relations-9)
+nmod:to(signifying-8, world-12)
+advmod(as-15, just-14)
+advmod(case-18, as-15)
+ccomp(stand-6, case-18)
+amod(propositions-21, ungeneralized-20)
+nmod:in(case-18, propositions-21)
+root(ROOT-0, mark-4)
+cop(mark-4, is-2)
+det(mark-4, a-3)
+punct(mark-4, .-18)
+case(symbol-8, of-5)
+det(symbol-8, a-6)
+mark(has-11, that-9)
+case(common-14, in-13)
+case(symbols-17, with-15)
+nsubj(mark-4, It-1)
+amod(symbol-8, composite-7)
+nmod:of(mark-4, symbol-8)
+nsubj(has-11, it-10)
+ccomp(symbol-8, has-11)
+dobj(has-11, something-12)
+nmod:in(something-12, common-14)
+amod(symbols-17, other-16)
+nmod:with(common-14, symbols-17)
+G[47, 47] ['s11, ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, It1, O8, O14, Ox1, They2147483647, This2, as15, case2147483647, common14, composite12, composite7, dx12, fact2147483647, fully2, generalized3, has11, have4, independently4, it10, just14, mark2147483647, mention6, other8, other16, proposition2147483647, proposition2147483647, propositions21, relations9, separately13, shown4, signifying8, something12, stand6, symbol2147483647, symbols17, ungeneralized20, we3, world2147483647]
+we3- ->have4
+it10- ->have4
+generalized3- ->?2
+?8-a->mark2147483647
+just14- ->as15
+other16- ->symbols17
+signifying8-in->stand6
+?6-the->world2147483647
+has11-  : that  : that ->?4
+?7- ->stand6
+separately13-and->O8
+O14-  : that ->?1
+?1-the->fact2147483647
+relations9- ->signifying8
+?6-to->signifying8
+Ox1-xsubj->mention6
+?2-A->proposition2147483647
+?5-the->case2147483647
+?1-agent : by ->shown4
+?3-like : is ->composite12
+separately13- ->mention6
+?4-of->?8
+?4-a->symbol2147483647
+as15-  : is ->?5
+mention6-  : to ->have4
+other8- ->?3
+?5- ->stand6
+symbols17-with->common14
+Ox1-==->have4
+it10- ->has11
+dx12-in->O14
+propositions21-in->?5
+?2- ->composite12
+It1-  : is ->?8
+common14-in->something12
+something12- ->has11
+fully2- ->generalized3
+?3-every->proposition2147483647
+we3-xsubj->mention6
+?7-both->They2147483647
+This2-  : is ->shown4
+O8- ->mention6
+ungeneralized20- ->propositions21
+This2- ->have4
+'s11- ->separately13
+composite7- ->?4
+independently4- ->stand6
+------CorefChainz
+CHAIN19-["A fully generalized proposition" in sentence 1, "This" in sentence 2, "It" in sentence 5, "it" in sentence 5]
+representative mention: "A fully generalized proposition" in sentence 1

@@ -1,0 +1,40 @@
+ In a proposition a thought finds an expression that can be perceived by the senses.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, finds-6)
+case(proposition-3, In-1)
+det(proposition-3, a-2)
+det(thought-5, a-4)
+punct(finds-6, .-16)
+det(expression-8, an-7)
+aux(perceived-12, can-10)
+auxpass(perceived-12, be-11)
+case(senses-15, by-13)
+det(senses-15, the-14)
+nmod:in(finds-6, proposition-3)
+nsubj(finds-6, thought-5)
+dobj(finds-6, expression-8)
+nsubjpass(perceived-12, expression-8)
+ref(expression-8, that-9)
+acl:relcl(expression-8, perceived-12)
+nmod:agent(perceived-12, senses-15)
+G[11, 11] [?1, ?2, ?3, ?4, expression2147483647, finds6, perceived12, proposition2147483647, senses2147483647, that9, thought2147483647]
+?2- ->finds6
+?2- ->perceived12
+?2-an->expression2147483647
+?4-agent : by ->perceived12
+?4-the->senses2147483647
+?3-in : In ->finds6
+?3-a->proposition2147483647
+?1-a->thought2147483647
+?1- ->finds6
+perceived12-relcl : can  : can  : be  : be ->?2
+that9- ->?2
+------CorefChainz

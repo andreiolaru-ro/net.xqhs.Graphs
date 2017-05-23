@@ -1,0 +1,211 @@
+ A formal concept is given immediately any object falling under it is given. It is not possible, therefore, to introduce as primitive ideas objects belonging to a formal concept and the formal concept itself. So it is impossible, for example, to introduce as primitive ideas both the concept of a function and specific functions, as Russell does; or the concept of a number and particular numbers.
+------CorefChainz
+CHAIN17-["the formal concept itself" in sentence 2, "itself" in sentence 2, "it" in sentence 3]
+representative mention: "the formal concept itself" in sentence 2
+CHAIN7-["A formal concept" in sentence 1, "it" in sentence 1, "It" in sentence 2]
+representative mention: "A formal concept" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, given-5)
+det(concept-3, A-1)
+auxpass(given-5, is-4)
+punct(given-5, .-14)
+det(object-8, any-7)
+auxpass(given-13, is-12)
+mark(given-13, under-10)
+amod(concept-3, formal-2)
+nsubjpass(given-5, concept-3)
+advmod(falling-9, immediately-6)
+nsubj(falling-9, object-8)
+ccomp(given-5, falling-9)
+nsubjpass(given-13, it-11)
+advcl:under(falling-9, given-13)
+---
+qqroot(ROOT-0, given-5)
+det(concept-3, A-1)
+auxpass(given-5, is-4)
+punct(given-5, .-14)
+det(object-8, any-7)
+auxpass(given-13, is-12)
+mark(given-13, under-10)
+amod(concept-3, formal-2)
+nsubjpass(given-5, concept-3)
+advmod(falling-9, immediately-6)
+nsubj(falling-9, object-8)
+ccomp(given-5, falling-9)
+nsubjpass(given-13, it-11)
+advcl:under(falling-9, given-13)
+root(ROOT-0, possible-4)
+cop(possible-4, is-2)
+punct(possible-4, ,-5)
+punct(possible-4, ,-7)
+punct(possible-4, .-24)
+mark(introduce-9, to-8)
+compound(objects-13, ideas-12)
+mark(belonging-14, as-10)
+case(concept-18, to-15)
+cc(concept-18, and-19)
+det(concept-18, a-16)
+det(concept-22, the-20)
+nsubj(possible-4, It-1)
+nsubj:xsubj(introduce-9, It-1)
+neg(possible-4, not-3)
+advmod(possible-4, therefore-6)
+xcomp(possible-4, introduce-9)
+amod(ideas-12, primitive-11)
+nsubj(belonging-14, objects-13)
+advcl:as(introduce-9, belonging-14)
+amod(concept-18, formal-17)
+nmod:to(belonging-14, concept-18)
+amod(concept-22, formal-21)
+nmod:to(belonging-14, concept-22)
+conj:and(concept-18, concept-22)
+nmod:npmod(concept-22, itself-23)
+---
+qqroot(ROOT-0, given-5)
+det(concept-3, A-1)
+auxpass(given-5, is-4)
+punct(given-5, .-14)
+det(object-8, any-7)
+auxpass(given-13, is-12)
+mark(given-13, under-10)
+amod(concept-3, formal-2)
+nsubjpass(given-5, concept-3)
+advmod(falling-9, immediately-6)
+nsubj(falling-9, object-8)
+ccomp(given-5, falling-9)
+nsubjpass(given-13, it-11)
+advcl:under(falling-9, given-13)
+root(ROOT-0, possible-4)
+cop(possible-4, is-2)
+punct(possible-4, ,-5)
+punct(possible-4, ,-7)
+punct(possible-4, .-24)
+mark(introduce-9, to-8)
+compound(objects-13, ideas-12)
+mark(belonging-14, as-10)
+case(concept-18, to-15)
+cc(concept-18, and-19)
+det(concept-18, a-16)
+det(concept-22, the-20)
+nsubj(possible-4, It-1)
+nsubj:xsubj(introduce-9, It-1)
+neg(possible-4, not-3)
+advmod(possible-4, therefore-6)
+xcomp(possible-4, introduce-9)
+amod(ideas-12, primitive-11)
+nsubj(belonging-14, objects-13)
+advcl:as(introduce-9, belonging-14)
+amod(concept-18, formal-17)
+nmod:to(belonging-14, concept-18)
+amod(concept-22, formal-21)
+nmod:to(belonging-14, concept-22)
+conj:and(concept-18, concept-22)
+nmod:npmod(concept-22, itself-23)
+root(ROOT-0, impossible-4)
+cop(impossible-4, is-3)
+punct(impossible-4, .-37)
+case(example-7, for-6)
+punct(example-7, ,-8)
+punct(example-7, ,-5)
+mark(introduce-10, to-9)
+case(ideas-13, as-11)
+cc(concept-16, or-28)
+cc(concept-16, and-20)
+det(concept-16, the-15)
+punct(concept-16, ,-23)
+punct(concept-16, ;-27)
+case(function-19, of-17)
+det(function-19, a-18)
+mark(does-26, as-24)
+det(concept-30, the-29)
+case(number-33, of-31)
+cc(number-33, and-34)
+det(number-33, a-32)
+advmod(impossible-4, So-1)
+nsubj(impossible-4, it-2)
+nsubj:xsubj(introduce-10, it-2)
+nmod:for(impossible-4, example-7)
+xcomp(impossible-4, introduce-10)
+amod(ideas-13, primitive-12)
+nmod:as(introduce-10, ideas-13)
+cc:preconj(concept-16, both-14)
+dep(ideas-13, concept-16)
+nmod:of(concept-16, function-19)
+amod(functions-22, specific-21)
+dep(ideas-13, functions-22)
+conj:and(concept-16, functions-22)
+nsubj(does-26, Russell-25)
+acl:relcl(concept-16, does-26)
+dep(ideas-13, concept-30)
+conj:and(concept-16, concept-30)
+nmod:of(concept-30, number-33)
+amod(numbers-36, particular-35)
+nmod:of(concept-30, numbers-36)
+conj:and(number-33, numbers-36)
+G[47, 52] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, It1, Russell25, So1, belonging14, both14, concept2147483647, concept2147483647, concept2147483647, concept2147483647, concept2147483647, does26, example7, falling9, formal2, formal21, formal17, function2147483647, functions22, given13, given5, ideas13, ideas objects13, immediately6, impossible4, introduce9, introduce10, it2, it11, itself23, not3, number2147483647, numbers36, object2147483647, particular35, possible4, primitive12, primitive11, specific21, therefore6]
+specific21- ->functions22
+?2-to->belonging14
+both14-preconj->?6
+?7-the->concept2147483647
+numbers36-of->?7
+example7-for->impossible4
+?7-and->?6
+?8-a->number2147483647
+functions22- ->ideas13
+?7- ->ideas13
+introduce9-  : to ->possible4
+formal2- ->?5
+?5-  : is ->given5
+formal21- ->?2
+numbers36-and->?8
+?6-the->concept2147483647
+introduce10- ->impossible4
+?4-to->belonging14
+?5-A->concept2147483647
+it2-xsubj->introduce10
+itself23-npmod:==->?2
+?8-of->?7
+formal17- ->?4
+ideas13-as : to ->introduce10
+functions22-and->?6
+formal2- ->?2
+primitive11- ->not3
+it11-  : is ->given13
+Russell25-  : as ->does26
+therefore6- ->possible4
+given13-under->falling9
+particular35- ->numbers36
+So1- ->not3
+?1- ->falling9
+immediately6- ->falling9
+It1-xsubj->introduce9
+primitive12- ->ideas13
+?3-of->?6
+does26-relcl : or  : or ->?6
+?2-the->concept2147483647
+So1- ->impossible4
+It1-  : is  : is ->possible4
+ideas objects13- ->belonging14
+not3- ->possible4
+?6- ->ideas13
+?2-and->?4
+belonging14-as->introduce9
+it2-  : is ->impossible4
+?4-a->concept2147483647
+?3-a->function2147483647
+falling9- ->given5
+?1-any->object2147483647
+------CorefChainz
+CHAIN17-["the formal concept itself" in sentence 2, "itself" in sentence 2, "it" in sentence 3]
+representative mention: "the formal concept itself" in sentence 2
+CHAIN7-["A formal concept" in sentence 1, "it" in sentence 1, "It" in sentence 2]
+representative mention: "A formal concept" in sentence 1

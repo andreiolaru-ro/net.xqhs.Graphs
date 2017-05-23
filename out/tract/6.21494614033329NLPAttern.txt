@@ -1,0 +1,45 @@
+ Mathematics is a logical method. The propositions of mathematics are equations, and therefore pseudo-propositions.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, method-5)
+cop(method-5, is-2)
+det(method-5, a-3)
+punct(method-5, .-6)
+nsubj(method-5, Mathematics-1)
+amod(method-5, logical-4)
+---
+qqroot(ROOT-0, method-5)
+cop(method-5, is-2)
+det(method-5, a-3)
+punct(method-5, .-6)
+nsubj(method-5, Mathematics-1)
+amod(method-5, logical-4)
+root(ROOT-0, equations-6)
+det(propositions-2, The-1)
+case(mathematics-4, of-3)
+cc(equations-6, and-8)
+cop(equations-6, are-5)
+punct(equations-6, ,-7)
+punct(equations-6, .-11)
+nsubj(equations-6, propositions-2)
+nmod:of(propositions-2, mathematics-4)
+advmod(pseudo-propositions-10, therefore-9)
+conj:and(equations-6, pseudo-propositions-10)
+G[10, 8] [?1, ?2, Mathematics1, equations6, logical4, mathematics4, method2147483647, propositions2147483647, pseudo-propositions10, therefore9]
+logical4- ->?2
+pseudo-propositions10-and->equations6
+mathematics4-of->?1
+Mathematics1-  : is ->?2
+therefore9- ->pseudo-propositions10
+?1-  : are ->equations6
+?2-a->method2147483647
+?1-The->propositions2147483647
+------CorefChainz

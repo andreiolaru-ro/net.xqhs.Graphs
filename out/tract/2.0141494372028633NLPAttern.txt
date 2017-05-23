@@ -1,0 +1,24 @@
+ Objects contain the possibility of all situations.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, contain-2)
+punct(contain-2, .-8)
+det(possibility-4, the-3)
+case(situations-7, of-5)
+det(situations-7, all-6)
+nsubj(contain-2, Objects-1)
+dobj(contain-2, possibility-4)
+nmod:of(possibility-4, situations-7)
+G[5, 4] [?1, ?2, contain2, possibility2147483647, situations2147483647]
+?1-of->?2
+?1-all->situations2147483647
+?2- ->contain2
+?2-the->possibility2147483647
+------CorefChainz

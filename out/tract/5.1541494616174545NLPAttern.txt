@@ -1,0 +1,874 @@
+ Suppose that an urn contains black and white balls in equal numbers (and none of any other kind). I draw one ball after another, putting them back into the urn. By this experiment I can establish that the number of black balls drawn and the number of white balls drawn approximate to one another as the draw continues. So this is not a mathematical truth. Now, if I say, 'The probability of my drawing a white ball is equal to the probability of my drawing a black one', this means that all the circumstances that I know of (including the laws of nature assumed as hypotheses) give no more probability to the occurrence of the one event than to that of the other. That is to say, they give each the probability 1/2 as can easily be gathered from the above definitions. What I confirm by the experiment is that the occurrence of the two events is independent of the circumstances of which I have no more detailed knowledge.
+------CorefChainz
+CHAIN49-["I" in sentence 2, "I" in sentence 3, "I" in sentence 5, "my" in sentence 5, "my" in sentence 5, "I" in sentence 5, "I" in sentence 7, "I" in sentence 7]
+representative mention: "I" in sentence 2
+CHAIN53-["this experiment" in sentence 3, "the experiment" in sentence 7]
+representative mention: "this experiment" in sentence 3
+CHAIN8-["one ball" in sentence 2, "them" in sentence 2]
+representative mention: "one ball" in sentence 2
+CHAIN9-["an urn" in sentence 1, "the urn" in sentence 2]
+representative mention: "an urn" in sentence 1
+CHAIN27-["this" in sentence 4, "this" in sentence 5]
+representative mention: "this" in sentence 4
+CHAIN46-["The probability of my drawing a white ball" in sentence 5, "the probability 1/2" in sentence 6]
+representative mention: "The probability of my drawing a white ball" in sentence 5
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, Suppose-1)
+punct(Suppose-1, .-21)
+det(urn-4, an-3)
+mark(contains-5, that-2)
+cc(black-6, and-7)
+case(numbers-12, in-10)
+cc(none-15, and-14)
+punct(none-15, -RRB--20)
+punct(none-15, -LRB--13)
+case(kind-19, of-16)
+det(kind-19, any-17)
+nsubj(contains-5, urn-4)
+ccomp(Suppose-1, contains-5)
+amod(balls-9, black-6)
+conj:and(black-6, white-8)
+amod(balls-9, white-8)
+dobj(contains-5, balls-9)
+amod(numbers-12, equal-11)
+nmod:in(balls-9, numbers-12)
+dep(balls-9, none-15)
+amod(kind-19, other-18)
+nmod:of(none-15, kind-19)
+---
+qqroot(ROOT-0, Suppose-1)
+punct(Suppose-1, .-21)
+det(urn-4, an-3)
+mark(contains-5, that-2)
+cc(black-6, and-7)
+case(numbers-12, in-10)
+cc(none-15, and-14)
+punct(none-15, -RRB--20)
+punct(none-15, -LRB--13)
+case(kind-19, of-16)
+det(kind-19, any-17)
+nsubj(contains-5, urn-4)
+ccomp(Suppose-1, contains-5)
+amod(balls-9, black-6)
+conj:and(black-6, white-8)
+amod(balls-9, white-8)
+dobj(contains-5, balls-9)
+amod(numbers-12, equal-11)
+nmod:in(balls-9, numbers-12)
+dep(balls-9, none-15)
+amod(kind-19, other-18)
+nmod:of(none-15, kind-19)
+root(ROOT-0, draw-2)
+punct(draw-2, ,-7)
+punct(draw-2, .-14)
+case(another-6, after-5)
+case(urn-13, into-11)
+det(urn-13, the-12)
+nsubj(draw-2, I-1)
+nummod(ball-4, one-3)
+dobj(draw-2, ball-4)
+nmod:after(draw-2, another-6)
+xcomp(draw-2, putting-8)
+dobj(putting-8, them-9)
+advmod(putting-8, back-10)
+nmod:into(putting-8, urn-13)
+---
+qqroot(ROOT-0, Suppose-1)
+punct(Suppose-1, .-21)
+det(urn-4, an-3)
+mark(contains-5, that-2)
+cc(black-6, and-7)
+case(numbers-12, in-10)
+cc(none-15, and-14)
+punct(none-15, -RRB--20)
+punct(none-15, -LRB--13)
+case(kind-19, of-16)
+det(kind-19, any-17)
+nsubj(contains-5, urn-4)
+ccomp(Suppose-1, contains-5)
+amod(balls-9, black-6)
+conj:and(black-6, white-8)
+amod(balls-9, white-8)
+dobj(contains-5, balls-9)
+amod(numbers-12, equal-11)
+nmod:in(balls-9, numbers-12)
+dep(balls-9, none-15)
+amod(kind-19, other-18)
+nmod:of(none-15, kind-19)
+root(ROOT-0, draw-2)
+punct(draw-2, ,-7)
+punct(draw-2, .-14)
+case(another-6, after-5)
+case(urn-13, into-11)
+det(urn-13, the-12)
+nsubj(draw-2, I-1)
+nummod(ball-4, one-3)
+dobj(draw-2, ball-4)
+nmod:after(draw-2, another-6)
+xcomp(draw-2, putting-8)
+dobj(putting-8, them-9)
+advmod(putting-8, back-10)
+nmod:into(putting-8, urn-13)
+root(ROOT-0, establish-6)
+case(experiment-3, By-1)
+det(experiment-3, this-2)
+aux(establish-6, can-5)
+punct(establish-6, .-29)
+cc(number-9, and-14)
+det(number-9, the-8)
+case(balls-12, of-10)
+det(number-16, the-15)
+case(balls-19, of-17)
+case(one-23, to-22)
+det(draw-27, the-26)
+mark(continues-28, as-25)
+nmod:by(establish-6, experiment-3)
+nsubj(establish-6, I-4)
+dobj(establish-6, that-7)
+dep(that-7, number-9)
+amod(balls-12, black-11)
+nmod:of(number-9, balls-12)
+acl(balls-12, drawn-13)
+dep(that-7, number-16)
+conj:and(number-9, number-16)
+amod(balls-19, white-18)
+nmod:of(number-16, balls-19)
+acl(balls-19, drawn-20)
+xcomp(drawn-20, approximate-21)
+nmod:to(approximate-21, one-23)
+dep(one-23, another-24)
+nsubj(continues-28, draw-27)
+dep(another-24, continues-28)
+---
+qqroot(ROOT-0, Suppose-1)
+punct(Suppose-1, .-21)
+det(urn-4, an-3)
+mark(contains-5, that-2)
+cc(black-6, and-7)
+case(numbers-12, in-10)
+cc(none-15, and-14)
+punct(none-15, -RRB--20)
+punct(none-15, -LRB--13)
+case(kind-19, of-16)
+det(kind-19, any-17)
+nsubj(contains-5, urn-4)
+ccomp(Suppose-1, contains-5)
+amod(balls-9, black-6)
+conj:and(black-6, white-8)
+amod(balls-9, white-8)
+dobj(contains-5, balls-9)
+amod(numbers-12, equal-11)
+nmod:in(balls-9, numbers-12)
+dep(balls-9, none-15)
+amod(kind-19, other-18)
+nmod:of(none-15, kind-19)
+root(ROOT-0, draw-2)
+punct(draw-2, ,-7)
+punct(draw-2, .-14)
+case(another-6, after-5)
+case(urn-13, into-11)
+det(urn-13, the-12)
+nsubj(draw-2, I-1)
+nummod(ball-4, one-3)
+dobj(draw-2, ball-4)
+nmod:after(draw-2, another-6)
+xcomp(draw-2, putting-8)
+dobj(putting-8, them-9)
+advmod(putting-8, back-10)
+nmod:into(putting-8, urn-13)
+root(ROOT-0, establish-6)
+case(experiment-3, By-1)
+det(experiment-3, this-2)
+aux(establish-6, can-5)
+punct(establish-6, .-29)
+cc(number-9, and-14)
+det(number-9, the-8)
+case(balls-12, of-10)
+det(number-16, the-15)
+case(balls-19, of-17)
+case(one-23, to-22)
+det(draw-27, the-26)
+mark(continues-28, as-25)
+nmod:by(establish-6, experiment-3)
+nsubj(establish-6, I-4)
+dobj(establish-6, that-7)
+dep(that-7, number-9)
+amod(balls-12, black-11)
+nmod:of(number-9, balls-12)
+acl(balls-12, drawn-13)
+dep(that-7, number-16)
+conj:and(number-9, number-16)
+amod(balls-19, white-18)
+nmod:of(number-16, balls-19)
+acl(balls-19, drawn-20)
+xcomp(drawn-20, approximate-21)
+nmod:to(approximate-21, one-23)
+dep(one-23, another-24)
+nsubj(continues-28, draw-27)
+dep(another-24, continues-28)
+root(ROOT-0, truth-7)
+cop(truth-7, is-3)
+det(truth-7, a-5)
+punct(truth-7, .-8)
+advmod(truth-7, So-1)
+nsubj(truth-7, this-2)
+neg(truth-7, not-4)
+amod(truth-7, mathematical-6)
+---
+qqroot(ROOT-0, Suppose-1)
+punct(Suppose-1, .-21)
+det(urn-4, an-3)
+mark(contains-5, that-2)
+cc(black-6, and-7)
+case(numbers-12, in-10)
+cc(none-15, and-14)
+punct(none-15, -RRB--20)
+punct(none-15, -LRB--13)
+case(kind-19, of-16)
+det(kind-19, any-17)
+nsubj(contains-5, urn-4)
+ccomp(Suppose-1, contains-5)
+amod(balls-9, black-6)
+conj:and(black-6, white-8)
+amod(balls-9, white-8)
+dobj(contains-5, balls-9)
+amod(numbers-12, equal-11)
+nmod:in(balls-9, numbers-12)
+dep(balls-9, none-15)
+amod(kind-19, other-18)
+nmod:of(none-15, kind-19)
+root(ROOT-0, draw-2)
+punct(draw-2, ,-7)
+punct(draw-2, .-14)
+case(another-6, after-5)
+case(urn-13, into-11)
+det(urn-13, the-12)
+nsubj(draw-2, I-1)
+nummod(ball-4, one-3)
+dobj(draw-2, ball-4)
+nmod:after(draw-2, another-6)
+xcomp(draw-2, putting-8)
+dobj(putting-8, them-9)
+advmod(putting-8, back-10)
+nmod:into(putting-8, urn-13)
+root(ROOT-0, establish-6)
+case(experiment-3, By-1)
+det(experiment-3, this-2)
+aux(establish-6, can-5)
+punct(establish-6, .-29)
+cc(number-9, and-14)
+det(number-9, the-8)
+case(balls-12, of-10)
+det(number-16, the-15)
+case(balls-19, of-17)
+case(one-23, to-22)
+det(draw-27, the-26)
+mark(continues-28, as-25)
+nmod:by(establish-6, experiment-3)
+nsubj(establish-6, I-4)
+dobj(establish-6, that-7)
+dep(that-7, number-9)
+amod(balls-12, black-11)
+nmod:of(number-9, balls-12)
+acl(balls-12, drawn-13)
+dep(that-7, number-16)
+conj:and(number-9, number-16)
+amod(balls-19, white-18)
+nmod:of(number-16, balls-19)
+acl(balls-19, drawn-20)
+xcomp(drawn-20, approximate-21)
+nmod:to(approximate-21, one-23)
+dep(one-23, another-24)
+nsubj(continues-28, draw-27)
+dep(another-24, continues-28)
+root(ROOT-0, truth-7)
+cop(truth-7, is-3)
+det(truth-7, a-5)
+punct(truth-7, .-8)
+advmod(truth-7, So-1)
+nsubj(truth-7, this-2)
+neg(truth-7, not-4)
+amod(truth-7, mathematical-6)
+root(ROOT-0, equal-17)
+mark(say-5, if-3)
+det(probability-9, The-8)
+mark(drawing-12, of-10)
+det(ball-15, a-13)
+cop(equal-17, is-16)
+punct(equal-17, -RRB--48)
+punct(equal-17, ,-28)
+punct(equal-17, ,-2)
+punct(equal-17, .-66)
+punct(equal-17, ,-6)
+punct(equal-17, `-7)
+case(probability-20, to-18)
+det(probability-20, the-19)
+mark(drawing-23, of-21)
+det(one-26, a-24)
+punct(one-26, '-27)
+det(circumstances-34, the-33)
+case(laws-42, of-38)
+case(laws-42, including-40)
+det(laws-42, the-41)
+punct(laws-42, -LRB--39)
+case(nature-44, of-43)
+mark(assumed-45, that-31)
+case(hypotheses-47, as-46)
+case(occurrence-55, to-53)
+det(occurrence-55, the-54)
+case(event-59, of-56)
+det(event-59, the-57)
+case(that-62, than-60)
+case(that-62, to-61)
+case(other-65, of-63)
+det(other-65, the-64)
+advmod(equal-17, Now-1)
+nsubj(say-5, I-4)
+advcl:if(equal-17, say-5)
+nsubj(equal-17, probability-9)
+nsubj(drawing-12, my-11)
+acl:of(probability-9, drawing-12)
+amod(ball-15, white-14)
+dobj(drawing-12, ball-15)
+nmod:to(equal-17, probability-20)
+nsubj(drawing-23, my-22)
+acl:of(probability-20, drawing-23)
+amod(one-26, black-25)
+dobj(drawing-23, one-26)
+nsubj(means-30, this-29)
+ccomp(equal-17, means-30)
+det:predet(circumstances-34, all-32)
+dobj(know-37, circumstances-34)
+nsubj(assumed-45, circumstances-34)
+ref(circumstances-34, that-35)
+nsubj(know-37, I-36)
+acl:relcl(circumstances-34, know-37)
+nmod:including(know-37, laws-42)
+nmod:of(laws-42, nature-44)
+ccomp(means-30, assumed-45)
+nmod:as(assumed-45, hypotheses-47)
+dep(equal-17, give-49)
+neg(probability-52, no-50)
+amod(probability-52, more-51)
+dobj(give-49, probability-52)
+nmod:to(probability-52, occurrence-55)
+nummod(event-59, one-58)
+nmod:of(occurrence-55, event-59)
+acl:to(probability-52, that-62)
+nmod:of(that-62, other-65)
+---
+qqroot(ROOT-0, Suppose-1)
+punct(Suppose-1, .-21)
+det(urn-4, an-3)
+mark(contains-5, that-2)
+cc(black-6, and-7)
+case(numbers-12, in-10)
+cc(none-15, and-14)
+punct(none-15, -RRB--20)
+punct(none-15, -LRB--13)
+case(kind-19, of-16)
+det(kind-19, any-17)
+nsubj(contains-5, urn-4)
+ccomp(Suppose-1, contains-5)
+amod(balls-9, black-6)
+conj:and(black-6, white-8)
+amod(balls-9, white-8)
+dobj(contains-5, balls-9)
+amod(numbers-12, equal-11)
+nmod:in(balls-9, numbers-12)
+dep(balls-9, none-15)
+amod(kind-19, other-18)
+nmod:of(none-15, kind-19)
+root(ROOT-0, draw-2)
+punct(draw-2, ,-7)
+punct(draw-2, .-14)
+case(another-6, after-5)
+case(urn-13, into-11)
+det(urn-13, the-12)
+nsubj(draw-2, I-1)
+nummod(ball-4, one-3)
+dobj(draw-2, ball-4)
+nmod:after(draw-2, another-6)
+xcomp(draw-2, putting-8)
+dobj(putting-8, them-9)
+advmod(putting-8, back-10)
+nmod:into(putting-8, urn-13)
+root(ROOT-0, establish-6)
+case(experiment-3, By-1)
+det(experiment-3, this-2)
+aux(establish-6, can-5)
+punct(establish-6, .-29)
+cc(number-9, and-14)
+det(number-9, the-8)
+case(balls-12, of-10)
+det(number-16, the-15)
+case(balls-19, of-17)
+case(one-23, to-22)
+det(draw-27, the-26)
+mark(continues-28, as-25)
+nmod:by(establish-6, experiment-3)
+nsubj(establish-6, I-4)
+dobj(establish-6, that-7)
+dep(that-7, number-9)
+amod(balls-12, black-11)
+nmod:of(number-9, balls-12)
+acl(balls-12, drawn-13)
+dep(that-7, number-16)
+conj:and(number-9, number-16)
+amod(balls-19, white-18)
+nmod:of(number-16, balls-19)
+acl(balls-19, drawn-20)
+xcomp(drawn-20, approximate-21)
+nmod:to(approximate-21, one-23)
+dep(one-23, another-24)
+nsubj(continues-28, draw-27)
+dep(another-24, continues-28)
+root(ROOT-0, truth-7)
+cop(truth-7, is-3)
+det(truth-7, a-5)
+punct(truth-7, .-8)
+advmod(truth-7, So-1)
+nsubj(truth-7, this-2)
+neg(truth-7, not-4)
+amod(truth-7, mathematical-6)
+root(ROOT-0, equal-17)
+mark(say-5, if-3)
+det(probability-9, The-8)
+mark(drawing-12, of-10)
+det(ball-15, a-13)
+cop(equal-17, is-16)
+punct(equal-17, -RRB--48)
+punct(equal-17, ,-28)
+punct(equal-17, ,-2)
+punct(equal-17, .-66)
+punct(equal-17, ,-6)
+punct(equal-17, `-7)
+case(probability-20, to-18)
+det(probability-20, the-19)
+mark(drawing-23, of-21)
+det(one-26, a-24)
+punct(one-26, '-27)
+det(circumstances-34, the-33)
+case(laws-42, of-38)
+case(laws-42, including-40)
+det(laws-42, the-41)
+punct(laws-42, -LRB--39)
+case(nature-44, of-43)
+mark(assumed-45, that-31)
+case(hypotheses-47, as-46)
+case(occurrence-55, to-53)
+det(occurrence-55, the-54)
+case(event-59, of-56)
+det(event-59, the-57)
+case(that-62, than-60)
+case(that-62, to-61)
+case(other-65, of-63)
+det(other-65, the-64)
+advmod(equal-17, Now-1)
+nsubj(say-5, I-4)
+advcl:if(equal-17, say-5)
+nsubj(equal-17, probability-9)
+nsubj(drawing-12, my-11)
+acl:of(probability-9, drawing-12)
+amod(ball-15, white-14)
+dobj(drawing-12, ball-15)
+nmod:to(equal-17, probability-20)
+nsubj(drawing-23, my-22)
+acl:of(probability-20, drawing-23)
+amod(one-26, black-25)
+dobj(drawing-23, one-26)
+nsubj(means-30, this-29)
+ccomp(equal-17, means-30)
+det:predet(circumstances-34, all-32)
+dobj(know-37, circumstances-34)
+nsubj(assumed-45, circumstances-34)
+ref(circumstances-34, that-35)
+nsubj(know-37, I-36)
+acl:relcl(circumstances-34, know-37)
+nmod:including(know-37, laws-42)
+nmod:of(laws-42, nature-44)
+ccomp(means-30, assumed-45)
+nmod:as(assumed-45, hypotheses-47)
+dep(equal-17, give-49)
+neg(probability-52, no-50)
+amod(probability-52, more-51)
+dobj(give-49, probability-52)
+nmod:to(probability-52, occurrence-55)
+nummod(event-59, one-58)
+nmod:of(occurrence-55, event-59)
+acl:to(probability-52, that-62)
+nmod:of(that-62, other-65)
+root(ROOT-0, is-2)
+punct(is-2, .-21)
+mark(say-4, to-3)
+punct(say-4, ,-5)
+det(probability-10, the-9)
+aux(gathered-16, can-13)
+auxpass(gathered-16, be-15)
+mark(gathered-16, as-12)
+case(definitions-20, from-17)
+det(definitions-20, the-18)
+nsubj(is-2, That-1)
+nsubj:xsubj(say-4, That-1)
+xcomp(is-2, say-4)
+nsubj(give-7, they-6)
+ccomp(say-4, give-7)
+iobj(give-7, each-8)
+dobj(give-7, probability-10)
+nummod(probability-10, 1/2-11)
+advmod(gathered-16, easily-14)
+advcl:as(give-7, gathered-16)
+amod(definitions-20, above-19)
+nmod:from(gathered-16, definitions-20)
+---
+qqroot(ROOT-0, Suppose-1)
+punct(Suppose-1, .-21)
+det(urn-4, an-3)
+mark(contains-5, that-2)
+cc(black-6, and-7)
+case(numbers-12, in-10)
+cc(none-15, and-14)
+punct(none-15, -RRB--20)
+punct(none-15, -LRB--13)
+case(kind-19, of-16)
+det(kind-19, any-17)
+nsubj(contains-5, urn-4)
+ccomp(Suppose-1, contains-5)
+amod(balls-9, black-6)
+conj:and(black-6, white-8)
+amod(balls-9, white-8)
+dobj(contains-5, balls-9)
+amod(numbers-12, equal-11)
+nmod:in(balls-9, numbers-12)
+dep(balls-9, none-15)
+amod(kind-19, other-18)
+nmod:of(none-15, kind-19)
+root(ROOT-0, draw-2)
+punct(draw-2, ,-7)
+punct(draw-2, .-14)
+case(another-6, after-5)
+case(urn-13, into-11)
+det(urn-13, the-12)
+nsubj(draw-2, I-1)
+nummod(ball-4, one-3)
+dobj(draw-2, ball-4)
+nmod:after(draw-2, another-6)
+xcomp(draw-2, putting-8)
+dobj(putting-8, them-9)
+advmod(putting-8, back-10)
+nmod:into(putting-8, urn-13)
+root(ROOT-0, establish-6)
+case(experiment-3, By-1)
+det(experiment-3, this-2)
+aux(establish-6, can-5)
+punct(establish-6, .-29)
+cc(number-9, and-14)
+det(number-9, the-8)
+case(balls-12, of-10)
+det(number-16, the-15)
+case(balls-19, of-17)
+case(one-23, to-22)
+det(draw-27, the-26)
+mark(continues-28, as-25)
+nmod:by(establish-6, experiment-3)
+nsubj(establish-6, I-4)
+dobj(establish-6, that-7)
+dep(that-7, number-9)
+amod(balls-12, black-11)
+nmod:of(number-9, balls-12)
+acl(balls-12, drawn-13)
+dep(that-7, number-16)
+conj:and(number-9, number-16)
+amod(balls-19, white-18)
+nmod:of(number-16, balls-19)
+acl(balls-19, drawn-20)
+xcomp(drawn-20, approximate-21)
+nmod:to(approximate-21, one-23)
+dep(one-23, another-24)
+nsubj(continues-28, draw-27)
+dep(another-24, continues-28)
+root(ROOT-0, truth-7)
+cop(truth-7, is-3)
+det(truth-7, a-5)
+punct(truth-7, .-8)
+advmod(truth-7, So-1)
+nsubj(truth-7, this-2)
+neg(truth-7, not-4)
+amod(truth-7, mathematical-6)
+root(ROOT-0, equal-17)
+mark(say-5, if-3)
+det(probability-9, The-8)
+mark(drawing-12, of-10)
+det(ball-15, a-13)
+cop(equal-17, is-16)
+punct(equal-17, -RRB--48)
+punct(equal-17, ,-28)
+punct(equal-17, ,-2)
+punct(equal-17, .-66)
+punct(equal-17, ,-6)
+punct(equal-17, `-7)
+case(probability-20, to-18)
+det(probability-20, the-19)
+mark(drawing-23, of-21)
+det(one-26, a-24)
+punct(one-26, '-27)
+det(circumstances-34, the-33)
+case(laws-42, of-38)
+case(laws-42, including-40)
+det(laws-42, the-41)
+punct(laws-42, -LRB--39)
+case(nature-44, of-43)
+mark(assumed-45, that-31)
+case(hypotheses-47, as-46)
+case(occurrence-55, to-53)
+det(occurrence-55, the-54)
+case(event-59, of-56)
+det(event-59, the-57)
+case(that-62, than-60)
+case(that-62, to-61)
+case(other-65, of-63)
+det(other-65, the-64)
+advmod(equal-17, Now-1)
+nsubj(say-5, I-4)
+advcl:if(equal-17, say-5)
+nsubj(equal-17, probability-9)
+nsubj(drawing-12, my-11)
+acl:of(probability-9, drawing-12)
+amod(ball-15, white-14)
+dobj(drawing-12, ball-15)
+nmod:to(equal-17, probability-20)
+nsubj(drawing-23, my-22)
+acl:of(probability-20, drawing-23)
+amod(one-26, black-25)
+dobj(drawing-23, one-26)
+nsubj(means-30, this-29)
+ccomp(equal-17, means-30)
+det:predet(circumstances-34, all-32)
+dobj(know-37, circumstances-34)
+nsubj(assumed-45, circumstances-34)
+ref(circumstances-34, that-35)
+nsubj(know-37, I-36)
+acl:relcl(circumstances-34, know-37)
+nmod:including(know-37, laws-42)
+nmod:of(laws-42, nature-44)
+ccomp(means-30, assumed-45)
+nmod:as(assumed-45, hypotheses-47)
+dep(equal-17, give-49)
+neg(probability-52, no-50)
+amod(probability-52, more-51)
+dobj(give-49, probability-52)
+nmod:to(probability-52, occurrence-55)
+nummod(event-59, one-58)
+nmod:of(occurrence-55, event-59)
+acl:to(probability-52, that-62)
+nmod:of(that-62, other-65)
+root(ROOT-0, is-2)
+punct(is-2, .-21)
+mark(say-4, to-3)
+punct(say-4, ,-5)
+det(probability-10, the-9)
+aux(gathered-16, can-13)
+auxpass(gathered-16, be-15)
+mark(gathered-16, as-12)
+case(definitions-20, from-17)
+det(definitions-20, the-18)
+nsubj(is-2, That-1)
+nsubj:xsubj(say-4, That-1)
+xcomp(is-2, say-4)
+nsubj(give-7, they-6)
+ccomp(say-4, give-7)
+iobj(give-7, each-8)
+dobj(give-7, probability-10)
+nummod(probability-10, 1/2-11)
+advmod(gathered-16, easily-14)
+advcl:as(give-7, gathered-16)
+amod(definitions-20, above-19)
+nmod:from(gathered-16, definitions-20)
+root(ROOT-0, is-7)
+case(experiment-6, by-4)
+det(experiment-6, the-5)
+punct(is-7, .-28)
+det(occurrence-10, the-9)
+case(events-14, of-11)
+det(events-14, the-12)
+cop(independent-16, is-15)
+mark(independent-16, that-8)
+case(circumstances-19, of-17)
+det(circumstances-19, the-18)
+case(which-21, of-20)
+dobj(confirm-3, What-1)
+nsubj(confirm-3, I-2)
+csubj(is-7, confirm-3)
+nmod:by(confirm-3, experiment-6)
+nsubj(independent-16, occurrence-10)
+nummod(events-14, two-13)
+nmod:of(occurrence-10, events-14)
+ccomp(is-7, independent-16)
+nmod:of(independent-16, circumstances-19)
+nmod:of(have-23, circumstances-19)
+ref(circumstances-19, which-21)
+nsubj(have-23, I-22)
+acl:relcl(circumstances-19, have-23)
+neg(knowledge-27, no-24)
+advmod(detailed-26, more-25)
+amod(knowledge-27, detailed-26)
+dobj(have-23, knowledge-27)
+G[128, 132] [1/211, ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?18, ?19, ?20, ?21, ?22, ?23, I22, I4, I1, I2, I36, I4, Now1, So1, Suppose1, That1, What1, above19, all32, another6, another24, approximate21, assumed45, back10, ball2147483647, ball4, balls12, balls19, balls9, black11, black25, black6, circumstances2147483647, circumstances2147483647, confirm3, contains5, continues28, definitions2147483647, detailed26, draw2147483647, draw2, drawing12, drawing23, drawn13, drawn20, each8, easily14, equal17, equal11, establish6, event2147483647, events2147483647, experiment2147483647, experiment2147483647, gathered16, give7, give49, have23, hypotheses47, independent16, is2, is7, kind2147483647, know37, knowledge27, laws2147483647, mathematical6, means30, more51, more25, my11, my22, nature44, no24, no50, none15, not4, number2147483647, number2147483647, numbers12, occurrence2147483647, occurrence2147483647, one58, one3, one23, one2147483647, other18, other2147483647, probability52, probability2147483647, probability2147483647, probability2147483647, putting8, say5, say4, that7, that35, that62, them9, they6, this2, this29, truth2147483647, two13, urn2147483647, urn2147483647, which21, white14, white8, white18]
+I22- ->have23
+hypotheses47-as->assumed45
+drawing12-of->?9
+that7- ->establish6
+no24- ->knowledge27
+above19- ->?4
+more51- ->probability52
+back10- ->?5
+?11-the->laws2147483647
+?22-of : is ->independent16
+confirm3- ->is7
+nature44-of->?11
+mathematical6- ->one3
+?3-by->confirm3
+That1- ->is2
+one58- ->?1
+none15-  : and  : and ->balls9
+another24- ->one23
+them9- ->putting8
+?21-the->occurrence2147483647
+I4-  : can ->establish6
+I36- ->know37
+1/211- ->?13
+?13- ->give7
+?20-by : By ->establish6
+?5- ->I4
+probability52- ->give49
+?12-the->occurrence2147483647
+one23-to->approximate21
+my11- ->drawing12
+gathered16-as->give7
+no50- ->probability52
+?9-The->probability2147483647
+?8-the->probability2147483647
+approximate21- ->drawn20
+not4- ->?15
+white8-and->black6
+?17-the->number2147483647
+?18-the->circumstances2147483647
+?18- ->know37
+more25- ->detailed26
+That1-xsubj->say4
+?1-the->event2147483647
+?16- ->continues28
+they6- ->give7
+?12- ->independent16
+?22-of->have23
+two13- ->?23
+balls9- ->contains5
+that62-to->probability52
+my22- ->drawing23
+?20-this->experiment2147483647
+?22-the->circumstances2147483647
+white8- ->balls9
+each8- ->give7
+?14- ->contains5
+?21-to->probability52
+?1-of->?21
+contains5-  : that ->Suppose1
+one3- ->ball4
+white18- ->balls19
+putting8- ->draw2
+drawing23-of->?8
+I22- ->Now1
+?17-and->?5
+equal11- ->numbers12
+balls12-of->?5
+continues28-  : as ->another24
+?23-of->?12
+?4-the->definitions2147483647
+What1- ->confirm3
+I4- ->say5
+?2-of->none15
+which21-  : of ->?22
+?6-into->putting8
+I1- ->draw2
+?14-an->urn2147483647
+give49- ->equal17
+assumed45-  : that ->means30
+?16-the->draw2147483647
+?23-the->events2147483647
+?19-a->one2147483647
+another6-after->draw2
+this29- ->means30
+?2-any->kind2147483647
+independent16-  : that ->is7
+black25- ->?19
+all32-predet->?18
+other18- ->?2
+?5- ->that7
+?18- ->assumed45
+two13- ->I4
+balls19-of->?17
+knowledge27- ->have23
+?10-the->other2147483647
+numbers12-in->balls9
+?3-the->experiment2147483647
+drawn13- ->balls12
+?17- ->that7
+?10-of : than ->that62
+this2-  : is  : is ->?15
+So1- ->?15
+?13-the->probability2147483647
+Now1- ->equal17
+?19- ->drawing23
+drawn20- ->balls19
+know37-relcl->?18
+give7- ->say4
+black11- ->Now1
+?4-from->gathered16
+?6-the->urn2147483647
+?7- ->drawing12
+?11-including->know37
+means30- ->equal17
+I2- ->confirm3
+easily14-  : can  : be ->gathered16
+black6- ->balls9
+have23-relcl->?22
+?8-to : is ->equal17
+that35- ->?18
+say5-if->equal17
+detailed26- ->knowledge27
+say4-  : to ->is2
+?15-a->truth2147483647
+back10- ->putting8
+black11- ->balls12
+ball4- ->draw2
+white14- ->?7
+?9- ->equal17
+?5-the->number2147483647
+mathematical6- ->?15
+?7-a->ball2147483647
+------CorefChainz
+CHAIN49-["I" in sentence 2, "I" in sentence 3, "I" in sentence 5, "my" in sentence 5, "my" in sentence 5, "I" in sentence 5, "I" in sentence 7, "I" in sentence 7]
+representative mention: "I" in sentence 2
+CHAIN53-["this experiment" in sentence 3, "the experiment" in sentence 7]
+representative mention: "this experiment" in sentence 3
+CHAIN8-["one ball" in sentence 2, "them" in sentence 2]
+representative mention: "one ball" in sentence 2
+CHAIN9-["an urn" in sentence 1, "the urn" in sentence 2]
+representative mention: "an urn" in sentence 1
+CHAIN27-["this" in sentence 4, "this" in sentence 5]
+representative mention: "this" in sentence 4
+CHAIN46-["The probability of my drawing a white ball" in sentence 5, "the probability 1/2" in sentence 6]
+representative mention: "The probability of my drawing a white ball" in sentence 5

@@ -1,0 +1,73 @@
+ The general form of a truth-function is [p, E, N(E)]. This is the general form of a proposition.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, form-3)
+det(form-3, The-1)
+punct(form-3, .-18)
+case(truth-function-6, of-4)
+det(truth-function-6, a-5)
+punct(p-9, -RSB--17)
+punct(p-9, -LSB--8)
+punct(p-9, ,-10)
+punct(p-9, ,-12)
+punct(E-15, -RRB--16)
+punct(E-15, -LRB--14)
+amod(form-3, general-2)
+nmod:of(form-3, truth-function-6)
+dep(form-3, is-7)
+dep(is-7, p-9)
+appos(p-9, E-11)
+appos(p-9, N-13)
+appos(N-13, E-15)
+---
+qqroot(ROOT-0, form-3)
+det(form-3, The-1)
+punct(form-3, .-18)
+case(truth-function-6, of-4)
+det(truth-function-6, a-5)
+punct(p-9, -RSB--17)
+punct(p-9, -LSB--8)
+punct(p-9, ,-10)
+punct(p-9, ,-12)
+punct(E-15, -RRB--16)
+punct(E-15, -LRB--14)
+amod(form-3, general-2)
+nmod:of(form-3, truth-function-6)
+dep(form-3, is-7)
+dep(is-7, p-9)
+appos(p-9, E-11)
+appos(p-9, N-13)
+appos(N-13, E-15)
+root(ROOT-0, form-5)
+cop(form-5, is-2)
+det(form-5, the-3)
+punct(form-5, .-9)
+case(proposition-8, of-6)
+det(proposition-8, a-7)
+nsubj(form-5, This-1)
+amod(form-5, general-4)
+nmod:of(form-5, proposition-8)
+G[16, 14] [?1, ?2, ?3, ?4, E15, E11, N13, This1, form2147483647, form2147483647, general4, general2, is7, p9, proposition2147483647, truth-function2147483647]
+?3-The->form2147483647
+p9- ->is7
+This1-  : is ->?4
+general2- ->?3
+N13- ->p9
+?4-the->form2147483647
+?2-a->proposition2147483647
+is7- ->?3
+general4- ->?4
+?1-of->?3
+?2-of->?4
+?1-a->truth-function2147483647
+E15- ->N13
+E11- ->p9
+------CorefChainz

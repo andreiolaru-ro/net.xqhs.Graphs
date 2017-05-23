@@ -1,0 +1,301 @@
+ To perceive a complex means to perceive that its constituents are related to one another in such and such a way. This no doubt also explains why there are two possible ways of seeing the figure as a cube; and all similar phenomena. For we really see two different facts. (If I look in the first place at the corners marked a and only glance at the b's, then the a's appear to be in front, and vice versa).
+------CorefChainz
+CHAIN7-["a complex" in sentence 1, "its" in sentence 1, "This no doubt" in sentence 2, "the a 's" in sentence 4]
+representative mention: "This no doubt" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, means-5)
+mark(perceive-2, To-1)
+det(complex-4, a-3)
+punct(means-5, .-22)
+mark(perceive-7, to-6)
+cop(related-12, are-11)
+mark(related-12, that-8)
+case(one-14, to-13)
+cc(such-17, and-18)
+case(way-21, in-16)
+det(way-21, a-20)
+csubj(means-5, perceive-2)
+dobj(perceive-2, complex-4)
+xcomp(means-5, perceive-7)
+nmod:poss(constituents-10, its-9)
+nsubj(related-12, constituents-10)
+ccomp(perceive-7, related-12)
+nmod:to(related-12, one-14)
+dep(one-14, another-15)
+amod(way-21, such-17)
+conj:and(such-17, such-19)
+amod(way-21, such-19)
+nmod:in(one-14, way-21)
+---
+qqroot(ROOT-0, means-5)
+mark(perceive-2, To-1)
+det(complex-4, a-3)
+punct(means-5, .-22)
+mark(perceive-7, to-6)
+cop(related-12, are-11)
+mark(related-12, that-8)
+case(one-14, to-13)
+cc(such-17, and-18)
+case(way-21, in-16)
+det(way-21, a-20)
+csubj(means-5, perceive-2)
+dobj(perceive-2, complex-4)
+xcomp(means-5, perceive-7)
+nmod:poss(constituents-10, its-9)
+nsubj(related-12, constituents-10)
+ccomp(perceive-7, related-12)
+nmod:to(related-12, one-14)
+dep(one-14, another-15)
+amod(way-21, such-17)
+conj:and(such-17, such-19)
+amod(way-21, such-19)
+nmod:in(one-14, way-21)
+root(ROOT-0, explains-5)
+det(doubt-3, This-1)
+cc(explains-5, and-20)
+punct(explains-5, ;-19)
+punct(explains-5, .-24)
+mark(seeing-13, of-12)
+det(figure-15, the-14)
+case(cube-18, as-16)
+det(cube-18, a-17)
+det(phenomena-23, all-21)
+neg(doubt-3, no-2)
+nsubj(explains-5, doubt-3)
+advmod(explains-5, also-4)
+advmod(are-8, why-6)
+expl(are-8, there-7)
+advcl(explains-5, are-8)
+nummod(ways-11, two-9)
+amod(ways-11, possible-10)
+nsubj(are-8, ways-11)
+acl:of(ways-11, seeing-13)
+dobj(seeing-13, figure-15)
+nmod:as(seeing-13, cube-18)
+amod(phenomena-23, similar-22)
+conj:and(explains-5, phenomena-23)
+---
+qqroot(ROOT-0, means-5)
+mark(perceive-2, To-1)
+det(complex-4, a-3)
+punct(means-5, .-22)
+mark(perceive-7, to-6)
+cop(related-12, are-11)
+mark(related-12, that-8)
+case(one-14, to-13)
+cc(such-17, and-18)
+case(way-21, in-16)
+det(way-21, a-20)
+csubj(means-5, perceive-2)
+dobj(perceive-2, complex-4)
+xcomp(means-5, perceive-7)
+nmod:poss(constituents-10, its-9)
+nsubj(related-12, constituents-10)
+ccomp(perceive-7, related-12)
+nmod:to(related-12, one-14)
+dep(one-14, another-15)
+amod(way-21, such-17)
+conj:and(such-17, such-19)
+amod(way-21, such-19)
+nmod:in(one-14, way-21)
+root(ROOT-0, explains-5)
+det(doubt-3, This-1)
+cc(explains-5, and-20)
+punct(explains-5, ;-19)
+punct(explains-5, .-24)
+mark(seeing-13, of-12)
+det(figure-15, the-14)
+case(cube-18, as-16)
+det(cube-18, a-17)
+det(phenomena-23, all-21)
+neg(doubt-3, no-2)
+nsubj(explains-5, doubt-3)
+advmod(explains-5, also-4)
+advmod(are-8, why-6)
+expl(are-8, there-7)
+advcl(explains-5, are-8)
+nummod(ways-11, two-9)
+amod(ways-11, possible-10)
+nsubj(are-8, ways-11)
+acl:of(ways-11, seeing-13)
+dobj(seeing-13, figure-15)
+nmod:as(seeing-13, cube-18)
+amod(phenomena-23, similar-22)
+conj:and(explains-5, phenomena-23)
+root(ROOT-0, see-4)
+mark(see-4, For-1)
+punct(see-4, .-8)
+nsubj(see-4, we-2)
+advmod(see-4, really-3)
+nummod(facts-7, two-5)
+amod(facts-7, different-6)
+dobj(see-4, facts-7)
+---
+qqroot(ROOT-0, means-5)
+mark(perceive-2, To-1)
+det(complex-4, a-3)
+punct(means-5, .-22)
+mark(perceive-7, to-6)
+cop(related-12, are-11)
+mark(related-12, that-8)
+case(one-14, to-13)
+cc(such-17, and-18)
+case(way-21, in-16)
+det(way-21, a-20)
+csubj(means-5, perceive-2)
+dobj(perceive-2, complex-4)
+xcomp(means-5, perceive-7)
+nmod:poss(constituents-10, its-9)
+nsubj(related-12, constituents-10)
+ccomp(perceive-7, related-12)
+nmod:to(related-12, one-14)
+dep(one-14, another-15)
+amod(way-21, such-17)
+conj:and(such-17, such-19)
+amod(way-21, such-19)
+nmod:in(one-14, way-21)
+root(ROOT-0, explains-5)
+det(doubt-3, This-1)
+cc(explains-5, and-20)
+punct(explains-5, ;-19)
+punct(explains-5, .-24)
+mark(seeing-13, of-12)
+det(figure-15, the-14)
+case(cube-18, as-16)
+det(cube-18, a-17)
+det(phenomena-23, all-21)
+neg(doubt-3, no-2)
+nsubj(explains-5, doubt-3)
+advmod(explains-5, also-4)
+advmod(are-8, why-6)
+expl(are-8, there-7)
+advcl(explains-5, are-8)
+nummod(ways-11, two-9)
+amod(ways-11, possible-10)
+nsubj(are-8, ways-11)
+acl:of(ways-11, seeing-13)
+dobj(seeing-13, figure-15)
+nmod:as(seeing-13, cube-18)
+amod(phenomena-23, similar-22)
+conj:and(explains-5, phenomena-23)
+root(ROOT-0, see-4)
+mark(see-4, For-1)
+punct(see-4, .-8)
+nsubj(see-4, we-2)
+advmod(see-4, really-3)
+nummod(facts-7, two-5)
+amod(facts-7, different-6)
+dobj(see-4, facts-7)
+root(ROOT-0, marked-12)
+mark(look-4, If-2)
+case(place-8, in-5)
+det(place-8, the-6)
+case(corners-11, at-9)
+det(corners-11, the-10)
+cc(marked-12, and-32)
+punct(marked-12, ,-31)
+punct(marked-12, -LRB--1)
+punct(marked-12, -RRB--35)
+punct(marked-12, .-36)
+punct(marked-12, ,-21)
+cc(a-13, and-14)
+case(b-19, at-17)
+case(b-19, 's-20)
+det(b-19, the-18)
+case(a-24, 's-25)
+det(a-24, the-23)
+case(front-30, in-29)
+cop(front-30, be-28)
+mark(front-30, to-27)
+nsubj(look-4, I-3)
+csubj(marked-12, look-4)
+amod(place-8, first-7)
+nmod:in(look-4, place-8)
+nmod:at(look-4, corners-11)
+dobj(marked-12, a-13)
+amod(glance-16, only-15)
+dobj(marked-12, glance-16)
+conj:and(a-13, glance-16)
+nmod:'s(marked-12, b-19)
+advmod(appear-26, then-22)
+nsubj(appear-26, a-24)
+nsubj:xsubj(front-30, a-24)
+ccomp(marked-12, appear-26)
+xcomp(appear-26, front-30)
+conj:and(marked-12, vice-33)
+advmod(vice-33, versa-34)
+G[59, 61] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, I3, a2147483647, a13, also4, another15, appear26, are8, b2147483647, complex2147483647, constituents10, corners2147483647, cube2147483647, different6, doubt2147483647, explains5, facts7, figure2147483647, first7, front30, glance16, its9, look4, marked12, means5, no2, one14, only15, perceive7, perceive2, phenomena2147483647, place2147483647, possible10, really3, related12, see4, seeing13, similar22, such19, such17, then22, there7, two5, two9, versa34, vice33, way2147483647, ways11, we2, why6]
+?4-a->cube2147483647
+there7- ->are8
+then22- ->appear26
+?2-xsubj->front30
+?7-the->place2147483647
+?2-  : 's ->appear26
+?2-the->a2147483647
+only15- ->glance16
+?1- ->explains5
+ways11- ->are8
+versa34- ->vice33
+?10-the->corners2147483647
+why6- ->are8
+its9-poss->constituents10
+?5- ->seeing13
+similar22- ->?6
+another15- ->one14
+perceive7-  : to ->means5
+two5- ->facts7
+such19- ->?9
+?6-and->explains5
+no2- ->?1
+first7- ->?7
+also4- ->explains5
+we2-  : For ->see4
+front30-  : to  : be  : in ->appear26
+such17- ->?9
+really3- ->see4
+perceive2- ->means5
+I3-  : If  : If ->look4
+possible10- ->ways11
+constituents10-  : are ->related12
+?1-This->doubt2147483647
+related12-  : that ->perceive7
+glance16-and->a13
+?9-a->way2147483647
+look4- ->?1
+two9- ->ways11
+appear26- ->marked12
+?8-a->complex2147483647
+such19-and->such17
+glance16- ->marked12
+?5-the->figure2147483647
+?7-in->look4
+facts7- ->see4
+?6-all->phenomena2147483647
+one14-to->related12
+different6- ->facts7
+?3-the->b2147483647
+seeing13-of->ways11
+?2- ->?1
+?4-as->seeing13
+?3-'s : at ->marked12
+its9- ->?1
+?8-  : To ->perceive2
+are8- ->explains5
+?10-at->look4
+?9-in->one14
+a13- ->marked12
+look4- ->marked12
+vice33-and->marked12
+------CorefChainz
+CHAIN7-["a complex" in sentence 1, "its" in sentence 1, "This no doubt" in sentence 2, "the a 's" in sentence 4]
+representative mention: "This no doubt" in sentence 2

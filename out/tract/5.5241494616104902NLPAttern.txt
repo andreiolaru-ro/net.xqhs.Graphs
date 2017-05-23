@@ -1,0 +1,91 @@
+ If objects are given, then at the same time we are given all objects. If elementary propositions are given, then at the same time all elementary propositions are given.
+------CorefChainz
+CHAIN5-["the same time" in sentence 1, "the same time" in sentence 2]
+representative mention: "the same time" in sentence 1
+CHAIN6-["elementary propositions" in sentence 2, "all elementary propositions" in sentence 2]
+representative mention: "all elementary propositions" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, given-13)
+auxpass(given-4, are-3)
+mark(given-4, If-1)
+case(time-10, at-7)
+det(time-10, the-8)
+auxpass(given-13, are-12)
+punct(given-13, .-16)
+punct(given-13, ,-5)
+det(objects-15, all-14)
+nsubjpass(given-4, objects-2)
+advcl:if(given-13, given-4)
+advmod(given-13, then-6)
+amod(time-10, same-9)
+nmod:at(given-13, time-10)
+nsubjpass(given-13, we-11)
+dobj(given-13, objects-15)
+---
+qqroot(ROOT-0, given-13)
+auxpass(given-4, are-3)
+mark(given-4, If-1)
+case(time-10, at-7)
+det(time-10, the-8)
+auxpass(given-13, are-12)
+punct(given-13, .-16)
+punct(given-13, ,-5)
+det(objects-15, all-14)
+nsubjpass(given-4, objects-2)
+advcl:if(given-13, given-4)
+advmod(given-13, then-6)
+amod(time-10, same-9)
+nmod:at(given-13, time-10)
+nsubjpass(given-13, we-11)
+dobj(given-13, objects-15)
+root(ROOT-0, given-16)
+auxpass(given-5, are-4)
+mark(given-5, If-1)
+case(time-11, at-8)
+det(time-11, the-9)
+det(propositions-14, all-12)
+auxpass(given-16, are-15)
+punct(given-16, ,-6)
+punct(given-16, .-17)
+amod(propositions-3, elementary-2)
+nsubjpass(given-5, propositions-3)
+advcl:if(given-16, given-5)
+advmod(given-16, then-7)
+amod(time-11, same-10)
+nmod:at(given-16, time-11)
+amod(propositions-14, elementary-13)
+nsubjpass(given-16, propositions-14)
+G[21, 20] [?1, ?2, ?3, ?4, elementary13, elementary2, given4, given13, given16, given5, objects2, objects2147483647, propositions3, propositions2147483647, same10, same9, then7, then6, time2147483647, time2147483647, we11]
+same9- ->?2
+?2-the->time2147483647
+objects2-  : If  : are ->given4
+?3- ->given13
+we11-  : are ->given13
+then6- ->given13
+elementary2- ->propositions3
+?4-all->propositions2147483647
+then7- ->given16
+given5-if->given16
+same10- ->?1
+?1-the->time2147483647
+?3-all->objects2147483647
+propositions3- ->?4
+propositions3-  : If  : are ->given5
+given4-if->given13
+?2-at->given13
+?1-at->given16
+?4-  : are ->given16
+elementary13- ->?4
+------CorefChainz
+CHAIN5-["the same time" in sentence 1, "the same time" in sentence 2]
+representative mention: "the same time" in sentence 1
+CHAIN6-["elementary propositions" in sentence 2, "all elementary propositions" in sentence 2]
+representative mention: "all elementary propositions" in sentence 2

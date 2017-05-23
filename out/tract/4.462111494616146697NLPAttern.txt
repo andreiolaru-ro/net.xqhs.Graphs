@@ -1,0 +1,75 @@
+ Tautologies and contradictions are not, however, nonsensical. They are part of the symbolism, much as '0' is part of the symbolism of arithmetic.
+------CorefChainz
+CHAIN8-["Tautologies and contradictions" in sentence 1, "They" in sentence 2]
+representative mention: "Tautologies and contradictions" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, nonsensical-9)
+cc(Tautologies-1, and-2)
+cop(nonsensical-9, are-4)
+punct(nonsensical-9, ,-6)
+punct(nonsensical-9, ,-8)
+punct(nonsensical-9, .-10)
+nsubj(nonsensical-9, Tautologies-1)
+conj:and(Tautologies-1, contradictions-3)
+nsubj(nonsensical-9, contradictions-3)
+neg(nonsensical-9, not-5)
+advmod(nonsensical-9, however-7)
+---
+qqroot(ROOT-0, nonsensical-9)
+cc(Tautologies-1, and-2)
+cop(nonsensical-9, are-4)
+punct(nonsensical-9, ,-6)
+punct(nonsensical-9, ,-8)
+punct(nonsensical-9, .-10)
+nsubj(nonsensical-9, Tautologies-1)
+conj:and(Tautologies-1, contradictions-3)
+nsubj(nonsensical-9, contradictions-3)
+neg(nonsensical-9, not-5)
+advmod(nonsensical-9, however-7)
+root(ROOT-0, part-3)
+cop(part-3, are-2)
+punct(part-3, .-20)
+punct(part-3, ,-7)
+case(symbolism-6, of-4)
+det(symbolism-6, the-5)
+case(as-9, '-10)
+punct(0-11, '-12)
+cop(part-14, is-13)
+case(symbolism-17, of-15)
+det(symbolism-17, the-16)
+case(arithmetic-19, of-18)
+nsubj(part-3, They-1)
+nmod:of(part-3, symbolism-6)
+advmod(0-11, much-8)
+advmod(0-11, as-9)
+nsubj(part-14, 0-11)
+parataxis(part-3, part-14)
+nmod:of(part-14, symbolism-17)
+nmod:of(symbolism-17, arithmetic-19)
+G[16, 15] [011, ?1, ?2, Tautologies1, They1, arithmetic19, as9, contradictions3, however7, much8, nonsensical9, not5, part14, part3, symbolism2147483647, symbolism2147483647]
+contradictions3-and->Tautologies1
+contradictions3-  : are  : are ->nonsensical9
+Tautologies1- ->nonsensical9
+They1-  : are ->part3
+?2-the->symbolism2147483647
+not5- ->nonsensical9
+much8- ->011
+arithmetic19-of->?1
+?2-of->part3
+however7- ->nonsensical9
+011-  : is ->part14
+part14- ->part3
+?1-the->symbolism2147483647
+as9-  : ' ->011
+?1-of->part14
+------CorefChainz
+CHAIN8-["Tautologies and contradictions" in sentence 1, "They" in sentence 2]
+representative mention: "Tautologies and contradictions" in sentence 1

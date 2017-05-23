@@ -1,0 +1,38 @@
+ The requirement that simple signs be possible is the requirement that sense be determinate.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, requirement-10)
+det(requirement-2, The-1)
+cop(possible-7, be-6)
+mark(possible-7, that-3)
+cop(requirement-10, is-8)
+det(requirement-10, the-9)
+punct(requirement-10, .-15)
+cop(determinate-14, be-13)
+nsubj(requirement-10, requirement-2)
+amod(signs-5, simple-4)
+nsubj(possible-7, signs-5)
+ccomp(requirement-2, possible-7)
+nsubj(sense-12, requirement-10)
+ref(requirement-10, that-11)
+acl:relcl(requirement-10, sense-12)
+ccomp(sense-12, determinate-14)
+G[10, 10] [?1, ?2, determinate14, possible7, requirement2147483647, requirement2147483647, sense12, signs5, simple4, that11]
+determinate14-  : be ->sense12
+?2- ->?1
+signs5-  : be ->possible7
+simple4- ->signs5
+?1- ->sense12
+?1-the->requirement2147483647
+that11-  : is ->?1
+possible7-  : that ->?2
+sense12-relcl->?1
+?2-The->requirement2147483647
+------CorefChainz

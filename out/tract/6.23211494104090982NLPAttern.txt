@@ -1,0 +1,206 @@
+ And the possibility of proving the propositions of mathematics means simply that their correctness can be perceived without its being necessary that what they express should itself be compared with the facts in order to determine its correctness.
+------CorefChainz
+CHAIN10-["the propositions of mathematics" in sentence 1, "their" in sentence 1, "its" in sentence 1, "they" in sentence 1, "itself" in sentence 1, "its" in sentence 1]
+representative mention: "the propositions of mathematics" in sentence 1
+CHAIN11-["their correctness" in sentence 1, "its correctness" in sentence 1]
+representative mention: "their correctness" in sentence 1
+And-CC 
+the-DT 
+possibility-NN 
+of-IN 
+proving-VBG 
+the-DT 
+propositions-NNS 
+of-IN 
+mathematics-NNS 
+means-VBZ 
+simply-RB 
+that-IN 
+their-PRP$ 
+correctness-NNS 
+can-MD 
+be-VB 
+perceived-VBN 
+without-IN 
+its-PRP$ 
+being-VBG 
+necessary-JJ 
+that-IN 
+what-WP 
+they-PRP 
+express-VBP 
+should-MD 
+itself-PRP 
+be-VB 
+compared-VBN 
+with-IN 
+the-DT 
+facts-NNS 
+in-IN 
+order-NN 
+to-TO 
+determine-VB 
+its-PRP$ 
+correctness-NNS 
+.-. 
+ROOT 	-> S 	-> CC 	-> And
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> possibility
+		 	-> PP 	-> IN 	-> of
+	 	-> S 	-> VP 	-> VBG 	-> proving
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> propositions
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NNS 	-> mathematics
+								 	-> VP 	-> VBZ 	-> means
+	 	-> ADVP 	-> RB 	-> simply
+		 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> PRP$ 	-> their
+	 	-> NNS 	-> correctness
+		 	-> VP 	-> MD 	-> can
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> perceived
+	 	-> PP 	-> IN 	-> without
+	 	-> S 	-> NP 	-> PRP$ 	-> its
+		 	-> VP 	-> VBG 	-> being
+	 	-> ADJP 	-> JJ 	-> necessary
+	 	-> SBAR 	-> IN 	-> that
+	 	-> SBAR 	-> WHNP 	-> WP 	-> what
+		 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> VBP 	-> express
+	 	-> SBAR 	-> SINV 	-> MD 	-> should
+	 	-> NP 	-> PRP 	-> itself
+		 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> compared
+	 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> facts
+			 	-> SBAR 	-> IN 	-> in
+	 	-> NN 	-> order
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> determine
+	 	-> NP 	-> PRP$ 	-> its
+	 	-> NNS 	-> correctness
+																								 	-> . 	-> .
+			
+Dependensee repr
+cc(means-10, And-1)
+det(possibility-3, the-2)
+nsubj(means-10, possibility-3)
+mark(proving-5, of-4)
+acl(possibility-3, proving-5)
+det(propositions-7, the-6)
+dobj(proving-5, propositions-7)
+case(mathematics-9, of-8)
+nmod:of(propositions-7, mathematics-9)
+root(ROOT-0, means-10)
+advmod(means-10, simply-11)
+mark(perceived-17, that-12)
+nmod:poss(correctness-14, their-13)
+nsubjpass(perceived-17, correctness-14)
+aux(perceived-17, can-15)
+auxpass(perceived-17, be-16)
+ccomp(means-10, perceived-17)
+mark(necessary-21, without-18)
+nsubj(necessary-21, its-19)
+cop(necessary-21, being-20)
+advcl(perceived-17, necessary-21)
+mark(express-25, that-22)
+dobj(express-25, what-23)
+nsubj(express-25, they-24)
+dep(necessary-21, express-25)
+aux(compared-29, should-26)
+nsubjpass(compared-29, itself-27)
+auxpass(compared-29, be-28)
+advcl(express-25, compared-29)
+case(facts-32, with-30)
+det(facts-32, the-31)
+nmod:with(compared-29, facts-32)
+mark(determine-36, in-33)
+mwe(in-33, order-34)
+mark(determine-36, to-35)
+advcl(compared-29, determine-36)
+nmod:poss(correctness-38, its-37)
+dobj(determine-36, correctness-38)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, means-10)
+det(possibility-3, the-2)
+mark(proving-5, of-4)
+det(propositions-7, the-6)
+case(mathematics-9, of-8)
+cc(means-10, And-1)
+aux(perceived-17, can-15)
+auxpass(perceived-17, be-16)
+mark(perceived-17, that-12)
+cop(necessary-21, being-20)
+mark(necessary-21, without-18)
+punct(express-25, .-39)
+aux(compared-29, should-26)
+auxpass(compared-29, be-28)
+case(facts-32, with-30)
+det(facts-32, the-31)
+mwe(in-33, order-34)
+mark(determine-36, in-33)
+mark(determine-36, to-35)
+nsubj(means-10, possibility-3)
+acl:of(possibility-3, proving-5)
+dobj(proving-5, propositions-7)
+nmod:of(propositions-7, mathematics-9)
+advmod(means-10, simply-11)
+nmod:poss(correctness-14, their-13)
+nsubjpass(perceived-17, correctness-14)
+ccomp(means-10, perceived-17)
+nsubj(necessary-21, its-19)
+advcl:without(perceived-17, necessary-21)
+dep(necessary-21, that-22)
+dobj(express-25, what-23)
+nsubj(express-25, they-24)
+ccomp(that-22, express-25)
+nsubjpass(compared-29, itself-27)
+ccomp(express-25, compared-29)
+nmod:with(compared-29, facts-32)
+acl:in_order(facts-32, determine-36)
+nmod:poss(correctness-38, its-37)
+dobj(determine-36, correctness-38)
+G[25, 29] [?#1, ?#2, ?#3, compared, correctness, correctness, determine, express, facts, in order, its, its, itself, mathematics, means, necessary, perceived, possibility, propositions, proving, simply, that, their, they, what]
+its-poss->correctness
+compared-  : should  : should ->express
+what- ->express
+they- ->express
+?#2-with->compared
+express- ->that
+?#3-  : And ->means
+itself-  : be ->compared
+perceived-  : that  : that ->means
+mathematics-of->?#1
+?#3-the->possibility
+their-poss->correctness
+determine-in_order : in order  : to  : to ->?#2
+their- ->?#1
+that- ->necessary
+?#2-the->facts
+simply- ->means
+its-  : being ->necessary
+correctness- ->correctness
+necessary-without->perceived
+proving-of->?#3
+?#1-the->propositions
+its- ->?#1
+correctness-  : can  : be ->perceived
+its- ->?#1
+correctness- ->determine
+?#1- ->proving
+itself- ->?#1
+they- ->?#1
+------CorefChainz
+CHAIN10-["the propositions of mathematics" in sentence 1, "their" in sentence 1, "its" in sentence 1, "they" in sentence 1, "itself" in sentence 1, "its" in sentence 1]
+representative mention: "the propositions of mathematics" in sentence 1
+CHAIN11-["their correctness" in sentence 1, "its correctness" in sentence 1]
+representative mention: "their correctness" in sentence 1

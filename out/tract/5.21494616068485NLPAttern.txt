@@ -1,0 +1,31 @@
+ The structures of propositions stand in internal relations to one another.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, stand-5)
+det(structures-2, The-1)
+case(propositions-4, of-3)
+punct(stand-5, .-12)
+case(relations-8, in-6)
+case(one-10, to-9)
+nsubj(stand-5, structures-2)
+nmod:of(structures-2, propositions-4)
+amod(relations-8, internal-7)
+nmod:in(stand-5, relations-8)
+nmod:to(stand-5, one-10)
+dep(one-10, another-11)
+G[8, 7] [?1, another11, internal7, one10, propositions4, relations8, stand5, structures2147483647]
+one10-to->stand5
+?1-The->structures2147483647
+?1- ->stand5
+propositions4-of->?1
+another11- ->one10
+internal7- ->relations8
+relations8-in->stand5
+------CorefChainz

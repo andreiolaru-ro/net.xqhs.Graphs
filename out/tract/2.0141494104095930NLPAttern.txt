@@ -1,0 +1,50 @@
+ Objects contain the possibility of all situations.
+------CorefChainz
+Objects-NNS 
+contain-VBP 
+the-DT 
+possibility-NN 
+of-IN 
+all-DT 
+situations-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Objects
+		 	-> VP 	-> VBP 	-> contain
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> possibility
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> all
+	 	-> NNS 	-> situations
+					 	-> . 	-> .
+			
+Dependensee repr
+nsubj(contain-2, Objects-1)
+root(ROOT-0, contain-2)
+det(possibility-4, the-3)
+dobj(contain-2, possibility-4)
+case(situations-7, of-5)
+det(situations-7, all-6)
+nmod:of(possibility-4, situations-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, contain-2)
+punct(contain-2, .-8)
+det(possibility-4, the-3)
+case(situations-7, of-5)
+det(situations-7, all-6)
+nsubj(contain-2, Objects-1)
+dobj(contain-2, possibility-4)
+nmod:of(possibility-4, situations-7)
+G[6, 5] [?#1, ?#2, Objects, contain, possibility, situations]
+?#1-the->possibility
+?#1- ->contain
+?#2-all->situations
+?#2-of->?#1
+Objects- ->contain
+------CorefChainz

@@ -1,0 +1,85 @@
+ It is clear that ethics cannot be put into words. Ethics is transcendental. (Ethics and aesthetics are one and the same.)
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-12)
+aux(put-9, can-6)
+auxpass(put-9, be-8)
+mark(put-9, that-4)
+case(words-11, into-10)
+nsubj(clear-3, It-1)
+nsubjpass(put-9, ethics-5)
+neg(put-9, not-7)
+ccomp(clear-3, put-9)
+nmod:into(put-9, words-11)
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-12)
+aux(put-9, can-6)
+auxpass(put-9, be-8)
+mark(put-9, that-4)
+case(words-11, into-10)
+nsubj(clear-3, It-1)
+nsubjpass(put-9, ethics-5)
+neg(put-9, not-7)
+ccomp(clear-3, put-9)
+nmod:into(put-9, words-11)
+root(ROOT-0, transcendental-3)
+cop(transcendental-3, is-2)
+punct(transcendental-3, .-4)
+nsubj(transcendental-3, Ethics-1)
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-12)
+aux(put-9, can-6)
+auxpass(put-9, be-8)
+mark(put-9, that-4)
+case(words-11, into-10)
+nsubj(clear-3, It-1)
+nsubjpass(put-9, ethics-5)
+neg(put-9, not-7)
+ccomp(clear-3, put-9)
+nmod:into(put-9, words-11)
+root(ROOT-0, transcendental-3)
+cop(transcendental-3, is-2)
+punct(transcendental-3, .-4)
+nsubj(transcendental-3, Ethics-1)
+root(ROOT-0, one-6)
+cc(Ethics-2, and-3)
+cc(one-6, and-7)
+cop(one-6, are-5)
+punct(one-6, .-10)
+punct(one-6, -RRB--11)
+punct(one-6, -LRB--1)
+det(same-9, the-8)
+nsubj(one-6, Ethics-2)
+nsubj(same-9, Ethics-2)
+conj:and(Ethics-2, aesthetics-4)
+nsubj(one-6, aesthetics-4)
+conj:and(one-6, same-9)
+G[13, 12] [?#1, Ethics, Ethics, It, aesthetics, clear, ethics, not, one, put, same, transcendental, words]
+aesthetics-  : are ->one
+not-  : be ->put
+words-into->put
+Ethics- ->one
+It-  : is ->clear
+put-  : that  : that ->clear
+Ethics- ->?#1
+?#1-the->same
+Ethics-  : is ->transcendental
+aesthetics-and->Ethics
+?#1-and->one
+ethics-  : can  : can ->put
+------CorefChainz

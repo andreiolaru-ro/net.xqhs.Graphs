@@ -1,0 +1,92 @@
+ 'Law of causality'--that is a general name. And just as in mechanics, for example, there are 'minimum-principles', such as the law of least action, so too in physics there are causal laws, laws of the causal form.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, name-11)
+case(causality-4, of-3)
+cop(name-11, is-8)
+det(name-11, a-9)
+punct(name-11, `-1)
+punct(name-11, '-5)
+punct(name-11, ---6)
+punct(name-11, .-12)
+dep(name-11, Law-2)
+nmod:of(Law-2, causality-4)
+nsubj(name-11, that-7)
+amod(name-11, general-10)
+---
+qqroot(ROOT-0, name-11)
+case(causality-4, of-3)
+cop(name-11, is-8)
+det(name-11, a-9)
+punct(name-11, `-1)
+punct(name-11, '-5)
+punct(name-11, ---6)
+punct(name-11, .-12)
+dep(name-11, Law-2)
+nmod:of(Law-2, causality-4)
+nsubj(name-11, that-7)
+amod(name-11, general-10)
+root(ROOT-0, are-11)
+case(mechanics-5, as-3)
+case(mechanics-5, in-4)
+case(example-8, for-7)
+cc(are-11, And-1)
+punct(are-11, ,-6)
+punct(are-11, .-38)
+punct(are-11, ,-9)
+punct(minimum-principles-13, ,-23)
+punct(minimum-principles-13, `-12)
+punct(minimum-principles-13, '-14)
+punct(minimum-principles-13, ,-15)
+mwe(such-16, as-17)
+case(law-19, such-16)
+det(law-19, the-18)
+case(action-22, of-20)
+case(physics-27, in-26)
+punct(laws-31, ,-32)
+case(form-37, of-34)
+det(form-37, the-35)
+advmod(mechanics-5, just-2)
+nmod:in(are-11, mechanics-5)
+nmod:for(are-11, example-8)
+expl(are-11, there-10)
+nsubj(are-11, minimum-principles-13)
+nmod:such_as(minimum-principles-13, law-19)
+amod(action-22, least-21)
+nmod:of(law-19, action-22)
+advmod(too-25, so-24)
+advmod(physics-27, too-25)
+nmod:in(minimum-principles-13, physics-27)
+expl(are-29, there-28)
+acl:relcl(physics-27, are-29)
+amod(laws-31, causal-30)
+nsubj(are-29, laws-31)
+appos(laws-31, laws-33)
+amod(form-37, causal-36)
+nmod:of(laws-33, form-37)
+G[19, 16] [?1, ?2, ?3, Law2, action22, are11, are29, causality4, example8, form2147483647, law2147483647, laws31, laws33, mechanics5, minimum-principles13, name2147483647, physics27, such as16, too25]
+causality4-of->Law2
+laws31- ->are29
+laws33- ->laws31
+Law2-  : is ->?1
+mechanics5-in : And  : as ->are11
+?1-a->name2147483647
+too25- ->physics27
+?3-of->laws33
+?3-the->form2147483647
+?2-such_as : such as ->minimum-principles13
+?2-the->law2147483647
+example8-for->are11
+physics27-in->minimum-principles13
+action22-of->?2
+minimum-principles13- ->are11
+are29-relcl->physics27
+------CorefChainz

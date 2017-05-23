@@ -11,14 +11,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.swing.JFrame;
 
 import net.xqhs.graphs.context.ContextPattern;
 import net.xqhs.graphs.graph.Graph;
-import net.xqhs.graphs.pattern.EdgeP;
-import net.xqhs.graphs.pattern.NodeP;
+import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.representation.graphical.GraphicalGraphRepresentation;
 import net.xqhs.graphs.representation.graphical.RadialGraphRepresentation;
 import net.xqhs.util.logging.LoggerSimple.Level;
@@ -42,9 +41,7 @@ import edu.stanford.nlp.coref.data.Mention;
 import edu.stanford.nlp.ie.machinereading.structure.MachineReadingAnnotations;
 import edu.stanford.nlp.ie.machinereading.structure.RelationMention;
 import edu.stanford.nlp.ling.CoreAnnotations;
-import edu.stanford.nlp.ling.CoreAnnotations.PartOfSpeechAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.ling.IndexedWord;
 import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
@@ -67,6 +64,7 @@ import edu.stanford.nlp.trees.TypedDependency;
 import edu.stanford.nlp.util.CoreMap;
 
 public class Parser {
+
 	private final static String PCG_MODEL = "edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz";
 
 	private final TokenizerFactory<CoreLabel> tokenizerFactory = PTBTokenizer
@@ -243,13 +241,14 @@ public class Parser {
 		return s;
 	}
 
-	public SemanticGraph getEnhancedGraph(Annotation document,
+	public ArrayList<SemanticGraph> getEnhancedGraph(Annotation document,
 			PrintWriter writer) {
 		// try to get enhanced dependencies
 
 		writer.println("---");
 		writer.println("Enhanced PLUS PLUS dependencies");
 		writer.println("---");
+		ArrayList<SemanticGraph> result = new ArrayList<SemanticGraph>();
 		for (CoreMap sentence : document.get(SentencesAnnotation.class)) {
 			writer.println("---");
 
@@ -257,9 +256,10 @@ public class Parser {
 					.get(SemanticGraphCoreAnnotations.EnhancedPlusPlusDependenciesAnnotation.class) != null) {
 
 				// SemanticGraph sg=
-				return sentence
-						.get(SemanticGraphCoreAnnotations.EnhancedPlusPlusDependenciesAnnotation.class);
-
+				// return sentence
+				// .get(SemanticGraphCoreAnnotations.EnhancedPlusPlusDependenciesAnnotation.class);
+				result.add(sentence
+						.get(SemanticGraphCoreAnnotations.EnhancedPlusPlusDependenciesAnnotation.class));
 				// for (CoreLabel token:
 				// sentence.get(CoreAnnotations.TokensAnnotation.class)) {
 				//
@@ -274,7 +274,7 @@ public class Parser {
 
 			}
 		}
-		return null;
+		return result;
 	}
 
 	public String printPrettyTree(Tree tree) {
@@ -306,9 +306,9 @@ public class Parser {
 		// for (String str : strs) {
 		// String str =
 		// "The world is like an apple spinning silently in space.";
-		String str = "A weak pawn is one that is not defended by another pawn, which means that it must be defended by other pieces, when it is under attack.";
+		String str = "A speck in the visual field, though it need not be red, must have some colour: it is, so to speak, surrounded by colour-space.";
 		// make output file
-		String filename = "out//superstitions//"
+		String filename = "out//" + System.currentTimeMillis()
 				+ (str.substring(0, Math.min(str.length(), 15))).trim()
 				+ "NLPAttern.txt";
 		PrintWriter writer = new PrintWriter(filename, "UTF-8");
@@ -327,11 +327,14 @@ public class Parser {
 		System.out.println(str);
 		// g = cPc.processCorefCP(g, document);
 		parser.getEnhancedPlusPlusPlusPlus(document, writer);
-		ContextPattern g = parser.getNLPattern(parser, writer, document);
+		ContextPattern g = (ContextPattern) parser.getNLPattern(parser, writer,
+				document, NLGraphType.PATTERN);
 
-		ContextPatternConverter cxt = new ContextPatternConverter(g);
-		g = cxt.relabelEdgesWithAuxWords(g);
-		g = cxt.processCorefCP(g, document);
+		// ContextPatternConverter cxt = new ContextPatternConverter(g);
+		g = (ContextPattern) ContextPatternConverter
+				.relabelEdgesWithAuxWords(g);
+		g = (ContextPattern) ContextPatternConverter.processCorefCP(g.t, g,
+				document);
 
 		g = fixDeterminers(g);
 		writer.println(g.toString());
@@ -340,7 +343,7 @@ public class Parser {
 		System.out.println(g.toString());
 
 		// g = cxt.removeDuplicateNN(g);
-		g = cxt.removeDuplicates(g);
+		g = ContextPatternConverter.removeDuplicates(g);
 		// g=cxt.invertAllEdges(g);
 		parser.contextPatternVisualize(g, true);
 		// parser.getGraphicalGraph(true, g);
@@ -356,318 +359,262 @@ public class Parser {
 	public static ContextPattern fixDeterminers(ContextPattern g) {
 		System.out
 				.println("------------------INSTANTIATE NODES WITH DETERMINERS---------------------");
-		ContextPatternConverter cxt = new ContextPatternConverter(g);
+
 		ArrayList<NLNodeP> determinedNodes = new ArrayList<NLNodeP>();
 		for (net.xqhs.graphs.graph.Node node : g.getNodes()) {
 			NLNodeP nlnode = (NLNodeP) node;
-			Iterator<ArrayList<FunctionWord>> attIt = nlnode.getAttributes()
-					.values().iterator();
+			Iterator<FunctionWord> attIt = nlnode.getAttributes().iterator();
+			System.out.println("Attributes of node " + nlnode);
 			while (attIt.hasNext()) {
 				System.out.println(" & " + attIt.next());
 			}
-			if (nlnode.getAttributes("det") != null) {
+			// determine which nodes have determiners
+			ArrayList<FunctionWord> dets = nlnode.getAttributes("det");
+			if (dets != null && !dets.isEmpty()) {
 				determinedNodes.add(nlnode);
 				System.out.println("Found  node with determiner: "
-						+ nlnode.getLabel());
+						+ nlnode.getLabel() + " " + dets);
 			}
 		}
 		for (NLNodeP nlNodeP : determinedNodes) {
-			g = cxt.breakDeterminer(g, nlNodeP);
+
+			g = ContextPatternConverter.breakDeterminer(g, nlNodeP);
 		}
 		return g;
 	}
 
 	// }
 
-	public ContextPattern getNLPattern(Parser parser, PrintWriter writer,
-			Annotation document) {
-		SemanticGraph sg = parser.getEnhancedGraph(document, writer);
+	public SimpleGraph getNLPattern(Parser parser, PrintWriter writer,
+			Annotation document, NLGraphType t) {
 
-		ContextPattern g = new ContextPattern();
+		SimpleGraph g = NLGraphFactory.makeGraph(t);
+		ArrayList<SemanticGraph> sgs = parser
+				.getEnhancedGraph(document, writer);
+		// foreach sentence in document make a graph and somehow stich it
+		// together
+		for (SemanticGraph sg : sgs) {
 
-		List<IndexedWord> nodes = sg.vertexListSorted();
-		HashMap<String, NLNodeP> patNodes = new HashMap<String, NLNodeP>();
-		HashMap<String, NLEdgeP> patEdges = new HashMap<String, NLEdgeP>();
-		Set<IndexedWord> leaves = sg.getLeafVertices();
-		List<SemanticGraphEdge> edge_set1 = sg.edgeListSorted();
+			HashMap<String, NLNode> patNodes = new HashMap<String, NLNode>();
+			HashMap<String, NLEdge> patEdges = new HashMap<String, NLEdge>();
 
-		// process det, mwe, case, cop
-		// for (IndexedWord indexedWord : leaves) {
-		// List<SemanticGraphEdge> govEdges = sg
-		// .getIncomingEdgesSorted(indexedWord);
-		// patNodes.putAll(processLeafNodes(govEdges, patNodes));
-		// }
-		patNodes.putAll(processLeafNodes(edge_set1, patNodes));
-		for (SemanticGraphEdge edge : edge_set1) {
-			NLNodeP to = null, from = null;
-			String flag = "REASONS";
-			if (edge.getDependent().index() != Integer.MIN_VALUE) {
-				from = createOrRetrieveNLNode(patNodes, edge.getDependent());
-			} else
-				flag = "Dependent node no longer in graph";
-			if (edge.getGovernor().index() != Integer.MIN_VALUE) {
-				to = createOrRetrieveNLNode(patNodes, edge.getGovernor());
-			} else
-				flag = "Governor node no longer in graph";
-			if (edge.getWeight() != Double.MIN_VALUE && to != null
-					&& from != null) {
+			List<SemanticGraphEdge> edge_set1 = sg.edgeListSorted();
 
-				NLEdgeP nlEdge = new NLEdgeP(from, to, edge.getRelation()
-						.toString());
-				patEdges.put(
-						from.getLabel() + from.getWordIndex()
-								+ nlEdge.getLabel() + to.getLabel()
-								+ to.getWordIndex(), nlEdge);
-			} else
-				System.out.println("Edge " + edge.getDependent().word() + " --"
-						+ edge.getRelation() + "->" + edge.getGovernor().word()
-						+ " not added. " + flag);
-
-		}
-		List<CoreMap> sentences = document.get(SentencesAnnotation.class);
-		for (CoreMap sent : sentences) {
-			List<CoreLabel> tokens = sent.get(TokensAnnotation.class);
-
-			for (IndexedWord nodeSG : nodes) {
-				if (nodeSG.index() != Integer.MIN_VALUE) {
-					if (!patNodes.containsKey(nodeSG.word() + nodeSG.index())) {
-						NLNodeP node = createOrRetrieveNLNode(patNodes, nodeSG);
-						if (!node.isGeneric()) {
-							CoreLabel tok = tokens.get(node.getWordIndex());
-							node.setPos(tok
-									.getString(PartOfSpeechAnnotation.class));
-						}
+			patNodes.putAll(processLeafNodes(t, edge_set1, patNodes));
+			System.out
+					.println("Nodes in pattern before edge exam: " + patNodes);
+			for (SemanticGraphEdge edge : edge_set1) {
+				NLNode to = null, from = null;
+				String flag = "REASONS";
+				if (edge.getDependent().pseudoPosition() != Integer.MIN_VALUE) {
+					// used to b createOrRetrieve
+					from = retrieveNLNode(patNodes, edge.getDependent());
+					if (from == null) {
+						System.out.println("Dependent node: "
+								+ edge.getDependent().word()
+								+ " not registered in pattern." + edge);
 					}
 				} else
-					patNodes.remove(nodeSG.word() + nodeSG.index());
-			}
-		}
-		// add results of leaf processing
-		// nodes first
+					flag = "Dependent node no longer in graph";
+				if (edge.getGovernor().pseudoPosition() != Integer.MIN_VALUE) {
+					// used to b createOrRetrieve
+					to = retrieveNLNode(patNodes, edge.getGovernor());
+					if (to == null) {
+						System.out.println("Governor node: "
+								+ edge.getGovernor().word()
+								+ " not registered in pattern." + edge);
+					}
+				} else {
 
-		for (String key : patNodes.keySet()) {
-			g.addNode(patNodes.get(key));
-		}
+					// deal with multiple levels of nesting for function words
+					flag = "Governor node no longer in graph";
+					// function word masquerading as node
+					NLNode zombie = retrieveNLNode(patNodes, edge.getGovernor());
+					if (zombie != null) {
+						System.out.println("Found zombie: " + zombie);
 
-		for (EdgeP edgeP : patEdges.values()) {
-			g.addEdge(edgeP);
-		}
-		return g;
-	}
+						IndexedWord iwGov = edge.getGovernor();
+						List<SemanticGraphEdge> inEdgesZombie = sg
+								.getIncomingEdgesSorted(iwGov);
+						for (SemanticGraphEdge semanticGraphEdge : inEdgesZombie) {
+							IndexedWord gov = semanticGraphEdge.getGovernor();
+							if (patNodes.containsKey(gov.word() + gov.index())) {
+								// find where the zombie is as an attribute of
+								// some other word
 
-	public ContextPattern getNLPattern2(Parser parser, PrintWriter writer,
-			Annotation document) {
-		SemanticGraph sg = parser.getEnhancedGraph(document, writer);
+								NLNode patGov = patNodes.get(gov.word()
+										+ gov.index());
+								boolean found = false;
 
-		ContextPattern g = new ContextPattern();
+								for (FunctionWord fw : patGov.getAttributes()) {
+									if (fw.getLabel().equals(zombie.getLabel())
+											&& fw.getIndex() == zombie
+													.getWordIndex()) {
+										found = true;
+										System.out
+												.println("Zombie found as attribute of "
+														+ patGov);
+									}
+								}
+								// and move all its attributes to its governor
+								if (found) {
+									patGov.getAttributes().addAll(
+											zombie.getAttributes());
+								}
+							}
+							break;
+						}
 
-		List<IndexedWord> nodes = sg.vertexListSorted();
-		HashMap<String, NLNodeP> patNodes = new HashMap<String, NLNodeP>();
-		HashMap<String, NLEdgeP> patEdges = new HashMap<String, NLEdgeP>();
-		Set<IndexedWord> leaves = sg.getLeafVertices();
-		List<SemanticGraphEdge> edge_set1 = sg.edgeListSorted();
+						// maybe should only work with indexes since labels can
+						// change with structures such as mwe
+						if (patNodes.remove(zombie.getLabel()
+								+ zombie.getWordIndex()) != null)
+							System.out.println("Zombie removed: " + zombie);
 
-		// process det, mwe, case, cop
-		for (IndexedWord indexedWord : leaves) {
-			List<SemanticGraphEdge> govEdges = sg
-					.getIncomingEdgesSorted(indexedWord);
-			patNodes.putAll(processLeafNodes(govEdges, patNodes));
-		}
-
-		for (SemanticGraphEdge edge : edge_set1) {
-			NLNodeP to = null, from = null;
-			String flag = "REASONS";
-			if (edge.getDependent().index() != Integer.MIN_VALUE) {
-				from = createOrRetrieveNLNode(patNodes, edge.getDependent());
-			} else
-				flag = "Dependent node no longer in graph";
-			if (edge.getGovernor().index() != Integer.MIN_VALUE) {
-				to = createOrRetrieveNLNode(patNodes, edge.getGovernor());
-			} else
-				flag = "Governor node no longer in graph";
-			if (edge.getWeight() != Double.MIN_VALUE && to != null
-					&& from != null) {
-
-				NLEdgeP nlEdge = new NLEdgeP(from, to, edge.getRelation()
-						.getShortName());
-				patEdges.put(
-						from.getLabel() + from.getWordIndex()
-								+ nlEdge.getLabel() + to.getLabel()
-								+ to.getWordIndex(), nlEdge);
-			} else
-				System.out.println("Edge " + edge.getDependent().word() + " --"
-						+ edge.getRelation().getShortName() + "->"
-						+ edge.getGovernor().word() + " not added. " + flag);
-
-		}
-		for (IndexedWord nodeSG : nodes) {
-			if (nodeSG.index() != Integer.MIN_VALUE) {
-				if (!patNodes.containsKey(nodeSG.word() + nodeSG.index())) {
-					createOrRetrieveNLNode(patNodes, nodeSG);
+						System.out.println("Nodes after removal: " + patNodes);
+					}
 				}
-			} else
-				patNodes.remove(nodeSG.word() + nodeSG.index());
-		}
-		// add results of leaf processing
-		// nodes first
+				if (edge.getWeight() != Double.MIN_VALUE && to != null
+						&& from != null) {
+					NLEdge nlEdge = NLEdgeFactory.makeNLEdge(t, from, to, edge
+							.getRelation().toString());
+					System.out.println("Created edge " + nlEdge);
+					// NLEdgeP nlEdge = new NLEdgeP(from, to, edge.getRelation()
+					// .toString());
+					patEdges.put(
+							from.getLabel() + from.getWordIndex()
+									+ nlEdge.getLabel() + to.getLabel()
+									+ to.getWordIndex(), nlEdge);
+				} else
+					System.out
+							.println("Edge " + edge.getDependent().word()
+									+ " --" + edge.getRelation() + "->"
+									+ edge.getGovernor().word()
+									+ " not added. " + flag);
 
-		for (String key : patNodes.keySet()) {
-			g.addNode(patNodes.get(key));
-		}
+			}
+			System.out.println("Nodes to be added:");
+			for (NLNode patNode : patNodes.values()) {
+				System.out.print(" , " + patNode.getLabel());
+			}
+			if (t == NLGraphType.GRAPH) {
+				for (String key : patNodes.keySet()) {
+					NLNode n = patNodes.get(key);
+					while (!patNodes
+							.values()
+							.stream()
+							.filter(a -> a != n
+									&& a.getLabel().equals(n.getLabel()))
+							.collect(Collectors.toList()).isEmpty()) {
+						System.out.println("Renaming node " + n);
+						n.setLabel(n.getLabel() + " ");
 
-		for (EdgeP edgeP : patEdges.values()) {
-			g.addEdge(edgeP);
+					}
+				}
+			}
+			g.addAll(patNodes.values());
+			// for (String key : patNodes.keySet()) {
+			// g.addNode(patNodes.get(key));
+			// }
+			System.out.println("Total nodes:");
+			for (net.xqhs.graphs.graph.Node node : g.getNodes()) {
+				System.out.print(" , " + node);
+			}
+			// g.addAll(patEdges.values());
+			for (net.xqhs.graphs.graph.Edge edgeP : patEdges.values()) {
+				System.out.println("Adding edge: " + edgeP);
+				g.addEdge(edgeP);
+			}
+
 		}
 		return g;
 	}
 
-	// public ContextPattern getContextPatternFromEnhanced(Parser parser,
-	// PrintWriter writer, Annotation document) {
-	// SemanticGraph sg = parser.getEnhancedGraph(document, writer);
-	// ContextPattern g = new ContextPattern();
-	// GraphOperations goCtx = new GraphOperations(g);
-	// List<IndexedWord> nodes = sg.vertexListSorted();
-	// HashMap<String, GraphComponent> leafProcessedGraphComponents = new
-	// HashMap<String, GraphComponent>();
-	// Set<IndexedWord> leaves = sg.getLeafVertices();
-	// List<SemanticGraphEdge> edge_set1 = sg.edgeListSorted();
-	//
-	// // process det, mwe, case, cop
-	// for (IndexedWord indexedWord : leaves) {
-	// List<SemanticGraphEdge> govEdges = sg
-	// .getIncomingEdgesSorted(indexedWord);
-	// leafProcessedGraphComponents.putAll(processLeafNodes(govEdges));
-	// }
-	//
-	// for (SemanticGraphEdge edge : edge_set1) {
-	// NLNodeP to = null, from = null;
-	// String flag = "REASONS: ";
-	//
-	// if (edge.getDependent().index() != Integer.MIN_VALUE) {
-	// from = createNLNode(leafProcessedGraphComponents,
-	// edge.getDependent());
-	// } else
-	// flag += "Dependent node no longer in graph";
-	//
-	// if (edge.getGovernor().index() != Integer.MIN_VALUE) {
-	// to = createNLNode(leafProcessedGraphComponents,
-	// edge.getGovernor());
-	// } else
-	// flag += "Governor node no longer in graph";
-	// if (edge.getWeight() != Double.MIN_VALUE && to != null
-	// && from != null) {
-	//
-	// NLEdgeP nlEdge = new NLEdgeP(from, to, edge.getRelation()
-	// .getShortName());
-	// leafProcessedGraphComponents.put(
-	// "EE" + from.getLabel() + from.getSentenceIndex()
-	// + nlEdge.getLabel() + to.getLabel()
-	// + to.getSentenceIndex(), nlEdge);
-	// } else
-	// System.out.println("Edge " + edge.getDependent().word() + " --"
-	// + edge.getRelation().getShortName() + "->"
-	// + edge.getGovernor().word() + " not added. " + flag);
-	//
-	// }
-	// for (IndexedWord nodeSG : nodes) {
-	// if (!leafProcessedGraphComponents.containsKey(nodeSG.word()
-	// + nodeSG.index())) {
-	// createNLNode(leafProcessedGraphComponents, nodeSG);
-	// }
-	// }
-	// g.addAll(leafProcessedGraphComponents.values());
-	//
-	// HashMap<String, NodeP> patNodes = new HashMap<String, NodeP>();
-	// ArrayList<EdgeP> patEdges = new ArrayList<EdgeP>();
-	// // construct hashmap of nodes+wordIndex for determining edges
-	// for (IndexedWord nodeSG : nodes) {
-	//
-	// NodeP patNode = new NodeP(String.format(nodeSG.word() + "%2d",
-	// nodeSG.index()));
-	// patNodes.put(patNode.getLabel(), patNode);
-	//
-	// }
-	//
-	// for (SemanticGraphEdge edge : edge_set1) {
-	//
-	// String dep = String.format(edge.getDependent().word() + "%2d", edge
-	// .getDependent().index());
-	// String gov = String.format(edge.getGovernor().word() + "%2d", edge
-	// .getGovernor().index());
-	//
-	// GrammaticalRelation relation = edge.getRelation();
-	//
-	// patEdges.add(new EdgeP(patNodes.get(dep), patNodes.get(gov),
-	// relation.toString()));
-	// // System.out.println("Converting " + relation.toPrettyString());
-	// System.out.println("Adding edge:" + dep + "--"
-	// + relation.toString() + "->" + gov);
-	//
-	// }
-	// for (NodeP nodeP : patNodes.values()) {
-	// String l = nodeP.getLabel();
-	// l = l.substring(0, l.length() - 2);
-	// while (!g.getNodesNamed(nodeP.getLabel()).isEmpty()) {
-	// l.concat("*");
-	// }
-	// nodeP.setLabel(l);
-	// goCtx.addNode(nodeP);
-	// // g.addNode(nodeP);
-	// }
-	// g.addAll(patEdges);
-	//
-	// return g;
-	// }
-
-	private HashMap<String, NLNodeP> processLeafNodes(
-			List<SemanticGraphEdge> govEdges, HashMap<String, NLNodeP> nodes) {
-
-		NLNodeP gov;
+	private HashMap<String, NLNode> processLeafNodes(NLGraphType t,
+			List<SemanticGraphEdge> govEdges, HashMap<String, NLNode> nodes) {
+		ArrayList<FunctionWord> fws = new ArrayList<FunctionWord>();
+		NLNode gov;
 		for (SemanticGraphEdge edge : govEdges) {
-			gov = createOrRetrieveNLNode(nodes, edge.getGovernor());
+			gov = createOrRetrieveNLNode(t, nodes, edge.getGovernor());
+			NLNode depp = retrieveNLNode(nodes, edge.getDependent());
 			IndexedWord dep = edge.getDependent();
-			switch (edge.getRelation().getShortName()) {
 
-			case "punct":
-			case "discourse":
-
+			if (edge.getDependent().index() == edge.getGovernor().index()) {
+				System.out.println("Reflexive edge found:" + edge);
 				edge.setWeight(Double.MIN_VALUE);
-				dep.setIndex(Integer.MIN_VALUE);
-				break;
-			case "det":
-			case "cop":
-			case "case":
-			case "aux":
-			case "auxpass":
-			case "cc":
-			case "mark":
-			case "dep":
-			case "ref":
-				String label = edge.getRelation().getShortName();
-				gov.addAttribute(new FunctionWord(label, edge.getDependent()));
-				edge.setWeight(Double.MIN_VALUE);
-				dep.setIndex(Integer.MIN_VALUE);
-				break;
-			case "flat":
-			case "fixed":
-			case "compound":
-			case "comp":
-			case "mwe":
+			} else {
+				switch (edge.getRelation().getShortName()) {
 
-				if (dep.index() < gov.getWordIndex()) {
-					gov.setLabel(dep.word() + " " + gov.getLabel());
-				} else
-					gov.setLabel(gov.getLabel() + " " + dep.word());
+				case "punct":
+				case "discourse":
 
-				edge.setWeight(Double.MIN_VALUE);
-				dep.setIndex(Integer.MIN_VALUE);
-				break;
+					edge.setWeight(Double.MIN_VALUE);
+					// dep.setIndex(Integer.MIN_VALUE);
+					dep.setPseudoPosition(Integer.MIN_VALUE);
+					break;
+				case "det":
+				case "cop":
+				case "case":
+				case "aux":
+				case "auxpass":
+				case "cc":
+				case "mark":
+					// case "dep":
 
-			default:
+					// case "ref":
+					String label = edge.getRelation().getShortName();
+					FunctionWord fw = new FunctionWord(label,
+							edge.getDependent());
+					gov.getAttributes().add(fw);
+					fws.add(fw);
+					edge.setWeight(Double.MIN_VALUE);
 
-				break;
+					dep.setPseudoPosition(Integer.MIN_VALUE);
+					if (depp != null) {
+						nodes.remove(depp.getLabel() + depp.getWordIndex());
+					}
+
+					break;
+				case "flat":
+				case "fixed":
+				case "compound":
+				case "comp":
+				case "mwe":
+
+					if (dep.index() < gov.getWordIndex()) {
+						gov.setLabel(dep.word() + " " + gov.getLabel());
+					} else
+						gov.setLabel(gov.getLabel() + " " + dep.word());
+
+					edge.setWeight(Double.MIN_VALUE);
+					// dep.setIndex(Integer.MIN_VALUE);
+					dep.setPseudoPosition(Integer.MIN_VALUE);
+					if (depp != null) {
+						nodes.remove(depp.getLabel() + depp.getWordIndex());
+					}
+					break;
+
+				default:
+					depp = createOrRetrieveNLNode(t, nodes, dep);
+					break;
+				}
 			}
 		}
+		// avoid having mwes & other crazy language constructs as separate nodes
+		// doesn't seem to work
+		for (FunctionWord functionWord : fws) {
+			if (nodes.containsKey(functionWord.getLabel()
+					+ functionWord.getIndex())) {
+				NLNode node = nodes.get(functionWord.getLabel()
+						+ functionWord.getIndex());
+				// no idea why i'm doing this
+				System.out.println("Removed node " + node);
+				functionWord.setLabel(node.getLabel());
+				nodes.remove(node.getLabel() + node.getWordIndex());
+			}
+
+		}
+
 		return nodes;
 	}
 
@@ -676,13 +623,13 @@ public class Parser {
 	 * @param word
 	 * @return new or existing corresponding NLNode (with equal word and index)
 	 */
-	public NLNodeP createOrRetrieveNLNode(HashMap<String, NLNodeP> nodeMap,
-			IndexedWord word) {
-		NLNodeP w;
+	public NLNode createOrRetrieveNLNode(NLGraphType t,
+			HashMap<String, NLNode> nodeMap, IndexedWord word) {
+		NLNode w;
 
 		String key = word.word() + word.index();
 		if (!nodeMap.containsKey(key)) {
-			w = new NLNodeP(word);
+			w = NLNodeFactory.makeNode(t, word);
 			nodeMap.put(key, w);
 		} else
 			w = nodeMap.get(key);
@@ -690,18 +637,35 @@ public class Parser {
 		return w;
 	}
 
-	public void contextPatternVisualize(ContextPattern cxt, boolean andDisplay)
+	public NLNode retrieveNLNode(HashMap<String, NLNode> nodeMap,
+			IndexedWord word) {
+		NLNode w;
+
+		String key = word.word() + word.index();
+		if (!nodeMap.containsKey(key)) {
+			return null;
+		} else
+			w = nodeMap.get(key);
+
+		return w;
+	}
+
+	public void contextPatternVisualize(SimpleGraph cxt, boolean andDisplay)
 			throws IOException, InterruptedException {
-		String graphId = "[PREDTRIALS]" + cxtToSentence(cxt);
+		String graphId = cxt.getUnitName();// System.currentTimeMillis() +
+											// cxtToSentence(cxt);
 
 		DefaultGraph sg = new DefaultGraph(graphId, false, false);
-		Map<NodeP, Node> isomorphism = new IdentityHashMap<NodeP, Node>();
+		Map<NLNode, Node> isomorphism = new IdentityHashMap<NLNode, Node>();
 		// add nodes to new graph
-		for (net.xqhs.graphs.graph.Node nod : cxt.getNodes()) {
-			NodeP node = (NodeP) nod;
+		for (net.xqhs.graphs.graph.Node nodd : cxt.getNodes()) {
+			NLNode node = (NLNode) nodd;
 			String label = node.getLabel();
-			if (node.isGeneric()) {
-				label = node.getLabel() + node.genericIndex();
+			if (node instanceof NLNodeP) {
+				NLNodeP nod = (NLNodeP) node;
+				if (nod.isGeneric()) {
+					label = node.getLabel() + nod.genericIndex();
+				}
 			} else
 				while (sg.getNode(label) != null) {
 					label += "*";
@@ -715,20 +679,23 @@ public class Parser {
 		}
 		// add edges
 		for (net.xqhs.graphs.graph.Edge edge : cxt.getEdges()) {
-			NodeP fromN = (NodeP) edge.getFrom(), toN = (NodeP) edge.getTo();
+			NLNode fromN = (NLNode) edge.getFrom(), toN = (NLNode) edge.getTo();
 			Node from = isomorphism.get(fromN);
 			Node to = isomorphism.get(toN);
 			String label = edge.getLabel();
 			// no duplicate edges allowed
-			if (sg.getEdge(label) != null) {
-				while (sg.getEdge(label) != null) {
-					label += "*";
-				}
+			// if (sg.getEdge(label) != null) {
+			while (sg.getEdge(label) != null) {
+				label += " ";
 			}
+			// }
 			System.out.println("Adding for visualization edge " + from + " --"
 					+ label + "-> " + to);
 			Edge e = sg.addEdge(label, from, to, true);
-			e.addAttribute("ui.label", label);
+			if (e != null) {
+				e.addAttribute("ui.label", label);
+			} else
+				System.out.println("Edge not added for *REASONS*");
 		}
 		sg.addAttribute("ui.stylesheet", "node { text-size: 18px; } "
 				+ "edge { text-size: 16px; } ");
@@ -741,8 +708,8 @@ public class Parser {
 		pic.setLayoutPolicy(LayoutPolicy.COMPUTED_FULLY_AT_NEW_IMAGE);
 		pic.setQuality(Quality.HIGH);
 		pic.setResolution(Resolutions.HD720);
-		Thread.sleep(100);
-		pic.writeAll(sg, "out//img//" + graphId + ".png");
+		Thread.sleep(200);
+		pic.writeAll(sg, "out//newtests" + graphId + ".png");
 		if (andDisplay) {
 
 			sg.display().enableAutoLayout();

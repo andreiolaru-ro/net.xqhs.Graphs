@@ -1,0 +1,153 @@
+ To ask whether a formal concept exists is nonsensical. For no proposition can be the answer to such a question. (So, for example, the question, 'Are there unanalysable subject-predicate propositions?' cannot be asked.)
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, nonsensical-9)
+mark(ask-2, To-1)
+det(concept-6, a-4)
+mark(exists-7, whether-3)
+cop(nonsensical-9, is-8)
+punct(nonsensical-9, .-10)
+csubj(nonsensical-9, ask-2)
+amod(concept-6, formal-5)
+nsubj(exists-7, concept-6)
+ccomp(ask-2, exists-7)
+---
+qqroot(ROOT-0, nonsensical-9)
+mark(ask-2, To-1)
+det(concept-6, a-4)
+mark(exists-7, whether-3)
+cop(nonsensical-9, is-8)
+punct(nonsensical-9, .-10)
+csubj(nonsensical-9, ask-2)
+amod(concept-6, formal-5)
+nsubj(exists-7, concept-6)
+ccomp(ask-2, exists-7)
+root(ROOT-0, answer-7)
+case(proposition-3, For-1)
+aux(answer-7, can-4)
+cop(answer-7, be-5)
+det(answer-7, the-6)
+punct(answer-7, .-12)
+case(question-11, to-8)
+det(question-11, a-10)
+neg(proposition-3, no-2)
+nmod:for(answer-7, proposition-3)
+det:predet(question-11, such-9)
+nmod:to(answer-7, question-11)
+---
+qqroot(ROOT-0, nonsensical-9)
+mark(ask-2, To-1)
+det(concept-6, a-4)
+mark(exists-7, whether-3)
+cop(nonsensical-9, is-8)
+punct(nonsensical-9, .-10)
+csubj(nonsensical-9, ask-2)
+amod(concept-6, formal-5)
+nsubj(exists-7, concept-6)
+ccomp(ask-2, exists-7)
+root(ROOT-0, answer-7)
+case(proposition-3, For-1)
+aux(answer-7, can-4)
+cop(answer-7, be-5)
+det(answer-7, the-6)
+punct(answer-7, .-12)
+case(question-11, to-8)
+det(question-11, a-10)
+neg(proposition-3, no-2)
+nmod:for(answer-7, proposition-3)
+det:predet(question-11, such-9)
+nmod:to(answer-7, question-11)
+root(ROOT-0, propositions-15)
+case(example-5, for-4)
+det(question-8, the-7)
+cop(propositions-15, Are-11)
+punct(propositions-15, ,-6)
+punct(propositions-15, ,-9)
+punct(propositions-15, `-10)
+punct(propositions-15, ?-16)
+punct(propositions-15, '-17)
+punct(propositions-15, -LRB--1)
+punct(propositions-15, ,-3)
+advmod(propositions-15, So-2)
+nmod:for(propositions-15, example-5)
+dep(propositions-15, question-8)
+expl(propositions-15, there-12)
+amod(propositions-15, unanalysable-13)
+amod(propositions-15, subject-predicate-14)
+---
+qqroot(ROOT-0, nonsensical-9)
+mark(ask-2, To-1)
+det(concept-6, a-4)
+mark(exists-7, whether-3)
+cop(nonsensical-9, is-8)
+punct(nonsensical-9, .-10)
+csubj(nonsensical-9, ask-2)
+amod(concept-6, formal-5)
+nsubj(exists-7, concept-6)
+ccomp(ask-2, exists-7)
+root(ROOT-0, answer-7)
+case(proposition-3, For-1)
+aux(answer-7, can-4)
+cop(answer-7, be-5)
+det(answer-7, the-6)
+punct(answer-7, .-12)
+case(question-11, to-8)
+det(question-11, a-10)
+neg(proposition-3, no-2)
+nmod:for(answer-7, proposition-3)
+det:predet(question-11, such-9)
+nmod:to(answer-7, question-11)
+root(ROOT-0, propositions-15)
+case(example-5, for-4)
+det(question-8, the-7)
+cop(propositions-15, Are-11)
+punct(propositions-15, ,-6)
+punct(propositions-15, ,-9)
+punct(propositions-15, `-10)
+punct(propositions-15, ?-16)
+punct(propositions-15, '-17)
+punct(propositions-15, -LRB--1)
+punct(propositions-15, ,-3)
+advmod(propositions-15, So-2)
+nmod:for(propositions-15, example-5)
+dep(propositions-15, question-8)
+expl(propositions-15, there-12)
+amod(propositions-15, unanalysable-13)
+amod(propositions-15, subject-predicate-14)
+root(ROOT-0, asked-4)
+aux(asked-4, can-1)
+auxpass(asked-4, be-3)
+punct(asked-4, .-5)
+punct(asked-4, -RRB--6)
+neg(asked-4, not-2)
+G[23, 19] [?1, ?2, ?3, ?4, So2, answer2147483647, ask2, asked4, concept2147483647, example5, exists7, formal5, no2, nonsensical9, not2, proposition3, propositions15, question2147483647, question2147483647, subject-predicate14, such9, there12, unanalysable13]
+?2-to->?4
+?3-a->concept2147483647
+So2- ->propositions15
+?4-the->answer2147483647
+example5-for->propositions15
+not2-  : can  : be ->asked4
+unanalysable13- ->propositions15
+?3- ->exists7
+?1- ->propositions15
+formal5- ->?3
+no2-  : For ->proposition3
+ask2-  : is ->nonsensical9
+?1-the->question2147483647
+subject-predicate14- ->propositions15
+?2-a->question2147483647
+there12-  : Are ->propositions15
+proposition3-for : can  : be ->?4
+such9-predet->?2
+exists7-  : To  : whether ->ask2
+------CorefChainz

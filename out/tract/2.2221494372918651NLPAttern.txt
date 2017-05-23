@@ -1,0 +1,41 @@
+ The agreement or disagreement or its sense with reality constitutes its truth or falsity.
+------CorefChainz
+CHAIN5-["The agreement" in sentence 1, "its" in sentence 1, "its" in sentence 1]
+representative mention: "The agreement" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, constitutes-10)
+cc(agreement-2, or-3)
+cc(agreement-2, or-5)
+det(agreement-2, The-1)
+case(reality-9, with-8)
+punct(constitutes-10, .-15)
+cc(truth-12, or-13)
+nsubj(constitutes-10, agreement-2)
+conj:or(agreement-2, disagreement-4)
+nsubj(constitutes-10, disagreement-4)
+nmod:poss(sense-7, its-6)
+conj:or(agreement-2, sense-7)
+nsubj(constitutes-10, sense-7)
+nmod:with(sense-7, reality-9)
+nmod:poss(truth-12, its-11)
+dobj(constitutes-10, truth-12)
+dobj(constitutes-10, falsity-14)
+conj:or(truth-12, falsity-14)
+G[6, 7] [?1, agreement2147483647, constitutes10, reality9, sense7, truth12]
+?1-The->agreement2147483647
+truth12-  : or ->constitutes10
+sense7-or->?1
+reality9-with->sense7
+truth12-==->?1
+?1- ->constitutes10
+sense7- ->constitutes10
+------CorefChainz
+CHAIN5-["The agreement" in sentence 1, "its" in sentence 1, "its" in sentence 1]
+representative mention: "The agreement" in sentence 1

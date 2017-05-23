@@ -1,0 +1,24 @@
+ The world and life are one.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, one-6)
+cc(world-2, and-3)
+det(world-2, The-1)
+cop(one-6, are-5)
+punct(one-6, .-7)
+nsubj(one-6, world-2)
+conj:and(world-2, life-4)
+nsubj(one-6, life-4)
+G[4, 4] [?1, life4, one6, world2147483647]
+life4-and->?1
+?1-The->world2147483647
+life4-  : are ->one6
+?1- ->one6
+------CorefChainz

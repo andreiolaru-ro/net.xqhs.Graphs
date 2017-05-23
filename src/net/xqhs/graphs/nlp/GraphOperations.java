@@ -5,37 +5,44 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import net.xqhs.graphs.context.ContextPattern;
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.graphs.graph.Node;
-import net.xqhs.graphs.pattern.EdgeP;
-import net.xqhs.graphs.pattern.NodeP;
+import net.xqhs.graphs.graph.SimpleGraph;
 
 public class GraphOperations {
-	ContextPattern cxt;
+	// ContextPattern cxt;
+	SimpleGraph cxt;
+	NLGraphType t;
 	int maxIndex = 0, indexCount = 0;
 	ArrayList<GraphComponent> createables, deletables;
 
-	public GraphOperations(ContextPattern cxt) {
+	public GraphOperations(NLGraphType t, SimpleGraph cxt) {
 		this.cxt = cxt;
+		this.t = t;
 		for (Node node : cxt.getNodes()) {
-			if (((NodeP) node).isGeneric()) {
-				indexCount++;
-				maxIndex = Math.max(maxIndex, ((NodeP) node).genericIndex());
+			if (node instanceof NLNodeP) {
+				if (((NLNodeP) node).isGeneric()) {
+					indexCount++;
+					maxIndex = Math.max(maxIndex,
+							((NLNodeP) node).genericIndex());
+				}
 			}
 		}
 		createables = new ArrayList<GraphComponent>();
 		deletables = new ArrayList<GraphComponent>();
 	}
 
-	public NLEdgeP addEdge(NLNodeP from, NLNodeP to, String edgeLabel) {
-		NLEdgeP edgeAlreadyThere = (NLEdgeP) containsEdge(from, to);
+	public NLEdge addEdge(NLNode from, NLNode to, String edgeLabel) {
+		NLEdge edgeAlreadyThere = (NLEdge) containsEdge(from, to);
 		if (edgeAlreadyThere == null) {
-			NLEdgeP edge = new NLEdgeP(from, to, edgeLabel);
-			cxt.addEdge(edge);
 			System.out.println("Adding edge " + from + " -" + edgeLabel + "-> "
 					+ to);
+			NLEdge edge = NLEdgeFactory.makeNLEdge(t, from, to, edgeLabel);
+			// new NLEdgeP(from, to, edgeLabel);
+
+			cxt.addEdge(edge);
+
 			return edge;
 		}
 
@@ -45,7 +52,7 @@ public class GraphOperations {
 
 	}
 
-	private Edge containsEdge(NLNodeP from, NLNodeP to) {
+	private Edge containsEdge(NLNode from, NLNode to) {
 		Collection<Edge> edges = new ArrayList<Edge>();
 		// edges.addAll(cxt.getInEdges(from));
 		edges.addAll(cxt.getOutEdges(from));
@@ -57,7 +64,7 @@ public class GraphOperations {
 
 	}
 
-	public void removeEdge(EdgeP edge) {
+	public void removeEdge(NLEdge edge) {
 		if (cxt.contains(edge)) {
 			System.out.println("Removing edge " + edge.getFrom() + " -"
 					+ edge.getLabel() + "-> " + edge.getTo());
@@ -66,57 +73,62 @@ public class GraphOperations {
 			System.out.println("Edge already removed");
 	}
 
-	public NodeP addNode(String label) {
-		NodeP n = new NodeP(label);
-		cxt.addNode(n);
-		System.out.println("Adding node " + label);
-		return n;
-	}
+	// public NLNode addNode(String label) {
+	// NLNode n =NLNodeFactory.makeNode(t, w) new NodeP(label);
+	// cxt.addNode(n);
+	// System.out.println("Adding node " + label);
+	// return n;
+	// }
 
-	public void removeNode(NodeP node) {
+	public void removeNode(NLNode node) {
 		if (cxt.contains(node)) {
 			System.out.println("Removing node " + node);
-			if (node.isGeneric()) {
-				genericNodeDeleted(node.genericIndex());
+			// prolly useless
+			if (node instanceof NLNodeP) {
+				if (((NLNodeP) node).isGeneric()) {
+					genericNodeDeleted(((NLNodeP) node).genericIndex());
+				}
 			}
 			cxt.removeNode(node);
 		}
 
 	}
 
+	// neverused
 	private void genericNodeDeleted(int index) {
 		indexCount--;
 
 	}
 
-	public NodeP addNode(NodeP node) {
+	public NLNode addNode(NLNode node) {
 		cxt.addNode(node);
 		System.out.println("Adding node " + node);
 		return node;
 	}
 
 	// badBadDontUse
-	public NLNodeP addGenericNode() {
-		NLNodeP genericNode = new NLNodeP();
-		indexCount++;
-		System.out.println("Added generic node:" + genericNode);
-		cxt.addNode(genericNode);
-		return genericNode;
-	}
+	// public NLNodeP addGenericNode() {
+	// NLNodeP genericNode = new NLNodeP();
+	// indexCount++;
+	// System.out.println("Added generic node:" + genericNode);
+	// cxt.addNode(genericNode);
+	// return genericNode;
+	// }
 
-	public NLNodeP getNLNodeByWordIndex(int index) {
+	public NLNode getNLNodeByWordIndex(int index) {
 		for (Node node : cxt.getNodes()) {
-			NLNodeP nlNode = (NLNodeP) node;
+			NLNode nlNode = (NLNode) node;
 			if (nlNode.getWordIndex() == index)
 				return nlNode;
 		}
 		return null;
 	}
 
-	public void mergeNodes(NodeP fromDep, NodeP toGov) {
-		if (cxt.contains(fromDep) && cxt.contains(toGov))
-			moveEdges(fromDep, toGov, true);
-		removeNode(fromDep);
+	public void mergeNodes(NLNode fromDep, NLNode toGov) {
+		if (cxt.contains(fromDep) && cxt.contains(toGov)) {
+			moveEdges(fromDep, toGov, false);
+			removeNode(fromDep);
+		}
 	}
 
 	public void apply() {
@@ -130,10 +142,10 @@ public class GraphOperations {
 		}
 	}
 
-	public NLNodeP getByIndex(int index) {
-		NLNodeP nodeNL = null;
+	public NLNode getByIndex(int index) {
+		NLNode nodeNL = null;
 		for (Node node : cxt.getNodes()) {
-			nodeNL = (NLNodeP) node;
+			nodeNL = (NLNode) node;
 			if (nodeNL.getWordIndex() == index) {
 				return nodeNL;
 			}
@@ -141,49 +153,59 @@ public class GraphOperations {
 		return nodeNL;
 	}
 
-	public void moveEdges(NodeP from, NodeP to, boolean andRelabel) {
-		if (cxt.contains(from)) {
+	public void moveEdges(NLNode from, NLNode to, boolean andRelabel) {
+		if (cxt.contains(from) && cxt.contains(to) && !from.equals(to)) {
 			for (Edge outEdgeP : cxt.getOutEdges(from)) {
 				if (outEdgeP.getTo().equals(to)) {
-					removeEdge((EdgeP) outEdgeP);
+
+					deletables.add(outEdgeP);
 				} else {
 					String label = outEdgeP.getLabel();
+					String role = ((NLEdge) outEdgeP).getRole();
 					if (andRelabel) {
 						label = from.getLabel() + " :" + label;
 					}
-					createables.add(new NLEdgeP((NLNodeP) to,
-							(NLNodeP) outEdgeP.getTo(), label));
+					createables.add(NLEdgeFactory.makeNLEdge(t, to,
+							(NLNode) outEdgeP.getTo(), label, role));
+
+					// new NLEdgeP((NLNodeP) to,
+					// (NLNodeP) outEdgeP.getTo(), label, role));
 					deletables.add(outEdgeP);
-					System.out.println("Modifying edge:" + outEdgeP.getFrom()
-							+ " --" + outEdgeP.getLabel() + "-> "
-							+ outEdgeP.getTo() + " to " + to.getLabel() + " -"
-							+ from.getLabel() + " :" + outEdgeP.getLabel()
-							+ "-> " + outEdgeP.getTo());
+					System.out.println("Modifying outEdge:"
+							+ outEdgeP.getFrom() + " --" + outEdgeP.getLabel()
+							+ "-> " + outEdgeP.getTo() + " [role]:"
+							+ ((NLEdge) outEdgeP).getRole() + " to \n" + to
+							+ " -" + label + "-> " + outEdgeP.getTo());
 				}
 			}
 			for (Edge inEdgeP : cxt.getInEdges(from)) {
+				// no reflexives pls
 				if (inEdgeP.getFrom().equals(to)) {
-					removeEdge((EdgeP) inEdgeP);
+					deletables.add(inEdgeP);
 				} else {
 					String label = inEdgeP.getLabel();
+					String role = ((NLEdge) inEdgeP).getRole();
 					if (andRelabel) {
 						label += " :" + from.getLabel();
 					}
-					createables.add(new NLEdgeP((NLNodeP) inEdgeP.getFrom(),
-							(NLNodeP) to, label));
+					createables.add(NLEdgeFactory.makeNLEdge(t,
+							(NLNode) inEdgeP.getFrom(), to, label, role));
+					// new NLEdgeP((NLNodeP) inEdgeP.getFrom(),
+					// (NLNodeP) to, label, role));
 					deletables.add(inEdgeP);
-					System.out.println("Modifying edge:" + inEdgeP.getFrom()
+					System.out.println("Modifying inEdge:" + inEdgeP.getFrom()
 							+ " --" + inEdgeP.getLabel() + "-> "
-							+ inEdgeP.getTo() + " to " + inEdgeP.getFrom()
-							+ " -" + inEdgeP.getLabel() + " :"
-							+ from.getLabel() + to.getLabel() + "-> " + from);
+							+ inEdgeP.getTo() + " [role]:"
+							+ ((NLEdge) inEdgeP).getRole() + "  to \n"
+							+ inEdgeP.getFrom() + " -" + label + "-> " + to);
 				}
 			}
 
 			apply();
 
 		} else
-			System.out.println("Node " + from + "not in graph");
+			System.out.println("Node " + from + " or " + to
+					+ "not in graph or " + from + " == " + to);
 	}
 
 }

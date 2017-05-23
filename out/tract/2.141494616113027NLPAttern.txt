@@ -1,0 +1,42 @@
+ What constitutes a picture is that its elements are related to one another in a determinate way.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-5)
+det(picture-4, a-3)
+punct(is-5, .-18)
+cop(related-10, are-9)
+mark(related-10, that-6)
+case(one-12, to-11)
+case(way-17, in-14)
+det(way-17, a-15)
+nsubj(constitutes-2, What-1)
+csubj(is-5, constitutes-2)
+dobj(constitutes-2, picture-4)
+nmod:poss(elements-8, its-7)
+nsubj(related-10, elements-8)
+ccomp(is-5, related-10)
+nmod:to(related-10, one-12)
+dep(one-12, another-13)
+amod(way-17, determinate-16)
+nmod:in(one-12, way-17)
+G[13, 12] [?1, ?2, What1, another13, constitutes2, determinate16, elements8, is5, its7, one12, picture2147483647, related10, way2147483647]
+What1- ->constitutes2
+determinate16- ->?1
+?2-a->picture2147483647
+related10-  : that ->is5
+another13- ->one12
+one12-to->related10
+constitutes2- ->is5
+?1-in->one12
+its7-poss->elements8
+elements8-  : are ->related10
+?1-a->way2147483647
+?2- ->constitutes2
+------CorefChainz

@@ -1,0 +1,598 @@
+ If, for example, two propositions 'p' and 'q' in the combination 'p z q' yield a tautology, then it is clear that q follows from p. For example, we see from the two propositions themselves that 'q' follows from 'p z q . p', but it is also possible to show it in this way: we combine them to form 'p z q . p :z: q', and then show that this is a tautology.
+------CorefChainz
+CHAIN18-["it" in sentence 2, "it" in sentence 2]
+representative mention: "it" in sentence 2
+CHAIN20-["we" in sentence 1, "we" in sentence 2]
+representative mention: "we" in sentence 1
+CHAIN23-["two propositions" in sentence 1, "this" in sentence 3]
+representative mention: "two propositions" in sentence 1
+If-IN 
+,-, 
+for-IN 
+example-NN 
+,-, 
+two-CD 
+propositions-NNS 
+`-`` 
+p-JJ 
+'-'' 
+and-CC 
+`-`` 
+q-JJ 
+'-'' 
+in-IN 
+the-DT 
+combination-NN 
+'-POS 
+p-NN 
+z-NN 
+q-NN 
+'-'' 
+yield-VBP 
+a-DT 
+tautology-NN 
+,-, 
+then-RB 
+it-PRP 
+is-VBZ 
+clear-JJ 
+that-IN 
+q-NN 
+follows-VBZ 
+from-IN 
+p.-NN 
+For-IN 
+example-NN 
+,-, 
+we-PRP 
+see-VBP 
+from-IN 
+the-DT 
+two-CD 
+propositions-NNS 
+themselves-PRP 
+that-IN 
+`-`` 
+q-NN 
+'-'' 
+follows-VBZ 
+from-IN 
+'-'' 
+p-NNP 
+z-NNP 
+q-NNP 
+.-. 
+p-NN 
+'-'' 
+,-, 
+but-CC 
+it-PRP 
+is-VBZ 
+also-RB 
+possible-JJ 
+to-TO 
+show-VB 
+it-PRP 
+in-IN 
+this-DT 
+way-NN 
+:-: 
+we-PRP 
+combine-VB 
+them-PRP 
+to-TO 
+form-NN 
+'-POS 
+p-NN 
+z-NN 
+q-NN 
+.-. 
+p-NN 
+:-: 
+z-SYM 
+:-: 
+q-VBN 
+'-'' 
+,-, 
+and-CC 
+then-RB 
+show-VBP 
+that-IN 
+this-DT 
+is-VBZ 
+a-DT 
+tautology-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> , 	-> ,
+	 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NN 	-> example
+			 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> NP 	-> CD 	-> two
+	 	-> NNS 	-> propositions
+		 	-> ADJP 	-> `` 	-> `
+	 	-> JJ 	-> p
+	 	-> '' 	-> '
+	 	-> CC 	-> and
+	 	-> `` 	-> `
+	 	-> JJ 	-> q
+	 	-> '' 	-> '
+			 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> combination
+	 	-> POS 	-> '
+		 	-> NN 	-> p
+	 	-> NN 	-> z
+	 	-> NN 	-> q
+				 	-> '' 	-> '
+	 	-> VP 	-> VBP 	-> yield
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> tautology
+					 	-> , 	-> ,
+	 	-> ADVP 	-> RB 	-> then
+		 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> VBZ 	-> is
+	 	-> ADJP 	-> JJ 	-> clear
+		 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> NN 	-> q
+		 	-> VP 	-> VBZ 	-> follows
+	 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> NP 	-> NN 	-> p.
+	 	-> UCP 	-> S 	-> S 	-> PP 	-> IN 	-> For
+	 	-> NP 	-> NN 	-> example
+			 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> we
+		 	-> VP 	-> VBP 	-> see
+	 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> DT 	-> the
+	 	-> CD 	-> two
+	 	-> NNS 	-> propositions
+			 	-> NP 	-> NP 	-> PRP 	-> themselves
+		 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> `` 	-> `
+	 	-> NN 	-> q
+	 	-> '' 	-> '
+		 	-> VP 	-> VBZ 	-> follows
+	 	-> PP 	-> IN 	-> from
+	 	-> '' 	-> '
+	 	-> NP 	-> NNP 	-> p
+	 	-> NNP 	-> z
+	 	-> NNP 	-> q
+	 	-> . 	-> .
+	 	-> NN 	-> p
+							 	-> '' 	-> '
+			 	-> , 	-> ,
+	 	-> CC 	-> but
+	 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> VBZ 	-> is
+	 	-> ADVP 	-> RB 	-> also
+		 	-> ADJP 	-> JJ 	-> possible
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> show
+	 	-> NP 	-> PRP 	-> it
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> way
+										 	-> : 	-> :
+	 	-> FRAG 	-> NP 	-> PRP 	-> we
+		 	-> VP 	-> VB 	-> combine
+	 	-> NP 	-> PRP 	-> them
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> NN 	-> form
+	 	-> POS 	-> '
+		 	-> NN 	-> p
+	 	-> NN 	-> z
+	 	-> NN 	-> q
+					 	-> . 	-> .
+		 	-> NN 	-> p
+		 	-> : 	-> :
+	 	-> S 	-> VP 	-> X 	-> SYM 	-> z
+		 	-> : 	-> :
+	 	-> VP 	-> VBN 	-> q
+	 	-> '' 	-> '
+											 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> S 	-> NP 	-> RB 	-> then
+		 	-> VP 	-> VBP 	-> show
+	 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> DT 	-> this
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> tautology
+							 	-> . 	-> .
+			
+Dependensee repr
+mark(yield-23, If-1)
+case(example-4, for-3)
+nmod:for(yield-23, example-4)
+nummod(propositions-7, two-6)
+nsubj(yield-23, propositions-7)
+amod(propositions-7, p-9)
+conj:and(q-13, p-9)
+cc(q-13, and-11)
+amod(propositions-7, q-13)
+case(q-21, in-15)
+det(combination-17, the-16)
+nmod:poss(q-21, combination-17)
+case(combination-17, '-18)
+compound(q-21, p-19)
+compound(q-21, z-20)
+nmod:in(propositions-7, q-21)
+advcl(clear-30, yield-23)
+det(tautology-25, a-24)
+dobj(yield-23, tautology-25)
+advmod(it-28, then-27)
+nsubj(clear-30, it-28)
+cop(clear-30, is-29)
+root(ROOT-0, clear-30)
+mark(follows-33, that-31)
+nsubj(follows-33, q-32)
+ccomp(clear-30, follows-33)
+case(p-82, from-34)
+compound(p-82, p.-35)
+case(example-37, For-36)
+nmod:for(see-40, example-37)
+nsubj(see-40, we-39)
+dep(p-82, see-40)
+case(propositions-44, from-41)
+det(propositions-44, the-42)
+nummod(propositions-44, two-43)
+nmod:from(see-40, propositions-44)
+dobj(see-40, themselves-45)
+mark(follows-50, that-46)
+nsubj(follows-50, q-48)
+dep(themselves-45, follows-50)
+case(p-57, from-51)
+compound(p-57, p-53)
+compound(p-57, z-54)
+compound(p-57, q-55)
+nmod:from(follows-50, p-57)
+cc(see-40, but-60)
+nsubj(possible-64, it-61)
+nsubj:xsubj(show-66, it-61)
+cop(possible-64, is-62)
+advmod(possible-64, also-63)
+conj:but(see-40, possible-64)
+dep(p-82, possible-64)
+mark(show-66, to-65)
+xcomp(possible-64, show-66)
+dobj(show-66, it-67)
+case(way-70, in-68)
+det(way-70, this-69)
+nmod:in(show-66, way-70)
+dep(see-40, we-72)
+dep(we-72, combine-73)
+dobj(combine-73, them-74)
+case(q-80, to-75)
+nmod:poss(q-80, form-76)
+case(form-76, '-77)
+compound(q-80, p-78)
+compound(q-80, z-79)
+nmod:to(combine-73, q-80)
+nmod:from(follows-33, p-82)
+dep(q-86, z-84)
+parataxis(p-82, q-86)
+cc(clear-30, and-89)
+nsubj(show-91, then-90)
+conj:and(clear-30, show-91)
+mark(tautology-96, that-92)
+nsubj(tautology-96, this-93)
+cop(tautology-96, is-94)
+det(tautology-96, a-95)
+ccomp(show-91, tautology-96)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, clear-30)
+case(example-4, for-3)
+cc(p-9, and-11)
+punct(p-9, `-8)
+punct(p-9, '-10)
+punct(q-13, `-12)
+punct(q-13, '-14)
+case(combination-17, in-15)
+det(combination-17, the-16)
+punct(combination-17, '-18)
+punct(combination-17, '-22)
+compound(q-21, p-19)
+compound(q-21, z-20)
+mark(yield-23, If-1)
+punct(yield-23, ,-2)
+punct(yield-23, ,-5)
+det(tautology-25, a-24)
+cop(clear-30, is-29)
+punct(clear-30, ,-38)
+punct(clear-30, .-56)
+punct(clear-30, ,-26)
+mark(follows-33, that-31)
+case(p.-35, from-34)
+case(example-37, For-36)
+case(propositions-44, from-41)
+det(propositions-44, the-42)
+punct(q-48, '-49)
+punct(q-48, `-47)
+mark(follows-50, that-46)
+case(p-53, from-51)
+punct(p-53, '-52)
+nmod:for(yield-23, example-4)
+nummod(propositions-7, two-6)
+nsubj(yield-23, propositions-7)
+dep(propositions-7, p-9)
+dep(propositions-7, q-13)
+conj:and(p-9, q-13)
+nmod:in(p-9, combination-17)
+dep(combination-17, q-21)
+advcl:if(clear-30, yield-23)
+dobj(yield-23, tautology-25)
+advmod(it-28, then-27)
+nsubj(clear-30, it-28)
+nsubj(follows-33, q-32)
+ccomp(clear-30, follows-33)
+nmod:from(follows-33, p.-35)
+nmod:for(p.-35, example-37)
+nsubj(see-40, we-39)
+parataxis(clear-30, see-40)
+nummod(propositions-44, two-43)
+nmod:from(see-40, propositions-44)
+nmod:npmod(propositions-44, themselves-45)
+nsubj(follows-50, q-48)
+ccomp(see-40, follows-50)
+nmod:from(follows-50, p-53)
+dep(q-55, z-54)
+nmod(p-53, q-55)
+---
+qqroot(ROOT-0, clear-30)
+case(example-4, for-3)
+cc(p-9, and-11)
+punct(p-9, `-8)
+punct(p-9, '-10)
+punct(q-13, `-12)
+punct(q-13, '-14)
+case(combination-17, in-15)
+det(combination-17, the-16)
+punct(combination-17, '-18)
+punct(combination-17, '-22)
+compound(q-21, p-19)
+compound(q-21, z-20)
+mark(yield-23, If-1)
+punct(yield-23, ,-2)
+punct(yield-23, ,-5)
+det(tautology-25, a-24)
+cop(clear-30, is-29)
+punct(clear-30, ,-38)
+punct(clear-30, .-56)
+punct(clear-30, ,-26)
+mark(follows-33, that-31)
+case(p.-35, from-34)
+case(example-37, For-36)
+case(propositions-44, from-41)
+det(propositions-44, the-42)
+punct(q-48, '-49)
+punct(q-48, `-47)
+mark(follows-50, that-46)
+case(p-53, from-51)
+punct(p-53, '-52)
+nmod:for(yield-23, example-4)
+nummod(propositions-7, two-6)
+nsubj(yield-23, propositions-7)
+dep(propositions-7, p-9)
+dep(propositions-7, q-13)
+conj:and(p-9, q-13)
+nmod:in(p-9, combination-17)
+dep(combination-17, q-21)
+advcl:if(clear-30, yield-23)
+dobj(yield-23, tautology-25)
+advmod(it-28, then-27)
+nsubj(clear-30, it-28)
+nsubj(follows-33, q-32)
+ccomp(clear-30, follows-33)
+nmod:from(follows-33, p.-35)
+nmod:for(p.-35, example-37)
+nsubj(see-40, we-39)
+parataxis(clear-30, see-40)
+nummod(propositions-44, two-43)
+nmod:from(see-40, propositions-44)
+nmod:npmod(propositions-44, themselves-45)
+nsubj(follows-50, q-48)
+ccomp(see-40, follows-50)
+nmod:from(follows-50, p-53)
+dep(q-55, z-54)
+nmod(p-53, q-55)
+root(ROOT-0, p-1)
+cc(p-1, but-4)
+punct(p-1, ,-3)
+punct(p-1, .-25)
+punct(p-1, :-15)
+punct(p-1, '-2)
+cop(possible-8, is-6)
+mark(show-10, to-9)
+case(way-14, in-12)
+det(way-14, this-13)
+mark(form-20, to-19)
+punct(form-20, '-21)
+nsubj(possible-8, it-5)
+nsubj:xsubj(show-10, it-5)
+advmod(possible-8, also-7)
+conj:but(p-1, possible-8)
+xcomp(possible-8, show-10)
+dobj(show-10, it-11)
+nmod:in(show-10, way-14)
+nsubj(combine-17, we-16)
+parataxis(p-1, combine-17)
+dobj(combine-17, them-18)
+nsubj:xsubj(form-20, them-18)
+xcomp(combine-17, form-20)
+dep(q-24, p-22)
+dep(q-24, z-23)
+advcl(form-20, q-24)
+---
+qqroot(ROOT-0, clear-30)
+case(example-4, for-3)
+cc(p-9, and-11)
+punct(p-9, `-8)
+punct(p-9, '-10)
+punct(q-13, `-12)
+punct(q-13, '-14)
+case(combination-17, in-15)
+det(combination-17, the-16)
+punct(combination-17, '-18)
+punct(combination-17, '-22)
+compound(q-21, p-19)
+compound(q-21, z-20)
+mark(yield-23, If-1)
+punct(yield-23, ,-2)
+punct(yield-23, ,-5)
+det(tautology-25, a-24)
+cop(clear-30, is-29)
+punct(clear-30, ,-38)
+punct(clear-30, .-56)
+punct(clear-30, ,-26)
+mark(follows-33, that-31)
+case(p.-35, from-34)
+case(example-37, For-36)
+case(propositions-44, from-41)
+det(propositions-44, the-42)
+punct(q-48, '-49)
+punct(q-48, `-47)
+mark(follows-50, that-46)
+case(p-53, from-51)
+punct(p-53, '-52)
+nmod:for(yield-23, example-4)
+nummod(propositions-7, two-6)
+nsubj(yield-23, propositions-7)
+dep(propositions-7, p-9)
+dep(propositions-7, q-13)
+conj:and(p-9, q-13)
+nmod:in(p-9, combination-17)
+dep(combination-17, q-21)
+advcl:if(clear-30, yield-23)
+dobj(yield-23, tautology-25)
+advmod(it-28, then-27)
+nsubj(clear-30, it-28)
+nsubj(follows-33, q-32)
+ccomp(clear-30, follows-33)
+nmod:from(follows-33, p.-35)
+nmod:for(p.-35, example-37)
+nsubj(see-40, we-39)
+parataxis(clear-30, see-40)
+nummod(propositions-44, two-43)
+nmod:from(see-40, propositions-44)
+nmod:npmod(propositions-44, themselves-45)
+nsubj(follows-50, q-48)
+ccomp(see-40, follows-50)
+nmod:from(follows-50, p-53)
+dep(q-55, z-54)
+nmod(p-53, q-55)
+root(ROOT-0, p-1)
+cc(p-1, but-4)
+punct(p-1, ,-3)
+punct(p-1, .-25)
+punct(p-1, :-15)
+punct(p-1, '-2)
+cop(possible-8, is-6)
+mark(show-10, to-9)
+case(way-14, in-12)
+det(way-14, this-13)
+mark(form-20, to-19)
+punct(form-20, '-21)
+nsubj(possible-8, it-5)
+nsubj:xsubj(show-10, it-5)
+advmod(possible-8, also-7)
+conj:but(p-1, possible-8)
+xcomp(possible-8, show-10)
+dobj(show-10, it-11)
+nmod:in(show-10, way-14)
+nsubj(combine-17, we-16)
+parataxis(p-1, combine-17)
+dobj(combine-17, them-18)
+nsubj:xsubj(form-20, them-18)
+xcomp(combine-17, form-20)
+dep(q-24, p-22)
+dep(q-24, z-23)
+advcl(form-20, q-24)
+root(ROOT-0, p-1)
+punct(p-1, .-16)
+punct(p-1, :-2)
+cc(q-5, and-8)
+punct(q-5, '-6)
+punct(q-5, ,-7)
+punct(q-5, :-4)
+cop(tautology-15, is-13)
+det(tautology-15, a-14)
+mark(tautology-15, that-11)
+dep(q-5, z-3)
+dep(p-1, q-5)
+advmod(show-10, then-9)
+dep(p-1, show-10)
+conj:and(q-5, show-10)
+nsubj(tautology-15, this-12)
+ccomp(show-10, tautology-15)
+G[52, 54] [?#1, ?#2, ?#3, ?#4, ?#5, also, clear, combination, combine, example, example, follows, follows, form, it, it, it, p, p, p, p, p, p., possible, propositions, propositions, q, q, q, q, q, q, see, show, show, tautology, tautology, them, themselves, then, then, this, two, two, way, we, we, yield, z, z, z, z p q]
+example-for : If ->yield
+it- ->show
+we- ->combine
+yield-if->clear
+it-xsubj->show
+?#1-  : that  : that ->show
+?#5-from->see
+form- ->combine
+two- ->propositions
+z- ->q
+q-and->p
+we- ->see
+show-  : to ->possible
+q- ->p
+q-  : that ->follows
+follows- ->see
+q- ->propositions
+?#4-this->way
+then- ->show
+see- ->clear
+show-and->q
+this- ->propositions
+?#1-a->tautology
+combine- ->p
+q- ->follows
+follows-  : that  : that ->clear
+?#2-in->p
+show- ->p
+then- ->it
+this-  : is ->?#1
+z- ->q
+?#4-in->show
+propositions- ->yield
+p- ->propositions
+q- ->form
+?#2-the->combination
+them- ->combine
+themselves-npmod->?#5
+it-  : is ->clear
+also- ->possible
+two- ->?#5
+them-xsubj : to ->form
+p.-from->follows
+it-  : is  : is ->possible
+p-from->follows
+z p q- ->?#2
+?#3- ->yield
+p- ->q
+?#3-a->tautology
+?#5-the->propositions
+possible-but->p
+q- ->p
+z- ->q
+example-for : For ->p.
+------CorefChainz
+CHAIN18-["it" in sentence 2, "it" in sentence 2]
+representative mention: "it" in sentence 2
+CHAIN20-["we" in sentence 1, "we" in sentence 2]
+representative mention: "we" in sentence 1
+CHAIN23-["two propositions" in sentence 1, "this" in sentence 3]
+representative mention: "two propositions" in sentence 1

@@ -1,0 +1,157 @@
+ It is only in this way that the step from one term of a series of forms to another is possible (from one type to another in the hierarchies of Russell and Whitehead). (Russell and Whitehead did not admit the possibility of such steps, but repeatedly availed themselves of it.)
+------CorefChainz
+CHAIN17-["Russell and Whitehead" in sentence 1, "Russell and Whitehead" in sentence 2, "themselves" in sentence 2]
+representative mention: "Russell and Whitehead" in sentence 1
+CHAIN18-["the possibility of such steps" in sentence 2, "it" in sentence 2]
+representative mention: "the possibility of such steps" in sentence 2
+CHAIN14-["Whitehead" in sentence 1, "Whitehead" in sentence 2]
+representative mention: "Whitehead" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, way-6)
+case(way-6, in-4)
+cop(way-6, is-2)
+det(way-6, this-5)
+punct(way-6, .-36)
+det(step-9, the-8)
+case(term-12, from-10)
+mwe(a-14, of-16)
+mwe(a-14, series-15)
+case(series-15, of-13)
+case(another-19, to-18)
+cop(possible-21, is-20)
+mark(possible-21, that-7)
+case(type-25, from-23)
+punct(type-25, -RRB--35)
+punct(type-25, -LRB--22)
+case(another-27, to-26)
+case(hierarchies-30, in-28)
+det(hierarchies-30, the-29)
+case(Russell-32, of-31)
+cc(Russell-32, and-33)
+nsubj(way-6, It-1)
+advmod(way-6, only-3)
+nsubj(possible-21, step-9)
+nummod(term-12, one-11)
+nmod:from(step-9, term-12)
+det:qmod(forms-17, a-14)
+nmod(term-12, forms-17)
+nmod:to(series-15, another-19)
+ccomp(way-6, possible-21)
+nummod(type-25, one-24)
+dep(possible-21, type-25)
+nmod:to(type-25, another-27)
+nmod:in(another-27, hierarchies-30)
+nmod:of(hierarchies-30, Russell-32)
+nmod:of(hierarchies-30, Whitehead-34)
+conj:and(Russell-32, Whitehead-34)
+---
+qqroot(ROOT-0, way-6)
+case(way-6, in-4)
+cop(way-6, is-2)
+det(way-6, this-5)
+punct(way-6, .-36)
+det(step-9, the-8)
+case(term-12, from-10)
+mwe(a-14, of-16)
+mwe(a-14, series-15)
+case(series-15, of-13)
+case(another-19, to-18)
+cop(possible-21, is-20)
+mark(possible-21, that-7)
+case(type-25, from-23)
+punct(type-25, -RRB--35)
+punct(type-25, -LRB--22)
+case(another-27, to-26)
+case(hierarchies-30, in-28)
+det(hierarchies-30, the-29)
+case(Russell-32, of-31)
+cc(Russell-32, and-33)
+nsubj(way-6, It-1)
+advmod(way-6, only-3)
+nsubj(possible-21, step-9)
+nummod(term-12, one-11)
+nmod:from(step-9, term-12)
+det:qmod(forms-17, a-14)
+nmod(term-12, forms-17)
+nmod:to(series-15, another-19)
+ccomp(way-6, possible-21)
+nummod(type-25, one-24)
+dep(possible-21, type-25)
+nmod:to(type-25, another-27)
+nmod:in(another-27, hierarchies-30)
+nmod:of(hierarchies-30, Russell-32)
+nmod:of(hierarchies-30, Whitehead-34)
+conj:and(Russell-32, Whitehead-34)
+root(ROOT-0, admit-7)
+cc(Russell-2, and-3)
+aux(admit-7, did-5)
+cc(admit-7, but-14)
+punct(admit-7, .-20)
+punct(admit-7, -RRB--21)
+punct(admit-7, ,-13)
+punct(admit-7, -LRB--1)
+det(possibility-9, the-8)
+case(steps-12, of-10)
+case(it-19, of-18)
+nsubj(admit-7, Russell-2)
+nsubj(availed-16, Russell-2)
+conj:and(Russell-2, Whitehead-4)
+nsubj(admit-7, Whitehead-4)
+neg(admit-7, not-6)
+dobj(admit-7, possibility-9)
+amod(steps-12, such-11)
+nmod:of(possibility-9, steps-12)
+advmod(availed-16, repeatedly-15)
+conj:but(admit-7, availed-16)
+dobj(availed-16, themselves-17)
+nmod:of(availed-16, it-19)
+G[32, 34] [?1, ?2, ?3, ?4, It1, Russell32, Russell2, Whitehead4, Whitehead34, a series of14, admit7, another27, another19, availed16, forms17, hierarchies2147483647, it19, not6, one24, one11, only3, possibility2147483647, possible21, repeatedly15, series15, step2147483647, steps12, such11, term12, themselves17, type25, way2147483647]
+repeatedly15- ->availed16
+Whitehead34-of->?4
+a series of14-qmod->forms17
+it19- ->?1
+availed16-but->admit7
+such11- ->steps12
+Russell2- ->admit7
+Whitehead4-and->Russell2
+it19-of->availed16
+term12-from->?2
+only3-  : in ->?3
+Russell32-of->?4
+Russell2- ->availed16
+themselves17- ->availed16
+Whitehead34-and->Russell32
+another27-to->type25
+not6- ->admit7
+?1-the->possibility2147483647
+?2- ->possible21
+type25-  : is ->possible21
+?4-in->another27
+Whitehead4-  : did  : did ->admit7
+?4-the->hierarchies2147483647
+?2-the->step2147483647
+?3-this->way2147483647
+It1-  : is  : is ->?3
+one24-  : from ->type25
+steps12-of->?1
+another19-to->series15
+forms17- ->term12
+?1- ->admit7
+themselves17- ->Russell32
+possible21-  : that ->?3
+one11- ->term12
+------CorefChainz
+CHAIN17-["Russell and Whitehead" in sentence 1, "Russell and Whitehead" in sentence 2, "themselves" in sentence 2]
+representative mention: "Russell and Whitehead" in sentence 1
+CHAIN18-["the possibility of such steps" in sentence 2, "it" in sentence 2]
+representative mention: "the possibility of such steps" in sentence 2
+CHAIN14-["Whitehead" in sentence 1, "Whitehead" in sentence 2]
+representative mention: "Whitehead" in sentence 1

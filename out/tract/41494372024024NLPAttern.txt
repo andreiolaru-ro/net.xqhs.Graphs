@@ -1,0 +1,26 @@
+ A thought is a proposition with a sense.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, proposition-5)
+det(thought-2, A-1)
+cop(proposition-5, is-3)
+det(proposition-5, a-4)
+punct(proposition-5, .-9)
+case(sense-8, with-6)
+det(sense-8, a-7)
+nsubj(proposition-5, thought-2)
+nmod:with(proposition-5, sense-8)
+G[6, 5] [?1, ?2, ?3, proposition2147483647, sense2147483647, thought2147483647]
+?2-with->?1
+?3-  : is ->?1
+?2-a->sense2147483647
+?3-A->thought2147483647
+?1-a->proposition2147483647
+------CorefChainz

@@ -1,0 +1,145 @@
+ There must be something identical in a picture and what it depicts, to enable the one to be a picture of the other at all.
+------CorefChainz
+CHAIN3-["something" in sentence 1, "it" in sentence 1]
+representative mention: "something" in sentence 1
+There-EX 
+must-MD 
+be-VB 
+something-NN 
+identical-JJ 
+in-IN 
+a-DT 
+picture-NN 
+and-CC 
+what-WP 
+it-PRP 
+depicts-VBZ 
+,-, 
+to-TO 
+enable-VB 
+the-DT 
+one-NN 
+to-TO 
+be-VB 
+a-DT 
+picture-NN 
+of-IN 
+the-DT 
+other-JJ 
+at-IN 
+all-DT 
+.-. 
+ROOT 	-> S 	-> NP 	-> EX 	-> There
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> UCP 	-> FRAG 	-> NP 	-> NP 	-> NN 	-> something
+		 	-> ADJP 	-> JJ 	-> identical
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> picture
+						 	-> CC 	-> and
+	 	-> SBAR 	-> WHNP 	-> WP 	-> what
+		 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> VBZ 	-> depicts
+	 	-> , 	-> ,
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> enable
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> one
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> be
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> picture
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> other
+		 	-> ADVP 	-> IN 	-> at
+	 	-> DT 	-> all
+																		 	-> . 	-> .
+			
+Dependensee repr
+expl(something-4, There-1)
+aux(something-4, must-2)
+cop(something-4, be-3)
+root(ROOT-0, something-4)
+amod(something-4, identical-5)
+case(picture-8, in-6)
+det(picture-8, a-7)
+nmod:in(identical-5, picture-8)
+cc(something-4, and-9)
+dobj(depicts-12, what-10)
+nsubj:xsubj(enable-15, what-10)
+nsubj(depicts-12, it-11)
+conj:and(something-4, depicts-12)
+mark(enable-15, to-14)
+xcomp(depicts-12, enable-15)
+det(one-17, the-16)
+dobj(enable-15, one-17)
+mark(picture-21, to-18)
+cop(picture-21, be-19)
+det(picture-21, a-20)
+acl(one-17, picture-21)
+case(other-24, of-22)
+det(other-24, the-23)
+nmod:of(picture-21, other-24)
+case(all-26, at-25)
+nmod:at(other-24, all-26)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, identical-5)
+aux(identical-5, must-2)
+cc(identical-5, and-9)
+cop(identical-5, be-3)
+punct(identical-5, .-27)
+case(picture-8, in-6)
+det(picture-8, a-7)
+punct(depicts-12, ,-13)
+mark(enable-15, to-14)
+det(one-17, the-16)
+cop(picture-21, be-19)
+det(picture-21, a-20)
+mark(picture-21, to-18)
+case(other-24, of-22)
+det(other-24, the-23)
+case(all-26, at-25)
+expl(identical-5, There-1)
+nmod:npmod(identical-5, something-4)
+nmod:in(identical-5, picture-8)
+dobj(depicts-12, what-10)
+nsubj:xsubj(enable-15, what-10)
+nsubj(depicts-12, it-11)
+conj:and(identical-5, depicts-12)
+xcomp(depicts-12, enable-15)
+dobj(enable-15, one-17)
+nsubj:xsubj(picture-21, one-17)
+xcomp(enable-15, picture-21)
+nmod:of(picture-21, other-24)
+nmod:at(picture-21, all-26)
+G[16, 18] [?#1, ?#2, ?#3, ?#4, There, all, depicts, enable, identical, it, one, other, picture, picture, something, what]
+depicts-and->identical
+?#4-the->other
+There-  : must  ->identical
+?#2-a->picture
+enable-  : to  ->depicts
+it- ->depicts
+all-at->?#2
+?#4-of->?#2
+?#1-xsubj : to  : be xsubj->?#2
+?#3-a->picture
+it- ->something
+?#3-in->identical
+?#1-the->one
+what- ->depicts
+what-xsubj->enable
+?#2- ->enable
+?#1- ->enable
+something-npmod : be npmod->identical
+------CorefChainz
+CHAIN3-["something" in sentence 1, "it" in sentence 1]
+representative mention: "something" in sentence 1

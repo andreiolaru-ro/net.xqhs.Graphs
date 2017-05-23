@@ -1,8 +1,9 @@
 package net.xqhs.graphs.nlp;
 
+import net.xqhs.graphs.graph.Node;
 import edu.stanford.nlp.ling.IndexedWord;
 
-public class FunctionWord implements Nodeish {
+public class FunctionWord implements Node {
 	public FunctionWord(String tag, String label, int index) {
 		super();
 		this.tag = tag;
@@ -40,6 +41,7 @@ public class FunctionWord implements Nodeish {
 	/**
 	 * @return the label
 	 */
+	@Override
 	public String getLabel() {
 		return label;
 	}
@@ -47,9 +49,12 @@ public class FunctionWord implements Nodeish {
 	/**
 	 * @param label
 	 *            the label to set
+	 * @return
 	 */
-	public void setLabel(String label) {
+	@Override
+	public Node setLabel(String label) {
 		this.label = label;
+		return this;
 	}
 
 	/**
@@ -69,12 +74,20 @@ public class FunctionWord implements Nodeish {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return tag + " - " + label + " [" + index + "]";
+		return "\"" + tag + " - " + label + " [" + index + "]" + "\"";
 	}
 
+	public boolean equals(NLNodeP other) {
+		return this.getLabel().equals(other.getLabel())
+				&& this.index == other.getWordIndex();
+	}
+
+	public boolean equalsByIndex(NLNodeP other) {
+		return this.index == other.getWordIndex();
+	}
 }

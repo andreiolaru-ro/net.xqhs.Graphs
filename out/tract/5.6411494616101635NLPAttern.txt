@@ -1,0 +1,217 @@
+ Thus there really is a sense in which philosophy can talk about the self in a non-psychological way. What brings the self into philosophy is the fact that 'the world is my world'. The philosophical self is not the human being, not the human body, or the human soul, with which psychology deals, but rather the metaphysical subject, the limit of the world--not a part of it.
+------CorefChainz
+CHAIN16-["the world" in sentence 2, "the world" in sentence 3]
+representative mention: "the world" in sentence 2
+CHAIN18-["the self in a non-psychological way" in sentence 1, "the self" in sentence 2, "The philosophical self" in sentence 3, "it" in sentence 3]
+representative mention: "The philosophical self" in sentence 3
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-4)
+punct(is-4, .-19)
+det(sense-6, a-5)
+case(which-8, in-7)
+aux(talk-11, can-10)
+case(self-14, about-12)
+det(self-14, the-13)
+case(way-18, in-15)
+det(way-18, a-16)
+advmod(is-4, Thus-1)
+expl(is-4, there-2)
+advmod(is-4, really-3)
+nsubj(is-4, sense-6)
+nmod:in(talk-11, sense-6)
+ref(sense-6, which-8)
+nsubj(talk-11, philosophy-9)
+acl:relcl(sense-6, talk-11)
+nmod:about(talk-11, self-14)
+amod(way-18, non-psychological-17)
+nmod:in(self-14, way-18)
+---
+qqroot(ROOT-0, is-4)
+punct(is-4, .-19)
+det(sense-6, a-5)
+case(which-8, in-7)
+aux(talk-11, can-10)
+case(self-14, about-12)
+det(self-14, the-13)
+case(way-18, in-15)
+det(way-18, a-16)
+advmod(is-4, Thus-1)
+expl(is-4, there-2)
+advmod(is-4, really-3)
+nsubj(is-4, sense-6)
+nmod:in(talk-11, sense-6)
+ref(sense-6, which-8)
+nsubj(talk-11, philosophy-9)
+acl:relcl(sense-6, talk-11)
+nmod:about(talk-11, self-14)
+amod(way-18, non-psychological-17)
+nmod:in(self-14, way-18)
+root(ROOT-0, fact-9)
+det(self-4, the-3)
+case(philosophy-6, into-5)
+cop(fact-9, is-7)
+det(fact-9, the-8)
+punct(fact-9, .-18)
+det(world-13, the-12)
+cop(world-16, is-14)
+mark(world-16, that-10)
+punct(world-16, `-11)
+punct(world-16, '-17)
+nsubj(brings-2, What-1)
+csubj(fact-9, brings-2)
+dobj(brings-2, self-4)
+nmod:into(brings-2, philosophy-6)
+nsubj(world-16, world-13)
+nmod:poss(world-16, my-15)
+ccomp(fact-9, world-16)
+---
+qqroot(ROOT-0, is-4)
+punct(is-4, .-19)
+det(sense-6, a-5)
+case(which-8, in-7)
+aux(talk-11, can-10)
+case(self-14, about-12)
+det(self-14, the-13)
+case(way-18, in-15)
+det(way-18, a-16)
+advmod(is-4, Thus-1)
+expl(is-4, there-2)
+advmod(is-4, really-3)
+nsubj(is-4, sense-6)
+nmod:in(talk-11, sense-6)
+ref(sense-6, which-8)
+nsubj(talk-11, philosophy-9)
+acl:relcl(sense-6, talk-11)
+nmod:about(talk-11, self-14)
+amod(way-18, non-psychological-17)
+nmod:in(self-14, way-18)
+root(ROOT-0, fact-9)
+det(self-4, the-3)
+case(philosophy-6, into-5)
+cop(fact-9, is-7)
+det(fact-9, the-8)
+punct(fact-9, .-18)
+det(world-13, the-12)
+cop(world-16, is-14)
+mark(world-16, that-10)
+punct(world-16, `-11)
+punct(world-16, '-17)
+nsubj(brings-2, What-1)
+csubj(fact-9, brings-2)
+dobj(brings-2, self-4)
+nmod:into(brings-2, philosophy-6)
+nsubj(world-16, world-13)
+nmod:poss(world-16, my-15)
+ccomp(fact-9, world-16)
+root(ROOT-0, being-8)
+det(self-3, The-1)
+cc(being-8, or-15)
+cop(being-8, is-4)
+det(being-8, the-6)
+punct(being-8, ,-9)
+punct(being-8, .-42)
+punct(being-8, ,-14)
+det(body-13, the-11)
+det(soul-18, the-16)
+punct(soul-18, ,-19)
+case(which-21, with-20)
+cc(deals-23, rather-26)
+compound(deals-23, psychology-22)
+punct(deals-23, ,-24)
+cc(rather-26, but-25)
+det(subject-29, the-27)
+punct(subject-29, ,-30)
+punct(subject-29, ---36)
+det(limit-32, the-31)
+case(world-35, of-33)
+det(world-35, the-34)
+det(part-39, a-38)
+case(it-41, of-40)
+amod(self-3, philosophical-2)
+nsubj(being-8, self-3)
+neg(being-8, not-5)
+amod(being-8, human-7)
+neg(body-13, not-10)
+amod(body-13, human-12)
+appos(being-8, body-13)
+amod(soul-18, human-17)
+conj:or(being-8, soul-18)
+nmod:with(soul-18, which-21)
+dep(which-21, deals-23)
+amod(subject-29, metaphysical-28)
+dep(which-21, subject-29)
+conj:rather(deals-23, subject-29)
+appos(subject-29, limit-32)
+nmod:of(limit-32, world-35)
+neg(part-39, not-37)
+dep(subject-29, part-39)
+nmod:of(part-39, it-41)
+G[52, 54] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, Thus1, What1, being2147483647, body2147483647, brings2, fact2147483647, human17, human7, human12, is4, it41, limit2147483647, metaphysical28, my15, non-psychological17, not37, not10, not5, part2147483647, philosophical2, philosophy9, philosophy6, psychology deals23, really3, self2147483647, self2147483647, self2147483647, sense2147483647, soul2147483647, subject2147483647, talk11, there2, way2147483647, which21, which8, world2147483647, world2147483647, world16]
+?9-the->body2147483647
+?1-about->talk11
+?8-a->sense2147483647
+really3- ->is4
+human7- ->?6
+human17- ->?5
+philosophy6-into->brings2
+brings2-  : is ->?13
+?3-the->world2147483647
+not5- ->?6
+?11- ->?4
+?2-  : is  : is ->?6
+my15-poss->world16
+not37- ->?11
+?2-The->self2147483647
+What1- ->brings2
+?10-a->way2147483647
+which21-with->?5
+?1- ->?2
+philosophy9-  : can ->talk11
+philosophical2- ->?2
+it41-of->?11
+?9- ->?6
+?1-the->self2147483647
+?5-the->soul2147483647
+non-psychological17- ->?10
+which8-  : in ->?8
+?3-  : is  : is ->world16
+?7-of->?12
+not10- ->?9
+?11-a->part2147483647
+human12- ->?9
+?7-the->world2147483647
+there2- ->is4
+?12- ->?4
+?4-the->subject2147483647
+?14- ->brings2
+?14-the->self2147483647
+is4- ->?2
+?13-the->fact2147483647
+psychology deals23- ->which21
+?4-rather->psychology deals23
+world16-  : that ->?13
+metaphysical28- ->?4
+it41- ->?2
+?8-in->talk11
+?8- ->is4
+?5-or->?6
+?12-the->limit2147483647
+?4- ->which21
+talk11-relcl->?8
+?10-in->?1
+Thus1- ->is4
+?6-the->being2147483647
+------CorefChainz
+CHAIN16-["the world" in sentence 2, "the world" in sentence 3]
+representative mention: "the world" in sentence 2
+CHAIN18-["the self in a non-psychological way" in sentence 1, "the self" in sentence 2, "The philosophical self" in sentence 3, "it" in sentence 3]
+representative mention: "The philosophical self" in sentence 3

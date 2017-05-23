@@ -1,0 +1,247 @@
+ Thus one proposition 'fa' shows that the object a occurs in its sense, two propositions 'fa' and 'ga' show that the same object is mentioned in both of them. If two propositions contradict one another, then their structure shows it; the same is true if one of them follows from the other. And so on.
+------CorefChainz
+CHAIN19-["one another" in sentence 2, "it" in sentence 2]
+representative mention: "one another" in sentence 2
+CHAIN20-["two propositions" in sentence 1, "two propositions" in sentence 2, "their" in sentence 2, "them" in sentence 2]
+representative mention: "two propositions" in sentence 1
+CHAIN9-["the object" in sentence 1, "its" in sentence 1, "the same object" in sentence 1]
+representative mention: "the same object" in sentence 1
+CHAIN11-["fa ' and ` ga '" in sentence 1, "them" in sentence 1]
+representative mention: "fa ' and ` ga '" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, show-26)
+compound(fa-5, proposition-3)
+punct(fa-5, `-4)
+punct(fa-5, '-6)
+det(object-10, the-9)
+det(occurs-12, a-11)
+mark(occurs-12, that-8)
+case(sense-15, in-13)
+cc(fa-20, and-22)
+punct(fa-20, ,-16)
+punct(fa-20, `-19)
+punct(fa-20, '-21)
+punct(ga-24, `-23)
+punct(ga-24, '-25)
+punct(show-26, .-37)
+det(object-30, the-28)
+auxpass(mentioned-32, is-31)
+mark(mentioned-32, that-27)
+case(both-34, in-33)
+mwe(both-34, of-35)
+advmod(shows-7, Thus-1)
+nummod(fa-5, one-2)
+nsubj(shows-7, fa-5)
+advcl(show-26, shows-7)
+nsubj(occurs-12, object-10)
+ccomp(shows-7, occurs-12)
+nmod:poss(sense-15, its-14)
+nmod:in(occurs-12, sense-15)
+nummod(propositions-18, two-17)
+dep(fa-20, propositions-18)
+nsubj(show-26, fa-20)
+conj:and(fa-20, ga-24)
+nsubj(show-26, ga-24)
+amod(object-30, same-29)
+nsubjpass(mentioned-32, object-30)
+ccomp(show-26, mentioned-32)
+det:qmod(them-36, both-34)
+nmod(mentioned-32, them-36)
+---
+qqroot(ROOT-0, show-26)
+compound(fa-5, proposition-3)
+punct(fa-5, `-4)
+punct(fa-5, '-6)
+det(object-10, the-9)
+det(occurs-12, a-11)
+mark(occurs-12, that-8)
+case(sense-15, in-13)
+cc(fa-20, and-22)
+punct(fa-20, ,-16)
+punct(fa-20, `-19)
+punct(fa-20, '-21)
+punct(ga-24, `-23)
+punct(ga-24, '-25)
+punct(show-26, .-37)
+det(object-30, the-28)
+auxpass(mentioned-32, is-31)
+mark(mentioned-32, that-27)
+case(both-34, in-33)
+mwe(both-34, of-35)
+advmod(shows-7, Thus-1)
+nummod(fa-5, one-2)
+nsubj(shows-7, fa-5)
+advcl(show-26, shows-7)
+nsubj(occurs-12, object-10)
+ccomp(shows-7, occurs-12)
+nmod:poss(sense-15, its-14)
+nmod:in(occurs-12, sense-15)
+nummod(propositions-18, two-17)
+dep(fa-20, propositions-18)
+nsubj(show-26, fa-20)
+conj:and(fa-20, ga-24)
+nsubj(show-26, ga-24)
+amod(object-30, same-29)
+nsubjpass(mentioned-32, object-30)
+ccomp(show-26, mentioned-32)
+det:qmod(them-36, both-34)
+nmod(mentioned-32, them-36)
+root(ROOT-0, shows-11)
+mark(contradict-4, If-1)
+punct(shows-11, ,-7)
+punct(shows-11, .-26)
+punct(shows-11, ;-13)
+det(same-15, the-14)
+cop(true-17, is-16)
+mwe(one-19, of-20)
+mark(follows-22, if-18)
+case(other-25, from-23)
+det(other-25, the-24)
+nummod(propositions-3, two-2)
+nsubj(contradict-4, propositions-3)
+advcl:if(shows-11, contradict-4)
+nummod(another-6, one-5)
+dobj(contradict-4, another-6)
+advmod(structure-10, then-8)
+nmod:poss(structure-10, their-9)
+nsubj(shows-11, structure-10)
+dobj(shows-11, it-12)
+nsubj(true-17, same-15)
+parataxis(shows-11, true-17)
+det:qmod(them-21, one-19)
+nsubj(follows-22, them-21)
+advcl:if(true-17, follows-22)
+nmod:from(follows-22, other-25)
+---
+qqroot(ROOT-0, show-26)
+compound(fa-5, proposition-3)
+punct(fa-5, `-4)
+punct(fa-5, '-6)
+det(object-10, the-9)
+det(occurs-12, a-11)
+mark(occurs-12, that-8)
+case(sense-15, in-13)
+cc(fa-20, and-22)
+punct(fa-20, ,-16)
+punct(fa-20, `-19)
+punct(fa-20, '-21)
+punct(ga-24, `-23)
+punct(ga-24, '-25)
+punct(show-26, .-37)
+det(object-30, the-28)
+auxpass(mentioned-32, is-31)
+mark(mentioned-32, that-27)
+case(both-34, in-33)
+mwe(both-34, of-35)
+advmod(shows-7, Thus-1)
+nummod(fa-5, one-2)
+nsubj(shows-7, fa-5)
+advcl(show-26, shows-7)
+nsubj(occurs-12, object-10)
+ccomp(shows-7, occurs-12)
+nmod:poss(sense-15, its-14)
+nmod:in(occurs-12, sense-15)
+nummod(propositions-18, two-17)
+dep(fa-20, propositions-18)
+nsubj(show-26, fa-20)
+conj:and(fa-20, ga-24)
+nsubj(show-26, ga-24)
+amod(object-30, same-29)
+nsubjpass(mentioned-32, object-30)
+ccomp(show-26, mentioned-32)
+det:qmod(them-36, both-34)
+nmod(mentioned-32, them-36)
+root(ROOT-0, shows-11)
+mark(contradict-4, If-1)
+punct(shows-11, ,-7)
+punct(shows-11, .-26)
+punct(shows-11, ;-13)
+det(same-15, the-14)
+cop(true-17, is-16)
+mwe(one-19, of-20)
+mark(follows-22, if-18)
+case(other-25, from-23)
+det(other-25, the-24)
+nummod(propositions-3, two-2)
+nsubj(contradict-4, propositions-3)
+advcl:if(shows-11, contradict-4)
+nummod(another-6, one-5)
+dobj(contradict-4, another-6)
+advmod(structure-10, then-8)
+nmod:poss(structure-10, their-9)
+nsubj(shows-11, structure-10)
+dobj(shows-11, it-12)
+nsubj(true-17, same-15)
+parataxis(shows-11, true-17)
+det:qmod(them-21, one-19)
+nsubj(follows-22, them-21)
+advcl:if(true-17, follows-22)
+nmod:from(follows-22, other-25)
+root(ROOT-0, on-3)
+cc(on-3, And-1)
+punct(on-3, .-4)
+advmod(on-3, so-2)
+G[41, 45] [?1, ?2, ?3, ?4, ?5, Thus1, another6, both of34, contradict4, fa20, follows22, ga24, it12, its14, mentioned32, object2147483647, object2147483647, occurs2147483647, on3, one2, one5, one of19, other2147483647, proposition fa5, propositions3, propositions18, same2147483647, same29, sense15, show26, shows7, shows11, so2, structure10, their9, them36, them21, then8, true17, two17, two2]
+propositions18- ->fa20
+their9-poss->structure10
+shows7- ->show26
+its14-poss->sense15
+another6- ->contradict4
+proposition fa5- ->shows7
+structure10- ->shows11
+one2- ->proposition fa5
+same29- ->?3
+them21- ->propositions18
+propositions3-  : If ->contradict4
+?3-  : is ->mentioned32
+then8- ->structure10
+structure10- ->?3
+?3-the->object2147483647
+two2- ->propositions3
+its14- ->?3
+two17- ->propositions18
+Thus1- ->shows7
+?2-  : is ->true17
+?1-  : that ->shows7
+ga24- ->show26
+both of34-qmod : in ->them36
+ga24-and->fa20
+?4-from->follows22
+them21- ->follows22
+?5- ->?1
+them36- ->mentioned32
+?1-a->occurs2147483647
+their9- ->propositions18
+it12- ->shows11
+so2-  : And ->on3
+true17- ->shows11
+contradict4-if->shows11
+it12- ->another6
+mentioned32-  : that ->show26
+?2-the->same2147483647
+fa20- ->show26
+follows22-if->true17
+?4-the->other2147483647
+them36- ->fa20
+?5-the->object2147483647
+one of19-qmod->them21
+one5- ->another6
+sense15-in->?1
+------CorefChainz
+CHAIN19-["one another" in sentence 2, "it" in sentence 2]
+representative mention: "one another" in sentence 2
+CHAIN20-["two propositions" in sentence 1, "two propositions" in sentence 2, "their" in sentence 2, "them" in sentence 2]
+representative mention: "two propositions" in sentence 1
+CHAIN9-["the object" in sentence 1, "its" in sentence 1, "the same object" in sentence 1]
+representative mention: "the same object" in sentence 1
+CHAIN11-["fa ' and ` ga '" in sentence 1, "them" in sentence 1]
+representative mention: "fa ' and ` ga '" in sentence 1

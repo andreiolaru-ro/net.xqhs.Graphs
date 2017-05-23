@@ -1,0 +1,177 @@
+ Although a propositional sign is a fact, this is obscured by the usual form of expression in writing or print. For in a printed proposition, for example, no essential difference is apparent between a propositional sign and a word. (That is what made it possible for Frege to call a proposition a composite name.)
+------CorefChainz
+CHAIN2-["a propositional sign" in sentence 1, "this" in sentence 1, "a propositional sign" in sentence 2, "it" in sentence 3]
+representative mention: "a propositional sign" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, obscured-11)
+det(sign-4, a-2)
+cop(fact-7, is-5)
+det(fact-7, a-6)
+mark(fact-7, Although-1)
+auxpass(obscured-11, is-10)
+punct(obscured-11, .-22)
+punct(obscured-11, ,-8)
+case(form-15, by-12)
+det(form-15, the-13)
+case(expression-17, of-16)
+cc(writing-19, or-20)
+mark(writing-19, in-18)
+amod(sign-4, propositional-3)
+nsubj(fact-7, sign-4)
+advcl:although(obscured-11, fact-7)
+nsubjpass(obscured-11, this-9)
+amod(form-15, usual-14)
+nmod:agent(obscured-11, form-15)
+nmod:of(form-15, expression-17)
+advcl:in(obscured-11, writing-19)
+advcl:in(obscured-11, print-21)
+conj:or(writing-19, print-21)
+---
+qqroot(ROOT-0, obscured-11)
+det(sign-4, a-2)
+cop(fact-7, is-5)
+det(fact-7, a-6)
+mark(fact-7, Although-1)
+auxpass(obscured-11, is-10)
+punct(obscured-11, .-22)
+punct(obscured-11, ,-8)
+case(form-15, by-12)
+det(form-15, the-13)
+case(expression-17, of-16)
+cc(writing-19, or-20)
+mark(writing-19, in-18)
+amod(sign-4, propositional-3)
+nsubj(fact-7, sign-4)
+advcl:although(obscured-11, fact-7)
+nsubjpass(obscured-11, this-9)
+amod(form-15, usual-14)
+nmod:agent(obscured-11, form-15)
+nmod:of(form-15, expression-17)
+advcl:in(obscured-11, writing-19)
+advcl:in(obscured-11, print-21)
+conj:or(writing-19, print-21)
+root(ROOT-0, apparent-14)
+case(proposition-5, For-1)
+case(proposition-5, in-2)
+det(proposition-5, a-3)
+case(example-8, for-7)
+cop(apparent-14, is-13)
+punct(apparent-14, ,-6)
+punct(apparent-14, .-22)
+punct(apparent-14, ,-9)
+case(sign-18, between-15)
+cc(sign-18, and-19)
+det(sign-18, a-16)
+det(word-21, a-20)
+amod(proposition-5, printed-4)
+nmod:in(apparent-14, proposition-5)
+nmod:for(apparent-14, example-8)
+neg(difference-12, no-10)
+amod(difference-12, essential-11)
+nsubj(apparent-14, difference-12)
+amod(sign-18, propositional-17)
+nmod:between(apparent-14, sign-18)
+nmod:between(apparent-14, word-21)
+conj:and(sign-18, word-21)
+---
+qqroot(ROOT-0, obscured-11)
+det(sign-4, a-2)
+cop(fact-7, is-5)
+det(fact-7, a-6)
+mark(fact-7, Although-1)
+auxpass(obscured-11, is-10)
+punct(obscured-11, .-22)
+punct(obscured-11, ,-8)
+case(form-15, by-12)
+det(form-15, the-13)
+case(expression-17, of-16)
+cc(writing-19, or-20)
+mark(writing-19, in-18)
+amod(sign-4, propositional-3)
+nsubj(fact-7, sign-4)
+advcl:although(obscured-11, fact-7)
+nsubjpass(obscured-11, this-9)
+amod(form-15, usual-14)
+nmod:agent(obscured-11, form-15)
+nmod:of(form-15, expression-17)
+advcl:in(obscured-11, writing-19)
+advcl:in(obscured-11, print-21)
+conj:or(writing-19, print-21)
+root(ROOT-0, apparent-14)
+case(proposition-5, For-1)
+case(proposition-5, in-2)
+det(proposition-5, a-3)
+case(example-8, for-7)
+cop(apparent-14, is-13)
+punct(apparent-14, ,-6)
+punct(apparent-14, .-22)
+punct(apparent-14, ,-9)
+case(sign-18, between-15)
+cc(sign-18, and-19)
+det(sign-18, a-16)
+det(word-21, a-20)
+amod(proposition-5, printed-4)
+nmod:in(apparent-14, proposition-5)
+nmod:for(apparent-14, example-8)
+neg(difference-12, no-10)
+amod(difference-12, essential-11)
+nsubj(apparent-14, difference-12)
+amod(sign-18, propositional-17)
+nmod:between(apparent-14, sign-18)
+nmod:between(apparent-14, word-21)
+conj:and(sign-18, word-21)
+root(ROOT-0, is-3)
+punct(is-3, -LRB--1)
+punct(is-3, .-17)
+punct(is-3, -RRB--18)
+mark(call-11, for-8)
+mark(call-11, to-10)
+det(proposition-13, a-12)
+det(name-16, a-14)
+nsubj(is-3, That-2)
+nsubj(made-5, what-4)
+ccomp(is-3, made-5)
+nsubj(call-11, it-6)
+dep(call-11, possible-7)
+nsubj(call-11, Frege-9)
+xcomp(made-5, call-11)
+nsubj(name-16, proposition-13)
+amod(name-16, composite-15)
+xcomp(call-11, name-16)
+G[25, 24] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, apparent14, call11, difference12, example8, expression17, fact2147483647, form2147483647, is3, made5, name2147483647, obscured11, proposition2147483647, proposition2147483647, sign2147483647, sign2147483647, word2147483647, writing19]
+?5-a->proposition2147483647
+?6-the->form2147483647
+?8- ->call11
+?7-  : Although ->?3
+?2-and->?4
+call11-  : for  : to ->made5
+?1-in : For ->apparent14
+?3-a->fact2147483647
+?4-a->sign2147483647
+expression17-of->?6
+difference12-  : is ->apparent14
+?3-although : is ->obscured11
+?7-a->sign2147483647
+writing19-in : or ->obscured11
+?2-between->apparent14
+?2-a->word2147483647
+made5- ->is3
+?1-a->proposition2147483647
+?6-agent : by ->obscured11
+?8-a->name2147483647
+?4-between->apparent14
+?5- ->?8
+difference12-==->?7
+example8-for->apparent14
+------CorefChainz
+CHAIN2-["a propositional sign" in sentence 1, "this" in sentence 1, "a propositional sign" in sentence 2, "it" in sentence 3]
+representative mention: "a propositional sign" in sentence 1

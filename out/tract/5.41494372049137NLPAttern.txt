@@ -1,0 +1,53 @@
+ At this point it becomes manifest that there are no 'logical objects' or 'logical constants' (in Frege's and Russell's sense).
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, becomes-5)
+case(point-3, At-1)
+det(point-3, this-2)
+mark(are-9, that-7)
+case(objects-13, '-14)
+cc(objects-13, or-15)
+punct(objects-13, -LRB--20)
+punct(objects-13, `-11)
+case(constants-18, '-19)
+punct(constants-18, `-16)
+case(Frege-22, in-21)
+case(Frege-22, 's-23)
+cc(Frege-22, and-24)
+punct(Frege-22, -RRB--28)
+punct(Frege-22, .-29)
+case(Russell-25, 's-26)
+nmod:at(becomes-5, point-3)
+nsubj(becomes-5, it-4)
+xcomp(becomes-5, manifest-6)
+expl(are-9, there-8)
+ccomp(becomes-5, are-9)
+neg(objects-13, no-10)
+amod(objects-13, logical-12)
+nsubj(are-9, objects-13)
+amod(constants-18, logical-17)
+nsubj(are-9, constants-18)
+conj:or(objects-13, constants-18)
+root(-LRB--20, Frege-22)
+nmod:poss(sense-27, Russell-25)
+root(-LRB--20, sense-27)
+conj:and(Frege-22, sense-27)
+G[10, 10] [-LRB-20, ?1, Frege22, Russell25, are9, becomes5, constants18, objects13, point2147483647, sense27]
+constants18- ->are9
+sense27- ->-LRB-20
+sense27-and->Frege22
+objects13- ->are9
+constants18-or : ' ->objects13
+Frege22-  : in  : 's ->-LRB-20
+Russell25-poss : 's ->sense27
+?1-this->point2147483647
+are9-  : that ->becomes5
+?1-at : At ->becomes5
+------CorefChainz

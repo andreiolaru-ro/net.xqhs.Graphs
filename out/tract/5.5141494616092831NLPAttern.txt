@@ -1,0 +1,222 @@
+ Once a notation has been established, there will be in it a rule governing the construction of all propositions that negate p, a rule governing the construction of all propositions that affirm p, and a rule governing the construction of all propositions that affirm p or q; and so on. These rules are equivalent to the symbols; and in them their sense is mirrored.
+------CorefChainz
+CHAIN1-["a notation" in sentence 1, "it" in sentence 1]
+representative mention: "a notation" in sentence 1
+CHAIN17-["These rules" in sentence 2, "them" in sentence 2, "their" in sentence 2]
+representative mention: "These rules" in sentence 2
+CHAIN11-["the construction of all propositions that affirm p" in sentence 1, "the construction of all propositions that affirm p or q" in sentence 1]
+representative mention: "the construction of all propositions that affirm p or q" in sentence 1
+CHAIN12-["all propositions that affirm p" in sentence 1, "all propositions that affirm p or q" in sentence 1]
+representative mention: "all propositions that affirm p or q" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, it-12)
+det(notation-3, a-2)
+aux(established-6, has-4)
+auxpass(established-6, been-5)
+aux(it-12, will-9)
+case(it-12, in-11)
+cc(it-12, and-52)
+cop(it-12, be-10)
+punct(it-12, ;-51)
+punct(it-12, ,-7)
+punct(it-12, .-55)
+det(rule-14, a-13)
+det(construction-17, the-16)
+case(propositions-20, of-18)
+det(propositions-20, all-19)
+cc(p-23, and-37)
+punct(p-23, ,-36)
+punct(p-23, ,-24)
+det(rule-26, a-25)
+det(construction-29, the-28)
+case(propositions-32, of-30)
+det(propositions-32, all-31)
+det(rule-39, a-38)
+det(construction-42, the-41)
+case(propositions-45, of-43)
+det(propositions-45, all-44)
+cc(p-48, or-49)
+advmod(established-6, Once-1)
+nsubjpass(established-6, notation-3)
+advcl(it-12, established-6)
+expl(it-12, there-8)
+dobj(it-12, rule-14)
+acl(rule-14, governing-15)
+dobj(governing-15, construction-17)
+nmod:of(construction-17, propositions-20)
+nsubj(negate-22, propositions-20)
+ref(propositions-20, that-21)
+acl:relcl(propositions-20, negate-22)
+dobj(negate-22, p-23)
+appos(p-23, rule-26)
+acl(rule-26, governing-27)
+dobj(governing-27, construction-29)
+nmod:of(construction-29, propositions-32)
+nsubj(affirm-34, propositions-32)
+ref(propositions-32, that-33)
+acl:relcl(propositions-32, affirm-34)
+dobj(affirm-34, p-35)
+dobj(negate-22, rule-39)
+conj:and(p-23, rule-39)
+acl(rule-39, governing-40)
+dobj(governing-40, construction-42)
+nmod:of(construction-42, propositions-45)
+nsubj(affirm-47, propositions-45)
+ref(propositions-45, that-46)
+acl:relcl(propositions-45, affirm-47)
+dobj(affirm-47, p-48)
+dobj(affirm-47, q-50)
+conj:or(p-48, q-50)
+advmod(on-54, so-53)
+conj:and(it-12, on-54)
+---
+qqroot(ROOT-0, it-12)
+det(notation-3, a-2)
+aux(established-6, has-4)
+auxpass(established-6, been-5)
+aux(it-12, will-9)
+case(it-12, in-11)
+cc(it-12, and-52)
+cop(it-12, be-10)
+punct(it-12, ;-51)
+punct(it-12, ,-7)
+punct(it-12, .-55)
+det(rule-14, a-13)
+det(construction-17, the-16)
+case(propositions-20, of-18)
+det(propositions-20, all-19)
+cc(p-23, and-37)
+punct(p-23, ,-36)
+punct(p-23, ,-24)
+det(rule-26, a-25)
+det(construction-29, the-28)
+case(propositions-32, of-30)
+det(propositions-32, all-31)
+det(rule-39, a-38)
+det(construction-42, the-41)
+case(propositions-45, of-43)
+det(propositions-45, all-44)
+cc(p-48, or-49)
+advmod(established-6, Once-1)
+nsubjpass(established-6, notation-3)
+advcl(it-12, established-6)
+expl(it-12, there-8)
+dobj(it-12, rule-14)
+acl(rule-14, governing-15)
+dobj(governing-15, construction-17)
+nmod:of(construction-17, propositions-20)
+nsubj(negate-22, propositions-20)
+ref(propositions-20, that-21)
+acl:relcl(propositions-20, negate-22)
+dobj(negate-22, p-23)
+appos(p-23, rule-26)
+acl(rule-26, governing-27)
+dobj(governing-27, construction-29)
+nmod:of(construction-29, propositions-32)
+nsubj(affirm-34, propositions-32)
+ref(propositions-32, that-33)
+acl:relcl(propositions-32, affirm-34)
+dobj(affirm-34, p-35)
+dobj(negate-22, rule-39)
+conj:and(p-23, rule-39)
+acl(rule-39, governing-40)
+dobj(governing-40, construction-42)
+nmod:of(construction-42, propositions-45)
+nsubj(affirm-47, propositions-45)
+ref(propositions-45, that-46)
+acl:relcl(propositions-45, affirm-47)
+dobj(affirm-47, p-48)
+dobj(affirm-47, q-50)
+conj:or(p-48, q-50)
+advmod(on-54, so-53)
+conj:and(it-12, on-54)
+root(ROOT-0, equivalent-4)
+det(rules-2, These-1)
+cc(equivalent-4, and-9)
+cop(equivalent-4, are-3)
+punct(equivalent-4, ;-8)
+punct(equivalent-4, .-16)
+case(symbols-7, to-5)
+det(symbols-7, the-6)
+case(them-11, in-10)
+auxpass(mirrored-15, is-14)
+nsubj(equivalent-4, rules-2)
+nmod:to(equivalent-4, symbols-7)
+nmod:in(mirrored-15, them-11)
+nmod:poss(sense-13, their-12)
+nsubjpass(mirrored-15, sense-13)
+conj:and(equivalent-4, mirrored-15)
+G[48, 56] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, Once1, affirm34, affirm47, construction2147483647, construction2147483647, construction2147483647, equivalent4, established6, governing27, governing40, governing15, it12, mirrored15, negate22, notation2147483647, on54, p23, p35, p48, propositions2147483647, propositions2147483647, propositions2147483647, q50, rule2147483647, rule2147483647, rule2147483647, rules2147483647, sense13, so53, symbols2147483647, that33, that21, that46, their12, them11, there8]
+them11- ->?6
+?9- ->negate22
+?9-all->propositions2147483647
+?1- ->affirm34
+?12- ->?8
+?12- ->governing27
+?2-  : has  : been ->established6
+?1-of->?12
+governing27- ->?7
+?10-of->?8
+that46- ->?10
+?7- ->p23
+?8-the->construction2147483647
+?4-a->rule2147483647
+?1- ->?10
+p23- ->negate22
+?3- ->governing15
+q50-or->p48
+their12- ->?2
+their12- ->?6
+p35- ->affirm34
+?5-and->p23
+there8-  : will  : be  : in  : in ->it12
+?4- ->it12
+?5- ->negate22
+governing40- ->?5
+?12-the->construction2147483647
+?10-all->propositions2147483647
+governing15- ->?4
+?6-These->rules2147483647
+?6-  : are ->equivalent4
+that21- ->?9
+p48- ->affirm47
+?11-the->symbols2147483647
+affirm47-relcl->?10
+on54-and->it12
+sense13-  : is ->mirrored15
+that33- ->?1
+mirrored15-and->equivalent4
+?11-to->equivalent4
+?5-a->rule2147483647
+negate22-relcl->?9
+?2-a->notation2147483647
+?1-all->propositions2147483647
+their12-poss->sense13
+Once1- ->established6
+?10- ->affirm47
+established6- ->it12
+?9-of->?3
+?8- ->governing40
+them11-in->mirrored15
+so53- ->on54
+?3-the->construction2147483647
+q50- ->affirm47
+affirm34-relcl->?1
+?7-a->rule2147483647
+------CorefChainz
+CHAIN1-["a notation" in sentence 1, "it" in sentence 1]
+representative mention: "a notation" in sentence 1
+CHAIN17-["These rules" in sentence 2, "them" in sentence 2, "their" in sentence 2]
+representative mention: "These rules" in sentence 2
+CHAIN11-["the construction of all propositions that affirm p" in sentence 1, "the construction of all propositions that affirm p or q" in sentence 1]
+representative mention: "the construction of all propositions that affirm p or q" in sentence 1
+CHAIN12-["all propositions that affirm p" in sentence 1, "all propositions that affirm p or q" in sentence 1]
+representative mention: "all propositions that affirm p or q" in sentence 1

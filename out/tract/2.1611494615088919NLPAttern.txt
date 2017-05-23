@@ -1,0 +1,63 @@
+ There must be something identical in a picture and what it depicts, to enable the one to be a picture of the other at all.
+------CorefChainz
+CHAIN3-["something" in sentence 1, "it" in sentence 1]
+representative mention: "something" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, identical-5)
+aux(identical-5, must-2)
+cc(identical-5, and-9)
+cop(identical-5, be-3)
+punct(identical-5, .-27)
+case(picture-8, in-6)
+det(picture-8, a-7)
+punct(depicts-12, ,-13)
+mark(enable-15, to-14)
+det(one-17, the-16)
+cop(picture-21, be-19)
+det(picture-21, a-20)
+mark(picture-21, to-18)
+case(other-24, of-22)
+det(other-24, the-23)
+case(all-26, at-25)
+expl(identical-5, There-1)
+nmod:npmod(identical-5, something-4)
+nmod:in(identical-5, picture-8)
+dobj(depicts-12, what-10)
+nsubj:xsubj(enable-15, what-10)
+nsubj(depicts-12, it-11)
+conj:and(identical-5, depicts-12)
+xcomp(depicts-12, enable-15)
+dobj(enable-15, one-17)
+nsubj:xsubj(picture-21, one-17)
+xcomp(enable-15, picture-21)
+nmod:of(picture-21, other-24)
+nmod:at(picture-21, all-26)
+G[16, 18] [?1, ?2, ?3, ?4, There1, all26, depicts12, enable15, identical5, it11, one2147483647, other2147483647, picture2147483647, picture2147483647, something4, what10]
+?4-the->other2147483647
+?3-a->picture2147483647
+something4-npmod : be ->identical5
+?2-the->one2147483647
+?4-of->?1
+depicts12-and->identical5
+it11- ->depicts12
+all26-at->?1
+?2-xsubj : to  : be ->?1
+enable15-  : to ->depicts12
+what10-xsubj->enable15
+?2- ->enable15
+?1-a->picture2147483647
+There1-  : must ->identical5
+?3-in->identical5
+it11- ->something4
+what10- ->depicts12
+?1- ->enable15
+------CorefChainz
+CHAIN3-["something" in sentence 1, "it" in sentence 1]
+representative mention: "something" in sentence 1

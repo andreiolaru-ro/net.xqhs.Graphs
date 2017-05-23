@@ -37,7 +37,7 @@ import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.graph.SimpleNode;
 import net.xqhs.graphs.hypergraph.HyperGraph;
 import net.xqhs.graphs.hypergraph.HyperNode;
-import net.xqhs.graphs.nlp.Parser;
+import net.xqhs.graphs.nlp.GraphConverter;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.graphical.GraphicalGraphRepresentation;
@@ -69,7 +69,9 @@ public class GrapherTest extends Tester {
 				lines.add(sCurrentLine);
 			}
 			br.close();
-			Parser.example(lines);
+			// Parser.example(lines);
+			new GraphConverter("cucu");
+			// Tests.example(Tests.readTractatus());
 
 		} catch (Exception e) {
 			e.printStackTrace();

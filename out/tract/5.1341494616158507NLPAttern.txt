@@ -1,0 +1,28 @@
+ One elementary proposition cannot be deduced form another.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, deduced-7)
+aux(deduced-7, can-4)
+auxpass(deduced-7, be-6)
+punct(deduced-7, .-10)
+nummod(proposition-3, One-1)
+amod(proposition-3, elementary-2)
+nsubjpass(deduced-7, proposition-3)
+neg(deduced-7, not-5)
+xcomp(deduced-7, form-8)
+dobj(form-8, another-9)
+G[7, 6] [One1, another9, deduced7, elementary2, form8, not5, proposition3]
+One1- ->proposition3
+form8- ->deduced7
+elementary2- ->proposition3
+not5-  : be ->deduced7
+another9- ->form8
+proposition3-  : can  : can ->deduced7
+------CorefChainz

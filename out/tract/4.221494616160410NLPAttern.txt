@@ -1,0 +1,53 @@
+ An elementary proposition consists of names. It is a nexus, a concatenation, of names.
+------CorefChainz
+CHAIN5-["An elementary proposition" in sentence 1, "It" in sentence 2]
+representative mention: "An elementary proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, consists-4)
+det(proposition-3, An-1)
+punct(consists-4, .-7)
+case(names-6, of-5)
+amod(proposition-3, elementary-2)
+nsubj(consists-4, proposition-3)
+nmod:of(consists-4, names-6)
+---
+qqroot(ROOT-0, consists-4)
+det(proposition-3, An-1)
+punct(consists-4, .-7)
+case(names-6, of-5)
+amod(proposition-3, elementary-2)
+nsubj(consists-4, proposition-3)
+nmod:of(consists-4, names-6)
+root(ROOT-0, nexus-4)
+cop(nexus-4, is-2)
+det(nexus-4, a-3)
+punct(nexus-4, ,-5)
+punct(nexus-4, ,-8)
+punct(nexus-4, .-11)
+det(concatenation-7, a-6)
+case(names-10, of-9)
+nsubj(nexus-4, It-1)
+appos(nexus-4, concatenation-7)
+nmod:of(nexus-4, names-10)
+G[11, 10] [?1, ?2, ?3, It1, concatenation2147483647, consists4, elementary2, names10, names6, nexus2147483647, proposition2147483647]
+?3- ->consists4
+?3-An->proposition2147483647
+?2- ->?1
+elementary2- ->?3
+names6-of->consists4
+?1-a->nexus2147483647
+?2-a->concatenation2147483647
+names10-of->?1
+It1-  : is ->?1
+It1- ->?3
+------CorefChainz
+CHAIN5-["An elementary proposition" in sentence 1, "It" in sentence 2]
+representative mention: "An elementary proposition" in sentence 1

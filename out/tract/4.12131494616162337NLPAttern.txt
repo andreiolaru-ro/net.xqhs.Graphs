@@ -1,0 +1,76 @@
+ Now, too, we understand our feeling that once we have a sign- language in which everything is all right, we already have a correct logical point of view.
+------CorefChainz
+CHAIN8-["we" in sentence 1, "our" in sentence 1, "we" in sentence 1, "we" in sentence 1]
+representative mention: "we" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, understand-6)
+punct(understand-6, ,-2)
+punct(understand-6, ,-4)
+punct(have-12, .-33)
+det(sign-14, a-13)
+punct(sign-14, --15)
+case(which-18, in-17)
+cop(right-22, is-20)
+punct(have-26, ,-23)
+det(point-30, a-27)
+case(view-32, of-31)
+advmod(understand-6, Now-1)
+advmod(understand-6, too-3)
+nsubj(understand-6, we-5)
+nmod:poss(feeling-8, our-7)
+dobj(understand-6, feeling-8)
+dep(feeling-8, that-9)
+advmod(have-12, once-10)
+nsubj(have-12, we-11)
+root(that-9, have-12)
+dobj(have-12, sign-14)
+dep(sign-14, language-16)
+nmod:in(right-22, language-16)
+ref(language-16, which-18)
+nsubj(right-22, everything-19)
+advmod(right-22, all-21)
+advcl(have-26, right-22)
+nsubj(have-26, we-24)
+advmod(have-26, already-25)
+acl:relcl(language-16, have-26)
+amod(point-30, correct-28)
+amod(point-30, logical-29)
+dobj(have-26, point-30)
+nmod:of(point-30, view-32)
+G[25, 26] [?1, ?2, Now1, all21, already25, correct28, everything19, feeling8, have12, have26, language16, logical29, once10, our7, point2147483647, right22, sign2147483647, that9, too3, understand6, view32, we24, we11, we5, which18]
+our7- ->we5
+our7-poss->feeling8
+once10- ->have12
+we5- ->understand6
+have12- ->that9
+that9- ->feeling8
+language16-in->right22
+Now1- ->understand6
+?1-a->point2147483647
+already25- ->have26
+right22- ->have26
+too3- ->understand6
+logical29- ->?1
+have26-relcl->language16
+we24- ->have26
+we11- ->have12
+?1- ->have26
+correct28- ->?1
+feeling8- ->understand6
+which18-  : in ->language16
+?2-a->sign2147483647
+view32-of->?1
+everything19-  : is  : is ->right22
+?2- ->have12
+language16- ->?2
+all21- ->right22
+------CorefChainz
+CHAIN8-["we" in sentence 1, "our" in sentence 1, "we" in sentence 1, "we" in sentence 1]
+representative mention: "we" in sentence 1

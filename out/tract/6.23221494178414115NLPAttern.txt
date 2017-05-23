@@ -1,0 +1,126 @@
+ It is impossible to assert the identity of meaning of two expressions. For in order to be able to assert anything about their meaning, I must know their meaning, and I cannot know their meaning without knowing whether what they mean is the same or different.
+------CorefChainz
+CHAIN12-["I" in sentence 2, "I" in sentence 2]
+representative mention: "I" in sentence 2
+CHAIN14-["meaning of two expressions" in sentence 1, "their meaning" in sentence 2, "their meaning" in sentence 2, "their meaning" in sentence 2]
+representative mention: "their meaning" in sentence 2
+CHAIN15-["their" in sentence 2, "their" in sentence 2, "their" in sentence 2, "they" in sentence 2]
+representative mention: "their" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, impossible-3)
+cop(impossible-3, is-2)
+punct(impossible-3, .-13)
+mark(assert-5, to-4)
+det(identity-7, the-6)
+case(meaning-9, of-8)
+case(expressions-12, of-10)
+nsubj(impossible-3, It-1)
+nsubj:xsubj(assert-5, It-1)
+xcomp(impossible-3, assert-5)
+dobj(assert-5, identity-7)
+nmod:of(identity-7, meaning-9)
+nummod(expressions-12, two-11)
+nmod:of(meaning-9, expressions-12)
+---
+qqroot(ROOT-0, impossible-3)
+cop(impossible-3, is-2)
+punct(impossible-3, .-13)
+mark(assert-5, to-4)
+det(identity-7, the-6)
+case(meaning-9, of-8)
+case(expressions-12, of-10)
+nsubj(impossible-3, It-1)
+nsubj:xsubj(assert-5, It-1)
+xcomp(impossible-3, assert-5)
+dobj(assert-5, identity-7)
+nmod:of(identity-7, meaning-9)
+nummod(expressions-12, two-11)
+nmod:of(meaning-9, expressions-12)
+root(ROOT-0, know-16)
+mwe(in-2, order-3)
+cop(able-6, be-5)
+mark(able-6, to-4)
+mark(able-6, in-2)
+mark(assert-8, to-7)
+case(meaning-12, about-10)
+aux(know-16, must-15)
+cc(know-16, and-20)
+mark(know-16, For-1)
+punct(know-16, ,-19)
+punct(know-16, .-38)
+punct(know-16, ,-13)
+aux(know-24, can-22)
+mark(knowing-28, without-27)
+cc(same-35, or-36)
+cop(same-35, is-33)
+det(same-35, the-34)
+mark(same-35, whether-29)
+advcl:in_order(know-16, able-6)
+xcomp(able-6, assert-8)
+dobj(assert-8, anything-9)
+nmod:poss(meaning-12, their-11)
+nmod:about(anything-9, meaning-12)
+nsubj(know-16, I-14)
+nmod:poss(meaning-18, their-17)
+dobj(know-16, meaning-18)
+nsubj(know-24, I-21)
+neg(know-24, not-23)
+conj:and(know-16, know-24)
+nmod:poss(meaning-26, their-25)
+dobj(know-24, meaning-26)
+advcl:without(know-24, knowing-28)
+dobj(mean-32, what-30)
+nsubj(mean-32, they-31)
+csubj(same-35, mean-32)
+csubj(different-37, mean-32)
+ccomp(knowing-28, same-35)
+ccomp(knowing-28, different-37)
+conj:or(same-35, different-37)
+G[30, 32] [?#1, ?#2, I, I, It, able, anything, assert, assert, different, expressions, identity, impossible, in order, know, know, knowing, mean, meaning, meaning, meaning, meaning, not, same, their, their, their, they, two, what]
+anything- ->assert
+they- ->mean
+It-xsubj->assert
+not- ->know
+?#1-  : whether ->knowing
+It-  : is ->impossible
+different- ->knowing
+?#2-the->identity
+I-  : can  : can ->know
+meaning- ->know
+mean- ->different
+their-poss->meaning
+they- ->their
+their-poss->meaning
+I-  : must ->know
+able-in_order : For ->know
+?#1-the->same
+?#2- ->assert
+meaning- ->know
+knowing-without->know
+assert-  : in order  : to  : be ->able
+their-poss->meaning
+meaning-about->anything
+know-and->know
+two- ->expressions
+what- ->mean
+different-or->?#1
+mean-  : is ->?#1
+expressions-of->meaning
+meaning-of->?#2
+anything- ->expressions
+assert-  : to ->impossible
+------CorefChainz
+CHAIN12-["I" in sentence 2, "I" in sentence 2]
+representative mention: "I" in sentence 2
+CHAIN14-["meaning of two expressions" in sentence 1, "their meaning" in sentence 2, "their meaning" in sentence 2, "their meaning" in sentence 2]
+representative mention: "their meaning" in sentence 2
+CHAIN15-["their" in sentence 2, "their" in sentence 2, "their" in sentence 2, "they" in sentence 2]
+representative mention: "their" in sentence 2

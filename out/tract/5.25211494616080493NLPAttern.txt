@@ -1,0 +1,193 @@
+ If an operation is applied repeatedly to its own results, I speak of successive applications of it. ('O'O'O'a' is the result of three successive applications of the operation 'O'E' to 'a'.) In a similar sense I speak of successive applications of more than one operation to a number of propositions.
+------CorefChainz
+CHAIN18-["I" in sentence 1, "I" in sentence 3]
+representative mention: "I" in sentence 1
+CHAIN5-["an operation" in sentence 1, "its" in sentence 1, "it" in sentence 1, "the operation" in sentence 2]
+representative mention: "an operation" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, speak-13)
+det(operation-3, an-2)
+auxpass(applied-5, is-4)
+mark(applied-5, If-1)
+case(results-10, to-7)
+punct(speak-13, .-19)
+punct(speak-13, ,-11)
+case(applications-16, of-14)
+case(it-18, of-17)
+nsubjpass(applied-5, operation-3)
+advcl:if(speak-13, applied-5)
+advmod(applied-5, repeatedly-6)
+nmod:poss(results-10, its-8)
+amod(results-10, own-9)
+nmod:to(applied-5, results-10)
+nsubj(speak-13, I-12)
+amod(applications-16, successive-15)
+nmod:of(speak-13, applications-16)
+nmod:of(applications-16, it-18)
+---
+qqroot(ROOT-0, speak-13)
+det(operation-3, an-2)
+auxpass(applied-5, is-4)
+mark(applied-5, If-1)
+case(results-10, to-7)
+punct(speak-13, .-19)
+punct(speak-13, ,-11)
+case(applications-16, of-14)
+case(it-18, of-17)
+nsubjpass(applied-5, operation-3)
+advcl:if(speak-13, applied-5)
+advmod(applied-5, repeatedly-6)
+nmod:poss(results-10, its-8)
+amod(results-10, own-9)
+nmod:to(applied-5, results-10)
+nsubj(speak-13, I-12)
+amod(applications-16, successive-15)
+nmod:of(speak-13, applications-16)
+nmod:of(applications-16, it-18)
+root(ROOT-0, result-11)
+compound(result-11, O'O-3)
+compound(result-11, O-5)
+cop(result-11, is-9)
+det(result-11, a-7)
+det(result-11, the-10)
+punct(result-11, `-4)
+punct(result-11, `-6)
+punct(result-11, '-8)
+punct(result-11, -LRB--1)
+punct(result-11, `-2)
+case(applications-15, of-12)
+case(operation-18, of-16)
+det(operation-18, the-17)
+punct(operation-18, `-19)
+compound(E-22, O-20)
+punct(E-22, `-21)
+punct(E-22, '-23)
+punct(a-26, `-25)
+punct(a-26, '-27)
+punct(a-26, .-28)
+punct(a-26, -RRB--29)
+nummod(applications-15, three-13)
+amod(applications-15, successive-14)
+nmod:of(result-11, applications-15)
+nmod:of(applications-15, operation-18)
+dep(operation-18, E-22)
+dep(applications-15, to-24)
+root(to-24, a-26)
+---
+qqroot(ROOT-0, speak-13)
+det(operation-3, an-2)
+auxpass(applied-5, is-4)
+mark(applied-5, If-1)
+case(results-10, to-7)
+punct(speak-13, .-19)
+punct(speak-13, ,-11)
+case(applications-16, of-14)
+case(it-18, of-17)
+nsubjpass(applied-5, operation-3)
+advcl:if(speak-13, applied-5)
+advmod(applied-5, repeatedly-6)
+nmod:poss(results-10, its-8)
+amod(results-10, own-9)
+nmod:to(applied-5, results-10)
+nsubj(speak-13, I-12)
+amod(applications-16, successive-15)
+nmod:of(speak-13, applications-16)
+nmod:of(applications-16, it-18)
+root(ROOT-0, result-11)
+compound(result-11, O'O-3)
+compound(result-11, O-5)
+cop(result-11, is-9)
+det(result-11, a-7)
+det(result-11, the-10)
+punct(result-11, `-4)
+punct(result-11, `-6)
+punct(result-11, '-8)
+punct(result-11, -LRB--1)
+punct(result-11, `-2)
+case(applications-15, of-12)
+case(operation-18, of-16)
+det(operation-18, the-17)
+punct(operation-18, `-19)
+compound(E-22, O-20)
+punct(E-22, `-21)
+punct(E-22, '-23)
+punct(a-26, `-25)
+punct(a-26, '-27)
+punct(a-26, .-28)
+punct(a-26, -RRB--29)
+nummod(applications-15, three-13)
+amod(applications-15, successive-14)
+nmod:of(result-11, applications-15)
+nmod:of(applications-15, operation-18)
+dep(operation-18, E-22)
+dep(applications-15, to-24)
+root(to-24, a-26)
+root(ROOT-0, speak-6)
+case(sense-4, In-1)
+det(sense-4, a-2)
+punct(speak-6, .-20)
+case(applications-9, of-7)
+mwe(more-11, than-12)
+case(operation-14, of-10)
+mwe(a-16, number-17)
+mwe(a-16, of-18)
+case(number-17, to-15)
+amod(sense-4, similar-3)
+nmod:in(speak-6, sense-4)
+nsubj(speak-6, I-5)
+amod(applications-9, successive-8)
+nmod:of(speak-6, applications-9)
+advmod(one-13, more-11)
+nummod(operation-14, one-13)
+nmod:of(applications-9, operation-14)
+det:qmod(propositions-19, a-16)
+nmod(applications-9, propositions-19)
+G[35, 34] [?1, ?2, ?3, ?4, ?5, I5, I12, O E22, O O'O result2147483647, a26, a number of16, applications9, applications16, applications15, applied5, it18, its8, more than11, one13, operation2147483647, operation2147483647, operation14, own9, propositions19, repeatedly6, results10, sense2147483647, similar3, speak13, speak6, successive15, successive14, successive8, three13, to24]
+a number of16-qmod->propositions19
+own9- ->results10
+more than11- ->one13
+O E22- ->?5
+I5- ->speak6
+?2-an->operation2147483647
+one13- ->operation14
+successive14- ->applications15
+a26- ->to24
+?1-a->sense2147483647
+applications16-of->speak13
+to24- ->applications15
+operation14-of->applications9
+applied5-if->speak13
+applications9-of->speak6
+?2-  : If  : is ->applied5
+it18-==->similar3
+its8- ->similar3
+similar3-  : In ->?1
+applications15-of : is ->?3
+three13- ->applications15
+?5-of->applications15
+successive15- ->applications16
+repeatedly6- ->applied5
+its8-poss->results10
+results10-to->applied5
+successive8- ->applications9
+?3-a->?4
+?4-the->O O'O result2147483647
+?5-the->operation2147483647
+it18-of->applications16
+propositions19- ->applications9
+I12- ->speak13
+?1-in->speak6
+------CorefChainz
+CHAIN18-["I" in sentence 1, "I" in sentence 3]
+representative mention: "I" in sentence 1
+CHAIN5-["an operation" in sentence 1, "its" in sentence 1, "it" in sentence 1, "the operation" in sentence 2]
+representative mention: "an operation" in sentence 1

@@ -1,0 +1,35 @@
+ Only facts can express a sense, a set of names cannot.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, express-4)
+aux(express-4, can-3)
+punct(express-4, ,-7)
+punct(express-4, .-14)
+det(sense-6, a-5)
+det(set-9, a-8)
+case(names-11, of-10)
+advmod(facts-2, Only-1)
+nsubj(express-4, facts-2)
+dobj(express-4, sense-6)
+dep(express-4, set-9)
+nmod:of(set-9, names-11)
+dep(set-9, can-12)
+neg(can-12, not-13)
+G[10, 9] [?1, ?2, Only1, can12, express4, facts2, names11, not13, sense2147483647, set2147483647]
+?1-a->sense2147483647
+Only1- ->facts2
+facts2-  : can ->express4
+can12- ->?2
+names11-of->?2
+not13- ->can12
+?2-a->set2147483647
+?1- ->express4
+?2- ->express4
+------CorefChainz

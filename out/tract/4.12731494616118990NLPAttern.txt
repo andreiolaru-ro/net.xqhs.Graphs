@@ -1,0 +1,751 @@
+ If we want to express in conceptual notation the general proposition, 'b is a successor of a', then we require an expression for the general term of the series of forms 'aRb', '(d : c) : aRx . xRb', '(d x,y) : aRx . xRy . yRb', ... , In order to express the general term of a series of forms, we must use a variable, because the concept 'term of that series of forms' is a formal concept. (This is what Frege and Russell overlooked: consequently the way in which they want to express general propositions like the one above is incorrect; it contains a vicious circle.) We can determine the general term of a series of forms by giving its first term and the general form of the operation that produces the next term out of the proposition that precedes it.
+------CorefChainz
+CHAIN49-["the general term of the series of forms ` aRb ' , ' -LRB- d : c -RRB- : aRx" in sentence 1, "the general term of a series of forms" in sentence 4, "the general term of a series of forms" in sentence 6, "its first term" in sentence 6, "it" in sentence 6]
+representative mention: "the general term of the series of forms ` aRb ' , ' -LRB- d : c -RRB- : aRx" in sentence 1
+CHAIN39-["we" in sentence 1, "we" in sentence 1, "we" in sentence 4, "Frege and Russell" in sentence 5, "they" in sentence 5, "We" in sentence 6]
+representative mention: "we" in sentence 1
+CHAIN41-["a series of forms" in sentence 4, "that series of forms '" in sentence 4, "a series of forms" in sentence 6]
+representative mention: "that series of forms '" in sentence 4
+CHAIN43-["This" in sentence 5, "it" in sentence 5, "its" in sentence 6]
+representative mention: "This" in sentence 5
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, want-3)
+mark(want-3, If-1)
+punct(want-3, .-48)
+mark(express-5, to-4)
+case(notation-8, in-6)
+det(proposition-11, the-9)
+punct(proposition-11, ,-12)
+punct(proposition-11, '-13)
+cop(successor-17, is-15)
+det(successor-17, a-16)
+case(require-24, of-18)
+det(require-24, a-19)
+punct(require-24, '-20)
+punct(require-24, ,-21)
+det(expression-26, an-25)
+case(term-30, for-27)
+det(term-30, the-28)
+case(series-33, of-31)
+det(series-33, the-32)
+case(forms-35, of-34)
+punct(aRb-37, `-36)
+punct(aRb-37, '-38)
+punct(aRb-37, ,-39)
+punct(aRb-37, '-40)
+punct(aRb-37, :-46)
+punct(d-42, -LRB--41)
+punct(d-42, :-43)
+punct(d-42, -RRB--45)
+nsubj(want-3, we-2)
+nsubj:xsubj(express-5, we-2)
+xcomp(want-3, express-5)
+amod(notation-8, conceptual-7)
+nmod:in(express-5, notation-8)
+amod(proposition-11, general-10)
+nsubj(successor-17, proposition-11)
+dep(proposition-11, b-14)
+ccomp(express-5, successor-17)
+advmod(we-23, then-22)
+nsubj(require-24, we-23)
+nmod:of(successor-17, require-24)
+dobj(require-24, expression-26)
+amod(term-30, general-29)
+nmod:for(expression-26, term-30)
+nmod:of(term-30, series-33)
+nmod:of(series-33, forms-35)
+dep(forms-35, aRb-37)
+dep(aRb-37, d-42)
+dep(d-42, c-44)
+dep(aRb-37, aRx-47)
+---
+qqroot(ROOT-0, want-3)
+mark(want-3, If-1)
+punct(want-3, .-48)
+mark(express-5, to-4)
+case(notation-8, in-6)
+det(proposition-11, the-9)
+punct(proposition-11, ,-12)
+punct(proposition-11, '-13)
+cop(successor-17, is-15)
+det(successor-17, a-16)
+case(require-24, of-18)
+det(require-24, a-19)
+punct(require-24, '-20)
+punct(require-24, ,-21)
+det(expression-26, an-25)
+case(term-30, for-27)
+det(term-30, the-28)
+case(series-33, of-31)
+det(series-33, the-32)
+case(forms-35, of-34)
+punct(aRb-37, `-36)
+punct(aRb-37, '-38)
+punct(aRb-37, ,-39)
+punct(aRb-37, '-40)
+punct(aRb-37, :-46)
+punct(d-42, -LRB--41)
+punct(d-42, :-43)
+punct(d-42, -RRB--45)
+nsubj(want-3, we-2)
+nsubj:xsubj(express-5, we-2)
+xcomp(want-3, express-5)
+amod(notation-8, conceptual-7)
+nmod:in(express-5, notation-8)
+amod(proposition-11, general-10)
+nsubj(successor-17, proposition-11)
+dep(proposition-11, b-14)
+ccomp(express-5, successor-17)
+advmod(we-23, then-22)
+nsubj(require-24, we-23)
+nmod:of(successor-17, require-24)
+dobj(require-24, expression-26)
+amod(term-30, general-29)
+nmod:for(expression-26, term-30)
+nmod:of(term-30, series-33)
+nmod:of(series-33, forms-35)
+dep(forms-35, aRb-37)
+dep(aRb-37, d-42)
+dep(d-42, c-44)
+dep(aRb-37, aRx-47)
+root(ROOT-0, x-7)
+compound(x-7, d-6)
+compound(x-7, xRb-1)
+punct(x-7, ,-3)
+punct(x-7, '-4)
+punct(x-7, -LRB--5)
+punct(x-7, ,-8)
+punct(x-7, -RRB--10)
+punct(x-7, :-11)
+punct(x-7, .-13)
+punct(x-7, '-2)
+appos(x-7, y-9)
+dep(x-7, aRx-12)
+---
+qqroot(ROOT-0, want-3)
+mark(want-3, If-1)
+punct(want-3, .-48)
+mark(express-5, to-4)
+case(notation-8, in-6)
+det(proposition-11, the-9)
+punct(proposition-11, ,-12)
+punct(proposition-11, '-13)
+cop(successor-17, is-15)
+det(successor-17, a-16)
+case(require-24, of-18)
+det(require-24, a-19)
+punct(require-24, '-20)
+punct(require-24, ,-21)
+det(expression-26, an-25)
+case(term-30, for-27)
+det(term-30, the-28)
+case(series-33, of-31)
+det(series-33, the-32)
+case(forms-35, of-34)
+punct(aRb-37, `-36)
+punct(aRb-37, '-38)
+punct(aRb-37, ,-39)
+punct(aRb-37, '-40)
+punct(aRb-37, :-46)
+punct(d-42, -LRB--41)
+punct(d-42, :-43)
+punct(d-42, -RRB--45)
+nsubj(want-3, we-2)
+nsubj:xsubj(express-5, we-2)
+xcomp(want-3, express-5)
+amod(notation-8, conceptual-7)
+nmod:in(express-5, notation-8)
+amod(proposition-11, general-10)
+nsubj(successor-17, proposition-11)
+dep(proposition-11, b-14)
+ccomp(express-5, successor-17)
+advmod(we-23, then-22)
+nsubj(require-24, we-23)
+nmod:of(successor-17, require-24)
+dobj(require-24, expression-26)
+amod(term-30, general-29)
+nmod:for(expression-26, term-30)
+nmod:of(term-30, series-33)
+nmod:of(series-33, forms-35)
+dep(forms-35, aRb-37)
+dep(aRb-37, d-42)
+dep(d-42, c-44)
+dep(aRb-37, aRx-47)
+root(ROOT-0, x-7)
+compound(x-7, d-6)
+compound(x-7, xRb-1)
+punct(x-7, ,-3)
+punct(x-7, '-4)
+punct(x-7, -LRB--5)
+punct(x-7, ,-8)
+punct(x-7, -RRB--10)
+punct(x-7, :-11)
+punct(x-7, .-13)
+punct(x-7, '-2)
+appos(x-7, y-9)
+dep(x-7, aRx-12)
+root(ROOT-0, xRy-1)
+punct(xRy-1, .-2)
+---
+qqroot(ROOT-0, want-3)
+mark(want-3, If-1)
+punct(want-3, .-48)
+mark(express-5, to-4)
+case(notation-8, in-6)
+det(proposition-11, the-9)
+punct(proposition-11, ,-12)
+punct(proposition-11, '-13)
+cop(successor-17, is-15)
+det(successor-17, a-16)
+case(require-24, of-18)
+det(require-24, a-19)
+punct(require-24, '-20)
+punct(require-24, ,-21)
+det(expression-26, an-25)
+case(term-30, for-27)
+det(term-30, the-28)
+case(series-33, of-31)
+det(series-33, the-32)
+case(forms-35, of-34)
+punct(aRb-37, `-36)
+punct(aRb-37, '-38)
+punct(aRb-37, ,-39)
+punct(aRb-37, '-40)
+punct(aRb-37, :-46)
+punct(d-42, -LRB--41)
+punct(d-42, :-43)
+punct(d-42, -RRB--45)
+nsubj(want-3, we-2)
+nsubj:xsubj(express-5, we-2)
+xcomp(want-3, express-5)
+amod(notation-8, conceptual-7)
+nmod:in(express-5, notation-8)
+amod(proposition-11, general-10)
+nsubj(successor-17, proposition-11)
+dep(proposition-11, b-14)
+ccomp(express-5, successor-17)
+advmod(we-23, then-22)
+nsubj(require-24, we-23)
+nmod:of(successor-17, require-24)
+dobj(require-24, expression-26)
+amod(term-30, general-29)
+nmod:for(expression-26, term-30)
+nmod:of(term-30, series-33)
+nmod:of(series-33, forms-35)
+dep(forms-35, aRb-37)
+dep(aRb-37, d-42)
+dep(d-42, c-44)
+dep(aRb-37, aRx-47)
+root(ROOT-0, x-7)
+compound(x-7, d-6)
+compound(x-7, xRb-1)
+punct(x-7, ,-3)
+punct(x-7, '-4)
+punct(x-7, -LRB--5)
+punct(x-7, ,-8)
+punct(x-7, -RRB--10)
+punct(x-7, :-11)
+punct(x-7, .-13)
+punct(x-7, '-2)
+appos(x-7, y-9)
+dep(x-7, aRx-12)
+root(ROOT-0, xRy-1)
+punct(xRy-1, .-2)
+root(ROOT-0, yRb-1)
+punct(yRb-1, '-2)
+punct(yRb-1, ,-3)
+punct(yRb-1, ...-4)
+punct(yRb-1, ,-5)
+punct(yRb-1, .-40)
+mwe(In-6, order-7)
+mark(express-9, In-6)
+mark(express-9, to-8)
+det(term-12, the-10)
+mwe(a-14, series-15)
+mwe(a-14, of-16)
+case(series-15, of-13)
+aux(use-21, must-20)
+punct(use-21, ,-18)
+punct(use-21, ,-24)
+det(variable-23, a-22)
+det(concept-27, the-26)
+punct(term-29, `-28)
+case(series-32, of-30)
+det(series-32, that-31)
+case(forms-34, of-33)
+case(forms-34, '-35)
+cop(concept-39, is-36)
+det(concept-39, a-37)
+mark(concept-39, because-25)
+advcl:in_order(use-21, express-9)
+amod(term-12, general-11)
+dobj(express-9, term-12)
+det:qmod(forms-17, a-14)
+nmod(term-12, forms-17)
+nsubj(use-21, we-19)
+dep(yRb-1, use-21)
+dobj(use-21, variable-23)
+nsubj(concept-39, concept-27)
+dep(concept-27, term-29)
+nmod:of(term-29, series-32)
+nmod:'(series-32, forms-34)
+amod(concept-39, formal-38)
+advcl:because(use-21, concept-39)
+---
+qqroot(ROOT-0, want-3)
+mark(want-3, If-1)
+punct(want-3, .-48)
+mark(express-5, to-4)
+case(notation-8, in-6)
+det(proposition-11, the-9)
+punct(proposition-11, ,-12)
+punct(proposition-11, '-13)
+cop(successor-17, is-15)
+det(successor-17, a-16)
+case(require-24, of-18)
+det(require-24, a-19)
+punct(require-24, '-20)
+punct(require-24, ,-21)
+det(expression-26, an-25)
+case(term-30, for-27)
+det(term-30, the-28)
+case(series-33, of-31)
+det(series-33, the-32)
+case(forms-35, of-34)
+punct(aRb-37, `-36)
+punct(aRb-37, '-38)
+punct(aRb-37, ,-39)
+punct(aRb-37, '-40)
+punct(aRb-37, :-46)
+punct(d-42, -LRB--41)
+punct(d-42, :-43)
+punct(d-42, -RRB--45)
+nsubj(want-3, we-2)
+nsubj:xsubj(express-5, we-2)
+xcomp(want-3, express-5)
+amod(notation-8, conceptual-7)
+nmod:in(express-5, notation-8)
+amod(proposition-11, general-10)
+nsubj(successor-17, proposition-11)
+dep(proposition-11, b-14)
+ccomp(express-5, successor-17)
+advmod(we-23, then-22)
+nsubj(require-24, we-23)
+nmod:of(successor-17, require-24)
+dobj(require-24, expression-26)
+amod(term-30, general-29)
+nmod:for(expression-26, term-30)
+nmod:of(term-30, series-33)
+nmod:of(series-33, forms-35)
+dep(forms-35, aRb-37)
+dep(aRb-37, d-42)
+dep(d-42, c-44)
+dep(aRb-37, aRx-47)
+root(ROOT-0, x-7)
+compound(x-7, d-6)
+compound(x-7, xRb-1)
+punct(x-7, ,-3)
+punct(x-7, '-4)
+punct(x-7, -LRB--5)
+punct(x-7, ,-8)
+punct(x-7, -RRB--10)
+punct(x-7, :-11)
+punct(x-7, .-13)
+punct(x-7, '-2)
+appos(x-7, y-9)
+dep(x-7, aRx-12)
+root(ROOT-0, xRy-1)
+punct(xRy-1, .-2)
+root(ROOT-0, yRb-1)
+punct(yRb-1, '-2)
+punct(yRb-1, ,-3)
+punct(yRb-1, ...-4)
+punct(yRb-1, ,-5)
+punct(yRb-1, .-40)
+mwe(In-6, order-7)
+mark(express-9, In-6)
+mark(express-9, to-8)
+det(term-12, the-10)
+mwe(a-14, series-15)
+mwe(a-14, of-16)
+case(series-15, of-13)
+aux(use-21, must-20)
+punct(use-21, ,-18)
+punct(use-21, ,-24)
+det(variable-23, a-22)
+det(concept-27, the-26)
+punct(term-29, `-28)
+case(series-32, of-30)
+det(series-32, that-31)
+case(forms-34, of-33)
+case(forms-34, '-35)
+cop(concept-39, is-36)
+det(concept-39, a-37)
+mark(concept-39, because-25)
+advcl:in_order(use-21, express-9)
+amod(term-12, general-11)
+dobj(express-9, term-12)
+det:qmod(forms-17, a-14)
+nmod(term-12, forms-17)
+nsubj(use-21, we-19)
+dep(yRb-1, use-21)
+dobj(use-21, variable-23)
+nsubj(concept-39, concept-27)
+dep(concept-27, term-29)
+nmod:of(term-29, series-32)
+nmod:'(series-32, forms-34)
+amod(concept-39, formal-38)
+advcl:because(use-21, concept-39)
+root(ROOT-0, is-3)
+punct(is-3, -LRB--1)
+punct(is-3, .-33)
+punct(is-3, -RRB--34)
+cc(Frege-5, and-6)
+punct(overlooked-8, :-9)
+det(way-12, the-11)
+case(which-14, in-13)
+mark(express-18, to-17)
+case(one-23, like-21)
+det(one-23, the-22)
+cop(incorrect-26, is-25)
+punct(incorrect-26, ;-27)
+det(circle-32, a-30)
+nsubj(is-3, This-2)
+dobj(overlooked-8, what-4)
+nsubj(overlooked-8, Frege-5)
+conj:and(Frege-5, Russell-7)
+nsubj(overlooked-8, Russell-7)
+ccomp(is-3, overlooked-8)
+advmod(way-12, consequently-10)
+nmod:in(want-16, way-12)
+nsubj(incorrect-26, way-12)
+ref(way-12, which-14)
+nsubj(want-16, they-15)
+nsubj:xsubj(express-18, they-15)
+acl:relcl(way-12, want-16)
+xcomp(want-16, express-18)
+amod(propositions-20, general-19)
+dobj(express-18, propositions-20)
+nmod:like(propositions-20, one-23)
+advmod(one-23, above-24)
+parataxis(overlooked-8, incorrect-26)
+nsubj(contains-29, it-28)
+parataxis(incorrect-26, contains-29)
+amod(circle-32, vicious-31)
+dobj(contains-29, circle-32)
+---
+qqroot(ROOT-0, want-3)
+mark(want-3, If-1)
+punct(want-3, .-48)
+mark(express-5, to-4)
+case(notation-8, in-6)
+det(proposition-11, the-9)
+punct(proposition-11, ,-12)
+punct(proposition-11, '-13)
+cop(successor-17, is-15)
+det(successor-17, a-16)
+case(require-24, of-18)
+det(require-24, a-19)
+punct(require-24, '-20)
+punct(require-24, ,-21)
+det(expression-26, an-25)
+case(term-30, for-27)
+det(term-30, the-28)
+case(series-33, of-31)
+det(series-33, the-32)
+case(forms-35, of-34)
+punct(aRb-37, `-36)
+punct(aRb-37, '-38)
+punct(aRb-37, ,-39)
+punct(aRb-37, '-40)
+punct(aRb-37, :-46)
+punct(d-42, -LRB--41)
+punct(d-42, :-43)
+punct(d-42, -RRB--45)
+nsubj(want-3, we-2)
+nsubj:xsubj(express-5, we-2)
+xcomp(want-3, express-5)
+amod(notation-8, conceptual-7)
+nmod:in(express-5, notation-8)
+amod(proposition-11, general-10)
+nsubj(successor-17, proposition-11)
+dep(proposition-11, b-14)
+ccomp(express-5, successor-17)
+advmod(we-23, then-22)
+nsubj(require-24, we-23)
+nmod:of(successor-17, require-24)
+dobj(require-24, expression-26)
+amod(term-30, general-29)
+nmod:for(expression-26, term-30)
+nmod:of(term-30, series-33)
+nmod:of(series-33, forms-35)
+dep(forms-35, aRb-37)
+dep(aRb-37, d-42)
+dep(d-42, c-44)
+dep(aRb-37, aRx-47)
+root(ROOT-0, x-7)
+compound(x-7, d-6)
+compound(x-7, xRb-1)
+punct(x-7, ,-3)
+punct(x-7, '-4)
+punct(x-7, -LRB--5)
+punct(x-7, ,-8)
+punct(x-7, -RRB--10)
+punct(x-7, :-11)
+punct(x-7, .-13)
+punct(x-7, '-2)
+appos(x-7, y-9)
+dep(x-7, aRx-12)
+root(ROOT-0, xRy-1)
+punct(xRy-1, .-2)
+root(ROOT-0, yRb-1)
+punct(yRb-1, '-2)
+punct(yRb-1, ,-3)
+punct(yRb-1, ...-4)
+punct(yRb-1, ,-5)
+punct(yRb-1, .-40)
+mwe(In-6, order-7)
+mark(express-9, In-6)
+mark(express-9, to-8)
+det(term-12, the-10)
+mwe(a-14, series-15)
+mwe(a-14, of-16)
+case(series-15, of-13)
+aux(use-21, must-20)
+punct(use-21, ,-18)
+punct(use-21, ,-24)
+det(variable-23, a-22)
+det(concept-27, the-26)
+punct(term-29, `-28)
+case(series-32, of-30)
+det(series-32, that-31)
+case(forms-34, of-33)
+case(forms-34, '-35)
+cop(concept-39, is-36)
+det(concept-39, a-37)
+mark(concept-39, because-25)
+advcl:in_order(use-21, express-9)
+amod(term-12, general-11)
+dobj(express-9, term-12)
+det:qmod(forms-17, a-14)
+nmod(term-12, forms-17)
+nsubj(use-21, we-19)
+dep(yRb-1, use-21)
+dobj(use-21, variable-23)
+nsubj(concept-39, concept-27)
+dep(concept-27, term-29)
+nmod:of(term-29, series-32)
+nmod:'(series-32, forms-34)
+amod(concept-39, formal-38)
+advcl:because(use-21, concept-39)
+root(ROOT-0, is-3)
+punct(is-3, -LRB--1)
+punct(is-3, .-33)
+punct(is-3, -RRB--34)
+cc(Frege-5, and-6)
+punct(overlooked-8, :-9)
+det(way-12, the-11)
+case(which-14, in-13)
+mark(express-18, to-17)
+case(one-23, like-21)
+det(one-23, the-22)
+cop(incorrect-26, is-25)
+punct(incorrect-26, ;-27)
+det(circle-32, a-30)
+nsubj(is-3, This-2)
+dobj(overlooked-8, what-4)
+nsubj(overlooked-8, Frege-5)
+conj:and(Frege-5, Russell-7)
+nsubj(overlooked-8, Russell-7)
+ccomp(is-3, overlooked-8)
+advmod(way-12, consequently-10)
+nmod:in(want-16, way-12)
+nsubj(incorrect-26, way-12)
+ref(way-12, which-14)
+nsubj(want-16, they-15)
+nsubj:xsubj(express-18, they-15)
+acl:relcl(way-12, want-16)
+xcomp(want-16, express-18)
+amod(propositions-20, general-19)
+dobj(express-18, propositions-20)
+nmod:like(propositions-20, one-23)
+advmod(one-23, above-24)
+parataxis(overlooked-8, incorrect-26)
+nsubj(contains-29, it-28)
+parataxis(incorrect-26, contains-29)
+amod(circle-32, vicious-31)
+dobj(contains-29, circle-32)
+root(ROOT-0, determine-3)
+mwe(out-29, of-30)
+aux(determine-3, can-2)
+punct(determine-3, .-36)
+det(term-6, the-4)
+mwe(a-8, series-9)
+mwe(a-8, of-10)
+case(series-9, of-7)
+mark(giving-13, by-12)
+cc(term-16, and-17)
+det(form-20, the-18)
+case(operation-23, of-21)
+det(operation-23, the-22)
+det(term-28, the-26)
+case(proposition-32, out-29)
+det(proposition-32, the-31)
+nsubj(determine-3, We-1)
+amod(term-6, general-5)
+dobj(determine-3, term-6)
+det:qmod(forms-11, a-8)
+nmod(term-6, forms-11)
+advcl:by(determine-3, giving-13)
+nmod:poss(term-16, its-14)
+amod(term-16, first-15)
+dobj(giving-13, term-16)
+amod(form-20, general-19)
+dobj(giving-13, form-20)
+conj:and(term-16, form-20)
+nmod:of(form-20, operation-23)
+nsubj(produces-25, operation-23)
+ref(operation-23, that-24)
+acl:relcl(operation-23, produces-25)
+amod(term-28, next-27)
+dobj(produces-25, term-28)
+nsubj(precedes-34, term-28)
+nmod:out_of(term-28, proposition-32)
+ref(term-28, that-33)
+acl:relcl(term-28, precedes-34)
+dobj(precedes-34, it-35)
+G[103, 113] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?18, ?19, Frege5, In order6, Russell7, This2, We1, a series of14, a series of8, aRb37, aRx47, aRx12, above24, b14, c44, circle2147483647, concept2147483647, concept2147483647, conceptual7, consequently10, contains29, d42, d xRb x7, determine3, express9, express5, express18, expression2147483647, first15, form2147483647, formal38, forms35, forms34, forms11, forms17, general11, general19, general19, general29, general5, general10, giving13, incorrect26, is3, it35, it28, its14, next27, notation8, one2147483647, operation2147483647, out of29, overlooked8, precedes34, produces25, proposition2147483647, proposition2147483647, propositions20, require2147483647, series2147483647, series2147483647, successor2147483647, term2147483647, term29, term2147483647, term16, term2147483647, term2147483647, that33, that24, then22, they15, use21, variable2147483647, vicious31, want16, want3, way2147483647, we23, we2, we19, what4, which14, xRy1, y9, yRb1]
+?4-and->term16
+?9-the->operation2147483647
+?13-the->proposition2147483647
+Russell7-and->Frege5
+?12-the->term2147483647
+its14-poss->term16
+forms34-' : of ->?14
+?17-a->concept2147483647
+?18-the->concept2147483647
+forms35-of->?2
+?19-the->term2147483647
+we2-xsubj->express5
+?8- ->incorrect26
+?16- ->?6
+?16-an->expression2147483647
+?15-for->?16
+want16- ->?15
+overlooked8- ->is3
+conceptual7- ->notation8
+general19- ->propositions20
+?1-a->variable2147483647
+express5- ->we2
+?3- ->?15
+?11-like->propositions20
+?3- ->determine3
+?8- ->?15
+aRx47- ->aRb37
+d42- ->aRb37
+?7- ->express5
+?9-of->?4
+b14- ->?13
+they15- ->want16
+?1- ->use21
+?10-a->circle2147483647
+forms17- ->?19
+we19-  : must ->use21
+a series of8-qmod->forms11
+?5-the->proposition2147483647
+express9-in_order->use21
+general29- ->?15
+c44- ->d42
+express18-  : to ->want16
+they15- ->we2
+?14-of->term29
+forms11- ->?3
+it35- ->precedes34
+vicious31- ->?10
+express9- ->?5
+?14-that->series2147483647
+aRb37- ->forms35
+?10- ->contains29
+incorrect26- ->overlooked8
+they15- ->?5
+formal38-  : is ->?17
+then22- ->we23
+?6-of->?7
+first15- ->term16
+produces25-relcl->?9
+what4- ->overlooked8
+it28- ->contains29
+general5- ->?3
+express5-  : to ->want3
+a series of14-qmod->forms17
+y9- ->d xRb x7
+that24- ->?9
+?15-the->term2147483647
+?8-the->way2147483647
+term29- ->?18
+?4- ->giving13
+aRx12- ->d xRb x7
+term16- ->giving13
+?2-of->?15
+Russell7- ->overlooked8
+contains29-  : is ->incorrect26
+?19-  : In order  : to ->express9
+?13-  : is ->?7
+consequently10- ->?8
+notation8-in->express5
+?2-the->series2147483647
+giving13-by->determine3
+?7-a->successor2147483647
+which14-  : in ->?8
+above24- ->?11
+general19- ->?4
+?6-a->require2147483647
+we23- ->?6
+?9- ->produces25
+This2- ->is3
+yRb1- ->we2
+We1-  : can ->determine3
+next27- ->?12
+precedes34-relcl->?12
+?4-the->form2147483647
+they15-xsubj->express18
+?11-the->one2147483647
+that33- ->?12
+use21- ->yRb1
+Frege5- ->overlooked8
+want16-relcl->?8
+we2-  : If ->want3
+?12- ->precedes34
+propositions20- ->express18
+a series of14- ->we2
+?3-the->term2147483647
+?12- ->produces25
+general11- ->?19
+?12- ->we2
+it35- ->?15
+?17-because->use21
+?8-in->want16
+?5-out_of : out of ->?12
+?18- ->?17
+general10- ->?13
+------CorefChainz
+CHAIN49-["the general term of the series of forms ` aRb ' , ' -LRB- d : c -RRB- : aRx" in sentence 1, "the general term of a series of forms" in sentence 4, "the general term of a series of forms" in sentence 6, "its first term" in sentence 6, "it" in sentence 6]
+representative mention: "the general term of the series of forms ` aRb ' , ' -LRB- d : c -RRB- : aRx" in sentence 1
+CHAIN39-["we" in sentence 1, "we" in sentence 1, "we" in sentence 4, "Frege and Russell" in sentence 5, "they" in sentence 5, "We" in sentence 6]
+representative mention: "we" in sentence 1
+CHAIN41-["a series of forms" in sentence 4, "that series of forms '" in sentence 4, "a series of forms" in sentence 6]
+representative mention: "that series of forms '" in sentence 4
+CHAIN43-["This" in sentence 5, "it" in sentence 5, "its" in sentence 6]
+representative mention: "This" in sentence 5

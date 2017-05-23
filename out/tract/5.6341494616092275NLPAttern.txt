@@ -1,0 +1,202 @@
+ This is connected with the fact that no part of our experience is at the same time a priori. Whatever we see could be other than it is. Whatever we can describe at all could be other than it is. There is no a priori order of things.
+------CorefChainz
+CHAIN10-["This" in sentence 1, "it" in sentence 2, "it" in sentence 3]
+representative mention: "This" in sentence 1
+CHAIN11-["our" in sentence 1, "we" in sentence 2, "we" in sentence 3]
+representative mention: "our" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, connected-3)
+auxpass(connected-3, is-2)
+punct(connected-3, .-20)
+case(fact-6, with-4)
+det(fact-6, the-5)
+case(experience-12, of-10)
+case(time-17, at-14)
+cop(time-17, is-13)
+det(time-17, the-15)
+mark(time-17, that-7)
+det(priori-19, a-18)
+nsubjpass(connected-3, This-1)
+nmod:with(connected-3, fact-6)
+neg(part-9, no-8)
+nsubj(time-17, part-9)
+nmod:poss(experience-12, our-11)
+nmod:of(part-9, experience-12)
+amod(time-17, same-16)
+ccomp(fact-6, time-17)
+nmod:npmod(time-17, priori-19)
+---
+qqroot(ROOT-0, connected-3)
+auxpass(connected-3, is-2)
+punct(connected-3, .-20)
+case(fact-6, with-4)
+det(fact-6, the-5)
+case(experience-12, of-10)
+case(time-17, at-14)
+cop(time-17, is-13)
+det(time-17, the-15)
+mark(time-17, that-7)
+det(priori-19, a-18)
+nsubjpass(connected-3, This-1)
+nmod:with(connected-3, fact-6)
+neg(part-9, no-8)
+nsubj(time-17, part-9)
+nmod:poss(experience-12, our-11)
+nmod:of(part-9, experience-12)
+amod(time-17, same-16)
+ccomp(fact-6, time-17)
+nmod:npmod(time-17, priori-19)
+root(ROOT-0, see-3)
+punct(see-3, .-10)
+aux(other-6, could-4)
+cop(other-6, be-5)
+mark(is-9, than-7)
+dobj(see-3, Whatever-1)
+nsubj(see-3, we-2)
+ccomp(see-3, other-6)
+nsubj(is-9, it-8)
+ccomp(other-6, is-9)
+---
+qqroot(ROOT-0, connected-3)
+auxpass(connected-3, is-2)
+punct(connected-3, .-20)
+case(fact-6, with-4)
+det(fact-6, the-5)
+case(experience-12, of-10)
+case(time-17, at-14)
+cop(time-17, is-13)
+det(time-17, the-15)
+mark(time-17, that-7)
+det(priori-19, a-18)
+nsubjpass(connected-3, This-1)
+nmod:with(connected-3, fact-6)
+neg(part-9, no-8)
+nsubj(time-17, part-9)
+nmod:poss(experience-12, our-11)
+nmod:of(part-9, experience-12)
+amod(time-17, same-16)
+ccomp(fact-6, time-17)
+nmod:npmod(time-17, priori-19)
+root(ROOT-0, see-3)
+punct(see-3, .-10)
+aux(other-6, could-4)
+cop(other-6, be-5)
+mark(is-9, than-7)
+dobj(see-3, Whatever-1)
+nsubj(see-3, we-2)
+ccomp(see-3, other-6)
+nsubj(is-9, it-8)
+ccomp(other-6, is-9)
+root(ROOT-0, other-9)
+aux(describe-4, can-3)
+case(all-6, at-5)
+aux(other-9, could-7)
+cop(other-9, be-8)
+punct(other-9, .-13)
+mark(is-12, than-10)
+dobj(describe-4, Whatever-1)
+nsubj(describe-4, we-2)
+csubj(other-9, describe-4)
+nmod:at(describe-4, all-6)
+nsubj(is-12, it-11)
+ccomp(other-9, is-12)
+---
+qqroot(ROOT-0, connected-3)
+auxpass(connected-3, is-2)
+punct(connected-3, .-20)
+case(fact-6, with-4)
+det(fact-6, the-5)
+case(experience-12, of-10)
+case(time-17, at-14)
+cop(time-17, is-13)
+det(time-17, the-15)
+mark(time-17, that-7)
+det(priori-19, a-18)
+nsubjpass(connected-3, This-1)
+nmod:with(connected-3, fact-6)
+neg(part-9, no-8)
+nsubj(time-17, part-9)
+nmod:poss(experience-12, our-11)
+nmod:of(part-9, experience-12)
+amod(time-17, same-16)
+ccomp(fact-6, time-17)
+nmod:npmod(time-17, priori-19)
+root(ROOT-0, see-3)
+punct(see-3, .-10)
+aux(other-6, could-4)
+cop(other-6, be-5)
+mark(is-9, than-7)
+dobj(see-3, Whatever-1)
+nsubj(see-3, we-2)
+ccomp(see-3, other-6)
+nsubj(is-9, it-8)
+ccomp(other-6, is-9)
+root(ROOT-0, other-9)
+aux(describe-4, can-3)
+case(all-6, at-5)
+aux(other-9, could-7)
+cop(other-9, be-8)
+punct(other-9, .-13)
+mark(is-12, than-10)
+dobj(describe-4, Whatever-1)
+nsubj(describe-4, we-2)
+csubj(other-9, describe-4)
+nmod:at(describe-4, all-6)
+nsubj(is-12, it-11)
+ccomp(other-9, is-12)
+root(ROOT-0, is-2)
+punct(is-2, .-9)
+compound(order-6, priori-5)
+det(order-6, a-4)
+case(things-8, of-7)
+expl(is-2, There-1)
+neg(order-6, no-3)
+nsubj(is-2, order-6)
+nmod:of(order-6, things-8)
+G[32, 31] [?1, ?2, ?3, ?4, There1, This1, Whatever1, Whatever1, all6, connected3, describe4, experience12, fact2147483647, is12, is9, is2, it11, it8, no8, no3, other6, other9, our11, part9, priori2147483647, priori order2147483647, same16, see3, things8, time2147483647, we2, we2]
+things8-of->?1
+?2-the->fact2147483647
+we2- ->see3
+all6-at->describe4
+it11- ->is12
+other6-  : could  : be ->see3
+we2-==->it11
+Whatever1- ->see3
+describe4-  : could  : be  : be ->other9
+?4-  : that ->?2
+no8- ->Whatever1
+part9- ->?4
+?1- ->is2
+it11- ->Whatever1
+?1-a->priori order2147483647
+we2-  : can ->describe4
+our11-poss->experience12
+is12-  : than  : than ->other9
+same16-  : is  : at ->?4
+There1- ->is2
+experience12-of->part9
+Whatever1- ->describe4
+no8- ->part9
+?2-with->connected3
+no3- ->?1
+it8- ->is9
+?4-the->time2147483647
+is9-  : than  : than ->other6
+This1-  : is ->connected3
+?3-a->priori2147483647
+?3-npmod->?4
+------CorefChainz
+CHAIN10-["This" in sentence 1, "it" in sentence 2, "it" in sentence 3]
+representative mention: "This" in sentence 1
+CHAIN11-["our" in sentence 1, "we" in sentence 2, "we" in sentence 3]
+representative mention: "our" in sentence 1

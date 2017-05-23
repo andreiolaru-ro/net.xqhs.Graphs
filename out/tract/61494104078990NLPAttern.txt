@@ -1,0 +1,150 @@
+ The general form of a truth-function is [p, E, N(E)]. This is the general form of a proposition.
+------CorefChainz
+The-DT 
+general-JJ 
+form-NN 
+of-IN 
+a-DT 
+truth-function-NN 
+is-VBZ 
+-LSB--RB 
+p-JJ 
+,-, 
+E-NNP 
+,-, 
+N-NNP 
+-LRB---LRB- 
+E-NNP 
+-RRB---RRB- 
+-RSB--NNP 
+.-. 
+This-DT 
+is-VBZ 
+the-DT 
+general-JJ 
+form-NN 
+of-IN 
+a-DT 
+proposition-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> The
+	 	-> JJ 	-> general
+	 	-> NN 	-> form
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> truth-function
+				 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> ADJP 	-> ADJP 	-> RB 	-> -LSB-
+	 	-> JJ 	-> p
+		 	-> PRN 	-> , 	-> ,
+	 	-> NP 	-> NNP 	-> E
+		 	-> , 	-> ,
+			 	-> NNP 	-> N
+	 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> NP 	-> NNP 	-> E
+		 	-> -RRB- 	-> -RRB-
+		 	-> NNP 	-> -RSB-
+	 	-> . 	-> .
+		 	-> SBAR 	-> S 	-> NP 	-> DT 	-> This
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> general
+	 	-> NN 	-> form
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> proposition
+									 	-> . 	-> .
+			
+Dependensee repr
+det(form-3, The-1)
+amod(form-3, general-2)
+nsubj(-RSB--17, form-3)
+case(truth-function-6, of-4)
+det(truth-function-6, a-5)
+nmod:of(form-3, truth-function-6)
+cop(-RSB--17, is-7)
+advmod(p-9, -LSB--8)
+amod(-RSB--17, p-9)
+dep(p-9, E-11)
+compound(-RSB--17, N-13)
+appos(-RSB--17, E-15)
+root(ROOT-0, -RSB--17)
+nsubj(form-23, This-19)
+cop(form-23, is-20)
+det(form-23, the-21)
+amod(form-23, general-22)
+acl:relcl(-RSB--17, form-23)
+case(proposition-26, of-24)
+det(proposition-26, a-25)
+nmod:of(form-23, proposition-26)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, form-3)
+det(form-3, The-1)
+punct(form-3, .-18)
+case(truth-function-6, of-4)
+det(truth-function-6, a-5)
+punct(p-9, -RSB--17)
+punct(p-9, -LSB--8)
+punct(p-9, ,-10)
+punct(p-9, ,-12)
+punct(E-15, -RRB--16)
+punct(E-15, -LRB--14)
+amod(form-3, general-2)
+nmod:of(form-3, truth-function-6)
+dep(form-3, is-7)
+dep(is-7, p-9)
+appos(p-9, E-11)
+appos(p-9, N-13)
+appos(N-13, E-15)
+---
+qqroot(ROOT-0, form-3)
+det(form-3, The-1)
+punct(form-3, .-18)
+case(truth-function-6, of-4)
+det(truth-function-6, a-5)
+punct(p-9, -RSB--17)
+punct(p-9, -LSB--8)
+punct(p-9, ,-10)
+punct(p-9, ,-12)
+punct(E-15, -RRB--16)
+punct(E-15, -LRB--14)
+amod(form-3, general-2)
+nmod:of(form-3, truth-function-6)
+dep(form-3, is-7)
+dep(is-7, p-9)
+appos(p-9, E-11)
+appos(p-9, N-13)
+appos(N-13, E-15)
+root(ROOT-0, form-5)
+cop(form-5, is-2)
+det(form-5, the-3)
+punct(form-5, .-9)
+case(proposition-8, of-6)
+det(proposition-8, a-7)
+nsubj(form-5, This-1)
+amod(form-5, general-4)
+nmod:of(form-5, proposition-8)
+G[16, 14] [?#1, ?#2, ?#3, ?#4, E, E, N, This, form, form, general, general, is, p, proposition, truth-function]
+p- ->is
+N- ->p
+general- ->?#3
+E- ->p
+This-  : is ->?#3
+general- ->?#4
+E- ->N
+?#2-of->?#4
+?#1-a->proposition
+?#3-the->form
+is- ->?#4
+?#4-The->form
+?#2-a->truth-function
+?#1-of->?#3
+------CorefChainz

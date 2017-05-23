@@ -1,0 +1,79 @@
+ It is the essential characteristic of mathematical method that it employs equations. For it is because of this method that every proposition of mathematics must go without saying.
+------CorefChainz
+CHAIN8-["It" in sentence 1, "it" in sentence 1, "it" in sentence 2]
+representative mention: "It" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, characteristic-5)
+cop(characteristic-5, is-2)
+det(characteristic-5, the-3)
+punct(characteristic-5, .-13)
+case(method-8, of-6)
+mark(employs-11, that-9)
+nsubj(characteristic-5, It-1)
+amod(characteristic-5, essential-4)
+amod(method-8, mathematical-7)
+nmod:of(characteristic-5, method-8)
+nsubj(employs-11, it-10)
+ccomp(characteristic-5, employs-11)
+dobj(employs-11, equations-12)
+---
+qqroot(ROOT-0, characteristic-5)
+cop(characteristic-5, is-2)
+det(characteristic-5, the-3)
+punct(characteristic-5, .-13)
+case(method-8, of-6)
+mark(employs-11, that-9)
+nsubj(characteristic-5, It-1)
+amod(characteristic-5, essential-4)
+amod(method-8, mathematical-7)
+nmod:of(characteristic-5, method-8)
+nsubj(employs-11, it-10)
+ccomp(characteristic-5, employs-11)
+dobj(employs-11, equations-12)
+root(ROOT-0, is-3)
+mark(is-3, For-1)
+punct(is-3, .-17)
+mwe(because-4, of-5)
+case(method-7, because-4)
+det(method-7, this-6)
+det(proposition-10, every-9)
+case(mathematics-12, of-11)
+aux(go-14, must-13)
+mark(go-14, that-8)
+mark(saying-16, without-15)
+nsubj(is-3, it-2)
+nmod:because_of(is-3, method-7)
+nsubj(go-14, proposition-10)
+nmod:of(proposition-10, mathematics-12)
+ccomp(method-7, go-14)
+advcl:without(go-14, saying-16)
+G[19, 18] [?1, ?2, ?3, It1, because of4, characteristic2147483647, employs11, equations12, essential4, go14, is3, it2, it10, mathematical7, mathematics12, method8, method2147483647, proposition2147483647, saying16]
+?1-this->method2147483647
+?2-every->proposition2147483647
+it10- ->It1
+It1-  : is ->?3
+mathematical7- ->method8
+mathematics12-of->?2
+?3-the->characteristic2147483647
+method8-of->?3
+?1-because_of : because of ->is3
+it10-  : that ->employs11
+it2-  : For ->is3
+it2- ->It1
+equations12- ->employs11
+?2-  : must  : must ->go14
+essential4- ->?3
+go14-  : that ->?1
+employs11- ->?3
+saying16-without->go14
+------CorefChainz
+CHAIN8-["It" in sentence 1, "it" in sentence 1, "it" in sentence 2]
+representative mention: "It" in sentence 1

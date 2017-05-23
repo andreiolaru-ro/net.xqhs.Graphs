@@ -1,0 +1,119 @@
+ This shows too that there is no such thing as the soul--the subject, etc.--as it is conceived in the superficial psychology of the present day. Indeed a composite soul would no longer be a soul.
+------CorefChainz
+CHAIN5-["This" in sentence 1, "it" in sentence 1]
+representative mention: "This" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, shows-2)
+punct(shows-2, .-31)
+mark(is-6, that-4)
+case(soul-12, as-10)
+det(soul-12, the-11)
+punct(soul-12, ---18)
+punct(soul-12, ---13)
+det(subject-15, the-14)
+punct(subject-15, ,-16)
+auxpass(conceived-22, is-21)
+mark(conceived-22, as-19)
+case(psychology-26, in-23)
+det(psychology-26, the-24)
+case(day-30, of-27)
+det(day-30, the-28)
+nsubj(shows-2, This-1)
+advmod(shows-2, too-3)
+expl(is-6, there-5)
+ccomp(shows-2, is-6)
+neg(thing-9, no-7)
+amod(thing-9, such-8)
+nsubj(is-6, thing-9)
+nmod:as(thing-9, soul-12)
+dep(soul-12, subject-15)
+appos(subject-15, etc.-17)
+nsubjpass(conceived-22, it-20)
+dep(thing-9, conceived-22)
+amod(psychology-26, superficial-25)
+nmod:in(conceived-22, psychology-26)
+amod(day-30, present-29)
+nmod:of(psychology-26, day-30)
+---
+qqroot(ROOT-0, shows-2)
+punct(shows-2, .-31)
+mark(is-6, that-4)
+case(soul-12, as-10)
+det(soul-12, the-11)
+punct(soul-12, ---18)
+punct(soul-12, ---13)
+det(subject-15, the-14)
+punct(subject-15, ,-16)
+auxpass(conceived-22, is-21)
+mark(conceived-22, as-19)
+case(psychology-26, in-23)
+det(psychology-26, the-24)
+case(day-30, of-27)
+det(day-30, the-28)
+nsubj(shows-2, This-1)
+advmod(shows-2, too-3)
+expl(is-6, there-5)
+ccomp(shows-2, is-6)
+neg(thing-9, no-7)
+amod(thing-9, such-8)
+nsubj(is-6, thing-9)
+nmod:as(thing-9, soul-12)
+dep(soul-12, subject-15)
+appos(subject-15, etc.-17)
+nsubjpass(conceived-22, it-20)
+dep(thing-9, conceived-22)
+amod(psychology-26, superficial-25)
+nmod:in(conceived-22, psychology-26)
+amod(day-30, present-29)
+nmod:of(psychology-26, day-30)
+root(ROOT-0, soul-10)
+det(soul-4, a-2)
+aux(soul-10, would-5)
+cop(soul-10, be-8)
+det(soul-10, a-9)
+punct(soul-10, .-11)
+advmod(soul-10, Indeed-1)
+amod(soul-4, composite-3)
+nsubj(soul-10, soul-4)
+neg(longer-7, no-6)
+advmod(soul-10, longer-7)
+G[29, 28] [?1, ?2, ?3, ?4, ?5, ?6, Indeed1, This1, composite3, conceived22, day2147483647, etc.17, is6, it20, longer7, no6, no7, present29, psychology2147483647, shows2, soul2147483647, soul2147483647, soul2147483647, subject2147483647, such8, superficial25, there5, thing9, too3]
+?6-a->soul2147483647
+?1-the->subject2147483647
+?3-in->conceived22
+there5-  : that ->is6
+?5-  : would ->?6
+?4-of->?3
+present29- ->?4
+?4-the->day2147483647
+superficial25- ->?3
+?1- ->?2
+too3- ->shows2
+no6- ->longer7
+is6- ->shows2
+?2-as->thing9
+thing9- ->is6
+?3-the->psychology2147483647
+such8- ->thing9
+?2-the->soul2147483647
+it20- ->This1
+Indeed1- ->?6
+composite3- ->?5
+This1- ->shows2
+no7- ->thing9
+etc.17- ->?1
+?5-a->soul2147483647
+longer7-  : be ->?6
+it20-  : as  : is ->conceived22
+conceived22- ->thing9
+------CorefChainz
+CHAIN5-["This" in sentence 1, "it" in sentence 1]
+representative mention: "This" in sentence 1

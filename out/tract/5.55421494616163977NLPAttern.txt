@@ -1,0 +1,135 @@
+ But is it really legitimate even to ask such a question? Can we set up a form of sign without knowing whether anything can correspond to it? Does it make sense to ask what there must be in order that something can be the case?
+------CorefChainz
+CHAIN10-["a form of sign" in sentence 2, "it" in sentence 2, "it" in sentence 3]
+representative mention: "a form of sign" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, legitimate-5)
+cc(legitimate-5, But-1)
+cop(legitimate-5, is-2)
+punct(legitimate-5, ?-12)
+mark(ask-8, to-7)
+det(question-11, a-10)
+nsubj(legitimate-5, it-3)
+advmod(legitimate-5, really-4)
+advmod(ask-8, even-6)
+dep(legitimate-5, ask-8)
+det:predet(question-11, such-9)
+dobj(ask-8, question-11)
+---
+qqroot(ROOT-0, legitimate-5)
+cc(legitimate-5, But-1)
+cop(legitimate-5, is-2)
+punct(legitimate-5, ?-12)
+mark(ask-8, to-7)
+det(question-11, a-10)
+nsubj(legitimate-5, it-3)
+advmod(legitimate-5, really-4)
+advmod(ask-8, even-6)
+dep(legitimate-5, ask-8)
+det:predet(question-11, such-9)
+dobj(ask-8, question-11)
+root(ROOT-0, set-3)
+aux(set-3, Can-1)
+punct(set-3, ?-17)
+mwe(a-5, form-6)
+mwe(a-5, of-7)
+mark(knowing-10, without-9)
+aux(correspond-14, can-13)
+mark(correspond-14, whether-11)
+case(it-16, to-15)
+nsubj(set-3, we-2)
+compound:prt(set-3, up-4)
+det:qmod(sign-8, a-5)
+dobj(set-3, sign-8)
+advcl:without(set-3, knowing-10)
+nsubj(correspond-14, anything-12)
+ccomp(knowing-10, correspond-14)
+nmod:to(correspond-14, it-16)
+---
+qqroot(ROOT-0, legitimate-5)
+cc(legitimate-5, But-1)
+cop(legitimate-5, is-2)
+punct(legitimate-5, ?-12)
+mark(ask-8, to-7)
+det(question-11, a-10)
+nsubj(legitimate-5, it-3)
+advmod(legitimate-5, really-4)
+advmod(ask-8, even-6)
+dep(legitimate-5, ask-8)
+det:predet(question-11, such-9)
+dobj(ask-8, question-11)
+root(ROOT-0, set-3)
+aux(set-3, Can-1)
+punct(set-3, ?-17)
+mwe(a-5, form-6)
+mwe(a-5, of-7)
+mark(knowing-10, without-9)
+aux(correspond-14, can-13)
+mark(correspond-14, whether-11)
+case(it-16, to-15)
+nsubj(set-3, we-2)
+compound:prt(set-3, up-4)
+det:qmod(sign-8, a-5)
+dobj(set-3, sign-8)
+advcl:without(set-3, knowing-10)
+nsubj(correspond-14, anything-12)
+ccomp(knowing-10, correspond-14)
+nmod:to(correspond-14, it-16)
+root(ROOT-0, make-3)
+aux(make-3, Does-1)
+punct(make-3, ?-19)
+mark(ask-6, to-5)
+mwe(in-11, order-12)
+aux(case-18, must-9)
+aux(case-18, can-15)
+cop(case-18, be-10)
+cop(case-18, be-16)
+det(case-18, the-17)
+mark(case-18, in-11)
+nsubj(make-3, it-2)
+dobj(make-3, sense-4)
+advcl:to(make-3, ask-6)
+dobj(case-18, what-7)
+expl(case-18, there-8)
+dobj(case-18, that-13)
+nsubj(case-18, something-14)
+ccomp(ask-6, case-18)
+G[28, 26] [?1, ?2, a form of5, anything12, ask8, ask6, case2147483647, correspond14, even6, in order11, it16, it3, it2, knowing10, legitimate5, make3, question2147483647, really4, sense4, set3, sign8, something14, such9, that13, there8, up4, we2, what7]
+?2-a->question2147483647
+it16- ->even6
+what7- ->?1
+?2- ->ask8
+something14-  : can  : be ->?1
+?1-the->case2147483647
+it3-  : But  : is ->legitimate5
+?1- ->ask6
+there8-  : must  : be ->?1
+that13-  : in order ->?1
+up4-prt->set3
+a form of5-qmod->sign8
+sense4- ->make3
+we2- ->even6
+anything12-  : can ->correspond14
+it2-  : Does ->make3
+really4- ->legitimate5
+even6-  : to ->ask8
+knowing10-without->set3
+it16-to->correspond14
+ask8- ->legitimate5
+sign8- ->set3
+ask6-to->make3
+we2-  : Can ->set3
+such9-predet->?2
+correspond14-  : whether  : whether ->knowing10
+------CorefChainz
+CHAIN10-["a form of sign" in sentence 2, "it" in sentence 2, "it" in sentence 3]
+representative mention: "a form of sign" in sentence 2

@@ -1,0 +1,246 @@
+ Contradiction is that common factor of propositions which no proposition has in common with another. Tautology is the common factor of all propositions that have nothing in common with one another. Contradiction, one might say, vanishes outside all propositions: tautology vanishes inside them. Contradiction is the outer limit of propositions: tautology is the unsubstantial point at their centre.
+------CorefChainz
+CHAIN17-["Tautology" in sentence 2, "tautology" in sentence 3, "tautology" in sentence 4]
+representative mention: "Tautology" in sentence 2
+CHAIN21-["Contradiction" in sentence 1, "Contradiction" in sentence 3, "Contradiction" in sentence 4]
+representative mention: "Contradiction" in sentence 1
+CHAIN14-["all propositions" in sentence 3, "them" in sentence 3]
+representative mention: "all propositions" in sentence 3
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-2)
+punct(factor-5, .-16)
+case(propositions-7, of-6)
+case(common-13, in-12)
+case(another-15, with-14)
+nsubj(is-2, Contradiction-1)
+dep(is-2, that-3)
+amod(factor-5, common-4)
+root(that-3, factor-5)
+dobj(has-11, factor-5)
+nmod:of(factor-5, propositions-7)
+ref(factor-5, which-8)
+neg(proposition-10, no-9)
+nsubj(has-11, proposition-10)
+acl:relcl(factor-5, has-11)
+nmod:in(has-11, common-13)
+nmod:with(common-13, another-15)
+---
+qqroot(ROOT-0, is-2)
+punct(factor-5, .-16)
+case(propositions-7, of-6)
+case(common-13, in-12)
+case(another-15, with-14)
+nsubj(is-2, Contradiction-1)
+dep(is-2, that-3)
+amod(factor-5, common-4)
+root(that-3, factor-5)
+dobj(has-11, factor-5)
+nmod:of(factor-5, propositions-7)
+ref(factor-5, which-8)
+neg(proposition-10, no-9)
+nsubj(has-11, proposition-10)
+acl:relcl(factor-5, has-11)
+nmod:in(has-11, common-13)
+nmod:with(common-13, another-15)
+root(ROOT-0, factor-5)
+cop(factor-5, is-2)
+det(factor-5, the-3)
+punct(factor-5, .-17)
+case(propositions-8, of-6)
+det(propositions-8, all-7)
+case(common-13, in-12)
+case(another-16, with-14)
+nsubj(factor-5, Tautology-1)
+amod(factor-5, common-4)
+nmod:of(factor-5, propositions-8)
+nsubj(have-10, propositions-8)
+ref(propositions-8, that-9)
+acl:relcl(propositions-8, have-10)
+dobj(have-10, nothing-11)
+nmod:in(nothing-11, common-13)
+nummod(another-16, one-15)
+nmod:with(common-13, another-16)
+---
+qqroot(ROOT-0, is-2)
+punct(factor-5, .-16)
+case(propositions-7, of-6)
+case(common-13, in-12)
+case(another-15, with-14)
+nsubj(is-2, Contradiction-1)
+dep(is-2, that-3)
+amod(factor-5, common-4)
+root(that-3, factor-5)
+dobj(has-11, factor-5)
+nmod:of(factor-5, propositions-7)
+ref(factor-5, which-8)
+neg(proposition-10, no-9)
+nsubj(has-11, proposition-10)
+acl:relcl(factor-5, has-11)
+nmod:in(has-11, common-13)
+nmod:with(common-13, another-15)
+root(ROOT-0, factor-5)
+cop(factor-5, is-2)
+det(factor-5, the-3)
+punct(factor-5, .-17)
+case(propositions-8, of-6)
+det(propositions-8, all-7)
+case(common-13, in-12)
+case(another-16, with-14)
+nsubj(factor-5, Tautology-1)
+amod(factor-5, common-4)
+nmod:of(factor-5, propositions-8)
+nsubj(have-10, propositions-8)
+ref(propositions-8, that-9)
+acl:relcl(propositions-8, have-10)
+dobj(have-10, nothing-11)
+nmod:in(nothing-11, common-13)
+nummod(another-16, one-15)
+nmod:with(common-13, another-16)
+root(ROOT-0, vanishes-7)
+aux(say-5, might-4)
+punct(say-5, ,-6)
+punct(say-5, ,-2)
+punct(vanishes-7, :-11)
+punct(vanishes-7, .-16)
+case(propositions-10, outside-8)
+det(propositions-10, all-9)
+case(them-15, inside-14)
+nsubj(vanishes-7, Contradiction-1)
+nsubj(say-5, one-3)
+parataxis(vanishes-7, say-5)
+nmod:outside(vanishes-7, propositions-10)
+nsubj(vanishes-13, tautology-12)
+parataxis(vanishes-7, vanishes-13)
+nmod:inside(vanishes-13, them-15)
+---
+qqroot(ROOT-0, is-2)
+punct(factor-5, .-16)
+case(propositions-7, of-6)
+case(common-13, in-12)
+case(another-15, with-14)
+nsubj(is-2, Contradiction-1)
+dep(is-2, that-3)
+amod(factor-5, common-4)
+root(that-3, factor-5)
+dobj(has-11, factor-5)
+nmod:of(factor-5, propositions-7)
+ref(factor-5, which-8)
+neg(proposition-10, no-9)
+nsubj(has-11, proposition-10)
+acl:relcl(factor-5, has-11)
+nmod:in(has-11, common-13)
+nmod:with(common-13, another-15)
+root(ROOT-0, factor-5)
+cop(factor-5, is-2)
+det(factor-5, the-3)
+punct(factor-5, .-17)
+case(propositions-8, of-6)
+det(propositions-8, all-7)
+case(common-13, in-12)
+case(another-16, with-14)
+nsubj(factor-5, Tautology-1)
+amod(factor-5, common-4)
+nmod:of(factor-5, propositions-8)
+nsubj(have-10, propositions-8)
+ref(propositions-8, that-9)
+acl:relcl(propositions-8, have-10)
+dobj(have-10, nothing-11)
+nmod:in(nothing-11, common-13)
+nummod(another-16, one-15)
+nmod:with(common-13, another-16)
+root(ROOT-0, vanishes-7)
+aux(say-5, might-4)
+punct(say-5, ,-6)
+punct(say-5, ,-2)
+punct(vanishes-7, :-11)
+punct(vanishes-7, .-16)
+case(propositions-10, outside-8)
+det(propositions-10, all-9)
+case(them-15, inside-14)
+nsubj(vanishes-7, Contradiction-1)
+nsubj(say-5, one-3)
+parataxis(vanishes-7, say-5)
+nmod:outside(vanishes-7, propositions-10)
+nsubj(vanishes-13, tautology-12)
+parataxis(vanishes-7, vanishes-13)
+nmod:inside(vanishes-13, them-15)
+root(ROOT-0, limit-5)
+cop(limit-5, is-2)
+det(limit-5, the-3)
+punct(limit-5, .-17)
+punct(limit-5, :-8)
+case(propositions-7, of-6)
+cop(point-13, is-10)
+det(point-13, the-11)
+case(centre-16, at-14)
+nsubj(limit-5, Contradiction-1)
+amod(limit-5, outer-4)
+nmod:of(limit-5, propositions-7)
+nsubj(point-13, tautology-9)
+amod(point-13, unsubstantial-12)
+parataxis(limit-5, point-13)
+nmod:poss(centre-16, their-15)
+nmod:at(point-13, centre-16)
+G[44, 45] [?1, ?2, ?3, ?4, ?5, Contradiction1, Contradiction1, Contradiction1, Tautology1, another15, another16, centre16, common4, common4, common13, common13, factor2147483647, factor5, has11, have10, is2, limit2147483647, no9, nothing11, one15, one3, outer4, point2147483647, proposition10, propositions7, propositions2147483647, propositions7, propositions2147483647, say5, tautology9, tautology12, that3, that9, their15, them15, unsubstantial12, vanishes13, vanishes7, which8]
+that3- ->is2
+has11-relcl->factor5
+Tautology1-  : is ->?4
+no9- ->proposition10
+that9- ->?2
+which8- ->factor5
+have10-relcl->?2
+outer4- ->?1
+tautology9-  : is ->?3
+propositions7-of->factor5
+common4- ->?4
+?5-all->propositions2147483647
+?2-of->?4
+one3-  : might ->say5
+?5-outside->vanishes7
+tautology12- ->Contradiction1
+?1-the->limit2147483647
+Contradiction1- ->is2
+factor5- ->has11
+say5- ->vanishes7
+Contradiction1-  : is ->?1
+common13-in->has11
+another16-with->common13
+?3- ->?1
+nothing11- ->have10
+their15-poss->centre16
+proposition10- ->has11
+?4-the->factor2147483647
+Contradiction1- ->vanishes7
+centre16-at->?3
+them15-inside->vanishes13
+another15-with->common13
+vanishes13- ->vanishes7
+?2- ->have10
+factor5- ->that3
+?3-the->point2147483647
+one15- ->another16
+tautology9- ->Contradiction1
+one15- ->have10
+unsubstantial12- ->?3
+tautology12- ->vanishes13
+common4- ->factor5
+common13-in->nothing11
+?2-all->propositions2147483647
+propositions7-of->?1
+------CorefChainz
+CHAIN17-["Tautology" in sentence 2, "tautology" in sentence 3, "tautology" in sentence 4]
+representative mention: "Tautology" in sentence 2
+CHAIN21-["Contradiction" in sentence 1, "Contradiction" in sentence 3, "Contradiction" in sentence 4]
+representative mention: "Contradiction" in sentence 1
+CHAIN14-["all propositions" in sentence 3, "them" in sentence 3]
+representative mention: "all propositions" in sentence 3

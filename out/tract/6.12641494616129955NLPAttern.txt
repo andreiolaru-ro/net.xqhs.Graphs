@@ -1,0 +1,205 @@
+ A proposition that has sense states something, which is shown by its proof to be so. In logic every proposition is the form of a proof. Every proposition of logic is a modus ponens represented in signs. (And one cannot express the modus ponens by means of a proposition.)
+------CorefChainz
+CHAIN11-["logic" in sentence 2, "logic" in sentence 3]
+representative mention: "logic" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, proposition-2)
+det(proposition-2, A-1)
+punct(proposition-2, .-18)
+compound(something-7, sense-5)
+compound(something-7, states-6)
+punct(something-7, ,-8)
+auxpass(shown-11, is-10)
+case(proof-14, by-12)
+mark(be-16, to-15)
+nsubj(has-4, proposition-2)
+ref(proposition-2, that-3)
+acl:relcl(proposition-2, has-4)
+dobj(has-4, something-7)
+nsubjpass(shown-11, something-7)
+ref(something-7, which-9)
+acl:relcl(something-7, shown-11)
+nmod:poss(proof-14, its-13)
+nmod:agent(shown-11, proof-14)
+acl:to(proof-14, be-16)
+advmod(be-16, so-17)
+---
+qqroot(ROOT-0, proposition-2)
+det(proposition-2, A-1)
+punct(proposition-2, .-18)
+compound(something-7, sense-5)
+compound(something-7, states-6)
+punct(something-7, ,-8)
+auxpass(shown-11, is-10)
+case(proof-14, by-12)
+mark(be-16, to-15)
+nsubj(has-4, proposition-2)
+ref(proposition-2, that-3)
+acl:relcl(proposition-2, has-4)
+dobj(has-4, something-7)
+nsubjpass(shown-11, something-7)
+ref(something-7, which-9)
+acl:relcl(something-7, shown-11)
+nmod:poss(proof-14, its-13)
+nmod:agent(shown-11, proof-14)
+acl:to(proof-14, be-16)
+advmod(be-16, so-17)
+root(ROOT-0, form-7)
+case(logic-2, In-1)
+det(proposition-4, every-3)
+cop(form-7, is-5)
+det(form-7, the-6)
+punct(form-7, .-11)
+case(proof-10, of-8)
+det(proof-10, a-9)
+nmod:in(form-7, logic-2)
+nsubj(form-7, proposition-4)
+nmod:of(form-7, proof-10)
+---
+qqroot(ROOT-0, proposition-2)
+det(proposition-2, A-1)
+punct(proposition-2, .-18)
+compound(something-7, sense-5)
+compound(something-7, states-6)
+punct(something-7, ,-8)
+auxpass(shown-11, is-10)
+case(proof-14, by-12)
+mark(be-16, to-15)
+nsubj(has-4, proposition-2)
+ref(proposition-2, that-3)
+acl:relcl(proposition-2, has-4)
+dobj(has-4, something-7)
+nsubjpass(shown-11, something-7)
+ref(something-7, which-9)
+acl:relcl(something-7, shown-11)
+nmod:poss(proof-14, its-13)
+nmod:agent(shown-11, proof-14)
+acl:to(proof-14, be-16)
+advmod(be-16, so-17)
+root(ROOT-0, form-7)
+case(logic-2, In-1)
+det(proposition-4, every-3)
+cop(form-7, is-5)
+det(form-7, the-6)
+punct(form-7, .-11)
+case(proof-10, of-8)
+det(proof-10, a-9)
+nmod:in(form-7, logic-2)
+nsubj(form-7, proposition-4)
+nmod:of(form-7, proof-10)
+root(ROOT-0, ponens-8)
+det(proposition-2, Every-1)
+case(logic-4, of-3)
+compound(ponens-8, modus-7)
+cop(ponens-8, is-5)
+det(ponens-8, a-6)
+punct(ponens-8, .-12)
+case(signs-11, in-10)
+nsubj(ponens-8, proposition-2)
+nmod:of(proposition-2, logic-4)
+acl(ponens-8, represented-9)
+nmod:in(represented-9, signs-11)
+---
+qqroot(ROOT-0, proposition-2)
+det(proposition-2, A-1)
+punct(proposition-2, .-18)
+compound(something-7, sense-5)
+compound(something-7, states-6)
+punct(something-7, ,-8)
+auxpass(shown-11, is-10)
+case(proof-14, by-12)
+mark(be-16, to-15)
+nsubj(has-4, proposition-2)
+ref(proposition-2, that-3)
+acl:relcl(proposition-2, has-4)
+dobj(has-4, something-7)
+nsubjpass(shown-11, something-7)
+ref(something-7, which-9)
+acl:relcl(something-7, shown-11)
+nmod:poss(proof-14, its-13)
+nmod:agent(shown-11, proof-14)
+acl:to(proof-14, be-16)
+advmod(be-16, so-17)
+root(ROOT-0, form-7)
+case(logic-2, In-1)
+det(proposition-4, every-3)
+cop(form-7, is-5)
+det(form-7, the-6)
+punct(form-7, .-11)
+case(proof-10, of-8)
+det(proof-10, a-9)
+nmod:in(form-7, logic-2)
+nsubj(form-7, proposition-4)
+nmod:of(form-7, proof-10)
+root(ROOT-0, ponens-8)
+det(proposition-2, Every-1)
+case(logic-4, of-3)
+compound(ponens-8, modus-7)
+cop(ponens-8, is-5)
+det(ponens-8, a-6)
+punct(ponens-8, .-12)
+case(signs-11, in-10)
+nsubj(ponens-8, proposition-2)
+nmod:of(proposition-2, logic-4)
+acl(ponens-8, represented-9)
+nmod:in(represented-9, signs-11)
+root(ROOT-0, express-6)
+mwe(by-10, means-11)
+mwe(by-10, of-12)
+aux(express-6, can-4)
+cc(express-6, And-2)
+punct(express-6, .-15)
+punct(express-6, -RRB--16)
+punct(express-6, -LRB--1)
+compound(ponens-9, modus-8)
+det(ponens-9, the-7)
+case(proposition-14, by-10)
+det(proposition-14, a-13)
+nsubj(express-6, one-3)
+neg(express-6, not-5)
+dobj(express-6, ponens-9)
+nmod:by_means_of(express-6, proposition-14)
+G[33, 30] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, be16, by means of10, express6, form2147483647, has4, its13, logic4, logic2, modus ponens2147483647, modus ponens2147483647, not5, one3, proof14, proof2147483647, proposition2147483647, proposition2147483647, proposition2147483647, proposition2147483647, represented9, shown11, signs11, so17, states sense something7, that3, which9]
+?5-  : is ->?3
+be16-to->proof14
+logic4-of->?5
+?5-Every->proposition2147483647
+?8-the->form2147483647
+?2- ->express6
+?3-a->modus ponens2147483647
+?6-by_means_of : by means of ->express6
+?4-  : is ->?8
+its13-poss->proof14
+proof14-agent : by  : by ->shown11
+which9- ->states sense something7
+?7-of->?8
+has4-relcl->?1
+not5- ->express6
+represented9- ->?3
+so17- ->be16
+states sense something7- ->shown11
+logic2-in : In ->?8
+?6-a->proposition2147483647
+states sense something7- ->has4
+that3- ->?1
+one3-  : And  : can  : can ->express6
+shown11-relcl : is  : is ->states sense something7
+?7-a->proof2147483647
+?2-the->modus ponens2147483647
+?4-every->proposition2147483647
+signs11-in->represented9
+?1- ->has4
+?1-A->proposition2147483647
+------CorefChainz
+CHAIN11-["logic" in sentence 2, "logic" in sentence 3]
+representative mention: "logic" in sentence 2

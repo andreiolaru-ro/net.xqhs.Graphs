@@ -1,0 +1,52 @@
+ These correlations are, as it were, the feelers of the picture's elements, with which the picture touches reality.
+------CorefChainz
+CHAIN1-["These correlations" in sentence 1, "it" in sentence 1]
+representative mention: "These correlations" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, are-3)
+det(correlations-2, These-1)
+punct(are-3, ,-4)
+mark(were-7, as-5)
+punct(were-7, ,-8)
+det(feelers-10, the-9)
+punct(feelers-10, .-23)
+case(picture-13, 's-14)
+det(picture-13, the-12)
+case(elements-15, of-11)
+punct(elements-15, ,-16)
+case(which-18, with-17)
+compound(reality-22, picture-20)
+compound(reality-22, touches-21)
+det(reality-22, the-19)
+nsubj(are-3, correlations-2)
+nsubj(were-7, it-6)
+dep(are-3, were-7)
+root(,-8, feelers-10)
+nmod:poss(elements-15, picture-13)
+nmod:of(feelers-10, elements-15)
+nmod:with(elements-15, which-18)
+dep(which-18, reality-22)
+G[14, 13] [,, ?#1, ?#2, ?#3, ?#4, are, correlations, elements, feelers, it, picture, touches picture reality, were, which]
+?#4- ->which
+?#1- ->,
+elements-of->?#1
+?#3-the->picture
+which-with->elements
+?#2-These->correlations
+it-  : as ->were
+it- ->?#2
+?#2- ->are
+?#3-poss : 's ->elements
+?#1-the->feelers
+were- ->are
+?#4-the->touches picture reality
+------CorefChainz
+CHAIN1-["These correlations" in sentence 1, "it" in sentence 1]
+representative mention: "These correlations" in sentence 1

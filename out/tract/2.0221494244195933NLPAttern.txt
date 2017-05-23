@@ -1,0 +1,64 @@
+ It is obvious that an imagined world, however difference it may be from the real one, must have something-- a form--in common with it.
+------CorefChainz
+CHAIN7-["It" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "It" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, obvious-3)
+cop(obvious-3, is-2)
+punct(obvious-3, .-30)
+det(world-7, an-5)
+aux(one-17, may-12)
+case(one-17, from-14)
+cop(one-17, be-13)
+det(one-17, the-15)
+aux(have-20, must-19)
+mark(have-20, that-4)
+punct(have-20, ,-18)
+punct(have-20, ---22)
+punct(have-20, ,-8)
+det(form-24, a-23)
+case(common-27, in-26)
+punct(common-27, ---25)
+case(it-29, with-28)
+nsubj(obvious-3, It-1)
+amod(world-7, imagined-6)
+nsubj(have-20, world-7)
+advmod(difference-10, however-9)
+nsubj(have-20, difference-10)
+nsubj(one-17, it-11)
+amod(one-17, real-16)
+acl:relcl(difference-10, one-17)
+ccomp(obvious-3, have-20)
+dobj(have-20, something-21)
+nmod:npmod(have-20, form-24)
+nmod:in(form-24, common-27)
+nmod:with(common-27, it-29)
+G[17, 18] [?#1, ?#2, ?#3, It, common, difference, form, have, however, imagined, it, it, obvious, one, real, something, world]
+have-  : that ->obvious
+?#1-the->one
+?#3-a->form
+?#2-an->world
+It-  : is ->obvious
+it-with->common
+however- ->difference
+?#1-relcl->difference
+real-  : from ->?#1
+?#3-npmod->have
+imagined- ->?#2
+common-in->?#3
+it- ->It
+it-  : may  : be ->?#1
+?#2- ->have
+something-  : must ->have
+it- ->It
+difference- ->have
+------CorefChainz
+CHAIN7-["It" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "It" in sentence 1

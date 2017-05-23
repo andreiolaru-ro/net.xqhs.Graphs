@@ -7,12 +7,14 @@ import net.xqhs.graphs.context.Instant.Offset;
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.nlp.NLGraphType;
 import net.xqhs.graphs.pattern.EdgeP;
 import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
 
 public class ContextPattern extends GraphPattern {
 	Offset persistence;
+	public NLGraphType t = NLGraphType.PATTERN;
 
 	public ContextPattern() {
 		super();

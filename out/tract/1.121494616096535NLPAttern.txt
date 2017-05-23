@@ -1,0 +1,42 @@
+ For the totality of facts determines what is the case, and also whatever is not the case.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, determines-6)
+case(totality-3, For-1)
+det(totality-3, the-2)
+case(facts-5, of-4)
+cc(determines-6, and-12)
+punct(determines-6, .-19)
+punct(determines-6, ,-11)
+cop(case-10, is-8)
+det(case-10, the-9)
+cop(case-18, is-15)
+det(case-18, the-17)
+nmod:for(determines-6, totality-3)
+nmod:of(totality-3, facts-5)
+nsubj(case-10, what-7)
+ccomp(determines-6, case-10)
+advmod(case-18, also-13)
+nsubj(case-18, whatever-14)
+neg(case-18, not-16)
+conj:and(determines-6, case-18)
+G[12, 11] [?1, ?2, ?3, also13, case2147483647, case2147483647, determines6, facts5, not16, totality2147483647, what7, whatever14]
+not16- ->?2
+what7-  : is ->?1
+?1-the->case2147483647
+?3-the->totality2147483647
+?2-the->case2147483647
+?2-and->determines6
+whatever14-  : is  : is ->?2
+?3-for->determines6
+also13- ->?2
+?1- ->determines6
+facts5-of : For ->?3
+------CorefChainz

@@ -1,0 +1,48 @@
+ A proposition cannot be dissected any further by means of a definition: it is a primitive sign.
+------CorefChainz
+CHAIN3-["A proposition" in sentence 1, "it" in sentence 1]
+representative mention: "A proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, dissected-6)
+mwe(by-9, means-10)
+mwe(by-9, of-11)
+det(proposition-2, A-1)
+aux(dissected-6, can-3)
+auxpass(dissected-6, be-5)
+punct(dissected-6, .-20)
+punct(dissected-6, :-14)
+case(definition-13, by-9)
+det(definition-13, any-7)
+det(definition-13, a-12)
+cop(sign-19, is-16)
+det(sign-19, a-17)
+nsubjpass(dissected-6, proposition-2)
+neg(dissected-6, not-4)
+advmod(definition-13, further-8)
+dobj(dissected-6, definition-13)
+nsubj(sign-19, it-15)
+amod(sign-19, primitive-18)
+parataxis(dissected-6, sign-19)
+G[13, 12] [?1, ?2, ?3, ?4, by means of9, definition2147483647, dissected6, further8, it15, not4, primitive18, proposition2147483647, sign2147483647]
+?1-a->sign2147483647
+it15- ->?2
+?2-A->proposition2147483647
+?1- ->dissected6
+it15-  : is ->?1
+further8-  : by means of ->?3
+not4-  : be ->dissected6
+primitive18- ->?1
+?2-  : can  : can ->dissected6
+?4-a->definition2147483647
+?3- ->dissected6
+?3-any->?4
+------CorefChainz
+CHAIN3-["A proposition" in sentence 1, "it" in sentence 1]
+representative mention: "A proposition" in sentence 1

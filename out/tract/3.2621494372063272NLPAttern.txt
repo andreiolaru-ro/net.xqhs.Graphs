@@ -1,0 +1,59 @@
+ What signs fail to express, their application shows. What signs slur over, their application says clearly.
+------CorefChainz
+CHAIN3-["their" in sentence 1, "their" in sentence 2]
+representative mention: "their" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, shows-9)
+det(signs-2, What-1)
+mark(express-5, to-4)
+compound(shows-9, application-8)
+punct(shows-9, ,-6)
+punct(shows-9, .-10)
+nsubj(fail-3, signs-2)
+nsubj:xsubj(express-5, signs-2)
+ccomp(shows-9, fail-3)
+xcomp(fail-3, express-5)
+nmod:poss(shows-9, their-7)
+---
+qqroot(ROOT-0, shows-9)
+det(signs-2, What-1)
+mark(express-5, to-4)
+compound(shows-9, application-8)
+punct(shows-9, ,-6)
+punct(shows-9, .-10)
+nsubj(fail-3, signs-2)
+nsubj:xsubj(express-5, signs-2)
+ccomp(shows-9, fail-3)
+xcomp(fail-3, express-5)
+nmod:poss(shows-9, their-7)
+root(ROOT-0, slur-3)
+det(signs-2, What-1)
+punct(slur-3, .-10)
+punct(says-8, ,-5)
+nsubj(slur-3, signs-2)
+compound:prt(slur-3, over-4)
+nmod:poss(application-7, their-6)
+nsubj(says-8, application-7)
+ccomp(slur-3, says-8)
+advmod(says-8, clearly-9)
+G[10, 9] [?1, ?2, application7, application shows9, express5, fail3, says8, signs2147483647, signs2147483647, slur3]
+?2-What->signs2147483647
+?1- ->fail3
+?2- ->slur3
+express5-  : to ->fail3
+fail3- ->application shows9
+says8- ->slur3
+?1-What->signs2147483647
+application7- ->says8
+?1-xsubj->express5
+------CorefChainz
+CHAIN3-["their" in sentence 1, "their" in sentence 2]
+representative mention: "their" in sentence 1

@@ -1,0 +1,35 @@
+ There must be objects, if the world is to have unalterable form.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, objects-4)
+aux(objects-4, must-2)
+cop(objects-4, be-3)
+punct(objects-4, ,-5)
+punct(objects-4, .-14)
+det(world-8, the-7)
+mark(is-9, if-6)
+mark(have-11, to-10)
+expl(objects-4, There-1)
+nsubj(is-9, world-8)
+nsubj:xsubj(have-11, world-8)
+advcl:if(objects-4, is-9)
+xcomp(is-9, have-11)
+amod(form-13, unalterable-12)
+dobj(have-11, form-13)
+G[8, 8] [?#1, There, form, have, is, objects, unalterable, world]
+have-  : to ->is
+There-  : must  : be ->objects
+?#1- ->is
+unalterable- ->form
+is-if->objects
+?#1-the->world
+form- ->have
+?#1-xsubj->have
+------CorefChainz

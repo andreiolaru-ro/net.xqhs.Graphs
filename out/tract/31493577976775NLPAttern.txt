@@ -1,0 +1,54 @@
+ A logical picture of facts is a thought.
+------CorefChainz
+A-DT 
+logical-JJ 
+picture-NN 
+of-IN 
+facts-NNS 
+is-VBZ 
+a-DT 
+thought-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> A
+	 	-> JJ 	-> logical
+	 	-> NN 	-> picture
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NNS 	-> facts
+				 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> thought
+			 	-> . 	-> .
+			
+Dependensee repr
+det(picture-3, A-1)
+amod(picture-3, logical-2)
+nsubj(thought-8, picture-3)
+case(facts-5, of-4)
+nmod:of(picture-3, facts-5)
+cop(thought-8, is-6)
+det(thought-8, a-7)
+root(ROOT-0, thought-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, thought-8)
+det(picture-3, A-1)
+case(facts-5, of-4)
+cop(thought-8, is-6)
+det(thought-8, a-7)
+punct(thought-8, .-9)
+amod(picture-3, logical-2)
+nsubj(thought-8, picture-3)
+nmod:of(picture-3, facts-5)
+G[6, 5] [?#1, ?#2, facts, logical, picture, thought]
+facts-of->?#1
+?#2-a->thought
+?#1-  : is  ->?#2
+?#1-A->picture
+logical- ->?#1
+------CorefChainz

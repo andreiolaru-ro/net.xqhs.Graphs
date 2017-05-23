@@ -1,0 +1,57 @@
+ A proposition is a truth-function of elementary propositions. (An elementary proposition is a truth-function of itself.)
+------CorefChainz
+CHAIN5-["A proposition" in sentence 1, "An elementary proposition" in sentence 2, "itself" in sentence 2]
+representative mention: "An elementary proposition" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, truth-function-5)
+det(proposition-2, A-1)
+cop(truth-function-5, is-3)
+det(truth-function-5, a-4)
+punct(truth-function-5, .-9)
+case(propositions-8, of-6)
+nsubj(truth-function-5, proposition-2)
+amod(propositions-8, elementary-7)
+nmod:of(truth-function-5, propositions-8)
+---
+qqroot(ROOT-0, truth-function-5)
+det(proposition-2, A-1)
+cop(truth-function-5, is-3)
+det(truth-function-5, a-4)
+punct(truth-function-5, .-9)
+case(propositions-8, of-6)
+nsubj(truth-function-5, proposition-2)
+amod(propositions-8, elementary-7)
+nmod:of(truth-function-5, propositions-8)
+root(ROOT-0, truth-function-7)
+det(proposition-4, An-2)
+cop(truth-function-7, is-5)
+det(truth-function-7, a-6)
+punct(truth-function-7, .-10)
+punct(truth-function-7, -RRB--11)
+punct(truth-function-7, -LRB--1)
+case(itself-9, of-8)
+amod(proposition-4, elementary-3)
+nsubj(truth-function-7, proposition-4)
+nmod:of(truth-function-7, itself-9)
+G[10, 10] [?1, ?2, ?3, ?4, itself9, proposition2147483647, proposition2147483647, propositions8, truth-function2147483647, truth-function2147483647]
+?3-  : is ->?2
+?2-a->truth-function2147483647
+?3-A->proposition2147483647
+?4-  : is ->?1
+propositions8-of->?2
+?3- ->?4
+?1-a->truth-function2147483647
+itself9-of->?1
+itself9- ->?4
+?4-An->proposition2147483647
+------CorefChainz
+CHAIN5-["A proposition" in sentence 1, "An elementary proposition" in sentence 2, "itself" in sentence 2]
+representative mention: "An elementary proposition" in sentence 2

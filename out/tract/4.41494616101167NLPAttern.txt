@@ -1,0 +1,40 @@
+ A proposition is an expression of agreement and disagreement with truth- possibilities of elementary propositions.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, expression-5)
+det(proposition-2, A-1)
+cop(expression-5, is-3)
+det(expression-5, an-4)
+punct(expression-5, .-17)
+punct(expression-5, --12)
+case(agreement-7, of-6)
+cc(agreement-7, and-8)
+case(truth-11, with-10)
+case(propositions-16, of-14)
+nsubj(expression-5, proposition-2)
+nmod:of(expression-5, agreement-7)
+nmod:of(expression-5, disagreement-9)
+conj:and(agreement-7, disagreement-9)
+nmod:with(agreement-7, truth-11)
+dep(expression-5, possibilities-13)
+amod(propositions-16, elementary-15)
+nmod:of(possibilities-13, propositions-16)
+G[10, 10] [?1, ?2, agreement7, disagreement9, elementary15, expression2147483647, possibilities13, proposition2147483647, propositions16, truth11]
+?1-an->expression2147483647
+?2-A->proposition2147483647
+disagreement9-of->?1
+elementary15- ->propositions16
+disagreement9-and->agreement7
+possibilities13- ->?1
+propositions16-of->possibilities13
+?2-  : is ->?1
+truth11-with->agreement7
+agreement7-of->?1
+------CorefChainz

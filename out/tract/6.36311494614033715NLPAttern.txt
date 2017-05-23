@@ -1,0 +1,93 @@
+ This procedure, however, has no logical justification but only a psychological one. It is clear that there are no grounds for believing that the simplest eventuality will in fact be realized.
+------CorefChainz
+CHAIN8-["This procedure" in sentence 1, "It" in sentence 2]
+representative mention: "This procedure" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, has-6)
+det(procedure-2, This-1)
+punct(has-6, ,-3)
+punct(has-6, ,-5)
+punct(has-6, .-15)
+cc(justification-9, but-10)
+det(one-14, a-12)
+nsubj(has-6, procedure-2)
+advmod(has-6, however-4)
+neg(justification-9, no-7)
+amod(justification-9, logical-8)
+dobj(has-6, justification-9)
+advmod(one-14, only-11)
+amod(one-14, psychological-13)
+dobj(has-6, one-14)
+conj:but(justification-9, one-14)
+---
+qqroot(ROOT-0, has-6)
+det(procedure-2, This-1)
+punct(has-6, ,-3)
+punct(has-6, ,-5)
+punct(has-6, .-15)
+cc(justification-9, but-10)
+det(one-14, a-12)
+nsubj(has-6, procedure-2)
+advmod(has-6, however-4)
+neg(justification-9, no-7)
+amod(justification-9, logical-8)
+dobj(has-6, justification-9)
+advmod(one-14, only-11)
+amod(one-14, psychological-13)
+dobj(has-6, one-14)
+conj:but(justification-9, one-14)
+root(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-20)
+mark(are-6, that-4)
+mark(believing-10, for-9)
+det(eventuality-14, the-12)
+case(fact-17, in-16)
+aux(realized-19, will-15)
+auxpass(realized-19, be-18)
+mark(realized-19, that-11)
+nsubj(clear-3, It-1)
+expl(are-6, there-5)
+ccomp(clear-3, are-6)
+neg(grounds-8, no-7)
+nsubj(are-6, grounds-8)
+acl:for(grounds-8, believing-10)
+amod(eventuality-14, simplest-13)
+nsubjpass(realized-19, eventuality-14)
+nmod:in(realized-19, fact-17)
+ccomp(believing-10, realized-19)
+G[23, 23] [?1, ?2, ?3, It1, are6, believing10, clear3, eventuality2147483647, fact17, grounds8, has6, however4, justification9, logical8, no7, no7, one2147483647, only11, procedure2147483647, psychological13, realized19, simplest13, there5]
+no7- ->grounds8
+?1- ->has6
+however4- ->has6
+realized19-  : that ->believing10
+psychological13- ->?3
+no7- ->justification9
+It1- ->?1
+grounds8- ->are6
+?1-This->procedure2147483647
+?3-but->justification9
+?2-the->eventuality2147483647
+logical8- ->justification9
+are6-  : that  : that ->clear3
+justification9- ->has6
+believing10-for->grounds8
+fact17-in : be ->realized19
+simplest13- ->?2
+It1-  : is ->clear3
+there5- ->are6
+?3-a->one2147483647
+?2-  : will ->realized19
+?3- ->has6
+only11- ->?3
+------CorefChainz
+CHAIN8-["This procedure" in sentence 1, "It" in sentence 2]
+representative mention: "This procedure" in sentence 1

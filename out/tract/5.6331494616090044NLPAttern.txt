@@ -1,0 +1,208 @@
+ Where in the world is a metaphysical subject to be found? You will say that this is exactly like the case of the eye and the visual field. But really you do not see the eye. And nothing in the visual field allows you to infer that it is seen by an eye.
+------CorefChainz
+CHAIN7-["the eye" in sentence 2, "the eye" in sentence 3]
+representative mention: "the eye" in sentence 2
+CHAIN9-["the visual field" in sentence 2, "the visual field" in sentence 4, "it" in sentence 4]
+representative mention: "the visual field" in sentence 2
+CHAIN13-["You" in sentence 2, "you" in sentence 3, "you" in sentence 4]
+representative mention: "You" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, subject-8)
+case(world-4, in-2)
+det(world-4, the-3)
+cop(subject-8, is-5)
+det(subject-8, a-6)
+punct(subject-8, ?-12)
+auxpass(found-11, be-10)
+mark(found-11, to-9)
+advmod(subject-8, Where-1)
+nmod:in(Where-1, world-4)
+amod(subject-8, metaphysical-7)
+acl:to(subject-8, found-11)
+---
+qqroot(ROOT-0, subject-8)
+case(world-4, in-2)
+det(world-4, the-3)
+cop(subject-8, is-5)
+det(subject-8, a-6)
+punct(subject-8, ?-12)
+auxpass(found-11, be-10)
+mark(found-11, to-9)
+advmod(subject-8, Where-1)
+nmod:in(Where-1, world-4)
+amod(subject-8, metaphysical-7)
+acl:to(subject-8, found-11)
+root(ROOT-0, say-3)
+aux(say-3, will-2)
+punct(say-3, .-18)
+case(case-10, like-8)
+cop(case-10, is-6)
+det(case-10, the-9)
+mark(case-10, that-4)
+case(eye-13, of-11)
+cc(eye-13, and-14)
+det(eye-13, the-12)
+det(field-17, the-15)
+nsubj(say-3, You-1)
+nsubj(case-10, this-5)
+advmod(case-10, exactly-7)
+ccomp(say-3, case-10)
+nmod:of(case-10, eye-13)
+amod(field-17, visual-16)
+nmod:of(case-10, field-17)
+conj:and(eye-13, field-17)
+---
+qqroot(ROOT-0, subject-8)
+case(world-4, in-2)
+det(world-4, the-3)
+cop(subject-8, is-5)
+det(subject-8, a-6)
+punct(subject-8, ?-12)
+auxpass(found-11, be-10)
+mark(found-11, to-9)
+advmod(subject-8, Where-1)
+nmod:in(Where-1, world-4)
+amod(subject-8, metaphysical-7)
+acl:to(subject-8, found-11)
+root(ROOT-0, say-3)
+aux(say-3, will-2)
+punct(say-3, .-18)
+case(case-10, like-8)
+cop(case-10, is-6)
+det(case-10, the-9)
+mark(case-10, that-4)
+case(eye-13, of-11)
+cc(eye-13, and-14)
+det(eye-13, the-12)
+det(field-17, the-15)
+nsubj(say-3, You-1)
+nsubj(case-10, this-5)
+advmod(case-10, exactly-7)
+ccomp(say-3, case-10)
+nmod:of(case-10, eye-13)
+amod(field-17, visual-16)
+nmod:of(case-10, field-17)
+conj:and(eye-13, field-17)
+root(ROOT-0, see-6)
+aux(see-6, do-4)
+cc(see-6, But-1)
+punct(see-6, .-9)
+det(eye-8, the-7)
+advmod(see-6, really-2)
+nsubj(see-6, you-3)
+neg(see-6, not-5)
+dobj(see-6, eye-8)
+---
+qqroot(ROOT-0, subject-8)
+case(world-4, in-2)
+det(world-4, the-3)
+cop(subject-8, is-5)
+det(subject-8, a-6)
+punct(subject-8, ?-12)
+auxpass(found-11, be-10)
+mark(found-11, to-9)
+advmod(subject-8, Where-1)
+nmod:in(Where-1, world-4)
+amod(subject-8, metaphysical-7)
+acl:to(subject-8, found-11)
+root(ROOT-0, say-3)
+aux(say-3, will-2)
+punct(say-3, .-18)
+case(case-10, like-8)
+cop(case-10, is-6)
+det(case-10, the-9)
+mark(case-10, that-4)
+case(eye-13, of-11)
+cc(eye-13, and-14)
+det(eye-13, the-12)
+det(field-17, the-15)
+nsubj(say-3, You-1)
+nsubj(case-10, this-5)
+advmod(case-10, exactly-7)
+ccomp(say-3, case-10)
+nmod:of(case-10, eye-13)
+amod(field-17, visual-16)
+nmod:of(case-10, field-17)
+conj:and(eye-13, field-17)
+root(ROOT-0, see-6)
+aux(see-6, do-4)
+cc(see-6, But-1)
+punct(see-6, .-9)
+det(eye-8, the-7)
+advmod(see-6, really-2)
+nsubj(see-6, you-3)
+neg(see-6, not-5)
+dobj(see-6, eye-8)
+root(ROOT-0, allows-7)
+case(field-6, in-3)
+det(field-6, the-4)
+cc(allows-7, And-1)
+punct(allows-7, .-18)
+mark(infer-10, to-9)
+auxpass(seen-14, is-13)
+mark(seen-14, that-11)
+case(eye-17, by-15)
+det(eye-17, an-16)
+nsubj(allows-7, nothing-2)
+amod(field-6, visual-5)
+nmod:in(nothing-2, field-6)
+dobj(allows-7, you-8)
+nsubj:xsubj(infer-10, you-8)
+xcomp(allows-7, infer-10)
+nsubjpass(seen-14, it-12)
+ccomp(infer-10, seen-14)
+nmod:agent(seen-14, eye-17)
+G[35, 36] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, Where1, You1, allows7, case2147483647, exactly7, eye2147483647, eye2147483647, eye2147483647, field2147483647, field2147483647, found11, infer10, it12, metaphysical7, not5, nothing2, really2, say3, see6, seen14, subject2147483647, this5, visual5, visual16, world2147483647, you8, you3]
+?2-the->field2147483647
+say3-  : will  : will ->You1
+?3-in->Where1
+?4- ->You1
+found11-to : be ->?5
+infer10- ->allows7
+?7-in->nothing2
+you3-  : do  : do ->see6
+nothing2-  : And ->allows7
+Where1- ->?5
+You1- ->say3
+seen14-  : that  : that ->infer10
+?7-the->field2147483647
+exactly7-  : like ->?6
+?4-the->eye2147483647
+really2-  : But ->see6
+?6-  : that  : that ->say3
+visual16- ->?2
+this5-  : is  : is ->?6
+metaphysical7-  : is ->?5
+you8-xsubj : to ->infer10
+?1-an->eye2147483647
+?1-agent : by ->seen14
+not5- ->see6
+?6-the->case2147483647
+it12-  : is ->seen14
+?3-the->world2147483647
+?4- ->see6
+it12- ->?1
+visual5- ->?7
+?2-and->?8
+you8- ->allows7
+?5-a->subject2147483647
+?8-of->?6
+?2-of->?6
+?8-the->eye2147483647
+------CorefChainz
+CHAIN7-["the eye" in sentence 2, "the eye" in sentence 3]
+representative mention: "the eye" in sentence 2
+CHAIN9-["the visual field" in sentence 2, "the visual field" in sentence 4, "it" in sentence 4]
+representative mention: "the visual field" in sentence 2
+CHAIN13-["You" in sentence 2, "you" in sentence 3, "you" in sentence 4]
+representative mention: "You" in sentence 2

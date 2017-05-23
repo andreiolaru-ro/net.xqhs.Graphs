@@ -1,0 +1,45 @@
+ Truth-functions can be arranged in series. That is the foundation of the theory of probability.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, arranged-4)
+aux(arranged-4, can-2)
+auxpass(arranged-4, be-3)
+punct(arranged-4, .-7)
+case(series-6, in-5)
+nsubjpass(arranged-4, Truth-functions-1)
+nmod:in(arranged-4, series-6)
+---
+qqroot(ROOT-0, arranged-4)
+aux(arranged-4, can-2)
+auxpass(arranged-4, be-3)
+punct(arranged-4, .-7)
+case(series-6, in-5)
+nsubjpass(arranged-4, Truth-functions-1)
+nmod:in(arranged-4, series-6)
+root(ROOT-0, foundation-4)
+cop(foundation-4, is-2)
+det(foundation-4, the-3)
+punct(foundation-4, .-10)
+case(theory-7, of-5)
+det(theory-7, the-6)
+case(probability-9, of-8)
+nsubj(foundation-4, That-1)
+nmod:of(foundation-4, theory-7)
+nmod:of(theory-7, probability-9)
+G[9, 7] [?1, ?2, That1, Truth-functions1, arranged4, foundation2147483647, probability9, series6, theory2147483647]
+series6-in->arranged4
+That1-  : is ->?2
+?1-the->theory2147483647
+?1-of->?2
+probability9-of->?1
+Truth-functions1-  : can  : be ->arranged4
+?2-the->foundation2147483647
+------CorefChainz

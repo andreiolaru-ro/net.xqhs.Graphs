@@ -1,0 +1,28 @@
+ The world is all that is the case.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, all-4)
+det(world-2, The-1)
+cop(all-4, is-3)
+punct(all-4, .-9)
+cop(case-8, is-6)
+det(case-8, the-7)
+nsubj(all-4, world-2)
+nsubj(case-8, all-4)
+ref(all-4, that-5)
+acl:relcl(all-4, case-8)
+G[6, 6] [?#1, ?#2, all, case, that, world]
+?#2-the->case
+that- ->all
+?#1-The->world
+?#1-  : is ->all
+all- ->?#2
+?#2-relcl : is  : is ->all
+------CorefChainz

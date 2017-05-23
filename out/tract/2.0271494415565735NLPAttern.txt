@@ -1,0 +1,39 @@
+ Objects, the unalterable, and the subsistent are one and the same.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, one-10)
+cc(Objects-1, and-6)
+punct(Objects-1, ,-2)
+punct(Objects-1, ,-5)
+det(unalterable-4, the-3)
+det(subsistent-8, the-7)
+cc(one-10, and-11)
+cop(one-10, are-9)
+punct(one-10, .-14)
+det(same-13, the-12)
+nsubj(one-10, Objects-1)
+nsubj(same-13, Objects-1)
+conj:and(Objects-1, unalterable-4)
+nsubj(one-10, unalterable-4)
+conj:and(Objects-1, subsistent-8)
+nsubj(one-10, subsistent-8)
+conj:and(one-10, same-13)
+G[8, 10] [?1, ?2, ?3, Objects1, one10, same2147483647, subsistent2147483647, unalterable2147483647]
+?2-and->Objects1
+?3-the->unalterable2147483647
+?1-the->same2147483647
+?3- ->one10
+Objects1- ->?1
+?3-and->Objects1
+?1-and->one10
+?2-  : are ->one10
+Objects1- ->one10
+?2-the->subsistent2147483647
+------CorefChainz

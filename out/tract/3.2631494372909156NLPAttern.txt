@@ -1,0 +1,77 @@
+ The meanings of primitive signs can be explained by means of elucidations. Elucidations are propositions that stood if the meanings of those signs are already known.
+------CorefChainz
+CHAIN5-["The meanings of primitive signs" in sentence 1, "the meanings of those signs" in sentence 2]
+representative mention: "The meanings of primitive signs" in sentence 1
+CHAIN6-["primitive signs" in sentence 1, "those signs" in sentence 2]
+representative mention: "primitive signs" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, explained-8)
+mwe(by-9, means-10)
+mwe(by-9, of-11)
+det(meanings-2, The-1)
+case(signs-5, of-3)
+aux(explained-8, can-6)
+auxpass(explained-8, be-7)
+punct(explained-8, .-13)
+case(elucidations-12, by-9)
+nsubjpass(explained-8, meanings-2)
+amod(signs-5, primitive-4)
+nmod:of(meanings-2, signs-5)
+nmod:agent(explained-8, elucidations-12)
+---
+qqroot(ROOT-0, explained-8)
+mwe(by-9, means-10)
+mwe(by-9, of-11)
+det(meanings-2, The-1)
+case(signs-5, of-3)
+aux(explained-8, can-6)
+auxpass(explained-8, be-7)
+punct(explained-8, .-13)
+case(elucidations-12, by-9)
+nsubjpass(explained-8, meanings-2)
+amod(signs-5, primitive-4)
+nmod:of(meanings-2, signs-5)
+nmod:agent(explained-8, elucidations-12)
+root(ROOT-0, propositions-3)
+cop(propositions-3, are-2)
+punct(propositions-3, .-15)
+det(meanings-8, the-7)
+case(signs-11, of-9)
+det(signs-11, those-10)
+auxpass(known-14, are-12)
+mark(known-14, if-6)
+nsubj(propositions-3, Elucidations-1)
+nsubj(stood-5, propositions-3)
+ref(propositions-3, that-4)
+acl:relcl(propositions-3, stood-5)
+nsubjpass(known-14, meanings-8)
+nmod:of(meanings-8, signs-11)
+advmod(known-14, already-13)
+advcl:if(stood-5, known-14)
+G[13, 13] [?1, ?2, ?3, by means of9, elucidations12, explained8, known14, meanings2147483647, meanings2147483647, propositions3, signs5, signs2147483647, stood5]
+?1-the->meanings2147483647
+?3-  : can  : be  : be ->explained8
+?1-  : are ->known14
+signs5-of->?3
+stood5-relcl : are  : are ->propositions3
+?2-those->signs2147483647
+?1- ->?3
+elucidations12-agent : by means of ->explained8
+propositions3- ->stood5
+?3-The->meanings2147483647
+known14-if->stood5
+?2- ->signs5
+?2-of->?1
+------CorefChainz
+CHAIN5-["The meanings of primitive signs" in sentence 1, "the meanings of those signs" in sentence 2]
+representative mention: "The meanings of primitive signs" in sentence 1
+CHAIN6-["primitive signs" in sentence 1, "those signs" in sentence 2]
+representative mention: "primitive signs" in sentence 1

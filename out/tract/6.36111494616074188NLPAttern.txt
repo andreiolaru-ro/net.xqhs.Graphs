@@ -1,0 +1,489 @@
+ We cannot compare a process with 'the passage of time'--there is no such thing--but only with another process (such as the working of a chronometer). Hence we can describe the lapse of time only by relying on some other process. Something exactly analogous applies to space: e.g. when people say that neither of two events (which exclude one another) can occur, because there is nothing to cause the one to occur rather than the other, it is really a matter of our being unable to describe one of the two events unless there is some sort of asymmetry to be found. And if such an asymmetry is to be found, we can regard it as the cause of the occurrence of the one and the non-occurrence of the other.
+------CorefChainz
+CHAIN33-["We" in sentence 1, "we" in sentence 2, "we" in sentence 4]
+representative mention: "We" in sentence 1
+CHAIN34-["such an asymmetry" in sentence 4, "it" in sentence 4]
+representative mention: "such an asymmetry" in sentence 4
+CHAIN28-["two events" in sentence 3, "the two events" in sentence 3]
+representative mention: "the two events" in sentence 3
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, compare-4)
+aux(compare-4, can-2)
+punct(compare-4, .-35)
+punct(compare-4, ---14)
+det(process-6, a-5)
+case(passage-10, with-7)
+det(passage-10, the-9)
+punct(passage-10, `-8)
+punct(passage-10, '-13)
+case(time-12, of-11)
+cc(is-16, but-21)
+punct(is-16, ---20)
+case(process-25, with-23)
+det(process-25, another-24)
+mwe(such-27, as-28)
+case(working-30, such-27)
+det(working-30, the-29)
+punct(working-30, -RRB--34)
+punct(working-30, -LRB--26)
+case(chronometer-33, of-31)
+det(chronometer-33, a-32)
+nsubj(compare-4, We-1)
+neg(compare-4, not-3)
+dobj(compare-4, process-6)
+nmod:with(process-6, passage-10)
+nmod:of(passage-10, time-12)
+expl(is-16, there-15)
+parataxis(compare-4, is-16)
+neg(thing-19, no-17)
+amod(thing-19, such-18)
+nsubj(is-16, thing-19)
+advmod(process-25, only-22)
+parataxis(compare-4, process-25)
+conj:but(is-16, process-25)
+nmod:such_as(process-25, working-30)
+nmod:of(working-30, chronometer-33)
+---
+qqroot(ROOT-0, compare-4)
+aux(compare-4, can-2)
+punct(compare-4, .-35)
+punct(compare-4, ---14)
+det(process-6, a-5)
+case(passage-10, with-7)
+det(passage-10, the-9)
+punct(passage-10, `-8)
+punct(passage-10, '-13)
+case(time-12, of-11)
+cc(is-16, but-21)
+punct(is-16, ---20)
+case(process-25, with-23)
+det(process-25, another-24)
+mwe(such-27, as-28)
+case(working-30, such-27)
+det(working-30, the-29)
+punct(working-30, -RRB--34)
+punct(working-30, -LRB--26)
+case(chronometer-33, of-31)
+det(chronometer-33, a-32)
+nsubj(compare-4, We-1)
+neg(compare-4, not-3)
+dobj(compare-4, process-6)
+nmod:with(process-6, passage-10)
+nmod:of(passage-10, time-12)
+expl(is-16, there-15)
+parataxis(compare-4, is-16)
+neg(thing-19, no-17)
+amod(thing-19, such-18)
+nsubj(is-16, thing-19)
+advmod(process-25, only-22)
+parataxis(compare-4, process-25)
+conj:but(is-16, process-25)
+nmod:such_as(process-25, working-30)
+nmod:of(working-30, chronometer-33)
+root(ROOT-0, describe-4)
+aux(describe-4, can-3)
+punct(describe-4, .-16)
+det(lapse-6, the-5)
+case(time-8, of-7)
+mark(relying-11, by-10)
+case(process-15, on-12)
+det(process-15, some-13)
+advmod(describe-4, Hence-1)
+nsubj(describe-4, we-2)
+dobj(describe-4, lapse-6)
+nmod:of(lapse-6, time-8)
+advmod(relying-11, only-9)
+advcl:by(describe-4, relying-11)
+amod(process-15, other-14)
+nmod:on(relying-11, process-15)
+---
+qqroot(ROOT-0, compare-4)
+aux(compare-4, can-2)
+punct(compare-4, .-35)
+punct(compare-4, ---14)
+det(process-6, a-5)
+case(passage-10, with-7)
+det(passage-10, the-9)
+punct(passage-10, `-8)
+punct(passage-10, '-13)
+case(time-12, of-11)
+cc(is-16, but-21)
+punct(is-16, ---20)
+case(process-25, with-23)
+det(process-25, another-24)
+mwe(such-27, as-28)
+case(working-30, such-27)
+det(working-30, the-29)
+punct(working-30, -RRB--34)
+punct(working-30, -LRB--26)
+case(chronometer-33, of-31)
+det(chronometer-33, a-32)
+nsubj(compare-4, We-1)
+neg(compare-4, not-3)
+dobj(compare-4, process-6)
+nmod:with(process-6, passage-10)
+nmod:of(passage-10, time-12)
+expl(is-16, there-15)
+parataxis(compare-4, is-16)
+neg(thing-19, no-17)
+amod(thing-19, such-18)
+nsubj(is-16, thing-19)
+advmod(process-25, only-22)
+parataxis(compare-4, process-25)
+conj:but(is-16, process-25)
+nmod:such_as(process-25, working-30)
+nmod:of(working-30, chronometer-33)
+root(ROOT-0, describe-4)
+aux(describe-4, can-3)
+punct(describe-4, .-16)
+det(lapse-6, the-5)
+case(time-8, of-7)
+mark(relying-11, by-10)
+case(process-15, on-12)
+det(process-15, some-13)
+advmod(describe-4, Hence-1)
+nsubj(describe-4, we-2)
+dobj(describe-4, lapse-6)
+nmod:of(lapse-6, time-8)
+advmod(relying-11, only-9)
+advcl:by(describe-4, relying-11)
+amod(process-15, other-14)
+nmod:on(relying-11, process-15)
+root(ROOT-0, applies-4)
+punct(applies-4, :-7)
+punct(applies-4, .-67)
+case(space-6, to-5)
+case(events-16, of-14)
+punct(exclude-19, -RRB--22)
+punct(exclude-19, -LRB--17)
+aux(occur-24, can-23)
+mark(occur-24, that-12)
+mark(is-28, because-26)
+mark(cause-31, to-30)
+det(one-33, the-32)
+mark(occur-35, to-34)
+mwe(rather-36, than-37)
+case(other-39, rather-36)
+det(other-39, the-38)
+cop(matter-45, is-42)
+det(matter-45, a-44)
+punct(matter-45, ,-40)
+punct(matter-45, ,-25)
+cop(unable-49, being-48)
+mark(unable-49, of-46)
+mark(describe-51, to-50)
+mwe(one-52, of-53)
+det(events-56, the-54)
+mark(is-59, unless-57)
+det(sort-61, some-60)
+case(asymmetry-63, of-62)
+auxpass(found-66, be-65)
+mark(found-66, to-64)
+nsubj(applies-4, Something-1)
+advmod(analogous-3, exactly-2)
+amod(applies-4, analogous-3)
+nmod:to(applies-4, space-6)
+advmod(matter-45, e.g.-8)
+advmod(say-11, when-9)
+nsubj(say-11, people-10)
+advcl(e.g.-8, say-11)
+nsubj(occur-24, neither-13)
+nummod(events-16, two-15)
+nmod:of(neither-13, events-16)
+nsubj(exclude-19, which-18)
+dep(events-16, exclude-19)
+dobj(exclude-19, one-20)
+dep(one-20, another-21)
+ccomp(say-11, occur-24)
+expl(is-28, there-27)
+advcl:because(matter-45, is-28)
+nsubj(is-28, nothing-29)
+acl:to(nothing-29, cause-31)
+dobj(cause-31, one-33)
+nsubj:xsubj(occur-35, one-33)
+xcomp(cause-31, occur-35)
+nmod:rather_than(occur-35, other-39)
+nsubj(matter-45, it-41)
+advmod(matter-45, really-43)
+parataxis(applies-4, matter-45)
+nsubj(unable-49, our-47)
+nsubj:xsubj(describe-51, our-47)
+acl:of(matter-45, unable-49)
+xcomp(unable-49, describe-51)
+det:qmod(events-56, one-52)
+nummod(events-56, two-55)
+dobj(describe-51, events-56)
+expl(is-59, there-58)
+advcl:unless(matter-45, is-59)
+nsubj(is-59, sort-61)
+nmod:of(sort-61, asymmetry-63)
+acl:to(sort-61, found-66)
+---
+qqroot(ROOT-0, compare-4)
+aux(compare-4, can-2)
+punct(compare-4, .-35)
+punct(compare-4, ---14)
+det(process-6, a-5)
+case(passage-10, with-7)
+det(passage-10, the-9)
+punct(passage-10, `-8)
+punct(passage-10, '-13)
+case(time-12, of-11)
+cc(is-16, but-21)
+punct(is-16, ---20)
+case(process-25, with-23)
+det(process-25, another-24)
+mwe(such-27, as-28)
+case(working-30, such-27)
+det(working-30, the-29)
+punct(working-30, -RRB--34)
+punct(working-30, -LRB--26)
+case(chronometer-33, of-31)
+det(chronometer-33, a-32)
+nsubj(compare-4, We-1)
+neg(compare-4, not-3)
+dobj(compare-4, process-6)
+nmod:with(process-6, passage-10)
+nmod:of(passage-10, time-12)
+expl(is-16, there-15)
+parataxis(compare-4, is-16)
+neg(thing-19, no-17)
+amod(thing-19, such-18)
+nsubj(is-16, thing-19)
+advmod(process-25, only-22)
+parataxis(compare-4, process-25)
+conj:but(is-16, process-25)
+nmod:such_as(process-25, working-30)
+nmod:of(working-30, chronometer-33)
+root(ROOT-0, describe-4)
+aux(describe-4, can-3)
+punct(describe-4, .-16)
+det(lapse-6, the-5)
+case(time-8, of-7)
+mark(relying-11, by-10)
+case(process-15, on-12)
+det(process-15, some-13)
+advmod(describe-4, Hence-1)
+nsubj(describe-4, we-2)
+dobj(describe-4, lapse-6)
+nmod:of(lapse-6, time-8)
+advmod(relying-11, only-9)
+advcl:by(describe-4, relying-11)
+amod(process-15, other-14)
+nmod:on(relying-11, process-15)
+root(ROOT-0, applies-4)
+punct(applies-4, :-7)
+punct(applies-4, .-67)
+case(space-6, to-5)
+case(events-16, of-14)
+punct(exclude-19, -RRB--22)
+punct(exclude-19, -LRB--17)
+aux(occur-24, can-23)
+mark(occur-24, that-12)
+mark(is-28, because-26)
+mark(cause-31, to-30)
+det(one-33, the-32)
+mark(occur-35, to-34)
+mwe(rather-36, than-37)
+case(other-39, rather-36)
+det(other-39, the-38)
+cop(matter-45, is-42)
+det(matter-45, a-44)
+punct(matter-45, ,-40)
+punct(matter-45, ,-25)
+cop(unable-49, being-48)
+mark(unable-49, of-46)
+mark(describe-51, to-50)
+mwe(one-52, of-53)
+det(events-56, the-54)
+mark(is-59, unless-57)
+det(sort-61, some-60)
+case(asymmetry-63, of-62)
+auxpass(found-66, be-65)
+mark(found-66, to-64)
+nsubj(applies-4, Something-1)
+advmod(analogous-3, exactly-2)
+amod(applies-4, analogous-3)
+nmod:to(applies-4, space-6)
+advmod(matter-45, e.g.-8)
+advmod(say-11, when-9)
+nsubj(say-11, people-10)
+advcl(e.g.-8, say-11)
+nsubj(occur-24, neither-13)
+nummod(events-16, two-15)
+nmod:of(neither-13, events-16)
+nsubj(exclude-19, which-18)
+dep(events-16, exclude-19)
+dobj(exclude-19, one-20)
+dep(one-20, another-21)
+ccomp(say-11, occur-24)
+expl(is-28, there-27)
+advcl:because(matter-45, is-28)
+nsubj(is-28, nothing-29)
+acl:to(nothing-29, cause-31)
+dobj(cause-31, one-33)
+nsubj:xsubj(occur-35, one-33)
+xcomp(cause-31, occur-35)
+nmod:rather_than(occur-35, other-39)
+nsubj(matter-45, it-41)
+advmod(matter-45, really-43)
+parataxis(applies-4, matter-45)
+nsubj(unable-49, our-47)
+nsubj:xsubj(describe-51, our-47)
+acl:of(matter-45, unable-49)
+xcomp(unable-49, describe-51)
+det:qmod(events-56, one-52)
+nummod(events-56, two-55)
+dobj(describe-51, events-56)
+expl(is-59, there-58)
+advcl:unless(matter-45, is-59)
+nsubj(is-59, sort-61)
+nmod:of(sort-61, asymmetry-63)
+acl:to(sort-61, found-66)
+root(ROOT-0, regard-13)
+det(asymmetry-5, an-4)
+mark(is-6, if-2)
+auxpass(found-9, be-8)
+mark(found-9, to-7)
+aux(regard-13, can-12)
+cc(regard-13, And-1)
+punct(regard-13, ,-10)
+punct(regard-13, .-30)
+case(cause-17, as-15)
+det(cause-17, the-16)
+case(occurrence-20, of-18)
+det(occurrence-20, the-19)
+case(one-23, of-21)
+cc(one-23, and-24)
+det(one-23, the-22)
+det(non-occurrence-26, the-25)
+case(other-29, of-27)
+det(other-29, the-28)
+det:predet(asymmetry-5, such-3)
+nsubj(is-6, asymmetry-5)
+nsubjpass:xsubj(found-9, asymmetry-5)
+advcl:if(regard-13, is-6)
+xcomp(is-6, found-9)
+nsubj(regard-13, we-11)
+dobj(regard-13, it-14)
+nmod:as(regard-13, cause-17)
+nmod:of(cause-17, occurrence-20)
+nmod:of(occurrence-20, one-23)
+nmod:of(occurrence-20, non-occurrence-26)
+conj:and(one-23, non-occurrence-26)
+nmod:of(non-occurrence-26, other-29)
+G[94, 97] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?18, Hence1, Something1, We1, analogous3, another21, applies4, asymmetry63, asymmetry2147483647, cause2147483647, cause31, chronometer2147483647, compare4, describe4, describe51, e.g.8, events2147483647, events16, exactly2, exclude19, found9, found66, is16, is6, is28, is59, it14, it41, lapse2147483647, matter2147483647, neither13, no17, non-occurrence2147483647, not3, nothing29, occur35, occur24, occurrence2147483647, one2147483647, one20, one2147483647, one of52, only22, only9, other2147483647, other2147483647, other14, our47, passage2147483647, people10, process2147483647, process2147483647, process2147483647, rather than36, really43, regard13, relying11, say11, sort2147483647, space6, such3, such18, such as27, there27, there58, there15, thing19, time8, time12, two55, two15, unable49, we11, we2, when9, which18, working2147483647]
+?18-xsubj : to ->occur35
+?9- ->compare4
+?5-of->?15
+?15-of->?2
+which18- ->exclude19
+such18- ->thing19
+one20- ->exclude19
+is59-unless->?1
+relying11-by->describe4
+when9- ->say11
+Hence1- ->describe4
+?12-the->lapse2147483647
+?17-an->asymmetry2147483647
+?15-the->occurrence2147483647
+?4-the->passage2147483647
+?4-with->?9
+?13-the->events2147483647
+?5-and->?3
+no17- ->thing19
+events16-of->neither13
+it14- ->regard13
+say11- ->e.g.8
+time12-of->?4
+?10-rather_than : rather than ->occur35
+unable49-of->?1
+?3-the->one2147483647
+analogous3- ->applies4
+cause31-to->nothing29
+?8-some->sort2147483647
+space6-to->applies4
+there15- ->is16
+only22-  : with ->?16
+?11-of->?5
+it41-  : is  : is ->?1
+found66-to : be ->?8
+?9-a->process2147483647
+other14- ->?6
+describe51-  : to ->unable49
+our47-xsubj->describe51
+?17- ->is6
+asymmetry63-of->?8
+?8- ->is59
+?16- ->compare4
+not3- ->compare4
+our47-  : being ->unable49
+?16-another->process2147483647
+We1-  : can  : can ->compare4
+?14-a->chronometer2147483647
+?1- ->applies4
+one of52-qmod->?13
+?13- ->describe51
+we2-  : can ->describe4
+nothing29- ->is28
+is16- ->?13
+exactly2- ->analogous3
+such3-predet->?17
+it14- ->?17
+Something1- ->applies4
+another21- ->one20
+is28-because->?1
+?18- ->cause31
+?7-the->working2147483647
+people10- ->say11
+exactly2- ->We1
+occur24-  : that  : that ->say11
+thing19- ->is16
+?6-some->process2147483647
+there27- ->is28
+?7-such_as : such as ->?16
+?16-but->is16
+?5-the->non-occurrence2147483647
+found9-  : to  : be ->is6
+exclude19- ->events16
+time8-of->?12
+only9- ->relying11
+occur35- ->cause31
+e.g.8- ->?1
+two55- ->?13
+there58- ->is59
+is16- ->compare4
+?3-of->?15
+really43- ->?1
+say11- ->We1
+?17-xsubj->found9
+?2-the->cause2147483647
+?11-the->other2147483647
+?12- ->describe4
+?18-the->one2147483647
+neither13-  : can ->occur24
+two15- ->events16
+?2-as->regard13
+?10-the->other2147483647
+?14-of->?7
+?6-on->relying11
+?1-a->matter2147483647
+is6-if : And ->regard13
+we11-  : can ->regard13
+------CorefChainz
+CHAIN33-["We" in sentence 1, "we" in sentence 2, "we" in sentence 4]
+representative mention: "We" in sentence 1
+CHAIN34-["such an asymmetry" in sentence 4, "it" in sentence 4]
+representative mention: "such an asymmetry" in sentence 4
+CHAIN28-["two events" in sentence 3, "the two events" in sentence 3]
+representative mention: "the two events" in sentence 3

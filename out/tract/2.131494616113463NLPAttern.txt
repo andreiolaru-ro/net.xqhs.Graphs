@@ -1,0 +1,39 @@
+ In a picture objects have the elements of the picture corresponding to them.
+------CorefChainz
+CHAIN3-["a picture objects" in sentence 1, "them" in sentence 1]
+representative mention: "a picture objects" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-5)
+case(objects-4, In-1)
+compound(objects-4, picture-3)
+det(objects-4, a-2)
+punct(have-5, .-14)
+det(elements-7, the-6)
+case(picture-10, of-8)
+det(picture-10, the-9)
+case(them-13, to-12)
+nmod:in(have-5, objects-4)
+dobj(have-5, elements-7)
+nmod:of(elements-7, picture-10)
+acl(picture-10, corresponding-11)
+nmod:to(corresponding-11, them-13)
+G[9, 9] [?1, ?2, ?3, corresponding11, elements2147483647, have5, picture2147483647, picture objects2147483647, them13]
+them13-to->corresponding11
+?1-a->picture objects2147483647
+?2- ->have5
+?3-the->picture2147483647
+?3-of->?2
+?1-in : In ->have5
+?2-the->elements2147483647
+them13- ->?1
+corresponding11- ->?3
+------CorefChainz
+CHAIN3-["a picture objects" in sentence 1, "them" in sentence 1]
+representative mention: "a picture objects" in sentence 1

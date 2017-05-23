@@ -1,0 +1,45 @@
+ A picture cannot, however, depict its pictorial form: it displays it.
+------CorefChainz
+CHAIN4-["A picture" in sentence 1, "its" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "A picture" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, depict-8)
+det(picture-2, A-1)
+aux(depict-8, can-3)
+punct(depict-8, .-16)
+punct(depict-8, ,-5)
+punct(depict-8, ,-7)
+punct(depict-8, :-12)
+nsubj(depict-8, picture-2)
+neg(depict-8, not-4)
+advmod(depict-8, however-6)
+nmod:poss(form-11, its-9)
+amod(form-11, pictorial-10)
+dobj(depict-8, form-11)
+nsubj(displays-14, it-13)
+parataxis(depict-8, displays-14)
+dobj(displays-14, it-15)
+G[11, 13] [?1, depict8, displays14, form11, however6, it13, it15, its9, not4, pictorial10, picture2147483647]
+form11- ->depict8
+it15- ->?1
+?1-  : can  : can ->depict8
+however6- ->depict8
+it15- ->displays14
+not4- ->depict8
+?1-A->picture2147483647
+its9-poss->form11
+pictorial10- ->form11
+it13- ->displays14
+displays14- ->depict8
+its9- ->?1
+it13- ->?1
+------CorefChainz
+CHAIN4-["A picture" in sentence 1, "its" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "A picture" in sentence 1

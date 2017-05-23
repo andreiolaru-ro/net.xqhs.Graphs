@@ -1,0 +1,215 @@
+ I call any part of a proposition that characterizes its sense an expression (or a symbol). (A proposition is itself an expression.) Everything essential to their sense that propositions can have in common with one another is an expression. An expression is the mark of a form and a content.
+------CorefChainz
+CHAIN8-["A proposition" in sentence 2, "itself" in sentence 2]
+representative mention: "A proposition" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, call-2)
+punct(call-2, .-19)
+det(part-4, any-3)
+case(proposition-7, of-5)
+det(proposition-7, a-6)
+det(expression-13, an-12)
+cc(symbol-17, or-15)
+det(symbol-17, a-16)
+punct(symbol-17, -RRB--18)
+punct(symbol-17, -LRB--14)
+nsubj(call-2, I-1)
+dobj(call-2, part-4)
+nmod:of(part-4, proposition-7)
+nsubj(characterizes-9, proposition-7)
+ref(proposition-7, that-8)
+acl:relcl(proposition-7, characterizes-9)
+nmod:poss(sense-11, its-10)
+dobj(characterizes-9, sense-11)
+dep(sense-11, expression-13)
+appos(expression-13, symbol-17)
+---
+qqroot(ROOT-0, call-2)
+punct(call-2, .-19)
+det(part-4, any-3)
+case(proposition-7, of-5)
+det(proposition-7, a-6)
+det(expression-13, an-12)
+cc(symbol-17, or-15)
+det(symbol-17, a-16)
+punct(symbol-17, -RRB--18)
+punct(symbol-17, -LRB--14)
+nsubj(call-2, I-1)
+dobj(call-2, part-4)
+nmod:of(part-4, proposition-7)
+nsubj(characterizes-9, proposition-7)
+ref(proposition-7, that-8)
+acl:relcl(proposition-7, characterizes-9)
+nmod:poss(sense-11, its-10)
+dobj(characterizes-9, sense-11)
+dep(sense-11, expression-13)
+appos(expression-13, symbol-17)
+root(ROOT-0, expression-7)
+det(proposition-3, A-2)
+cop(expression-7, is-4)
+det(expression-7, an-6)
+punct(expression-7, .-8)
+punct(expression-7, -RRB--9)
+punct(expression-7, -LRB--1)
+nsubj(expression-7, proposition-3)
+nsubj(expression-7, itself-5)
+---
+qqroot(ROOT-0, call-2)
+punct(call-2, .-19)
+det(part-4, any-3)
+case(proposition-7, of-5)
+det(proposition-7, a-6)
+det(expression-13, an-12)
+cc(symbol-17, or-15)
+det(symbol-17, a-16)
+punct(symbol-17, -RRB--18)
+punct(symbol-17, -LRB--14)
+nsubj(call-2, I-1)
+dobj(call-2, part-4)
+nmod:of(part-4, proposition-7)
+nsubj(characterizes-9, proposition-7)
+ref(proposition-7, that-8)
+acl:relcl(proposition-7, characterizes-9)
+nmod:poss(sense-11, its-10)
+dobj(characterizes-9, sense-11)
+dep(sense-11, expression-13)
+appos(expression-13, symbol-17)
+root(ROOT-0, expression-7)
+det(proposition-3, A-2)
+cop(expression-7, is-4)
+det(expression-7, an-6)
+punct(expression-7, .-8)
+punct(expression-7, -RRB--9)
+punct(expression-7, -LRB--1)
+nsubj(expression-7, proposition-3)
+nsubj(expression-7, itself-5)
+root(ROOT-0, expression-17)
+case(sense-5, to-3)
+aux(have-9, can-8)
+mark(have-9, that-6)
+case(common-11, in-10)
+case(another-14, with-12)
+cop(expression-17, is-15)
+det(expression-17, an-16)
+punct(expression-17, .-18)
+nsubj(expression-17, Everything-1)
+amod(Everything-1, essential-2)
+nmod:poss(sense-5, their-4)
+nmod:to(essential-2, sense-5)
+nsubj(have-9, propositions-7)
+ccomp(sense-5, have-9)
+advcl:in(have-9, common-11)
+nummod(another-14, one-13)
+nmod:with(common-11, another-14)
+---
+qqroot(ROOT-0, call-2)
+punct(call-2, .-19)
+det(part-4, any-3)
+case(proposition-7, of-5)
+det(proposition-7, a-6)
+det(expression-13, an-12)
+cc(symbol-17, or-15)
+det(symbol-17, a-16)
+punct(symbol-17, -RRB--18)
+punct(symbol-17, -LRB--14)
+nsubj(call-2, I-1)
+dobj(call-2, part-4)
+nmod:of(part-4, proposition-7)
+nsubj(characterizes-9, proposition-7)
+ref(proposition-7, that-8)
+acl:relcl(proposition-7, characterizes-9)
+nmod:poss(sense-11, its-10)
+dobj(characterizes-9, sense-11)
+dep(sense-11, expression-13)
+appos(expression-13, symbol-17)
+root(ROOT-0, expression-7)
+det(proposition-3, A-2)
+cop(expression-7, is-4)
+det(expression-7, an-6)
+punct(expression-7, .-8)
+punct(expression-7, -RRB--9)
+punct(expression-7, -LRB--1)
+nsubj(expression-7, proposition-3)
+nsubj(expression-7, itself-5)
+root(ROOT-0, expression-17)
+case(sense-5, to-3)
+aux(have-9, can-8)
+mark(have-9, that-6)
+case(common-11, in-10)
+case(another-14, with-12)
+cop(expression-17, is-15)
+det(expression-17, an-16)
+punct(expression-17, .-18)
+nsubj(expression-17, Everything-1)
+amod(Everything-1, essential-2)
+nmod:poss(sense-5, their-4)
+nmod:to(essential-2, sense-5)
+nsubj(have-9, propositions-7)
+ccomp(sense-5, have-9)
+advcl:in(have-9, common-11)
+nummod(another-14, one-13)
+nmod:with(common-11, another-14)
+root(ROOT-0, mark-5)
+det(expression-2, An-1)
+cop(mark-5, is-3)
+det(mark-5, the-4)
+punct(mark-5, .-12)
+case(form-8, of-6)
+cc(form-8, and-9)
+det(form-8, a-7)
+det(content-11, a-10)
+nsubj(mark-5, expression-2)
+nmod:of(mark-5, form-8)
+nmod:of(mark-5, content-11)
+conj:and(form-8, content-11)
+G[38, 37] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, Everything1, I1, another14, call2, characterizes9, common11, content2147483647, essential2, expression2147483647, expression2147483647, expression2147483647, expression2147483647, form2147483647, have9, its10, itself5, mark2147483647, one13, part2147483647, proposition2147483647, proposition2147483647, propositions7, sense11, sense5, symbol2147483647, that8, their4]
+itself5- ->?4
+?4-A->proposition2147483647
+?2-an->expression2147483647
+?3-any->part2147483647
+?8-and->?10
+itself5- ->?2
+another14-with->common11
+?5- ->characterizes9
+?5-of->?3
+its10-poss->sense11
+have9-  : that  : that ->sense5
+their4-poss->sense5
+sense11- ->characterizes9
+?4-  : is  : is ->?2
+?10-a->form2147483647
+Everything1-  : is ->?6
+?6-an->expression2147483647
+that8- ->?5
+?7-  : or ->?9
+?11-  : is ->?1
+?8-a->content2147483647
+?8-of->?1
+propositions7-  : can ->have9
+sense5-to->essential2
+characterizes9-relcl->?5
+I1- ->call2
+essential2- ->Everything1
+one13- ->another14
+?9-an->expression2147483647
+?10-of->?1
+common11-in->have9
+?11-An->expression2147483647
+?1-the->mark2147483647
+?3- ->call2
+?9- ->sense11
+?5-a->proposition2147483647
+?7-a->symbol2147483647
+------CorefChainz
+CHAIN8-["A proposition" in sentence 2, "itself" in sentence 2]
+representative mention: "A proposition" in sentence 2

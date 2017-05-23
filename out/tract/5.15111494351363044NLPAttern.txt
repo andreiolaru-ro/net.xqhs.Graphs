@@ -1,0 +1,28 @@
+ There is no special object peculiar to probability propositions.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-2)
+punct(is-2, .-10)
+case(propositions-9, to-7)
+compound(propositions-9, probability-8)
+expl(is-2, There-1)
+neg(object-5, no-3)
+amod(object-5, special-4)
+nsubj(is-2, object-5)
+amod(object-5, peculiar-6)
+nmod:to(peculiar-6, propositions-9)
+G[7, 6] [There, is, no, object, peculiar, probability propositions, special]
+peculiar- ->object
+special- ->object
+object- ->is
+There- ->is
+probability propositions-to->peculiar
+no- ->object
+------CorefChainz

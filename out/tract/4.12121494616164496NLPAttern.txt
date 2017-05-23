@@ -1,0 +1,25 @@
+ What can be shown, cannot be said.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, said-9)
+aux(shown-4, can-2)
+auxpass(shown-4, be-3)
+aux(said-9, can-6)
+auxpass(said-9, be-8)
+punct(said-9, ,-5)
+punct(said-9, .-10)
+nsubjpass(shown-4, What-1)
+ccomp(said-9, shown-4)
+neg(said-9, not-7)
+G[4, 3] [What1, not7, said9, shown4]
+not7-  : can  : be ->said9
+shown4- ->said9
+What1-  : can  : be ->shown4
+------CorefChainz

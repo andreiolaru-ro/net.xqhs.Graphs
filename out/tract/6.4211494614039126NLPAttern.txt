@@ -1,0 +1,85 @@
+ It is clear that ethics cannot be put into words. Ethics is transcendental. (Ethics and aesthetics are one and the same.)
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-12)
+aux(put-9, can-6)
+auxpass(put-9, be-8)
+mark(put-9, that-4)
+case(words-11, into-10)
+nsubj(clear-3, It-1)
+nsubjpass(put-9, ethics-5)
+neg(put-9, not-7)
+ccomp(clear-3, put-9)
+nmod:into(put-9, words-11)
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-12)
+aux(put-9, can-6)
+auxpass(put-9, be-8)
+mark(put-9, that-4)
+case(words-11, into-10)
+nsubj(clear-3, It-1)
+nsubjpass(put-9, ethics-5)
+neg(put-9, not-7)
+ccomp(clear-3, put-9)
+nmod:into(put-9, words-11)
+root(ROOT-0, transcendental-3)
+cop(transcendental-3, is-2)
+punct(transcendental-3, .-4)
+nsubj(transcendental-3, Ethics-1)
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-12)
+aux(put-9, can-6)
+auxpass(put-9, be-8)
+mark(put-9, that-4)
+case(words-11, into-10)
+nsubj(clear-3, It-1)
+nsubjpass(put-9, ethics-5)
+neg(put-9, not-7)
+ccomp(clear-3, put-9)
+nmod:into(put-9, words-11)
+root(ROOT-0, transcendental-3)
+cop(transcendental-3, is-2)
+punct(transcendental-3, .-4)
+nsubj(transcendental-3, Ethics-1)
+root(ROOT-0, one-6)
+cc(Ethics-2, and-3)
+cc(one-6, and-7)
+cop(one-6, are-5)
+punct(one-6, .-10)
+punct(one-6, -RRB--11)
+punct(one-6, -LRB--1)
+det(same-9, the-8)
+nsubj(one-6, Ethics-2)
+nsubj(same-9, Ethics-2)
+conj:and(Ethics-2, aesthetics-4)
+nsubj(one-6, aesthetics-4)
+conj:and(one-6, same-9)
+G[13, 12] [?1, Ethics2, Ethics1, It1, aesthetics4, clear3, ethics5, not7, one6, put9, same2147483647, transcendental3, words11]
+aesthetics4-and->Ethics2
+not7-  : be ->put9
+put9-  : that  : that ->clear3
+words11-into->put9
+Ethics2- ->one6
+Ethics1-  : is ->transcendental3
+ethics5-  : can  : can ->put9
+It1-  : is ->clear3
+aesthetics4-  : are ->one6
+?1-and->one6
+Ethics2- ->?1
+?1-the->same2147483647
+------CorefChainz

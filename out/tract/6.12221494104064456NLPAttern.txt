@@ -1,0 +1,288 @@
+ This throws some light on the question why logical propositions cannot be confirmed by experience any more than they can be refuted by it. Not only must a proposition of logic be irrefutable by any possible experience, but it must also be unconfirmable by any possible experience.
+------CorefChainz
+CHAIN5-["logical propositions" in sentence 1, "they" in sentence 1]
+representative mention: "logical propositions" in sentence 1
+CHAIN6-["This" in sentence 1, "it" in sentence 1]
+representative mention: "This" in sentence 1
+CHAIN10-["a proposition of logic" in sentence 2, "it" in sentence 2]
+representative mention: "a proposition of logic" in sentence 2
+This-DT 
+throws-VBZ 
+some-DT 
+light-NN 
+on-IN 
+the-DT 
+question-NN 
+why-WRB 
+logical-JJ 
+propositions-NNS 
+can-MD 
+not-RB 
+be-VB 
+confirmed-VBN 
+by-IN 
+experience-NN 
+any-DT 
+more-RBR 
+than-IN 
+they-PRP 
+can-MD 
+be-VB 
+refuted-VBN 
+by-IN 
+it-PRP 
+.-. 
+Not-RB 
+only-RB 
+must-MD 
+a-DT 
+proposition-NN 
+of-IN 
+logic-NN 
+be-VB 
+irrefutable-JJ 
+by-IN 
+any-DT 
+possible-JJ 
+experience-NN 
+,-, 
+but-CC 
+it-PRP 
+must-MD 
+also-RB 
+be-VB 
+unconfirmable-JJ 
+by-IN 
+any-DT 
+possible-JJ 
+experience-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> DT 	-> This
+		 	-> VP 	-> VBZ 	-> throws
+	 	-> SBAR 	-> S 	-> NP 	-> NP 	-> DT 	-> some
+	 	-> NN 	-> light
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> question
+		 	-> SBAR 	-> WHADVP 	-> WRB 	-> why
+		 	-> S 	-> NP 	-> JJ 	-> logical
+	 	-> NNS 	-> propositions
+		 	-> VP 	-> MD 	-> can
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> confirmed
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NN 	-> experience
+			 	-> ADVP 	-> ADVP 	-> DT 	-> any
+	 	-> RBR 	-> more
+		 	-> SBAR 	-> IN 	-> than
+	 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> MD 	-> can
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> refuted
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> PRP 	-> it
+							 	-> . 	-> .
+											 	-> ADVP 	-> RB 	-> Not
+	 	-> RB 	-> only
+		 	-> VP 	-> MD 	-> must
+	 	-> PP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> proposition
+		 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> logic
+			 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> JJ 	-> irrefutable
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> possible
+	 	-> NN 	-> experience
+										 	-> , 	-> ,
+	 	-> CC 	-> but
+	 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> MD 	-> must
+	 	-> ADVP 	-> RB 	-> also
+		 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> JJ 	-> unconfirmable
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> possible
+	 	-> NN 	-> experience
+							 	-> . 	-> .
+			
+Dependensee repr
+nsubj(throws-2, This-1)
+root(ROOT-0, throws-2)
+det(light-4, some-3)
+nsubj(irrefutable-35, light-4)
+case(question-7, on-5)
+det(question-7, the-6)
+nmod:on(light-4, question-7)
+advmod(confirmed-14, why-8)
+amod(propositions-10, logical-9)
+nsubjpass(confirmed-14, propositions-10)
+aux(confirmed-14, can-11)
+neg(confirmed-14, not-12)
+auxpass(confirmed-14, be-13)
+acl:relcl(question-7, confirmed-14)
+case(experience-16, by-15)
+nmod:agent(confirmed-14, experience-16)
+dep(more-18, any-17)
+advmod(confirmed-14, more-18)
+mark(refuted-23, than-19)
+nsubjpass(refuted-23, they-20)
+aux(refuted-23, can-21)
+auxpass(refuted-23, be-22)
+advcl(more-18, refuted-23)
+case(it-25, by-24)
+nmod:agent(refuted-23, it-25)
+dep(only-28, Not-27)
+advmod(irrefutable-35, only-28)
+aux(irrefutable-35, must-29)
+det(proposition-31, a-30)
+nmod:of(irrefutable-35, proposition-31)
+case(proposition-31, of-32)
+dep(proposition-31, logic-33)
+cop(irrefutable-35, be-34)
+ccomp(throws-2, irrefutable-35)
+case(experience-39, by-36)
+det(experience-39, any-37)
+amod(experience-39, possible-38)
+nmod:by(irrefutable-35, experience-39)
+cc(throws-2, but-41)
+nsubj(unconfirmable-46, it-42)
+aux(unconfirmable-46, must-43)
+advmod(unconfirmable-46, also-44)
+cop(unconfirmable-46, be-45)
+conj:but(throws-2, unconfirmable-46)
+case(experience-50, by-47)
+det(experience-50, any-48)
+amod(experience-50, possible-49)
+nmod:by(unconfirmable-46, experience-50)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, throws-2)
+punct(throws-2, .-26)
+det(light-4, some-3)
+case(question-7, on-5)
+det(question-7, the-6)
+aux(confirmed-14, can-11)
+auxpass(confirmed-14, be-13)
+case(experience-16, by-15)
+det(more-18, any-17)
+aux(refuted-23, can-21)
+auxpass(refuted-23, be-22)
+mark(refuted-23, than-19)
+case(it-25, by-24)
+nsubj(throws-2, This-1)
+dobj(throws-2, light-4)
+nmod:on(throws-2, question-7)
+advmod(confirmed-14, why-8)
+amod(propositions-10, logical-9)
+nsubjpass(confirmed-14, propositions-10)
+neg(confirmed-14, not-12)
+acl:relcl(question-7, confirmed-14)
+nmod:agent(confirmed-14, experience-16)
+advmod(confirmed-14, more-18)
+nsubjpass(refuted-23, they-20)
+advcl:than(more-18, refuted-23)
+nmod:agent(refuted-23, it-25)
+---
+qqroot(ROOT-0, throws-2)
+punct(throws-2, .-26)
+det(light-4, some-3)
+case(question-7, on-5)
+det(question-7, the-6)
+aux(confirmed-14, can-11)
+auxpass(confirmed-14, be-13)
+case(experience-16, by-15)
+det(more-18, any-17)
+aux(refuted-23, can-21)
+auxpass(refuted-23, be-22)
+mark(refuted-23, than-19)
+case(it-25, by-24)
+nsubj(throws-2, This-1)
+dobj(throws-2, light-4)
+nmod:on(throws-2, question-7)
+advmod(confirmed-14, why-8)
+amod(propositions-10, logical-9)
+nsubjpass(confirmed-14, propositions-10)
+neg(confirmed-14, not-12)
+acl:relcl(question-7, confirmed-14)
+nmod:agent(confirmed-14, experience-16)
+advmod(confirmed-14, more-18)
+nsubjpass(refuted-23, they-20)
+advcl:than(more-18, refuted-23)
+nmod:agent(refuted-23, it-25)
+root(ROOT-0, irrefutable-9)
+det(proposition-5, a-4)
+case(logic-7, of-6)
+aux(irrefutable-9, must-3)
+cc(irrefutable-9, but-15)
+cop(irrefutable-9, be-8)
+punct(irrefutable-9, .-25)
+punct(irrefutable-9, ,-14)
+case(experience-13, by-10)
+det(experience-13, any-11)
+aux(unconfirmable-20, must-17)
+cop(unconfirmable-20, be-19)
+case(experience-24, by-21)
+det(experience-24, any-22)
+neg(only-2, Not-1)
+dep(irrefutable-9, only-2)
+nsubj(irrefutable-9, proposition-5)
+nmod:of(proposition-5, logic-7)
+amod(experience-13, possible-12)
+nmod:by(irrefutable-9, experience-13)
+nsubj(unconfirmable-20, it-16)
+advmod(unconfirmable-20, also-18)
+conj:but(irrefutable-9, unconfirmable-20)
+amod(experience-24, possible-23)
+nmod:by(unconfirmable-20, experience-24)
+G[32, 33] [?#1, ?#2, ?#3, ?#4, ?#5, ?#6, Not, This, also, confirmed, experience, experience, experience, irrefutable, it, it, light, logic, logical, more, not, only, possible, possible, proposition, propositions, question, refuted, they, throws, unconfirmable, why]
+why- ->confirmed
+Not- ->only
+it-agent : by ->refuted
+confirmed-relcl->?#4
+experience- ->?#2
+?#3-by->unconfirmable
+?#4-on->throws
+also-  : be ->unconfirmable
+experience-agent : by ->confirmed
+logic-of->?#2
+?#5-by->irrefutable
+logical- ->propositions
+?#3-any->experience
+it- ->Not
+?#5-any->experience
+This- ->throws
+they-  : can  : be ->refuted
+possible- ->?#5
+possible- ->?#3
+it-  : must  : must ->unconfirmable
+?#4-the->question
+unconfirmable- ->propositions
+?#6- ->confirmed
+propositions-  : can  : can ->confirmed
+?#1- ->throws
+?#2-a->proposition
+?#2-  : be ->irrefutable
+?#1-some->light
+?#6-any->more
+not-  : be ->confirmed
+refuted-than->?#6
+only-  : must ->irrefutable
+unconfirmable-but->irrefutable
+------CorefChainz
+CHAIN5-["logical propositions" in sentence 1, "they" in sentence 1]
+representative mention: "logical propositions" in sentence 1
+CHAIN6-["This" in sentence 1, "it" in sentence 1]
+representative mention: "This" in sentence 1
+CHAIN10-["a proposition of logic" in sentence 2, "it" in sentence 2]
+representative mention: "a proposition of logic" in sentence 2

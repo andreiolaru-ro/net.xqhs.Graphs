@@ -1,0 +1,109 @@
+ A picture represents its subject from a position outside it. (Its standpoint is its representational form.) That is why a picture represents its subject correctly or incorrectly.
+------CorefChainz
+CHAIN11-["A picture" in sentence 1, "its" in sentence 1, "it" in sentence 1, "Its" in sentence 2, "its" in sentence 2, "a picture" in sentence 3, "its" in sentence 3]
+representative mention: "A picture" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, represents-3)
+det(picture-2, A-1)
+punct(represents-3, .-11)
+case(position-8, from-6)
+det(position-8, a-7)
+case(it-10, outside-9)
+nsubj(represents-3, picture-2)
+nmod:poss(subject-5, its-4)
+dobj(represents-3, subject-5)
+nmod:from(represents-3, position-8)
+nmod:outside(position-8, it-10)
+---
+qqroot(ROOT-0, represents-3)
+det(picture-2, A-1)
+punct(represents-3, .-11)
+case(position-8, from-6)
+det(position-8, a-7)
+case(it-10, outside-9)
+nsubj(represents-3, picture-2)
+nmod:poss(subject-5, its-4)
+dobj(represents-3, subject-5)
+nmod:from(represents-3, position-8)
+nmod:outside(position-8, it-10)
+root(ROOT-0, form-7)
+cop(form-7, is-4)
+punct(form-7, .-8)
+punct(form-7, -RRB--9)
+punct(form-7, -LRB--1)
+nmod:poss(standpoint-3, Its-2)
+nsubj(form-7, standpoint-3)
+nmod:poss(form-7, its-5)
+amod(form-7, representational-6)
+---
+qqroot(ROOT-0, represents-3)
+det(picture-2, A-1)
+punct(represents-3, .-11)
+case(position-8, from-6)
+det(position-8, a-7)
+case(it-10, outside-9)
+nsubj(represents-3, picture-2)
+nmod:poss(subject-5, its-4)
+dobj(represents-3, subject-5)
+nmod:from(represents-3, position-8)
+nmod:outside(position-8, it-10)
+root(ROOT-0, form-7)
+cop(form-7, is-4)
+punct(form-7, .-8)
+punct(form-7, -RRB--9)
+punct(form-7, -LRB--1)
+nmod:poss(standpoint-3, Its-2)
+nsubj(form-7, standpoint-3)
+nmod:poss(form-7, its-5)
+amod(form-7, representational-6)
+root(ROOT-0, is-2)
+punct(is-2, .-12)
+det(picture-5, a-4)
+cc(correctly-9, or-10)
+nsubj(is-2, That-1)
+advmod(represents-6, why-3)
+nsubj(represents-6, picture-5)
+advcl(is-2, represents-6)
+nmod:poss(subject-8, its-7)
+dobj(represents-6, subject-8)
+advmod(subject-8, correctly-9)
+advmod(subject-8, incorrectly-11)
+conj:or(correctly-9, incorrectly-11)
+G[23, 25] [?1, ?2, ?3, Its2, That1, correctly9, form7, incorrectly11, is2, it10, its4, its7, its5, picture2147483647, picture2147483647, position2147483647, representational6, represents6, represents3, standpoint3, subject5, subject8, why3]
+?2-A->picture2147483647
+its7-poss->subject8
+?1-a->position2147483647
+subject5- ->represents3
+its4- ->?2
+standpoint3-  : is  : is ->form7
+its4-poss->subject5
+correctly9- ->subject8
+its5-poss->form7
+it10-outside->?1
+represents6- ->is2
+it10- ->?2
+subject8- ->represents6
+?2- ->represents3
+That1- ->is2
+?3- ->represents6
+Its2-poss->standpoint3
+incorrectly11- ->subject8
+why3- ->represents6
+subject5-==->?2
+form7- ->?2
+incorrectly11-or->correctly9
+?3-a->picture2147483647
+representational6- ->form7
+?1-from->represents3
+------CorefChainz
+CHAIN11-["A picture" in sentence 1, "its" in sentence 1, "it" in sentence 1, "Its" in sentence 2, "its" in sentence 2, "a picture" in sentence 3, "its" in sentence 3]
+representative mention: "A picture" in sentence 1

@@ -1,0 +1,67 @@
+ I call the sign with which we express a thought a propositional sign.And a proposition is a propositional sign in its projective relation to the world.
+------CorefChainz
+CHAIN7-["a proposition" in sentence 1, "its" in sentence 1]
+representative mention: "a proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, call-2)
+punct(call-2, .-27)
+det(sign-4, the-3)
+case(which-6, with-5)
+det(sign.And-13, a-11)
+det(proposition-15, a-14)
+cop(sign-19, is-16)
+det(sign-19, a-17)
+case(relation-23, in-20)
+case(world-26, to-24)
+det(world-26, the-25)
+nsubj(call-2, I-1)
+dobj(call-2, sign-4)
+nmod:with(express-8, sign-4)
+ref(sign-4, which-6)
+nsubj(express-8, we-7)
+acl:relcl(sign-4, express-8)
+dobj(express-8, a-9)
+acl(a-9, thought-10)
+amod(sign.And-13, propositional-12)
+dobj(thought-10, sign.And-13)
+nsubj(sign-19, proposition-15)
+amod(sign-19, propositional-18)
+acl:relcl(sign.And-13, sign-19)
+nmod:poss(relation-23, its-21)
+amod(relation-23, projective-22)
+nmod:in(sign-19, relation-23)
+nmod:to(relation-23, world-26)
+G[22, 23] [?1, ?2, ?3, ?4, ?5, I1, a9, call2, express8, its21, projective22, proposition2147483647, propositional18, propositional12, relation23, sign2147483647, sign2147483647, sign.And2147483647, thought10, we7, which6, world2147483647]
+which6-  : with ->?3
+?2-a->sign2147483647
+thought10- ->a9
+express8-relcl->?3
+a9- ->express8
+?3-with->express8
+?3-the->sign2147483647
+?5- ->thought10
+?4-  : is ->?2
+?4-a->proposition2147483647
+propositional12- ->?5
+we7- ->express8
+?1-the->world2147483647
+?2-relcl->?5
+its21-poss->relation23
+?1-to->relation23
+?3- ->call2
+projective22- ->relation23
+its21- ->?4
+I1- ->call2
+propositional18- ->?2
+relation23-in->?2
+?5-a->sign.And2147483647
+------CorefChainz
+CHAIN7-["a proposition" in sentence 1, "its" in sentence 1]
+representative mention: "a proposition" in sentence 1

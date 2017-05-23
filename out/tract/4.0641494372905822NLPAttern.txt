@@ -1,0 +1,121 @@
+ Every proposition must already have a sense: it cannot be given a sense by affirmation. Indeed its sense is just what is affirmed. And the same applies to negation, etc.
+------CorefChainz
+CHAIN2-["Every proposition" in sentence 1, "it" in sentence 1]
+representative mention: "Every proposition" in sentence 1
+CHAIN3-["a sense" in sentence 1, "a sense" in sentence 1, "its sense" in sentence 2]
+representative mention: "a sense" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-5)
+det(proposition-2, Every-1)
+aux(have-5, must-3)
+punct(have-5, .-18)
+punct(have-5, :-8)
+det(sense-7, a-6)
+aux(given-13, can-10)
+auxpass(given-13, be-12)
+det(sense-15, a-14)
+case(affirmation-17, by-16)
+nsubj(have-5, proposition-2)
+advmod(have-5, already-4)
+dobj(have-5, sense-7)
+nsubjpass(given-13, it-9)
+neg(given-13, not-11)
+parataxis(have-5, given-13)
+dobj(given-13, sense-15)
+nmod:agent(given-13, affirmation-17)
+---
+qqroot(ROOT-0, have-5)
+det(proposition-2, Every-1)
+aux(have-5, must-3)
+punct(have-5, .-18)
+punct(have-5, :-8)
+det(sense-7, a-6)
+aux(given-13, can-10)
+auxpass(given-13, be-12)
+det(sense-15, a-14)
+case(affirmation-17, by-16)
+nsubj(have-5, proposition-2)
+advmod(have-5, already-4)
+dobj(have-5, sense-7)
+nsubjpass(given-13, it-9)
+neg(given-13, not-11)
+parataxis(have-5, given-13)
+dobj(given-13, sense-15)
+nmod:agent(given-13, affirmation-17)
+root(ROOT-0, is-4)
+punct(is-4, .-9)
+auxpass(affirmed-8, is-7)
+advmod(is-4, Indeed-1)
+nmod:poss(sense-3, its-2)
+nsubj(is-4, sense-3)
+advmod(what-6, just-5)
+nsubjpass(affirmed-8, what-6)
+ccomp(is-4, affirmed-8)
+---
+qqroot(ROOT-0, have-5)
+det(proposition-2, Every-1)
+aux(have-5, must-3)
+punct(have-5, .-18)
+punct(have-5, :-8)
+det(sense-7, a-6)
+aux(given-13, can-10)
+auxpass(given-13, be-12)
+det(sense-15, a-14)
+case(affirmation-17, by-16)
+nsubj(have-5, proposition-2)
+advmod(have-5, already-4)
+dobj(have-5, sense-7)
+nsubjpass(given-13, it-9)
+neg(given-13, not-11)
+parataxis(have-5, given-13)
+dobj(given-13, sense-15)
+nmod:agent(given-13, affirmation-17)
+root(ROOT-0, is-4)
+punct(is-4, .-9)
+auxpass(affirmed-8, is-7)
+advmod(is-4, Indeed-1)
+nmod:poss(sense-3, its-2)
+nsubj(is-4, sense-3)
+advmod(what-6, just-5)
+nsubjpass(affirmed-8, what-6)
+ccomp(is-4, affirmed-8)
+root(ROOT-0, applies-4)
+det(same-3, the-2)
+cc(applies-4, And-1)
+punct(applies-4, .-9)
+case(negation-6, to-5)
+punct(negation-6, ,-7)
+nsubj(applies-4, same-3)
+nmod:to(applies-4, negation-6)
+appos(negation-6, etc.-8)
+G[17, 16] [?1, ?2, ?3, ?4, affirmation17, affirmed8, applies4, given13, have5, is4, negation6, proposition2147483647, same2147483647, sense3, sense2147483647, sense2147483647, what6]
+?1- ->have5
+?1-a->sense2147483647
+negation6-to->applies4
+sense3- ->is4
+?3-  : must ->have5
+?4-  : And ->applies4
+sense3- ->?1
+given13-  : can  : can ->have5
+?4-the->same2147483647
+?2-a->sense2147483647
+affirmed8- ->is4
+?3-Every->proposition2147483647
+affirmation17-agent : by ->given13
+?4- ->?3
+?2-  : be ->given13
+what6-  : is ->affirmed8
+------CorefChainz
+CHAIN2-["Every proposition" in sentence 1, "it" in sentence 1]
+representative mention: "Every proposition" in sentence 1
+CHAIN3-["a sense" in sentence 1, "a sense" in sentence 1, "its sense" in sentence 2]
+representative mention: "a sense" in sentence 1

@@ -1,0 +1,55 @@
+ There is no possible way of making an inference form the existence of one situation to the existence of another, entirely different situation.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-2)
+punct(is-2, ,-21)
+punct(is-2, .-25)
+mark(making-7, of-6)
+det(inference-9, an-8)
+det(existence-12, the-11)
+case(situation-15, of-13)
+case(existence-18, to-16)
+det(existence-18, the-17)
+case(another-20, of-19)
+expl(is-2, There-1)
+neg(way-5, no-3)
+amod(way-5, possible-4)
+nsubj(is-2, way-5)
+acl:of(way-5, making-7)
+nsubj(form-10, inference-9)
+ccomp(making-7, form-10)
+dobj(form-10, existence-12)
+nummod(situation-15, one-14)
+nmod:of(existence-12, situation-15)
+nmod:to(form-10, existence-18)
+nmod:of(existence-18, another-20)
+advmod(different-23, entirely-22)
+amod(situation-24, different-23)
+nsubj(is-2, situation-24)
+G[19, 18] [?1, ?2, ?3, There1, another20, different23, entirely22, existence2147483647, existence2147483647, form10, inference2147483647, is2, making7, no3, one14, possible4, situation15, situation24, way5]
+one14- ->situation15
+?2- ->form10
+possible4- ->way5
+There1- ->is2
+?2-an->inference2147483647
+form10- ->making7
+no3- ->way5
+making7-of->way5
+entirely22- ->different23
+another20-of->?1
+?1-the->existence2147483647
+?3- ->form10
+situation24- ->is2
+situation15-of->?3
+?3-the->existence2147483647
+different23- ->situation24
+?1-to->form10
+way5- ->is2
+------CorefChainz

@@ -1,0 +1,25 @@
+ States of affairs are independent of one another.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, independent-5)
+case(affairs-3, of-2)
+cop(independent-5, are-4)
+punct(independent-5, .-9)
+case(another-8, of-6)
+nsubj(independent-5, States-1)
+nmod:of(States-1, affairs-3)
+nummod(another-8, one-7)
+nmod:of(independent-5, another-8)
+G[5, 4] [States1, affairs3, another8, independent5, one7]
+affairs3-of->States1
+one7- ->another8
+States1-  : are ->independent5
+another8-of->independent5
+------CorefChainz

@@ -1,0 +1,139 @@
+ A particular mode of signifying may be unimportant but it is always important that it is a possible mode of signifying. And that is generally so in philosophy: again and again the individual case turns out to be unimportant, but the possibility of each individual case discloses something about the essence of the world.
+------CorefChainz
+CHAIN1-["A particular mode of signifying" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "A particular mode of signifying" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, unimportant-8)
+det(mode-3, A-1)
+case(signifying-5, of-4)
+aux(unimportant-8, may-6)
+cc(unimportant-8, but-9)
+cop(unimportant-8, be-7)
+punct(unimportant-8, .-22)
+cop(important-13, is-11)
+cop(mode-19, is-16)
+det(mode-19, a-17)
+mark(mode-19, that-14)
+case(signifying-21, of-20)
+amod(mode-3, particular-2)
+nsubj(unimportant-8, mode-3)
+nmod:of(mode-3, signifying-5)
+nsubj(important-13, it-10)
+advmod(important-13, always-12)
+conj:but(unimportant-8, important-13)
+nsubj(mode-19, it-15)
+amod(mode-19, possible-18)
+ccomp(important-13, mode-19)
+nmod:of(mode-19, signifying-21)
+---
+qqroot(ROOT-0, unimportant-8)
+det(mode-3, A-1)
+case(signifying-5, of-4)
+aux(unimportant-8, may-6)
+cc(unimportant-8, but-9)
+cop(unimportant-8, be-7)
+punct(unimportant-8, .-22)
+cop(important-13, is-11)
+cop(mode-19, is-16)
+det(mode-19, a-17)
+mark(mode-19, that-14)
+case(signifying-21, of-20)
+amod(mode-3, particular-2)
+nsubj(unimportant-8, mode-3)
+nmod:of(mode-3, signifying-5)
+nsubj(important-13, it-10)
+advmod(important-13, always-12)
+conj:but(unimportant-8, important-13)
+nsubj(mode-19, it-15)
+amod(mode-19, possible-18)
+ccomp(important-13, mode-19)
+nmod:of(mode-19, signifying-21)
+root(ROOT-0, philosophy-7)
+case(philosophy-7, in-6)
+cc(philosophy-7, And-1)
+cop(philosophy-7, is-3)
+punct(philosophy-7, .-36)
+punct(philosophy-7, :-8)
+det(case-14, the-12)
+cc(turns-15, but-21)
+punct(turns-15, ,-20)
+cop(unimportant-19, be-18)
+mark(unimportant-19, to-17)
+det(possibility-23, the-22)
+case(case-27, of-24)
+det(case-27, each-25)
+case(essence-32, about-30)
+det(essence-32, the-31)
+case(world-35, of-33)
+det(world-35, the-34)
+nsubj(philosophy-7, that-2)
+advmod(so-5, generally-4)
+advmod(philosophy-7, so-5)
+advmod(and-10, again-9)
+advmod(turns-15, and-10)
+advmod(and-10, again-11)
+amod(case-14, individual-13)
+nsubj(turns-15, case-14)
+nsubj:xsubj(unimportant-19, case-14)
+parataxis(philosophy-7, turns-15)
+compound:prt(turns-15, out-16)
+xcomp(turns-15, unimportant-19)
+nsubj(discloses-28, possibility-23)
+amod(case-27, individual-26)
+nmod:of(possibility-23, case-27)
+parataxis(philosophy-7, discloses-28)
+conj:but(turns-15, discloses-28)
+dobj(discloses-28, something-29)
+nmod:about(something-29, essence-32)
+nmod:of(essence-32, world-35)
+G[37, 39] [?1, ?2, ?3, ?4, ?5, ?6, ?7, again9, again11, always12, and10, case2147483647, case2147483647, discloses28, essence2147483647, generally4, important13, individual26, individual13, it10, it15, mode2147483647, mode2147483647, out16, particular2, philosophy7, possibility2147483647, possible18, signifying5, signifying21, so5, something29, that2, turns15, unimportant8, unimportant19, world2147483647]
+it10- ->?5
+?4-xsubj->unimportant19
+?5-A->mode2147483647
+signifying21-of->?7
+and10- ->turns15
+out16-prt->turns15
+?5-  : may  : be ->unimportant8
+?3-of->?6
+generally4- ->so5
+discloses28-but->turns15
+turns15- ->?5
+?6-about->something29
+?7-  : that  : that ->important13
+always12- ->important13
+it15-  : is ->?7
+individual26- ->?1
+?6-the->essence2147483647
+something29- ->discloses28
+it10-  : is  : is ->important13
+unimportant19-  : to  : be ->turns15
+?4-the->case2147483647
+that2-  : And  : is ->philosophy7
+particular2- ->?5
+again9- ->and10
+discloses28- ->philosophy7
+individual13- ->?4
+?2-the->possibility2147483647
+again11- ->and10
+?4- ->turns15
+possible18- ->?7
+?1-of->?2
+?3-the->world2147483647
+signifying5-of->?5
+?1-each->case2147483647
+turns15- ->philosophy7
+important13-but->unimportant8
+so5-  : in ->philosophy7
+?2- ->discloses28
+?7-a->mode2147483647
+------CorefChainz
+CHAIN1-["A particular mode of signifying" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "A particular mode of signifying" in sentence 1

@@ -1,0 +1,51 @@
+ If a fact is to be a picture, it must have something in common with what it depicts.
+------CorefChainz
+CHAIN4-["a fact" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "a fact" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-12)
+det(fact-3, a-2)
+mark(is-4, If-1)
+cop(picture-8, be-6)
+det(picture-8, a-7)
+mark(picture-8, to-5)
+aux(have-12, must-11)
+punct(have-12, .-20)
+punct(have-12, ,-9)
+case(common-15, in-14)
+mark(depicts-19, with-16)
+nsubj(is-4, fact-3)
+nsubj:xsubj(picture-8, fact-3)
+advcl:if(have-12, is-4)
+xcomp(is-4, picture-8)
+nsubj(have-12, it-10)
+dobj(have-12, something-13)
+acl:in(something-13, common-15)
+dobj(depicts-19, what-17)
+nsubj(depicts-19, it-18)
+advcl:with(common-15, depicts-19)
+G[12, 14] [?1, ?2, common15, depicts19, fact2147483647, have12, is4, it18, it10, picture2147483647, something13, what17]
+it10-  : must ->have12
+?2-  : to  : be ->is4
+?1-a->fact2147483647
+?1-xsubj->?2
+is4-if->have12
+?1-  : If ->is4
+what17- ->depicts19
+it18- ->?1
+it10- ->?1
+?2-a->picture2147483647
+something13- ->have12
+common15-in->something13
+depicts19-with->common15
+it18- ->depicts19
+------CorefChainz
+CHAIN4-["a fact" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "a fact" in sentence 1

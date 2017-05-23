@@ -1,0 +1,41 @@
+ It is only in the nexus of an elementary proposition that a name occurs in a proposition.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, nexus-6)
+case(nexus-6, in-4)
+cop(nexus-6, is-2)
+det(nexus-6, the-5)
+punct(nexus-6, .-18)
+case(proposition-10, of-7)
+det(proposition-10, an-8)
+det(name-13, a-12)
+mark(occurs-14, that-11)
+case(proposition-17, in-15)
+det(proposition-17, a-16)
+nsubj(nexus-6, It-1)
+advmod(nexus-6, only-3)
+amod(proposition-10, elementary-9)
+nmod:of(nexus-6, proposition-10)
+nsubj(occurs-14, name-13)
+ccomp(proposition-10, occurs-14)
+nmod:in(occurs-14, proposition-17)
+G[12, 11] [?1, ?2, ?3, ?4, It1, elementary9, name2147483647, nexus2147483647, occurs14, only3, proposition2147483647, proposition2147483647]
+?3-a->name2147483647
+?3- ->occurs14
+only3-  : in ->?2
+?1-a->proposition2147483647
+?2-the->nexus2147483647
+elementary9- ->?4
+?1-in->occurs14
+occurs14-  : that ->?4
+?4-of->?2
+It1-  : is  : is ->?2
+?4-an->proposition2147483647
+------CorefChainz

@@ -1,0 +1,25 @@
+ It is laid against reality like a measure.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, laid-3)
+auxpass(laid-3, is-2)
+punct(laid-3, .-9)
+case(reality-5, against-4)
+case(measure-8, like-6)
+det(measure-8, a-7)
+nsubjpass(laid-3, It-1)
+nmod:against(laid-3, reality-5)
+nmod:like(laid-3, measure-8)
+G[5, 4] [?1, It1, laid3, measure2147483647, reality5]
+?1-a->measure2147483647
+reality5-against->laid3
+?1-like->laid3
+It1-  : is ->laid3
+------CorefChainz

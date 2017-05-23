@@ -1,0 +1,24 @@
+ The sum-total of reality is the world.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, world-7)
+det(sum-total-2, The-1)
+case(reality-4, of-3)
+cop(world-7, is-5)
+det(world-7, the-6)
+punct(world-7, .-8)
+nsubj(world-7, sum-total-2)
+nmod:of(sum-total-2, reality-4)
+G[5, 4] [?1, ?2, reality4, sum-total2147483647, world2147483647]
+?1-the->world2147483647
+reality4-of->?2
+?2-The->sum-total2147483647
+?2-  : is ->?1
+------CorefChainz

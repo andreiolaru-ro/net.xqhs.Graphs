@@ -1,0 +1,41 @@
+ That is how a picture is attached to reality; it reaches right out to it.
+------CorefChainz
+CHAIN4-["a picture" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "a picture" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-2)
+punct(is-2, .-17)
+punct(is-2, ;-10)
+det(picture-5, a-4)
+auxpass(attached-7, is-6)
+case(reality-9, to-8)
+case(it-16, out-14)
+case(it-16, to-15)
+nsubj(is-2, That-1)
+advmod(attached-7, how-3)
+nsubjpass(attached-7, picture-5)
+ccomp(is-2, attached-7)
+nmod:to(attached-7, reality-9)
+nsubj(reaches-12, it-11)
+parataxis(is-2, reaches-12)
+xcomp(reaches-12, right-13)
+nmod:to(right-13, it-16)
+G[8, 8] [?1, attached7, is2, it16, picture2147483647, reaches12, reality9, right13]
+right13- ->reaches12
+attached7- ->is2
+?1-  : is ->attached7
+?1-a->picture2147483647
+it16-to : out ->right13
+it16-==->?1
+reaches12- ->is2
+reality9-to->attached7
+------CorefChainz
+CHAIN4-["a picture" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "a picture" in sentence 1

@@ -1,0 +1,76 @@
+ It is supposed to be possible to answer a priori the question whether I can get into a position in which I need the sign for a 27-termed relation in order to signify something.
+------CorefChainz
+CHAIN4-["I" in sentence 1, "I" in sentence 1]
+representative mention: "I" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, supposed-3)
+auxpass(supposed-3, is-2)
+punct(supposed-3, .-35)
+cop(possible-6, be-5)
+mark(possible-6, to-4)
+mark(answer-8, to-7)
+det(priori-10, a-9)
+det(question-12, the-11)
+aux(get-16, can-15)
+mark(get-16, whether-13)
+case(position-19, into-17)
+det(position-19, a-18)
+case(which-21, in-20)
+det(sign-25, the-24)
+case(relation-29, for-26)
+det(relation-29, a-27)
+mwe(in-30, order-31)
+mark(signify-33, to-32)
+mark(signify-33, in-30)
+nsubjpass(supposed-3, It-1)
+nsubj:xsubj(possible-6, It-1)
+xcomp(supposed-3, possible-6)
+xcomp(possible-6, answer-8)
+dobj(answer-8, priori-10)
+dep(priori-10, question-12)
+nsubj(get-16, I-14)
+ccomp(question-12, get-16)
+nmod:into(get-16, position-19)
+nmod:in(need-23, position-19)
+ref(position-19, which-21)
+nsubj(need-23, I-22)
+acl:relcl(position-19, need-23)
+dobj(need-23, sign-25)
+amod(relation-29, 27-termed-28)
+nmod:for(sign-25, relation-29)
+acl:in_order(relation-29, signify-33)
+dobj(signify-33, something-34)
+G[23, 23] [27-termed28, ?1, ?2, ?3, ?4, ?5, I22, I14, It1, answer8, get16, in order30, need23, position2147483647, possible6, priori2147483647, question2147483647, relation2147483647, sign2147483647, signify33, something34, supposed3, which21]
+?2-a->position2147483647
+?1- ->answer8
+answer8-  : to ->possible6
+I22- ->need23
+which21-  : in ->?2
+?2-in->need23
+?4-the->question2147483647
+I14-  : can ->get16
+?4- ->?1
+get16-  : whether  : whether ->?4
+It1-  : is ->supposed3
+?5-a->relation2147483647
+27-termed28- ->?5
+something34-  : to ->signify33
+need23-relcl->?2
+signify33-in_order : in order ->?5
+possible6-  : to  : be ->supposed3
+It1-xsubj->possible6
+?5-for->?3
+?3-the->sign2147483647
+?1-a->priori2147483647
+?3- ->need23
+?2-into->get16
+------CorefChainz
+CHAIN4-["I" in sentence 1, "I" in sentence 1]
+representative mention: "I" in sentence 1

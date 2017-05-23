@@ -1,0 +1,134 @@
+ In a proposition there must be exactly as many distinguishable parts as in the situation that it represents. The two must possess the same logical (mathematical) multiplicity. (Compare Hertz's Mechanics on dynamical models.)
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, parts-11)
+case(proposition-3, In-1)
+det(proposition-3, a-2)
+aux(parts-11, must-5)
+cop(parts-11, be-6)
+punct(parts-11, .-19)
+case(situation-15, as-12)
+case(situation-15, in-13)
+det(situation-15, the-14)
+nmod:in(parts-11, proposition-3)
+expl(parts-11, there-4)
+advmod(parts-11, exactly-7)
+advmod(parts-11, as-8)
+amod(parts-11, many-9)
+amod(parts-11, distinguishable-10)
+nmod:in(parts-11, situation-15)
+dobj(represents-18, situation-15)
+ref(situation-15, that-16)
+nsubj(represents-18, it-17)
+acl:relcl(situation-15, represents-18)
+---
+qqroot(ROOT-0, parts-11)
+case(proposition-3, In-1)
+det(proposition-3, a-2)
+aux(parts-11, must-5)
+cop(parts-11, be-6)
+punct(parts-11, .-19)
+case(situation-15, as-12)
+case(situation-15, in-13)
+det(situation-15, the-14)
+nmod:in(parts-11, proposition-3)
+expl(parts-11, there-4)
+advmod(parts-11, exactly-7)
+advmod(parts-11, as-8)
+amod(parts-11, many-9)
+amod(parts-11, distinguishable-10)
+nmod:in(parts-11, situation-15)
+dobj(represents-18, situation-15)
+ref(situation-15, that-16)
+nsubj(represents-18, it-17)
+acl:relcl(situation-15, represents-18)
+root(ROOT-0, possess-4)
+det(two-2, The-1)
+aux(possess-4, must-3)
+punct(possess-4, .-12)
+punct(mathematical-9, -LRB--8)
+punct(mathematical-9, -RRB--10)
+det(multiplicity-11, the-5)
+nsubj(possess-4, two-2)
+amod(multiplicity-11, same-6)
+amod(multiplicity-11, logical-7)
+dep(logical-7, mathematical-9)
+dobj(possess-4, multiplicity-11)
+---
+qqroot(ROOT-0, parts-11)
+case(proposition-3, In-1)
+det(proposition-3, a-2)
+aux(parts-11, must-5)
+cop(parts-11, be-6)
+punct(parts-11, .-19)
+case(situation-15, as-12)
+case(situation-15, in-13)
+det(situation-15, the-14)
+nmod:in(parts-11, proposition-3)
+expl(parts-11, there-4)
+advmod(parts-11, exactly-7)
+advmod(parts-11, as-8)
+amod(parts-11, many-9)
+amod(parts-11, distinguishable-10)
+nmod:in(parts-11, situation-15)
+dobj(represents-18, situation-15)
+ref(situation-15, that-16)
+nsubj(represents-18, it-17)
+acl:relcl(situation-15, represents-18)
+root(ROOT-0, possess-4)
+det(two-2, The-1)
+aux(possess-4, must-3)
+punct(possess-4, .-12)
+punct(mathematical-9, -LRB--8)
+punct(mathematical-9, -RRB--10)
+det(multiplicity-11, the-5)
+nsubj(possess-4, two-2)
+amod(multiplicity-11, same-6)
+amod(multiplicity-11, logical-7)
+dep(logical-7, mathematical-9)
+dobj(possess-4, multiplicity-11)
+root(ROOT-0, Compare-2)
+punct(Compare-2, .-9)
+punct(Compare-2, -RRB--10)
+punct(Compare-2, -LRB--1)
+case(Hertz-3, 's-4)
+case(models-8, on-6)
+nmod:poss(Mechanics-5, Hertz-3)
+dobj(Compare-2, Mechanics-5)
+amod(models-8, dynamical-7)
+nmod:on(Compare-2, models-8)
+G[26, 24] [?1, ?2, ?3, ?4, Compare2, Hertz3, Mechanics5, as8, distinguishable10, dynamical7, exactly7, it17, logical7, many9, mathematical9, models8, multiplicity2147483647, parts11, possess4, proposition2147483647, represents18, same6, situation2147483647, that16, there4, two2147483647]
+it17- ->represents18
+same6- ->?3
+?2-The->two2147483647
+Mechanics5- ->Compare2
+?3-the->multiplicity2147483647
+exactly7-  : be ->parts11
+dynamical7- ->models8
+represents18-relcl->?1
+there4-  : must ->parts11
+that16- ->?1
+?2-  : must ->possess4
+mathematical9- ->logical7
+distinguishable10- ->parts11
+?4-in : In ->parts11
+?1- ->represents18
+many9- ->parts11
+as8- ->parts11
+?1-in : as ->parts11
+?3- ->possess4
+Hertz3-poss : 's ->Mechanics5
+models8-on->Compare2
+logical7- ->?3
+?4-a->proposition2147483647
+?1-the->situation2147483647
+------CorefChainz

@@ -1,0 +1,148 @@
+ Indeed, it would be altogether too remarkable if a proposition that had sense could be proved logically from others, and so too could a logical proposition. It is clear from the start that a logical proof of a proposition that has sense and a proof in logic must be two entirely different things.
+------CorefChainz
+CHAIN6-["it" in sentence 1, "It" in sentence 2]
+representative mention: "it" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, remarkable-8)
+aux(remarkable-8, would-4)
+cc(remarkable-8, and-22)
+cop(remarkable-8, be-5)
+punct(remarkable-8, ,-2)
+punct(remarkable-8, ,-21)
+punct(remarkable-8, .-29)
+det(proposition-11, a-10)
+aux(proved-17, could-15)
+auxpass(proved-17, be-16)
+mark(proved-17, if-9)
+case(others-20, from-19)
+det(proposition-28, a-26)
+advmod(remarkable-8, Indeed-1)
+nsubj(remarkable-8, it-3)
+advmod(remarkable-8, altogether-6)
+advmod(remarkable-8, too-7)
+nsubj(had-13, proposition-11)
+nsubjpass(proved-17, proposition-11)
+ref(proposition-11, that-12)
+acl:relcl(proposition-11, had-13)
+dobj(had-13, sense-14)
+advcl:if(remarkable-8, proved-17)
+advmod(proved-17, logically-18)
+nmod:from(proved-17, others-20)
+advmod(too-24, so-23)
+advmod(proposition-28, too-24)
+dep(proposition-28, could-25)
+amod(proposition-28, logical-27)
+conj:and(remarkable-8, proposition-28)
+---
+qqroot(ROOT-0, remarkable-8)
+aux(remarkable-8, would-4)
+cc(remarkable-8, and-22)
+cop(remarkable-8, be-5)
+punct(remarkable-8, ,-2)
+punct(remarkable-8, ,-21)
+punct(remarkable-8, .-29)
+det(proposition-11, a-10)
+aux(proved-17, could-15)
+auxpass(proved-17, be-16)
+mark(proved-17, if-9)
+case(others-20, from-19)
+det(proposition-28, a-26)
+advmod(remarkable-8, Indeed-1)
+nsubj(remarkable-8, it-3)
+advmod(remarkable-8, altogether-6)
+advmod(remarkable-8, too-7)
+nsubj(had-13, proposition-11)
+nsubjpass(proved-17, proposition-11)
+ref(proposition-11, that-12)
+acl:relcl(proposition-11, had-13)
+dobj(had-13, sense-14)
+advcl:if(remarkable-8, proved-17)
+advmod(proved-17, logically-18)
+nmod:from(proved-17, others-20)
+advmod(too-24, so-23)
+advmod(proposition-28, too-24)
+dep(proposition-28, could-25)
+amod(proposition-28, logical-27)
+conj:and(remarkable-8, proposition-28)
+root(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-28)
+case(start-6, from-4)
+det(start-6, the-5)
+det(proof-10, a-8)
+case(proposition-13, of-11)
+det(proposition-13, a-12)
+cc(sense-16, and-17)
+det(proof-19, a-18)
+case(logic-21, in-20)
+aux(things-27, must-22)
+cop(things-27, be-23)
+mark(things-27, that-7)
+nsubj(clear-3, It-1)
+nmod:from(clear-3, start-6)
+amod(proof-10, logical-9)
+nsubj(things-27, proof-10)
+nmod:of(proof-10, proposition-13)
+nsubj(has-15, proposition-13)
+ref(proposition-13, that-14)
+acl:relcl(proposition-13, has-15)
+dobj(has-15, sense-16)
+dobj(has-15, proof-19)
+conj:and(sense-16, proof-19)
+nmod:in(proof-19, logic-21)
+nummod(things-27, two-24)
+advmod(different-26, entirely-25)
+amod(things-27, different-26)
+ccomp(start-6, things-27)
+G[38, 40] [?1, ?2, ?3, ?4, ?5, ?6, Indeed1, It1, altogether6, clear3, could25, different26, entirely25, had13, has15, it3, logic21, logical9, logical27, logically18, others20, proof2147483647, proof2147483647, proposition2147483647, proposition2147483647, proposition2147483647, proved17, remarkable8, sense14, sense16, so23, start2147483647, that12, that14, things27, too24, too7, two24]
+logic21-in->?5
+Indeed1-  : is  : is ->clear3
+too24- ->?4
+proved17-if->remarkable8
+had13-relcl->?6
+entirely25- ->different26
+?2-of->?1
+things27-  : that ->?3
+could25- ->?4
+Indeed1- ->remarkable8
+altogether6-  : be ->remarkable8
+sense16- ->has15
+?1-a->proof2147483647
+two24-  : must  : be ->things27
+?6- ->had13
+logical27- ->?4
+too7- ->remarkable8
+sense14- ->had13
+others20-from->proved17
+that14- ->?2
+logically18-  : could  : be ->proved17
+?2-a->proposition2147483647
+it3-  : would ->remarkable8
+?3-the->start2147483647
+?5-and->sense16
+?4-and->remarkable8
+that12- ->?6
+different26- ->things27
+logical9- ->?1
+?1- ->things27
+?6-a->proposition2147483647
+so23- ->too24
+has15-relcl->?2
+?6- ->proved17
+?5-a->proof2147483647
+?4-a->proposition2147483647
+?5- ->has15
+?3-from->clear3
+?2- ->has15
+It1- ->clear3
+------CorefChainz
+CHAIN6-["it" in sentence 1, "It" in sentence 2]
+representative mention: "it" in sentence 1

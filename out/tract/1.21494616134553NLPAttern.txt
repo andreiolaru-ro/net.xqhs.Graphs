@@ -1,0 +1,21 @@
+ The world divides into facts.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, divides-3)
+det(world-2, The-1)
+punct(divides-3, .-6)
+case(facts-5, into-4)
+nsubj(divides-3, world-2)
+nmod:into(divides-3, facts-5)
+G[4, 3] [?1, divides3, facts5, world2147483647]
+facts5-into->divides3
+?1- ->divides3
+?1-The->world2147483647
+------CorefChainz

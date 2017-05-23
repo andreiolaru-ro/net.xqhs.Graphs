@@ -1,0 +1,45 @@
+ In order to tell whether a picture is true or false we must compare it with reality.
+------CorefChainz
+CHAIN3-["a picture" in sentence 1, "it" in sentence 1]
+representative mention: "a picture" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, compare-14)
+mwe(In-1, order-2)
+mark(tell-4, In-1)
+mark(tell-4, to-3)
+det(picture-7, a-6)
+cc(true-9, or-10)
+cop(true-9, is-8)
+mark(true-9, whether-5)
+aux(compare-14, must-13)
+punct(compare-14, .-18)
+case(reality-17, with-16)
+advcl:in_order(compare-14, tell-4)
+nsubj(true-9, picture-7)
+nsubj(false-11, picture-7)
+ccomp(tell-4, true-9)
+ccomp(tell-4, false-11)
+conj:or(true-9, false-11)
+nsubj(compare-14, we-12)
+dobj(compare-14, it-15)
+nmod:with(compare-14, reality-17)
+G[8, 9] [?1, In order1, compare14, false11, picture2147483647, reality17, tell4, true9]
+true9-  : whether  : In order  : to ->tell4
+false11- ->tell4
+compare14- ->?1
+?1-a->picture2147483647
+tell4-in_order->compare14
+reality17-with : must ->compare14
+false11-or->true9
+?1-  : is ->true9
+?1- ->false11
+------CorefChainz
+CHAIN3-["a picture" in sentence 1, "it" in sentence 1]
+representative mention: "a picture" in sentence 1

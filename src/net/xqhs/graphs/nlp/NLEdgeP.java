@@ -3,7 +3,7 @@ package net.xqhs.graphs.nlp;
 import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.pattern.EdgeP;
 
-public class NLEdgeP extends EdgeP {
+public class NLEdgeP extends EdgeP implements NLEdge {
 	private String role;
 
 	public String getRole() {
@@ -24,6 +24,11 @@ public class NLEdgeP extends EdgeP {
 	public NLEdgeP(NLNodeP from, NLNodeP to, String label) {
 		super(from, to, label);
 		role = label.contains(":") ? label.split(":")[0] : label;
+	}
+
+	public NLEdgeP(NLNodeP from, NLNodeP to, String label, String role) {
+		super(from, to, label);
+		this.role = role;
 	}
 
 	/**

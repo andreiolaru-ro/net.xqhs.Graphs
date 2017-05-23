@@ -1,0 +1,89 @@
+ A proposition determines a place in logical space. The existence of this logical place is guaranteed by the mere existence of the constituents-- by the existence of the proposition with a sense.
+------CorefChainz
+CHAIN4-["a place in logical space" in sentence 1, "this logical place" in sentence 2]
+representative mention: "this logical place" in sentence 2
+CHAIN8-["A proposition" in sentence 1, "the proposition" in sentence 2]
+representative mention: "A proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, determines-3)
+det(proposition-2, A-1)
+punct(determines-3, .-9)
+det(place-5, a-4)
+case(space-8, in-6)
+nsubj(determines-3, proposition-2)
+dobj(determines-3, place-5)
+amod(space-8, logical-7)
+nmod:in(place-5, space-8)
+---
+qqroot(ROOT-0, determines-3)
+det(proposition-2, A-1)
+punct(determines-3, .-9)
+det(place-5, a-4)
+case(space-8, in-6)
+nsubj(determines-3, proposition-2)
+dobj(determines-3, place-5)
+amod(space-8, logical-7)
+nmod:in(place-5, space-8)
+root(ROOT-0, guaranteed-8)
+det(existence-2, The-1)
+case(place-6, of-3)
+det(place-6, this-4)
+auxpass(guaranteed-8, is-7)
+punct(guaranteed-8, .-26)
+punct(guaranteed-8, ---16)
+case(existence-12, by-9)
+det(existence-12, the-10)
+case(constituents-15, of-13)
+det(constituents-15, the-14)
+case(existence-19, by-17)
+det(existence-19, the-18)
+case(proposition-22, of-20)
+det(proposition-22, the-21)
+case(sense-25, with-23)
+det(sense-25, a-24)
+nsubjpass(guaranteed-8, existence-2)
+amod(place-6, logical-5)
+nmod:of(existence-2, place-6)
+amod(existence-12, mere-11)
+nmod:agent(guaranteed-8, existence-12)
+nmod:of(existence-12, constituents-15)
+nmod:agent(guaranteed-8, existence-19)
+nmod:of(existence-19, proposition-22)
+nmod:with(existence-19, sense-25)
+G[24, 23] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, constituents2147483647, determines3, existence2147483647, existence2147483647, existence2147483647, guaranteed8, logical7, logical5, mere11, place2147483647, place2147483647, proposition2147483647, proposition2147483647, sense2147483647, space8]
+mere11- ->?3
+?8-A->proposition2147483647
+?5-The->existence2147483647
+?6-the->existence2147483647
+?2- ->?5
+?2-of : by ->?6
+?9-a->sense2147483647
+?4-the->constituents2147483647
+?7-a->place2147483647
+?4-of->?3
+?3-the->existence2147483647
+?9-with->?6
+?5-  : is  : is ->guaranteed8
+?1-of->?5
+?6-agent->guaranteed8
+?7- ->determines3
+?8- ->determines3
+logical7- ->space8
+?2-the->proposition2147483647
+?3-agent : by ->guaranteed8
+?1-this->place2147483647
+space8-in->?7
+logical5-==->?1
+------CorefChainz
+CHAIN4-["a place in logical space" in sentence 1, "this logical place" in sentence 2]
+representative mention: "this logical place" in sentence 2
+CHAIN8-["A proposition" in sentence 1, "the proposition" in sentence 2]
+representative mention: "A proposition" in sentence 1

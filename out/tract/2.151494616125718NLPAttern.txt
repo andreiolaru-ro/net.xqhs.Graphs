@@ -1,0 +1,164 @@
+ The fact that the elements of a picture are related to one another in a determinate way represents that things are related to one another in the same way. Let us call this connexion of its elements the structure of the picture, and let us call the possibility of this structure the pictorial form of the picture.
+------CorefChainz
+CHAIN16-["us" in sentence 2, "us" in sentence 2]
+representative mention: "us" in sentence 2
+CHAIN18-["the structure of the picture" in sentence 2, "this structure" in sentence 2]
+representative mention: "the structure of the picture" in sentence 2
+CHAIN20-["a picture" in sentence 1, "the picture" in sentence 2, "the picture" in sentence 2]
+representative mention: "a picture" in sentence 1
+CHAIN13-["the elements of a picture" in sentence 1, "its elements" in sentence 2]
+representative mention: "the elements of a picture" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, represents-18)
+det(fact-2, The-1)
+det(elements-5, the-4)
+case(picture-8, of-6)
+det(picture-8, a-7)
+cop(related-10, are-9)
+mark(related-10, that-3)
+case(one-12, to-11)
+case(way-17, in-14)
+det(way-17, a-15)
+punct(represents-18, .-30)
+cop(related-22, are-21)
+mark(related-22, that-19)
+case(one-24, to-23)
+case(way-29, in-26)
+det(way-29, the-27)
+nsubj(represents-18, fact-2)
+nsubj(related-10, elements-5)
+nmod:of(elements-5, picture-8)
+ccomp(fact-2, related-10)
+nmod:to(related-10, one-12)
+dep(one-12, another-13)
+amod(way-17, determinate-16)
+nmod:in(one-12, way-17)
+nsubj(related-22, things-20)
+ccomp(represents-18, related-22)
+nmod:to(related-22, one-24)
+dep(one-24, another-25)
+amod(way-29, same-28)
+nmod:in(one-24, way-29)
+---
+qqroot(ROOT-0, represents-18)
+det(fact-2, The-1)
+det(elements-5, the-4)
+case(picture-8, of-6)
+det(picture-8, a-7)
+cop(related-10, are-9)
+mark(related-10, that-3)
+case(one-12, to-11)
+case(way-17, in-14)
+det(way-17, a-15)
+punct(represents-18, .-30)
+cop(related-22, are-21)
+mark(related-22, that-19)
+case(one-24, to-23)
+case(way-29, in-26)
+det(way-29, the-27)
+nsubj(represents-18, fact-2)
+nsubj(related-10, elements-5)
+nmod:of(elements-5, picture-8)
+ccomp(fact-2, related-10)
+nmod:to(related-10, one-12)
+dep(one-12, another-13)
+amod(way-17, determinate-16)
+nmod:in(one-12, way-17)
+nsubj(related-22, things-20)
+ccomp(represents-18, related-22)
+nmod:to(related-22, one-24)
+dep(one-24, another-25)
+amod(way-29, same-28)
+nmod:in(one-24, way-29)
+root(ROOT-0, Let-1)
+cc(Let-1, and-15)
+punct(Let-1, ,-14)
+punct(Let-1, .-30)
+det(connexion-5, this-4)
+case(elements-8, of-6)
+det(structure-10, the-9)
+case(picture-13, of-11)
+det(picture-13, the-12)
+det(possibility-20, the-19)
+case(structure-23, of-21)
+det(structure-23, this-22)
+det(form-26, the-24)
+case(picture-29, of-27)
+det(picture-29, the-28)
+nsubj(call-3, us-2)
+ccomp(Let-1, call-3)
+xcomp(call-3, connexion-5)
+nmod:poss(elements-8, its-7)
+nmod:of(connexion-5, elements-8)
+dep(connexion-5, structure-10)
+nmod:of(structure-10, picture-13)
+conj:and(Let-1, let-16)
+nsubj(call-18, us-17)
+ccomp(let-16, call-18)
+nsubj(form-26, possibility-20)
+nmod:of(possibility-20, structure-23)
+amod(form-26, pictorial-25)
+xcomp(call-18, form-26)
+nmod:of(form-26, picture-29)
+G[43, 44] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, Let1, another25, another13, call3, call18, connexion2147483647, determinate16, elements8, elements2147483647, fact2147483647, form2147483647, its7, let16, one12, one24, pictorial25, picture2147483647, picture2147483647, picture2147483647, possibility2147483647, related22, related10, represents18, same28, structure2147483647, structure2147483647, things20, us2, us17, way2147483647, way2147483647]
+?9-the->structure2147483647
+another13- ->one12
+us17- ->call18
+call3- ->Let1
+?6-in->one24
+call18- ->let16
+?4- ->elements8
+?12- ->represents18
+?8- ->related10
+one12-to : are ->related10
+us2- ->call3
+?3-this->connexion2147483647
+?7-of->?9
+things20-  : are ->related22
+?3- ->call3
+?10-of->?8
+?10-a->picture2147483647
+?7-the->picture2147483647
+?5- ->call18
+pictorial25- ->?5
+related22-  : that  : that ->represents18
+?9- ->?3
+?4-the->picture2147483647
+?1-the->possibility2147483647
+?2-a->way2147483647
+?12-The->fact2147483647
+?2-in->one12
+let16-and->Let1
+another25- ->one24
+?8-the->elements2147483647
+its7-poss->elements8
+?4-of->?5
+same28- ->?6
+?1- ->?5
+?5-the->form2147483647
+determinate16- ->?2
+?11-of->?1
+elements8-of:== : of  : of ->?3
+?11-this->structure2147483647
+related10-  : that ->?12
+one24-to->related22
+?7- ->elements8
+?6-the->way2147483647
+?11- ->related10
+------CorefChainz
+CHAIN16-["us" in sentence 2, "us" in sentence 2]
+representative mention: "us" in sentence 2
+CHAIN18-["the structure of the picture" in sentence 2, "this structure" in sentence 2]
+representative mention: "the structure of the picture" in sentence 2
+CHAIN20-["a picture" in sentence 1, "the picture" in sentence 2, "the picture" in sentence 2]
+representative mention: "a picture" in sentence 1
+CHAIN13-["the elements of a picture" in sentence 1, "its elements" in sentence 2]
+representative mention: "the elements of a picture" in sentence 1

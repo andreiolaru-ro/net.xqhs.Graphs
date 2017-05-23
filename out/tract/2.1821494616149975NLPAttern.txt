@@ -1,0 +1,71 @@
+ Every picture is at the same time a logical one. (On the other hand, not every picture is, for example, a spatial one.)
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, time-7)
+det(picture-2, Every-1)
+case(time-7, at-4)
+cop(time-7, is-3)
+det(time-7, the-5)
+punct(time-7, .-11)
+det(one-10, a-8)
+nsubj(time-7, picture-2)
+amod(time-7, same-6)
+amod(one-10, logical-9)
+dobj(time-7, one-10)
+---
+qqroot(ROOT-0, time-7)
+det(picture-2, Every-1)
+case(time-7, at-4)
+cop(time-7, is-3)
+det(time-7, the-5)
+punct(time-7, .-11)
+det(one-10, a-8)
+nsubj(time-7, picture-2)
+amod(time-7, same-6)
+amod(one-10, logical-9)
+dobj(time-7, one-10)
+root(ROOT-0, one-17)
+case(hand-5, On-2)
+det(hand-5, the-3)
+det(picture-9, every-8)
+case(example-13, for-12)
+cop(one-17, is-10)
+det(one-17, a-15)
+punct(one-17, -RRB--19)
+punct(one-17, ,-6)
+punct(one-17, ,-11)
+punct(one-17, ,-14)
+punct(one-17, -LRB--1)
+punct(one-17, .-18)
+amod(hand-5, other-4)
+nmod:on(one-17, hand-5)
+neg(picture-9, not-7)
+nsubj(one-17, picture-9)
+nmod:for(one-17, example-13)
+amod(one-17, spatial-16)
+G[18, 16] [?1, ?2, ?3, ?4, ?5, ?6, example13, hand2147483647, logical9, not7, one2147483647, one2147483647, other4, picture2147483647, picture2147483647, same6, spatial16, time2147483647]
+?4- ->?3
+?6-every->picture2147483647
+?1-on->?2
+same6- ->?3
+?5-Every->picture2147483647
+?2-a->one2147483647
+?6-  : is ->?2
+logical9- ->?4
+?1-the->hand2147483647
+other4-  : On ->?1
+spatial16- ->?2
+?5-  : is  : at  : at ->?3
+?4-a->one2147483647
+?3-the->time2147483647
+not7- ->?6
+example13-for->?2
+------CorefChainz

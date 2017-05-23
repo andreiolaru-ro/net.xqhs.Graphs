@@ -1,0 +1,264 @@
+ If all true elementary propositions are given, the result is a complete description of the world. The world is completely described by giving all elementary propositions, and adding which of them are true and which false. For n states of affairs, there are possibilities of existence and non-existence. Of these states of affairs any combination can exist and the remainder not exist.
+------CorefChainz
+CHAIN5-["all true elementary propositions" in sentence 1, "all elementary propositions" in sentence 2, "them" in sentence 2]
+representative mention: "all true elementary propositions" in sentence 1
+CHAIN6-["the world" in sentence 1, "The world" in sentence 2]
+representative mention: "the world" in sentence 1
+CHAIN13-["n states of affairs" in sentence 3, "these states of affairs" in sentence 4]
+representative mention: "n states of affairs" in sentence 3
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, description-14)
+det(propositions-5, all-2)
+auxpass(given-7, are-6)
+mark(given-7, If-1)
+det(result-10, the-9)
+cop(description-14, is-11)
+det(description-14, a-12)
+punct(description-14, .-18)
+punct(description-14, ,-8)
+case(world-17, of-15)
+det(world-17, the-16)
+amod(propositions-5, true-3)
+amod(propositions-5, elementary-4)
+nsubjpass(given-7, propositions-5)
+advcl:if(description-14, given-7)
+nsubj(description-14, result-10)
+amod(description-14, complete-13)
+nmod:of(description-14, world-17)
+---
+qqroot(ROOT-0, description-14)
+det(propositions-5, all-2)
+auxpass(given-7, are-6)
+mark(given-7, If-1)
+det(result-10, the-9)
+cop(description-14, is-11)
+det(description-14, a-12)
+punct(description-14, .-18)
+punct(description-14, ,-8)
+case(world-17, of-15)
+det(world-17, the-16)
+amod(propositions-5, true-3)
+amod(propositions-5, elementary-4)
+nsubjpass(given-7, propositions-5)
+advcl:if(description-14, given-7)
+nsubj(description-14, result-10)
+amod(description-14, complete-13)
+nmod:of(description-14, world-17)
+root(ROOT-0, described-5)
+det(world-2, The-1)
+auxpass(described-5, is-3)
+cc(described-5, and-12)
+punct(described-5, .-22)
+punct(described-5, ,-11)
+mark(giving-7, by-6)
+det(propositions-10, all-8)
+case(them-16, of-15)
+cc(true-18, and-19)
+cop(true-18, are-17)
+nsubjpass(described-5, world-2)
+nsubjpass(adding-13, world-2)
+advmod(described-5, completely-4)
+advcl:by(described-5, giving-7)
+amod(propositions-10, elementary-9)
+dobj(giving-7, propositions-10)
+conj:and(described-5, adding-13)
+nsubj(true-18, which-14)
+nmod:of(true-18, them-16)
+ccomp(adding-13, true-18)
+nsubj(false-21, which-20)
+ccomp(adding-13, false-21)
+conj:and(true-18, false-21)
+---
+qqroot(ROOT-0, description-14)
+det(propositions-5, all-2)
+auxpass(given-7, are-6)
+mark(given-7, If-1)
+det(result-10, the-9)
+cop(description-14, is-11)
+det(description-14, a-12)
+punct(description-14, .-18)
+punct(description-14, ,-8)
+case(world-17, of-15)
+det(world-17, the-16)
+amod(propositions-5, true-3)
+amod(propositions-5, elementary-4)
+nsubjpass(given-7, propositions-5)
+advcl:if(description-14, given-7)
+nsubj(description-14, result-10)
+amod(description-14, complete-13)
+nmod:of(description-14, world-17)
+root(ROOT-0, described-5)
+det(world-2, The-1)
+auxpass(described-5, is-3)
+cc(described-5, and-12)
+punct(described-5, .-22)
+punct(described-5, ,-11)
+mark(giving-7, by-6)
+det(propositions-10, all-8)
+case(them-16, of-15)
+cc(true-18, and-19)
+cop(true-18, are-17)
+nsubjpass(described-5, world-2)
+nsubjpass(adding-13, world-2)
+advmod(described-5, completely-4)
+advcl:by(described-5, giving-7)
+amod(propositions-10, elementary-9)
+dobj(giving-7, propositions-10)
+conj:and(described-5, adding-13)
+nsubj(true-18, which-14)
+nmod:of(true-18, them-16)
+ccomp(adding-13, true-18)
+nsubj(false-21, which-20)
+ccomp(adding-13, false-21)
+conj:and(true-18, false-21)
+root(ROOT-0, are-8)
+case(states-3, For-1)
+compound(states-3, n-2)
+case(affairs-5, of-4)
+punct(are-8, ,-6)
+punct(are-8, .-14)
+case(existence-11, of-10)
+cc(existence-11, and-12)
+nmod:for(are-8, states-3)
+nmod:of(states-3, affairs-5)
+expl(are-8, there-7)
+nsubj(are-8, possibilities-9)
+nmod:of(possibilities-9, existence-11)
+nmod:of(possibilities-9, non-existence-13)
+conj:and(existence-11, non-existence-13)
+---
+qqroot(ROOT-0, description-14)
+det(propositions-5, all-2)
+auxpass(given-7, are-6)
+mark(given-7, If-1)
+det(result-10, the-9)
+cop(description-14, is-11)
+det(description-14, a-12)
+punct(description-14, .-18)
+punct(description-14, ,-8)
+case(world-17, of-15)
+det(world-17, the-16)
+amod(propositions-5, true-3)
+amod(propositions-5, elementary-4)
+nsubjpass(given-7, propositions-5)
+advcl:if(description-14, given-7)
+nsubj(description-14, result-10)
+amod(description-14, complete-13)
+nmod:of(description-14, world-17)
+root(ROOT-0, described-5)
+det(world-2, The-1)
+auxpass(described-5, is-3)
+cc(described-5, and-12)
+punct(described-5, .-22)
+punct(described-5, ,-11)
+mark(giving-7, by-6)
+det(propositions-10, all-8)
+case(them-16, of-15)
+cc(true-18, and-19)
+cop(true-18, are-17)
+nsubjpass(described-5, world-2)
+nsubjpass(adding-13, world-2)
+advmod(described-5, completely-4)
+advcl:by(described-5, giving-7)
+amod(propositions-10, elementary-9)
+dobj(giving-7, propositions-10)
+conj:and(described-5, adding-13)
+nsubj(true-18, which-14)
+nmod:of(true-18, them-16)
+ccomp(adding-13, true-18)
+nsubj(false-21, which-20)
+ccomp(adding-13, false-21)
+conj:and(true-18, false-21)
+root(ROOT-0, are-8)
+case(states-3, For-1)
+compound(states-3, n-2)
+case(affairs-5, of-4)
+punct(are-8, ,-6)
+punct(are-8, .-14)
+case(existence-11, of-10)
+cc(existence-11, and-12)
+nmod:for(are-8, states-3)
+nmod:of(states-3, affairs-5)
+expl(are-8, there-7)
+nsubj(are-8, possibilities-9)
+nmod:of(possibilities-9, existence-11)
+nmod:of(possibilities-9, non-existence-13)
+conj:and(existence-11, non-existence-13)
+root(ROOT-0, exist-9)
+case(states-3, Of-1)
+det(states-3, these-2)
+case(affairs-5, of-4)
+det(combination-7, any-6)
+aux(exist-9, can-8)
+cc(exist-9, and-10)
+punct(exist-9, .-15)
+det(remainder-12, the-11)
+nmod:of(exist-9, states-3)
+nmod:of(states-3, affairs-5)
+nsubj(exist-9, combination-7)
+nsubj(exist-14, remainder-12)
+neg(exist-14, not-13)
+conj:and(exist-9, exist-14)
+G[43, 45] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, adding13, affairs5, affairs5, are8, combination2147483647, complete13, completely4, described5, description2147483647, elementary9, elementary4, exist14, exist9, existence11, false21, given7, giving7, n states3, non-existence13, not13, possibilities9, propositions2147483647, propositions2147483647, remainder2147483647, result2147483647, states2147483647, them16, there7, true3, true18, which14, which20, world2147483647, world2147483647]
+affairs5-of : Of ->?2
+not13- ->exist14
+?3-  : is ->?6
+them16- ->affairs5
+non-existence13-of->possibilities9
+?5-  : is  : is ->described5
+?4-of->?6
+?9-  : If  : are ->given7
+possibilities9- ->are8
+adding13-and->described5
+non-existence13-and->existence11
+given7-if->?6
+them16-of : are ->true18
+?3-the->result2147483647
+there7- ->are8
+?5- ->?4
+?7- ->exist14
+true3- ->?9
+n states3-for->are8
+?9-all->propositions2147483647
+?4-the->world2147483647
+false21-and->true18
+existence11-of->possibilities9
+?2-these->states2147483647
+?8-all->propositions2147483647
+false21- ->adding13
+completely4- ->described5
+?1-any->combination2147483647
+?8- ->giving7
+affairs5-of : For ->n states3
+elementary9- ->?8
+which14- ->true18
+?5- ->adding13
+giving7-by->described5
+complete13- ->?6
+?7-the->remainder2147483647
+exist14-and->exist9
+?2-of->exist9
+?1-  : can ->exist9
+which20- ->false21
+?3- ->affairs5
+?5-The->world2147483647
+elementary4- ->?9
+true18- ->adding13
+?6-a->description2147483647
+------CorefChainz
+CHAIN5-["all true elementary propositions" in sentence 1, "all elementary propositions" in sentence 2, "them" in sentence 2]
+representative mention: "all true elementary propositions" in sentence 1
+CHAIN6-["the world" in sentence 1, "The world" in sentence 2]
+representative mention: "the world" in sentence 1
+CHAIN13-["n states of affairs" in sentence 3, "these states of affairs" in sentence 4]
+representative mention: "n states of affairs" in sentence 3

@@ -1,0 +1,80 @@
+ The existence and non-existence of states of affairs is reality. (We call the existence of states of affairs a positive fact, and their non- existence a negative fact.)
+------CorefChainz
+CHAIN5-["The existence" in sentence 1, "the existence of states of affairs" in sentence 2, "their non - existence" in sentence 2]
+representative mention: "their non - existence" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, reality-10)
+cc(existence-2, and-3)
+det(existence-2, The-1)
+case(states-6, of-5)
+case(affairs-8, of-7)
+cop(reality-10, is-9)
+punct(reality-10, .-11)
+nsubj(reality-10, existence-2)
+conj:and(existence-2, non-existence-4)
+nsubj(reality-10, non-existence-4)
+nmod:of(existence-2, states-6)
+nmod:of(states-6, affairs-8)
+---
+qqroot(ROOT-0, reality-10)
+cc(existence-2, and-3)
+det(existence-2, The-1)
+case(states-6, of-5)
+case(affairs-8, of-7)
+cop(reality-10, is-9)
+punct(reality-10, .-11)
+nsubj(reality-10, existence-2)
+conj:and(existence-2, non-existence-4)
+nsubj(reality-10, non-existence-4)
+nmod:of(existence-2, states-6)
+nmod:of(states-6, affairs-8)
+root(ROOT-0, call-3)
+cc(call-3, and-14)
+punct(call-3, .-22)
+punct(call-3, -RRB--23)
+punct(call-3, ,-13)
+punct(call-3, -LRB--1)
+det(existence-5, the-4)
+case(states-7, of-6)
+case(affairs-9, of-8)
+det(fact-12, a-10)
+punct(existence-18, --17)
+det(fact-21, a-19)
+nsubj(call-3, We-2)
+nsubj(fact-12, existence-5)
+nmod:of(existence-5, states-7)
+nmod:of(states-7, affairs-9)
+amod(fact-12, positive-11)
+xcomp(call-3, fact-12)
+nmod:poss(existence-18, their-15)
+amod(existence-18, non-16)
+nsubj(fact-21, existence-18)
+amod(fact-21, negative-20)
+conj:and(call-3, fact-21)
+G[15, 15] [?1, ?2, ?3, ?4, affairs8, affairs9, call3, existence2147483647, existence2147483647, existence18, fact2147483647, fact2147483647, reality10, states6, states7]
+existence18- ->?3
+?3-a->fact2147483647
+?2-The->existence2147483647
+affairs9-of->states7
+?1- ->existence18
+?3-and->call3
+states6-of : and ->?2
+?1- ->?4
+?4-a->fact2147483647
+?2- ->existence18
+?4- ->call3
+affairs8-of->states6
+states7-of->?1
+?1-the->existence2147483647
+?2-  : is ->reality10
+------CorefChainz
+CHAIN5-["The existence" in sentence 1, "the existence of states of affairs" in sentence 2, "their non - existence" in sentence 2]
+representative mention: "their non - existence" in sentence 2

@@ -1,0 +1,116 @@
+ The mark of a logical proposition is not general validity. To be general means no more than to be accidentally valid for all things. An ungeneralized proposition can be tautological just as well as a generalized one.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, validity-10)
+det(mark-2, The-1)
+case(proposition-6, of-3)
+det(proposition-6, a-4)
+cop(validity-10, is-7)
+punct(validity-10, .-11)
+nsubj(validity-10, mark-2)
+amod(proposition-6, logical-5)
+nmod:of(mark-2, proposition-6)
+neg(validity-10, not-8)
+amod(validity-10, general-9)
+---
+qqroot(ROOT-0, validity-10)
+det(mark-2, The-1)
+case(proposition-6, of-3)
+det(proposition-6, a-4)
+cop(validity-10, is-7)
+punct(validity-10, .-11)
+nsubj(validity-10, mark-2)
+amod(proposition-6, logical-5)
+nmod:of(mark-2, proposition-6)
+neg(validity-10, not-8)
+amod(validity-10, general-9)
+root(ROOT-0, means-4)
+cop(means-4, be-2)
+mark(means-4, To-1)
+punct(means-4, .-15)
+cop(valid-11, be-9)
+mark(valid-11, than-7)
+mark(valid-11, to-8)
+case(things-14, for-12)
+det(things-14, all-13)
+amod(means-4, general-3)
+neg(more-6, no-5)
+dep(means-4, more-6)
+advmod(valid-11, accidentally-10)
+acl:to(more-6, valid-11)
+nmod:for(valid-11, things-14)
+---
+qqroot(ROOT-0, validity-10)
+det(mark-2, The-1)
+case(proposition-6, of-3)
+det(proposition-6, a-4)
+cop(validity-10, is-7)
+punct(validity-10, .-11)
+nsubj(validity-10, mark-2)
+amod(proposition-6, logical-5)
+nmod:of(mark-2, proposition-6)
+neg(validity-10, not-8)
+amod(validity-10, general-9)
+root(ROOT-0, means-4)
+cop(means-4, be-2)
+mark(means-4, To-1)
+punct(means-4, .-15)
+cop(valid-11, be-9)
+mark(valid-11, than-7)
+mark(valid-11, to-8)
+case(things-14, for-12)
+det(things-14, all-13)
+amod(means-4, general-3)
+neg(more-6, no-5)
+dep(means-4, more-6)
+advmod(valid-11, accidentally-10)
+acl:to(more-6, valid-11)
+nmod:for(valid-11, things-14)
+root(ROOT-0, tautological-6)
+det(proposition-3, An-1)
+aux(tautological-6, can-4)
+cop(tautological-6, be-5)
+punct(tautological-6, .-14)
+cc(just-7, as-8)
+mwe(as-8, well-9)
+mwe(as-8, as-10)
+det(one-13, a-11)
+amod(proposition-3, ungeneralized-2)
+nsubj(tautological-6, proposition-3)
+advmod(tautological-6, just-7)
+amod(one-13, generalized-12)
+advmod(tautological-6, one-13)
+conj:and(just-7, one-13)
+G[25, 22] [?#1, ?#2, ?#3, ?#4, ?#5, accidentally, as well as, general, general, generalized, just, logical, mark, means, more, no, not, one, proposition, proposition, tautological, things, ungeneralized, valid, validity]
+not-  : is ->validity
+just-  : as well as ->tautological
+logical- ->?#1
+?#2-  : can  : be  : be ->tautological
+ungeneralized- ->?#2
+?#4- ->tautological
+?#5-The->mark
+?#3-for->valid
+?#5- ->validity
+?#4-and->just
+?#1-of->?#5
+more- ->means
+?#2-An->proposition
+?#4-a->one
+general-  : To  : be ->means
+?#3-all->things
+generalized- ->?#4
+no- ->more
+accidentally-  : be ->valid
+?#1-a->proposition
+valid-to : than ->more
+general- ->validity
+------CorefChainz

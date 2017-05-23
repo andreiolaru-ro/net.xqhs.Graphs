@@ -1,0 +1,106 @@
+ The sense of a proposition is its agreement and disagreement with possibilities of existence and non-existence of states of affairs. 4.21 The simplest kind of proposition, an elementary proposition, asserts the existence of a state of affairs.
+------CorefChainz
+CHAIN2-["The sense of a proposition" in sentence 1, "its" in sentence 1]
+representative mention: "The sense of a proposition" in sentence 1
+CHAIN12-["a proposition" in sentence 1, "proposition" in sentence 2]
+representative mention: "a proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, agreement-8)
+det(sense-2, The-1)
+case(proposition-5, of-3)
+det(proposition-5, a-4)
+cc(agreement-8, and-9)
+cop(agreement-8, is-6)
+punct(agreement-8, .-21)
+case(possibilities-12, with-11)
+case(existence-14, of-13)
+cc(existence-14, and-15)
+case(states-18, of-17)
+case(affairs-20, of-19)
+nsubj(agreement-8, sense-2)
+nmod:of(sense-2, proposition-5)
+nmod:poss(agreement-8, its-7)
+conj:and(agreement-8, disagreement-10)
+nmod:with(agreement-8, possibilities-12)
+nmod:of(possibilities-12, existence-14)
+nmod:of(possibilities-12, non-existence-16)
+conj:and(existence-14, non-existence-16)
+nmod:of(existence-14, states-18)
+nmod:of(states-18, affairs-20)
+---
+qqroot(ROOT-0, agreement-8)
+det(sense-2, The-1)
+case(proposition-5, of-3)
+det(proposition-5, a-4)
+cc(agreement-8, and-9)
+cop(agreement-8, is-6)
+punct(agreement-8, .-21)
+case(possibilities-12, with-11)
+case(existence-14, of-13)
+cc(existence-14, and-15)
+case(states-18, of-17)
+case(affairs-20, of-19)
+nsubj(agreement-8, sense-2)
+nmod:of(sense-2, proposition-5)
+nmod:poss(agreement-8, its-7)
+conj:and(agreement-8, disagreement-10)
+nmod:with(agreement-8, possibilities-12)
+nmod:of(possibilities-12, existence-14)
+nmod:of(possibilities-12, non-existence-16)
+conj:and(existence-14, non-existence-16)
+nmod:of(existence-14, states-18)
+nmod:of(states-18, affairs-20)
+root(ROOT-0, asserts-12)
+det(kind-4, The-2)
+punct(kind-4, ,-7)
+punct(kind-4, ,-11)
+case(proposition-6, of-5)
+det(proposition-10, an-8)
+punct(asserts-12, .-20)
+det(existence-14, the-13)
+case(state-17, of-15)
+det(state-17, a-16)
+case(affairs-19, of-18)
+nummod(kind-4, 4.21-1)
+amod(kind-4, simplest-3)
+nsubj(asserts-12, kind-4)
+nmod:of(kind-4, proposition-6)
+amod(proposition-10, elementary-9)
+appos(kind-4, proposition-10)
+dobj(asserts-12, existence-14)
+nmod:of(existence-14, state-17)
+nmod:of(state-17, affairs-19)
+G[20, 20] [?1, ?2, ?3, ?4, ?5, ?6, affairs19, affairs20, agreement8, asserts12, existence2147483647, existence14, kind2147483647, possibilities12, proposition2147483647, proposition2147483647, proposition6, sense2147483647, state2147483647, states18]
+states18-of->existence14
+affairs19-of->?6
+?6-of->?2
+?6-a->state2147483647
+proposition6- ->?4
+?4-of->?5
+?2-the->existence2147483647
+proposition6- ->?5
+?4-a->proposition2147483647
+?1- ->?3
+affairs20-of->states18
+?3-The->kind2147483647
+proposition6-of->?3
+?5-The->sense2147483647
+?2- ->asserts12
+?3- ->asserts12
+possibilities12-with : and ->agreement8
+?5-  : is ->agreement8
+?1-an->proposition2147483647
+existence14-of : and  : and ->possibilities12
+------CorefChainz
+CHAIN2-["The sense of a proposition" in sentence 1, "its" in sentence 1]
+representative mention: "The sense of a proposition" in sentence 1
+CHAIN12-["a proposition" in sentence 1, "proposition" in sentence 2]
+representative mention: "a proposition" in sentence 1

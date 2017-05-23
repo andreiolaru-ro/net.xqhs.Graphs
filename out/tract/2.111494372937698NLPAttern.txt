@@ -1,0 +1,44 @@
+ A picture presents a situation in logical space, the existence and non- existence of states of affairs.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, presents-3)
+det(picture-2, A-1)
+punct(presents-3, .-20)
+punct(presents-3, ,-9)
+det(situation-5, a-4)
+case(space-8, in-6)
+cc(existence-11, and-12)
+det(existence-11, the-10)
+punct(existence-15, --14)
+case(states-17, of-16)
+case(affairs-19, of-18)
+nsubj(presents-3, picture-2)
+dobj(presents-3, situation-5)
+amod(space-8, logical-7)
+nmod:in(situation-5, space-8)
+dobj(presents-3, existence-11)
+amod(existence-15, non-13)
+dobj(presents-3, existence-15)
+conj:and(existence-11, existence-15)
+nmod:of(existence-11, states-17)
+nmod:of(states-17, affairs-19)
+G[11, 11] [?1, ?2, ?3, affairs19, existence15, existence2147483647, picture2147483647, presents3, situation2147483647, space8, states17]
+existence15-and->?3
+?1- ->presents3
+space8-in->?1
+affairs19-of->states17
+?3- ->presents3
+?1-a->situation2147483647
+?2- ->presents3
+?2-A->picture2147483647
+?3-the->existence2147483647
+existence15- ->presents3
+states17-of->?3
+------CorefChainz

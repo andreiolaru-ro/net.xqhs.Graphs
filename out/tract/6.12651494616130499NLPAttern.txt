@@ -1,0 +1,50 @@
+ It is always possible to construe logic in such a way that every proposition is its own proof.
+------CorefChainz
+CHAIN4-["every proposition" in sentence 1, "its" in sentence 1]
+representative mention: "every proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, possible-4)
+cop(possible-4, is-2)
+punct(possible-4, .-19)
+mark(construe-6, to-5)
+case(way-11, in-8)
+det(way-11, a-10)
+det(proposition-14, every-13)
+cop(proof-18, is-15)
+mark(proof-18, that-12)
+nsubj(possible-4, It-1)
+nsubj:xsubj(construe-6, It-1)
+advmod(possible-4, always-3)
+xcomp(possible-4, construe-6)
+dobj(construe-6, logic-7)
+amod(way-11, such-9)
+nmod:in(construe-6, way-11)
+nsubj(proof-18, proposition-14)
+nmod:poss(proof-18, its-16)
+amod(proof-18, own-17)
+ccomp(way-11, proof-18)
+G[13, 14] [?1, ?2, It1, always3, construe6, its16, logic7, own17, possible4, proof18, proposition2147483647, such9, way2147483647]
+It1-  : is  : is ->possible4
+?1-every->proposition2147483647
+It1-xsubj->construe6
+?1-  : is  : is ->proof18
+its16- ->?1
+such9- ->?2
+always3- ->possible4
+construe6-  : to ->possible4
+proof18-  : that ->?2
+?2-a->way2147483647
+own17- ->proof18
+logic7- ->construe6
+?2-in->construe6
+its16-poss->proof18
+------CorefChainz
+CHAIN4-["every proposition" in sentence 1, "its" in sentence 1]
+representative mention: "every proposition" in sentence 1

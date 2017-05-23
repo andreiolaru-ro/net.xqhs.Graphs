@@ -1,0 +1,64 @@
+ If an elementary proposition is true, the state of affairs exists: if an elementary proposition is false, the state of affairs does not exist.
+------CorefChainz
+CHAIN3-["an elementary proposition" in sentence 1, "an elementary proposition" in sentence 1]
+representative mention: "an elementary proposition" in sentence 1
+CHAIN4-["the state of affairs" in sentence 1, "the state of affairs" in sentence 1]
+representative mention: "the state of affairs" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, exists-12)
+det(proposition-4, an-2)
+cop(true-6, is-5)
+mark(true-6, If-1)
+det(state-9, the-8)
+case(affairs-11, of-10)
+punct(exists-12, ,-7)
+punct(exists-12, .-28)
+punct(exists-12, :-13)
+det(proposition-17, an-15)
+cop(false-19, is-18)
+mark(false-19, if-14)
+det(state-22, the-21)
+case(affairs-24, of-23)
+aux(exist-27, does-25)
+punct(exist-27, ,-20)
+amod(proposition-4, elementary-3)
+nsubj(true-6, proposition-4)
+advcl:if(exists-12, true-6)
+nsubj(exists-12, state-9)
+nmod:of(state-9, affairs-11)
+amod(proposition-17, elementary-16)
+nsubj(false-19, proposition-17)
+advcl:if(exist-27, false-19)
+nsubj(exist-27, state-22)
+nmod:of(state-22, affairs-24)
+neg(exist-27, not-26)
+parataxis(exists-12, exist-27)
+G[17, 16] [?1, ?2, ?3, ?4, affairs11, affairs24, elementary3, elementary16, exist27, exists12, false19, not26, proposition2147483647, proposition2147483647, state2147483647, state2147483647, true6]
+?2-an->proposition2147483647
+elementary16- ->?1
+?4-the->state2147483647
+true6-if->exists12
+?1-  : is ->false19
+not26-  : does ->exist27
+elementary3- ->?2
+exist27- ->exists12
+affairs24-of->?4
+affairs11-of->?3
+?2-  : If  : is ->true6
+?3- ->exists12
+false19-if->exist27
+?4- ->exist27
+?1-an->proposition2147483647
+?3-the->state2147483647
+------CorefChainz
+CHAIN3-["an elementary proposition" in sentence 1, "an elementary proposition" in sentence 1]
+representative mention: "an elementary proposition" in sentence 1
+CHAIN4-["the state of affairs" in sentence 1, "the state of affairs" in sentence 1]
+representative mention: "the state of affairs" in sentence 1

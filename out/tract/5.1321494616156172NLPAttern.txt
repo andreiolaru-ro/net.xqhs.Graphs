@@ -1,0 +1,266 @@
+ If p follows from q, I can make an inference from q to p, deduce p from q. The nature of the inference can be gathered only from the two propositions. They themselves are the only possible justification of the inference. 'Laws of inference', which are supposed to justify inferences, as in the works of Frege and Russell, have no sense, and would be superfluous.
+------CorefChainz
+CHAIN6-["p" in sentence 1, "p" in sentence 1]
+representative mention: "p" in sentence 1
+CHAIN7-["q" in sentence 1, "q" in sentence 1, "q" in sentence 1]
+representative mention: "q" in sentence 1
+CHAIN13-["an inference from q" in sentence 1, "the inference" in sentence 2, "the inference" in sentence 3]
+representative mention: "an inference from q" in sentence 1
+CHAIN15-["They" in sentence 3, "themselves" in sentence 3]
+representative mention: "They" in sentence 3
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, make-9)
+mark(follows-3, If-1)
+case(q-5, from-4)
+aux(make-9, can-8)
+punct(make-9, ,-16)
+punct(make-9, .-21)
+punct(make-9, ,-6)
+det(inference-11, an-10)
+case(q-13, from-12)
+case(p-15, to-14)
+case(q-20, from-19)
+nsubj(follows-3, p-2)
+advcl:if(make-9, follows-3)
+nmod:from(follows-3, q-5)
+nsubj(make-9, I-7)
+dobj(make-9, inference-11)
+nmod:from(inference-11, q-13)
+nmod:to(make-9, p-15)
+advcl(make-9, deduce-17)
+dobj(deduce-17, p-18)
+nmod:from(deduce-17, q-20)
+---
+qqroot(ROOT-0, make-9)
+mark(follows-3, If-1)
+case(q-5, from-4)
+aux(make-9, can-8)
+punct(make-9, ,-16)
+punct(make-9, .-21)
+punct(make-9, ,-6)
+det(inference-11, an-10)
+case(q-13, from-12)
+case(p-15, to-14)
+case(q-20, from-19)
+nsubj(follows-3, p-2)
+advcl:if(make-9, follows-3)
+nmod:from(follows-3, q-5)
+nsubj(make-9, I-7)
+dobj(make-9, inference-11)
+nmod:from(inference-11, q-13)
+nmod:to(make-9, p-15)
+advcl(make-9, deduce-17)
+dobj(deduce-17, p-18)
+nmod:from(deduce-17, q-20)
+root(ROOT-0, gathered-8)
+det(nature-2, The-1)
+case(inference-5, of-3)
+det(inference-5, the-4)
+aux(gathered-8, can-6)
+auxpass(gathered-8, be-7)
+punct(gathered-8, .-14)
+case(propositions-13, from-10)
+det(propositions-13, the-11)
+nsubjpass(gathered-8, nature-2)
+nmod:of(nature-2, inference-5)
+advmod(propositions-13, only-9)
+nummod(propositions-13, two-12)
+nmod:from(gathered-8, propositions-13)
+---
+qqroot(ROOT-0, make-9)
+mark(follows-3, If-1)
+case(q-5, from-4)
+aux(make-9, can-8)
+punct(make-9, ,-16)
+punct(make-9, .-21)
+punct(make-9, ,-6)
+det(inference-11, an-10)
+case(q-13, from-12)
+case(p-15, to-14)
+case(q-20, from-19)
+nsubj(follows-3, p-2)
+advcl:if(make-9, follows-3)
+nmod:from(follows-3, q-5)
+nsubj(make-9, I-7)
+dobj(make-9, inference-11)
+nmod:from(inference-11, q-13)
+nmod:to(make-9, p-15)
+advcl(make-9, deduce-17)
+dobj(deduce-17, p-18)
+nmod:from(deduce-17, q-20)
+root(ROOT-0, gathered-8)
+det(nature-2, The-1)
+case(inference-5, of-3)
+det(inference-5, the-4)
+aux(gathered-8, can-6)
+auxpass(gathered-8, be-7)
+punct(gathered-8, .-14)
+case(propositions-13, from-10)
+det(propositions-13, the-11)
+nsubjpass(gathered-8, nature-2)
+nmod:of(nature-2, inference-5)
+advmod(propositions-13, only-9)
+nummod(propositions-13, two-12)
+nmod:from(gathered-8, propositions-13)
+root(ROOT-0, justification-7)
+cop(justification-7, are-3)
+det(justification-7, the-4)
+punct(justification-7, .-11)
+case(inference-10, of-8)
+det(inference-10, the-9)
+nsubj(justification-7, They-1)
+nmod:npmod(They-1, themselves-2)
+amod(justification-7, only-5)
+amod(justification-7, possible-6)
+nmod:of(justification-7, inference-10)
+---
+qqroot(ROOT-0, make-9)
+mark(follows-3, If-1)
+case(q-5, from-4)
+aux(make-9, can-8)
+punct(make-9, ,-16)
+punct(make-9, .-21)
+punct(make-9, ,-6)
+det(inference-11, an-10)
+case(q-13, from-12)
+case(p-15, to-14)
+case(q-20, from-19)
+nsubj(follows-3, p-2)
+advcl:if(make-9, follows-3)
+nmod:from(follows-3, q-5)
+nsubj(make-9, I-7)
+dobj(make-9, inference-11)
+nmod:from(inference-11, q-13)
+nmod:to(make-9, p-15)
+advcl(make-9, deduce-17)
+dobj(deduce-17, p-18)
+nmod:from(deduce-17, q-20)
+root(ROOT-0, gathered-8)
+det(nature-2, The-1)
+case(inference-5, of-3)
+det(inference-5, the-4)
+aux(gathered-8, can-6)
+auxpass(gathered-8, be-7)
+punct(gathered-8, .-14)
+case(propositions-13, from-10)
+det(propositions-13, the-11)
+nsubjpass(gathered-8, nature-2)
+nmod:of(nature-2, inference-5)
+advmod(propositions-13, only-9)
+nummod(propositions-13, two-12)
+nmod:from(gathered-8, propositions-13)
+root(ROOT-0, justification-7)
+cop(justification-7, are-3)
+det(justification-7, the-4)
+punct(justification-7, .-11)
+case(inference-10, of-8)
+det(inference-10, the-9)
+nsubj(justification-7, They-1)
+nmod:npmod(They-1, themselves-2)
+amod(justification-7, only-5)
+amod(justification-7, possible-6)
+nmod:of(justification-7, inference-10)
+root(ROOT-0, `-1)
+case(inference-4, of-3)
+punct(inference-4, ,-13)
+punct(inference-4, '-5)
+punct(inference-4, ,-6)
+auxpass(supposed-9, are-8)
+mark(justify-11, to-10)
+case(works-17, as-14)
+case(works-17, in-15)
+det(works-17, the-16)
+case(Frege-19, of-18)
+cc(Frege-19, and-20)
+cc(have-23, and-27)
+punct(have-23, ,-26)
+punct(have-23, .-31)
+punct(have-23, ,-22)
+aux(superfluous-30, would-28)
+cop(superfluous-30, be-29)
+nsubj(have-23, Laws-2)
+nsubj(superfluous-30, Laws-2)
+nmod:of(Laws-2, inference-4)
+nsubjpass(supposed-9, inference-4)
+nsubj:xsubj(justify-11, inference-4)
+ref(inference-4, which-7)
+acl:relcl(inference-4, supposed-9)
+xcomp(supposed-9, justify-11)
+dobj(justify-11, inferences-12)
+nmod:in(Laws-2, works-17)
+nmod:of(works-17, Frege-19)
+nmod:of(works-17, Russell-21)
+conj:and(Frege-19, Russell-21)
+root(`-1, have-23)
+neg(sense-25, no-24)
+dobj(have-23, sense-25)
+root(`-1, superfluous-30)
+conj:and(have-23, superfluous-30)
+G[44, 48] [?1, ?2, ?3, ?4, ?5, ?6, ?7, Frege19, I7, Laws2, Russell21, They1, `1, deduce17, follows3, gathered8, have23, inference2147483647, inference2147483647, inference4, inference2147483647, inferences12, justification2147483647, justify11, make9, nature2147483647, no24, only5, only9, p15, p18, p2, possible6, propositions2147483647, q5, q13, q20, sense25, superfluous30, supposed9, themselves2, two12, which7, works2147483647]
+follows3-if->make9
+q13-from->?5
+?2-from->gathered8
+?5- ->make9
+?1- ->?5
+?6-The->nature2147483647
+I7-  : can ->make9
+?5-an->inference2147483647
+deduce17- ->make9
+which7- ->inference4
+p2-  : If ->follows3
+only5- ->?7
+only9- ->?2
+have23- ->`1
+Laws2- ->`1
+Frege19-of : as ->?3
+no24- ->sense25
+p15-to->make9
+Russell21-and->Frege19
+two12- ->?2
+supposed9-relcl->inference4
+sense25- ->have23
+inference4- ->supposed9
+?4-the->inference2147483647
+q20-from->deduce17
+justify11-  : are  : to ->supposed9
+?1-of->?6
+q5-from->follows3
+?3-in->Laws2
+Laws2- ->have23
+?7-the->justification2147483647
+?1-the->inference2147483647
+Russell21-of->?3
+?4-of->?7
+?3-the->works2147483647
+inference4-of->Laws2
+themselves2-npmod->They1
+superfluous30- ->`1
+superfluous30-and : would  : be ->have23
+?2-the->propositions2147483647
+?4- ->?5
+p18- ->deduce17
+They1-  : are  : are ->?7
+?6-  : can  : be ->gathered8
+inferences12- ->justify11
+possible6- ->?7
+Laws2- ->superfluous30
+inference4-xsubj->justify11
+------CorefChainz
+CHAIN6-["p" in sentence 1, "p" in sentence 1]
+representative mention: "p" in sentence 1
+CHAIN7-["q" in sentence 1, "q" in sentence 1, "q" in sentence 1]
+representative mention: "q" in sentence 1
+CHAIN13-["an inference from q" in sentence 1, "the inference" in sentence 2, "the inference" in sentence 3]
+representative mention: "an inference from q" in sentence 1
+CHAIN15-["They" in sentence 3, "themselves" in sentence 3]
+representative mention: "They" in sentence 3

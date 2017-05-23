@@ -1,0 +1,95 @@
+ It also becomes clear now why logic was called the theory of forms and of inference.
+------CorefChainz
+It-PRP 
+also-RB 
+becomes-VBZ 
+clear-JJ 
+now-RB 
+why-WRB 
+logic-NN 
+was-VBD 
+called-VBN 
+the-DT 
+theory-NN 
+of-IN 
+forms-NNS 
+and-CC 
+of-IN 
+inference-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> It
+		 	-> ADVP 	-> RB 	-> also
+		 	-> VP 	-> VBZ 	-> becomes
+	 	-> ADJP 	-> JJ 	-> clear
+		 	-> SBAR 	-> ADVP 	-> RB 	-> now
+		 	-> WHADVP 	-> WRB 	-> why
+		 	-> S 	-> NP 	-> NN 	-> logic
+		 	-> VP 	-> VBD 	-> was
+	 	-> VP 	-> VBN 	-> called
+	 	-> UCP 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> theory
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NNS 	-> forms
+				 	-> CC 	-> and
+	 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> inference
+									 	-> . 	-> .
+			
+Dependensee repr
+nsubj(becomes-3, It-1)
+advmod(becomes-3, also-2)
+root(ROOT-0, becomes-3)
+xcomp(becomes-3, clear-4)
+advmod(called-9, now-5)
+advmod(called-9, why-6)
+nsubjpass(called-9, logic-7)
+auxpass(called-9, was-8)
+advcl(becomes-3, called-9)
+det(theory-11, the-10)
+dobj(called-9, theory-11)
+case(forms-13, of-12)
+nmod:of(theory-11, forms-13)
+cc(theory-11, and-14)
+case(inference-16, of-15)
+dobj(called-9, inference-16)
+conj:and(theory-11, inference-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, becomes-3)
+punct(becomes-3, .-17)
+auxpass(called-9, was-8)
+cc(theory-11, and-14)
+det(theory-11, the-10)
+case(forms-13, of-12)
+case(inference-16, of-15)
+nsubj(becomes-3, It-1)
+advmod(becomes-3, also-2)
+xcomp(becomes-3, clear-4)
+advmod(called-9, now-5)
+advmod(called-9, why-6)
+nsubjpass(called-9, logic-7)
+acl(clear-4, called-9)
+dobj(called-9, theory-11)
+dobj(called-9, theory-11''')
+conj:and(theory-11, theory-11''')
+nmod:of(theory-11, forms-13)
+nmod:of(theory-11''', inference-16)
+G[12, 11] [?#1, It, also, becomes, called, clear, forms, inference, logic, now, theory, why]
+It- ->becomes
+why- ->called
+also- ->becomes
+?#1-the->theory
+inference-of->?#1
+called- ->clear
+logic-  : was  ->called
+?#1- ->called
+clear- ->becomes
+now- ->called
+forms-of : and of->?#1
+------CorefChainz

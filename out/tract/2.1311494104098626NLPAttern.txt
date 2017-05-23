@@ -1,0 +1,82 @@
+ In a picture the elements of the picture are the representatives of objects.
+------CorefChainz
+CHAIN2-["a picture" in sentence 1, "the picture" in sentence 1]
+representative mention: "a picture" in sentence 1
+In-IN 
+a-DT 
+picture-NN 
+the-DT 
+elements-NNS 
+of-IN 
+the-DT 
+picture-NN 
+are-VBP 
+the-DT 
+representatives-NNS 
+of-IN 
+objects-NNS 
+.-. 
+ROOT 	-> S 	-> PP 	-> IN 	-> In
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> picture
+			 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> elements
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> picture
+				 	-> VP 	-> VBP 	-> are
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> representatives
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NNS 	-> objects
+					 	-> . 	-> .
+			
+Dependensee repr
+case(picture-3, In-1)
+det(picture-3, a-2)
+nmod:in(representatives-11, picture-3)
+det(elements-5, the-4)
+nsubj(representatives-11, elements-5)
+case(picture-8, of-6)
+det(picture-8, the-7)
+nmod:of(elements-5, picture-8)
+cop(representatives-11, are-9)
+det(representatives-11, the-10)
+root(ROOT-0, representatives-11)
+case(objects-13, of-12)
+nmod:of(representatives-11, objects-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, representatives-11)
+case(picture-3, In-1)
+det(picture-3, a-2)
+det(elements-5, the-4)
+case(picture-8, of-6)
+det(picture-8, the-7)
+cop(representatives-11, are-9)
+det(representatives-11, the-10)
+punct(representatives-11, .-14)
+case(objects-13, of-12)
+nmod:in(representatives-11, picture-3)
+nsubj(representatives-11, elements-5)
+nmod:of(elements-5, picture-8)
+nmod:of(representatives-11, objects-13)
+G[9, 9] [?#1, ?#2, ?#3, ?#4, elements, objects, picture, picture, representatives]
+?#4-in->?#2
+?#1-  : In ->?#4
+?#4-a->picture
+?#1-the->picture
+?#3-  : are  : are ->?#2
+?#2-the->representatives
+?#1-of->?#3
+?#3-the->elements
+objects-of->?#2
+------CorefChainz
+CHAIN2-["a picture" in sentence 1, "the picture" in sentence 1]
+representative mention: "a picture" in sentence 1

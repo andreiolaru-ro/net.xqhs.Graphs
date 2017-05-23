@@ -1,0 +1,69 @@
+ If I am to know an object, thought I need not know its external properties, I must know all its internal properties.
+------CorefChainz
+CHAIN2-["I" in sentence 1, "I" in sentence 1, "I" in sentence 1]
+representative mention: "I" in sentence 1
+CHAIN7-["its" in sentence 1, "its" in sentence 1]
+representative mention: "its" in sentence 1
+CHAIN8-["its external properties" in sentence 1, "all its internal properties" in sentence 1]
+representative mention: "all its internal properties" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, know-20)
+mark(am-3, If-1)
+mark(know-5, to-4)
+det(object-7, an-6)
+punct(thought-9, ,-8)
+aux(know-13, need-11)
+aux(know-20, must-19)
+punct(know-20, ,-17)
+punct(know-20, .-25)
+nsubj(am-3, I-2)
+nsubj:xsubj(know-5, I-2)
+advcl:if(thought-9, am-3)
+xcomp(am-3, know-5)
+dobj(know-5, object-7)
+ccomp(know-20, thought-9)
+nsubj(know-13, I-10)
+neg(know-13, not-12)
+ccomp(thought-9, know-13)
+nmod:poss(properties-16, its-14)
+amod(properties-16, external-15)
+dobj(know-13, properties-16)
+nsubj(know-20, I-18)
+det:predet(properties-24, all-21)
+nmod:poss(properties-24, its-22)
+amod(properties-24, internal-23)
+dobj(know-20, properties-24)
+G[18, 19] [?1, I10, I2, I18, all21, am3, external15, internal23, its14, its22, know5, know20, know13, not12, object2147483647, properties24, properties16, thought9]
+all21-predet->properties24
+external15- ->properties16
+thought9- ->know20
+know5-  : to ->am3
+not12- ->know13
+am3-if->thought9
+internal23- ->properties24
+I2-  : If ->am3
+properties24- ->know20
+I10-  : need  : need ->know13
+I2-xsubj->know5
+?1-an->object2147483647
+?1- ->know5
+properties16- ->know13
+I18-  : must ->know20
+its14-poss->properties16
+properties16- ->properties24
+its22-poss->properties24
+know13- ->thought9
+------CorefChainz
+CHAIN2-["I" in sentence 1, "I" in sentence 1, "I" in sentence 1]
+representative mention: "I" in sentence 1
+CHAIN7-["its" in sentence 1, "its" in sentence 1]
+representative mention: "its" in sentence 1
+CHAIN8-["its external properties" in sentence 1, "all its internal properties" in sentence 1]
+representative mention: "all its internal properties" in sentence 1

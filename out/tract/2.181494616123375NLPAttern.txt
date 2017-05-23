@@ -1,0 +1,79 @@
+ What any picture, of whatever form, must have in common with reality, in order to be able to depict it--correctly or incorrectly--in any way at all, is logical form, i.e. the form of reality.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-10)
+det(picture-3, What-1)
+det(picture-3, any-2)
+case(form-7, of-5)
+det(form-7, whatever-6)
+aux(have-10, must-9)
+punct(have-10, ,-4)
+punct(have-10, ,-8)
+punct(have-10, .-44)
+punct(have-10, ,-15)
+case(common-12, in-11)
+case(reality-14, with-13)
+mwe(in-16, order-17)
+cop(able-20, be-19)
+mark(able-20, in-16)
+mark(able-20, to-18)
+mark(depict-22, to-21)
+punct(depict-22, ,-34)
+punct(depict-22, ---24)
+punct(depict-22, ---28)
+cc(correctly-25, or-26)
+case(way-31, in-29)
+det(way-31, any-30)
+case(all-33, at-32)
+cop(form-37, is-35)
+det(form-41, the-40)
+punct(form-41, ,-38)
+case(reality-43, of-42)
+dobj(have-10, picture-3)
+nmod:of(have-10, form-7)
+advcl:in(have-10, common-12)
+nmod:with(common-12, reality-14)
+advcl:in_order(have-10, able-20)
+csubj(form-37, depict-22)
+dobj(depict-22, it-23)
+advmod(depict-22, correctly-25)
+advmod(depict-22, incorrectly-27)
+conj:or(correctly-25, incorrectly-27)
+nmod:in(depict-22, way-31)
+nmod:at(way-31, all-33)
+amod(form-37, logical-36)
+ccomp(able-20, form-37)
+dep(form-41, i.e.-39)
+dep(able-20, form-41)
+nmod:of(form-41, reality-43)
+G[23, 22] [?1, ?2, ?3, ?4, ?5, able20, all33, common12, correctly25, depict22, form37, form2147483647, form2147483647, have10, i.e.39, in order16, incorrectly27, it23, logical36, picture2147483647, reality43, reality14, way2147483647]
+logical36-  : is ->form37
+form37- ->able20
+depict22- ->form37
+able20-in_order : in order  : to  : be ->have10
+?2-in->depict22
+reality43-of->?5
+?2-any->way2147483647
+it23-  : to ->depict22
+i.e.39- ->?5
+correctly25- ->depict22
+?1-whatever->form2147483647
+incorrectly27- ->depict22
+?3- ->have10
+?4-any->picture2147483647
+?5-the->form2147483647
+?3-What->?4
+all33-at->?2
+?5- ->able20
+common12-in->have10
+reality14-with->common12
+incorrectly27-or->correctly25
+?1-of : must ->have10
+------CorefChainz

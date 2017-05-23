@@ -1,0 +1,47 @@
+ In logic process and result are equivalent. (Hence the absence of surprise.)
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, equivalent-7)
+case(process-3, In-1)
+cc(process-3, and-4)
+compound(process-3, logic-2)
+cop(equivalent-7, are-6)
+punct(equivalent-7, .-8)
+nmod:in(equivalent-7, process-3)
+conj:and(process-3, result-5)
+nmod:in(equivalent-7, result-5)
+---
+qqroot(ROOT-0, equivalent-7)
+case(process-3, In-1)
+cc(process-3, and-4)
+compound(process-3, logic-2)
+cop(equivalent-7, are-6)
+punct(equivalent-7, .-8)
+nmod:in(equivalent-7, process-3)
+conj:and(process-3, result-5)
+nmod:in(equivalent-7, result-5)
+root(ROOT-0, -LRB--1)
+punct(Hence-2, .-7)
+punct(Hence-2, -RRB--8)
+det(absence-4, the-3)
+case(surprise-6, of-5)
+root(-LRB--1, Hence-2)
+dep(Hence-2, absence-4)
+nmod:of(absence-4, surprise-6)
+G[8, 7] [-LRB-1, ?1, Hence2, absence2147483647, equivalent7, logic process3, result5, surprise6]
+?1-the->absence2147483647
+result5-in : are ->equivalent7
+logic process3-in->equivalent7
+Hence2- ->-LRB-1
+result5-and : In ->logic process3
+surprise6-of->?1
+?1- ->Hence2
+------CorefChainz

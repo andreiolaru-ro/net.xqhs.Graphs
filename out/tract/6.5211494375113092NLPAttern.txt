@@ -1,0 +1,126 @@
+ The solution of the problem of life is seen in the vanishing of the problem. (Is not this the reason why those who have found after a long period of doubt that the sense of life became clear to them have then been unable to say what constituted that sense?)
+------CorefChainz
+CHAIN3-["the problem of life" in sentence 1, "the problem" in sentence 1]
+representative mention: "the problem of life" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, seen-9)
+det(solution-2, The-1)
+case(problem-5, of-3)
+det(problem-5, the-4)
+case(life-7, of-6)
+auxpass(seen-9, is-8)
+punct(seen-9, .-16)
+case(vanishing-12, in-10)
+det(vanishing-12, the-11)
+case(problem-15, of-13)
+det(problem-15, the-14)
+nsubjpass(seen-9, solution-2)
+nmod:of(solution-2, problem-5)
+nmod:of(problem-5, life-7)
+nmod:in(seen-9, vanishing-12)
+nmod:of(vanishing-12, problem-15)
+---
+qqroot(ROOT-0, seen-9)
+det(solution-2, The-1)
+case(problem-5, of-3)
+det(problem-5, the-4)
+case(life-7, of-6)
+auxpass(seen-9, is-8)
+punct(seen-9, .-16)
+case(vanishing-12, in-10)
+det(vanishing-12, the-11)
+case(problem-15, of-13)
+det(problem-15, the-14)
+nsubjpass(seen-9, solution-2)
+nmod:of(solution-2, problem-5)
+nmod:of(problem-5, life-7)
+nmod:in(seen-9, vanishing-12)
+nmod:of(vanishing-12, problem-15)
+root(ROOT-0, reason-6)
+cop(reason-6, Is-2)
+det(reason-6, this-4)
+det(reason-6, the-5)
+punct(reason-6, -RRB--38)
+punct(reason-6, -LRB--1)
+punct(those-8, ?-37)
+aux(found-11, have-10)
+case(period-15, after-12)
+det(period-15, a-13)
+case(doubt-17, of-16)
+det(sense-20, the-19)
+case(life-22, of-21)
+mark(became-23, that-18)
+case(them-26, to-25)
+aux(unable-30, have-27)
+cop(unable-30, been-29)
+mark(say-32, to-31)
+det(sense-36, that-35)
+neg(reason-6, not-3)
+dep(reason-6, why-7)
+dep(why-7, those-8)
+nsubj(found-11, those-8)
+ref(those-8, who-9)
+acl:relcl(those-8, found-11)
+amod(period-15, long-14)
+nmod:after(found-11, period-15)
+nmod:of(period-15, doubt-17)
+nsubj(became-23, sense-20)
+nsubj:xsubj(unable-30, sense-20)
+nmod:of(sense-20, life-22)
+ccomp(those-8, became-23)
+xcomp(became-23, clear-24)
+nmod:to(became-23, them-26)
+advmod(unable-30, then-28)
+xcomp(became-23, unable-30)
+xcomp(unable-30, say-32)
+nsubj(constituted-34, what-33)
+ccomp(say-32, constituted-34)
+dobj(constituted-34, sense-36)
+G[35, 36] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, became23, clear24, constituted34, doubt17, found11, life7, life22, long14, not3, period2147483647, problem2147483647, problem2147483647, reason2147483647, say32, seen9, sense2147483647, sense2147483647, solution2147483647, them26, then28, those8, unable30, vanishing2147483647, what33, who9, why7]
+?4-  : that ->became23
+?3-of->?9
+clear24- ->became23
+found11-relcl : have  : have ->those8
+?8- ->seen9
+say32-  : to ->unable30
+?1- ->constituted34
+?3-the->problem2147483647
+?4-xsubj->unable30
+?2-a->period2147483647
+?8-The->solution2147483647
+then28-  : have  : been ->unable30
+doubt17-of->?2
+?5-the->problem2147483647
+became23- ->those8
+?2- ->?5
+life7-of->?5
+who9- ->those8
+?2-after->found11
+long14- ->?2
+life22-of->?4
+those8- ->found11
+unable30- ->became23
+?6-this->?7
+?9-the->vanishing2147483647
+?9-in : is ->seen9
+them26-to->became23
+those8- ->why7
+?7-the->reason2147483647
+constituted34- ->say32
+?4-the->sense2147483647
+?1-that->sense2147483647
+?5-of->?8
+not3-  : Is ->?6
+what33- ->constituted34
+why7- ->?6
+------CorefChainz
+CHAIN3-["the problem of life" in sentence 1, "the problem" in sentence 1]
+representative mention: "the problem of life" in sentence 1

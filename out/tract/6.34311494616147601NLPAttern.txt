@@ -1,0 +1,55 @@
+ The laws of physics, with all their logical apparatus, still speak, however indirectly, about the objects of the world.
+------CorefChainz
+CHAIN3-["The laws of physics" in sentence 1, "their" in sentence 1]
+representative mention: "The laws of physics" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, speak-13)
+det(laws-2, The-1)
+case(physics-4, of-3)
+case(apparatus-10, with-6)
+punct(speak-13, ,-17)
+punct(speak-13, ,-5)
+punct(speak-13, .-24)
+punct(speak-13, ,-11)
+punct(speak-13, ,-14)
+case(objects-20, about-18)
+det(objects-20, the-19)
+case(world-23, of-21)
+det(world-23, the-22)
+nsubj(speak-13, laws-2)
+nmod:of(laws-2, physics-4)
+det:predet(apparatus-10, all-7)
+nmod:poss(apparatus-10, their-8)
+amod(apparatus-10, logical-9)
+nmod:with(speak-13, apparatus-10)
+advmod(speak-13, still-12)
+advmod(indirectly-16, however-15)
+advmod(speak-13, indirectly-16)
+nmod:about(speak-13, objects-20)
+nmod:of(objects-20, world-23)
+G[15, 15] [?1, ?2, ?3, all7, apparatus10, however15, indirectly16, laws2147483647, logical9, objects2147483647, physics4, speak13, still12, their8, world2147483647]
+physics4-of->?2
+apparatus10-with->speak13
+logical9- ->apparatus10
+?1-the->world2147483647
+their8- ->?2
+?3-about->speak13
+?3-the->objects2147483647
+indirectly16- ->speak13
+?2-The->laws2147483647
+still12- ->speak13
+all7-predet->apparatus10
+?2- ->speak13
+however15- ->indirectly16
+their8-poss->apparatus10
+?1-of->?3
+------CorefChainz
+CHAIN3-["The laws of physics" in sentence 1, "their" in sentence 1]
+representative mention: "The laws of physics" in sentence 1

@@ -1,0 +1,38 @@
+ In that case we could not sketch any picture of the world (true or false).
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, sketch-7)
+case(case-3, In-1)
+det(case-3, that-2)
+aux(sketch-7, could-5)
+punct(sketch-7, .-18)
+det(picture-9, any-8)
+case(world-12, of-10)
+det(world-12, the-11)
+cc(true-14, or-15)
+punct(true-14, -RRB--17)
+punct(true-14, -LRB--13)
+nmod:in(sketch-7, case-3)
+nsubj(sketch-7, we-4)
+neg(sketch-7, not-6)
+dobj(sketch-7, picture-9)
+nmod:of(picture-9, world-12)
+dep(world-12, true-14)
+dep(world-12, false-16)
+conj:or(true-14, false-16)
+G[8, 7] [?1, ?2, ?3, case2147483647, picture2147483647, sketch7, true14, world2147483647]
+true14-  : or ->?1
+?1-of->?2
+?2-any->picture2147483647
+?1-the->world2147483647
+?3-in : could  : In ->sketch7
+?3-that->case2147483647
+?2- ->sketch7
+------CorefChainz

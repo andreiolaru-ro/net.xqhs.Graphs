@@ -1,0 +1,507 @@
+ Not only is there no guarantee of the temporal immortality of the human soul, that is to say of its eternal survival after death; but, in any case, this assumption completely fails to accomplish the purpose for which it has always been intended. Or is some riddle solved by my surviving for ever? Is not this eternal life itself as much of a riddle as our present life? The solution of the riddle of life in space and time lies outside space and time. (It is certainly not the solution of any problems of natural science that is required.)
+------CorefChainz
+CHAIN13-["its" in sentence 1, "this assumption" in sentence 1, "it" in sentence 1, "itself" in sentence 3]
+representative mention: "this assumption" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-3)
+cc(is-3, but-27)
+punct(is-3, .-48)
+punct(is-3, ;-26)
+punct(is-3, ,-15)
+case(immortality-10, of-7)
+det(immortality-10, the-8)
+case(soul-14, of-11)
+det(soul-14, the-12)
+mark(say-19, to-18)
+case(survival-23, of-20)
+case(death-25, after-24)
+case(case-31, in-29)
+det(case-31, any-30)
+det(assumption-34, this-33)
+punct(fails-36, ,-32)
+punct(fails-36, ,-28)
+mark(accomplish-38, to-37)
+det(purpose-40, the-39)
+case(which-42, for-41)
+aux(intended-47, has-44)
+auxpass(intended-47, been-46)
+neg(only-2, Not-1)
+cc:preconj(is-3, only-2)
+nsubj(is-3, there-4)
+neg(guarantee-6, no-5)
+nsubj(is-3, guarantee-6)
+amod(immortality-10, temporal-9)
+nmod:of(guarantee-6, immortality-10)
+amod(soul-14, human-13)
+nmod:of(immortality-10, soul-14)
+nsubj(is-17, that-16)
+nsubj:xsubj(say-19, that-16)
+dep(is-3, is-17)
+xcomp(is-17, say-19)
+nmod:poss(survival-23, its-21)
+amod(survival-23, eternal-22)
+nmod:of(say-19, survival-23)
+nmod:after(survival-23, death-25)
+nmod:in(fails-36, case-31)
+nsubj(fails-36, assumption-34)
+nsubj:xsubj(accomplish-38, assumption-34)
+advmod(fails-36, completely-35)
+conj:but(is-3, fails-36)
+xcomp(fails-36, accomplish-38)
+dobj(accomplish-38, purpose-40)
+nmod:for(intended-47, purpose-40)
+ref(purpose-40, which-42)
+nsubjpass(intended-47, it-43)
+advmod(intended-47, always-45)
+acl:relcl(purpose-40, intended-47)
+---
+qqroot(ROOT-0, is-3)
+cc(is-3, but-27)
+punct(is-3, .-48)
+punct(is-3, ;-26)
+punct(is-3, ,-15)
+case(immortality-10, of-7)
+det(immortality-10, the-8)
+case(soul-14, of-11)
+det(soul-14, the-12)
+mark(say-19, to-18)
+case(survival-23, of-20)
+case(death-25, after-24)
+case(case-31, in-29)
+det(case-31, any-30)
+det(assumption-34, this-33)
+punct(fails-36, ,-32)
+punct(fails-36, ,-28)
+mark(accomplish-38, to-37)
+det(purpose-40, the-39)
+case(which-42, for-41)
+aux(intended-47, has-44)
+auxpass(intended-47, been-46)
+neg(only-2, Not-1)
+cc:preconj(is-3, only-2)
+nsubj(is-3, there-4)
+neg(guarantee-6, no-5)
+nsubj(is-3, guarantee-6)
+amod(immortality-10, temporal-9)
+nmod:of(guarantee-6, immortality-10)
+amod(soul-14, human-13)
+nmod:of(immortality-10, soul-14)
+nsubj(is-17, that-16)
+nsubj:xsubj(say-19, that-16)
+dep(is-3, is-17)
+xcomp(is-17, say-19)
+nmod:poss(survival-23, its-21)
+amod(survival-23, eternal-22)
+nmod:of(say-19, survival-23)
+nmod:after(survival-23, death-25)
+nmod:in(fails-36, case-31)
+nsubj(fails-36, assumption-34)
+nsubj:xsubj(accomplish-38, assumption-34)
+advmod(fails-36, completely-35)
+conj:but(is-3, fails-36)
+xcomp(fails-36, accomplish-38)
+dobj(accomplish-38, purpose-40)
+nmod:for(intended-47, purpose-40)
+ref(purpose-40, which-42)
+nsubjpass(intended-47, it-43)
+advmod(intended-47, always-45)
+acl:relcl(purpose-40, intended-47)
+root(ROOT-0, Or-1)
+punct(Or-1, ?-11)
+det(riddle-4, some-3)
+case(surviving-8, by-6)
+case(ever-10, for-9)
+dep(Or-1, is-2)
+nsubj(is-2, riddle-4)
+acl(riddle-4, solved-5)
+nmod:poss(surviving-8, my-7)
+nmod:by(solved-5, surviving-8)
+nmod:for(surviving-8, ever-10)
+---
+qqroot(ROOT-0, is-3)
+cc(is-3, but-27)
+punct(is-3, .-48)
+punct(is-3, ;-26)
+punct(is-3, ,-15)
+case(immortality-10, of-7)
+det(immortality-10, the-8)
+case(soul-14, of-11)
+det(soul-14, the-12)
+mark(say-19, to-18)
+case(survival-23, of-20)
+case(death-25, after-24)
+case(case-31, in-29)
+det(case-31, any-30)
+det(assumption-34, this-33)
+punct(fails-36, ,-32)
+punct(fails-36, ,-28)
+mark(accomplish-38, to-37)
+det(purpose-40, the-39)
+case(which-42, for-41)
+aux(intended-47, has-44)
+auxpass(intended-47, been-46)
+neg(only-2, Not-1)
+cc:preconj(is-3, only-2)
+nsubj(is-3, there-4)
+neg(guarantee-6, no-5)
+nsubj(is-3, guarantee-6)
+amod(immortality-10, temporal-9)
+nmod:of(guarantee-6, immortality-10)
+amod(soul-14, human-13)
+nmod:of(immortality-10, soul-14)
+nsubj(is-17, that-16)
+nsubj:xsubj(say-19, that-16)
+dep(is-3, is-17)
+xcomp(is-17, say-19)
+nmod:poss(survival-23, its-21)
+amod(survival-23, eternal-22)
+nmod:of(say-19, survival-23)
+nmod:after(survival-23, death-25)
+nmod:in(fails-36, case-31)
+nsubj(fails-36, assumption-34)
+nsubj:xsubj(accomplish-38, assumption-34)
+advmod(fails-36, completely-35)
+conj:but(is-3, fails-36)
+xcomp(fails-36, accomplish-38)
+dobj(accomplish-38, purpose-40)
+nmod:for(intended-47, purpose-40)
+ref(purpose-40, which-42)
+nsubjpass(intended-47, it-43)
+advmod(intended-47, always-45)
+acl:relcl(purpose-40, intended-47)
+root(ROOT-0, Or-1)
+punct(Or-1, ?-11)
+det(riddle-4, some-3)
+case(surviving-8, by-6)
+case(ever-10, for-9)
+dep(Or-1, is-2)
+nsubj(is-2, riddle-4)
+acl(riddle-4, solved-5)
+nmod:poss(surviving-8, my-7)
+nmod:by(solved-5, surviving-8)
+nmod:for(surviving-8, ever-10)
+root(ROOT-0, Is-1)
+punct(Is-1, ?-16)
+det(life-5, this-3)
+case(riddle-11, of-9)
+det(riddle-11, a-10)
+case(life-15, as-12)
+neg(life-5, not-2)
+amod(life-5, eternal-4)
+nsubj(Is-1, life-5)
+nmod:npmod(life-5, itself-6)
+advmod(much-8, as-7)
+amod(life-5, much-8)
+nmod:of(much-8, riddle-11)
+nmod:poss(life-15, our-13)
+amod(life-15, present-14)
+nmod:as(much-8, life-15)
+---
+qqroot(ROOT-0, is-3)
+cc(is-3, but-27)
+punct(is-3, .-48)
+punct(is-3, ;-26)
+punct(is-3, ,-15)
+case(immortality-10, of-7)
+det(immortality-10, the-8)
+case(soul-14, of-11)
+det(soul-14, the-12)
+mark(say-19, to-18)
+case(survival-23, of-20)
+case(death-25, after-24)
+case(case-31, in-29)
+det(case-31, any-30)
+det(assumption-34, this-33)
+punct(fails-36, ,-32)
+punct(fails-36, ,-28)
+mark(accomplish-38, to-37)
+det(purpose-40, the-39)
+case(which-42, for-41)
+aux(intended-47, has-44)
+auxpass(intended-47, been-46)
+neg(only-2, Not-1)
+cc:preconj(is-3, only-2)
+nsubj(is-3, there-4)
+neg(guarantee-6, no-5)
+nsubj(is-3, guarantee-6)
+amod(immortality-10, temporal-9)
+nmod:of(guarantee-6, immortality-10)
+amod(soul-14, human-13)
+nmod:of(immortality-10, soul-14)
+nsubj(is-17, that-16)
+nsubj:xsubj(say-19, that-16)
+dep(is-3, is-17)
+xcomp(is-17, say-19)
+nmod:poss(survival-23, its-21)
+amod(survival-23, eternal-22)
+nmod:of(say-19, survival-23)
+nmod:after(survival-23, death-25)
+nmod:in(fails-36, case-31)
+nsubj(fails-36, assumption-34)
+nsubj:xsubj(accomplish-38, assumption-34)
+advmod(fails-36, completely-35)
+conj:but(is-3, fails-36)
+xcomp(fails-36, accomplish-38)
+dobj(accomplish-38, purpose-40)
+nmod:for(intended-47, purpose-40)
+ref(purpose-40, which-42)
+nsubjpass(intended-47, it-43)
+advmod(intended-47, always-45)
+acl:relcl(purpose-40, intended-47)
+root(ROOT-0, Or-1)
+punct(Or-1, ?-11)
+det(riddle-4, some-3)
+case(surviving-8, by-6)
+case(ever-10, for-9)
+dep(Or-1, is-2)
+nsubj(is-2, riddle-4)
+acl(riddle-4, solved-5)
+nmod:poss(surviving-8, my-7)
+nmod:by(solved-5, surviving-8)
+nmod:for(surviving-8, ever-10)
+root(ROOT-0, Is-1)
+punct(Is-1, ?-16)
+det(life-5, this-3)
+case(riddle-11, of-9)
+det(riddle-11, a-10)
+case(life-15, as-12)
+neg(life-5, not-2)
+amod(life-5, eternal-4)
+nsubj(Is-1, life-5)
+nmod:npmod(life-5, itself-6)
+advmod(much-8, as-7)
+amod(life-5, much-8)
+nmod:of(much-8, riddle-11)
+nmod:poss(life-15, our-13)
+amod(life-15, present-14)
+nmod:as(much-8, life-15)
+root(ROOT-0, lies-12)
+det(solution-2, The-1)
+case(riddle-5, of-3)
+cc(riddle-5, and-10)
+det(riddle-5, the-4)
+case(life-7, of-6)
+case(space-9, in-8)
+punct(lies-12, .-17)
+cc(space-14, and-15)
+nsubj(lies-12, solution-2)
+nmod:of(solution-2, riddle-5)
+nmod:of(riddle-5, life-7)
+nmod:in(riddle-5, space-9)
+nmod:of(solution-2, time-11)
+conj:and(riddle-5, time-11)
+amod(space-14, outside-13)
+dobj(lies-12, space-14)
+dobj(lies-12, time-16)
+conj:and(space-14, time-16)
+---
+qqroot(ROOT-0, is-3)
+cc(is-3, but-27)
+punct(is-3, .-48)
+punct(is-3, ;-26)
+punct(is-3, ,-15)
+case(immortality-10, of-7)
+det(immortality-10, the-8)
+case(soul-14, of-11)
+det(soul-14, the-12)
+mark(say-19, to-18)
+case(survival-23, of-20)
+case(death-25, after-24)
+case(case-31, in-29)
+det(case-31, any-30)
+det(assumption-34, this-33)
+punct(fails-36, ,-32)
+punct(fails-36, ,-28)
+mark(accomplish-38, to-37)
+det(purpose-40, the-39)
+case(which-42, for-41)
+aux(intended-47, has-44)
+auxpass(intended-47, been-46)
+neg(only-2, Not-1)
+cc:preconj(is-3, only-2)
+nsubj(is-3, there-4)
+neg(guarantee-6, no-5)
+nsubj(is-3, guarantee-6)
+amod(immortality-10, temporal-9)
+nmod:of(guarantee-6, immortality-10)
+amod(soul-14, human-13)
+nmod:of(immortality-10, soul-14)
+nsubj(is-17, that-16)
+nsubj:xsubj(say-19, that-16)
+dep(is-3, is-17)
+xcomp(is-17, say-19)
+nmod:poss(survival-23, its-21)
+amod(survival-23, eternal-22)
+nmod:of(say-19, survival-23)
+nmod:after(survival-23, death-25)
+nmod:in(fails-36, case-31)
+nsubj(fails-36, assumption-34)
+nsubj:xsubj(accomplish-38, assumption-34)
+advmod(fails-36, completely-35)
+conj:but(is-3, fails-36)
+xcomp(fails-36, accomplish-38)
+dobj(accomplish-38, purpose-40)
+nmod:for(intended-47, purpose-40)
+ref(purpose-40, which-42)
+nsubjpass(intended-47, it-43)
+advmod(intended-47, always-45)
+acl:relcl(purpose-40, intended-47)
+root(ROOT-0, Or-1)
+punct(Or-1, ?-11)
+det(riddle-4, some-3)
+case(surviving-8, by-6)
+case(ever-10, for-9)
+dep(Or-1, is-2)
+nsubj(is-2, riddle-4)
+acl(riddle-4, solved-5)
+nmod:poss(surviving-8, my-7)
+nmod:by(solved-5, surviving-8)
+nmod:for(surviving-8, ever-10)
+root(ROOT-0, Is-1)
+punct(Is-1, ?-16)
+det(life-5, this-3)
+case(riddle-11, of-9)
+det(riddle-11, a-10)
+case(life-15, as-12)
+neg(life-5, not-2)
+amod(life-5, eternal-4)
+nsubj(Is-1, life-5)
+nmod:npmod(life-5, itself-6)
+advmod(much-8, as-7)
+amod(life-5, much-8)
+nmod:of(much-8, riddle-11)
+nmod:poss(life-15, our-13)
+amod(life-15, present-14)
+nmod:as(much-8, life-15)
+root(ROOT-0, lies-12)
+det(solution-2, The-1)
+case(riddle-5, of-3)
+cc(riddle-5, and-10)
+det(riddle-5, the-4)
+case(life-7, of-6)
+case(space-9, in-8)
+punct(lies-12, .-17)
+cc(space-14, and-15)
+nsubj(lies-12, solution-2)
+nmod:of(solution-2, riddle-5)
+nmod:of(riddle-5, life-7)
+nmod:in(riddle-5, space-9)
+nmod:of(solution-2, time-11)
+conj:and(riddle-5, time-11)
+amod(space-14, outside-13)
+dobj(lies-12, space-14)
+dobj(lies-12, time-16)
+conj:and(space-14, time-16)
+root(ROOT-0, solution-7)
+cop(solution-7, is-3)
+det(solution-7, the-6)
+punct(solution-7, -LRB--1)
+punct(solution-7, .-17)
+punct(solution-7, -RRB--18)
+case(problems-10, of-8)
+det(problems-10, any-9)
+case(science-13, of-11)
+auxpass(required-16, is-15)
+nsubj(solution-7, It-2)
+advmod(solution-7, certainly-4)
+neg(solution-7, not-5)
+nmod:of(solution-7, problems-10)
+nsubjpass(required-16, problems-10)
+amod(science-13, natural-12)
+nmod:of(problems-10, science-13)
+ref(problems-10, that-14)
+acl:relcl(problems-10, required-16)
+G[75, 79] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, Is1, It2, Not1, Or1, accomplish38, always45, as7, assumption2147483647, case2147483647, certainly4, completely35, death25, eternal4, eternal22, ever10, fails36, guarantee6, human13, immortality2147483647, intended47, is2, is17, is3, it43, its21, itself6, lies12, life15, life2147483647, life7, much8, my7, natural12, no5, not5, not2, only2, our13, outside13, present14, problems2147483647, purpose2147483647, required16, riddle2147483647, riddle2147483647, riddle2147483647, say19, science13, solution2147483647, solution2147483647, solved5, soul2147483647, space14, space9, survival23, surviving8, temporal9, that16, that14, there4, time16, time11, which42]
+eternal22- ->survival23
+?10-The->solution2147483647
+?12-the->riddle2147483647
+survival23-of->say19
+temporal9- ->?2
+fails36-but->is3
+not2- ->?4
+outside13- ->space14
+?9-of->much8
+?11-some->riddle2147483647
+always45-  : been ->intended47
+?9-a->riddle2147483647
+science13-of->?8
+eternal4- ->?4
+is2- ->Or1
+our13-poss->life15
+?6-for->intended47
+?6- ->accomplish38
+only2-preconj->is3
+time11-of->?10
+accomplish38-  : to ->fails36
+?3-the->soul2147483647
+?8-any->problems2147483647
+surviving8-by->solved5
+time11-and->?12
+no5- ->guarantee6
+?1-in->fails36
+present14- ->life15
+?8- ->required16
+life7-of->?12
+ever10-for->surviving8
+Not1- ->only2
+there4- ->is3
+?8-of->?7
+?10- ->lies12
+?5-xsubj->accomplish38
+its21- ->?5
+?2-the->immortality2147483647
+that14- ->?8
+?3-of->?2
+?2-of->guarantee6
+?6-the->purpose2147483647
+?1-any->case2147483647
+required16-relcl : is  : is ->?8
+is17- ->is3
+time16-and->space14
+time16- ->lies12
+guarantee6- ->is3
+human13- ->?3
+not5- ->?7
+itself6-npmod->?4
+it43-  : has  : has ->intended47
+guarantee6- ->?5
+that16- ->is17
+space14- ->lies12
+certainly4- ->?7
+?5- ->fails36
+it43- ->?5
+which42-  : for ->?6
+?4- ->Is1
+completely35- ->fails36
+?7-the->solution2147483647
+?5-this->assumption2147483647
+life15-as->much8
+as7- ->much8
+?12-of->?10
+space9-in->?12
+say19-  : to ->is17
+It2-  : is  : is ->?7
+that16-xsubj->say19
+death25-after->survival23
+its21-poss->survival23
+much8- ->?4
+?11- ->is2
+my7-poss->surviving8
+solved5- ->?11
+natural12- ->science13
+?4-this->life2147483647
+intended47-relcl->?6
+------CorefChainz
+CHAIN13-["its" in sentence 1, "this assumption" in sentence 1, "it" in sentence 1, "itself" in sentence 3]
+representative mention: "this assumption" in sentence 1

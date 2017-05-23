@@ -1,0 +1,544 @@
+ All propositions are results of truth-operations on elementary propositions. A truth-operation is the way in which a truth-function is produced out of elementary propositions. It is of the essence of truth- operations that, just as elementary propositions yield a truth-function of themselves, so too in the same way truth-functions yield a further truth- function. When a truth-operation is applied to truth-functions of elementary propositions, it always generates another truth-function of elementary propositions, another proposition. When a truth-operation is applied to the results of truth-operations on elementary propositions, there is always a single operation on elementary propositions that has the same result. Every proposition is the result of truth-operations on elementary propositions.
+------CorefChainz
+CHAIN17-["a truth-function" in sentence 2, "It" in sentence 3]
+representative mention: "a truth-function" in sentence 2
+CHAIN19-["elementary propositions" in sentence 1, "elementary propositions" in sentence 3, "themselves" in sentence 3, "elementary propositions" in sentence 4, "elementary propositions" in sentence 5, "elementary propositions" in sentence 6]
+representative mention: "elementary propositions" in sentence 1
+CHAIN20-["A truth-operation" in sentence 2, "a truth-operation" in sentence 4, "it" in sentence 4, "a truth-operation" in sentence 5]
+representative mention: "A truth-operation" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, results-4)
+det(propositions-2, All-1)
+cop(results-4, are-3)
+punct(results-4, .-10)
+case(truth-operations-6, of-5)
+case(propositions-9, on-7)
+nsubj(results-4, propositions-2)
+nmod:of(results-4, truth-operations-6)
+amod(propositions-9, elementary-8)
+nmod:on(truth-operations-6, propositions-9)
+---
+qqroot(ROOT-0, results-4)
+det(propositions-2, All-1)
+cop(results-4, are-3)
+punct(results-4, .-10)
+case(truth-operations-6, of-5)
+case(propositions-9, on-7)
+nsubj(results-4, propositions-2)
+nmod:of(results-4, truth-operations-6)
+amod(propositions-9, elementary-8)
+nmod:on(truth-operations-6, propositions-9)
+root(ROOT-0, way-5)
+mwe(out-12, of-13)
+det(truth-operation-2, A-1)
+cop(way-5, is-3)
+det(way-5, the-4)
+punct(way-5, .-16)
+case(which-7, in-6)
+det(truth-function-9, a-8)
+auxpass(produced-11, is-10)
+case(propositions-15, out-12)
+nsubj(way-5, truth-operation-2)
+nmod:in(produced-11, way-5)
+ref(way-5, which-7)
+nsubjpass(produced-11, truth-function-9)
+acl:relcl(way-5, produced-11)
+amod(propositions-15, elementary-14)
+nmod:out_of(produced-11, propositions-15)
+---
+qqroot(ROOT-0, results-4)
+det(propositions-2, All-1)
+cop(results-4, are-3)
+punct(results-4, .-10)
+case(truth-operations-6, of-5)
+case(propositions-9, on-7)
+nsubj(results-4, propositions-2)
+nmod:of(results-4, truth-operations-6)
+amod(propositions-9, elementary-8)
+nmod:on(truth-operations-6, propositions-9)
+root(ROOT-0, way-5)
+mwe(out-12, of-13)
+det(truth-operation-2, A-1)
+cop(way-5, is-3)
+det(way-5, the-4)
+punct(way-5, .-16)
+case(which-7, in-6)
+det(truth-function-9, a-8)
+auxpass(produced-11, is-10)
+case(propositions-15, out-12)
+nsubj(way-5, truth-operation-2)
+nmod:in(produced-11, way-5)
+ref(way-5, which-7)
+nsubjpass(produced-11, truth-function-9)
+acl:relcl(way-5, produced-11)
+amod(propositions-15, elementary-14)
+nmod:out_of(produced-11, propositions-15)
+root(ROOT-0, essence-5)
+case(essence-5, of-3)
+cop(essence-5, is-2)
+det(essence-5, the-4)
+punct(essence-5, --8)
+case(truth-7, of-6)
+punct(that-10, ,-11)
+mark(yield-16, as-13)
+punct(yield-16, .-35)
+punct(yield-16, ,-21)
+det(truth-function-18, a-17)
+case(themselves-20, of-19)
+case(way-27, in-24)
+det(way-27, the-25)
+det(truth-32, a-30)
+punct(truth-32, --33)
+nsubj(essence-5, It-1)
+nmod:of(essence-5, truth-7)
+dep(essence-5, operations-9)
+dep(operations-9, that-10)
+advmod(yield-16, just-12)
+amod(propositions-15, elementary-14)
+nsubj(yield-16, propositions-15)
+root(,-11, yield-16)
+dobj(yield-16, truth-function-18)
+nmod:of(truth-function-18, themselves-20)
+advmod(too-23, so-22)
+advmod(yield-29, too-23)
+amod(way-27, same-26)
+nmod:in(yield-29, way-27)
+nsubj(yield-29, truth-functions-28)
+dep(yield-16, yield-29)
+amod(truth-32, further-31)
+dobj(yield-29, truth-32)
+dep(truth-32, function-34)
+---
+qqroot(ROOT-0, results-4)
+det(propositions-2, All-1)
+cop(results-4, are-3)
+punct(results-4, .-10)
+case(truth-operations-6, of-5)
+case(propositions-9, on-7)
+nsubj(results-4, propositions-2)
+nmod:of(results-4, truth-operations-6)
+amod(propositions-9, elementary-8)
+nmod:on(truth-operations-6, propositions-9)
+root(ROOT-0, way-5)
+mwe(out-12, of-13)
+det(truth-operation-2, A-1)
+cop(way-5, is-3)
+det(way-5, the-4)
+punct(way-5, .-16)
+case(which-7, in-6)
+det(truth-function-9, a-8)
+auxpass(produced-11, is-10)
+case(propositions-15, out-12)
+nsubj(way-5, truth-operation-2)
+nmod:in(produced-11, way-5)
+ref(way-5, which-7)
+nsubjpass(produced-11, truth-function-9)
+acl:relcl(way-5, produced-11)
+amod(propositions-15, elementary-14)
+nmod:out_of(produced-11, propositions-15)
+root(ROOT-0, essence-5)
+case(essence-5, of-3)
+cop(essence-5, is-2)
+det(essence-5, the-4)
+punct(essence-5, --8)
+case(truth-7, of-6)
+punct(that-10, ,-11)
+mark(yield-16, as-13)
+punct(yield-16, .-35)
+punct(yield-16, ,-21)
+det(truth-function-18, a-17)
+case(themselves-20, of-19)
+case(way-27, in-24)
+det(way-27, the-25)
+det(truth-32, a-30)
+punct(truth-32, --33)
+nsubj(essence-5, It-1)
+nmod:of(essence-5, truth-7)
+dep(essence-5, operations-9)
+dep(operations-9, that-10)
+advmod(yield-16, just-12)
+amod(propositions-15, elementary-14)
+nsubj(yield-16, propositions-15)
+root(,-11, yield-16)
+dobj(yield-16, truth-function-18)
+nmod:of(truth-function-18, themselves-20)
+advmod(too-23, so-22)
+advmod(yield-29, too-23)
+amod(way-27, same-26)
+nmod:in(yield-29, way-27)
+nsubj(yield-29, truth-functions-28)
+dep(yield-16, yield-29)
+amod(truth-32, further-31)
+dobj(yield-29, truth-32)
+dep(truth-32, function-34)
+root(ROOT-0, generates-14)
+det(truth-operation-3, a-2)
+auxpass(applied-5, is-4)
+case(truth-functions-7, to-6)
+case(propositions-10, of-8)
+punct(generates-14, ,-11)
+punct(generates-14, .-23)
+det(truth-function-16, another-15)
+punct(truth-function-16, ,-20)
+case(propositions-19, of-17)
+det(proposition-22, another-21)
+advmod(applied-5, When-1)
+nsubjpass(applied-5, truth-operation-3)
+advcl(generates-14, applied-5)
+nmod:to(applied-5, truth-functions-7)
+amod(propositions-10, elementary-9)
+nmod:of(truth-functions-7, propositions-10)
+nsubj(generates-14, it-12)
+advmod(generates-14, always-13)
+dobj(generates-14, truth-function-16)
+amod(propositions-19, elementary-18)
+nmod:of(truth-function-16, propositions-19)
+appos(truth-function-16, proposition-22)
+---
+qqroot(ROOT-0, results-4)
+det(propositions-2, All-1)
+cop(results-4, are-3)
+punct(results-4, .-10)
+case(truth-operations-6, of-5)
+case(propositions-9, on-7)
+nsubj(results-4, propositions-2)
+nmod:of(results-4, truth-operations-6)
+amod(propositions-9, elementary-8)
+nmod:on(truth-operations-6, propositions-9)
+root(ROOT-0, way-5)
+mwe(out-12, of-13)
+det(truth-operation-2, A-1)
+cop(way-5, is-3)
+det(way-5, the-4)
+punct(way-5, .-16)
+case(which-7, in-6)
+det(truth-function-9, a-8)
+auxpass(produced-11, is-10)
+case(propositions-15, out-12)
+nsubj(way-5, truth-operation-2)
+nmod:in(produced-11, way-5)
+ref(way-5, which-7)
+nsubjpass(produced-11, truth-function-9)
+acl:relcl(way-5, produced-11)
+amod(propositions-15, elementary-14)
+nmod:out_of(produced-11, propositions-15)
+root(ROOT-0, essence-5)
+case(essence-5, of-3)
+cop(essence-5, is-2)
+det(essence-5, the-4)
+punct(essence-5, --8)
+case(truth-7, of-6)
+punct(that-10, ,-11)
+mark(yield-16, as-13)
+punct(yield-16, .-35)
+punct(yield-16, ,-21)
+det(truth-function-18, a-17)
+case(themselves-20, of-19)
+case(way-27, in-24)
+det(way-27, the-25)
+det(truth-32, a-30)
+punct(truth-32, --33)
+nsubj(essence-5, It-1)
+nmod:of(essence-5, truth-7)
+dep(essence-5, operations-9)
+dep(operations-9, that-10)
+advmod(yield-16, just-12)
+amod(propositions-15, elementary-14)
+nsubj(yield-16, propositions-15)
+root(,-11, yield-16)
+dobj(yield-16, truth-function-18)
+nmod:of(truth-function-18, themselves-20)
+advmod(too-23, so-22)
+advmod(yield-29, too-23)
+amod(way-27, same-26)
+nmod:in(yield-29, way-27)
+nsubj(yield-29, truth-functions-28)
+dep(yield-16, yield-29)
+amod(truth-32, further-31)
+dobj(yield-29, truth-32)
+dep(truth-32, function-34)
+root(ROOT-0, generates-14)
+det(truth-operation-3, a-2)
+auxpass(applied-5, is-4)
+case(truth-functions-7, to-6)
+case(propositions-10, of-8)
+punct(generates-14, ,-11)
+punct(generates-14, .-23)
+det(truth-function-16, another-15)
+punct(truth-function-16, ,-20)
+case(propositions-19, of-17)
+det(proposition-22, another-21)
+advmod(applied-5, When-1)
+nsubjpass(applied-5, truth-operation-3)
+advcl(generates-14, applied-5)
+nmod:to(applied-5, truth-functions-7)
+amod(propositions-10, elementary-9)
+nmod:of(truth-functions-7, propositions-10)
+nsubj(generates-14, it-12)
+advmod(generates-14, always-13)
+dobj(generates-14, truth-function-16)
+amod(propositions-19, elementary-18)
+nmod:of(truth-function-16, propositions-19)
+appos(truth-function-16, proposition-22)
+root(ROOT-0, is-16)
+det(truth-operation-3, a-2)
+auxpass(applied-5, is-4)
+case(results-8, to-6)
+det(results-8, the-7)
+case(truth-operations-10, of-9)
+case(propositions-13, on-11)
+punct(is-16, .-29)
+punct(is-16, ,-14)
+det(operation-20, a-18)
+case(propositions-23, on-21)
+det(result-28, the-26)
+advmod(applied-5, When-1)
+nsubjpass(applied-5, truth-operation-3)
+advcl(is-16, applied-5)
+nmod:to(applied-5, results-8)
+nmod:of(results-8, truth-operations-10)
+amod(propositions-13, elementary-12)
+nmod:on(results-8, propositions-13)
+expl(is-16, there-15)
+advmod(is-16, always-17)
+amod(operation-20, single-19)
+nsubj(is-16, operation-20)
+nsubj(has-25, operation-20)
+amod(propositions-23, elementary-22)
+nmod:on(operation-20, propositions-23)
+ref(operation-20, that-24)
+acl:relcl(operation-20, has-25)
+amod(result-28, same-27)
+dobj(has-25, result-28)
+---
+qqroot(ROOT-0, results-4)
+det(propositions-2, All-1)
+cop(results-4, are-3)
+punct(results-4, .-10)
+case(truth-operations-6, of-5)
+case(propositions-9, on-7)
+nsubj(results-4, propositions-2)
+nmod:of(results-4, truth-operations-6)
+amod(propositions-9, elementary-8)
+nmod:on(truth-operations-6, propositions-9)
+root(ROOT-0, way-5)
+mwe(out-12, of-13)
+det(truth-operation-2, A-1)
+cop(way-5, is-3)
+det(way-5, the-4)
+punct(way-5, .-16)
+case(which-7, in-6)
+det(truth-function-9, a-8)
+auxpass(produced-11, is-10)
+case(propositions-15, out-12)
+nsubj(way-5, truth-operation-2)
+nmod:in(produced-11, way-5)
+ref(way-5, which-7)
+nsubjpass(produced-11, truth-function-9)
+acl:relcl(way-5, produced-11)
+amod(propositions-15, elementary-14)
+nmod:out_of(produced-11, propositions-15)
+root(ROOT-0, essence-5)
+case(essence-5, of-3)
+cop(essence-5, is-2)
+det(essence-5, the-4)
+punct(essence-5, --8)
+case(truth-7, of-6)
+punct(that-10, ,-11)
+mark(yield-16, as-13)
+punct(yield-16, .-35)
+punct(yield-16, ,-21)
+det(truth-function-18, a-17)
+case(themselves-20, of-19)
+case(way-27, in-24)
+det(way-27, the-25)
+det(truth-32, a-30)
+punct(truth-32, --33)
+nsubj(essence-5, It-1)
+nmod:of(essence-5, truth-7)
+dep(essence-5, operations-9)
+dep(operations-9, that-10)
+advmod(yield-16, just-12)
+amod(propositions-15, elementary-14)
+nsubj(yield-16, propositions-15)
+root(,-11, yield-16)
+dobj(yield-16, truth-function-18)
+nmod:of(truth-function-18, themselves-20)
+advmod(too-23, so-22)
+advmod(yield-29, too-23)
+amod(way-27, same-26)
+nmod:in(yield-29, way-27)
+nsubj(yield-29, truth-functions-28)
+dep(yield-16, yield-29)
+amod(truth-32, further-31)
+dobj(yield-29, truth-32)
+dep(truth-32, function-34)
+root(ROOT-0, generates-14)
+det(truth-operation-3, a-2)
+auxpass(applied-5, is-4)
+case(truth-functions-7, to-6)
+case(propositions-10, of-8)
+punct(generates-14, ,-11)
+punct(generates-14, .-23)
+det(truth-function-16, another-15)
+punct(truth-function-16, ,-20)
+case(propositions-19, of-17)
+det(proposition-22, another-21)
+advmod(applied-5, When-1)
+nsubjpass(applied-5, truth-operation-3)
+advcl(generates-14, applied-5)
+nmod:to(applied-5, truth-functions-7)
+amod(propositions-10, elementary-9)
+nmod:of(truth-functions-7, propositions-10)
+nsubj(generates-14, it-12)
+advmod(generates-14, always-13)
+dobj(generates-14, truth-function-16)
+amod(propositions-19, elementary-18)
+nmod:of(truth-function-16, propositions-19)
+appos(truth-function-16, proposition-22)
+root(ROOT-0, is-16)
+det(truth-operation-3, a-2)
+auxpass(applied-5, is-4)
+case(results-8, to-6)
+det(results-8, the-7)
+case(truth-operations-10, of-9)
+case(propositions-13, on-11)
+punct(is-16, .-29)
+punct(is-16, ,-14)
+det(operation-20, a-18)
+case(propositions-23, on-21)
+det(result-28, the-26)
+advmod(applied-5, When-1)
+nsubjpass(applied-5, truth-operation-3)
+advcl(is-16, applied-5)
+nmod:to(applied-5, results-8)
+nmod:of(results-8, truth-operations-10)
+amod(propositions-13, elementary-12)
+nmod:on(results-8, propositions-13)
+expl(is-16, there-15)
+advmod(is-16, always-17)
+amod(operation-20, single-19)
+nsubj(is-16, operation-20)
+nsubj(has-25, operation-20)
+amod(propositions-23, elementary-22)
+nmod:on(operation-20, propositions-23)
+ref(operation-20, that-24)
+acl:relcl(operation-20, has-25)
+amod(result-28, same-27)
+dobj(has-25, result-28)
+root(ROOT-0, result-5)
+det(proposition-2, Every-1)
+cop(result-5, is-3)
+det(result-5, the-4)
+punct(result-5, .-11)
+case(truth-operations-7, of-6)
+case(propositions-10, on-8)
+nsubj(result-5, proposition-2)
+nmod:of(result-5, truth-operations-7)
+amod(propositions-10, elementary-9)
+nmod:on(truth-operations-7, propositions-10)
+G[87, 85] [,11, ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, It1, When1, When1, always13, always17, applied5, applied5, elementary18, elementary8, elementary22, elementary12, elementary9, elementary14, elementary14, elementary9, essence2147483647, function34, further31, generates14, has25, is16, it12, just12, operation2147483647, operations9, out of12, produced11, proposition2147483647, proposition2147483647, propositions13, propositions15, propositions10, propositions15, propositions10, propositions2147483647, propositions19, propositions9, propositions23, result2147483647, result2147483647, results2147483647, results4, same26, same27, single19, so22, that24, that10, themselves20, there15, too23, truth7, truth2147483647, truth-function2147483647, truth-function2147483647, truth-function2147483647, truth-functions7, truth-functions28, truth-operation2147483647, truth-operation2147483647, truth-operation2147483647, truth-operations7, truth-operations6, truth-operations10, way2147483647, way2147483647, which7, yield29, yield16]
+?14-the->results2147483647
+produced11-relcl->?13
+truth-operations10-of->?14
+propositions19-of->?1
+When1- ->applied5
+single19- ->?3
+applied5- ->is16
+which7-  : in ->?13
+?10-  : are ->results4
+When1- ->elementary9
+elementary12- ->propositions13
+?4-  : is ->?9
+?13-the->way2147483647
+truth-functions28- ->yield29
+it12- ->generates14
+yield29- ->yield16
+?8-A->truth-operation2147483647
+applied5- ->generates14
+always17- ->is16
+?15- ->yield16
+propositions15- ->yield16
+truth-operations6-of->results4
+?9-the->result2147483647
+?5-==->?4
+that10- ->operations9
+?13-in->produced11
+elementary8- ->propositions9
+?16-a->truth-operation2147483647
+themselves20- ->elementary9
+propositions23-on->?3
+?11-the->result2147483647
+?6-in->yield29
+there15- ->is16
+?6-the->way2147483647
+?8-  : is ->?13
+?3- ->has25
+too23- ->yield29
+propositions9-on->truth-operations6
+propositions13-on->?14
+?15-a->truth-function2147483647
+elementary14- ->propositions15
+?1- ->generates14
+?7-another->proposition2147483647
+just12-  : as ->yield16
+elementary18- ->propositions19
+further31- ->?12
+so22- ->too23
+elementary9- ->propositions10
+that24- ->?3
+?5-a->truth-operation2147483647
+?17-  : is ->produced11
+propositions10-of->truth-functions7
+truth7-of->?2
+always13- ->generates14
+?3-a->operation2147483647
+yield16- ->,11
+?11- ->has25
+same26- ->?6
+themselves20-of->?15
+?12-a->truth2147483647
+?17-a->truth-function2147483647
+propositions15-out_of : out of ->produced11
+it12- ->?4
+?12- ->yield29
+same27- ->?11
+When1- ->applied5
+?4-Every->proposition2147483647
+?7- ->?1
+?10-All->propositions2147483647
+?2-the->essence2147483647
+truth-functions7-to->applied5
+operations9- ->?2
+truth-operations7-of->?9
+elementary14- ->propositions15
+?16-  : is ->applied5
+has25-relcl->?3
+?14-to->applied5
+elementary22- ->propositions23
+function34- ->?12
+?1-another->truth-function2147483647
+It1-  : is ->?2
+propositions10-on->truth-operations7
+?3- ->is16
+elementary9- ->propositions10
+?5-  : is ->applied5
+------CorefChainz
+CHAIN17-["a truth-function" in sentence 2, "It" in sentence 3]
+representative mention: "a truth-function" in sentence 2
+CHAIN19-["elementary propositions" in sentence 1, "elementary propositions" in sentence 3, "themselves" in sentence 3, "elementary propositions" in sentence 4, "elementary propositions" in sentence 5, "elementary propositions" in sentence 6]
+representative mention: "elementary propositions" in sentence 1
+CHAIN20-["A truth-operation" in sentence 2, "a truth-operation" in sentence 4, "it" in sentence 4, "a truth-operation" in sentence 5]
+representative mention: "A truth-operation" in sentence 2

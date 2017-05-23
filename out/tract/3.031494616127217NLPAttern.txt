@@ -1,0 +1,49 @@
+ Thought can never be of anything illogical, since, if it were, we should have to think illogically.
+------CorefChainz
+CHAIN2-["Thought" in sentence 1, "it" in sentence 1]
+representative mention: "Thought" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, anything-6)
+aux(anything-6, can-2)
+case(anything-6, of-5)
+cop(anything-6, be-4)
+punct(anything-6, .-21)
+punct(anything-6, ,-8)
+mark(were-13, if-11)
+aux(have-17, should-16)
+mark(have-17, since-9)
+punct(have-17, ,-10)
+punct(have-17, ,-14)
+mark(think-19, to-18)
+nsubj(anything-6, Thought-1)
+neg(anything-6, never-3)
+amod(anything-6, illogical-7)
+nsubj(were-13, it-12)
+advcl:if(have-17, were-13)
+nsubj(have-17, we-15)
+nsubj:xsubj(think-19, we-15)
+advcl:since(anything-6, have-17)
+xcomp(have-17, think-19)
+advmod(think-19, illogically-20)
+G[10, 11] [Thought1, anything6, have17, illogical7, illogically20, it12, never3, think19, we15, were13]
+illogical7- ->anything6
+were13-if->have17
+we15-  : should ->have17
+have17-since->anything6
+think19-  : to ->have17
+we15-xsubj->think19
+illogically20- ->think19
+Thought1-  : can  : can ->anything6
+it12- ->Thought1
+it12- ->were13
+never3-  : be  : of  : of ->anything6
+------CorefChainz
+CHAIN2-["Thought" in sentence 1, "it" in sentence 1]
+representative mention: "Thought" in sentence 1

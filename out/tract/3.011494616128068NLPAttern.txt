@@ -1,0 +1,31 @@
+ The totality of true thoughts is a picture of the world.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, picture-8)
+det(totality-2, The-1)
+case(thoughts-5, of-3)
+cop(picture-8, is-6)
+det(picture-8, a-7)
+punct(picture-8, .-12)
+case(world-11, of-9)
+det(world-11, the-10)
+nsubj(picture-8, totality-2)
+amod(thoughts-5, true-4)
+nmod:of(totality-2, thoughts-5)
+nmod:of(picture-8, world-11)
+G[8, 7] [?1, ?2, ?3, picture2147483647, thoughts5, totality2147483647, true4, world2147483647]
+thoughts5-of->?2
+?2-The->totality2147483647
+?1-of->?3
+?3-a->picture2147483647
+?2-  : is ->?3
+?1-the->world2147483647
+true4- ->thoughts5
+------CorefChainz

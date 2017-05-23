@@ -1,0 +1,31 @@
+ There are no pictures that are true a priori.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, are-2)
+punct(are-2, .-10)
+cop(true-7, are-6)
+det(priori-9, a-8)
+expl(are-2, There-1)
+neg(pictures-4, no-3)
+nsubj(are-2, pictures-4)
+nsubj(true-7, pictures-4)
+ref(pictures-4, that-5)
+acl:relcl(pictures-4, true-7)
+dep(true-7, priori-9)
+G[8, 8] [?1, There1, are2, no3, pictures4, priori2147483647, that5, true7]
+true7-relcl : are  : are ->pictures4
+pictures4- ->are2
+There1- ->are2
+?1- ->true7
+?1-a->priori2147483647
+pictures4- ->true7
+that5- ->pictures4
+no3- ->pictures4
+------CorefChainz

@@ -1,0 +1,281 @@
+ Every sign that has a definition signifies via the signs that serve to define it; and the definitions point the way. Two signs cannot signify in the same manner if one is primitive and the other is defined by means of primitive signs. Names cannot be anatomized by means of definitions. (Nor can any sign that has a meaning independently and on its own.)
+------CorefChainz
+CHAIN3-["a definition" in sentence 1, "it" in sentence 1]
+representative mention: "a definition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, sign-2)
+cc(sign-2, and-17)
+det(sign-2, Every-1)
+punct(sign-2, ;-16)
+punct(sign-2, .-23)
+det(definition-6, a-5)
+case(signs-10, via-8)
+det(signs-10, the-9)
+mark(define-14, to-13)
+det(definitions-19, the-18)
+det(way-22, the-21)
+nsubj(has-4, sign-2)
+ref(sign-2, that-3)
+acl:relcl(sign-2, has-4)
+nsubj(signifies-7, definition-6)
+ccomp(has-4, signifies-7)
+nmod:via(signifies-7, signs-10)
+nsubj(serve-12, signs-10)
+nsubj:xsubj(define-14, signs-10)
+ref(signs-10, that-11)
+acl:relcl(signs-10, serve-12)
+xcomp(serve-12, define-14)
+dobj(define-14, it-15)
+nsubj(point-20, definitions-19)
+conj:and(sign-2, point-20)
+nsubj(has-4, point-20)
+dobj(point-20, way-22)
+---
+qqroot(ROOT-0, sign-2)
+cc(sign-2, and-17)
+det(sign-2, Every-1)
+punct(sign-2, ;-16)
+punct(sign-2, .-23)
+det(definition-6, a-5)
+case(signs-10, via-8)
+det(signs-10, the-9)
+mark(define-14, to-13)
+det(definitions-19, the-18)
+det(way-22, the-21)
+nsubj(has-4, sign-2)
+ref(sign-2, that-3)
+acl:relcl(sign-2, has-4)
+nsubj(signifies-7, definition-6)
+ccomp(has-4, signifies-7)
+nmod:via(signifies-7, signs-10)
+nsubj(serve-12, signs-10)
+nsubj:xsubj(define-14, signs-10)
+ref(signs-10, that-11)
+acl:relcl(signs-10, serve-12)
+xcomp(serve-12, define-14)
+dobj(define-14, it-15)
+nsubj(point-20, definitions-19)
+conj:and(sign-2, point-20)
+nsubj(has-4, point-20)
+dobj(point-20, way-22)
+root(ROOT-0, signify-5)
+mwe(by-19, means-20)
+mwe(by-19, of-21)
+aux(signify-5, can-3)
+punct(signify-5, .-24)
+case(manner-9, in-6)
+det(manner-9, the-7)
+cc(primitive-13, and-14)
+cop(primitive-13, is-12)
+mark(primitive-13, if-10)
+det(other-16, the-15)
+auxpass(defined-18, is-17)
+case(signs-23, by-19)
+nummod(signs-2, Two-1)
+nsubj(signify-5, signs-2)
+neg(signify-5, not-4)
+amod(manner-9, same-8)
+nmod:in(signify-5, manner-9)
+nsubj(primitive-13, one-11)
+advcl:if(signify-5, primitive-13)
+nsubjpass(defined-18, other-16)
+advcl:if(signify-5, defined-18)
+conj:and(primitive-13, defined-18)
+amod(signs-23, primitive-22)
+nmod:agent(defined-18, signs-23)
+---
+qqroot(ROOT-0, sign-2)
+cc(sign-2, and-17)
+det(sign-2, Every-1)
+punct(sign-2, ;-16)
+punct(sign-2, .-23)
+det(definition-6, a-5)
+case(signs-10, via-8)
+det(signs-10, the-9)
+mark(define-14, to-13)
+det(definitions-19, the-18)
+det(way-22, the-21)
+nsubj(has-4, sign-2)
+ref(sign-2, that-3)
+acl:relcl(sign-2, has-4)
+nsubj(signifies-7, definition-6)
+ccomp(has-4, signifies-7)
+nmod:via(signifies-7, signs-10)
+nsubj(serve-12, signs-10)
+nsubj:xsubj(define-14, signs-10)
+ref(signs-10, that-11)
+acl:relcl(signs-10, serve-12)
+xcomp(serve-12, define-14)
+dobj(define-14, it-15)
+nsubj(point-20, definitions-19)
+conj:and(sign-2, point-20)
+nsubj(has-4, point-20)
+dobj(point-20, way-22)
+root(ROOT-0, signify-5)
+mwe(by-19, means-20)
+mwe(by-19, of-21)
+aux(signify-5, can-3)
+punct(signify-5, .-24)
+case(manner-9, in-6)
+det(manner-9, the-7)
+cc(primitive-13, and-14)
+cop(primitive-13, is-12)
+mark(primitive-13, if-10)
+det(other-16, the-15)
+auxpass(defined-18, is-17)
+case(signs-23, by-19)
+nummod(signs-2, Two-1)
+nsubj(signify-5, signs-2)
+neg(signify-5, not-4)
+amod(manner-9, same-8)
+nmod:in(signify-5, manner-9)
+nsubj(primitive-13, one-11)
+advcl:if(signify-5, primitive-13)
+nsubjpass(defined-18, other-16)
+advcl:if(signify-5, defined-18)
+conj:and(primitive-13, defined-18)
+amod(signs-23, primitive-22)
+nmod:agent(defined-18, signs-23)
+root(ROOT-0, anatomized-5)
+mwe(by-6, means-7)
+mwe(by-6, of-8)
+aux(anatomized-5, can-2)
+auxpass(anatomized-5, be-4)
+punct(anatomized-5, .-10)
+case(definitions-9, by-6)
+nsubjpass(anatomized-5, Names-1)
+neg(anatomized-5, not-3)
+nmod:agent(anatomized-5, definitions-9)
+---
+qqroot(ROOT-0, sign-2)
+cc(sign-2, and-17)
+det(sign-2, Every-1)
+punct(sign-2, ;-16)
+punct(sign-2, .-23)
+det(definition-6, a-5)
+case(signs-10, via-8)
+det(signs-10, the-9)
+mark(define-14, to-13)
+det(definitions-19, the-18)
+det(way-22, the-21)
+nsubj(has-4, sign-2)
+ref(sign-2, that-3)
+acl:relcl(sign-2, has-4)
+nsubj(signifies-7, definition-6)
+ccomp(has-4, signifies-7)
+nmod:via(signifies-7, signs-10)
+nsubj(serve-12, signs-10)
+nsubj:xsubj(define-14, signs-10)
+ref(signs-10, that-11)
+acl:relcl(signs-10, serve-12)
+xcomp(serve-12, define-14)
+dobj(define-14, it-15)
+nsubj(point-20, definitions-19)
+conj:and(sign-2, point-20)
+nsubj(has-4, point-20)
+dobj(point-20, way-22)
+root(ROOT-0, signify-5)
+mwe(by-19, means-20)
+mwe(by-19, of-21)
+aux(signify-5, can-3)
+punct(signify-5, .-24)
+case(manner-9, in-6)
+det(manner-9, the-7)
+cc(primitive-13, and-14)
+cop(primitive-13, is-12)
+mark(primitive-13, if-10)
+det(other-16, the-15)
+auxpass(defined-18, is-17)
+case(signs-23, by-19)
+nummod(signs-2, Two-1)
+nsubj(signify-5, signs-2)
+neg(signify-5, not-4)
+amod(manner-9, same-8)
+nmod:in(signify-5, manner-9)
+nsubj(primitive-13, one-11)
+advcl:if(signify-5, primitive-13)
+nsubjpass(defined-18, other-16)
+advcl:if(signify-5, defined-18)
+conj:and(primitive-13, defined-18)
+amod(signs-23, primitive-22)
+nmod:agent(defined-18, signs-23)
+root(ROOT-0, anatomized-5)
+mwe(by-6, means-7)
+mwe(by-6, of-8)
+aux(anatomized-5, can-2)
+auxpass(anatomized-5, be-4)
+punct(anatomized-5, .-10)
+case(definitions-9, by-6)
+nsubjpass(anatomized-5, Names-1)
+neg(anatomized-5, not-3)
+nmod:agent(anatomized-5, definitions-9)
+root(ROOT-0, -LRB--1)
+punct(can-3, -RRB--16)
+det(sign-5, any-4)
+punct(sign-5, .-15)
+det(meaning-9, a-8)
+case(own-14, on-12)
+root(-LRB--1, Nor-2)
+dep(Nor-2, can-3)
+nsubj(can-3, sign-5)
+nsubj(has-7, sign-5)
+ref(sign-5, that-6)
+acl:relcl(sign-5, has-7)
+dobj(has-7, meaning-9)
+advmod(and-11, independently-10)
+advmod(meaning-9, and-11)
+nmod:poss(own-14, its-13)
+conj(and-11, own-14)
+G[38, 39] [-LRB-1, ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, Nor2, anatomized5, and11, by means of6, by means of19, can3, define14, defined18, definition2147483647, definitions9, definitions2147483647, has4, has7, manner2147483647, meaning2147483647, other2147483647, own14, point20, primitive13, serve12, sign2147483647, sign2147483647, signifies7, signify5, signs2147483647, signs23, signs2, way2147483647]
+?4-xsubj->define14
+?3- ->has4
+define14-  : to ->serve12
+?4-via->signifies7
+?8- ->has7
+?8-a->meaning2147483647
+?4- ->serve12
+signifies7- ->has4
+definitions9-agent : by means of  : can  : be ->anatomized5
+signifies7- ->by means of6
+?2-any->sign2147483647
+point20- ->has4
+primitive13-if->signify5
+?7- ->defined18
+signs23-agent : by means of ->defined18
+signs2-  : can ->signify5
+?6-the->manner2147483647
+?2- ->can3
+can3- ->Nor2
+?5-the->definitions2147483647
+point20-and->?3
+?9- ->point20
+defined18-and : is ->primitive13
+own14-  : on ->and11
+defined18-if->signify5
+has4-relcl->?3
+?9-the->way2147483647
+?1-a->definition2147483647
+has7-relcl->?2
+?4-the->signs2147483647
+?5- ->point20
+?7-the->other2147483647
+serve12-relcl->?4
+?1- ->signifies7
+?2- ->has7
+?3-Every->sign2147483647
+and11- ->?8
+?6-in->signify5
+Nor2- ->-LRB-1
+------CorefChainz
+CHAIN3-["a definition" in sentence 1, "it" in sentence 1]
+representative mention: "a definition" in sentence 1

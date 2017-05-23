@@ -1,0 +1,47 @@
+ The totality of true propositions is the whole of natural science (or the whole corpus of the natural sciences).
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, whole-8)
+det(totality-2, The-1)
+case(propositions-5, of-3)
+cop(whole-8, is-6)
+det(whole-8, the-7)
+punct(whole-8, .-22)
+case(science-11, of-9)
+cc(corpus-16, or-13)
+det(corpus-16, the-14)
+punct(corpus-16, -RRB--21)
+punct(corpus-16, -LRB--12)
+case(sciences-20, of-17)
+det(sciences-20, the-18)
+nsubj(whole-8, totality-2)
+amod(propositions-5, true-4)
+nmod:of(totality-2, propositions-5)
+amod(science-11, natural-10)
+nmod:of(whole-8, science-11)
+amod(corpus-16, whole-15)
+dep(science-11, corpus-16)
+amod(sciences-20, natural-19)
+nmod:of(corpus-16, sciences-20)
+G[14, 13] [?1, ?2, ?3, ?4, corpus2147483647, natural19, natural10, propositions5, science11, sciences2147483647, totality2147483647, true4, whole15, whole2147483647]
+?4-the->sciences2147483647
+?3-the->whole2147483647
+natural10- ->science11
+?1-The->totality2147483647
+true4- ->propositions5
+?2-the->corpus2147483647
+science11-of->?3
+?1-  : is ->?3
+whole15- ->?2
+propositions5-of->?1
+?2-  : or  : or ->science11
+natural19- ->?4
+?4-of->?2
+------CorefChainz

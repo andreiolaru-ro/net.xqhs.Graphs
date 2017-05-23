@@ -1,0 +1,131 @@
+ When the answer cannot be put into words, neither can the question be put into words. The riddle does not exist. If a question can be framed at all, it is also possible to answer it.
+------CorefChainz
+CHAIN6-["a question" in sentence 3, "it" in sentence 3, "it" in sentence 3]
+representative mention: "a question" in sentence 3
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, put-16)
+det(answer-3, the-2)
+aux(put-7, can-4)
+auxpass(put-7, be-6)
+case(words-9, into-8)
+det(question-14, the-13)
+aux(put-16, can-12)
+auxpass(put-16, be-15)
+punct(put-16, .-19)
+punct(put-16, ,-10)
+case(words-18, into-17)
+advmod(put-7, When-1)
+nsubjpass(put-7, answer-3)
+neg(put-7, not-5)
+advcl(put-16, put-7)
+nmod:into(put-7, words-9)
+dep(put-16, neither-11)
+nsubjpass(put-16, question-14)
+nmod:into(put-16, words-18)
+---
+qqroot(ROOT-0, put-16)
+det(answer-3, the-2)
+aux(put-7, can-4)
+auxpass(put-7, be-6)
+case(words-9, into-8)
+det(question-14, the-13)
+aux(put-16, can-12)
+auxpass(put-16, be-15)
+punct(put-16, .-19)
+punct(put-16, ,-10)
+case(words-18, into-17)
+advmod(put-7, When-1)
+nsubjpass(put-7, answer-3)
+neg(put-7, not-5)
+advcl(put-16, put-7)
+nmod:into(put-7, words-9)
+dep(put-16, neither-11)
+nsubjpass(put-16, question-14)
+nmod:into(put-16, words-18)
+root(ROOT-0, exist-5)
+det(riddle-2, The-1)
+aux(exist-5, does-3)
+punct(exist-5, .-6)
+nsubj(exist-5, riddle-2)
+neg(exist-5, not-4)
+---
+qqroot(ROOT-0, put-16)
+det(answer-3, the-2)
+aux(put-7, can-4)
+auxpass(put-7, be-6)
+case(words-9, into-8)
+det(question-14, the-13)
+aux(put-16, can-12)
+auxpass(put-16, be-15)
+punct(put-16, .-19)
+punct(put-16, ,-10)
+case(words-18, into-17)
+advmod(put-7, When-1)
+nsubjpass(put-7, answer-3)
+neg(put-7, not-5)
+advcl(put-16, put-7)
+nmod:into(put-7, words-9)
+dep(put-16, neither-11)
+nsubjpass(put-16, question-14)
+nmod:into(put-16, words-18)
+root(ROOT-0, exist-5)
+det(riddle-2, The-1)
+aux(exist-5, does-3)
+punct(exist-5, .-6)
+nsubj(exist-5, riddle-2)
+neg(exist-5, not-4)
+root(ROOT-0, possible-13)
+det(question-3, a-2)
+aux(framed-6, can-4)
+auxpass(framed-6, be-5)
+mark(framed-6, If-1)
+case(all-8, at-7)
+cop(possible-13, is-11)
+punct(possible-13, ,-9)
+punct(possible-13, .-17)
+mark(answer-15, to-14)
+nsubjpass(framed-6, question-3)
+advcl:if(possible-13, framed-6)
+nmod:at(framed-6, all-8)
+nsubj(possible-13, it-10)
+nsubj:xsubj(answer-15, it-10)
+advmod(possible-13, also-12)
+xcomp(possible-13, answer-15)
+dobj(answer-15, it-16)
+G[24, 24] [?#1, ?#2, ?#3, ?#4, When, all, also, answer, answer, exist, framed, it, it, neither, not, not, possible, put, put, question, question, riddle, words, words]
+framed-if->possible
+?#1-a->question
+words-into->put
+it-xsubj->answer
+it- ->answer
+it- ->?#1
+?#2-  : can  : can ->put
+?#2-the->answer
+also- ->possible
+words-into->put
+?#4-The->riddle
+?#1-  : If  : can  : be ->framed
+not-  : be ->put
+put- ->put
+all-at->framed
+?#4-  : does  : does ->exist
+not- ->exist
+neither-  : can ->put
+?#3-  : be ->put
+?#3-the->question
+When- ->put
+answer-  : to ->possible
+it- ->?#1
+it-  : is  : is ->possible
+------CorefChainz
+CHAIN6-["a question" in sentence 3, "it" in sentence 3, "it" in sentence 3]
+representative mention: "a question" in sentence 3

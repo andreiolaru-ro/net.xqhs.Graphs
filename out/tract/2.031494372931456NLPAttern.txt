@@ -1,0 +1,38 @@
+ In a state of affairs objects fit into one another like the links of a chain.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, fit-7)
+case(state-3, In-1)
+det(state-3, a-2)
+case(affairs-5, of-4)
+punct(fit-7, .-17)
+case(one-9, into-8)
+case(links-13, like-11)
+det(links-13, the-12)
+case(chain-16, of-14)
+det(chain-16, a-15)
+nmod:in(fit-7, state-3)
+nmod:of(state-3, affairs-5)
+nsubj(fit-7, objects-6)
+nmod:into(fit-7, one-9)
+dep(one-9, another-10)
+nmod:like(another-10, links-13)
+nmod:of(links-13, chain-16)
+G[10, 9] [?1, ?2, ?3, affairs5, another10, chain2147483647, fit7, links2147483647, one9, state2147483647]
+?1-the->links2147483647
+?1-like->another10
+?2-a->state2147483647
+affairs5-of : In ->?2
+?3-of->?1
+one9-into->fit7
+another10- ->one9
+?2-in->fit7
+?3-a->chain2147483647
+------CorefChainz

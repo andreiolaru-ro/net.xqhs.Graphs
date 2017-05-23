@@ -1,0 +1,24 @@
+ Elementary propositions are the truth-arguments of propositions.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, truth-arguments-5)
+cop(truth-arguments-5, are-3)
+det(truth-arguments-5, the-4)
+punct(truth-arguments-5, .-8)
+case(propositions-7, of-6)
+amod(propositions-2, Elementary-1)
+nsubj(truth-arguments-5, propositions-2)
+nmod:of(truth-arguments-5, propositions-7)
+G[5, 4] [?1, Elementary1, propositions2, propositions7, truth-arguments2147483647]
+propositions7-of->?1
+?1-the->truth-arguments2147483647
+Elementary1- ->propositions2
+propositions2-  : are ->?1
+------CorefChainz

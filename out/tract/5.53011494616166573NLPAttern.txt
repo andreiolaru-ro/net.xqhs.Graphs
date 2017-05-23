@@ -1,0 +1,309 @@
+ It is self-evident that identity is not a relation between objects. This becomes very clear if one considers, for example, the proposition '(x) : fx . z . x = a'. What this proposition says is simply that only a satisfies the function f, and not that only things that have a certain relation to a satisfy the function, Of course, it might then be said that only a did have this relation to a; but in order to express that, we should need the identity-sign itself.
+------CorefChainz
+CHAIN17-["this proposition" in sentence 5, "it" in sentence 5]
+representative mention: "this proposition" in sentence 5
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, self-evident-3)
+cop(self-evident-3, is-2)
+punct(self-evident-3, .-12)
+cop(relation-9, is-6)
+det(relation-9, a-8)
+mark(relation-9, that-4)
+case(objects-11, between-10)
+nsubj(self-evident-3, It-1)
+nsubj(relation-9, identity-5)
+neg(relation-9, not-7)
+ccomp(self-evident-3, relation-9)
+nmod:between(relation-9, objects-11)
+---
+qqroot(ROOT-0, self-evident-3)
+cop(self-evident-3, is-2)
+punct(self-evident-3, .-12)
+cop(relation-9, is-6)
+det(relation-9, a-8)
+mark(relation-9, that-4)
+case(objects-11, between-10)
+nsubj(self-evident-3, It-1)
+nsubj(relation-9, identity-5)
+neg(relation-9, not-7)
+ccomp(self-evident-3, relation-9)
+nmod:between(relation-9, objects-11)
+root(ROOT-0, becomes-2)
+mark(considers-7, if-5)
+punct(considers-7, ,-8)
+case(example-10, for-9)
+punct(example-10, ,-11)
+det(proposition-13, the-12)
+punct(proposition-13, .-20)
+punct(proposition-13, '-14)
+punct(proposition-13, :-18)
+punct(x-16, -LRB--15)
+punct(x-16, -RRB--17)
+nsubj(becomes-2, This-1)
+advmod(clear-4, very-3)
+xcomp(becomes-2, clear-4)
+nsubj(considers-7, one-6)
+advcl:if(becomes-2, considers-7)
+root(,-8, example-10)
+root(,-11, proposition-13)
+appos(proposition-13, x-16)
+dep(proposition-13, fx-19)
+---
+qqroot(ROOT-0, self-evident-3)
+cop(self-evident-3, is-2)
+punct(self-evident-3, .-12)
+cop(relation-9, is-6)
+det(relation-9, a-8)
+mark(relation-9, that-4)
+case(objects-11, between-10)
+nsubj(self-evident-3, It-1)
+nsubj(relation-9, identity-5)
+neg(relation-9, not-7)
+ccomp(self-evident-3, relation-9)
+nmod:between(relation-9, objects-11)
+root(ROOT-0, becomes-2)
+mark(considers-7, if-5)
+punct(considers-7, ,-8)
+case(example-10, for-9)
+punct(example-10, ,-11)
+det(proposition-13, the-12)
+punct(proposition-13, .-20)
+punct(proposition-13, '-14)
+punct(proposition-13, :-18)
+punct(x-16, -LRB--15)
+punct(x-16, -RRB--17)
+nsubj(becomes-2, This-1)
+advmod(clear-4, very-3)
+xcomp(becomes-2, clear-4)
+nsubj(considers-7, one-6)
+advcl:if(becomes-2, considers-7)
+root(,-8, example-10)
+root(,-11, proposition-13)
+appos(proposition-13, x-16)
+dep(proposition-13, fx-19)
+root(ROOT-0, z-1)
+punct(z-1, .-2)
+---
+qqroot(ROOT-0, self-evident-3)
+cop(self-evident-3, is-2)
+punct(self-evident-3, .-12)
+cop(relation-9, is-6)
+det(relation-9, a-8)
+mark(relation-9, that-4)
+case(objects-11, between-10)
+nsubj(self-evident-3, It-1)
+nsubj(relation-9, identity-5)
+neg(relation-9, not-7)
+ccomp(self-evident-3, relation-9)
+nmod:between(relation-9, objects-11)
+root(ROOT-0, becomes-2)
+mark(considers-7, if-5)
+punct(considers-7, ,-8)
+case(example-10, for-9)
+punct(example-10, ,-11)
+det(proposition-13, the-12)
+punct(proposition-13, .-20)
+punct(proposition-13, '-14)
+punct(proposition-13, :-18)
+punct(x-16, -LRB--15)
+punct(x-16, -RRB--17)
+nsubj(becomes-2, This-1)
+advmod(clear-4, very-3)
+xcomp(becomes-2, clear-4)
+nsubj(considers-7, one-6)
+advcl:if(becomes-2, considers-7)
+root(,-8, example-10)
+root(,-11, proposition-13)
+appos(proposition-13, x-16)
+dep(proposition-13, fx-19)
+root(ROOT-0, z-1)
+punct(z-1, .-2)
+root(ROOT-0, x-1)
+punct(x-1, .-5)
+punct(a-3, '-4)
+dep(x-1, =-2)
+dep(=-2, a-3)
+---
+qqroot(ROOT-0, self-evident-3)
+cop(self-evident-3, is-2)
+punct(self-evident-3, .-12)
+cop(relation-9, is-6)
+det(relation-9, a-8)
+mark(relation-9, that-4)
+case(objects-11, between-10)
+nsubj(self-evident-3, It-1)
+nsubj(relation-9, identity-5)
+neg(relation-9, not-7)
+ccomp(self-evident-3, relation-9)
+nmod:between(relation-9, objects-11)
+root(ROOT-0, becomes-2)
+mark(considers-7, if-5)
+punct(considers-7, ,-8)
+case(example-10, for-9)
+punct(example-10, ,-11)
+det(proposition-13, the-12)
+punct(proposition-13, .-20)
+punct(proposition-13, '-14)
+punct(proposition-13, :-18)
+punct(x-16, -LRB--15)
+punct(x-16, -RRB--17)
+nsubj(becomes-2, This-1)
+advmod(clear-4, very-3)
+xcomp(becomes-2, clear-4)
+nsubj(considers-7, one-6)
+advcl:if(becomes-2, considers-7)
+root(,-8, example-10)
+root(,-11, proposition-13)
+appos(proposition-13, x-16)
+dep(proposition-13, fx-19)
+root(ROOT-0, z-1)
+punct(z-1, .-2)
+root(ROOT-0, x-1)
+punct(x-1, .-5)
+punct(a-3, '-4)
+dep(x-1, =-2)
+dep(=-2, a-3)
+root(ROOT-0, says-4)
+det(proposition-3, this-2)
+punct(says-4, .-62)
+det(satisfies-10, a-9)
+cc(function-12, and-15)
+det(function-12, the-11)
+punct(function-12, ,-14)
+det(relation-24, a-22)
+case(satisfy-27, to-25)
+det(satisfy-27, a-26)
+punct(satisfy-27, ,-30)
+punct(satisfy-27, ,-33)
+det(function-29, the-28)
+case(course-32, Of-31)
+aux(said-38, might-35)
+auxpass(said-38, be-37)
+cc(said-38, but-49)
+punct(said-38, ;-48)
+aux(have-43, did-42)
+mark(have-43, that-39)
+det(relation-45, this-44)
+case(a-47, to-46)
+mwe(in-50, order-51)
+mark(express-53, in-50)
+mark(express-53, to-52)
+aux(need-58, should-57)
+punct(need-58, ,-55)
+det(identity-sign-60, the-59)
+dobj(says-4, What-1)
+nsubj(says-4, proposition-3)
+ccomp(says-4, is-5)
+advmod(is-5, simply-6)
+dep(simply-6, that-7)
+advmod(satisfies-10, only-8)
+dep(that-7, satisfies-10)
+dobj(satisfies-10, function-12)
+dep(function-12, f-13)
+dobj(satisfies-10, not-16)
+conj:and(function-12, not-16)
+dep(not-16, that-17)
+advmod(things-19, only-18)
+dep(that-17, things-19)
+nsubj(have-21, things-19)
+ref(things-19, that-20)
+acl:relcl(things-19, have-21)
+amod(relation-24, certain-23)
+dobj(have-21, relation-24)
+nmod:to(relation-24, satisfy-27)
+dobj(satisfy-27, function-29)
+nmod:of(satisfy-27, course-32)
+nsubjpass(said-38, it-34)
+advmod(said-38, then-36)
+dep(satisfy-27, said-38)
+advmod(a-41, only-40)
+nsubj(have-43, a-41)
+ccomp(said-38, have-43)
+dobj(have-43, relation-45)
+nmod:to(relation-45, a-47)
+advcl:in_order(need-58, express-53)
+dobj(express-53, that-54)
+nsubj(need-58, we-56)
+dep(satisfy-27, need-58)
+conj:but(said-38, need-58)
+dobj(need-58, identity-sign-60)
+nmod:npmod(identity-sign-60, itself-61)
+G[68, 64] [,11, ,8, =2, ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, It1, This1, What1, a47, a41, a3, becomes2, certain23, clear4, considers7, course32, example10, express53, f13, function2147483647, function2147483647, fx19, have21, have43, identity5, identity-sign2147483647, in order50, is5, it34, itself61, need58, not7, not16, objects11, one6, only8, only18, only40, proposition2147483647, proposition2147483647, relation2147483647, relation2147483647, relation2147483647, said38, satisfies2147483647, satisfy2147483647, says4, self-evident3, simply6, that54, that7, that17, that20, then36, things19, very3, we56, x1, x16, z1]
+have21-relcl->things19
+only8- ->?1
+itself61-npmod->?5
+?1- ->that7
+What1- ->says4
+that7- ->simply6
+fx19- ->?7
+simply6- ->is5
+?6- ->?1
+?1-a->satisfies2147483647
+?9-to->?3
+f13- ->?6
+very3- ->clear4
+only18- ->things19
+?8-the->function2147483647
+?6-the->function2147483647
+one6- ->considers7
+it34-  : might  : might ->said38
+is5- ->says4
+?4- ->have43
+express53-in_order->need58
+things19- ->have21
+identity5-  : is  : is ->?2
+?8- ->?9
+?7-the->proposition2147483647
+?9-a->satisfy2147483647
+course32-of : Of ->?9
+not16-and->?6
+=2- ->x1
+only40- ->a41
+that20- ->things19
+clear4- ->becomes2
+?5- ->need58
+?3-a->relation2147483647
+?5-the->identity-sign2147483647
+It1-  : is ->self-evident3
+that17- ->not16
+?3- ->have21
+not7- ->?2
+?7- ->,11
+example10-  : for ->,8
+?10-this->proposition2147483647
+considers7-if->becomes2
+that54-  : in order  : to ->express53
+objects11-between->?2
+need58- ->?9
+?2-  : that  : that ->self-evident3
+a47-to->?4
+it34- ->very3
+This1- ->becomes2
+have43-  : that ->said38
+certain23- ->?3
+said38- ->?9
+?4-this->relation2147483647
+x16- ->?7
+then36-  : be ->said38
+we56-  : should ->need58
+things19- ->that17
+need58-but->said38
+not16- ->?1
+?10- ->says4
+a41-  : did ->have43
+?2-a->relation2147483647
+a3- ->=2
+------CorefChainz
+CHAIN17-["this proposition" in sentence 5, "it" in sentence 5]
+representative mention: "this proposition" in sentence 5

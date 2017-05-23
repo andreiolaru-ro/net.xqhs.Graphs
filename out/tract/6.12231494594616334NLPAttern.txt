@@ -1,0 +1,124 @@
+ Now it becomes clear why people have often felt as if it were for us to 'postulate ' the 'truths of logic'. The reason is that we can postulate them in so far as we can postulate an adequate notation.
+------CorefChainz
+CHAIN2-["it" in sentence 1, "it" in sentence 1]
+representative mention: "it" in sentence 1
+CHAIN7-["people" in sentence 1, "them" in sentence 2]
+representative mention: "people" in sentence 1
+CHAIN8-["us" in sentence 1, "we" in sentence 2, "we" in sentence 2]
+representative mention: "us" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, becomes-3)
+punct(becomes-3, .-26)
+aux(felt-9, have-7)
+mwe(as-10, if-11)
+cop(postulate-18, were-13)
+mark(postulate-18, to-16)
+mark(postulate-18, as-10)
+mark(postulate-18, for-14)
+punct(postulate-18, `-17)
+punct(postulate-18, '-19)
+det(truths-22, the-20)
+punct(truths-22, `-21)
+punct(truths-22, '-25)
+case(logic-24, of-23)
+advmod(becomes-3, Now-1)
+nsubj(becomes-3, it-2)
+xcomp(becomes-3, clear-4)
+advmod(felt-9, why-5)
+nsubj(felt-9, people-6)
+advmod(felt-9, often-8)
+advcl(becomes-3, felt-9)
+nsubj(postulate-18, it-12)
+nsubj(postulate-18, us-15)
+advcl:as_if(felt-9, postulate-18)
+dobj(postulate-18, truths-22)
+nmod:of(truths-22, logic-24)
+---
+qqroot(ROOT-0, becomes-3)
+punct(becomes-3, .-26)
+aux(felt-9, have-7)
+mwe(as-10, if-11)
+cop(postulate-18, were-13)
+mark(postulate-18, to-16)
+mark(postulate-18, as-10)
+mark(postulate-18, for-14)
+punct(postulate-18, `-17)
+punct(postulate-18, '-19)
+det(truths-22, the-20)
+punct(truths-22, `-21)
+punct(truths-22, '-25)
+case(logic-24, of-23)
+advmod(becomes-3, Now-1)
+nsubj(becomes-3, it-2)
+xcomp(becomes-3, clear-4)
+advmod(felt-9, why-5)
+nsubj(felt-9, people-6)
+advmod(felt-9, often-8)
+advcl(becomes-3, felt-9)
+nsubj(postulate-18, it-12)
+nsubj(postulate-18, us-15)
+advcl:as_if(felt-9, postulate-18)
+dobj(postulate-18, truths-22)
+nmod:of(truths-22, logic-24)
+root(ROOT-0, is-3)
+det(reason-2, The-1)
+punct(is-3, .-19)
+aux(postulate-7, can-6)
+mark(postulate-7, that-4)
+case(far-11, in-9)
+aux(postulate-15, can-14)
+mark(postulate-15, as-12)
+det(notation-18, an-16)
+nsubj(is-3, reason-2)
+nsubj(postulate-7, we-5)
+ccomp(is-3, postulate-7)
+dobj(postulate-7, them-8)
+advmod(far-11, so-10)
+advcl:in(postulate-7, far-11)
+nsubj(postulate-15, we-13)
+advcl:as(far-11, postulate-15)
+amod(notation-18, adequate-17)
+dobj(postulate-15, notation-18)
+G[28, 27] [?1, ?2, ?3, Now1, adequate17, as if10, becomes3, clear4, far11, felt9, is3, it2, it12, logic24, notation2147483647, often8, people6, postulate15, postulate7, postulate18, reason2147483647, so10, them8, truths2147483647, us15, we5, we13, why5]
+postulate18-as_if : as if ->felt9
+postulate15-as->far11
+it12-  : were ->postulate18
+postulate7-  : that  : that ->is3
+?3-the->truths2147483647
+it2- ->becomes3
+Now1- ->becomes3
+we5- ->postulate15
+people6-  : have  : have ->felt9
+?1-The->reason2147483647
+why5- ->felt9
+clear4- ->becomes3
+?3- ->postulate18
+far11-in->postulate7
+?2-an->notation2147483647
+them8- ->postulate7
+them8- ->people6
+we13-== : can ->postulate15
+?2- ->postulate15
+we5-  : can ->postulate7
+adequate17- ->?2
+?1- ->is3
+so10- ->far11
+often8- ->felt9
+us15-  : for  : to ->postulate18
+felt9- ->becomes3
+logic24-of->?3
+------CorefChainz
+CHAIN2-["it" in sentence 1, "it" in sentence 1]
+representative mention: "it" in sentence 1
+CHAIN7-["people" in sentence 1, "them" in sentence 2]
+representative mention: "people" in sentence 1
+CHAIN8-["us" in sentence 1, "we" in sentence 2, "we" in sentence 2]
+representative mention: "us" in sentence 1

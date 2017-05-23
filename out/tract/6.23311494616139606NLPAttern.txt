@@ -1,0 +1,52 @@
+ The process of calculating serves to bring about that intuition. Calculation is not an experiment.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, process-2)
+det(process-2, The-1)
+punct(process-2, .-11)
+mark(calculating-4, of-3)
+mark(bring-7, to-6)
+det(intuition-10, that-9)
+acl:of(process-2, calculating-4)
+ccomp(calculating-4, serves-5)
+xcomp(serves-5, bring-7)
+compound:prt(bring-7, about-8)
+dobj(bring-7, intuition-10)
+---
+qqroot(ROOT-0, process-2)
+det(process-2, The-1)
+punct(process-2, .-11)
+mark(calculating-4, of-3)
+mark(bring-7, to-6)
+det(intuition-10, that-9)
+acl:of(process-2, calculating-4)
+ccomp(calculating-4, serves-5)
+xcomp(serves-5, bring-7)
+compound:prt(bring-7, about-8)
+dobj(bring-7, intuition-10)
+root(ROOT-0, experiment-5)
+cop(experiment-5, is-2)
+det(experiment-5, an-4)
+punct(experiment-5, .-6)
+nsubj(experiment-5, Calculation-1)
+neg(experiment-5, not-3)
+G[12, 10] [?1, ?2, ?3, Calculation1, about8, bring7, calculating4, experiment2147483647, intuition2147483647, not3, process2147483647, serves5]
+?3-an->experiment2147483647
+Calculation1-  : is  : is ->?3
+?1-The->process2147483647
+not3- ->?3
+?2- ->bring7
+bring7-  : to ->serves5
+calculating4-of->?1
+?2-that->intuition2147483647
+serves5- ->calculating4
+about8-prt->bring7
+------CorefChainz

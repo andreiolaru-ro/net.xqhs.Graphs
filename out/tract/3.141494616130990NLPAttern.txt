@@ -1,0 +1,92 @@
+ What constitutes a propositional sign is that in its elements (the words) stand in a determinate relation to one another. A propositional sign is a fact.
+------CorefChainz
+CHAIN7-["a propositional sign" in sentence 1, "A propositional sign" in sentence 2]
+representative mention: "a propositional sign" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-6)
+det(sign-5, a-3)
+punct(is-6, .-23)
+case(elements-10, in-8)
+det(words-13, the-12)
+punct(words-13, -LRB--11)
+punct(words-13, -RRB--14)
+case(relation-19, in-16)
+det(relation-19, a-17)
+case(one-21, to-20)
+nsubj(constitutes-2, What-1)
+csubj(is-6, constitutes-2)
+amod(sign-5, propositional-4)
+dobj(constitutes-2, sign-5)
+nsubj(is-6, that-7)
+nmod:poss(elements-10, its-9)
+nmod:in(that-7, elements-10)
+appos(elements-10, words-13)
+acl(elements-10, stand-15)
+amod(relation-19, determinate-18)
+nmod:in(stand-15, relation-19)
+nmod:to(relation-19, one-21)
+dep(one-21, another-22)
+---
+qqroot(ROOT-0, is-6)
+det(sign-5, a-3)
+punct(is-6, .-23)
+case(elements-10, in-8)
+det(words-13, the-12)
+punct(words-13, -LRB--11)
+punct(words-13, -RRB--14)
+case(relation-19, in-16)
+det(relation-19, a-17)
+case(one-21, to-20)
+nsubj(constitutes-2, What-1)
+csubj(is-6, constitutes-2)
+amod(sign-5, propositional-4)
+dobj(constitutes-2, sign-5)
+nsubj(is-6, that-7)
+nmod:poss(elements-10, its-9)
+nmod:in(that-7, elements-10)
+appos(elements-10, words-13)
+acl(elements-10, stand-15)
+amod(relation-19, determinate-18)
+nmod:in(stand-15, relation-19)
+nmod:to(relation-19, one-21)
+dep(one-21, another-22)
+root(ROOT-0, fact-6)
+det(sign-3, A-1)
+cop(fact-6, is-4)
+det(fact-6, a-5)
+punct(fact-6, .-7)
+amod(sign-3, propositional-2)
+nsubj(fact-6, sign-3)
+G[22, 21] [?1, ?2, ?3, ?4, ?5, What1, another22, constitutes2, determinate18, elements10, fact2147483647, is6, its9, one21, propositional4, propositional2, relation2147483647, sign2147483647, sign2147483647, stand15, that7, words2147483647]
+its9-poss->elements10
+?3-the->words2147483647
+?2- ->?4
+determinate18- ->?5
+stand15- ->elements10
+?4-a->sign2147483647
+?5-in->stand15
+one21-to->?5
+?3- ->elements10
+propositional4- ->?4
+elements10-in->that7
+another22- ->one21
+propositional2- ->?2
+?2-A->sign2147483647
+constitutes2- ->is6
+?5-a->relation2147483647
+?4- ->constitutes2
+What1- ->constitutes2
+that7- ->is6
+?1-a->fact2147483647
+?2-  : is ->?1
+------CorefChainz
+CHAIN7-["a propositional sign" in sentence 1, "A propositional sign" in sentence 2]
+representative mention: "a propositional sign" in sentence 1

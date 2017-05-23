@@ -1,0 +1,57 @@
+ From the existence or non-existence of one state of affairs it is impossible to infer the existence or non-existence of another.
+------CorefChainz
+CHAIN5-["the existence" in sentence 1, "it" in sentence 1, "the existence" in sentence 1]
+representative mention: "the existence" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, impossible-13)
+case(existence-3, From-1)
+cc(existence-3, or-4)
+det(existence-3, the-2)
+case(state-8, of-6)
+case(affairs-10, of-9)
+cop(impossible-13, is-12)
+punct(impossible-13, .-22)
+mark(infer-15, to-14)
+cc(existence-17, or-18)
+det(existence-17, the-16)
+case(another-21, of-20)
+nmod:from(impossible-13, existence-3)
+conj:or(existence-3, non-existence-5)
+nmod:from(impossible-13, non-existence-5)
+nummod(state-8, one-7)
+nmod:of(existence-3, state-8)
+nmod:of(state-8, affairs-10)
+nsubj(impossible-13, it-11)
+nsubj:xsubj(infer-15, it-11)
+xcomp(impossible-13, infer-15)
+dobj(infer-15, existence-17)
+dobj(infer-15, non-existence-19)
+conj:or(existence-17, non-existence-19)
+nmod:of(existence-17, another-21)
+G[13, 16] [?1, ?2, affairs10, another21, existence2147483647, existence2147483647, impossible13, infer15, it11, non-existence19, non-existence5, one7, state8]
+state8-of->?2
+non-existence5-from->impossible13
+non-existence19- ->infer15
+?1-the->existence2147483647
+infer15-  : to ->impossible13
+it11-xsubj->infer15
+it11-  : is ->impossible13
+?2-from->impossible13
+another21-of->?1
+it11- ->?2
+one7- ->state8
+non-existence19-or->?1
+affairs10-of->state8
+?1- ->infer15
+?2-the->existence2147483647
+non-existence5-or : From ->?2
+------CorefChainz
+CHAIN5-["the existence" in sentence 1, "it" in sentence 1, "the existence" in sentence 1]
+representative mention: "the existence" in sentence 1

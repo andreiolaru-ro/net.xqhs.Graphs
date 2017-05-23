@@ -1,0 +1,26 @@
+ We picture facts to ourselves.
+------CorefChainz
+CHAIN2-["We" in sentence 1, "ourselves" in sentence 1]
+representative mention: "We" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, picture-2)
+punct(picture-2, .-6)
+case(ourselves-5, to-4)
+nsubj(picture-2, We-1)
+dobj(picture-2, facts-3)
+nmod:to(picture-2, ourselves-5)
+G[4, 4] [We1, facts3, ourselves5, picture2]
+ourselves5-to->picture2
+ourselves5- ->We1
+facts3- ->picture2
+We1- ->picture2
+------CorefChainz
+CHAIN2-["We" in sentence 1, "ourselves" in sentence 1]
+representative mention: "We" in sentence 1

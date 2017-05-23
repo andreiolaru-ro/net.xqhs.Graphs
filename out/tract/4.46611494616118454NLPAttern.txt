@@ -1,0 +1,91 @@
+ Admittedly the signs are still combined with one another even in tautologies and contradictions--i.e. they stand in certain relations to one another: but these relations have no meaning, they are not essential to the symbol .
+------CorefChainz
+CHAIN9-["certain relations" in sentence 1, "these relations" in sentence 1]
+representative mention: "certain relations" in sentence 1
+CHAIN12-["one another even in tautologies and contradictions" in sentence 1, "they" in sentence 1, "they" in sentence 1]
+representative mention: "one another even in tautologies and contradictions" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, combined-6)
+det(signs-3, the-2)
+auxpass(combined-6, are-4)
+cc(combined-6, but-26)
+punct(combined-6, .-40)
+punct(combined-6, :-25)
+punct(combined-6, ---15)
+case(another-9, with-7)
+case(tautologies-12, in-11)
+cc(tautologies-12, and-13)
+case(relations-21, in-19)
+case(one-23, to-22)
+det(relations-28, these-27)
+punct(have-29, ,-32)
+cop(essential-36, are-34)
+case(symbol-39, to-37)
+det(symbol-39, the-38)
+advmod(combined-6, Admittedly-1)
+nsubjpass(combined-6, signs-3)
+advmod(combined-6, still-5)
+nummod(another-9, one-8)
+nmod:with(combined-6, another-9)
+advmod(tautologies-12, even-10)
+nmod:in(another-9, tautologies-12)
+nmod:in(another-9, contradictions-14)
+conj:and(tautologies-12, contradictions-14)
+advmod(stand-18, i.e.-16)
+nsubj(stand-18, they-17)
+parataxis(combined-6, stand-18)
+amod(relations-21, certain-20)
+nmod:in(stand-18, relations-21)
+nmod:to(stand-18, one-23)
+dep(one-23, another-24)
+nsubj(have-29, relations-28)
+conj:but(combined-6, have-29)
+neg(meaning-31, no-30)
+dobj(have-29, meaning-31)
+nsubj(essential-36, they-33)
+neg(essential-36, not-35)
+parataxis(have-29, essential-36)
+nmod:to(essential-36, symbol-39)
+G[27, 30] [?1, ?2, ?3, Admittedly1, another9, another24, certain20, combined6, contradictions14, essential36, even10, have29, i.e.16, meaning31, no30, not35, one8, one23, relations2147483647, relations21, signs2147483647, stand18, still5, symbol2147483647, tautologies12, they33, they17]
+one8- ->another9
+another24- ->one23
+contradictions14-and->tautologies12
+?3- ->have29
+Admittedly1- ->combined6
+certain20- ->relations21
+tautologies12-in->another9
+one23-to->stand18
+they33-  : are  : are ->essential36
+?3- ->relations21
+i.e.16- ->stand18
+not35- ->essential36
+?2-  : are  : are ->combined6
+still5- ->combined6
+they17- ->stand18
+contradictions14-in->another9
+?1-to->essential36
+relations21-in->stand18
+?3-these->relations2147483647
+meaning31- ->have29
+even10- ->tautologies12
+they33- ->another9
+essential36- ->have29
+?2-the->signs2147483647
+?1-the->symbol2147483647
+have29-but->combined6
+they17- ->another9
+stand18- ->combined6
+no30- ->meaning31
+another9-with->combined6
+------CorefChainz
+CHAIN9-["certain relations" in sentence 1, "these relations" in sentence 1]
+representative mention: "certain relations" in sentence 1
+CHAIN12-["one another even in tautologies and contradictions" in sentence 1, "they" in sentence 1, "they" in sentence 1]
+representative mention: "one another even in tautologies and contradictions" in sentence 1

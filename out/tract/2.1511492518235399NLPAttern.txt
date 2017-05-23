@@ -1,0 +1,114 @@
+ Pictorial form is the possibility that things are related to one another in the same way as the elements of the picture.
+------CorefChainz
+Pictorial-JJ 
+form-NN 
+is-VBZ 
+the-DT 
+possibility-NN 
+that-IN 
+things-NNS 
+are-VBP 
+related-VBN 
+to-TO 
+one-CD 
+another-DT 
+in-IN 
+the-DT 
+same-JJ 
+way-NN 
+as-IN 
+the-DT 
+elements-NNS 
+of-IN 
+the-DT 
+picture-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> JJ 	-> Pictorial
+	 	-> NN 	-> form
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> possibility
+		 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> NNS 	-> things
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> related
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> CD 	-> one
+	 	-> DT 	-> another
+			 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> same
+	 	-> NN 	-> way
+		 	-> PP 	-> IN 	-> as
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> elements
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> picture
+												 	-> . 	-> .
+			
+Dependensee repr
+amod(form-2, Pictorial-1)
+nsubj(possibility-5, form-2)
+cop(possibility-5, is-3)
+det(possibility-5, the-4)
+root(ROOT-0, possibility-5)
+mark(related-9, that-6)
+nsubjpass(related-9, things-7)
+auxpass(related-9, are-8)
+ccomp(possibility-5, related-9)
+case(one-11, to-10)
+nmod:to(related-9, one-11)
+dep(one-11, another-12)
+case(way-16, in-13)
+det(way-16, the-14)
+amod(way-16, same-15)
+nmod:in(related-9, way-16)
+case(elements-19, as-17)
+det(elements-19, the-18)
+nmod:as(way-16, elements-19)
+case(picture-22, of-20)
+det(picture-22, the-21)
+nmod:of(elements-19, picture-22)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, possibility-5)
+cop(possibility-5, is-3)
+det(possibility-5, the-4)
+punct(possibility-5, .-23)
+cop(related-9, are-8)
+mark(related-9, that-6)
+case(one-11, to-10)
+dep(one-11, another-12)
+case(way-16, in-13)
+det(way-16, the-14)
+case(elements-19, as-17)
+det(elements-19, the-18)
+case(picture-22, of-20)
+det(picture-22, the-21)
+amod(form-2, Pictorial-1)
+nsubj(possibility-5, form-2)
+nsubj(related-9, things-7)
+ccomp(possibility-5, related-9)
+nmod:to(related-9, one-11)
+amod(way-16, same-15)
+nmod:in(one-11, way-16)
+nmod:as(related-9, elements-19)
+nmod:of(elements-19, picture-22)
+G[10, 9] [Pictorial, elements, form, one, picture, possibility, related, same, things, way]
+Pictorial- ->form
+related-  : that  : that  ->possibility
+one-to : another to->related
+form-  : is  ->possibility
+same- ->way
+picture-of->elements
+way-in->one
+elements-as->related
+things-  : are  ->related
+------CorefChainz

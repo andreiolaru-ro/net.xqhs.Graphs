@@ -1,0 +1,74 @@
+ The structure of a fact consists of the structures of states of affairs.
+------CorefChainz
+The-DT 
+structure-NN 
+of-IN 
+a-DT 
+fact-NN 
+consists-VBZ 
+of-IN 
+the-DT 
+structures-NNS 
+of-IN 
+states-NNS 
+of-IN 
+affairs-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> structure
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> fact
+				 	-> VP 	-> VBZ 	-> consists
+	 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> structures
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NNS 	-> states
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NNS 	-> affairs
+								 	-> . 	-> .
+			
+Dependensee repr
+det(structure-2, The-1)
+nsubj(consists-6, structure-2)
+case(fact-5, of-3)
+det(fact-5, a-4)
+nmod:of(structure-2, fact-5)
+root(ROOT-0, consists-6)
+case(structures-9, of-7)
+det(structures-9, the-8)
+nmod:of(consists-6, structures-9)
+case(states-11, of-10)
+nmod:of(structures-9, states-11)
+case(affairs-13, of-12)
+nmod:of(states-11, affairs-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, consists-6)
+det(structure-2, The-1)
+case(fact-5, of-3)
+det(fact-5, a-4)
+punct(consists-6, .-14)
+case(structures-9, of-7)
+det(structures-9, the-8)
+case(states-11, of-10)
+case(affairs-13, of-12)
+nsubj(consists-6, structure-2)
+nmod:of(structure-2, fact-5)
+nmod:of(consists-6, structures-9)
+nmod:of(structures-9, states-11)
+nmod:of(states-11, affairs-13)
+G[6, 5] [affairs, consists, fact, states, structure, structures]
+structure- ->consists
+affairs-of->states
+structures-of->consists
+fact-of->structure
+states-of->structures
+------CorefChainz

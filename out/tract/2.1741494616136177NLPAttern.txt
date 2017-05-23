@@ -1,0 +1,40 @@
+ A picture cannot, however, place itself outside its representational form.
+------CorefChainz
+CHAIN3-["place itself outside its representational form" in sentence 1, "itself" in sentence 1, "its" in sentence 1]
+representative mention: "place itself outside its representational form" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, picture-2)
+det(picture-2, A-1)
+punct(not-4, ,-5)
+punct(however-6, ,-7)
+punct(place-8, .-14)
+case(form-13, outside-10)
+dep(picture-2, can-3)
+dep(can-3, not-4)
+root(,-5, however-6)
+root(,-7, place-8)
+nmod:npmod(place-8, itself-9)
+nmod:poss(form-13, its-11)
+amod(form-13, representational-12)
+nmod:outside(place-8, form-13)
+G[12, 10] [,5, ,7, ?1, can3, form13, however6, its11, itself9, not4, picture2147483647, place8, representational12]
+?1-A->picture2147483647
+itself9-npmod:==->place8
+form13-outside->place8
+place8- ->,7
+its11-poss->form13
+representational12- ->form13
+can3- ->?1
+however6- ->,5
+not4- ->can3
+its11- ->place8
+------CorefChainz
+CHAIN3-["place itself outside its representational form" in sentence 1, "itself" in sentence 1, "its" in sentence 1]
+representative mention: "place itself outside its representational form" in sentence 1

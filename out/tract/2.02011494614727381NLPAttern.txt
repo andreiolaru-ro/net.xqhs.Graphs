@@ -1,0 +1,59 @@
+ Every statement about complexes can be resolved into a statement about their constituents and into the propositions that describe the complexes completely.
+------CorefChainz
+CHAIN3-["complexes" in sentence 1, "their" in sentence 1, "the complexes" in sentence 1]
+representative mention: "the complexes" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, resolved-7)
+det(statement-2, Every-1)
+case(complexes-4, about-3)
+aux(resolved-7, can-5)
+auxpass(resolved-7, be-6)
+cc(resolved-7, and-14)
+punct(resolved-7, .-23)
+case(statement-10, into-8)
+det(statement-10, a-9)
+case(constituents-13, about-11)
+case(propositions-17, into-15)
+det(propositions-17, the-16)
+det(complexes-21, the-20)
+nsubjpass(resolved-7, statement-2)
+nsubjpass(resolved-7''', statement-2)
+nmod:about(statement-2, complexes-4)
+conj:and(resolved-7, resolved-7''')
+nmod:into(resolved-7, statement-10)
+nmod:poss(constituents-13, their-12)
+nmod:about(statement-10, constituents-13)
+nmod:into(resolved-7''', propositions-17)
+nsubj(describe-19, propositions-17)
+ref(propositions-17, that-18)
+acl:relcl(propositions-17, describe-19)
+dobj(describe-19, complexes-21)
+advmod(describe-19, completely-22)
+G[15, 17] [?1, ?2, ?3, ?4, completely22, complexes4, complexes2147483647, constituents13, describe19, propositions2147483647, resolved7, statement2147483647, statement2147483647, that18, their12]
+?4-the->propositions2147483647
+completely22- ->describe19
+?3- ->describe19
+complexes4- ->?3
+constituents13-about->?2
+?1-Every->statement2147483647
+their12- ->?3
+?3-the->complexes2147483647
+complexes4-about->?1
+that18- ->?4
+?1-  : can  : be  : be ->resolved7
+?4-into : and ->resolved7
+?2-into->resolved7
+?2-a->statement2147483647
+?4- ->describe19
+their12-poss->constituents13
+describe19-relcl->?4
+------CorefChainz
+CHAIN3-["complexes" in sentence 1, "their" in sentence 1, "the complexes" in sentence 1]
+representative mention: "the complexes" in sentence 1

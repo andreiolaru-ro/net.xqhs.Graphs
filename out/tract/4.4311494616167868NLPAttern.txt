@@ -1,0 +1,326 @@
+ The expression of agreement and disagreement with the truth possibilities of elementary propositions expresses the truth-conditions of a proposition. A proposition is the expression of its truth-conditions. (Thus Frege was quite right to use them as a starting point when he explained the signs of his conceptual notation. But the explanation of the concept of truth that Frege gives is mistaken: if 'the true' and 'the false' were really objects, and were the arguments in Pp etc., then Frege's method of determining the sense of 'Pp' would leave it absolutely undetermined.)
+------CorefChainz
+CHAIN16-["Frege" in sentence 3, "he" in sentence 3, "his" in sentence 3, "Frege" in sentence 4, "Frege 's" in sentence 4]
+representative mention: "Frege 's" in sentence 4
+CHAIN22-["the sense of ` Pp '" in sentence 4, "it" in sentence 4]
+representative mention: "the sense of ` Pp '" in sentence 4
+CHAIN8-["a proposition" in sentence 1, "A proposition" in sentence 2, "its" in sentence 2]
+representative mention: "a proposition" in sentence 1
+CHAIN12-["the truth-conditions of a proposition" in sentence 1, "its truth-conditions" in sentence 2, "them" in sentence 3]
+representative mention: "the truth-conditions of a proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, expresses-14)
+det(expression-2, The-1)
+case(agreement-4, of-3)
+cc(agreement-4, and-5)
+case(possibilities-10, with-7)
+compound(possibilities-10, truth-9)
+det(possibilities-10, the-8)
+case(propositions-13, of-11)
+punct(expresses-14, .-20)
+det(truth-conditions-16, the-15)
+case(proposition-19, of-17)
+det(proposition-19, a-18)
+nsubj(expresses-14, expression-2)
+nmod:of(expression-2, agreement-4)
+nmod:of(expression-2, disagreement-6)
+conj:and(agreement-4, disagreement-6)
+nmod:with(expression-2, possibilities-10)
+amod(propositions-13, elementary-12)
+nmod:of(possibilities-10, propositions-13)
+dobj(expresses-14, truth-conditions-16)
+nmod:of(truth-conditions-16, proposition-19)
+---
+qqroot(ROOT-0, expresses-14)
+det(expression-2, The-1)
+case(agreement-4, of-3)
+cc(agreement-4, and-5)
+case(possibilities-10, with-7)
+compound(possibilities-10, truth-9)
+det(possibilities-10, the-8)
+case(propositions-13, of-11)
+punct(expresses-14, .-20)
+det(truth-conditions-16, the-15)
+case(proposition-19, of-17)
+det(proposition-19, a-18)
+nsubj(expresses-14, expression-2)
+nmod:of(expression-2, agreement-4)
+nmod:of(expression-2, disagreement-6)
+conj:and(agreement-4, disagreement-6)
+nmod:with(expression-2, possibilities-10)
+amod(propositions-13, elementary-12)
+nmod:of(possibilities-10, propositions-13)
+dobj(expresses-14, truth-conditions-16)
+nmod:of(truth-conditions-16, proposition-19)
+root(ROOT-0, expression-5)
+det(proposition-2, A-1)
+cop(expression-5, is-3)
+det(expression-5, the-4)
+punct(expression-5, .-9)
+case(truth-conditions-8, of-6)
+nsubj(expression-5, proposition-2)
+nmod:poss(truth-conditions-8, its-7)
+nmod:of(expression-5, truth-conditions-8)
+---
+qqroot(ROOT-0, expresses-14)
+det(expression-2, The-1)
+case(agreement-4, of-3)
+cc(agreement-4, and-5)
+case(possibilities-10, with-7)
+compound(possibilities-10, truth-9)
+det(possibilities-10, the-8)
+case(propositions-13, of-11)
+punct(expresses-14, .-20)
+det(truth-conditions-16, the-15)
+case(proposition-19, of-17)
+det(proposition-19, a-18)
+nsubj(expresses-14, expression-2)
+nmod:of(expression-2, agreement-4)
+nmod:of(expression-2, disagreement-6)
+conj:and(agreement-4, disagreement-6)
+nmod:with(expression-2, possibilities-10)
+amod(propositions-13, elementary-12)
+nmod:of(possibilities-10, propositions-13)
+dobj(expresses-14, truth-conditions-16)
+nmod:of(truth-conditions-16, proposition-19)
+root(ROOT-0, expression-5)
+det(proposition-2, A-1)
+cop(expression-5, is-3)
+det(expression-5, the-4)
+punct(expression-5, .-9)
+case(truth-conditions-8, of-6)
+nsubj(expression-5, proposition-2)
+nmod:poss(truth-conditions-8, its-7)
+nmod:of(expression-5, truth-conditions-8)
+root(ROOT-0, right-6)
+cop(right-6, was-4)
+punct(right-6, .-23)
+punct(right-6, -LRB--1)
+mark(use-8, to-7)
+case(point-13, as-10)
+det(point-13, a-11)
+det(signs-18, the-17)
+case(notation-22, of-19)
+advmod(right-6, Thus-2)
+nsubj(right-6, Frege-3)
+nsubj:xsubj(use-8, Frege-3)
+advmod(right-6, quite-5)
+xcomp(right-6, use-8)
+dobj(use-8, them-9)
+amod(point-13, starting-12)
+nmod:as(use-8, point-13)
+advmod(explained-16, when-14)
+nsubj(explained-16, he-15)
+advcl(use-8, explained-16)
+dobj(explained-16, signs-18)
+nmod:poss(notation-22, his-20)
+amod(notation-22, conceptual-21)
+nmod:of(signs-18, notation-22)
+---
+qqroot(ROOT-0, expresses-14)
+det(expression-2, The-1)
+case(agreement-4, of-3)
+cc(agreement-4, and-5)
+case(possibilities-10, with-7)
+compound(possibilities-10, truth-9)
+det(possibilities-10, the-8)
+case(propositions-13, of-11)
+punct(expresses-14, .-20)
+det(truth-conditions-16, the-15)
+case(proposition-19, of-17)
+det(proposition-19, a-18)
+nsubj(expresses-14, expression-2)
+nmod:of(expression-2, agreement-4)
+nmod:of(expression-2, disagreement-6)
+conj:and(agreement-4, disagreement-6)
+nmod:with(expression-2, possibilities-10)
+amod(propositions-13, elementary-12)
+nmod:of(possibilities-10, propositions-13)
+dobj(expresses-14, truth-conditions-16)
+nmod:of(truth-conditions-16, proposition-19)
+root(ROOT-0, expression-5)
+det(proposition-2, A-1)
+cop(expression-5, is-3)
+det(expression-5, the-4)
+punct(expression-5, .-9)
+case(truth-conditions-8, of-6)
+nsubj(expression-5, proposition-2)
+nmod:poss(truth-conditions-8, its-7)
+nmod:of(expression-5, truth-conditions-8)
+root(ROOT-0, right-6)
+cop(right-6, was-4)
+punct(right-6, .-23)
+punct(right-6, -LRB--1)
+mark(use-8, to-7)
+case(point-13, as-10)
+det(point-13, a-11)
+det(signs-18, the-17)
+case(notation-22, of-19)
+advmod(right-6, Thus-2)
+nsubj(right-6, Frege-3)
+nsubj:xsubj(use-8, Frege-3)
+advmod(right-6, quite-5)
+xcomp(right-6, use-8)
+dobj(use-8, them-9)
+amod(point-13, starting-12)
+nmod:as(use-8, point-13)
+advmod(explained-16, when-14)
+nsubj(explained-16, he-15)
+advcl(use-8, explained-16)
+dobj(explained-16, signs-18)
+nmod:poss(notation-22, his-20)
+amod(notation-22, conceptual-21)
+nmod:of(signs-18, notation-22)
+root(ROOT-0, mistaken-13)
+det(explanation-3, the-2)
+case(concept-6, of-4)
+det(concept-6, the-5)
+case(truth-8, of-7)
+auxpass(mistaken-13, is-12)
+cc(mistaken-13, But-1)
+punct(mistaken-13, :-14)
+punct(mistaken-13, .-54)
+punct(mistaken-13, -RRB--55)
+cc(true-18, and-20)
+det(true-18, the-17)
+punct(true-18, `-16)
+punct(true-18, '-19)
+det(false-23, the-22)
+punct(false-23, `-21)
+punct(false-23, '-24)
+cc(objects-27, and-29)
+cop(objects-27, were-25)
+mark(objects-27, if-15)
+punct(objects-27, ,-28)
+cop(arguments-32, were-30)
+det(arguments-32, the-31)
+case(etc.-35, in-33)
+compound(etc.-35, Pp-34)
+case(Frege-38, 's-39)
+mark(determining-42, of-41)
+det(sense-44, the-43)
+case(Pp-47, of-45)
+punct(Pp-47, `-46)
+punct(Pp-47, '-48)
+aux(leave-50, would-49)
+punct(leave-50, ,-36)
+nsubjpass(mistaken-13, explanation-3)
+nmod:of(explanation-3, concept-6)
+dobj(gives-11, concept-6)
+nmod:of(concept-6, truth-8)
+ref(concept-6, that-9)
+nsubj(gives-11, Frege-10)
+acl:relcl(concept-6, gives-11)
+nsubj(objects-27, true-18)
+conj:and(true-18, false-23)
+nsubj(objects-27, false-23)
+advmod(objects-27, really-26)
+advcl:if(leave-50, objects-27)
+conj:and(objects-27, arguments-32)
+advcl:if(leave-50, arguments-32)
+nmod:in(arguments-32, etc.-35)
+advmod(method-40, then-37)
+nmod:poss(method-40, Frege-38)
+nsubj(leave-50, method-40)
+acl:of(method-40, determining-42)
+dobj(determining-42, sense-44)
+nmod:of(sense-44, Pp-47)
+parataxis(mistaken-13, leave-50)
+dobj(leave-50, it-51)
+advmod(undetermined-53, absolutely-52)
+advmod(leave-50, undetermined-53)
+G[65, 75] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, Frege3, Frege10, Frege38, Pp47, Pp etc.35, Thus2, absolutely52, agreement4, arguments2147483647, concept2147483647, conceptual21, determining42, disagreement6, elementary12, explained16, explanation2147483647, expresses14, expression2147483647, expression2147483647, false2147483647, gives11, he15, his20, it51, its7, leave50, method40, mistaken13, notation22, objects27, point2147483647, proposition2147483647, proposition2147483647, propositions13, quite5, really26, right6, sense2147483647, signs2147483647, starting12, that9, them9, then37, true2147483647, truth8, truth possibilities2147483647, truth-conditions2147483647, truth-conditions8, undetermined53, use8, when14]
+Frege10- ->Frege38
+?2- ->explained16
+his20-poss->notation22
+method40- ->leave50
+then37- ->method40
+he15- ->Frege38
+disagreement6-and->agreement4
+?8-  : is ->?11
+propositions13-of->?13
+Frege3- ->Frege38
+?4-and : were ->objects27
+?13-the->truth possibilities2147483647
+absolutely52- ->undetermined53
+Thus2- ->?5
+its7-poss->truth-conditions8
+them9- ->use8
+?2-the->signs2147483647
+its7- ->?5
+Frege10- ->gives11
+?3- ->determining42
+that9- ->?10
+his20- ->Frege38
+elementary12- ->propositions13
+notation22-of->?2
+disagreement6-of->?7
+?12-the->concept2147483647
+?4-the->arguments2147483647
+?13-with->?7
+?6-the->explanation2147483647
+when14- ->explained16
+undetermined53- ->leave50
+gives11-relcl->?12
+?8-A->proposition2147483647
+use8-  : to ->right6
+?1-and->?14
+it51-  : would ->leave50
+Pp47-of->?3
+?12-of->?6
+Frege3-xsubj->use8
+Frege3-  : was  : was ->right6
+?7-The->expression2147483647
+?11-the->expression2147483647
+he15- ->explained16
+?12- ->gives11
+truth-conditions8-of->?11
+truth8-of->?12
+explained16- ->use8
+?10-the->truth-conditions2147483647
+it51- ->?3
+conceptual21- ->notation22
+?10- ->expresses14
+agreement4-of->?7
+starting12- ->?9
+objects27-if->leave50
+that9- ->?12
+?6-  : But  : is ->mistaken13
+really26-  : were ->objects27
+quite5- ->right6
+?9-as->use8
+determining42-of->method40
+?4-if->leave50
+?7- ->expresses14
+?14-the->true2147483647
+?1- ->objects27
+?5-a->proposition2147483647
+truth8- ->?10
+Thus2- ->right6
+Pp etc.35-in->?4
+?5-of->?10
+?3-the->sense2147483647
+Frege38-poss : 's ->method40
+?9-a->point2147483647
+leave50- ->mistaken13
+?1-the->false2147483647
+?14- ->objects27
+------CorefChainz
+CHAIN16-["Frege" in sentence 3, "he" in sentence 3, "his" in sentence 3, "Frege" in sentence 4, "Frege 's" in sentence 4]
+representative mention: "Frege 's" in sentence 4
+CHAIN22-["the sense of ` Pp '" in sentence 4, "it" in sentence 4]
+representative mention: "the sense of ` Pp '" in sentence 4
+CHAIN8-["a proposition" in sentence 1, "A proposition" in sentence 2, "its" in sentence 2]
+representative mention: "a proposition" in sentence 1
+CHAIN12-["the truth-conditions of a proposition" in sentence 1, "its truth-conditions" in sentence 2, "them" in sentence 3]
+representative mention: "the truth-conditions of a proposition" in sentence 1

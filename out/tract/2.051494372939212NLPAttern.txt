@@ -1,0 +1,37 @@
+ The totality of existing states of affairs also determines which states of affairs do not exist.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, determines-9)
+det(totality-2, The-1)
+case(states-5, of-3)
+case(affairs-7, of-6)
+punct(determines-9, .-17)
+det(states-11, which-10)
+case(affairs-13, of-12)
+aux(exist-16, do-14)
+nsubj(determines-9, totality-2)
+amod(states-5, existing-4)
+nmod:of(totality-2, states-5)
+nmod:of(states-5, affairs-7)
+advmod(determines-9, also-8)
+nsubj(exist-16, states-11)
+nmod:of(states-11, affairs-13)
+neg(exist-16, not-15)
+ccomp(determines-9, exist-16)
+G[9, 8] [?1, ?2, affairs13, affairs7, determines9, exist16, states5, states2147483647, totality2147483647]
+affairs13-of->?2
+?2-which->states2147483647
+affairs7-of->states5
+?1-The->totality2147483647
+exist16- ->determines9
+states5-of->?1
+?1- ->determines9
+?2-  : do ->exist16
+------CorefChainz

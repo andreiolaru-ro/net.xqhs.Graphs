@@ -1,0 +1,28 @@
+ Objects are just what constitute this unalterable form.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, Objects-1)
+punct(Objects-1, .-9)
+det(form-8, this-6)
+acl(Objects-1, are-2)
+advmod(what-4, just-3)
+nsubj(constitute-5, what-4)
+ccomp(are-2, constitute-5)
+amod(form-8, unalterable-7)
+dobj(constitute-5, form-8)
+G[8, 7] [?#1, Objects, are, constitute, form, just, unalterable, what]
+unalterable- ->?#1
+?#1-this->form
+are- ->Objects
+constitute- ->are
+just- ->what
+what- ->constitute
+?#1- ->constitute
+------CorefChainz

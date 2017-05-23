@@ -1,0 +1,44 @@
+ The facts all contribute only to setting the problem, not to its solution.
+------CorefChainz
+CHAIN3-["the problem" in sentence 1, "its" in sentence 1]
+representative mention: "the problem" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, contribute-4)
+det(facts-2, The-1)
+punct(contribute-4, .-15)
+mark(setting-7, to-6)
+punct(setting-7, ,-10)
+det(problem-9, the-8)
+case(solution-14, to-12)
+nsubj(contribute-4, facts-2)
+nsubj:xsubj(setting-7, facts-2)
+advmod(contribute-4, all-3)
+advmod(setting-7, only-5)
+xcomp(contribute-4, setting-7)
+dobj(setting-7, problem-9)
+neg(solution-14, not-11)
+nmod:poss(solution-14, its-13)
+nmod:to(setting-7, solution-14)
+G[11, 12] [?1, ?2, all3, contribute4, facts2147483647, its13, not11, only5, problem2147483647, setting7, solution14]
+its13-poss->solution14
+?2-The->facts2147483647
+all3- ->contribute4
+its13- ->?1
+?1- ->setting7
+setting7- ->contribute4
+?2-xsubj->setting7
+not11- ->solution14
+?1-the->problem2147483647
+solution14-to->setting7
+?2- ->contribute4
+only5- ->setting7
+------CorefChainz
+CHAIN3-["the problem" in sentence 1, "its" in sentence 1]
+representative mention: "the problem" in sentence 1

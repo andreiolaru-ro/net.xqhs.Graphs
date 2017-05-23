@@ -1,0 +1,95 @@
+ Every variable is the sign for a formal concept. For every variable represents a constant form that all its values possess, and this can be regarded as a formal property of those values.
+------CorefChainz
+CHAIN3-["Every variable" in sentence 1, "every variable" in sentence 2]
+representative mention: "Every variable" in sentence 1
+CHAIN10-["all its values" in sentence 2, "those values" in sentence 2]
+representative mention: "all its values" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, sign-5)
+det(variable-2, Every-1)
+cop(sign-5, is-3)
+det(sign-5, the-4)
+punct(sign-5, .-10)
+case(concept-9, for-6)
+det(concept-9, a-7)
+nsubj(sign-5, variable-2)
+amod(concept-9, formal-8)
+nmod:for(sign-5, concept-9)
+---
+qqroot(ROOT-0, sign-5)
+det(variable-2, Every-1)
+cop(sign-5, is-3)
+det(sign-5, the-4)
+punct(sign-5, .-10)
+case(concept-9, for-6)
+det(concept-9, a-7)
+nsubj(sign-5, variable-2)
+amod(concept-9, formal-8)
+nmod:for(sign-5, concept-9)
+root(ROOT-0, represents-4)
+case(variable-3, For-1)
+det(variable-3, every-2)
+cc(represents-4, and-14)
+punct(represents-4, .-26)
+punct(represents-4, ,-13)
+det(form-7, a-5)
+aux(regarded-18, can-16)
+auxpass(regarded-18, be-17)
+case(property-22, as-19)
+det(property-22, a-20)
+case(values-25, of-23)
+det(values-25, those-24)
+nmod:for(represents-4, variable-3)
+amod(form-7, constant-6)
+dobj(represents-4, form-7)
+dobj(possess-12, form-7)
+ref(form-7, that-8)
+det:predet(values-11, all-9)
+nmod:poss(values-11, its-10)
+nsubj(possess-12, values-11)
+acl:relcl(form-7, possess-12)
+nsubjpass(regarded-18, this-15)
+conj:and(represents-4, regarded-18)
+amod(property-22, formal-21)
+nmod:as(regarded-18, property-22)
+nmod:of(property-22, values-25)
+G[25, 26] [?1, ?2, ?3, ?4, ?5, ?6, ?7, all9, concept2147483647, constant6, form2147483647, formal21, formal8, its10, possess12, property2147483647, regarded18, represents4, sign2147483647, that8, this15, values11, values2147483647, variable2147483647, variable2147483647]
+all9-predet->values11
+?6-of->?1
+?5-Every->variable2147483647
+?1-as->regarded18
+formal21- ->?1
+formal8- ->?7
+?4- ->represents4
+?3-  : For ->?5
+?6- ->values11
+?3-every->variable2147483647
+constant6- ->?4
+?4-a->form2147483647
+?3-for->represents4
+?4- ->possess12
+values11- ->possess12
+?7-for->?2
+possess12-relcl->?4
+?6-those->values2147483647
+this15-  : can  : be ->regarded18
+?5-  : is ->?2
+that8- ->?4
+?1-a->property2147483647
+its10-poss->values11
+?7-a->concept2147483647
+?2-the->sign2147483647
+regarded18-and->represents4
+------CorefChainz
+CHAIN3-["Every variable" in sentence 1, "every variable" in sentence 2]
+representative mention: "Every variable" in sentence 1
+CHAIN10-["all its values" in sentence 2, "those values" in sentence 2]
+representative mention: "all its values" in sentence 2

@@ -1,0 +1,72 @@
+ A priori knowledge that a thought was true would be possible only it its truth were recognizable from the thought itself (without anything a to compare it with).
+------CorefChainz
+CHAIN2-["A priori knowledge that a thought was true" in sentence 1, "it" in sentence 1, "its" in sentence 1]
+representative mention: "A priori knowledge that a thought was true" in sentence 1
+CHAIN8-["itself" in sentence 1, "it" in sentence 1]
+representative mention: "itself" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, possible-11)
+compound(knowledge-3, priori-2)
+det(knowledge-3, A-1)
+det(thought-6, a-5)
+cop(true-8, was-7)
+mark(true-8, that-4)
+aux(possible-11, would-9)
+cop(possible-11, be-10)
+punct(possible-11, .-31)
+cop(recognizable-17, were-16)
+case(thought-20, from-18)
+det(thought-20, the-19)
+case(anything-24, without-23)
+punct(anything-24, -LRB--22)
+mark(compare-27, to-26)
+punct(with-29, -RRB--30)
+nsubj(possible-11, knowledge-3)
+nsubj(true-8, thought-6)
+ccomp(knowledge-3, true-8)
+advmod(it-13, only-12)
+dobj(possible-11, it-13)
+nmod:poss(truth-15, its-14)
+nsubj(recognizable-17, truth-15)
+acl:relcl(it-13, recognizable-17)
+nmod:from(recognizable-17, thought-20)
+nmod:npmod(thought-20, itself-21)
+dep(itself-21, anything-24)
+dep(anything-24, a-25)
+acl:to(a-25, compare-27)
+dobj(compare-27, it-28)
+dep(compare-27, with-29)
+G[19, 21] [?1, ?2, ?3, a25, anything24, compare27, it28, it13, its14, itself21, only12, possible11, priori knowledge2147483647, recognizable17, thought2147483647, thought2147483647, true8, truth15, with29]
+anything24-  : without  : without ->itself21
+with29- ->compare27
+itself21-npmod->?1
+recognizable17-relcl->it13
+it13- ->?2
+?3-a->thought2147483647
+it28- ->compare27
+?2- ->possible11
+a25- ->anything24
+compare27-to->a25
+only12- ->it13
+?3-  : was ->true8
+?1-from->recognizable17
+its14-poss->truth15
+it28- ->itself21
+?1-the->thought2147483647
+truth15-  : were ->recognizable17
+?2-A->priori knowledge2147483647
+true8-  : that ->?2
+its14- ->?2
+it13-  : would  : be ->possible11
+------CorefChainz
+CHAIN2-["A priori knowledge that a thought was true" in sentence 1, "it" in sentence 1, "its" in sentence 1]
+representative mention: "A priori knowledge that a thought was true" in sentence 1
+CHAIN8-["itself" in sentence 1, "it" in sentence 1]
+representative mention: "itself" in sentence 1

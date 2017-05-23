@@ -1,0 +1,44 @@
+ There correspond to these combinations the same number of possibilities of truth--and falsity--for n elementary propositions.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, correspond-2)
+punct(correspond-2, .-21)
+case(combinations-5, to-3)
+det(combinations-5, these-4)
+det(number-8, the-6)
+case(possibilities-10, of-9)
+case(truth-12, of-11)
+cc(falsity-15, and-14)
+punct(falsity-15, ---16)
+punct(falsity-15, ---13)
+case(propositions-20, for-17)
+compound(propositions-20, n-18)
+expl(correspond-2, There-1)
+nmod:to(correspond-2, combinations-5)
+amod(number-8, same-7)
+dobj(correspond-2, number-8)
+nmod:of(number-8, possibilities-10)
+nmod:of(possibilities-10, truth-12)
+dep(number-8, falsity-15)
+amod(propositions-20, elementary-19)
+nmod:for(number-8, propositions-20)
+G[12, 11] [?1, ?2, There1, combinations2147483647, correspond2, elementary19, falsity15, n propositions20, number2147483647, possibilities10, same7, truth12]
+?2-these->combinations2147483647
+truth12-of->possibilities10
+same7- ->?1
+There1- ->correspond2
+elementary19- ->n propositions20
+?2-to->correspond2
+?1- ->correspond2
+n propositions20-for->?1
+?1-the->number2147483647
+falsity15-  : and ->?1
+possibilities10-of->?1
+------CorefChainz

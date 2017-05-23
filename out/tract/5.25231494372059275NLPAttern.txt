@@ -1,0 +1,42 @@
+ The concept of successive applications of an operation is equivalent to the concept 'and so on'.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, equivalent-10)
+det(concept-2, The-1)
+case(applications-5, of-3)
+case(operation-8, of-6)
+det(operation-8, an-7)
+cop(equivalent-10, is-9)
+punct(equivalent-10, .-19)
+case(concept-13, to-11)
+cc(concept-13, and-15)
+det(concept-13, the-12)
+punct(concept-13, `-14)
+case('-18, on-17)
+nsubj(equivalent-10, concept-2)
+amod(applications-5, successive-4)
+nmod:of(concept-2, applications-5)
+nmod:of(applications-5, operation-8)
+nmod:to(equivalent-10, concept-13)
+nmod:to(equivalent-10, so-16)
+conj:and(concept-13, so-16)
+nmod:on(so-16, '-18)
+G[10, 10] ['18, ?1, ?2, ?3, applications5, concept2147483647, concept2147483647, equivalent10, operation2147483647, so16]
+?3-to : is ->equivalent10
+so16-to->equivalent10
+?2-The->concept2147483647
+?1-an->operation2147483647
+?2- ->equivalent10
+so16-and->?3
+'18-on->so16
+applications5-of->?2
+?3-the->concept2147483647
+?1-of->applications5
+------CorefChainz

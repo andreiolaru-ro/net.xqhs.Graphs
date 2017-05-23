@@ -1,0 +1,211 @@
+ For instance, we can express what is common to all notations for truth-functions in the following way: they have in common that, for example, the notation that uses 'Pp' ('not p') and 'p C g' ('p or g') can be substituted for any of them. (This serves to characterize the way in which something general can be disclosed by the possibility of a specific notation.)
+------CorefChainz
+CHAIN14-["truth-functions" in sentence 1, "they" in sentence 1, "them" in sentence 1]
+representative mention: "truth-functions" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, express-6)
+case(instance-2, For-1)
+aux(express-6, can-5)
+punct(express-6, ,-3)
+punct(express-6, :-19)
+cop(common-9, is-8)
+case(notations-12, to-10)
+det(notations-12, all-11)
+case(truth-functions-14, for-13)
+case(way-18, in-15)
+det(way-18, the-16)
+case(common-23, in-22)
+punct(that-24, ,-25)
+case(example-27, for-26)
+punct(example-27, ,-28)
+cc(notation-30, and-42)
+det(notation-30, the-29)
+punct(notation-30, .-62)
+punct(uses-32, `-33)
+punct(uses-32, '-35)
+punct(p-39, -LRB--36)
+punct(p-39, `-37)
+punct(p-39, '-40)
+punct(p-39, -RRB--41)
+compound(g-46, p-44)
+compound(g-46, C-45)
+punct(g-46, '-43)
+punct(g-46, '-47)
+cc(p-50, or-51)
+punct(p-50, '-53)
+punct(p-50, -RRB--54)
+aux(substituted-57, can-55)
+auxpass(substituted-57, be-56)
+punct(substituted-57, -LRB--48)
+punct(substituted-57, '-49)
+case(any-59, for-58)
+case(them-61, of-60)
+nmod:for(express-6, instance-2)
+nsubj(express-6, we-4)
+nsubj(common-9, what-7)
+ccomp(express-6, common-9)
+nmod:to(common-9, notations-12)
+nmod:for(notations-12, truth-functions-14)
+amod(way-18, following-17)
+nmod:in(notations-12, way-18)
+nsubj(have-21, they-20)
+parataxis(express-6, have-21)
+nmod:in(have-21, common-23)
+dep(have-21, that-24)
+root(,-25, example-27)
+root(,-28, notation-30)
+nsubj(uses-32, notation-30)
+ref(notation-30, that-31)
+acl:relcl(notation-30, uses-32)
+dobj(uses-32, Pp-34)
+neg(p-39, not-38)
+dep(notation-30, p-39)
+root(,-28, g-46)
+conj:and(notation-30, g-46)
+nsubj(uses-32, g-46)
+nsubjpass(substituted-57, p-50)
+conj:or(p-50, g-52)
+nsubjpass(substituted-57, g-52)
+dep(g-46, substituted-57)
+nmod:for(substituted-57, any-59)
+nmod:of(any-59, them-61)
+---
+qqroot(ROOT-0, express-6)
+case(instance-2, For-1)
+aux(express-6, can-5)
+punct(express-6, ,-3)
+punct(express-6, :-19)
+cop(common-9, is-8)
+case(notations-12, to-10)
+det(notations-12, all-11)
+case(truth-functions-14, for-13)
+case(way-18, in-15)
+det(way-18, the-16)
+case(common-23, in-22)
+punct(that-24, ,-25)
+case(example-27, for-26)
+punct(example-27, ,-28)
+cc(notation-30, and-42)
+det(notation-30, the-29)
+punct(notation-30, .-62)
+punct(uses-32, `-33)
+punct(uses-32, '-35)
+punct(p-39, -LRB--36)
+punct(p-39, `-37)
+punct(p-39, '-40)
+punct(p-39, -RRB--41)
+compound(g-46, p-44)
+compound(g-46, C-45)
+punct(g-46, '-43)
+punct(g-46, '-47)
+cc(p-50, or-51)
+punct(p-50, '-53)
+punct(p-50, -RRB--54)
+aux(substituted-57, can-55)
+auxpass(substituted-57, be-56)
+punct(substituted-57, -LRB--48)
+punct(substituted-57, '-49)
+case(any-59, for-58)
+case(them-61, of-60)
+nmod:for(express-6, instance-2)
+nsubj(express-6, we-4)
+nsubj(common-9, what-7)
+ccomp(express-6, common-9)
+nmod:to(common-9, notations-12)
+nmod:for(notations-12, truth-functions-14)
+amod(way-18, following-17)
+nmod:in(notations-12, way-18)
+nsubj(have-21, they-20)
+parataxis(express-6, have-21)
+nmod:in(have-21, common-23)
+dep(have-21, that-24)
+root(,-25, example-27)
+root(,-28, notation-30)
+nsubj(uses-32, notation-30)
+ref(notation-30, that-31)
+acl:relcl(notation-30, uses-32)
+dobj(uses-32, Pp-34)
+neg(p-39, not-38)
+dep(notation-30, p-39)
+root(,-28, g-46)
+conj:and(notation-30, g-46)
+nsubj(uses-32, g-46)
+nsubjpass(substituted-57, p-50)
+conj:or(p-50, g-52)
+nsubjpass(substituted-57, g-52)
+dep(g-46, substituted-57)
+nmod:for(substituted-57, any-59)
+nmod:of(any-59, them-61)
+root(ROOT-0, serves-3)
+punct(serves-3, .-22)
+punct(serves-3, -RRB--23)
+punct(serves-3, -LRB--1)
+mark(characterize-5, to-4)
+det(way-7, the-6)
+case(which-9, in-8)
+compound(general-11, something-10)
+aux(disclosed-14, can-12)
+auxpass(disclosed-14, be-13)
+case(possibility-17, by-15)
+det(possibility-17, the-16)
+case(notation-21, of-18)
+det(notation-21, a-19)
+nsubj(serves-3, This-2)
+nsubj:xsubj(characterize-5, This-2)
+xcomp(serves-3, characterize-5)
+dobj(characterize-5, way-7)
+nmod:in(disclosed-14, way-7)
+ref(way-7, which-9)
+nsubjpass(disclosed-14, general-11)
+acl:relcl(way-7, disclosed-14)
+nmod:agent(disclosed-14, possibility-17)
+amod(notation-21, specific-20)
+nmod:of(possibility-17, notation-21)
+G[34, 36] [,28, ,25, ?1, ?2, ?3, ?4, ?5, ?6, C p g46, any59, characterize5, common9, common23, disclosed14, example27, express6, have21, instance2, notation2147483647, notation2147483647, notations2147483647, p39, p50, possibility2147483647, serves3, something general11, substituted57, that24, them61, truth-functions14, uses32, way2147483647, way2147483647, which9]
+C p g46- ->uses32
+have21- ->express6
+which9- ->truth-functions14
+?1- ->,28
+C p g46-and->?1
+truth-functions14-for->?5
+uses32-relcl->?1
+?4-in->disclosed14
+?6-a->notation2147483647
+?1-the->notation2147483647
+?2-the->possibility2147483647
+common23-in->have21
+disclosed14-relcl->?4
+?3-in->?5
+C p g46- ->,28
+something general11-  : can  : be ->disclosed14
+characterize5-  : to ->serves3
+any59-for : can  : be ->substituted57
+example27-  : for ->,25
+?5-to->common9
+common9-  : is ->express6
+them61-of->any59
+?4- ->characterize5
+instance2-for : For  : can ->express6
+p39- ->?1
+them61- ->truth-functions14
+p50-  : or ->substituted57
+that24- ->have21
+which9-  : in ->?4
+substituted57- ->C p g46
+?3-the->way2147483647
+?2-agent : by ->disclosed14
+?1- ->uses32
+?5-all->notations2147483647
+?4-the->way2147483647
+?6-of->?2
+------CorefChainz
+CHAIN14-["truth-functions" in sentence 1, "they" in sentence 1, "them" in sentence 1]
+representative mention: "truth-functions" in sentence 1

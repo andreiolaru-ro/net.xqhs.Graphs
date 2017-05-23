@@ -1,0 +1,106 @@
+ How can logic--all-embracing logic, which mirrors the world--use such peculiar crotchets and contrivances? Only because they are all connected with one another in an infinitely fine network, the great mirror.
+------CorefChainz
+CHAIN6-["such peculiar crotchets and contrivances" in sentence 1, "they" in sentence 2]
+representative mention: "such peculiar crotchets and contrivances" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, use-13)
+punct(logic-6, ---4)
+punct(logic-6, ,-7)
+punct(logic-6, ---12)
+det(world-11, the-10)
+aux(use-13, can-2)
+punct(use-13, ?-19)
+cc(crotchets-16, and-17)
+advmod(use-13, How-1)
+nsubj(use-13, logic-3)
+amod(logic-6, all-embracing-5)
+dep(logic-3, logic-6)
+nsubj(mirrors-9, logic-6)
+ref(logic-6, which-8)
+acl:relcl(logic-6, mirrors-9)
+dobj(mirrors-9, world-11)
+amod(crotchets-16, such-14)
+amod(crotchets-16, peculiar-15)
+dobj(use-13, crotchets-16)
+dobj(use-13, contrivances-18)
+conj:and(crotchets-16, contrivances-18)
+---
+qqroot(ROOT-0, use-13)
+punct(logic-6, ---4)
+punct(logic-6, ,-7)
+punct(logic-6, ---12)
+det(world-11, the-10)
+aux(use-13, can-2)
+punct(use-13, ?-19)
+cc(crotchets-16, and-17)
+advmod(use-13, How-1)
+nsubj(use-13, logic-3)
+amod(logic-6, all-embracing-5)
+dep(logic-3, logic-6)
+nsubj(mirrors-9, logic-6)
+ref(logic-6, which-8)
+acl:relcl(logic-6, mirrors-9)
+dobj(mirrors-9, world-11)
+amod(crotchets-16, such-14)
+amod(crotchets-16, peculiar-15)
+dobj(use-13, crotchets-16)
+dobj(use-13, contrivances-18)
+conj:and(crotchets-16, contrivances-18)
+root(ROOT-0, mirror-18)
+auxpass(connected-6, are-4)
+mark(connected-6, because-2)
+case(another-9, with-7)
+case(network-14, in-10)
+det(network-14, an-11)
+det(mirror-18, the-16)
+punct(mirror-18, .-19)
+punct(mirror-18, ,-15)
+advmod(connected-6, Only-1)
+nsubjpass(connected-6, they-3)
+advmod(connected-6, all-5)
+dep(mirror-18, connected-6)
+nummod(another-9, one-8)
+nmod:with(connected-6, another-9)
+advmod(fine-13, infinitely-12)
+amod(network-14, fine-13)
+nmod:in(connected-6, network-14)
+amod(mirror-18, great-17)
+G[26, 27] [?1, ?2, ?3, How1, Only1, all5, all-embracing5, another9, connected6, contrivances18, crotchets16, fine13, great17, infinitely12, logic3, logic6, mirror2147483647, mirrors9, network2147483647, one8, peculiar15, such14, they3, use13, which8, world2147483647]
+?1-the->world2147483647
+all-embracing5- ->logic6
+contrivances18-and->crotchets16
+which8- ->logic6
+such14- ->crotchets16
+?3-an->network2147483647
+mirrors9-relcl->logic6
+another9-with->connected6
+crotchets16- ->use13
+contrivances18- ->use13
+connected6- ->?2
+?1- ->mirrors9
+great17- ->?2
+?3-in->connected6
+logic3- ->use13
+all5- ->connected6
+logic6- ->logic3
+logic6- ->mirrors9
+How1-  : can  : can ->use13
+Only1-  : because  : because ->connected6
+logic3- ->crotchets16
+fine13- ->?3
+?2-the->mirror2147483647
+they3-  : are  : are ->connected6
+infinitely12- ->fine13
+peculiar15- ->crotchets16
+one8- ->another9
+------CorefChainz
+CHAIN6-["such peculiar crotchets and contrivances" in sentence 1, "they" in sentence 2]
+representative mention: "such peculiar crotchets and contrivances" in sentence 1

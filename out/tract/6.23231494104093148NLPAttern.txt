@@ -1,0 +1,129 @@
+ An equation merely marks the point of view from which I consider the two expressions: it marks their equivalence in meaning.
+------CorefChainz
+CHAIN6-["An equation" in sentence 1, "it" in sentence 1]
+representative mention: "An equation" in sentence 1
+An-DT 
+equation-NN 
+merely-RB 
+marks-VBZ 
+the-DT 
+point-NN 
+of-IN 
+view-NN 
+from-IN 
+which-WDT 
+I-PRP 
+consider-VBP 
+the-DT 
+two-CD 
+expressions-NNS 
+:-: 
+it-PRP 
+marks-VBZ 
+their-PRP$ 
+equivalence-NN 
+in-IN 
+meaning-VBG 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> DT 	-> An
+	 	-> NN 	-> equation
+		 	-> ADVP 	-> RB 	-> merely
+		 	-> VP 	-> VBZ 	-> marks
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> point
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> view
+			 	-> SBAR 	-> WHPP 	-> IN 	-> from
+	 	-> WHNP 	-> WDT 	-> which
+			 	-> S 	-> NP 	-> PRP 	-> I
+		 	-> VP 	-> VBP 	-> consider
+	 	-> NP 	-> DT 	-> the
+	 	-> CD 	-> two
+	 	-> NNS 	-> expressions
+								 	-> : 	-> :
+	 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> VBZ 	-> marks
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NN 	-> equivalence
+		 	-> PP 	-> IN 	-> in
+	 	-> S 	-> VP 	-> VBG 	-> meaning
+						 	-> . 	-> .
+			
+Dependensee repr
+det(equation-2, An-1)
+nsubj(marks-4, equation-2)
+advmod(marks-4, merely-3)
+root(ROOT-0, marks-4)
+det(point-6, the-5)
+dobj(marks-4, point-6)
+nmod:from(consider-12, point-6)
+case(view-8, of-7)
+nmod:of(point-6, view-8)
+case(which-10, from-9)
+ref(point-6, which-10)
+nsubj(consider-12, I-11)
+acl:relcl(point-6, consider-12)
+det(expressions-15, the-13)
+nummod(expressions-15, two-14)
+dobj(consider-12, expressions-15)
+nsubj(marks-18, it-17)
+parataxis(marks-4, marks-18)
+nmod:poss(equivalence-20, their-19)
+dobj(marks-18, equivalence-20)
+mark(meaning-22, in-21)
+advcl(marks-18, meaning-22)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, marks-4)
+det(equation-2, An-1)
+punct(marks-4, :-16)
+punct(marks-4, .-23)
+det(point-6, the-5)
+case(view-8, of-7)
+case(which-10, from-9)
+det(expressions-15, the-13)
+case(meaning-22, in-21)
+nsubj(marks-4, equation-2)
+advmod(marks-4, merely-3)
+dobj(marks-4, point-6)
+nmod:of(point-6, view-8)
+nmod:from(consider-12, view-8)
+ref(view-8, which-10)
+nsubj(consider-12, I-11)
+acl:relcl(view-8, consider-12)
+nummod(expressions-15, two-14)
+dobj(consider-12, expressions-15)
+nsubj(marks-18, it-17)
+parataxis(marks-4, marks-18)
+nmod:poss(equivalence-20, their-19)
+dobj(marks-18, equivalence-20)
+nmod:in(marks-18, meaning-22)
+G[18, 19] [?#1, ?#2, ?#3, I, consider, equation, equivalence, expressions, it, marks, marks, meaning, merely, point, their, two, view, which]
+?#1-An->equation
+I- ->consider
+equivalence- ->marks
+view-of->?#2
+consider-relcl->view
+it- ->marks
+view-from->consider
+merely- ->marks
+?#1- ->marks
+?#3- ->consider
+their-poss->equivalence
+it- ->?#1
+meaning-in->marks
+?#3-the->expressions
+?#2- ->marks
+which-  : from ->view
+marks- ->marks
+?#2-the->point
+two- ->?#3
+------CorefChainz
+CHAIN6-["An equation" in sentence 1, "it" in sentence 1]
+representative mention: "An equation" in sentence 1

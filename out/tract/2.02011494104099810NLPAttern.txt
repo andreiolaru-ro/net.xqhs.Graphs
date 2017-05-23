@@ -1,0 +1,132 @@
+ Every statement about complexes can be resolved into a statement about their constituents and into the propositions that describe the complexes completely.
+------CorefChainz
+CHAIN3-["complexes" in sentence 1, "their" in sentence 1, "the complexes" in sentence 1]
+representative mention: "the complexes" in sentence 1
+Every-DT 
+statement-NN 
+about-IN 
+complexes-NNS 
+can-MD 
+be-VB 
+resolved-VBN 
+into-IN 
+a-DT 
+statement-NN 
+about-IN 
+their-PRP$ 
+constituents-NNS 
+and-CC 
+into-IN 
+the-DT 
+propositions-NNS 
+that-WDT 
+describe-VBP 
+the-DT 
+complexes-NNS 
+completely-RB 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> Every
+	 	-> NN 	-> statement
+		 	-> PP 	-> IN 	-> about
+	 	-> NP 	-> NNS 	-> complexes
+				 	-> VP 	-> MD 	-> can
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> resolved
+	 	-> PP 	-> PP 	-> IN 	-> into
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> statement
+		 	-> PP 	-> IN 	-> about
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NNS 	-> constituents
+					 	-> CC 	-> and
+	 	-> PP 	-> IN 	-> into
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> propositions
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> VP 	-> VBP 	-> describe
+	 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> complexes
+		 	-> ADVP 	-> RB 	-> completely
+											 	-> . 	-> .
+			
+Dependensee repr
+det(statement-2, Every-1)
+nsubjpass(resolved-7, statement-2)
+nsubjpass(resolved-7', statement-2)
+case(complexes-4, about-3)
+nmod:about(statement-2, complexes-4)
+aux(resolved-7, can-5)
+auxpass(resolved-7, be-6)
+root(ROOT-0, resolved-7)
+conj:and(resolved-7, resolved-7')
+case(statement-10, into-8)
+det(statement-10, a-9)
+nmod:into(resolved-7, statement-10)
+case(constituents-13, about-11)
+nmod:poss(constituents-13, their-12)
+nmod:about(statement-10, constituents-13)
+cc(resolved-7, and-14)
+case(propositions-17, into-15)
+det(propositions-17, the-16)
+nmod:into(resolved-7', propositions-17)
+nsubj(describe-19, propositions-17)
+ref(propositions-17, that-18)
+acl:relcl(propositions-17, describe-19)
+det(complexes-21, the-20)
+dobj(describe-19, complexes-21)
+advmod(describe-19, completely-22)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, resolved-7)
+det(statement-2, Every-1)
+case(complexes-4, about-3)
+aux(resolved-7, can-5)
+auxpass(resolved-7, be-6)
+cc(resolved-7, and-14)
+punct(resolved-7, .-23)
+case(statement-10, into-8)
+det(statement-10, a-9)
+case(constituents-13, about-11)
+case(propositions-17, into-15)
+det(propositions-17, the-16)
+det(complexes-21, the-20)
+nsubjpass(resolved-7, statement-2)
+nsubjpass(resolved-7''', statement-2)
+nmod:about(statement-2, complexes-4)
+conj:and(resolved-7, resolved-7''')
+nmod:into(resolved-7, statement-10)
+nmod:poss(constituents-13, their-12)
+nmod:about(statement-10, constituents-13)
+nmod:into(resolved-7''', propositions-17)
+nsubj(describe-19, propositions-17)
+ref(propositions-17, that-18)
+acl:relcl(propositions-17, describe-19)
+dobj(describe-19, complexes-21)
+advmod(describe-19, completely-22)
+G[15, 17] [?#1, ?#2, ?#3, ?#4, completely, complexes, complexes, constituents, describe, propositions, resolved, statement, statement, that, their]
+their-poss->constituents
+their- ->?#2
+constituents-about->?#1
+?#3- ->describe
+that- ->?#3
+?#2-the->complexes
+describe-relcl->?#3
+?#3-the->propositions
+?#1-into->resolved
+?#2- ->describe
+complexes- ->?#2
+?#4-Every->statement
+completely- ->describe
+?#4-  : can  : be  : be ->resolved
+complexes-about->?#4
+?#1-a->statement
+?#3-into : and ->resolved
+------CorefChainz
+CHAIN3-["complexes" in sentence 1, "their" in sentence 1, "the complexes" in sentence 1]
+representative mention: "the complexes" in sentence 1

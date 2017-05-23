@@ -1,0 +1,23 @@
+ Logical pictures can depict the world.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, depict-4)
+aux(depict-4, can-3)
+punct(depict-4, .-7)
+det(world-6, the-5)
+amod(pictures-2, Logical-1)
+nsubj(depict-4, pictures-2)
+dobj(depict-4, world-6)
+G[5, 4] [?1, Logical1, depict4, pictures2, world2147483647]
+?1-the->world2147483647
+Logical1- ->pictures2
+?1- ->depict4
+pictures2-  : can ->depict4
+------CorefChainz

@@ -1,0 +1,213 @@
+ I dissociate the concept all from truth-functions. Frege and Russell introduced generality in association with logical productor logical sum. This made it difficult to understand the propositions '(dx) . fx' and '(x) . fx', in which both ideas are embedded.
+------CorefChainz
+CHAIN12-["Frege and Russell" in sentence 2, "This" in sentence 3, "it" in sentence 3]
+representative mention: "Frege and Russell" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, dissociate-2)
+punct(dissociate-2, .-8)
+det(concept-4, the-3)
+case(truth-functions-7, from-6)
+nsubj(dissociate-2, I-1)
+dobj(dissociate-2, concept-4)
+advmod(dissociate-2, all-5)
+nmod:from(all-5, truth-functions-7)
+---
+qqroot(ROOT-0, dissociate-2)
+punct(dissociate-2, .-8)
+det(concept-4, the-3)
+case(truth-functions-7, from-6)
+nsubj(dissociate-2, I-1)
+dobj(dissociate-2, concept-4)
+advmod(dissociate-2, all-5)
+nmod:from(all-5, truth-functions-7)
+root(ROOT-0, introduced-4)
+cc(Frege-1, and-2)
+punct(introduced-4, .-13)
+case(association-7, in-6)
+case(sum-12, with-8)
+compound(sum-12, productor-10)
+nsubj(introduced-4, Frege-1)
+conj:and(Frege-1, Russell-3)
+nsubj(introduced-4, Russell-3)
+dobj(introduced-4, generality-5)
+nmod:in(introduced-4, association-7)
+amod(sum-12, logical-9)
+amod(sum-12, logical-11)
+nmod:with(association-7, sum-12)
+---
+qqroot(ROOT-0, dissociate-2)
+punct(dissociate-2, .-8)
+det(concept-4, the-3)
+case(truth-functions-7, from-6)
+nsubj(dissociate-2, I-1)
+dobj(dissociate-2, concept-4)
+advmod(dissociate-2, all-5)
+nmod:from(all-5, truth-functions-7)
+root(ROOT-0, introduced-4)
+cc(Frege-1, and-2)
+punct(introduced-4, .-13)
+case(association-7, in-6)
+case(sum-12, with-8)
+compound(sum-12, productor-10)
+nsubj(introduced-4, Frege-1)
+conj:and(Frege-1, Russell-3)
+nsubj(introduced-4, Russell-3)
+dobj(introduced-4, generality-5)
+nmod:in(introduced-4, association-7)
+amod(sum-12, logical-9)
+amod(sum-12, logical-11)
+nmod:with(association-7, sum-12)
+root(ROOT-0, made-2)
+punct(made-2, .-13)
+mark(understand-6, to-5)
+case(propositions-8, '-9)
+det(propositions-8, the-7)
+punct(dx-11, -LRB--10)
+punct(dx-11, -RRB--12)
+nsubj(made-2, This-1)
+nsubj(understand-6, it-3)
+dep(understand-6, difficult-4)
+xcomp(made-2, understand-6)
+dobj(understand-6, propositions-8)
+dep(propositions-8, dx-11)
+---
+qqroot(ROOT-0, dissociate-2)
+punct(dissociate-2, .-8)
+det(concept-4, the-3)
+case(truth-functions-7, from-6)
+nsubj(dissociate-2, I-1)
+dobj(dissociate-2, concept-4)
+advmod(dissociate-2, all-5)
+nmod:from(all-5, truth-functions-7)
+root(ROOT-0, introduced-4)
+cc(Frege-1, and-2)
+punct(introduced-4, .-13)
+case(association-7, in-6)
+case(sum-12, with-8)
+compound(sum-12, productor-10)
+nsubj(introduced-4, Frege-1)
+conj:and(Frege-1, Russell-3)
+nsubj(introduced-4, Russell-3)
+dobj(introduced-4, generality-5)
+nmod:in(introduced-4, association-7)
+amod(sum-12, logical-9)
+amod(sum-12, logical-11)
+nmod:with(association-7, sum-12)
+root(ROOT-0, made-2)
+punct(made-2, .-13)
+mark(understand-6, to-5)
+case(propositions-8, '-9)
+det(propositions-8, the-7)
+punct(dx-11, -LRB--10)
+punct(dx-11, -RRB--12)
+nsubj(made-2, This-1)
+nsubj(understand-6, it-3)
+dep(understand-6, difficult-4)
+xcomp(made-2, understand-6)
+dobj(understand-6, propositions-8)
+dep(propositions-8, dx-11)
+root(ROOT-0, fx-1)
+cc(fx-1, and-3)
+punct(fx-1, '-2)
+punct(fx-1, '-4)
+punct(fx-1, .-8)
+punct(x-6, -LRB--5)
+punct(x-6, -RRB--7)
+appos(fx-1, x-6)
+---
+qqroot(ROOT-0, dissociate-2)
+punct(dissociate-2, .-8)
+det(concept-4, the-3)
+case(truth-functions-7, from-6)
+nsubj(dissociate-2, I-1)
+dobj(dissociate-2, concept-4)
+advmod(dissociate-2, all-5)
+nmod:from(all-5, truth-functions-7)
+root(ROOT-0, introduced-4)
+cc(Frege-1, and-2)
+punct(introduced-4, .-13)
+case(association-7, in-6)
+case(sum-12, with-8)
+compound(sum-12, productor-10)
+nsubj(introduced-4, Frege-1)
+conj:and(Frege-1, Russell-3)
+nsubj(introduced-4, Russell-3)
+dobj(introduced-4, generality-5)
+nmod:in(introduced-4, association-7)
+amod(sum-12, logical-9)
+amod(sum-12, logical-11)
+nmod:with(association-7, sum-12)
+root(ROOT-0, made-2)
+punct(made-2, .-13)
+mark(understand-6, to-5)
+case(propositions-8, '-9)
+det(propositions-8, the-7)
+punct(dx-11, -LRB--10)
+punct(dx-11, -RRB--12)
+nsubj(made-2, This-1)
+nsubj(understand-6, it-3)
+dep(understand-6, difficult-4)
+xcomp(made-2, understand-6)
+dobj(understand-6, propositions-8)
+dep(propositions-8, dx-11)
+root(ROOT-0, fx-1)
+cc(fx-1, and-3)
+punct(fx-1, '-2)
+punct(fx-1, '-4)
+punct(fx-1, .-8)
+punct(x-6, -LRB--5)
+punct(x-6, -RRB--7)
+appos(fx-1, x-6)
+root(ROOT-0, fx-1)
+punct(fx-1, '-2)
+punct(fx-1, ,-3)
+punct(fx-1, .-10)
+case(which-5, in-4)
+det(ideas-7, both-6)
+cop(embedded-9, are-8)
+nmod:in(embedded-9, fx-1)
+ref(fx-1, which-5)
+nsubj(embedded-9, ideas-7)
+acl:relcl(fx-1, embedded-9)
+G[29, 27] [?1, ?2, ?3, Frege1, I1, Russell3, This1, all5, association7, concept2147483647, difficult4, dissociate2, dx11, embedded9, fx1, fx1, generality5, ideas2147483647, introduced4, it3, logical11, logical9, made2, productor sum12, propositions2147483647, truth-functions7, understand6, which5, x6]
+x6-  : and ->fx1
+Russell3- ->I1
+?2-  : are ->embedded9
+fx1-in->embedded9
+I1- ->dissociate2
+association7-in->introduced4
+?2-both->ideas2147483647
+difficult4-  : to ->understand6
+Russell3-and->Frege1
+all5- ->dissociate2
+logical9- ->productor sum12
+logical11- ->productor sum12
+which5-  : in ->fx1
+Frege1- ->introduced4
+it3- ->understand6
+truth-functions7-from->all5
+?3-the->concept2147483647
+embedded9-relcl->fx1
+?3- ->dissociate2
+Russell3- ->introduced4
+?1-the->propositions2147483647
+generality5- ->introduced4
+understand6- ->made2
+This1- ->made2
+dx11-  : ' ->?1
+?1- ->understand6
+productor sum12-with->association7
+------CorefChainz
+CHAIN12-["Frege and Russell" in sentence 2, "This" in sentence 3, "it" in sentence 3]
+representative mention: "Frege and Russell" in sentence 2

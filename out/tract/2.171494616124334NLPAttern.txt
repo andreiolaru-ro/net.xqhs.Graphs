@@ -1,0 +1,76 @@
+ What a picture must have in common with reality, in order to be able to depict it--correctly or incorrectly--in the way that it does, is its pictorial form.
+------CorefChainz
+CHAIN6-["a picture" in sentence 1, "it" in sentence 1, "it" in sentence 1, "its" in sentence 1]
+representative mention: "a picture" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-5)
+det(picture-3, a-2)
+aux(have-5, must-4)
+punct(have-5, ,-10)
+case(common-7, in-6)
+case(reality-9, with-8)
+mwe(in-11, order-12)
+cop(able-15, be-14)
+mark(able-15, in-11)
+mark(able-15, to-13)
+mark(depict-17, to-16)
+case(way-26, in-24)
+det(way-26, the-25)
+punct(way-26, ---23)
+punct(way-26, ,-30)
+punct(is-31, ---19)
+punct(is-31, .-35)
+dobj(have-5, What-1)
+nsubj(have-5, picture-3)
+nmod:in(have-5, common-7)
+nmod:with(common-7, reality-9)
+root(,-10, able-15)
+xcomp(able-15, depict-17)
+dobj(depict-17, it-18)
+advmod(or-21, correctly-20)
+dep(is-31, or-21)
+advmod(or-21, incorrectly-22)
+dobj(does-29, way-26)
+dep(is-31, way-26)
+ref(way-26, that-27)
+nsubj(does-29, it-28)
+acl:relcl(way-26, does-29)
+dep(able-15, is-31)
+nmod:poss(form-34, its-32)
+amod(form-34, pictorial-33)
+nsubj(is-31, form-34)
+G[23, 24] [,10, ?1, ?2, What1, able15, common7, correctly20, depict17, does29, form34, have5, in order11, incorrectly22, is31, it28, it18, its32, or21, pictorial33, picture2147483647, reality9, that27, way2147483647]
+does29-relcl->?1
+form34- ->is31
+that27-  : in ->?1
+reality9-with->common7
+its32- ->?2
+pictorial33- ->form34
+depict17-  : to  : be ->able15
+it28- ->?2
+correctly20- ->or21
+is31- ->able15
+?1-the->way2147483647
+its32-poss->form34
+What1- ->have5
+incorrectly22- ->or21
+common7-in->have5
+able15-  : in order ->,10
+?2-  : must ->have5
+it18- ->?2
+?2-a->picture2147483647
+or21- ->is31
+?1- ->is31
+?1- ->does29
+it18- ->depict17
+it28- ->does29
+------CorefChainz
+CHAIN6-["a picture" in sentence 1, "it" in sentence 1, "it" in sentence 1, "its" in sentence 1]
+representative mention: "a picture" in sentence 1

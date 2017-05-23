@@ -1,0 +1,56 @@
+ To give the essence of a proposition means to give the essence of all description, and thus the essence of the world.
+------CorefChainz
+CHAIN2-["the essence of a proposition" in sentence 1, "the essence of all description" in sentence 1]
+representative mention: "the essence of a proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, means-8)
+mark(give-2, To-1)
+det(essence-4, the-3)
+case(proposition-7, of-5)
+det(proposition-7, a-6)
+cc(means-8, and-17)
+punct(means-8, ,-16)
+punct(means-8, .-24)
+mark(give-10, to-9)
+det(essence-12, the-11)
+case(description-15, of-13)
+det(description-15, all-14)
+det(essence-20, the-19)
+case(world-23, of-21)
+det(world-23, the-22)
+csubj(means-8, give-2)
+dobj(give-2, essence-4)
+nmod:of(essence-4, proposition-7)
+xcomp(means-8, give-10)
+dobj(give-10, essence-12)
+nmod:of(essence-12, description-15)
+conj:and(means-8, thus-18)
+dep(thus-18, essence-20)
+nmod:of(essence-20, world-23)
+G[16, 16] [?1, ?2, ?3, ?4, ?5, ?6, description2147483647, essence2147483647, essence2147483647, essence2147483647, give10, give2, means8, proposition2147483647, thus18, world2147483647]
+?1-the->essence2147483647
+?3-all->description2147483647
+?4- ->?1
+?3-of->?4
+?4-the->essence2147483647
+?6-of->?1
+?2-the->essence2147483647
+thus18-and->means8
+?2- ->thus18
+?1-  : To ->give2
+?5-the->world2147483647
+give10-  : to ->means8
+give2- ->means8
+?6-a->proposition2147483647
+?4- ->give10
+?5-of->?2
+------CorefChainz
+CHAIN2-["the essence of a proposition" in sentence 1, "the essence of all description" in sentence 1]
+representative mention: "the essence of a proposition" in sentence 1

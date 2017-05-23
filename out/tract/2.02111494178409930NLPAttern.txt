@@ -1,0 +1,52 @@
+ If they world had no substance, then whether a proposition had sense would depend on whether another proposition was true.
+------CorefChainz
+CHAIN5-["a proposition" in sentence 1, "another proposition" in sentence 1]
+representative mention: "a proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, depend-15)
+det(world-3, they-2)
+mark(had-4, If-1)
+det(proposition-11, a-10)
+mark(had-12, whether-9)
+aux(depend-15, would-14)
+punct(depend-15, .-22)
+punct(depend-15, ,-7)
+det(proposition-19, another-18)
+cop(true-21, was-20)
+mark(true-21, on-16)
+mark(true-21, whether-17)
+nsubj(had-4, world-3)
+advcl:if(depend-15, had-4)
+neg(substance-6, no-5)
+dobj(had-4, substance-6)
+advmod(had-12, then-8)
+nsubj(had-12, proposition-11)
+csubj(depend-15, had-12)
+dobj(had-12, sense-13)
+nsubj(true-21, proposition-19)
+advcl:whether(depend-15, true-21)
+G[14, 14] [?#1, ?#2, ?#3, depend, had, had, no, proposition, proposition, sense, substance, then, true, world]
+true-whether : on ->depend
+?#1-  : If ->had
+had-if->depend
+?#2-a->proposition
+had-  : would ->depend
+?#1-they->world
+?#3- ->?#2
+?#2- ->had
+?#3-  : was ->true
+then-  : whether ->had
+no- ->substance
+?#3-another->proposition
+sense- ->had
+substance- ->had
+------CorefChainz
+CHAIN5-["a proposition" in sentence 1, "another proposition" in sentence 1]
+representative mention: "a proposition" in sentence 1

@@ -1,0 +1,38 @@
+ It is clear that one could achieve the same purpose by using contradictions instead of tautologies.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-17)
+aux(achieve-7, could-6)
+mark(achieve-7, that-4)
+det(purpose-10, the-8)
+mark(using-12, by-11)
+mwe(instead-14, of-15)
+case(tautologies-16, instead-14)
+nsubj(clear-3, It-1)
+nsubj(achieve-7, one-5)
+ccomp(clear-3, achieve-7)
+amod(purpose-10, same-9)
+dobj(achieve-7, purpose-10)
+advcl:by(achieve-7, using-12)
+dobj(using-12, contradictions-13)
+nmod:instead_of(using-12, tautologies-16)
+G[11, 9] [?1, It1, achieve7, clear3, contradictions13, instead of14, one5, purpose2147483647, same9, tautologies16, using12]
+achieve7-  : that  : that ->clear3
+same9- ->?1
+one5-  : could ->achieve7
+contradictions13- ->using12
+It1-  : is ->clear3
+tautologies16-instead_of : instead of ->using12
+?1-the->purpose2147483647
+?1- ->achieve7
+using12-by->achieve7
+------CorefChainz

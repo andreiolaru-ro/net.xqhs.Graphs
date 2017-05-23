@@ -1,0 +1,58 @@
+ The essence of a propositional sign is very clearly seen if we imagine one composed of spatial objects (such as tables, chairs, and books) instead of written signs.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, seen-10)
+det(essence-2, The-1)
+case(sign-6, of-3)
+det(sign-6, a-4)
+auxpass(seen-10, is-7)
+punct(seen-10, .-33)
+mark(imagine-13, if-11)
+case(objects-18, of-16)
+mwe(such-20, as-21)
+case(tables-22, such-20)
+cc(tables-22, and-26)
+punct(tables-22, -LRB--19)
+punct(tables-22, ,-23)
+punct(tables-22, ,-25)
+punct(tables-22, -RRB--28)
+mwe(instead-29, of-30)
+case(signs-32, instead-29)
+nsubjpass(seen-10, essence-2)
+amod(sign-6, propositional-5)
+nmod:of(essence-2, sign-6)
+advmod(clearly-9, very-8)
+advmod(seen-10, clearly-9)
+nsubj(imagine-13, we-12)
+advcl:if(seen-10, imagine-13)
+dobj(imagine-13, one-14)
+acl(one-14, composed-15)
+amod(objects-18, spatial-17)
+nmod:of(composed-15, objects-18)
+nmod:such_as(objects-18, tables-22)
+nmod:such_as(objects-18, chairs-24)
+conj:and(tables-22, chairs-24)
+nmod:such_as(objects-18, books-27)
+conj:and(tables-22, books-27)
+amod(signs-32, written-31)
+nmod:instead_of(objects-18, signs-32)
+G[14, 11] [?1, ?2, clearly9, composed15, essence2147483647, imagine13, instead of29, objects18, one14, seen10, sign2147483647, signs32, such as20, tables22]
+clearly9-  : is ->seen10
+?2-The->essence2147483647
+tables22-such_as : such as  : and ->objects18
+?1-a->sign2147483647
+signs32-instead_of : instead of ->objects18
+?1-of->?2
+?2- ->seen10
+one14- ->imagine13
+imagine13-if->seen10
+objects18-of->composed15
+composed15- ->one14
+------CorefChainz

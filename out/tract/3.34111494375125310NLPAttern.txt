@@ -1,0 +1,112 @@
+ So one could say that the real name of an object was what all symbols that signified it had in common. Thus, one by one, all kinds of composition would prove to be unessential to a name.
+------CorefChainz
+CHAIN4-["the real name of an object" in sentence 1, "it" in sentence 1]
+representative mention: "the real name of an object" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, say-4)
+aux(say-4, could-3)
+punct(say-4, .-22)
+det(name-8, the-6)
+case(object-11, of-9)
+det(object-11, an-10)
+mark(was-12, that-5)
+det(symbols-15, all-14)
+case(common-21, in-20)
+advmod(say-4, So-1)
+nsubj(say-4, one-2)
+amod(name-8, real-7)
+nsubj(was-12, name-8)
+nmod:of(name-8, object-11)
+ccomp(say-4, was-12)
+dep(was-12, what-13)
+nsubj(what-13, symbols-15)
+nsubj(signified-17, symbols-15)
+ref(symbols-15, that-16)
+acl:relcl(symbols-15, signified-17)
+nsubj(had-19, it-18)
+ccomp(signified-17, had-19)
+nmod:in(had-19, common-21)
+---
+qqroot(ROOT-0, say-4)
+aux(say-4, could-3)
+punct(say-4, .-22)
+det(name-8, the-6)
+case(object-11, of-9)
+det(object-11, an-10)
+mark(was-12, that-5)
+det(symbols-15, all-14)
+case(common-21, in-20)
+advmod(say-4, So-1)
+nsubj(say-4, one-2)
+amod(name-8, real-7)
+nsubj(was-12, name-8)
+nmod:of(name-8, object-11)
+ccomp(say-4, was-12)
+dep(was-12, what-13)
+nsubj(what-13, symbols-15)
+nsubj(signified-17, symbols-15)
+ref(symbols-15, that-16)
+acl:relcl(symbols-15, signified-17)
+nsubj(had-19, it-18)
+ccomp(signified-17, had-19)
+nmod:in(had-19, common-21)
+root(ROOT-0, prove-12)
+punct(one-3, ,-6)
+case(one-5, by-4)
+det(kinds-8, all-7)
+case(composition-10, of-9)
+aux(prove-12, would-11)
+punct(prove-12, .-19)
+punct(prove-12, ,-2)
+cop(unessential-15, be-14)
+mark(unessential-15, to-13)
+case(name-18, to-16)
+det(name-18, a-17)
+advmod(prove-12, Thus-1)
+nsubj(prove-12, one-3)
+nsubj:xsubj(unessential-15, one-3)
+nmod:by(one-3, one-5)
+appos(one-3, kinds-8)
+nmod:of(kinds-8, composition-10)
+xcomp(prove-12, unessential-15)
+nmod:to(unessential-15, name-18)
+G[27, 28] [?1, ?2, ?3, ?4, ?5, So1, Thus1, common21, composition10, had19, it18, kinds2147483647, name2147483647, name2147483647, object2147483647, one2, one3, one5, prove12, real7, say4, signified17, symbols2147483647, that16, unessential15, was12, what13]
+?4- ->one3
+real7- ->?2
+it18- ->had19
+?4-all->kinds2147483647
+?5-to->unessential15
+?5-a->name2147483647
+signified17-relcl->?1
+?2-the->name2147483647
+Thus1- ->prove12
+?1-all->symbols2147483647
+one2-  : could ->say4
+one3-xsubj->unessential15
+So1- ->say4
+composition10-of->?4
+what13- ->was12
+one3- ->prove12
+unessential15-  : be  : would ->prove12
+was12-  : that ->say4
+?3-of->?2
+?1- ->signified17
+that16- ->?1
+one5-by->one3
+it18- ->?2
+had19- ->signified17
+?1- ->what13
+common21-in->had19
+?2- ->was12
+?3-an->object2147483647
+------CorefChainz
+CHAIN4-["the real name of an object" in sentence 1, "it" in sentence 1]
+representative mention: "the real name of an object" in sentence 1

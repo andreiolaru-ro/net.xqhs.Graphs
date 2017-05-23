@@ -1,0 +1,59 @@
+ There is no special object peculiar to probability propositions.
+------CorefChainz
+There-EX 
+is-VBZ 
+no-DT 
+special-JJ 
+object-NN 
+peculiar-JJ 
+to-TO 
+probability-NN 
+propositions-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> EX 	-> There
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> DT 	-> no
+	 	-> JJ 	-> special
+	 	-> NN 	-> object
+		 	-> ADJP 	-> JJ 	-> peculiar
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NN 	-> probability
+	 	-> NNS 	-> propositions
+						 	-> . 	-> .
+			
+Dependensee repr
+expl(is-2, There-1)
+root(ROOT-0, is-2)
+neg(object-5, no-3)
+amod(object-5, special-4)
+nsubj(is-2, object-5)
+amod(object-5, peculiar-6)
+case(propositions-9, to-7)
+compound(propositions-9, probability-8)
+nmod:to(peculiar-6, propositions-9)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-2)
+punct(is-2, .-10)
+case(propositions-9, to-7)
+compound(propositions-9, probability-8)
+expl(is-2, There-1)
+neg(object-5, no-3)
+amod(object-5, special-4)
+nsubj(is-2, object-5)
+amod(object-5, peculiar-6)
+nmod:to(peculiar-6, propositions-9)
+G[7, 6] [There, is, no, object, peculiar, probability propositions, special]
+object- ->is
+no- ->object
+probability propositions-to->peculiar
+peculiar- ->object
+There- ->is
+special- ->object
+------CorefChainz

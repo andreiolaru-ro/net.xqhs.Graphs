@@ -1,0 +1,120 @@
+ Russell's definition of '=' is inadequate, because according to it we cannot say that two objects have all their properties in common. (Even if this proposition is never correct, it still has sense .)
+------CorefChainz
+CHAIN7-["two objects" in sentence 1, "their" in sentence 1]
+representative mention: "two objects" in sentence 1
+CHAIN10-["Russell 's definition of ' = '" in sentence 1, "it" in sentence 1, "this proposition" in sentence 2, "it" in sentence 2]
+representative mention: "Russell 's definition of ' = '" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, inadequate-9)
+case(Russell-1, 's-2)
+case(=-6, of-4)
+punct(=-6, '-5)
+punct(=-6, '-7)
+cop(inadequate-9, is-8)
+punct(inadequate-9, ,-10)
+punct(inadequate-9, .-28)
+mark(according-12, because-11)
+case(it-14, to-13)
+aux(say-18, can-16)
+mark(have-22, that-19)
+case(common-27, in-26)
+nmod:poss(definition-3, Russell-1)
+nsubj(inadequate-9, definition-3)
+acl:of(definition-3, =-6)
+advcl:because(inadequate-9, according-12)
+nmod:to(according-12, it-14)
+nsubj(say-18, we-15)
+neg(say-18, not-17)
+ccomp(according-12, say-18)
+nummod(objects-21, two-20)
+nsubj(have-22, objects-21)
+ccomp(say-18, have-22)
+det:predet(properties-25, all-23)
+nmod:poss(properties-25, their-24)
+dobj(have-22, properties-25)
+nmod:in(have-22, common-27)
+---
+qqroot(ROOT-0, inadequate-9)
+case(Russell-1, 's-2)
+case(=-6, of-4)
+punct(=-6, '-5)
+punct(=-6, '-7)
+cop(inadequate-9, is-8)
+punct(inadequate-9, ,-10)
+punct(inadequate-9, .-28)
+mark(according-12, because-11)
+case(it-14, to-13)
+aux(say-18, can-16)
+mark(have-22, that-19)
+case(common-27, in-26)
+nmod:poss(definition-3, Russell-1)
+nsubj(inadequate-9, definition-3)
+acl:of(definition-3, =-6)
+advcl:because(inadequate-9, according-12)
+nmod:to(according-12, it-14)
+nsubj(say-18, we-15)
+neg(say-18, not-17)
+ccomp(according-12, say-18)
+nummod(objects-21, two-20)
+nsubj(have-22, objects-21)
+ccomp(say-18, have-22)
+det:predet(properties-25, all-23)
+nmod:poss(properties-25, their-24)
+dobj(have-22, properties-25)
+nmod:in(have-22, common-27)
+root(ROOT-0, has-12)
+det(proposition-5, this-4)
+cop(correct-8, is-6)
+mark(correct-8, if-3)
+punct(has-12, ,-9)
+punct(has-12, .-14)
+punct(has-12, -RRB--15)
+punct(has-12, -LRB--1)
+advmod(correct-8, Even-2)
+nsubj(correct-8, proposition-5)
+neg(correct-8, never-7)
+advcl:if(has-12, correct-8)
+nsubj(has-12, it-10)
+advmod(has-12, still-11)
+dobj(has-12, sense-13)
+G[25, 27] [=6, ?1, Even2, Russell1, according12, all23, common27, correct8, definition3, has12, have22, inadequate9, it10, it14, never7, not17, objects21, properties25, proposition2147483647, say18, sense13, still11, their24, two20, we15]
+it14- ->definition3
+their24- ->objects21
+according12-because : is ->inadequate9
+two20- ->objects21
+sense13- ->has12
+=6-of->definition3
+definition3- ->inadequate9
+it14-to->according12
+properties25- ->have22
+common27-in->have22
+?1-  : is  : is ->correct8
+say18- ->according12
+never7- ->correct8
+?1- ->definition3
+it10- ->definition3
+we15-  : can  : can ->say18
+correct8-if->has12
+all23-predet->properties25
+not17- ->say18
+have22-  : that ->say18
+Russell1-poss : 's ->definition3
+objects21- ->have22
+their24-poss->properties25
+it10- ->has12
+?1-this->proposition2147483647
+still11- ->has12
+Even2- ->correct8
+------CorefChainz
+CHAIN7-["two objects" in sentence 1, "their" in sentence 1]
+representative mention: "two objects" in sentence 1
+CHAIN10-["Russell 's definition of ' = '" in sentence 1, "it" in sentence 1, "this proposition" in sentence 2, "it" in sentence 2]
+representative mention: "Russell 's definition of ' = '" in sentence 1

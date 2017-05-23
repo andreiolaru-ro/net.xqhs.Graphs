@@ -1,0 +1,44 @@
+ The subject does not belong to the world: rather, it is a limit of the world.
+------CorefChainz
+CHAIN2-["The subject" in sentence 1, "it" in sentence 1]
+representative mention: "The subject" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, belong-5)
+det(subject-2, The-1)
+aux(belong-5, does-3)
+punct(belong-5, .-19)
+punct(belong-5, :-9)
+case(world-8, to-6)
+det(world-8, the-7)
+cop(limit-15, is-13)
+det(limit-15, a-14)
+punct(limit-15, ,-11)
+case(world-18, of-16)
+det(world-18, the-17)
+nsubj(belong-5, subject-2)
+neg(belong-5, not-4)
+nmod:to(belong-5, world-8)
+advmod(limit-15, rather-10)
+nsubj(limit-15, it-12)
+parataxis(belong-5, limit-15)
+nmod:of(limit-15, world-18)
+G[9, 9] [?1, ?2, ?3, ?4, belong5, limit2147483647, subject2147483647, world2147483647, world2147483647]
+?3-of : is ->?1
+?3-the->world2147483647
+?1-a->limit2147483647
+?2-The->subject2147483647
+?2-  : does ->belong5
+?4- ->?2
+?4-to->belong5
+?1- ->belong5
+?4-the->world2147483647
+------CorefChainz
+CHAIN2-["The subject" in sentence 1, "it" in sentence 1]
+representative mention: "The subject" in sentence 1

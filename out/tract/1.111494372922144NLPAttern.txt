@@ -1,0 +1,39 @@
+ The world is determined by the facts, and by their being all the facts.
+------CorefChainz
+CHAIN3-["the facts" in sentence 1, "all the facts" in sentence 1]
+representative mention: "all the facts" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, determined-4)
+det(world-2, The-1)
+auxpass(determined-4, is-3)
+cc(determined-4, and-9)
+punct(determined-4, .-16)
+punct(determined-4, ,-8)
+case(facts-7, by-5)
+det(facts-7, the-6)
+cop(facts-15, being-12)
+det(facts-15, the-14)
+mark(facts-15, by-10)
+nsubjpass(determined-4, world-2)
+nmod:agent(determined-4, facts-7)
+nsubj(facts-15, their-11)
+det:predet(facts-15, all-13)
+conj:and(determined-4, facts-15)
+G[7, 7] [?1, ?2, ?3, determined4, facts2147483647, facts2147483647, world2147483647]
+?2-agent->determined4
+?2-  : by  : being ->?1
+?3-  : is ->determined4
+?2-the->facts2147483647
+?1-and->determined4
+?3-The->world2147483647
+?1-the->facts2147483647
+------CorefChainz
+CHAIN3-["the facts" in sentence 1, "all the facts" in sentence 1]
+representative mention: "all the facts" in sentence 1

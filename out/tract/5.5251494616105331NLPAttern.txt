@@ -1,0 +1,265 @@
+ It is incorrect to render the proposition '(dx) . fx' in the words, 'fx is possible ' as Russell does. The certainty, possibility, or impossibility of a situation is not expressed by a proposition, but by an expression's being a tautology, a proposition with a sense, or a contradiction. The precedent to which we are constantly inclined to appeal must reside in the symbol itself.
+------CorefChainz
+CHAIN18-["the symbol itself" in sentence 4, "itself" in sentence 4]
+representative mention: "the symbol itself" in sentence 4
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, incorrect-3)
+cop(incorrect-3, is-2)
+punct(incorrect-3, .-12)
+mark(render-5, to-4)
+det(proposition-7, the-6)
+punct(proposition-7, '-8)
+punct(dx-10, -LRB--9)
+punct(dx-10, -RRB--11)
+nsubj(incorrect-3, It-1)
+nsubj:xsubj(render-5, It-1)
+xcomp(incorrect-3, render-5)
+dobj(render-5, proposition-7)
+appos(proposition-7, dx-10)
+---
+qqroot(ROOT-0, incorrect-3)
+cop(incorrect-3, is-2)
+punct(incorrect-3, .-12)
+mark(render-5, to-4)
+det(proposition-7, the-6)
+punct(proposition-7, '-8)
+punct(dx-10, -LRB--9)
+punct(dx-10, -RRB--11)
+nsubj(incorrect-3, It-1)
+nsubj:xsubj(render-5, It-1)
+xcomp(incorrect-3, render-5)
+dobj(render-5, proposition-7)
+appos(proposition-7, dx-10)
+root(ROOT-0, possible-10)
+punct(fx-1, ,-6)
+punct(fx-1, '-2)
+case(words-5, in-3)
+det(words-5, the-4)
+punct(fx-8, `-7)
+cop(possible-10, is-9)
+punct(possible-10, '-11)
+punct(possible-10, .-15)
+mark(does-14, as-12)
+nsubj(possible-10, fx-1)
+nmod:in(fx-1, words-5)
+appos(fx-1, fx-8)
+nsubj(does-14, Russell-13)
+advcl:as(possible-10, does-14)
+---
+qqroot(ROOT-0, incorrect-3)
+cop(incorrect-3, is-2)
+punct(incorrect-3, .-12)
+mark(render-5, to-4)
+det(proposition-7, the-6)
+punct(proposition-7, '-8)
+punct(dx-10, -LRB--9)
+punct(dx-10, -RRB--11)
+nsubj(incorrect-3, It-1)
+nsubj:xsubj(render-5, It-1)
+xcomp(incorrect-3, render-5)
+dobj(render-5, proposition-7)
+appos(proposition-7, dx-10)
+root(ROOT-0, possible-10)
+punct(fx-1, ,-6)
+punct(fx-1, '-2)
+case(words-5, in-3)
+det(words-5, the-4)
+punct(fx-8, `-7)
+cop(possible-10, is-9)
+punct(possible-10, '-11)
+punct(possible-10, .-15)
+mark(does-14, as-12)
+nsubj(possible-10, fx-1)
+nmod:in(fx-1, words-5)
+appos(fx-1, fx-8)
+nsubj(does-14, Russell-13)
+advcl:as(possible-10, does-14)
+root(ROOT-0, expressed-13)
+cc(certainty-2, or-6)
+det(certainty-2, The-1)
+punct(certainty-2, ,-3)
+punct(certainty-2, ,-5)
+case(situation-10, of-8)
+det(situation-10, a-9)
+auxpass(expressed-13, is-11)
+cc(expressed-13, but-18)
+punct(expressed-13, ,-17)
+punct(expressed-13, .-36)
+case(proposition-16, by-14)
+det(proposition-16, a-15)
+case(expression-21, 's-22)
+det(expression-21, an-20)
+cc(tautology-25, or-33)
+cop(tautology-25, being-23)
+det(tautology-25, a-24)
+mark(tautology-25, by-19)
+punct(tautology-25, ,-26)
+punct(tautology-25, ,-32)
+det(proposition-28, a-27)
+case(sense-31, with-29)
+det(sense-31, a-30)
+det(contradiction-35, a-34)
+nsubjpass(expressed-13, certainty-2)
+conj:or(certainty-2, possibility-4)
+nsubjpass(expressed-13, possibility-4)
+conj:or(certainty-2, impossibility-7)
+nsubjpass(expressed-13, impossibility-7)
+nmod:of(impossibility-7, situation-10)
+neg(expressed-13, not-12)
+nmod:agent(expressed-13, proposition-16)
+nsubj(tautology-25, expression-21)
+conj:but(expressed-13, tautology-25)
+conj:but(expressed-13, proposition-28)
+conj:or(tautology-25, proposition-28)
+nmod:with(proposition-28, sense-31)
+conj:but(expressed-13, contradiction-35)
+conj:or(tautology-25, contradiction-35)
+---
+qqroot(ROOT-0, incorrect-3)
+cop(incorrect-3, is-2)
+punct(incorrect-3, .-12)
+mark(render-5, to-4)
+det(proposition-7, the-6)
+punct(proposition-7, '-8)
+punct(dx-10, -LRB--9)
+punct(dx-10, -RRB--11)
+nsubj(incorrect-3, It-1)
+nsubj:xsubj(render-5, It-1)
+xcomp(incorrect-3, render-5)
+dobj(render-5, proposition-7)
+appos(proposition-7, dx-10)
+root(ROOT-0, possible-10)
+punct(fx-1, ,-6)
+punct(fx-1, '-2)
+case(words-5, in-3)
+det(words-5, the-4)
+punct(fx-8, `-7)
+cop(possible-10, is-9)
+punct(possible-10, '-11)
+punct(possible-10, .-15)
+mark(does-14, as-12)
+nsubj(possible-10, fx-1)
+nmod:in(fx-1, words-5)
+appos(fx-1, fx-8)
+nsubj(does-14, Russell-13)
+advcl:as(possible-10, does-14)
+root(ROOT-0, expressed-13)
+cc(certainty-2, or-6)
+det(certainty-2, The-1)
+punct(certainty-2, ,-3)
+punct(certainty-2, ,-5)
+case(situation-10, of-8)
+det(situation-10, a-9)
+auxpass(expressed-13, is-11)
+cc(expressed-13, but-18)
+punct(expressed-13, ,-17)
+punct(expressed-13, .-36)
+case(proposition-16, by-14)
+det(proposition-16, a-15)
+case(expression-21, 's-22)
+det(expression-21, an-20)
+cc(tautology-25, or-33)
+cop(tautology-25, being-23)
+det(tautology-25, a-24)
+mark(tautology-25, by-19)
+punct(tautology-25, ,-26)
+punct(tautology-25, ,-32)
+det(proposition-28, a-27)
+case(sense-31, with-29)
+det(sense-31, a-30)
+det(contradiction-35, a-34)
+nsubjpass(expressed-13, certainty-2)
+conj:or(certainty-2, possibility-4)
+nsubjpass(expressed-13, possibility-4)
+conj:or(certainty-2, impossibility-7)
+nsubjpass(expressed-13, impossibility-7)
+nmod:of(impossibility-7, situation-10)
+neg(expressed-13, not-12)
+nmod:agent(expressed-13, proposition-16)
+nsubj(tautology-25, expression-21)
+conj:but(expressed-13, tautology-25)
+conj:but(expressed-13, proposition-28)
+conj:or(tautology-25, proposition-28)
+nmod:with(proposition-28, sense-31)
+conj:but(expressed-13, contradiction-35)
+conj:or(tautology-25, contradiction-35)
+root(ROOT-0, precedent-2)
+det(precedent-2, The-1)
+punct(precedent-2, .-17)
+case(which-4, to-3)
+auxpass(inclined-8, are-6)
+mark(appeal-10, to-9)
+aux(reside-12, must-11)
+case(symbol-15, in-13)
+det(symbol-15, the-14)
+nmod:to(inclined-8, precedent-2)
+ref(precedent-2, which-4)
+nsubjpass(inclined-8, we-5)
+nsubj:xsubj(appeal-10, we-5)
+advmod(inclined-8, constantly-7)
+acl:relcl(precedent-2, inclined-8)
+xcomp(inclined-8, appeal-10)
+ccomp(appeal-10, reside-12)
+nmod:in(reside-12, symbol-15)
+nmod:npmod(symbol-15, itself-16)
+G[44, 47] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, It1, Russell13, appeal10, certainty2147483647, constantly7, contradiction2147483647, does14, dx10, expressed13, expression2147483647, fx8, fx1, impossibility7, inclined8, incorrect3, itself16, not12, possibility4, possible10, precedent2147483647, proposition2147483647, proposition2147483647, proposition2147483647, render5, reside12, sense2147483647, situation2147483647, symbol2147483647, tautology2147483647, we5, which4, words2147483647]
+?12-The->certainty2147483647
+?4- ->render5
+?5-The->precedent2147483647
+?12- ->expressed13
+?4-the->proposition2147483647
+?6-a->contradiction2147483647
+impossibility7- ->expressed13
+appeal10-  : to ->inclined8
+?7-a->tautology2147483647
+?9-  : by  : being  : 's ->?7
+?6-or->?7
+?3-of->impossibility7
+?10-a->sense2147483647
+It1-xsubj->render5
+not12-  : is ->expressed13
+we5-  : are  : are ->inclined8
+?6-but->expressed13
+inclined8-relcl->?5
+render5-  : to ->incorrect3
+?3-a->situation2147483647
+?11-in->fx1
+possibility4-or->?12
+?9-an->expression2147483647
+It1-  : is ->incorrect3
+?1-but->expressed13
+impossibility7-or->?12
+fx8- ->fx1
+?5-to->inclined8
+fx1- ->possible10
+which4-  : to ->?5
+?1-or->?7
+?2-in->reside12
+?8-a->proposition2147483647
+does14-as : is ->possible10
+we5-xsubj->appeal10
+possibility4- ->expressed13
+?7-but->expressed13
+constantly7- ->inclined8
+?2-the->symbol2147483647
+dx10- ->?4
+?10-with->?1
+?11-the->words2147483647
+?8-agent : by ->expressed13
+reside12-  : must ->appeal10
+itself16-npmod:==->?2
+Russell13- ->does14
+?1-a->proposition2147483647
+------CorefChainz
+CHAIN18-["the symbol itself" in sentence 4, "itself" in sentence 4]
+representative mention: "the symbol itself" in sentence 4

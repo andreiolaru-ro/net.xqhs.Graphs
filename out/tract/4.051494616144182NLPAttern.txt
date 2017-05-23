@@ -1,0 +1,20 @@
+ Reality is compared with propositions.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, compared-3)
+auxpass(compared-3, is-2)
+punct(compared-3, .-6)
+case(propositions-5, with-4)
+nsubjpass(compared-3, Reality-1)
+nmod:with(compared-3, propositions-5)
+G[3, 2] [Reality1, compared3, propositions5]
+Reality1-  : is ->compared3
+propositions5-with->compared3
+------CorefChainz

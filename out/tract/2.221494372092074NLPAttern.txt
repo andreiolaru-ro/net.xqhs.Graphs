@@ -1,0 +1,44 @@
+ What a picture represents it represents independently of its truth or falsity, by means of its pictorial form.
+------CorefChainz
+CHAIN6-["a picture" in sentence 1, "it" in sentence 1, "its" in sentence 1, "its" in sentence 1]
+representative mention: "a picture" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, represents-4)
+mwe(by-14, of-16)
+mwe(by-14, means-15)
+det(picture-3, a-2)
+punct(represents-4, .-20)
+punct(represents-4, ,-13)
+case(truth-10, of-8)
+cc(truth-10, or-11)
+case(form-19, by-14)
+dobj(represents-4, What-1)
+nsubj(represents-4, picture-3)
+nsubj(represents-6, it-5)
+ccomp(represents-4, represents-6)
+advmod(represents-6, independently-7)
+nmod:poss(truth-10, its-9)
+nmod:of(independently-7, truth-10)
+nmod:of(independently-7, falsity-12)
+conj:or(truth-10, falsity-12)
+nmod:poss(form-19, its-17)
+amod(form-19, pictorial-18)
+nmod:by_means_of(represents-4, form-19)
+G[8, 7] [?1, by means of14, form19, independently7, picture2147483647, represents4, represents6, truth10]
+represents6- ->represents4
+?1- ->represents4
+independently7- ->represents6
+?1-a->picture2147483647
+truth10-of : or ->independently7
+form19-by_means_of : by means of ->represents4
+form19-==:==->?1
+------CorefChainz
+CHAIN6-["a picture" in sentence 1, "it" in sentence 1, "its" in sentence 1, "its" in sentence 1]
+representative mention: "a picture" in sentence 1

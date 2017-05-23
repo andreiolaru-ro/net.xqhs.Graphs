@@ -1,0 +1,38 @@
+ A picture whose pictorial form is logical form is called a logical picture.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, called-10)
+det(picture-2, A-1)
+cop(form-8, is-6)
+auxpass(called-10, is-9)
+punct(called-10, .-14)
+det(picture-13, a-11)
+nmod:poss(form-5, picture-2)
+nsubjpass(called-10, picture-2)
+ref(picture-2, whose-3)
+amod(form-5, pictorial-4)
+nsubj(form-8, form-5)
+amod(form-8, logical-7)
+acl:relcl(picture-2, form-8)
+amod(picture-13, logical-12)
+xcomp(called-10, picture-13)
+G[11, 11] [?1, ?2, called10, form5, form8, logical12, logical7, pictorial4, picture2147483647, picture2147483647, whose3]
+logical12- ->?1
+?2-poss->form5
+pictorial4- ->form5
+?1-  : is ->called10
+form8-relcl->?2
+?2- ->called10
+whose3- ->?2
+?1-a->picture2147483647
+logical7- ->form8
+?2-A->picture2147483647
+form5-  : is  : is ->form8
+------CorefChainz

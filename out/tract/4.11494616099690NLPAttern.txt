@@ -1,0 +1,31 @@
+ Propositions represent the existence and non-existence of states of affairs.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, represent-2)
+punct(represent-2, .-11)
+cc(existence-4, and-5)
+det(existence-4, the-3)
+case(states-8, of-7)
+case(affairs-10, of-9)
+nsubj(represent-2, Propositions-1)
+dobj(represent-2, existence-4)
+dobj(represent-2, non-existence-6)
+conj:and(existence-4, non-existence-6)
+nmod:of(existence-4, states-8)
+nmod:of(states-8, affairs-10)
+G[7, 7] [?1, Propositions1, affairs10, existence2147483647, non-existence6, represent2, states8]
+?1-the->existence2147483647
+?1- ->represent2
+non-existence6- ->represent2
+non-existence6-and->?1
+states8-of->?1
+affairs10-of->states8
+Propositions1- ->represent2
+------CorefChainz

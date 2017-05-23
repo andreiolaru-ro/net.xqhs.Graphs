@@ -1,0 +1,30 @@
+ What a picture represents is its sense.
+------CorefChainz
+CHAIN1-["a picture" in sentence 1, "its" in sentence 1]
+representative mention: "a picture" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, sense-7)
+det(picture-3, a-2)
+cop(sense-7, is-5)
+punct(sense-7, .-8)
+dobj(represents-4, What-1)
+nsubj(represents-4, picture-3)
+csubj(sense-7, represents-4)
+nmod:poss(sense-7, its-6)
+G[6, 6] [?1, What1, its6, picture2147483647, represents4, sense7]
+?1-a->picture2147483647
+?1- ->represents4
+represents4-  : is  : is ->sense7
+its6-poss->sense7
+its6- ->?1
+What1- ->represents4
+------CorefChainz
+CHAIN1-["a picture" in sentence 1, "its" in sentence 1]
+representative mention: "a picture" in sentence 1

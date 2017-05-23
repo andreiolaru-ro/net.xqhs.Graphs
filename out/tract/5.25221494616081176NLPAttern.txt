@@ -1,0 +1,213 @@
+ Accordingly I use the sign '[a, x, O'x]' for the general term of the series of forms a, O'a, O'O'a, ... . This bracketed expression is a variable: the first term of the bracketed expression is the beginning of the series of forms, the second is the form of a term x arbitrarily selected from the series, and the third is the form of the term that immediately follows x in the series.
+------CorefChainz
+CHAIN17-["This bracketed expression" in sentence 2, "the bracketed expression" in sentence 2]
+representative mention: "This bracketed expression" in sentence 2
+CHAIN19-["the series of forms a , O ` a , O'O ` a , ... ." in sentence 1, "the series of forms" in sentence 2, "the series" in sentence 2, "the series" in sentence 2]
+representative mention: "the series of forms a , O ` a , O'O ` a , ... ." in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, use-3)
+det(sign-5, the-4)
+punct(sign-5, '-16)
+punct(sign-5, '-6)
+compound(x-14, x-10)
+compound(x-14, O-12)
+det(x-14, a-8)
+punct(x-14, -LSB--7)
+punct(x-14, ,-9)
+punct(x-14, ,-11)
+punct(x-14, `-13)
+punct(x-14, -RSB--15)
+case(term-20, for-17)
+det(term-20, the-18)
+case(series-23, of-21)
+det(series-23, the-22)
+case(forms-25, of-24)
+punct(a-26, ,-27)
+punct(O-28, `-29)
+punct(a-30, .-37)
+punct(a-34, `-33)
+punct(a-34, ,-35)
+punct(a-34, ...-36)
+punct(a-34, ,-31)
+advmod(use-3, Accordingly-1)
+nsubj(use-3, I-2)
+dobj(use-3, sign-5)
+appos(sign-5, x-14)
+amod(term-20, general-19)
+nmod:for(use-3, term-20)
+nmod:of(term-20, series-23)
+nmod:of(series-23, forms-25)
+dep(forms-25, a-26)
+root(,-27, O-28)
+root(`-29, a-30)
+dep(a-34, O'O-32)
+dep(a-30, a-34)
+---
+qqroot(ROOT-0, use-3)
+det(sign-5, the-4)
+punct(sign-5, '-16)
+punct(sign-5, '-6)
+compound(x-14, x-10)
+compound(x-14, O-12)
+det(x-14, a-8)
+punct(x-14, -LSB--7)
+punct(x-14, ,-9)
+punct(x-14, ,-11)
+punct(x-14, `-13)
+punct(x-14, -RSB--15)
+case(term-20, for-17)
+det(term-20, the-18)
+case(series-23, of-21)
+det(series-23, the-22)
+case(forms-25, of-24)
+punct(a-26, ,-27)
+punct(O-28, `-29)
+punct(a-30, .-37)
+punct(a-34, `-33)
+punct(a-34, ,-35)
+punct(a-34, ...-36)
+punct(a-34, ,-31)
+advmod(use-3, Accordingly-1)
+nsubj(use-3, I-2)
+dobj(use-3, sign-5)
+appos(sign-5, x-14)
+amod(term-20, general-19)
+nmod:for(use-3, term-20)
+nmod:of(term-20, series-23)
+nmod:of(series-23, forms-25)
+dep(forms-25, a-26)
+root(,-27, O-28)
+root(`-29, a-30)
+dep(a-34, O'O-32)
+dep(a-30, a-34)
+root(ROOT-0, variable-6)
+det(expression-3, This-1)
+cop(variable-6, is-4)
+det(variable-6, a-5)
+punct(variable-6, :-7)
+punct(variable-6, .-55)
+det(term-10, the-8)
+case(expression-14, of-11)
+det(expression-14, the-12)
+cc(beginning-17, and-39)
+cop(beginning-17, is-15)
+det(beginning-17, the-16)
+punct(beginning-17, ,-38)
+punct(beginning-17, ,-23)
+case(series-20, of-18)
+det(series-20, the-19)
+case(forms-22, of-21)
+det(second-25, the-24)
+cop(form-28, is-26)
+det(form-28, the-27)
+case(x-32, of-29)
+compound(x-32, term-31)
+det(x-32, a-30)
+case(series-37, from-35)
+det(series-37, the-36)
+det(third-41, the-40)
+cop(form-44, is-42)
+det(form-44, the-43)
+case(term-47, of-45)
+det(term-47, the-46)
+case(series-54, in-52)
+det(series-54, the-53)
+amod(expression-3, bracketed-2)
+nsubj(variable-6, expression-3)
+amod(term-10, first-9)
+nsubj(beginning-17, term-10)
+amod(expression-14, bracketed-13)
+nmod:of(term-10, expression-14)
+parataxis(variable-6, beginning-17)
+nmod:of(beginning-17, series-20)
+nmod:of(series-20, forms-22)
+nsubj(form-28, second-25)
+acl:relcl(beginning-17, form-28)
+nmod:of(form-28, x-32)
+advmod(selected-34, arbitrarily-33)
+acl(x-32, selected-34)
+nmod:from(selected-34, series-37)
+nsubj(form-44, third-41)
+parataxis(variable-6, form-44)
+conj:and(beginning-17, form-44)
+nmod:of(form-44, term-47)
+nsubj(follows-50, term-47)
+ref(term-47, that-48)
+advmod(follows-50, immediately-49)
+acl:relcl(term-47, follows-50)
+dobj(follows-50, x-51)
+nmod:in(follows-50, series-54)
+G[58, 60] [,27, ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?18, Accordingly1, I2, O28, O x x2147483647, O'O32, `29, a30, a34, a26, arbitrarily33, beginning2147483647, bracketed13, bracketed2, expression2147483647, expression2147483647, first9, follows50, form2147483647, form2147483647, forms22, forms25, general19, immediately49, second2147483647, selected34, series2147483647, series2147483647, series2147483647, series2147483647, sign2147483647, term2147483647, term2147483647, term2147483647, term x2147483647, that48, third2147483647, use3, variable2147483647, x51]
+?1- ->?13
+?15-the->third2147483647
+?7-of->?10
+?5- ->?16
+?3- ->?9
+?4- ->?9
+?18-  : is ->?12
+?13-the->sign2147483647
+?14-for->use3
+general19- ->?14
+a34- ->a30
+?1- ->use3
+forms22-of->?17
+?3-from->selected34
+?8-a->term x2147483647
+?2-of->?6
+?2-the->term2147483647
+bracketed13- ->?7
+?1-a->O x x2147483647
+?5-the->beginning2147483647
+?12-the->form2147483647
+?14- ->?9
+O'O32- ->a34
+selected34- ->?8
+?15-  : is ->?6
+a26- ->forms25
+follows50-relcl->?2
+?13- ->use3
+?11-  : is ->?16
+?10-  : is  : is ->?5
+?10-the->term2147483647
+?12-relcl->?5
+O28- ->,27
+?17-of->?5
+?4-the->series2147483647
+forms25-of->?9
+first9- ->?10
+?4-in->follows50
+?6-and->?5
+?14-the->term2147483647
+that48- ->?2
+bracketed2- ->?11
+I2- ->use3
+?8-of->?12
+?3-the->series2147483647
+immediately49- ->follows50
+Accordingly1- ->use3
+?17-the->series2147483647
+?6-the->form2147483647
+?16-a->variable2147483647
+x51- ->follows50
+?9-the->series2147483647
+?11-This->expression2147483647
+?7-the->expression2147483647
+arbitrarily33- ->selected34
+?6- ->?16
+?2- ->follows50
+?18-the->second2147483647
+?9-of->?14
+a30- ->`29
+------CorefChainz
+CHAIN17-["This bracketed expression" in sentence 2, "the bracketed expression" in sentence 2]
+representative mention: "This bracketed expression" in sentence 2
+CHAIN19-["the series of forms a , O ` a , O'O ` a , ... ." in sentence 1, "the series of forms" in sentence 2, "the series" in sentence 2, "the series" in sentence 2]
+representative mention: "the series of forms a , O ` a , O'O ` a , ... ." in sentence 1

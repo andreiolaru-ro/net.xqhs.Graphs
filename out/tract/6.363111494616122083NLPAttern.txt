@@ -1,0 +1,54 @@
+ It is an hypothesis that the sun will rise tomorrow: and this means that we do not know whether it will rise.
+------CorefChainz
+CHAIN6-["It" in sentence 1, "it" in sentence 1]
+representative mention: "It" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, hypothesis-4)
+cc(hypothesis-4, and-12)
+cop(hypothesis-4, is-2)
+det(hypothesis-4, an-3)
+punct(hypothesis-4, .-24)
+punct(hypothesis-4, :-11)
+det(sun-7, the-6)
+aux(rise-9, will-8)
+mark(rise-9, that-5)
+aux(know-19, do-17)
+mark(know-19, that-15)
+aux(rise-23, will-22)
+mark(rise-23, whether-20)
+nsubj(hypothesis-4, It-1)
+nsubj(rise-9, sun-7)
+ccomp(hypothesis-4, rise-9)
+nmod:tmod(rise-9, tomorrow-10)
+nsubj(means-14, this-13)
+conj:and(hypothesis-4, means-14)
+nsubj(know-19, we-16)
+neg(know-19, not-18)
+ccomp(means-14, know-19)
+nsubj(rise-23, it-21)
+ccomp(know-19, rise-23)
+G[14, 14] [?1, ?2, It1, hypothesis2147483647, it21, know19, means14, not18, rise23, rise9, sun2147483647, this13, tomorrow10, we16]
+not18- ->know19
+means14-and->?2
+know19-  : that  : that ->means14
+It1-  : is ->?2
+?1-the->sun2147483647
+?1-  : will ->rise9
+it21- ->It1
+rise9-  : that ->?2
+tomorrow10-tmod->rise9
+?2-an->hypothesis2147483647
+it21-  : will ->rise23
+we16-  : do  : do ->know19
+this13- ->means14
+rise23-  : whether  : whether ->know19
+------CorefChainz
+CHAIN6-["It" in sentence 1, "it" in sentence 1]
+representative mention: "It" in sentence 1

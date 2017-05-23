@@ -1,0 +1,82 @@
+ In a state of affairs objects stand in a determinate relation to one another.
+------CorefChainz
+In-IN 
+a-DT 
+state-NN 
+of-IN 
+affairs-NNS 
+objects-NNS 
+stand-VBP 
+in-IN 
+a-DT 
+determinate-JJ 
+relation-NN 
+to-TO 
+one-CD 
+another-DT 
+.-. 
+ROOT 	-> S 	-> PP 	-> IN 	-> In
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> state
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NNS 	-> affairs
+					 	-> NP 	-> NNS 	-> objects
+		 	-> VP 	-> VBP 	-> stand
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> determinate
+	 	-> NN 	-> relation
+			 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> CD 	-> one
+	 	-> DT 	-> another
+				 	-> . 	-> .
+			
+Dependensee repr
+case(state-3, In-1)
+det(state-3, a-2)
+nmod:in(stand-7, state-3)
+case(affairs-5, of-4)
+nmod:of(state-3, affairs-5)
+nsubj(stand-7, objects-6)
+root(ROOT-0, stand-7)
+case(relation-11, in-8)
+det(relation-11, a-9)
+amod(relation-11, determinate-10)
+nmod:in(stand-7, relation-11)
+case(one-13, to-12)
+nmod:to(stand-7, one-13)
+dep(one-13, another-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, state-3)
+case(state-3, In-1)
+det(state-3, a-2)
+punct(state-3, .-15)
+case(affairs-5, of-4)
+case(relation-11, in-8)
+det(relation-11, a-9)
+case(one-13, to-12)
+nmod:of(state-3, affairs-5)
+nsubj(stand-7, objects-6)
+acl:relcl(affairs-5, stand-7)
+amod(relation-11, determinate-10)
+nmod:in(stand-7, relation-11)
+nmod:to(relation-11, one-13)
+dep(one-13, another-14)
+G[10, 9] [?#1, ?#2, affairs, another, determinate, objects, one, relation, stand, state]
+affairs-of : In ->?#2
+objects- ->stand
+one-to->?#1
+stand-relcl->affairs
+?#1-a->relation
+?#2-a->state
+determinate- ->?#1
+?#1-in->stand
+another- ->one
+------CorefChainz

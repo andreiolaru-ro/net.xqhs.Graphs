@@ -1,0 +1,46 @@
+ Objects make up the substance of the world. That is why they cannot be composite.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, make-2)
+punct(make-2, .-9)
+det(substance-5, the-4)
+case(world-8, of-6)
+det(world-8, the-7)
+nsubj(make-2, Objects-1)
+compound:prt(make-2, up-3)
+dobj(make-2, substance-5)
+nmod:of(substance-5, world-8)
+---
+qqroot(ROOT-0, make-2)
+punct(make-2, .-9)
+det(substance-5, the-4)
+case(world-8, of-6)
+det(world-8, the-7)
+nsubj(make-2, Objects-1)
+compound:prt(make-2, up-3)
+dobj(make-2, substance-5)
+nmod:of(substance-5, world-8)
+root(ROOT-0, is-2)
+punct(is-2, .-9)
+aux(composite-8, can-5)
+cop(composite-8, be-7)
+nsubj(is-2, That-1)
+advmod(composite-8, why-3)
+nsubj(composite-8, they-4)
+neg(composite-8, not-6)
+advcl(is-2, composite-8)
+G[7, 5] [?1, ?2, composite8, is2, make2, substance2147483647, world2147483647]
+?2-the->world2147483647
+?2-of->?1
+composite8-  : can  : be ->is2
+?1-the->substance2147483647
+?1- ->make2
+------CorefChainz

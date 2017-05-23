@@ -1,0 +1,17 @@
+ Objects are simple.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, simple-3)
+cop(simple-3, are-2)
+punct(simple-3, .-4)
+nsubj(simple-3, Objects-1)
+G[2, 1] [Objects1, simple3]
+Objects1-  : are ->simple3
+------CorefChainz

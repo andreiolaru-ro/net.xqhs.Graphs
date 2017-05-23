@@ -1,0 +1,102 @@
+ It is as impossible to represent in language anything that 'contradicts logic' as it is in geometry to represent by its coordinates a figure that contradicts the laws of space, or to give the coordinates of a point that does not exist.
+------CorefChainz
+CHAIN5-["it" in sentence 1, "its" in sentence 1]
+representative mention: "it" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, impossible-4)
+cop(impossible-4, is-2)
+punct(impossible-4, .-46)
+mark(represent-6, to-5)
+case(anything-9, in-7)
+compound(anything-9, language-8)
+punct(contradicts-12, `-11)
+punct(contradicts-12, '-14)
+case(geometry-19, in-18)
+cop(geometry-19, is-17)
+mark(geometry-19, as-15)
+mark(represent-21, to-20)
+case(coordinates-24, by-22)
+cc(figure-26, or-34)
+det(figure-26, a-25)
+punct(figure-26, ,-33)
+det(laws-30, the-29)
+case(space-32, of-31)
+mark(give-36, to-35)
+det(coordinates-38, the-37)
+case(point-41, of-39)
+det(point-41, a-40)
+aux(exist-45, does-43)
+nsubj(impossible-4, It-1)
+nsubj:xsubj(represent-6, It-1)
+advmod(impossible-4, as-3)
+xcomp(impossible-4, represent-6)
+nmod:in(represent-6, anything-9)
+nsubj(contradicts-12, anything-9)
+ref(anything-9, that-10)
+acl:relcl(anything-9, contradicts-12)
+dobj(contradicts-12, logic-13)
+nsubj(geometry-19, it-16)
+advcl:as(contradicts-12, geometry-19)
+acl:to(geometry-19, represent-21)
+nmod:poss(coordinates-24, its-23)
+nmod:by(represent-21, coordinates-24)
+dep(coordinates-24, figure-26)
+nsubj(contradicts-28, figure-26)
+ref(figure-26, that-27)
+acl:relcl(figure-26, contradicts-28)
+dobj(contradicts-28, laws-30)
+nmod:of(laws-30, space-32)
+dep(coordinates-24, give-36)
+conj:or(figure-26, give-36)
+nsubj(contradicts-28, give-36)
+dobj(give-36, coordinates-38)
+nmod:of(coordinates-38, point-41)
+nsubj(exist-45, point-41)
+ref(point-41, that-42)
+neg(exist-45, not-44)
+acl:relcl(point-41, exist-45)
+G[28, 34] [?1, ?2, ?3, ?4, It1, as3, contradicts28, contradicts12, coordinates24, coordinates2147483647, exist45, figure2147483647, geometry19, give36, impossible4, it16, its23, language anything9, laws2147483647, logic13, not44, point2147483647, represent6, represent21, space32, that42, that10, that27]
+contradicts12-relcl->language anything9
+coordinates24-by->represent21
+language anything9-in->represent6
+represent6-  : to ->impossible4
+logic13- ->contradicts12
+that42- ->?2
+It1-  : is  : is ->impossible4
+give36-or->?4
+?4- ->contradicts28
+as3- ->impossible4
+?4-a->figure2147483647
+it16-  : is  : in ->geometry19
+geometry19-as->contradicts12
+?1- ->contradicts28
+?1-the->laws2147483647
+?4- ->coordinates24
+?3-  : to ->give36
+not44-  : does ->exist45
+It1-xsubj->represent6
+?2-a->point2147483647
+?3-the->coordinates2147483647
+that27- ->?4
+space32-of->?1
+that10- ->language anything9
+its23-poss->coordinates24
+its23- ->it16
+exist45-relcl->?2
+?2- ->exist45
+?2-of->?3
+give36- ->coordinates24
+contradicts28-relcl->?4
+give36- ->contradicts28
+language anything9- ->contradicts12
+represent21-to->geometry19
+------CorefChainz
+CHAIN5-["it" in sentence 1, "its" in sentence 1]
+representative mention: "it" in sentence 1

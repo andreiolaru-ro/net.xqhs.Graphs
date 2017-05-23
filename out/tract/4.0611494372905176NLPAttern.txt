@@ -1,0 +1,161 @@
+ It must not be overlooked that a proposition has a sense that is independent of the facts: otherwise one can easily suppose that true and false are relations of equal status between signs and what they signify. In that case one could say, for example, that 'p' signified in the true way what 'Pp' signified in the false way, etc.
+------CorefChainz
+CHAIN8-["signs" in sentence 1, "they" in sentence 1]
+representative mention: "signs" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, overlooked-5)
+aux(overlooked-5, must-2)
+auxpass(overlooked-5, be-4)
+punct(overlooked-5, :-18)
+punct(overlooked-5, .-39)
+det(proposition-8, a-7)
+mark(has-9, that-6)
+det(sense-11, a-10)
+cop(independent-14, is-13)
+case(facts-17, of-15)
+det(facts-17, the-16)
+aux(suppose-23, can-21)
+cc(true-25, and-26)
+cop(relations-29, are-28)
+mark(relations-29, that-24)
+case(status-32, of-30)
+case(signs-34, between-33)
+cc(signs-34, and-35)
+nsubjpass(overlooked-5, It-1)
+neg(overlooked-5, not-3)
+nsubj(has-9, proposition-8)
+ccomp(overlooked-5, has-9)
+dobj(has-9, sense-11)
+nsubj(independent-14, sense-11)
+ref(sense-11, that-12)
+acl:relcl(sense-11, independent-14)
+nmod:of(independent-14, facts-17)
+advmod(suppose-23, otherwise-19)
+nsubj(suppose-23, one-20)
+advmod(suppose-23, easily-22)
+parataxis(overlooked-5, suppose-23)
+nsubj(relations-29, true-25)
+conj:and(true-25, false-27)
+nsubj(relations-29, false-27)
+ccomp(suppose-23, relations-29)
+amod(status-32, equal-31)
+nmod:of(relations-29, status-32)
+nmod:between(status-32, signs-34)
+dobj(signify-38, what-36)
+nsubj(signify-38, they-37)
+nmod:between(status-32, signify-38)
+conj:and(signs-34, signify-38)
+---
+qqroot(ROOT-0, overlooked-5)
+aux(overlooked-5, must-2)
+auxpass(overlooked-5, be-4)
+punct(overlooked-5, :-18)
+punct(overlooked-5, .-39)
+det(proposition-8, a-7)
+mark(has-9, that-6)
+det(sense-11, a-10)
+cop(independent-14, is-13)
+case(facts-17, of-15)
+det(facts-17, the-16)
+aux(suppose-23, can-21)
+cc(true-25, and-26)
+cop(relations-29, are-28)
+mark(relations-29, that-24)
+case(status-32, of-30)
+case(signs-34, between-33)
+cc(signs-34, and-35)
+nsubjpass(overlooked-5, It-1)
+neg(overlooked-5, not-3)
+nsubj(has-9, proposition-8)
+ccomp(overlooked-5, has-9)
+dobj(has-9, sense-11)
+nsubj(independent-14, sense-11)
+ref(sense-11, that-12)
+acl:relcl(sense-11, independent-14)
+nmod:of(independent-14, facts-17)
+advmod(suppose-23, otherwise-19)
+nsubj(suppose-23, one-20)
+advmod(suppose-23, easily-22)
+parataxis(overlooked-5, suppose-23)
+nsubj(relations-29, true-25)
+conj:and(true-25, false-27)
+nsubj(relations-29, false-27)
+ccomp(suppose-23, relations-29)
+amod(status-32, equal-31)
+nmod:of(relations-29, status-32)
+nmod:between(status-32, signs-34)
+dobj(signify-38, what-36)
+nsubj(signify-38, they-37)
+nmod:between(status-32, signify-38)
+conj:and(signs-34, signify-38)
+root(ROOT-0, say-6)
+case(case-3, In-1)
+det(case-3, that-2)
+aux(say-6, could-5)
+punct(say-6, ,-7)
+punct(say-6, ,-10)
+punct(say-6, .-31)
+case(example-9, for-8)
+mark(signified-15, that-11)
+punct(signified-15, `-12)
+punct(signified-15, '-14)
+case(way-19, in-16)
+det(way-19, the-17)
+det(Pp-22, what-20)
+punct(Pp-22, `-21)
+punct(Pp-22, '-23)
+punct(Pp-22, ,-29)
+case(way-28, in-25)
+det(way-28, the-26)
+nmod:in(say-6, case-3)
+nsubj(say-6, one-4)
+nmod:for(say-6, example-9)
+nsubj(signified-15, p-13)
+ccomp(say-6, signified-15)
+amod(way-19, true-18)
+nmod:in(signified-15, way-19)
+dep(way-19, Pp-22)
+acl(Pp-22, signified-24)
+amod(way-28, false-27)
+nmod:in(signified-24, way-28)
+dep(Pp-22, etc.-30)
+G[27, 28] [?1, ?2, ?3, ?4, ?5, ?6, ?7, Pp2147483647, case2147483647, example9, facts2147483647, has9, independent14, overlooked5, proposition2147483647, relations29, say6, sense2147483647, signified15, signified24, signify38, signs34, status32, suppose23, true25, way2147483647, way2147483647]
+signs34-between->status32
+relations29-  : that  : that  : can ->suppose23
+?6-the->facts2147483647
+?2-in : In  : could ->say6
+?7- ->has9
+status32-of->relations29
+?4- ->?1
+signify38-between->status32
+true25-  : and  : are ->relations29
+?7- ->signs34
+?7-a->proposition2147483647
+?5- ->independent14
+independent14-relcl : is  : is ->?5
+?5- ->has9
+signified24- ->?4
+?1-in->signified15
+?1-the->way2147483647
+?2-that->case2147483647
+?5-a->sense2147483647
+signify38-and->signs34
+suppose23- ->overlooked5
+?6-of->independent14
+?4-what->Pp2147483647
+has9-  : that  : must  : be ->overlooked5
+example9-for->say6
+signified15-  : that ->say6
+?3-the->way2147483647
+?3-in->signified24
+------CorefChainz
+CHAIN8-["signs" in sentence 1, "they" in sentence 1]
+representative mention: "signs" in sentence 1

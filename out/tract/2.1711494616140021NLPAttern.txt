@@ -1,0 +1,79 @@
+ A picture can depict any reality whose form it has. A spatial picture can depict anything spatial, a coloured one anything coloured, etc.
+------CorefChainz
+CHAIN3-["A picture" in sentence 1, "it" in sentence 1]
+representative mention: "A picture" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, depict-4)
+det(picture-2, A-1)
+aux(depict-4, can-3)
+punct(depict-4, .-11)
+det(reality-6, any-5)
+nsubj(depict-4, picture-2)
+dobj(depict-4, reality-6)
+nmod:poss(form-8, reality-6)
+ref(reality-6, whose-7)
+dobj(has-10, form-8)
+nsubj(has-10, it-9)
+acl:relcl(reality-6, has-10)
+---
+qqroot(ROOT-0, depict-4)
+det(picture-2, A-1)
+aux(depict-4, can-3)
+punct(depict-4, .-11)
+det(reality-6, any-5)
+nsubj(depict-4, picture-2)
+dobj(depict-4, reality-6)
+nmod:poss(form-8, reality-6)
+ref(reality-6, whose-7)
+dobj(has-10, form-8)
+nsubj(has-10, it-9)
+acl:relcl(reality-6, has-10)
+root(ROOT-0, depict-5)
+det(picture-3, A-1)
+aux(depict-5, can-4)
+punct(depict-5, ,-8)
+punct(depict-5, .-16)
+det(anything-12, a-9)
+punct(coloured-13, ,-14)
+amod(picture-3, spatial-2)
+nsubj(depict-5, picture-3)
+dobj(depict-5, anything-6)
+amod(anything-6, spatial-7)
+amod(anything-12, coloured-10)
+nummod(anything-12, one-11)
+dobj(depict-5, anything-12)
+acl(anything-12, coloured-13)
+dep(coloured-13, etc.-15)
+G[21, 21] [?1, ?2, ?3, ?4, anything6, anything2147483647, coloured13, coloured10, depict5, depict4, etc.15, form8, has10, it9, one11, picture2147483647, picture2147483647, reality2147483647, spatial2, spatial7, whose7]
+one11- ->?1
+?4-  : can ->depict5
+spatial7- ->anything6
+?1-a->anything2147483647
+spatial2- ->?4
+whose7- ->?2
+has10-relcl->?2
+?2-any->reality2147483647
+etc.15- ->coloured13
+?3-A->picture2147483647
+?3-  : can ->depict4
+coloured10- ->?1
+it9- ->spatial2
+anything6- ->depict5
+?2- ->depict4
+?4-A->picture2147483647
+coloured13- ->?1
+?2-poss->form8
+it9- ->has10
+?1- ->depict5
+form8- ->has10
+------CorefChainz
+CHAIN3-["A picture" in sentence 1, "it" in sentence 1]
+representative mention: "A picture" in sentence 1

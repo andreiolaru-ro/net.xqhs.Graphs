@@ -1,0 +1,203 @@
+ Each thing is, as it were, in a space of possible states of affairs. This space I can imagine empty, but I cannot imagine the thing without the space.
+------CorefChainz
+CHAIN6-["I" in sentence 2, "I" in sentence 2]
+representative mention: "I" in sentence 2
+CHAIN7-["Each thing" in sentence 1, "it" in sentence 1, "the thing" in sentence 2]
+representative mention: "Each thing" in sentence 1
+CHAIN8-["a space of possible states of affairs" in sentence 1, "the space" in sentence 2]
+representative mention: "a space of possible states of affairs" in sentence 1
+Each-DT 
+thing-NN 
+is-VBZ 
+,-, 
+as-IN 
+it-PRP 
+were-VBD 
+,-, 
+in-IN 
+a-DT 
+space-NN 
+of-IN 
+possible-JJ 
+states-NNS 
+of-IN 
+affairs-NNS 
+.-. 
+This-DT 
+space-NN 
+I-PRP 
+can-MD 
+imagine-VB 
+empty-JJ 
+,-, 
+but-CC 
+I-PRP 
+can-MD 
+not-RB 
+imagine-VB 
+the-DT 
+thing-NN 
+without-IN 
+the-DT 
+space-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> DT 	-> Each
+	 	-> NN 	-> thing
+		 	-> VP 	-> VBZ 	-> is
+	 	-> , 	-> ,
+	 	-> SBAR 	-> IN 	-> as
+	 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> VBD 	-> were
+				 	-> , 	-> ,
+	 	-> FRAG 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> space
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> JJ 	-> possible
+	 	-> NNS 	-> states
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NNS 	-> affairs
+						 	-> . 	-> .
+		 	-> NP 	-> DT 	-> This
+	 	-> NN 	-> space
+					 	-> PRN 	-> S 	-> NP 	-> PRP 	-> I
+		 	-> VP 	-> MD 	-> can
+	 	-> VP 	-> VB 	-> imagine
+	 	-> ADJP 	-> JJ 	-> empty
+					 	-> , 	-> ,
+		 	-> CC 	-> but
+	 	-> S 	-> NP 	-> PRP 	-> I
+		 	-> VP 	-> MD 	-> can
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> imagine
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> thing
+		 	-> PP 	-> IN 	-> without
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> space
+						 	-> . 	-> .
+			
+Dependensee repr
+det(thing-2, Each-1)
+nsubj(is-3, thing-2)
+root(ROOT-0, is-3)
+mark(were-7, as-5)
+nsubj(were-7, it-6)
+advcl(is-3, were-7)
+case(space-11, in-9)
+det(space-11, a-10)
+nmod:in(space-19, space-11)
+case(states-14, of-12)
+amod(states-14, possible-13)
+nmod:of(space-11, states-14)
+case(affairs-16, of-15)
+nmod:of(states-14, affairs-16)
+det(space-19, This-18)
+dep(is-3, space-19)
+nsubj(imagine-22, I-20)
+aux(imagine-22, can-21)
+dep(is-3, imagine-22)
+xcomp(imagine-22, empty-23)
+cc(is-3, but-25)
+nsubj(imagine-29, I-26)
+aux(imagine-29, can-27)
+neg(imagine-29, not-28)
+conj:but(is-3, imagine-29)
+det(thing-31, the-30)
+dobj(imagine-29, thing-31)
+case(space-34, without-32)
+det(space-34, the-33)
+nmod:without(imagine-29, space-34)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-3)
+det(thing-2, Each-1)
+punct(is-3, ,-4)
+mark(were-7, as-5)
+punct(were-7, ,-8)
+case(space-11, in-9)
+det(space-11, a-10)
+punct(space-11, .-17)
+case(states-14, of-12)
+case(affairs-16, of-15)
+nsubj(is-3, thing-2)
+nsubj(were-7, it-6)
+advcl:as(is-3, were-7)
+root(,-8, space-11)
+amod(states-14, possible-13)
+nmod:of(space-11, states-14)
+nmod:of(states-14, affairs-16)
+---
+qqroot(ROOT-0, is-3)
+det(thing-2, Each-1)
+punct(is-3, ,-4)
+mark(were-7, as-5)
+punct(were-7, ,-8)
+case(space-11, in-9)
+det(space-11, a-10)
+punct(space-11, .-17)
+case(states-14, of-12)
+case(affairs-16, of-15)
+nsubj(is-3, thing-2)
+nsubj(were-7, it-6)
+advcl:as(is-3, were-7)
+root(,-8, space-11)
+amod(states-14, possible-13)
+nmod:of(space-11, states-14)
+nmod:of(states-14, affairs-16)
+root(ROOT-0, space-2)
+cc(space-2, but-8)
+det(space-2, This-1)
+punct(space-2, ,-7)
+punct(space-2, .-18)
+aux(imagine-5, can-4)
+aux(imagine-12, can-10)
+det(thing-14, the-13)
+case(space-17, without-15)
+det(space-17, the-16)
+nsubj(imagine-5, I-3)
+acl:relcl(space-2, imagine-5)
+xcomp(imagine-5, empty-6)
+nsubj(imagine-12, I-9)
+neg(imagine-12, not-11)
+conj:but(space-2, imagine-12)
+dobj(imagine-12, thing-14)
+nmod:without(imagine-12, space-17)
+G[23, 23] [,, ?#1, ?#2, ?#3, ?#4, ?#5, I, I, affairs, empty, imagine, imagine, is, it, not, possible, space, space, space, states, thing, thing, were]
+?#2-without->imagine
+?#1- ->?#4
+affairs-of->states
+it- ->?#4
+?#2-the->space
+states-of->?#3
+possible- ->states
+?#2- ->?#3
+it- ->were
+?#1- ->imagine
+not- ->imagine
+?#5-This->space
+?#4-Each->thing
+imagine-but->?#5
+?#4- ->is
+?#3-  : in ->,
+?#3-a->space
+I-  : can ->imagine
+imagine-relcl->?#5
+empty- ->imagine
+?#1-the->thing
+I-  : can  : can ->imagine
+were-as->is
+------CorefChainz
+CHAIN6-["I" in sentence 2, "I" in sentence 2]
+representative mention: "I" in sentence 2
+CHAIN7-["Each thing" in sentence 1, "it" in sentence 1, "the thing" in sentence 2]
+representative mention: "Each thing" in sentence 1
+CHAIN8-["a space of possible states of affairs" in sentence 1, "the space" in sentence 2]
+representative mention: "a space of possible states of affairs" in sentence 1

@@ -1,0 +1,113 @@
+ We ought not to forget that any description of the world by means of mechanics will be of the completely general kind. For example, it will never mention particular point-masses: it will only talk about any point- masses whatsoever.
+------CorefChainz
+CHAIN8-["any description of the world by means of mechanics" in sentence 1, "it" in sentence 2, "it" in sentence 2]
+representative mention: "any description of the world by means of mechanics" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, ought-2)
+mwe(by-12, means-13)
+mwe(by-12, of-14)
+punct(ought-2, .-23)
+mark(forget-5, to-4)
+det(description-8, any-7)
+case(world-11, of-9)
+det(world-11, the-10)
+case(mechanics-15, by-12)
+aux(kind-22, will-16)
+case(kind-22, of-18)
+cop(kind-22, be-17)
+det(kind-22, the-19)
+mark(kind-22, that-6)
+nsubj(ought-2, We-1)
+nsubj:xsubj(forget-5, We-1)
+neg(forget-5, not-3)
+xcomp(ought-2, forget-5)
+nsubj(kind-22, description-8)
+nmod:of(description-8, world-11)
+nmod:by_means_of(description-8, mechanics-15)
+advmod(general-21, completely-20)
+amod(kind-22, general-21)
+ccomp(forget-5, kind-22)
+---
+qqroot(ROOT-0, ought-2)
+mwe(by-12, means-13)
+mwe(by-12, of-14)
+punct(ought-2, .-23)
+mark(forget-5, to-4)
+det(description-8, any-7)
+case(world-11, of-9)
+det(world-11, the-10)
+case(mechanics-15, by-12)
+aux(kind-22, will-16)
+case(kind-22, of-18)
+cop(kind-22, be-17)
+det(kind-22, the-19)
+mark(kind-22, that-6)
+nsubj(ought-2, We-1)
+nsubj:xsubj(forget-5, We-1)
+neg(forget-5, not-3)
+xcomp(ought-2, forget-5)
+nsubj(kind-22, description-8)
+nmod:of(description-8, world-11)
+nmod:by_means_of(description-8, mechanics-15)
+advmod(general-21, completely-20)
+amod(kind-22, general-21)
+ccomp(forget-5, kind-22)
+root(ROOT-0, mention-7)
+case(example-2, For-1)
+aux(mention-7, will-5)
+punct(mention-7, ,-3)
+punct(mention-7, .-21)
+punct(mention-7, :-10)
+aux(talk-14, will-12)
+case(point-17, about-15)
+det(point-17, any-16)
+punct(point-17, --18)
+nmod:for(mention-7, example-2)
+nsubj(mention-7, it-4)
+neg(mention-7, never-6)
+amod(point-masses-9, particular-8)
+dobj(mention-7, point-masses-9)
+nsubj(talk-14, it-11)
+advmod(talk-14, only-13)
+parataxis(mention-7, talk-14)
+nmod:about(talk-14, point-17)
+dep(point-17, masses-19)
+advmod(masses-19, whatsoever-20)
+G[27, 26] [?1, ?2, ?3, ?4, We1, by means of12, completely20, description2147483647, example2, forget5, general21, it4, it11, kind2147483647, masses19, mechanics15, mention7, never6, not3, only13, ought2, particular8, point2147483647, point-masses9, talk14, whatsoever20, world2147483647]
+never6- ->mention7
+it4- ->?3
+particular8- ->point-masses9
+masses19- ->?4
+?3-any->description2147483647
+it11-  : will  : will ->talk14
+?4-any->point2147483647
+general21-  : will  : be  : of ->?1
+?4-about->talk14
+We1- ->ought2
+only13- ->talk14
+?2-the->world2147483647
+it4-  : will  : will ->mention7
+?3- ->?1
+We1-xsubj->forget5
+forget5- ->ought2
+completely20- ->general21
+?1-the->kind2147483647
+?1-  : that ->forget5
+?2-of:== : of ->?3
+whatsoever20- ->masses19
+point-masses9- ->mention7
+mechanics15-by_means_of : by means of ->?3
+not3-  : to ->forget5
+example2-for : For ->mention7
+talk14- ->mention7
+------CorefChainz
+CHAIN8-["any description of the world by means of mechanics" in sentence 1, "it" in sentence 2, "it" in sentence 2]
+representative mention: "any description of the world by means of mechanics" in sentence 1

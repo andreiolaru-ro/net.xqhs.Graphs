@@ -1,0 +1,43 @@
+ The configuration of objects in a situation corresponds to the configuration of simple signs in the propositional sign.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, configuration-2)
+det(configuration-2, The-1)
+punct(configuration-2, .-19)
+case(objects-4, of-3)
+case(situation-7, in-5)
+det(situation-7, a-6)
+case(configuration-11, to-9)
+det(configuration-11, the-10)
+case(signs-14, of-12)
+case(sign-18, in-15)
+det(sign-18, the-16)
+nmod:of(configuration-2, objects-4)
+nmod:in(configuration-2, situation-7)
+acl(situation-7, corresponds-8)
+nmod:to(corresponds-8, configuration-11)
+amod(signs-14, simple-13)
+nmod:of(configuration-11, signs-14)
+amod(sign-18, propositional-17)
+nmod:in(signs-14, sign-18)
+G[13, 12] [?1, ?2, ?3, ?4, configuration2147483647, configuration2147483647, corresponds8, objects4, propositional17, sign2147483647, signs14, simple13, situation2147483647]
+?2-to->corresponds8
+?3-a->situation2147483647
+propositional17- ->?1
+signs14-of->?2
+?2-the->configuration2147483647
+simple13- ->signs14
+?1-the->sign2147483647
+objects4-of->?4
+?4-The->configuration2147483647
+?1-in->signs14
+?3-in->?4
+corresponds8- ->?3
+------CorefChainz

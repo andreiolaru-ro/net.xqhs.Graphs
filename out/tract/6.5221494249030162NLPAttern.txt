@@ -1,0 +1,97 @@
+ There are, indeed, things that cannot be put into words. They make themselves manifest. They are what is mystical.
+------CorefChainz
+CHAIN2-["things that can not be put into words" in sentence 1, "They" in sentence 2, "themselves" in sentence 2, "They" in sentence 3]
+representative mention: "things that can not be put into words" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, are-2)
+punct(are-2, ,-3)
+punct(are-2, ,-5)
+punct(are-2, .-14)
+aux(put-11, can-8)
+auxpass(put-11, be-10)
+case(words-13, into-12)
+expl(are-2, There-1)
+advmod(are-2, indeed-4)
+nsubj(are-2, things-6)
+nsubjpass(put-11, things-6)
+ref(things-6, that-7)
+neg(put-11, not-9)
+acl:relcl(things-6, put-11)
+nmod:into(put-11, words-13)
+---
+qqroot(ROOT-0, are-2)
+punct(are-2, ,-3)
+punct(are-2, ,-5)
+punct(are-2, .-14)
+aux(put-11, can-8)
+auxpass(put-11, be-10)
+case(words-13, into-12)
+expl(are-2, There-1)
+advmod(are-2, indeed-4)
+nsubj(are-2, things-6)
+nsubjpass(put-11, things-6)
+ref(things-6, that-7)
+neg(put-11, not-9)
+acl:relcl(things-6, put-11)
+nmod:into(put-11, words-13)
+root(ROOT-0, make-2)
+punct(make-2, .-5)
+nsubj(make-2, They-1)
+nsubj(manifest-4, themselves-3)
+xcomp(make-2, manifest-4)
+---
+qqroot(ROOT-0, are-2)
+punct(are-2, ,-3)
+punct(are-2, ,-5)
+punct(are-2, .-14)
+aux(put-11, can-8)
+auxpass(put-11, be-10)
+case(words-13, into-12)
+expl(are-2, There-1)
+advmod(are-2, indeed-4)
+nsubj(are-2, things-6)
+nsubjpass(put-11, things-6)
+ref(things-6, that-7)
+neg(put-11, not-9)
+acl:relcl(things-6, put-11)
+nmod:into(put-11, words-13)
+root(ROOT-0, make-2)
+punct(make-2, .-5)
+nsubj(make-2, They-1)
+nsubj(manifest-4, themselves-3)
+xcomp(make-2, manifest-4)
+root(ROOT-0, are-2)
+punct(are-2, .-6)
+cop(mystical-5, is-4)
+nsubj(are-2, They-1)
+nsubj(mystical-5, what-3)
+ccomp(are-2, mystical-5)
+G[16, 16] [There, They, They, are, are, indeed, make, manifest, mystical, not, put, that, themselves, things, what, words]
+They- ->are
+There- ->are
+that- ->things
+indeed- ->are
+manifest- ->make
+things- ->put
+They- ->make
+not-  : can  : be ->put
+themselves- ->manifest
+mystical- ->are
+words-into->put
+what-  : is ->mystical
+put-relcl->things
+things- ->are
+themselves- ->things
+They-==->things
+------CorefChainz
+CHAIN2-["things that can not be put into words" in sentence 1, "They" in sentence 2, "themselves" in sentence 2, "They" in sentence 3]
+representative mention: "things that can not be put into words" in sentence 1

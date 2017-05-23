@@ -1,0 +1,37 @@
+ So too at death the world does not alter, but comes to an end.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, So-1)
+cc(So-1, but-11)
+punct(So-1, .-16)
+punct(So-1, ,-10)
+case(death-4, at-3)
+det(world-6, the-5)
+aux(alter-9, does-7)
+case(end-15, to-13)
+det(end-15, an-14)
+advmod(death-4, too-2)
+nmod:at(So-1, death-4)
+nsubj(alter-9, world-6)
+neg(alter-9, not-8)
+acl:relcl(death-4, alter-9)
+conj:but(So-1, comes-12)
+nmod:to(comes-12, end-15)
+G[10, 9] [?1, ?2, So1, alter9, comes12, death4, end2147483647, not8, too2, world2147483647]
+death4-at->So1
+?2-the->world2147483647
+too2- ->death4
+alter9-relcl->death4
+?2-  : does  : does ->alter9
+?1-to->comes12
+comes12-but->So1
+not8- ->alter9
+?1-an->end2147483647
+------CorefChainz

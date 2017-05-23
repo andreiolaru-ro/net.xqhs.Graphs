@@ -1,0 +1,59 @@
+ In a proposition a thought can be expressed in such a way that elements of the propositional sign correspond to the objects of the thought.
+------CorefChainz
+CHAIN6-["a thought" in sentence 1, "the thought" in sentence 1]
+representative mention: "a thought" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, expressed-8)
+case(proposition-3, In-1)
+det(proposition-3, a-2)
+det(thought-5, a-4)
+aux(expressed-8, can-6)
+auxpass(expressed-8, be-7)
+punct(expressed-8, .-26)
+case(way-12, in-9)
+det(way-12, a-11)
+case(sign-18, of-15)
+det(sign-18, the-16)
+mark(correspond-19, that-13)
+case(objects-22, to-20)
+det(objects-22, the-21)
+case(thought-25, of-23)
+det(thought-25, the-24)
+nmod:in(expressed-8, proposition-3)
+nsubjpass(expressed-8, thought-5)
+amod(way-12, such-10)
+nmod:in(expressed-8, way-12)
+nsubj(correspond-19, elements-14)
+amod(sign-18, propositional-17)
+nmod:of(elements-14, sign-18)
+ccomp(way-12, correspond-19)
+nmod:to(correspond-19, objects-22)
+nmod:of(objects-22, thought-25)
+G[17, 17] [?1, ?2, ?3, ?4, ?5, ?6, correspond19, elements14, expressed8, objects2147483647, proposition2147483647, propositional17, sign2147483647, such10, thought2147483647, thought2147483647, way2147483647]
+?2-a->thought2147483647
+?3-the->thought2147483647
+propositional17- ->?5
+elements14- ->correspond19
+?5-the->sign2147483647
+?4-a->way2147483647
+?3- ->?2
+?4-in->expressed8
+?3-of->?6
+?1-in : In ->expressed8
+?5-of->elements14
+?2-  : can  : be ->expressed8
+correspond19-  : that  : that ->?4
+such10- ->?4
+?6-the->objects2147483647
+?1-a->proposition2147483647
+?6-to->correspond19
+------CorefChainz
+CHAIN6-["a thought" in sentence 1, "the thought" in sentence 1]
+representative mention: "a thought" in sentence 1

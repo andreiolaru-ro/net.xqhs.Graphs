@@ -1,0 +1,50 @@
+ It a thought were correct a priori, it would be a thought whose possibility ensured its truth.
+------CorefChainz
+CHAIN5-["a thought" in sentence 1, "it" in sentence 1, "its" in sentence 1]
+representative mention: "a thought" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, correct-5)
+det(thought-3, a-2)
+cop(correct-5, were-4)
+punct(correct-5, .-19)
+punct(correct-5, ,-8)
+det(priori-7, a-6)
+aux(thought-13, would-10)
+cop(thought-13, be-11)
+det(thought-13, a-12)
+nsubj(correct-5, It-1)
+nsubj(correct-5, thought-3)
+dobj(correct-5, priori-7)
+nsubj(thought-13, it-9)
+parataxis(correct-5, thought-13)
+nmod:poss(possibility-15, whose-14)
+nsubj(ensured-16, possibility-15)
+ccomp(thought-13, ensured-16)
+nmod:poss(truth-18, its-17)
+dobj(ensured-16, truth-18)
+G[14, 15] [?1, ?2, ?3, It1, correct5, ensured16, it9, its17, possibility15, priori2147483647, thought2147483647, thought2147483647, truth18, whose14]
+possibility15- ->ensured16
+?1- ->correct5
+?2- ->correct5
+ensured16- ->?1
+?2-a->priori2147483647
+whose14-poss->possibility15
+?3-  : were ->correct5
+it9-  : would  : be ->?1
+it9- ->?3
+truth18- ->ensured16
+?1-a->thought2147483647
+?3-a->thought2147483647
+It1- ->correct5
+its17- ->?3
+its17-poss->truth18
+------CorefChainz
+CHAIN5-["a thought" in sentence 1, "it" in sentence 1, "its" in sentence 1]
+representative mention: "a thought" in sentence 1

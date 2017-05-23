@@ -1,0 +1,51 @@
+The sun is free to go around.
+------CorefChainz
+The-DT 
+sun-NN 
+is-VBZ 
+free-JJ 
+to-TO 
+go-VB 
+around-RP 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> sun
+		 	-> VP 	-> VBZ 	-> is
+	 	-> ADJP 	-> JJ 	-> free
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> go
+	 	-> PRT 	-> RP 	-> around
+							 	-> . 	-> .
+			
+Dependensee repr
+det(sun-2, The-1)
+nsubj(free-4, sun-2)
+nsubj:xsubj(go-6, sun-2)
+cop(free-4, is-3)
+root(ROOT-0, free-4)
+mark(go-6, to-5)
+xcomp(free-4, go-6)
+compound:prt(go-6, around-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, free-4)
+det(sun-2, The-1)
+nsubj(free-4, sun-2)
+nsubj:xsubj(go-6, sun-2)
+cop(free-4, is-3)
+mark(go-6, to-5)
+xcomp(free-4, go-6)
+advmod(go-6, around-7)
+punct(free-4, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[5, 5] [?#1, around, free, go, sun]
+?#1-  : is  ->free
+?#1-xsubj->go
+?#1-The->sun
+go-  : to  ->free
+around- ->go

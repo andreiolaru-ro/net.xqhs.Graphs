@@ -1,0 +1,36 @@
+ A propositional sign, applied and thought out, is a thought.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, thought-12)
+det(sign-3, A-1)
+punct(sign-3, ,-4)
+cc(applied-5, and-6)
+cop(thought-12, is-10)
+det(thought-12, a-11)
+punct(thought-12, ,-9)
+punct(thought-12, .-13)
+amod(sign-3, propositional-2)
+nsubj(applied-5, sign-3)
+nsubj(thought-7, sign-3)
+ccomp(thought-12, applied-5)
+conj:and(applied-5, thought-7)
+ccomp(thought-12, thought-7)
+compound:prt(thought-7, out-8)
+G[8, 9] [?1, ?2, applied5, out8, propositional2, sign2147483647, thought7, thought2147483647]
+?2-a->thought2147483647
+propositional2- ->?1
+?1- ->applied5
+applied5- ->?2
+thought7-and->applied5
+out8-prt->thought7
+thought7-  : is ->?2
+?1- ->thought7
+?1-A->sign2147483647
+------CorefChainz

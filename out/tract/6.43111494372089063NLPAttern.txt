@@ -1,0 +1,167 @@
+ Death is not an event in life: we do not live to experience death. If we take eternity to mean not infinite temporal duration but timelessness, then eternal life belongs to those who live in the present. Our life has no end in just the way in which our visual field has no limits.
+------CorefChainz
+CHAIN12-["we" in sentence 1, "we" in sentence 2, "Our" in sentence 3, "our" in sentence 3]
+representative mention: "we" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, event-5)
+cop(event-5, is-2)
+det(event-5, an-4)
+punct(event-5, .-16)
+punct(event-5, :-8)
+case(life-7, in-6)
+aux(live-12, do-10)
+mark(experience-14, to-13)
+nsubj(event-5, Death-1)
+neg(event-5, not-3)
+nmod:in(event-5, life-7)
+nsubj(live-12, we-9)
+nsubj:xsubj(experience-14, we-9)
+neg(live-12, not-11)
+parataxis(event-5, live-12)
+xcomp(live-12, experience-14)
+dobj(experience-14, death-15)
+---
+qqroot(ROOT-0, event-5)
+cop(event-5, is-2)
+det(event-5, an-4)
+punct(event-5, .-16)
+punct(event-5, :-8)
+case(life-7, in-6)
+aux(live-12, do-10)
+mark(experience-14, to-13)
+nsubj(event-5, Death-1)
+neg(event-5, not-3)
+nmod:in(event-5, life-7)
+nsubj(live-12, we-9)
+nsubj:xsubj(experience-14, we-9)
+neg(live-12, not-11)
+parataxis(event-5, live-12)
+xcomp(live-12, experience-14)
+dobj(experience-14, death-15)
+root(ROOT-0, take-3)
+mark(take-3, If-1)
+punct(take-3, .-25)
+mark(mean-6, to-5)
+cc(duration-10, but-11)
+punct(duration-10, ,-13)
+case(those-19, to-18)
+case(present-24, in-22)
+det(present-24, the-23)
+nsubj(take-3, we-2)
+dobj(take-3, eternity-4)
+advcl:to(take-3, mean-6)
+neg(duration-10, not-7)
+amod(duration-10, infinite-8)
+amod(duration-10, temporal-9)
+dobj(mean-6, duration-10)
+dobj(mean-6, timelessness-12)
+conj:but(duration-10, timelessness-12)
+advmod(life-16, then-14)
+amod(life-16, eternal-15)
+nsubj(belongs-17, life-16)
+acl:relcl(duration-10, belongs-17)
+nmod:to(belongs-17, those-19)
+nsubj(live-21, those-19)
+ref(those-19, who-20)
+acl:relcl(those-19, live-21)
+nmod:in(live-21, present-24)
+---
+qqroot(ROOT-0, event-5)
+cop(event-5, is-2)
+det(event-5, an-4)
+punct(event-5, .-16)
+punct(event-5, :-8)
+case(life-7, in-6)
+aux(live-12, do-10)
+mark(experience-14, to-13)
+nsubj(event-5, Death-1)
+neg(event-5, not-3)
+nmod:in(event-5, life-7)
+nsubj(live-12, we-9)
+nsubj:xsubj(experience-14, we-9)
+neg(live-12, not-11)
+parataxis(event-5, live-12)
+xcomp(live-12, experience-14)
+dobj(experience-14, death-15)
+root(ROOT-0, take-3)
+mark(take-3, If-1)
+punct(take-3, .-25)
+mark(mean-6, to-5)
+cc(duration-10, but-11)
+punct(duration-10, ,-13)
+case(those-19, to-18)
+case(present-24, in-22)
+det(present-24, the-23)
+nsubj(take-3, we-2)
+dobj(take-3, eternity-4)
+advcl:to(take-3, mean-6)
+neg(duration-10, not-7)
+amod(duration-10, infinite-8)
+amod(duration-10, temporal-9)
+dobj(mean-6, duration-10)
+dobj(mean-6, timelessness-12)
+conj:but(duration-10, timelessness-12)
+advmod(life-16, then-14)
+amod(life-16, eternal-15)
+nsubj(belongs-17, life-16)
+acl:relcl(duration-10, belongs-17)
+nmod:to(belongs-17, those-19)
+nsubj(live-21, those-19)
+ref(those-19, who-20)
+acl:relcl(those-19, live-21)
+nmod:in(live-21, present-24)
+root(ROOT-0, has-3)
+punct(has-3, .-18)
+case(way-9, in-6)
+det(way-9, the-8)
+case(which-11, in-10)
+nmod:poss(life-2, Our-1)
+nsubj(has-3, life-2)
+neg(end-5, no-4)
+dobj(has-3, end-5)
+advmod(way-9, just-7)
+nmod:in(has-3, way-9)
+nmod:in(has-15, way-9)
+ref(way-9, which-11)
+nmod:poss(field-14, our-12)
+amod(field-14, visual-13)
+nsubj(has-15, field-14)
+acl:relcl(way-9, has-15)
+neg(limits-17, no-16)
+dobj(has-15, limits-17)
+G[23, 23] [?1, ?2, ?3, belongs17, duration10, end5, event2147483647, experience14, field14, has3, has15, life16, life7, life2, limits17, live12, live21, mean6, present2147483647, take3, those19, way2147483647, which11]
+?3-in->has3
+mean6-to : If ->take3
+those19-to->belongs17
+life16- ->belongs17
+?3-in->has15
+has15-relcl->?3
+field14- ->has15
+those19- ->live21
+life2- ->has3
+live12- ->?2
+limits17- ->has15
+life7-in : is ->?2
+?2-an->event2147483647
+live12-  : do ->?3
+end5- ->has3
+?3-the->way2147483647
+live21-relcl->those19
+belongs17-relcl->duration10
+experience14-  : to ->live12
+duration10-  : but ->mean6
+?1-in->live21
+which11-  : in ->?3
+?1-the->present2147483647
+------CorefChainz
+CHAIN12-["we" in sentence 1, "we" in sentence 2, "Our" in sentence 3, "our" in sentence 3]
+representative mention: "we" in sentence 1

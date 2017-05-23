@@ -1,0 +1,93 @@
+ It is impossible to speak about the will in so far as it is the subject of ethical attributes. And the will as a phenomenon is of interest only to psychology.
+------CorefChainz
+CHAIN2-["the will" in sentence 1, "it" in sentence 1]
+representative mention: "the will" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, impossible-3)
+cop(impossible-3, is-2)
+punct(impossible-3, .-20)
+mark(speak-5, to-4)
+case(will-8, about-6)
+det(will-8, the-7)
+case(far-11, in-9)
+cop(subject-16, is-14)
+det(subject-16, the-15)
+mark(subject-16, as-12)
+case(attributes-19, of-17)
+nsubj(impossible-3, It-1)
+nsubj:xsubj(speak-5, It-1)
+xcomp(impossible-3, speak-5)
+nmod:about(speak-5, will-8)
+advmod(far-11, so-10)
+advmod(speak-5, far-11)
+nsubj(subject-16, it-13)
+advcl:as(far-11, subject-16)
+amod(attributes-19, ethical-18)
+nmod:of(subject-16, attributes-19)
+---
+qqroot(ROOT-0, impossible-3)
+cop(impossible-3, is-2)
+punct(impossible-3, .-20)
+mark(speak-5, to-4)
+case(will-8, about-6)
+det(will-8, the-7)
+case(far-11, in-9)
+cop(subject-16, is-14)
+det(subject-16, the-15)
+mark(subject-16, as-12)
+case(attributes-19, of-17)
+nsubj(impossible-3, It-1)
+nsubj:xsubj(speak-5, It-1)
+xcomp(impossible-3, speak-5)
+nmod:about(speak-5, will-8)
+advmod(far-11, so-10)
+advmod(speak-5, far-11)
+nsubj(subject-16, it-13)
+advcl:as(far-11, subject-16)
+amod(attributes-19, ethical-18)
+nmod:of(subject-16, attributes-19)
+root(ROOT-0, And-1)
+punct(And-1, .-13)
+det(phenomenon-6, a-5)
+case(interest-9, of-8)
+cop(interest-9, is-7)
+mark(interest-9, as-4)
+case(psychology-12, to-11)
+dep(And-1, the-2)
+acl(the-2, will-3)
+nsubj(interest-9, phenomenon-6)
+advcl:of(will-3, interest-9)
+advmod(psychology-12, only-10)
+nmod:to(interest-9, psychology-12)
+G[20, 20] [?1, ?2, ?3, And1, It1, attributes19, ethical18, far11, impossible3, interest9, it13, only10, phenomenon2147483647, psychology12, so10, speak5, subject2147483647, the2, will3, will2147483647]
+It1-xsubj->speak5
+It1-  : is ->impossible3
+the2- ->And1
+psychology12-to->interest9
+it13- ->?3
+interest9-of : as ->will3
+?1-the->subject2147483647
+?2-  : is ->interest9
+?1-as->far11
+speak5-  : to ->impossible3
+it13-  : is ->?1
+so10-  : in ->far11
+far11- ->speak5
+will3- ->the2
+?3-about->speak5
+?2-a->phenomenon2147483647
+attributes19-of->?1
+ethical18- ->attributes19
+only10- ->psychology12
+?3-the->will2147483647
+------CorefChainz
+CHAIN2-["the will" in sentence 1, "it" in sentence 1]
+representative mention: "the will" in sentence 1

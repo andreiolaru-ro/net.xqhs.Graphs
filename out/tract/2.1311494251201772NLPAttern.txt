@@ -1,0 +1,39 @@
+ In a picture the elements of the picture are the representatives of objects.
+------CorefChainz
+CHAIN2-["a picture" in sentence 1, "the picture" in sentence 1]
+representative mention: "a picture" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, representatives-11)
+case(picture-3, In-1)
+det(picture-3, a-2)
+det(elements-5, the-4)
+case(picture-8, of-6)
+det(picture-8, the-7)
+cop(representatives-11, are-9)
+det(representatives-11, the-10)
+punct(representatives-11, .-14)
+case(objects-13, of-12)
+nmod:in(representatives-11, picture-3)
+nsubj(representatives-11, elements-5)
+nmod:of(elements-5, picture-8)
+nmod:of(representatives-11, objects-13)
+G[9, 9] [?#1, ?#2, ?#3, ?#4, elements, objects, picture, picture, representatives]
+?#3-  : are  : are ->?#4
+?#4-the->representatives
+?#1-a->picture
+?#1-in->?#4
+objects-of->?#4
+?#3-the->elements
+?#2-the->picture
+?#2-  : In ->?#1
+?#2-of->?#3
+------CorefChainz
+CHAIN2-["a picture" in sentence 1, "the picture" in sentence 1]
+representative mention: "a picture" in sentence 1

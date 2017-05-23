@@ -1,0 +1,279 @@
+ A proposition can determine only one place in logical space: nevertheless the whole of logical space must already be given by it. (Otherwise negation, logical sum, logical product, etc., would introduce more and more new elements in co-ordination.) (The logical scaffolding surrounding a picture determines logical space. The force of a proposition reaches through the whole of logical space.)
+------CorefChainz
+CHAIN16-["logical space" in sentence 3, "logical space" in sentence 4]
+representative mention: "logical space" in sentence 3
+CHAIN18-["A proposition" in sentence 1, "a proposition" in sentence 4]
+representative mention: "A proposition" in sentence 1
+CHAIN6-["nevertheless the whole of logical space" in sentence 1, "it" in sentence 1]
+representative mention: "nevertheless the whole of logical space" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, determine-4)
+det(proposition-2, A-1)
+aux(determine-4, can-3)
+punct(determine-4, .-24)
+punct(determine-4, :-11)
+case(space-10, in-8)
+det(whole-14, the-13)
+case(space-17, of-15)
+aux(given-21, must-18)
+auxpass(given-21, be-20)
+case(it-23, by-22)
+nsubj(determine-4, proposition-2)
+advmod(one-6, only-5)
+nummod(place-7, one-6)
+dobj(determine-4, place-7)
+amod(space-10, logical-9)
+nmod:in(place-7, space-10)
+advmod(whole-14, nevertheless-12)
+nsubjpass(given-21, whole-14)
+amod(space-17, logical-16)
+nmod:of(whole-14, space-17)
+advmod(given-21, already-19)
+parataxis(determine-4, given-21)
+nmod:agent(given-21, it-23)
+---
+qqroot(ROOT-0, determine-4)
+det(proposition-2, A-1)
+aux(determine-4, can-3)
+punct(determine-4, .-24)
+punct(determine-4, :-11)
+case(space-10, in-8)
+det(whole-14, the-13)
+case(space-17, of-15)
+aux(given-21, must-18)
+auxpass(given-21, be-20)
+case(it-23, by-22)
+nsubj(determine-4, proposition-2)
+advmod(one-6, only-5)
+nummod(place-7, one-6)
+dobj(determine-4, place-7)
+amod(space-10, logical-9)
+nmod:in(place-7, space-10)
+advmod(whole-14, nevertheless-12)
+nsubjpass(given-21, whole-14)
+amod(space-17, logical-16)
+nmod:of(whole-14, space-17)
+advmod(given-21, already-19)
+parataxis(determine-4, given-21)
+nmod:agent(given-21, it-23)
+root(ROOT-0, introduce-14)
+punct(sum-6, ,-7)
+punct(sum-6, ,-10)
+punct(sum-6, ,-12)
+aux(introduce-14, would-13)
+punct(introduce-14, ,-4)
+punct(introduce-14, .-22)
+punct(introduce-14, -RRB--23)
+punct(introduce-14, -LRB--1)
+cc(more-15, and-16)
+case(co-ordination-21, in-20)
+advmod(negation-3, Otherwise-2)
+dep(introduce-14, negation-3)
+amod(sum-6, logical-5)
+nsubj(introduce-14, sum-6)
+amod(product-9, logical-8)
+appos(sum-6, product-9)
+appos(sum-6, etc.-11)
+dobj(introduce-14, more-15)
+amod(elements-19, more-17)
+amod(elements-19, new-18)
+dobj(introduce-14, elements-19)
+conj:and(more-15, elements-19)
+nmod:in(introduce-14, co-ordination-21)
+---
+qqroot(ROOT-0, determine-4)
+det(proposition-2, A-1)
+aux(determine-4, can-3)
+punct(determine-4, .-24)
+punct(determine-4, :-11)
+case(space-10, in-8)
+det(whole-14, the-13)
+case(space-17, of-15)
+aux(given-21, must-18)
+auxpass(given-21, be-20)
+case(it-23, by-22)
+nsubj(determine-4, proposition-2)
+advmod(one-6, only-5)
+nummod(place-7, one-6)
+dobj(determine-4, place-7)
+amod(space-10, logical-9)
+nmod:in(place-7, space-10)
+advmod(whole-14, nevertheless-12)
+nsubjpass(given-21, whole-14)
+amod(space-17, logical-16)
+nmod:of(whole-14, space-17)
+advmod(given-21, already-19)
+parataxis(determine-4, given-21)
+nmod:agent(given-21, it-23)
+root(ROOT-0, introduce-14)
+punct(sum-6, ,-7)
+punct(sum-6, ,-10)
+punct(sum-6, ,-12)
+aux(introduce-14, would-13)
+punct(introduce-14, ,-4)
+punct(introduce-14, .-22)
+punct(introduce-14, -RRB--23)
+punct(introduce-14, -LRB--1)
+cc(more-15, and-16)
+case(co-ordination-21, in-20)
+advmod(negation-3, Otherwise-2)
+dep(introduce-14, negation-3)
+amod(sum-6, logical-5)
+nsubj(introduce-14, sum-6)
+amod(product-9, logical-8)
+appos(sum-6, product-9)
+appos(sum-6, etc.-11)
+dobj(introduce-14, more-15)
+amod(elements-19, more-17)
+amod(elements-19, new-18)
+dobj(introduce-14, elements-19)
+conj:and(more-15, elements-19)
+nmod:in(introduce-14, co-ordination-21)
+root(ROOT-0, determines-8)
+det(scaffolding-4, The-2)
+det(picture-7, a-6)
+punct(determines-8, .-11)
+punct(determines-8, -LRB--1)
+amod(scaffolding-4, logical-3)
+nsubj(determines-8, scaffolding-4)
+acl(scaffolding-4, surrounding-5)
+dobj(surrounding-5, picture-7)
+amod(space-10, logical-9)
+dobj(determines-8, space-10)
+---
+qqroot(ROOT-0, determine-4)
+det(proposition-2, A-1)
+aux(determine-4, can-3)
+punct(determine-4, .-24)
+punct(determine-4, :-11)
+case(space-10, in-8)
+det(whole-14, the-13)
+case(space-17, of-15)
+aux(given-21, must-18)
+auxpass(given-21, be-20)
+case(it-23, by-22)
+nsubj(determine-4, proposition-2)
+advmod(one-6, only-5)
+nummod(place-7, one-6)
+dobj(determine-4, place-7)
+amod(space-10, logical-9)
+nmod:in(place-7, space-10)
+advmod(whole-14, nevertheless-12)
+nsubjpass(given-21, whole-14)
+amod(space-17, logical-16)
+nmod:of(whole-14, space-17)
+advmod(given-21, already-19)
+parataxis(determine-4, given-21)
+nmod:agent(given-21, it-23)
+root(ROOT-0, introduce-14)
+punct(sum-6, ,-7)
+punct(sum-6, ,-10)
+punct(sum-6, ,-12)
+aux(introduce-14, would-13)
+punct(introduce-14, ,-4)
+punct(introduce-14, .-22)
+punct(introduce-14, -RRB--23)
+punct(introduce-14, -LRB--1)
+cc(more-15, and-16)
+case(co-ordination-21, in-20)
+advmod(negation-3, Otherwise-2)
+dep(introduce-14, negation-3)
+amod(sum-6, logical-5)
+nsubj(introduce-14, sum-6)
+amod(product-9, logical-8)
+appos(sum-6, product-9)
+appos(sum-6, etc.-11)
+dobj(introduce-14, more-15)
+amod(elements-19, more-17)
+amod(elements-19, new-18)
+dobj(introduce-14, elements-19)
+conj:and(more-15, elements-19)
+nmod:in(introduce-14, co-ordination-21)
+root(ROOT-0, determines-8)
+det(scaffolding-4, The-2)
+det(picture-7, a-6)
+punct(determines-8, .-11)
+punct(determines-8, -LRB--1)
+amod(scaffolding-4, logical-3)
+nsubj(determines-8, scaffolding-4)
+acl(scaffolding-4, surrounding-5)
+dobj(surrounding-5, picture-7)
+amod(space-10, logical-9)
+dobj(determines-8, space-10)
+root(ROOT-0, reaches-6)
+det(force-2, The-1)
+case(proposition-5, of-3)
+det(proposition-5, a-4)
+punct(reaches-6, .-13)
+punct(reaches-6, -RRB--14)
+case(whole-9, through-7)
+det(whole-9, the-8)
+case(space-12, of-10)
+nsubj(reaches-6, force-2)
+nmod:of(force-2, proposition-5)
+nmod:through(reaches-6, whole-9)
+amod(space-12, logical-11)
+nmod:of(whole-9, space-12)
+G[47, 45] [?1, ?2, ?3, ?4, ?5, ?6, ?7, Otherwise2, already19, co-ordination21, determine4, determines8, elements19, etc.11, force2147483647, given21, introduce14, it23, logical11, logical8, logical9, logical5, logical3, logical9, logical16, more17, more15, negation3, nevertheless12, new18, one6, only5, picture2147483647, place7, product9, proposition2147483647, proposition2147483647, reaches6, scaffolding2147483647, space10, space10, space17, space12, sum6, surrounding5, whole2147483647, whole2147483647]
+elements19- ->introduce14
+place7- ->determine4
+space10-in->place7
+negation3- ->introduce14
+already19-  : must  : be ->given21
+more15-  : would ->introduce14
+?5-  : can ->determine4
+logical11- ->space12
+space17-of->?6
+only5- ->one6
+?4-through->reaches6
+?7- ->surrounding5
+?5-A->proposition2147483647
+logical16- ->space17
+?3- ->reaches6
+space12-of->?4
+given21- ->determine4
+elements19-and->more15
+?7-a->picture2147483647
+?1-a->proposition2147483647
+?3-The->force2147483647
+it23-agent : by ->given21
+?2- ->determines8
+logical5- ->sum6
+surrounding5- ->?2
+it23- ->introduce14
+space10- ->determines8
+nevertheless12- ->?6
+one6- ->place7
+logical8- ->product9
+logical3- ->?2
+?6-the->whole2147483647
+co-ordination21-in->introduce14
+?1-of:== : of ->?3
+Otherwise2- ->negation3
+sum6- ->introduce14
+?2-The->scaffolding2147483647
+product9- ->sum6
+etc.11- ->sum6
+more17- ->elements19
+logical9- ->space10
+?6- ->given21
+?4-the->whole2147483647
+logical9- ->space10
+new18- ->elements19
+------CorefChainz
+CHAIN16-["logical space" in sentence 3, "logical space" in sentence 4]
+representative mention: "logical space" in sentence 3
+CHAIN18-["A proposition" in sentence 1, "a proposition" in sentence 4]
+representative mention: "A proposition" in sentence 1
+CHAIN6-["nevertheless the whole of logical space" in sentence 1, "it" in sentence 1]
+representative mention: "nevertheless the whole of logical space" in sentence 1

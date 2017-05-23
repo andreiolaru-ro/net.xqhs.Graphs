@@ -1,0 +1,136 @@
+ This throws some light on the question why logical propositions cannot be confirmed by experience any more than they can be refuted by it. Not only must a proposition of logic be irrefutable by any possible experience, but it must also be unconfirmable by any possible experience.
+------CorefChainz
+CHAIN5-["logical propositions" in sentence 1, "they" in sentence 1]
+representative mention: "logical propositions" in sentence 1
+CHAIN6-["This" in sentence 1, "it" in sentence 1]
+representative mention: "This" in sentence 1
+CHAIN10-["a proposition of logic" in sentence 2, "it" in sentence 2]
+representative mention: "a proposition of logic" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, throws-2)
+punct(throws-2, .-26)
+det(light-4, some-3)
+case(question-7, on-5)
+det(question-7, the-6)
+aux(confirmed-14, can-11)
+auxpass(confirmed-14, be-13)
+case(experience-16, by-15)
+det(more-18, any-17)
+aux(refuted-23, can-21)
+auxpass(refuted-23, be-22)
+mark(refuted-23, than-19)
+case(it-25, by-24)
+nsubj(throws-2, This-1)
+dobj(throws-2, light-4)
+nmod:on(throws-2, question-7)
+advmod(confirmed-14, why-8)
+amod(propositions-10, logical-9)
+nsubjpass(confirmed-14, propositions-10)
+neg(confirmed-14, not-12)
+acl:relcl(question-7, confirmed-14)
+nmod:agent(confirmed-14, experience-16)
+advmod(confirmed-14, more-18)
+nsubjpass(refuted-23, they-20)
+advcl:than(more-18, refuted-23)
+nmod:agent(refuted-23, it-25)
+---
+qqroot(ROOT-0, throws-2)
+punct(throws-2, .-26)
+det(light-4, some-3)
+case(question-7, on-5)
+det(question-7, the-6)
+aux(confirmed-14, can-11)
+auxpass(confirmed-14, be-13)
+case(experience-16, by-15)
+det(more-18, any-17)
+aux(refuted-23, can-21)
+auxpass(refuted-23, be-22)
+mark(refuted-23, than-19)
+case(it-25, by-24)
+nsubj(throws-2, This-1)
+dobj(throws-2, light-4)
+nmod:on(throws-2, question-7)
+advmod(confirmed-14, why-8)
+amod(propositions-10, logical-9)
+nsubjpass(confirmed-14, propositions-10)
+neg(confirmed-14, not-12)
+acl:relcl(question-7, confirmed-14)
+nmod:agent(confirmed-14, experience-16)
+advmod(confirmed-14, more-18)
+nsubjpass(refuted-23, they-20)
+advcl:than(more-18, refuted-23)
+nmod:agent(refuted-23, it-25)
+root(ROOT-0, irrefutable-9)
+det(proposition-5, a-4)
+case(logic-7, of-6)
+aux(irrefutable-9, must-3)
+cc(irrefutable-9, but-15)
+cop(irrefutable-9, be-8)
+punct(irrefutable-9, .-25)
+punct(irrefutable-9, ,-14)
+case(experience-13, by-10)
+det(experience-13, any-11)
+aux(unconfirmable-20, must-17)
+cop(unconfirmable-20, be-19)
+case(experience-24, by-21)
+det(experience-24, any-22)
+neg(only-2, Not-1)
+dep(irrefutable-9, only-2)
+nsubj(irrefutable-9, proposition-5)
+nmod:of(proposition-5, logic-7)
+amod(experience-13, possible-12)
+nmod:by(irrefutable-9, experience-13)
+nsubj(unconfirmable-20, it-16)
+advmod(unconfirmable-20, also-18)
+conj:but(irrefutable-9, unconfirmable-20)
+amod(experience-24, possible-23)
+nmod:by(unconfirmable-20, experience-24)
+G[32, 33] [?#1, ?#2, ?#3, ?#4, ?#5, ?#6, Not, This, also, confirmed, experience, experience, experience, irrefutable, it, it, light, logic, logical, more, not, only, possible, possible, proposition, propositions, question, refuted, they, throws, unconfirmable, why]
+?#2-any->experience
+it-agent : by ->refuted
+only-  : must ->irrefutable
+it- ->Not
+Not- ->only
+possible- ->?#5
+?#3- ->throws
+?#5-by->irrefutable
+it- ->?#6
+confirmed-relcl->?#1
+?#4-any->more
+?#1-the->question
+?#2-by->unconfirmable
+unconfirmable-but->irrefutable
+logic-of->?#6
+This- ->throws
+possible- ->?#2
+refuted-than->?#4
+also-  : be ->unconfirmable
+propositions-  : can  : can ->confirmed
+it-  : must  : must ->unconfirmable
+experience-agent : by ->confirmed
+they-  : can  : be ->refuted
+?#4- ->confirmed
+?#6-a->proposition
+not-  : be ->confirmed
+?#3-some->light
+?#1-on->throws
+why- ->confirmed
+?#6-  : be ->irrefutable
+?#5-any->experience
+unconfirmable- ->propositions
+logical- ->propositions
+------CorefChainz
+CHAIN5-["logical propositions" in sentence 1, "they" in sentence 1]
+representative mention: "logical propositions" in sentence 1
+CHAIN6-["This" in sentence 1, "it" in sentence 1]
+representative mention: "This" in sentence 1
+CHAIN10-["a proposition of logic" in sentence 2, "it" in sentence 2]
+representative mention: "a proposition of logic" in sentence 2

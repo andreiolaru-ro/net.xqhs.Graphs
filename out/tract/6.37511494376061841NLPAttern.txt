@@ -1,0 +1,553 @@
+ For example, the simultaneous presence of two colours at the same place in the visual field is impossible, in fact logically impossible, since it is ruled out by the logical structure of colour. Let us think how this contradiction appears in physics: more or less as follows--a particle cannot have two velocities at the same time; that is to say, it cannot be in two places at the same time; that is to say, particles that are in different places at the same time cannot be identical. (It is clear that the logical product of two elementary propositions can neither be a tautology nor a contradiction. The statement that a point in the visual field has two different colours at the same time is a contradiction.)
+------CorefChainz
+CHAIN33-["the visual field" in sentence 1, "the visual field" in sentence 4]
+representative mention: "the visual field" in sentence 1
+CHAIN19-["this contradiction" in sentence 2, "it" in sentence 2]
+representative mention: "this contradiction" in sentence 2
+CHAIN35-["the same time" in sentence 2, "the same time" in sentence 2, "the same time" in sentence 2, "the same time" in sentence 4]
+representative mention: "the same time" in sentence 2
+CHAIN7-["the simultaneous presence of two colours at the same place in the visual field" in sentence 1, "it" in sentence 1]
+representative mention: "the simultaneous presence of two colours at the same place in the visual field" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, impossible-19)
+case(example-2, For-1)
+det(presence-6, the-4)
+case(colours-9, of-7)
+case(place-13, at-10)
+det(place-13, the-11)
+case(field-17, in-14)
+det(field-17, the-15)
+cop(impossible-19, is-18)
+punct(impossible-19, ,-3)
+punct(impossible-19, ,-20)
+punct(impossible-19, .-37)
+punct(impossible-19, ,-25)
+case(fact-22, in-21)
+auxpass(ruled-29, is-28)
+mark(ruled-29, since-26)
+case(structure-34, by-31)
+det(structure-34, the-32)
+case(colour-36, of-35)
+nmod:for(impossible-19, example-2)
+amod(presence-6, simultaneous-5)
+nsubj(impossible-19, presence-6)
+nummod(colours-9, two-8)
+nmod:of(presence-6, colours-9)
+amod(place-13, same-12)
+nmod:at(presence-6, place-13)
+amod(field-17, visual-16)
+nmod:in(place-13, field-17)
+nmod:in(impossible-19, fact-22)
+advmod(impossible-24, logically-23)
+amod(fact-22, impossible-24)
+nsubjpass(ruled-29, it-27)
+advcl:since(impossible-19, ruled-29)
+compound:prt(ruled-29, out-30)
+amod(structure-34, logical-33)
+nmod:agent(ruled-29, structure-34)
+nmod:of(structure-34, colour-36)
+---
+qqroot(ROOT-0, impossible-19)
+case(example-2, For-1)
+det(presence-6, the-4)
+case(colours-9, of-7)
+case(place-13, at-10)
+det(place-13, the-11)
+case(field-17, in-14)
+det(field-17, the-15)
+cop(impossible-19, is-18)
+punct(impossible-19, ,-3)
+punct(impossible-19, ,-20)
+punct(impossible-19, .-37)
+punct(impossible-19, ,-25)
+case(fact-22, in-21)
+auxpass(ruled-29, is-28)
+mark(ruled-29, since-26)
+case(structure-34, by-31)
+det(structure-34, the-32)
+case(colour-36, of-35)
+nmod:for(impossible-19, example-2)
+amod(presence-6, simultaneous-5)
+nsubj(impossible-19, presence-6)
+nummod(colours-9, two-8)
+nmod:of(presence-6, colours-9)
+amod(place-13, same-12)
+nmod:at(presence-6, place-13)
+amod(field-17, visual-16)
+nmod:in(place-13, field-17)
+nmod:in(impossible-19, fact-22)
+advmod(impossible-24, logically-23)
+amod(fact-22, impossible-24)
+nsubjpass(ruled-29, it-27)
+advcl:since(impossible-19, ruled-29)
+compound:prt(ruled-29, out-30)
+amod(structure-34, logical-33)
+nmod:agent(ruled-29, structure-34)
+nmod:of(structure-34, colour-36)
+root(ROOT-0, Let-1)
+punct(Let-1, :-10)
+punct(Let-1, .-65)
+det(contradiction-6, this-5)
+case(physics-9, in-8)
+cc(more-11, or-12)
+punct(follows-15, ;-28)
+punct(follows-15, ;-45)
+punct(follows-15, ---16)
+det(particle-18, a-17)
+aux(have-21, can-19)
+case(time-27, at-24)
+det(time-27, the-25)
+mark(say-32, to-31)
+punct(say-32, ,-33)
+aux(places-40, can-35)
+case(places-40, in-38)
+cop(places-40, be-37)
+case(time-44, at-41)
+det(time-44, the-42)
+mark(say-49, to-48)
+punct(say-49, ,-50)
+case(places-56, in-54)
+cop(places-56, are-53)
+case(time-60, at-57)
+det(time-60, the-58)
+aux(identical-64, can-61)
+cop(identical-64, be-63)
+nsubj(think-3, us-2)
+ccomp(Let-1, think-3)
+advmod(appears-7, how-4)
+nsubj(appears-7, contradiction-6)
+ccomp(think-3, appears-7)
+nmod:in(appears-7, physics-9)
+advmod(follows-15, more-11)
+conj:or(more-11, less-13)
+advmod(follows-15, less-13)
+advmod(follows-15, as-14)
+dep(Let-1, follows-15)
+nsubj(have-21, particle-18)
+neg(have-21, not-20)
+parataxis(follows-15, have-21)
+nummod(velocities-23, two-22)
+dobj(have-21, velocities-23)
+amod(time-27, same-26)
+nmod:at(have-21, time-27)
+nsubj(is-30, that-29)
+nsubj:xsubj(say-32, that-29)
+parataxis(follows-15, is-30)
+xcomp(is-30, say-32)
+nsubj(places-40, it-34)
+neg(places-40, not-36)
+nummod(places-40, two-39)
+ccomp(say-32, places-40)
+amod(time-44, same-43)
+nmod:at(places-40, time-44)
+nsubj(is-47, that-46)
+nsubj:xsubj(say-49, that-46)
+parataxis(follows-15, is-47)
+xcomp(is-47, say-49)
+nsubj(places-56, particles-51)
+nsubj(identical-64, particles-51)
+ref(particles-51, that-52)
+amod(places-56, different-55)
+acl:relcl(particles-51, places-56)
+amod(time-60, same-59)
+nmod:at(places-56, time-60)
+neg(identical-64, not-62)
+ccomp(say-49, identical-64)
+---
+qqroot(ROOT-0, impossible-19)
+case(example-2, For-1)
+det(presence-6, the-4)
+case(colours-9, of-7)
+case(place-13, at-10)
+det(place-13, the-11)
+case(field-17, in-14)
+det(field-17, the-15)
+cop(impossible-19, is-18)
+punct(impossible-19, ,-3)
+punct(impossible-19, ,-20)
+punct(impossible-19, .-37)
+punct(impossible-19, ,-25)
+case(fact-22, in-21)
+auxpass(ruled-29, is-28)
+mark(ruled-29, since-26)
+case(structure-34, by-31)
+det(structure-34, the-32)
+case(colour-36, of-35)
+nmod:for(impossible-19, example-2)
+amod(presence-6, simultaneous-5)
+nsubj(impossible-19, presence-6)
+nummod(colours-9, two-8)
+nmod:of(presence-6, colours-9)
+amod(place-13, same-12)
+nmod:at(presence-6, place-13)
+amod(field-17, visual-16)
+nmod:in(place-13, field-17)
+nmod:in(impossible-19, fact-22)
+advmod(impossible-24, logically-23)
+amod(fact-22, impossible-24)
+nsubjpass(ruled-29, it-27)
+advcl:since(impossible-19, ruled-29)
+compound:prt(ruled-29, out-30)
+amod(structure-34, logical-33)
+nmod:agent(ruled-29, structure-34)
+nmod:of(structure-34, colour-36)
+root(ROOT-0, Let-1)
+punct(Let-1, :-10)
+punct(Let-1, .-65)
+det(contradiction-6, this-5)
+case(physics-9, in-8)
+cc(more-11, or-12)
+punct(follows-15, ;-28)
+punct(follows-15, ;-45)
+punct(follows-15, ---16)
+det(particle-18, a-17)
+aux(have-21, can-19)
+case(time-27, at-24)
+det(time-27, the-25)
+mark(say-32, to-31)
+punct(say-32, ,-33)
+aux(places-40, can-35)
+case(places-40, in-38)
+cop(places-40, be-37)
+case(time-44, at-41)
+det(time-44, the-42)
+mark(say-49, to-48)
+punct(say-49, ,-50)
+case(places-56, in-54)
+cop(places-56, are-53)
+case(time-60, at-57)
+det(time-60, the-58)
+aux(identical-64, can-61)
+cop(identical-64, be-63)
+nsubj(think-3, us-2)
+ccomp(Let-1, think-3)
+advmod(appears-7, how-4)
+nsubj(appears-7, contradiction-6)
+ccomp(think-3, appears-7)
+nmod:in(appears-7, physics-9)
+advmod(follows-15, more-11)
+conj:or(more-11, less-13)
+advmod(follows-15, less-13)
+advmod(follows-15, as-14)
+dep(Let-1, follows-15)
+nsubj(have-21, particle-18)
+neg(have-21, not-20)
+parataxis(follows-15, have-21)
+nummod(velocities-23, two-22)
+dobj(have-21, velocities-23)
+amod(time-27, same-26)
+nmod:at(have-21, time-27)
+nsubj(is-30, that-29)
+nsubj:xsubj(say-32, that-29)
+parataxis(follows-15, is-30)
+xcomp(is-30, say-32)
+nsubj(places-40, it-34)
+neg(places-40, not-36)
+nummod(places-40, two-39)
+ccomp(say-32, places-40)
+amod(time-44, same-43)
+nmod:at(places-40, time-44)
+nsubj(is-47, that-46)
+nsubj:xsubj(say-49, that-46)
+parataxis(follows-15, is-47)
+xcomp(is-47, say-49)
+nsubj(places-56, particles-51)
+nsubj(identical-64, particles-51)
+ref(particles-51, that-52)
+amod(places-56, different-55)
+acl:relcl(particles-51, places-56)
+amod(time-60, same-59)
+nmod:at(places-56, time-60)
+neg(identical-64, not-62)
+ccomp(say-49, identical-64)
+root(ROOT-0, clear-4)
+cop(clear-4, is-3)
+punct(clear-4, -LRB--1)
+punct(clear-4, .-21)
+det(product-8, the-6)
+case(propositions-12, of-9)
+aux(tautology-17, can-13)
+cc(tautology-17, nor-18)
+cop(tautology-17, be-15)
+det(tautology-17, a-16)
+mark(tautology-17, that-5)
+det(contradiction-20, a-19)
+nsubj(clear-4, It-2)
+amod(product-8, logical-7)
+nsubj(tautology-17, product-8)
+nummod(propositions-12, two-10)
+amod(propositions-12, elementary-11)
+nmod:of(product-8, propositions-12)
+advmod(tautology-17, neither-14)
+ccomp(clear-4, tautology-17)
+ccomp(clear-4, contradiction-20)
+conj:nor(tautology-17, contradiction-20)
+---
+qqroot(ROOT-0, impossible-19)
+case(example-2, For-1)
+det(presence-6, the-4)
+case(colours-9, of-7)
+case(place-13, at-10)
+det(place-13, the-11)
+case(field-17, in-14)
+det(field-17, the-15)
+cop(impossible-19, is-18)
+punct(impossible-19, ,-3)
+punct(impossible-19, ,-20)
+punct(impossible-19, .-37)
+punct(impossible-19, ,-25)
+case(fact-22, in-21)
+auxpass(ruled-29, is-28)
+mark(ruled-29, since-26)
+case(structure-34, by-31)
+det(structure-34, the-32)
+case(colour-36, of-35)
+nmod:for(impossible-19, example-2)
+amod(presence-6, simultaneous-5)
+nsubj(impossible-19, presence-6)
+nummod(colours-9, two-8)
+nmod:of(presence-6, colours-9)
+amod(place-13, same-12)
+nmod:at(presence-6, place-13)
+amod(field-17, visual-16)
+nmod:in(place-13, field-17)
+nmod:in(impossible-19, fact-22)
+advmod(impossible-24, logically-23)
+amod(fact-22, impossible-24)
+nsubjpass(ruled-29, it-27)
+advcl:since(impossible-19, ruled-29)
+compound:prt(ruled-29, out-30)
+amod(structure-34, logical-33)
+nmod:agent(ruled-29, structure-34)
+nmod:of(structure-34, colour-36)
+root(ROOT-0, Let-1)
+punct(Let-1, :-10)
+punct(Let-1, .-65)
+det(contradiction-6, this-5)
+case(physics-9, in-8)
+cc(more-11, or-12)
+punct(follows-15, ;-28)
+punct(follows-15, ;-45)
+punct(follows-15, ---16)
+det(particle-18, a-17)
+aux(have-21, can-19)
+case(time-27, at-24)
+det(time-27, the-25)
+mark(say-32, to-31)
+punct(say-32, ,-33)
+aux(places-40, can-35)
+case(places-40, in-38)
+cop(places-40, be-37)
+case(time-44, at-41)
+det(time-44, the-42)
+mark(say-49, to-48)
+punct(say-49, ,-50)
+case(places-56, in-54)
+cop(places-56, are-53)
+case(time-60, at-57)
+det(time-60, the-58)
+aux(identical-64, can-61)
+cop(identical-64, be-63)
+nsubj(think-3, us-2)
+ccomp(Let-1, think-3)
+advmod(appears-7, how-4)
+nsubj(appears-7, contradiction-6)
+ccomp(think-3, appears-7)
+nmod:in(appears-7, physics-9)
+advmod(follows-15, more-11)
+conj:or(more-11, less-13)
+advmod(follows-15, less-13)
+advmod(follows-15, as-14)
+dep(Let-1, follows-15)
+nsubj(have-21, particle-18)
+neg(have-21, not-20)
+parataxis(follows-15, have-21)
+nummod(velocities-23, two-22)
+dobj(have-21, velocities-23)
+amod(time-27, same-26)
+nmod:at(have-21, time-27)
+nsubj(is-30, that-29)
+nsubj:xsubj(say-32, that-29)
+parataxis(follows-15, is-30)
+xcomp(is-30, say-32)
+nsubj(places-40, it-34)
+neg(places-40, not-36)
+nummod(places-40, two-39)
+ccomp(say-32, places-40)
+amod(time-44, same-43)
+nmod:at(places-40, time-44)
+nsubj(is-47, that-46)
+nsubj:xsubj(say-49, that-46)
+parataxis(follows-15, is-47)
+xcomp(is-47, say-49)
+nsubj(places-56, particles-51)
+nsubj(identical-64, particles-51)
+ref(particles-51, that-52)
+amod(places-56, different-55)
+acl:relcl(particles-51, places-56)
+amod(time-60, same-59)
+nmod:at(places-56, time-60)
+neg(identical-64, not-62)
+ccomp(say-49, identical-64)
+root(ROOT-0, clear-4)
+cop(clear-4, is-3)
+punct(clear-4, -LRB--1)
+punct(clear-4, .-21)
+det(product-8, the-6)
+case(propositions-12, of-9)
+aux(tautology-17, can-13)
+cc(tautology-17, nor-18)
+cop(tautology-17, be-15)
+det(tautology-17, a-16)
+mark(tautology-17, that-5)
+det(contradiction-20, a-19)
+nsubj(clear-4, It-2)
+amod(product-8, logical-7)
+nsubj(tautology-17, product-8)
+nummod(propositions-12, two-10)
+amod(propositions-12, elementary-11)
+nmod:of(product-8, propositions-12)
+advmod(tautology-17, neither-14)
+ccomp(clear-4, tautology-17)
+ccomp(clear-4, contradiction-20)
+conj:nor(tautology-17, contradiction-20)
+root(ROOT-0, contradiction-20)
+det(statement-2, The-1)
+det(point-5, a-4)
+case(field-9, in-6)
+det(field-9, the-7)
+mark(has-10, that-3)
+case(time-17, at-14)
+det(time-17, the-15)
+cop(contradiction-20, is-18)
+det(contradiction-20, a-19)
+punct(contradiction-20, .-21)
+punct(contradiction-20, -RRB--22)
+nsubj(contradiction-20, statement-2)
+nsubj(has-10, point-5)
+amod(field-9, visual-8)
+nmod:in(point-5, field-9)
+ccomp(statement-2, has-10)
+nummod(colours-13, two-11)
+amod(colours-13, different-12)
+dobj(has-10, colours-13)
+amod(time-17, same-16)
+nmod:at(has-10, time-17)
+G[95, 98] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, It2, Let1, appears7, as14, clear4, colour36, colours9, colours13, contradiction2147483647, contradiction2147483647, contradiction2147483647, different12, different55, elementary11, example2, fact22, field2147483647, field2147483647, follows15, has10, have21, how4, identical64, impossible24, impossible19, is47, is30, it34, it27, less13, logical7, logical33, logically23, more11, neither14, not20, not62, not36, out30, particle2147483647, particles51, physics9, place2147483647, places56, places40, point2147483647, presence2147483647, product2147483647, propositions12, ruled29, same16, same12, same26, same43, same59, say49, say32, simultaneous5, statement2147483647, structure2147483647, tautology2147483647, that29, that46, that52, think3, time2147483647, time2147483647, time2147483647, time2147483647, two22, two11, two39, two8, two10, us2, velocities23, visual16, visual8]
+that29- ->is30
+?13-the->structure2147483647
+ruled29-since->impossible19
+two39-  : in ->places40
+visual16- ->?17
+?5-at->places56
+has10-  : that ->?6
+identical64- ->say49
+say32-  : to ->is30
+impossible24- ->fact22
+same43- ->?11
+logical7- ->?14
+that46- ->is47
+colours9-of->?8
+?12-the->time2147483647
+same59- ->?5
+not62-  : can  : be ->identical64
+logical33- ->?13
+not36-  : be ->places40
+?6-  : is ->?3
+out30-prt->ruled29
+?4-a->contradiction2147483647
+?3-a->contradiction2147483647
+?5-the->time2147483647
+?11-the->time2147483647
+visual8- ->?9
+?17-the->field2147483647
+it27-  : is ->ruled29
+example2-for : For ->impossible19
+less13- ->follows15
+?1-at->have21
+?14-the->product2147483647
+physics9-in->appears7
+it34-  : can  : can ->places40
+?9-the->field2147483647
+?2- ->appears7
+It2-  : is ->clear4
+?8-the->presence2147483647
+?6-The->statement2147483647
+two10- ->propositions12
+?14- ->?7
+appears7- ->think3
+how4- ->appears7
+same16- ->?12
+two22- ->velocities23
+neither14-  : can  : be ->?7
+two8- ->colours9
+colours13- ->has10
+places40- ->say32
+?11-at->places40
+is30- ->follows15
+it34- ->?2
+different12- ->colours13
+elementary11- ->propositions12
+think3- ->Let1
+?16-a->particle2147483647
+?8- ->impossible19
+?13-agent : by  : by ->ruled29
+fact22-in : is ->impossible19
+us2- ->think3
+more11- ->follows15
+less13-or->more11
+?15-at->?8
+?1-the->time2147483647
+?10-a->point2147483647
+?7-  : that ->clear4
+colour36-of->?13
+places56-relcl : are  : are  : are ->particles51
+?10- ->has10
+same26- ->?1
+that29-xsubj->say32
+simultaneous5- ->?8
+particles51- ->places56
+as14- ->follows15
+?12-at->has10
+logically23- ->impossible24
+two11- ->colours13
+?9-in->?10
+?17-in->?15
+?4- ->clear4
+follows15- ->Let1
+?1- ->?2
+not20- ->have21
+have21- ->follows15
+that52- ->particles51
+propositions12-of->?14
+?4-nor->?7
+is47- ->follows15
+?16-  : can  : can ->have21
+?15-the->place2147483647
+different55-  : in ->places56
+particles51- ->identical64
+?7-a->tautology2147483647
+?2-this->contradiction2147483647
+velocities23- ->have21
+that46-xsubj->say49
+same12- ->?15
+say49-  : to ->is47
+------CorefChainz
+CHAIN33-["the visual field" in sentence 1, "the visual field" in sentence 4]
+representative mention: "the visual field" in sentence 1
+CHAIN19-["this contradiction" in sentence 2, "it" in sentence 2]
+representative mention: "this contradiction" in sentence 2
+CHAIN35-["the same time" in sentence 2, "the same time" in sentence 2, "the same time" in sentence 2, "the same time" in sentence 4]
+representative mention: "the same time" in sentence 2
+CHAIN7-["the simultaneous presence of two colours at the same place in the visual field" in sentence 1, "it" in sentence 1]
+representative mention: "the simultaneous presence of two colours at the same place in the visual field" in sentence 1

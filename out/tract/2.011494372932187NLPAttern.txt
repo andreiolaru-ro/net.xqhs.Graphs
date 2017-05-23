@@ -1,0 +1,40 @@
+ A state of affairs (a state of things) is a combination of objects (things).
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, combination-13)
+det(state-2, A-1)
+case(affairs-4, of-3)
+det(state-7, a-6)
+punct(state-7, -LRB--5)
+punct(state-7, -RRB--10)
+case(things-9, of-8)
+cop(combination-13, is-11)
+det(combination-13, a-12)
+punct(combination-13, .-19)
+case(objects-15, of-14)
+punct(things-17, -LRB--16)
+punct(things-17, -RRB--18)
+nsubj(combination-13, state-2)
+nmod:of(state-2, affairs-4)
+dep(state-2, state-7)
+nmod:of(state-7, things-9)
+nmod:of(combination-13, objects-15)
+appos(objects-15, things-17)
+G[10, 9] [?1, ?2, ?3, affairs4, combination2147483647, objects15, state2147483647, state2147483647, things17, things9]
+objects15-of : is ->?1
+?1-a->combination2147483647
+?3-a->state2147483647
+affairs4-of->?2
+?3- ->?2
+things9-of->?3
+?2-A->state2147483647
+things17- ->objects15
+?2- ->?1
+------CorefChainz

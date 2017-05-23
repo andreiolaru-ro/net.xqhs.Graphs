@@ -1,0 +1,127 @@
+ The correct explanation of the form of the proposition, 'A makes the judgement p', must show that it is impossible for a judgement to be a piece of nonsense. (Russell's theory does not satisfy this requirement.)
+------CorefChainz
+CHAIN6-["the judgement" in sentence 1, "it" in sentence 1]
+representative mention: "the judgement" in sentence 1
+CHAIN11-["A" in sentence 1, "Russell 's theory" in sentence 2]
+representative mention: "Russell 's theory" in sentence 2
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, makes-13)
+det(explanation-3, The-1)
+case(form-6, of-4)
+det(form-6, the-5)
+case(proposition-9, of-7)
+det(proposition-9, the-8)
+punct(makes-13, ,-18)
+punct(makes-13, .-34)
+punct(makes-13, ,-10)
+punct(makes-13, '-11)
+det(judgement-15, the-14)
+punct(p-16, '-17)
+aux(show-20, must-19)
+cop(impossible-24, is-23)
+mark(impossible-24, that-21)
+det(judgement-27, a-26)
+cop(piece-31, be-29)
+det(piece-31, a-30)
+mark(piece-31, for-25)
+mark(piece-31, to-28)
+case(nonsense-33, of-32)
+amod(explanation-3, correct-2)
+nsubj(makes-13, explanation-3)
+nmod:of(explanation-3, form-6)
+nmod:of(form-6, proposition-9)
+nsubj(makes-13, A-12)
+nsubj(p-16, judgement-15)
+xcomp(makes-13, p-16)
+ccomp(makes-13, show-20)
+nsubj(impossible-24, it-22)
+ccomp(show-20, impossible-24)
+nsubj(piece-31, judgement-27)
+advcl:to(impossible-24, piece-31)
+nmod:of(piece-31, nonsense-33)
+---
+qqroot(ROOT-0, makes-13)
+det(explanation-3, The-1)
+case(form-6, of-4)
+det(form-6, the-5)
+case(proposition-9, of-7)
+det(proposition-9, the-8)
+punct(makes-13, ,-18)
+punct(makes-13, .-34)
+punct(makes-13, ,-10)
+punct(makes-13, '-11)
+det(judgement-15, the-14)
+punct(p-16, '-17)
+aux(show-20, must-19)
+cop(impossible-24, is-23)
+mark(impossible-24, that-21)
+det(judgement-27, a-26)
+cop(piece-31, be-29)
+det(piece-31, a-30)
+mark(piece-31, for-25)
+mark(piece-31, to-28)
+case(nonsense-33, of-32)
+amod(explanation-3, correct-2)
+nsubj(makes-13, explanation-3)
+nmod:of(explanation-3, form-6)
+nmod:of(form-6, proposition-9)
+nsubj(makes-13, A-12)
+nsubj(p-16, judgement-15)
+xcomp(makes-13, p-16)
+ccomp(makes-13, show-20)
+nsubj(impossible-24, it-22)
+ccomp(show-20, impossible-24)
+nsubj(piece-31, judgement-27)
+advcl:to(impossible-24, piece-31)
+nmod:of(piece-31, nonsense-33)
+root(ROOT-0, satisfy-7)
+case(Russell-2, 's-3)
+aux(satisfy-7, does-5)
+punct(satisfy-7, .-10)
+punct(satisfy-7, -RRB--11)
+punct(satisfy-7, -LRB--1)
+det(requirement-9, this-8)
+nmod:poss(theory-4, Russell-2)
+nsubj(satisfy-7, theory-4)
+neg(satisfy-7, not-6)
+dobj(satisfy-7, requirement-9)
+G[26, 26] [?1, ?2, ?3, ?4, ?5, ?6, ?7, A12, Russell2, correct2, explanation2147483647, form2147483647, impossible24, it22, judgement2147483647, judgement2147483647, makes13, nonsense33, not6, p16, piece2147483647, proposition2147483647, requirement2147483647, satisfy7, show20, theory4]
+it22-  : is ->impossible24
+?2-a->judgement2147483647
+?6-the->form2147483647
+?1- ->satisfy7
+Russell2-poss : 's ->theory4
+?3- ->p16
+correct2- ->?5
+?7-of->?6
+not6- ->satisfy7
+?7-the->proposition2147483647
+?6-of->?5
+nonsense33-of->?4
+?2-  : be ->?4
+p16- ->makes13
+?3-the->judgement2147483647
+?4-a->piece2147483647
+?5- ->makes13
+?1-this->requirement2147483647
+?4-to : for ->impossible24
+show20- ->makes13
+A12- ->theory4
+it22- ->?3
+impossible24-  : must  : that  : that ->show20
+theory4-  : does  : does ->satisfy7
+?5-The->explanation2147483647
+A12- ->makes13
+------CorefChainz
+CHAIN6-["the judgement" in sentence 1, "it" in sentence 1]
+representative mention: "the judgement" in sentence 1
+CHAIN11-["A" in sentence 1, "Russell 's theory" in sentence 2]
+representative mention: "Russell 's theory" in sentence 2

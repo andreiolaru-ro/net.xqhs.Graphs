@@ -1,0 +1,189 @@
+ A proposition, therefore, does not actually contain its sense, but does contain the possibility of expressing it. ('The content of a proposition' means the content of a proposition that has sense.) A proposition contains the form, but not the content, of its sense.
+------CorefChainz
+CHAIN4-["A proposition" in sentence 1, "its" in sentence 1, "it" in sentence 1, "a proposition" in sentence 2, "A proposition" in sentence 3, "its" in sentence 3]
+representative mention: "A proposition" in sentence 1
+CHAIN10-["the content of a proposition that has sense" in sentence 2, "the content" in sentence 3]
+representative mention: "the content of a proposition that has sense" in sentence 2
+CHAIN12-["its sense" in sentence 1, "its sense" in sentence 3]
+representative mention: "its sense" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, contain-9)
+det(proposition-2, A-1)
+aux(contain-9, does-6)
+cc(contain-9, but-13)
+punct(contain-9, ,-3)
+punct(contain-9, ,-5)
+punct(contain-9, .-21)
+punct(contain-9, ,-12)
+aux(contain-15, does-14)
+det(possibility-17, the-16)
+mark(expressing-19, of-18)
+nsubj(contain-9, proposition-2)
+nsubj(contain-15, proposition-2)
+advmod(contain-9, therefore-4)
+neg(contain-9, not-7)
+advmod(contain-9, actually-8)
+nmod:poss(sense-11, its-10)
+dobj(contain-9, sense-11)
+conj:but(contain-9, contain-15)
+dobj(contain-15, possibility-17)
+acl:of(possibility-17, expressing-19)
+dobj(expressing-19, it-20)
+---
+qqroot(ROOT-0, contain-9)
+det(proposition-2, A-1)
+aux(contain-9, does-6)
+cc(contain-9, but-13)
+punct(contain-9, ,-3)
+punct(contain-9, ,-5)
+punct(contain-9, .-21)
+punct(contain-9, ,-12)
+aux(contain-15, does-14)
+det(possibility-17, the-16)
+mark(expressing-19, of-18)
+nsubj(contain-9, proposition-2)
+nsubj(contain-15, proposition-2)
+advmod(contain-9, therefore-4)
+neg(contain-9, not-7)
+advmod(contain-9, actually-8)
+nmod:poss(sense-11, its-10)
+dobj(contain-9, sense-11)
+conj:but(contain-9, contain-15)
+dobj(contain-15, possibility-17)
+acl:of(possibility-17, expressing-19)
+dobj(expressing-19, it-20)
+root(ROOT-0, means-9)
+det(content-4, The-3)
+punct(content-4, '-8)
+punct(content-4, -LRB--1)
+punct(content-4, `-2)
+case(proposition-7, of-5)
+det(proposition-7, a-6)
+punct(means-9, -RRB--19)
+punct(means-9, .-18)
+det(content-11, the-10)
+case(proposition-14, of-12)
+det(proposition-14, a-13)
+nsubj(means-9, content-4)
+nmod:of(content-4, proposition-7)
+dobj(means-9, content-11)
+nmod:of(content-11, proposition-14)
+nsubj(has-16, proposition-14)
+ref(proposition-14, that-15)
+acl:relcl(proposition-14, has-16)
+dobj(has-16, sense-17)
+---
+qqroot(ROOT-0, contain-9)
+det(proposition-2, A-1)
+aux(contain-9, does-6)
+cc(contain-9, but-13)
+punct(contain-9, ,-3)
+punct(contain-9, ,-5)
+punct(contain-9, .-21)
+punct(contain-9, ,-12)
+aux(contain-15, does-14)
+det(possibility-17, the-16)
+mark(expressing-19, of-18)
+nsubj(contain-9, proposition-2)
+nsubj(contain-15, proposition-2)
+advmod(contain-9, therefore-4)
+neg(contain-9, not-7)
+advmod(contain-9, actually-8)
+nmod:poss(sense-11, its-10)
+dobj(contain-9, sense-11)
+conj:but(contain-9, contain-15)
+dobj(contain-15, possibility-17)
+acl:of(possibility-17, expressing-19)
+dobj(expressing-19, it-20)
+root(ROOT-0, means-9)
+det(content-4, The-3)
+punct(content-4, '-8)
+punct(content-4, -LRB--1)
+punct(content-4, `-2)
+case(proposition-7, of-5)
+det(proposition-7, a-6)
+punct(means-9, -RRB--19)
+punct(means-9, .-18)
+det(content-11, the-10)
+case(proposition-14, of-12)
+det(proposition-14, a-13)
+nsubj(means-9, content-4)
+nmod:of(content-4, proposition-7)
+dobj(means-9, content-11)
+nmod:of(content-11, proposition-14)
+nsubj(has-16, proposition-14)
+ref(proposition-14, that-15)
+acl:relcl(proposition-14, has-16)
+dobj(has-16, sense-17)
+root(ROOT-0, contains-3)
+det(proposition-2, A-1)
+punct(contains-3, .-15)
+cc(form-5, not-8)
+det(form-5, the-4)
+punct(form-5, ,-6)
+punct(form-5, ,-11)
+cc(not-8, but-7)
+det(content-10, the-9)
+case(sense-14, of-12)
+nsubj(contains-3, proposition-2)
+dobj(contains-3, form-5)
+dobj(contains-3, content-10)
+conj:negcc(form-5, content-10)
+nmod:poss(sense-14, its-13)
+nmod:of(form-5, sense-14)
+G[34, 39] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, actually8, contain9, contain15, contains3, content2147483647, content2147483647, content2147483647, expressing19, form2147483647, has16, it20, its10, its13, means9, not7, possibility2147483647, proposition2147483647, proposition2147483647, proposition2147483647, proposition2147483647, sense14, sense17, sense11, that15, therefore4]
+?7-a->proposition2147483647
+contain15-but->contain9
+?2-A->proposition2147483647
+its10-poss->sense11
+?4- ->?1
+?5-the->form2147483647
+?8-The->content2147483647
+it20- ->expressing19
+expressing19-of->?9
+not7-  : does ->contain9
+?5- ->contains3
+?3-a->proposition2147483647
+?3-of->?8
+?4-the->content2147483647
+?6- ->contains3
+its13- ->?2
+?4- ->contains3
+?1- ->means9
+actually8- ->contain9
+?9-the->possibility2147483647
+?6-A->proposition2147483647
+it20- ->?2
+sense11- ->contain9
+?1-the->content2147483647
+sense14-of->?5
+therefore4- ->contain9
+?2- ->contain9
+?3- ->?2
+its13-poss->sense14
+sense17- ->has16
+?7- ->has16
+has16-relcl->?7
+?8- ->means9
+?7-of->?1
+?4- ->?2
+that15- ->?7
+?9-  : does ->contain15
+?2- ->contain15
+?4-negcc : not ->?5
+------CorefChainz
+CHAIN4-["A proposition" in sentence 1, "its" in sentence 1, "it" in sentence 1, "a proposition" in sentence 2, "A proposition" in sentence 3, "its" in sentence 3]
+representative mention: "A proposition" in sentence 1
+CHAIN10-["the content of a proposition that has sense" in sentence 2, "the content" in sentence 3]
+representative mention: "the content of a proposition that has sense" in sentence 2
+CHAIN12-["its sense" in sentence 1, "its sense" in sentence 3]
+representative mention: "its sense" in sentence 1

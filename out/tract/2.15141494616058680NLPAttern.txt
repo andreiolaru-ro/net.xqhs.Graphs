@@ -1,0 +1,56 @@
+ So a picture, conceived in this way, also includes the pictorial relationship, which makes it into a picture.
+------CorefChainz
+CHAIN3-["this way" in sentence 1, "it" in sentence 1]
+representative mention: "this way" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, includes-11)
+det(picture-3, a-2)
+punct(picture-3, ,-4)
+punct(picture-3, ,-9)
+case(way-8, in-6)
+det(way-8, this-7)
+punct(includes-11, .-22)
+det(relationship-14, the-12)
+punct(relationship-14, ,-15)
+case(picture-21, into-19)
+det(picture-21, a-20)
+dep(includes-11, So-1)
+nsubj(includes-11, picture-3)
+acl(picture-3, conceived-5)
+nmod:in(conceived-5, way-8)
+advmod(includes-11, also-10)
+amod(relationship-14, pictorial-13)
+dobj(includes-11, relationship-14)
+nsubj(makes-17, relationship-14)
+ref(relationship-14, which-16)
+acl:relcl(relationship-14, makes-17)
+dobj(makes-17, it-18)
+nmod:into(makes-17, picture-21)
+G[16, 17] [?1, ?2, ?3, ?4, So1, also10, conceived5, includes11, it18, makes17, pictorial13, picture2147483647, picture2147483647, relationship2147483647, way2147483647, which16]
+?1-the->relationship2147483647
+it18- ->makes17
+?1- ->includes11
+makes17-relcl->?1
+?3-in->conceived5
+?2-a->picture2147483647
+So1- ->includes11
+it18- ->?3
+?1- ->makes17
+?4- ->includes11
+?4-a->picture2147483647
+which16- ->?1
+conceived5- ->?4
+pictorial13- ->?1
+also10- ->includes11
+?2-into->makes17
+?3-this->way2147483647
+------CorefChainz
+CHAIN3-["this way" in sentence 1, "it" in sentence 1]
+representative mention: "this way" in sentence 1

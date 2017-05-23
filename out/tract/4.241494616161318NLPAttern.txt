@@ -1,0 +1,222 @@
+ Names are the simple symbols: I indicate them by single letters ('x', 'y', 'z'). I write elementary propositions as functions of names, so that they have the form 'fx', 'O (x,y)', etc. Or I indicate them by the letters 'p', 'q', 'r'.
+------CorefChainz
+CHAIN16-["single letters" in sentence 1, "the letters" in sentence 3]
+representative mention: "single letters" in sentence 1
+CHAIN20-["I" in sentence 1, "I" in sentence 2, "I" in sentence 3]
+representative mention: "I" in sentence 1
+CHAIN21-["Names" in sentence 1, "them" in sentence 1, "they" in sentence 2, "them" in sentence 3]
+representative mention: "Names" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, symbols-5)
+cop(symbols-5, are-2)
+det(symbols-5, the-3)
+punct(symbols-5, :-6)
+punct(symbols-5, .-26)
+case(letters-12, by-10)
+punct(x-15, '-16)
+punct(x-15, ,-17)
+punct(x-15, `-18)
+punct(x-15, '-20)
+punct(x-15, ,-21)
+punct(x-15, `-22)
+punct(x-15, '-24)
+punct(x-15, -RRB--25)
+punct(x-15, -LRB--13)
+punct(x-15, `-14)
+nsubj(symbols-5, Names-1)
+amod(symbols-5, simple-4)
+nsubj(indicate-8, I-7)
+parataxis(symbols-5, indicate-8)
+dobj(indicate-8, them-9)
+amod(letters-12, single-11)
+nmod:by(indicate-8, letters-12)
+dep(indicate-8, x-15)
+dep(x-15, y-19)
+dep(x-15, z-23)
+---
+qqroot(ROOT-0, symbols-5)
+cop(symbols-5, are-2)
+det(symbols-5, the-3)
+punct(symbols-5, :-6)
+punct(symbols-5, .-26)
+case(letters-12, by-10)
+punct(x-15, '-16)
+punct(x-15, ,-17)
+punct(x-15, `-18)
+punct(x-15, '-20)
+punct(x-15, ,-21)
+punct(x-15, `-22)
+punct(x-15, '-24)
+punct(x-15, -RRB--25)
+punct(x-15, -LRB--13)
+punct(x-15, `-14)
+nsubj(symbols-5, Names-1)
+amod(symbols-5, simple-4)
+nsubj(indicate-8, I-7)
+parataxis(symbols-5, indicate-8)
+dobj(indicate-8, them-9)
+amod(letters-12, single-11)
+nmod:by(indicate-8, letters-12)
+dep(indicate-8, x-15)
+dep(x-15, y-19)
+dep(x-15, z-23)
+root(ROOT-0, write-2)
+punct(write-2, ,-19)
+punct(write-2, ,-9)
+case(functions-6, as-5)
+case(names-8, of-7)
+mwe(so-10, that-11)
+mark(have-13, so-10)
+det(form-15, the-14)
+punct(fx-17, `-16)
+punct(fx-17, '-18)
+punct(O-21, '-27)
+punct(O-21, ,-28)
+punct(O-21, .-30)
+punct(x-23, -LRB--22)
+punct(x-23, ,-24)
+punct(x-23, -RRB--26)
+nsubj(write-2, I-1)
+amod(propositions-4, elementary-3)
+dobj(write-2, propositions-4)
+nmod:as(write-2, functions-6)
+nmod:of(functions-6, names-8)
+nsubj(have-13, they-12)
+advcl:so_that(write-2, have-13)
+dobj(have-13, form-15)
+dep(form-15, fx-17)
+root(,-19, '-20)
+root('-20, O-21)
+dep(O-21, x-23)
+appos(x-23, y-25)
+dep(O-21, etc.-29)
+---
+qqroot(ROOT-0, symbols-5)
+cop(symbols-5, are-2)
+det(symbols-5, the-3)
+punct(symbols-5, :-6)
+punct(symbols-5, .-26)
+case(letters-12, by-10)
+punct(x-15, '-16)
+punct(x-15, ,-17)
+punct(x-15, `-18)
+punct(x-15, '-20)
+punct(x-15, ,-21)
+punct(x-15, `-22)
+punct(x-15, '-24)
+punct(x-15, -RRB--25)
+punct(x-15, -LRB--13)
+punct(x-15, `-14)
+nsubj(symbols-5, Names-1)
+amod(symbols-5, simple-4)
+nsubj(indicate-8, I-7)
+parataxis(symbols-5, indicate-8)
+dobj(indicate-8, them-9)
+amod(letters-12, single-11)
+nmod:by(indicate-8, letters-12)
+dep(indicate-8, x-15)
+dep(x-15, y-19)
+dep(x-15, z-23)
+root(ROOT-0, write-2)
+punct(write-2, ,-19)
+punct(write-2, ,-9)
+case(functions-6, as-5)
+case(names-8, of-7)
+mwe(so-10, that-11)
+mark(have-13, so-10)
+det(form-15, the-14)
+punct(fx-17, `-16)
+punct(fx-17, '-18)
+punct(O-21, '-27)
+punct(O-21, ,-28)
+punct(O-21, .-30)
+punct(x-23, -LRB--22)
+punct(x-23, ,-24)
+punct(x-23, -RRB--26)
+nsubj(write-2, I-1)
+amod(propositions-4, elementary-3)
+dobj(write-2, propositions-4)
+nmod:as(write-2, functions-6)
+nmod:of(functions-6, names-8)
+nsubj(have-13, they-12)
+advcl:so_that(write-2, have-13)
+dobj(have-13, form-15)
+dep(form-15, fx-17)
+root(,-19, '-20)
+root('-20, O-21)
+dep(O-21, x-23)
+appos(x-23, y-25)
+dep(O-21, etc.-29)
+root(ROOT-0, indicate-3)
+cc(indicate-3, Or-1)
+punct(indicate-3, .-19)
+case(letters-7, by-5)
+det(letters-7, the-6)
+punct(p-9, `-8)
+punct(p-9, '-10)
+punct(p-9, ,-11)
+punct(p-9, `-12)
+punct(p-9, '-14)
+punct(p-9, ,-15)
+punct(p-9, `-16)
+punct(p-9, '-18)
+nsubj(indicate-3, I-2)
+dobj(indicate-3, them-4)
+nmod:by(indicate-3, letters-7)
+dep(letters-7, p-9)
+dep(p-9, q-13)
+dep(p-9, r-17)
+G[38, 37] ['20, ,19, ?1, ?2, ?3, I2, I7, I1, Names1, O21, elementary3, etc.29, form2147483647, functions6, fx17, have13, indicate3, indicate8, letters12, letters2147483647, names8, p9, propositions4, q13, r17, simple4, single11, so that10, symbols2147483647, them9, them4, they12, write2, x15, x23, y19, y25, z23]
+names8-of->functions6
+?2-the->letters2147483647
+I7- ->indicate8
+single11- ->letters12
+they12-  : so that ->have13
+?2-by->indicate3
+?1-the->symbols2147483647
+x23- ->O21
+propositions4- ->write2
+have13-so_that->write2
+etc.29- ->O21
+'20- ->,19
+q13- ->p9
+Names1-  : are ->?1
+letters12-by->indicate8
+them9- ->indicate8
+fx17- ->?3
+them4- ->indicate3
+p9- ->?2
+I7- ->letters12
+letters12- ->Names1
+p9- ->Names1
+x15- ->indicate8
+simple4- ->?1
+r17- ->p9
+indicate8- ->?1
+?3-the->form2147483647
+I2-  : Or ->indicate3
+y19- ->x15
+functions6-as->write2
+elementary3- ->propositions4
+I1- ->write2
+propositions4- ->Names1
+?3- ->have13
+y25- ->x23
+z23- ->x15
+O21- ->'20
+------CorefChainz
+CHAIN16-["single letters" in sentence 1, "the letters" in sentence 3]
+representative mention: "single letters" in sentence 1
+CHAIN20-["I" in sentence 1, "I" in sentence 2, "I" in sentence 3]
+representative mention: "I" in sentence 1
+CHAIN21-["Names" in sentence 1, "them" in sentence 1, "they" in sentence 2, "them" in sentence 3]
+representative mention: "Names" in sentence 1

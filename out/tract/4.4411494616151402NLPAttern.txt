@@ -1,0 +1,262 @@
+ It is clear that a complex of the signs 'F' and 'T' has no object (or complex of objects) corresponding to it, just as there is none corresponding to the horizontal and vertical lines or to the brackets.-- There are no 'logical objects'. Of course the same applies to all signs that express what the schemata of 'T's' and 'F's' express.
+------CorefChainz
+CHAIN9-["a complex of the signs ` F ' and ` T '" in sentence 1, "it" in sentence 1]
+representative mention: "a complex of the signs ` F ' and ` T '" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-46)
+det(complex-6, a-5)
+case(signs-9, of-7)
+det(signs-9, the-8)
+cc(F-11, and-13)
+punct(F-11, `-10)
+punct(F-11, '-12)
+punct(T-15, '-16)
+punct(T-15, `-14)
+mark(has-17, that-4)
+punct(has-17, ,-29)
+cc(complex-22, or-21)
+punct(complex-22, -LRB--20)
+punct(complex-22, -RRB--25)
+case(objects-24, of-23)
+case(it-28, to-27)
+mark(is-33, as-31)
+cc(corresponding-35, or-42)
+cc(horizontal-38, and-39)
+case(lines-41, to-36)
+det(lines-41, the-37)
+case(brackets-45, to-43)
+det(brackets-45, the-44)
+nsubj(clear-3, It-1)
+nsubj(has-17, complex-6)
+nmod:of(complex-6, signs-9)
+dep(signs-9, F-11)
+dep(signs-9, T-15)
+conj:and(F-11, T-15)
+ccomp(clear-3, has-17)
+neg(object-19, no-18)
+dobj(has-17, object-19)
+dep(object-19, complex-22)
+nmod:of(complex-22, objects-24)
+acl(object-19, corresponding-26)
+nmod:to(corresponding-26, it-28)
+advmod(is-33, just-30)
+expl(is-33, there-32)
+advcl:as(has-17, is-33)
+nsubj(is-33, none-34)
+acl(none-34, corresponding-35)
+acl(none-34, corresponding-35''')
+conj:or(corresponding-35, corresponding-35''')
+amod(lines-41, horizontal-38)
+conj:and(horizontal-38, vertical-40)
+amod(lines-41, vertical-40)
+nmod:to(corresponding-35, lines-41)
+nmod:to(corresponding-35''', brackets-45)
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-46)
+det(complex-6, a-5)
+case(signs-9, of-7)
+det(signs-9, the-8)
+cc(F-11, and-13)
+punct(F-11, `-10)
+punct(F-11, '-12)
+punct(T-15, '-16)
+punct(T-15, `-14)
+mark(has-17, that-4)
+punct(has-17, ,-29)
+cc(complex-22, or-21)
+punct(complex-22, -LRB--20)
+punct(complex-22, -RRB--25)
+case(objects-24, of-23)
+case(it-28, to-27)
+mark(is-33, as-31)
+cc(corresponding-35, or-42)
+cc(horizontal-38, and-39)
+case(lines-41, to-36)
+det(lines-41, the-37)
+case(brackets-45, to-43)
+det(brackets-45, the-44)
+nsubj(clear-3, It-1)
+nsubj(has-17, complex-6)
+nmod:of(complex-6, signs-9)
+dep(signs-9, F-11)
+dep(signs-9, T-15)
+conj:and(F-11, T-15)
+ccomp(clear-3, has-17)
+neg(object-19, no-18)
+dobj(has-17, object-19)
+dep(object-19, complex-22)
+nmod:of(complex-22, objects-24)
+acl(object-19, corresponding-26)
+nmod:to(corresponding-26, it-28)
+advmod(is-33, just-30)
+expl(is-33, there-32)
+advcl:as(has-17, is-33)
+nsubj(is-33, none-34)
+acl(none-34, corresponding-35)
+acl(none-34, corresponding-35''')
+conj:or(corresponding-35, corresponding-35''')
+amod(lines-41, horizontal-38)
+conj:and(horizontal-38, vertical-40)
+amod(lines-41, vertical-40)
+nmod:to(corresponding-35, lines-41)
+nmod:to(corresponding-35''', brackets-45)
+root(ROOT-0, are-3)
+punct(are-3, .-9)
+punct(are-3, ---1)
+case(objects-7, '-8)
+punct(objects-7, `-5)
+expl(are-3, There-2)
+neg(objects-7, no-4)
+amod(objects-7, logical-6)
+nsubj(are-3, objects-7)
+---
+qqroot(ROOT-0, clear-3)
+cop(clear-3, is-2)
+punct(clear-3, .-46)
+det(complex-6, a-5)
+case(signs-9, of-7)
+det(signs-9, the-8)
+cc(F-11, and-13)
+punct(F-11, `-10)
+punct(F-11, '-12)
+punct(T-15, '-16)
+punct(T-15, `-14)
+mark(has-17, that-4)
+punct(has-17, ,-29)
+cc(complex-22, or-21)
+punct(complex-22, -LRB--20)
+punct(complex-22, -RRB--25)
+case(objects-24, of-23)
+case(it-28, to-27)
+mark(is-33, as-31)
+cc(corresponding-35, or-42)
+cc(horizontal-38, and-39)
+case(lines-41, to-36)
+det(lines-41, the-37)
+case(brackets-45, to-43)
+det(brackets-45, the-44)
+nsubj(clear-3, It-1)
+nsubj(has-17, complex-6)
+nmod:of(complex-6, signs-9)
+dep(signs-9, F-11)
+dep(signs-9, T-15)
+conj:and(F-11, T-15)
+ccomp(clear-3, has-17)
+neg(object-19, no-18)
+dobj(has-17, object-19)
+dep(object-19, complex-22)
+nmod:of(complex-22, objects-24)
+acl(object-19, corresponding-26)
+nmod:to(corresponding-26, it-28)
+advmod(is-33, just-30)
+expl(is-33, there-32)
+advcl:as(has-17, is-33)
+nsubj(is-33, none-34)
+acl(none-34, corresponding-35)
+acl(none-34, corresponding-35''')
+conj:or(corresponding-35, corresponding-35''')
+amod(lines-41, horizontal-38)
+conj:and(horizontal-38, vertical-40)
+amod(lines-41, vertical-40)
+nmod:to(corresponding-35, lines-41)
+nmod:to(corresponding-35''', brackets-45)
+root(ROOT-0, are-3)
+punct(are-3, .-9)
+punct(are-3, ---1)
+case(objects-7, '-8)
+punct(objects-7, `-5)
+expl(are-3, There-2)
+neg(objects-7, no-4)
+amod(objects-7, logical-6)
+nsubj(are-3, objects-7)
+root(ROOT-0, applies-5)
+case(course-2, Of-1)
+det(same-4, the-3)
+punct(applies-5, .-25)
+case(signs-8, to-6)
+det(signs-8, all-7)
+det(schemata-13, the-12)
+case(T-16, 's-17)
+cc(T-16, and-19)
+punct(T-16, '-23)
+punct(T-16, `-15)
+punct(T-16, '-18)
+case(F-21, 's-22)
+punct(F-21, `-20)
+case(express-24, of-14)
+nmod:of(applies-5, course-2)
+nsubj(applies-5, same-4)
+nmod:to(applies-5, signs-8)
+nsubj(express-10, signs-8)
+ref(signs-8, that-9)
+acl:relcl(signs-8, express-10)
+dobj(express-10, what-11)
+nsubj(what-11, schemata-13)
+dep(express-24, T-16)
+conj:and(T-16, F-21)
+dep(express-24, F-21)
+nmod:of(schemata-13, express-24)
+G[45, 47] [?1, ?2, ?3, ?4, ?5, ?6, ?7, F21, F11, It1, T16, T15, There2, applies5, are3, brackets2147483647, clear3, complex22, complex2147483647, corresponding26, corresponding35, course2, express10, express24, has17, horizontal38, is33, it28, just30, lines2147483647, logical6, no18, no4, none34, object19, objects7, objects24, same2147483647, schemata2147483647, signs2147483647, signs2147483647, that9, there32, vertical40, what11]
+F21- ->express24
+?4-the->lines2147483647
+?6-the->brackets2147483647
+is33-as->has17
+?1- ->applies5
+no4- ->objects7
+?2-the->schemata2147483647
+course2-of : Of ->applies5
+none34- ->is33
+F11- ->?3
+?4-to : or ->corresponding35
+there32- ->is33
+It1-  : is ->clear3
+T16- ->express24
+that9- ->?5
+?1-the->same2147483647
+?7-a->complex2147483647
+?3-of->?7
+?2- ->what11
+corresponding35- ->none34
+express10-relcl->?5
+?6-to->corresponding35
+objects24-of->complex22
+vertical40- ->?4
+it28- ->logical6
+object19- ->has17
+horizontal38- ->?4
+?5- ->express10
+complex22-  : or ->object19
+F21-and : 's ->T16
+?5-all->signs2147483647
+T15-and->F11
+corresponding26- ->object19
+There2- ->are3
+vertical40-and->horizontal38
+?5-to->applies5
+logical6-  : ' ->objects7
+T15- ->?3
+?7- ->has17
+it28-to->corresponding26
+just30- ->is33
+what11- ->express10
+express24-of->?2
+no18- ->object19
+has17-  : that ->clear3
+?3-the->signs2147483647
+objects7- ->are3
+------CorefChainz
+CHAIN9-["a complex of the signs ` F ' and ` T '" in sentence 1, "it" in sentence 1]
+representative mention: "a complex of the signs ` F ' and ` T '" in sentence 1

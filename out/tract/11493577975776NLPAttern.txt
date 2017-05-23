@@ -1,0 +1,57 @@
+ The world is all that is the case.
+------CorefChainz
+The-DT 
+world-NN 
+is-VBZ 
+all-DT 
+that-WDT 
+is-VBZ 
+the-DT 
+case-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> world
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> DT 	-> all
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> case
+							 	-> . 	-> .
+			
+Dependensee repr
+det(world-2, The-1)
+nsubj(all-4, world-2)
+cop(all-4, is-3)
+root(ROOT-0, all-4)
+nsubj(case-8, all-4)
+ref(all-4, that-5)
+cop(case-8, is-6)
+det(case-8, the-7)
+acl:relcl(all-4, case-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, all-4)
+det(world-2, The-1)
+cop(all-4, is-3)
+punct(all-4, .-9)
+cop(case-8, is-6)
+det(case-8, the-7)
+nsubj(all-4, world-2)
+nsubj(case-8, all-4)
+ref(all-4, that-5)
+acl:relcl(all-4, case-8)
+G[6, 6] [?#1, ?#2, all, case, that, world]
+that- ->all
+?#2-The->world
+?#1-the->case
+?#1-relcl : is  : is relcl->all
+all- ->?#1
+?#2- ->all
+------CorefChainz

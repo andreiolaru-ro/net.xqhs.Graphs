@@ -1,0 +1,210 @@
+ The truth or falsity of every proposition does make some alteration in the general construction of the world. And the range that the totality of elementary propositions leaves open for its construction is exactly the same as that which is delimited by entirely general propositions. (If an elementary proposition is true, that means, at any rate, one more true elementary proposition.)
+------CorefChainz
+CHAIN9-["the totality of elementary propositions" in sentence 2, "its" in sentence 2]
+representative mention: "the totality of elementary propositions" in sentence 2
+CHAIN10-["the general construction of the world" in sentence 1, "its construction" in sentence 2]
+representative mention: "the general construction of the world" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, make-9)
+cc(truth-2, or-3)
+det(truth-2, The-1)
+case(proposition-7, of-5)
+det(proposition-7, every-6)
+aux(make-9, does-8)
+punct(make-9, .-19)
+det(alteration-11, some-10)
+case(construction-15, in-12)
+det(construction-15, the-13)
+case(world-18, of-16)
+det(world-18, the-17)
+nsubj(make-9, truth-2)
+conj:or(truth-2, falsity-4)
+nsubj(make-9, falsity-4)
+nmod:of(truth-2, proposition-7)
+dobj(make-9, alteration-11)
+amod(construction-15, general-14)
+nmod:in(make-9, construction-15)
+nmod:of(construction-15, world-18)
+---
+qqroot(ROOT-0, make-9)
+cc(truth-2, or-3)
+det(truth-2, The-1)
+case(proposition-7, of-5)
+det(proposition-7, every-6)
+aux(make-9, does-8)
+punct(make-9, .-19)
+det(alteration-11, some-10)
+case(construction-15, in-12)
+det(construction-15, the-13)
+case(world-18, of-16)
+det(world-18, the-17)
+nsubj(make-9, truth-2)
+conj:or(truth-2, falsity-4)
+nsubj(make-9, falsity-4)
+nmod:of(truth-2, proposition-7)
+dobj(make-9, alteration-11)
+amod(construction-15, general-14)
+nmod:in(make-9, construction-15)
+nmod:of(construction-15, world-18)
+root(ROOT-0, same-18)
+det(range-3, the-2)
+det(totality-6, the-5)
+case(propositions-9, of-7)
+mark(leaves-10, that-4)
+case(construction-14, for-12)
+cc(same-18, And-1)
+cop(same-18, is-15)
+det(same-18, the-17)
+punct(same-18, .-28)
+case(that-20, as-19)
+auxpass(delimited-23, is-22)
+case(propositions-27, by-24)
+nsubj(same-18, range-3)
+nsubj(leaves-10, totality-6)
+amod(propositions-9, elementary-8)
+nmod:of(totality-6, propositions-9)
+ccomp(range-3, leaves-10)
+xcomp(leaves-10, open-11)
+nmod:poss(construction-14, its-13)
+nmod:for(open-11, construction-14)
+advmod(same-18, exactly-16)
+nmod:as(same-18, that-20)
+nsubjpass(delimited-23, that-20)
+ref(that-20, which-21)
+acl:relcl(that-20, delimited-23)
+advmod(propositions-27, entirely-25)
+amod(propositions-27, general-26)
+nmod:agent(delimited-23, propositions-27)
+---
+qqroot(ROOT-0, make-9)
+cc(truth-2, or-3)
+det(truth-2, The-1)
+case(proposition-7, of-5)
+det(proposition-7, every-6)
+aux(make-9, does-8)
+punct(make-9, .-19)
+det(alteration-11, some-10)
+case(construction-15, in-12)
+det(construction-15, the-13)
+case(world-18, of-16)
+det(world-18, the-17)
+nsubj(make-9, truth-2)
+conj:or(truth-2, falsity-4)
+nsubj(make-9, falsity-4)
+nmod:of(truth-2, proposition-7)
+dobj(make-9, alteration-11)
+amod(construction-15, general-14)
+nmod:in(make-9, construction-15)
+nmod:of(construction-15, world-18)
+root(ROOT-0, same-18)
+det(range-3, the-2)
+det(totality-6, the-5)
+case(propositions-9, of-7)
+mark(leaves-10, that-4)
+case(construction-14, for-12)
+cc(same-18, And-1)
+cop(same-18, is-15)
+det(same-18, the-17)
+punct(same-18, .-28)
+case(that-20, as-19)
+auxpass(delimited-23, is-22)
+case(propositions-27, by-24)
+nsubj(same-18, range-3)
+nsubj(leaves-10, totality-6)
+amod(propositions-9, elementary-8)
+nmod:of(totality-6, propositions-9)
+ccomp(range-3, leaves-10)
+xcomp(leaves-10, open-11)
+nmod:poss(construction-14, its-13)
+nmod:for(open-11, construction-14)
+advmod(same-18, exactly-16)
+nmod:as(same-18, that-20)
+nsubjpass(delimited-23, that-20)
+ref(that-20, which-21)
+acl:relcl(that-20, delimited-23)
+advmod(propositions-27, entirely-25)
+amod(propositions-27, general-26)
+nmod:agent(delimited-23, propositions-27)
+root(ROOT-0, means-10)
+det(proposition-5, an-3)
+cop(true-7, is-6)
+mark(true-7, If-2)
+punct(means-10, -RRB--22)
+punct(means-10, ,-8)
+punct(means-10, ,-11)
+punct(means-10, ,-15)
+punct(means-10, -LRB--1)
+punct(means-10, .-21)
+case(rate-14, at-12)
+det(rate-14, any-13)
+amod(proposition-5, elementary-4)
+nsubj(true-7, proposition-5)
+advcl:if(means-10, true-7)
+nsubj(means-10, that-9)
+nmod:at(means-10, rate-14)
+nummod(proposition-20, one-16)
+advmod(true-18, more-17)
+amod(proposition-20, true-18)
+amod(proposition-20, elementary-19)
+dep(means-10, proposition-20)
+G[45, 46] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, alteration2147483647, construction2147483647, construction14, delimited23, elementary19, elementary8, elementary4, entirely25, exactly16, falsity4, general26, general14, its13, leaves10, make9, means10, more17, one16, open11, proposition2147483647, proposition2147483647, proposition20, propositions27, propositions9, range2147483647, rate2147483647, same2147483647, that20, that9, totality2147483647, true7, true18, truth2147483647, which21, world2147483647]
+?1-the->construction2147483647
+?4-of->?1
+?8-The->truth2147483647
+proposition20- ->means10
+?6-at->means10
+falsity4- ->make9
+?8- ->make9
+?2-some->alteration2147483647
+that9- ->means10
+?6-any->rate2147483647
+delimited23-relcl : is  : is ->that20
+?3-  : And ->?5
+true7-if->means10
+construction14- ->?1
+?9-every->proposition2147483647
+elementary19- ->proposition20
+entirely25- ->propositions27
+its13-poss->construction14
+?4-the->world2147483647
+leaves10-  : that ->?3
+open11- ->leaves10
+construction14-for->open11
+true18- ->proposition20
+?5-the->same2147483647
+general14- ->?1
+its13- ->?10
+propositions27-agent : by  : by ->delimited23
+which21- ->that20
+falsity4-or->?8
+elementary4- ->?7
+?2-  : does ->make9
+that20-as->?5
+general26- ->propositions27
+more17- ->true18
+that20- ->delimited23
+?1-in->make9
+?3-the->range2147483647
+one16- ->proposition20
+?9-of->?8
+propositions9-of->?10
+?10- ->leaves10
+?7-an->proposition2147483647
+?7-  : If  : is ->true7
+?10-the->totality2147483647
+elementary8- ->propositions9
+exactly16-  : is ->?5
+------CorefChainz
+CHAIN9-["the totality of elementary propositions" in sentence 2, "its" in sentence 2]
+representative mention: "the totality of elementary propositions" in sentence 2
+CHAIN10-["the general construction of the world" in sentence 1, "its construction" in sentence 2]
+representative mention: "the general construction of the world" in sentence 1

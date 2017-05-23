@@ -1,0 +1,70 @@
+ In logic nothing is accidental: if a thing can occur in a state of affairs, the possibility of the state of affairs must be written into the thing itself.
+------CorefChainz
+CHAIN5-["a state of affairs" in sentence 1, "the state of affairs" in sentence 1]
+representative mention: "a state of affairs" in sentence 1
+CHAIN8-["a thing" in sentence 1, "the thing itself" in sentence 1, "itself" in sentence 1]
+representative mention: "the thing itself" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, accidental-5)
+case(nothing-3, In-1)
+compound(nothing-3, logic-2)
+cop(accidental-5, is-4)
+punct(accidental-5, .-32)
+punct(accidental-5, :-6)
+det(thing-9, a-8)
+aux(occur-11, can-10)
+mark(occur-11, if-7)
+case(state-14, in-12)
+det(state-14, a-13)
+case(affairs-16, of-15)
+det(possibility-19, the-18)
+case(state-22, of-20)
+det(state-22, the-21)
+case(affairs-24, of-23)
+aux(written-27, must-25)
+auxpass(written-27, be-26)
+punct(written-27, ,-17)
+case(thing-30, into-28)
+det(thing-30, the-29)
+nmod:in(accidental-5, nothing-3)
+nsubj(occur-11, thing-9)
+advcl:if(written-27, occur-11)
+nmod:in(occur-11, state-14)
+nmod:of(state-14, affairs-16)
+nsubjpass(written-27, possibility-19)
+nmod:of(possibility-19, state-22)
+nmod:of(state-22, affairs-24)
+parataxis(accidental-5, written-27)
+nmod:into(written-27, thing-30)
+nmod:npmod(thing-30, itself-31)
+G[16, 18] [?1, ?2, ?3, ?4, ?5, accidental5, affairs24, affairs16, logic nothing3, occur11, possibility2147483647, state2147483647, state2147483647, thing2147483647, thing2147483647, written27]
+?1-the->thing2147483647
+occur11-if->written27
+?5-a->thing2147483647
+affairs16- ->?1
+affairs24-of->?2
+?2-of->?4
+?5-  : can ->occur11
+affairs16-of->?3
+?1-into : must  : be ->written27
+logic nothing3-in : In  : is ->accidental5
+?4-the->possibility2147483647
+?5- ->?1
+?3-in->occur11
+?2- ->?3
+?4- ->written27
+?3-a->state2147483647
+?2-the->state2147483647
+written27- ->accidental5
+------CorefChainz
+CHAIN5-["a state of affairs" in sentence 1, "the state of affairs" in sentence 1]
+representative mention: "a state of affairs" in sentence 1
+CHAIN8-["a thing" in sentence 1, "the thing itself" in sentence 1, "itself" in sentence 1]
+representative mention: "the thing itself" in sentence 1

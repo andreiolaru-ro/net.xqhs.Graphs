@@ -1,0 +1,307 @@
+ When propositions have no truth-arguments in common with one another, we call them independent of one another. Two elementary propositions give one another the probability 1/2. If p follows from q, then the proposition 'q' gives to the proposition 'p' the probability 1. The certainty of logical inference is a limiting case of probability. (Application of this to tautology and contradiction.)
+------CorefChainz
+CHAIN7-["propositions" in sentence 1, "them" in sentence 1]
+representative mention: "propositions" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, call-13)
+case(common-7, in-6)
+case(one-9, with-8)
+punct(call-13, .-19)
+punct(call-13, ,-11)
+case(another-18, of-16)
+advmod(have-3, When-1)
+nsubj(have-3, propositions-2)
+advcl(call-13, have-3)
+neg(truth-arguments-5, no-4)
+dobj(have-3, truth-arguments-5)
+nmod:in(have-3, common-7)
+nmod:with(common-7, one-9)
+dep(one-9, another-10)
+nsubj(call-13, we-12)
+nsubj(independent-15, them-14)
+xcomp(call-13, independent-15)
+nummod(another-18, one-17)
+nmod:of(independent-15, another-18)
+---
+qqroot(ROOT-0, call-13)
+case(common-7, in-6)
+case(one-9, with-8)
+punct(call-13, .-19)
+punct(call-13, ,-11)
+case(another-18, of-16)
+advmod(have-3, When-1)
+nsubj(have-3, propositions-2)
+advcl(call-13, have-3)
+neg(truth-arguments-5, no-4)
+dobj(have-3, truth-arguments-5)
+nmod:in(have-3, common-7)
+nmod:with(common-7, one-9)
+dep(one-9, another-10)
+nsubj(call-13, we-12)
+nsubj(independent-15, them-14)
+xcomp(call-13, independent-15)
+nummod(another-18, one-17)
+nmod:of(independent-15, another-18)
+root(ROOT-0, give-4)
+punct(give-4, .-10)
+det(probability-8, the-7)
+nummod(propositions-3, Two-1)
+amod(propositions-3, elementary-2)
+nsubj(give-4, propositions-3)
+dobj(give-4, one-5)
+dep(one-5, another-6)
+dep(another-6, probability-8)
+nummod(probability-8, 1/2-9)
+---
+qqroot(ROOT-0, call-13)
+case(common-7, in-6)
+case(one-9, with-8)
+punct(call-13, .-19)
+punct(call-13, ,-11)
+case(another-18, of-16)
+advmod(have-3, When-1)
+nsubj(have-3, propositions-2)
+advcl(call-13, have-3)
+neg(truth-arguments-5, no-4)
+dobj(have-3, truth-arguments-5)
+nmod:in(have-3, common-7)
+nmod:with(common-7, one-9)
+dep(one-9, another-10)
+nsubj(call-13, we-12)
+nsubj(independent-15, them-14)
+xcomp(call-13, independent-15)
+nummod(another-18, one-17)
+nmod:of(independent-15, another-18)
+root(ROOT-0, give-4)
+punct(give-4, .-10)
+det(probability-8, the-7)
+nummod(propositions-3, Two-1)
+amod(propositions-3, elementary-2)
+nsubj(give-4, propositions-3)
+dobj(give-4, one-5)
+dep(one-5, another-6)
+dep(another-6, probability-8)
+nummod(probability-8, 1/2-9)
+root(ROOT-0, gives-13)
+mark(follows-3, If-1)
+case(q-5, from-4)
+compound(q-11, proposition-9)
+det(q-11, the-8)
+punct(q-11, `-10)
+punct(q-11, '-12)
+punct(gives-13, ,-6)
+punct(gives-13, .-23)
+case(p-18, to-14)
+compound(p-18, proposition-16)
+det(p-18, the-15)
+punct(p-18, `-17)
+punct(p-18, '-19)
+det(probability-21, the-20)
+nsubj(follows-3, p-2)
+advcl:if(gives-13, follows-3)
+nmod:from(follows-3, q-5)
+advmod(q-11, then-7)
+nsubj(gives-13, q-11)
+nmod:to(gives-13, p-18)
+dep(p-18, probability-21)
+nummod(probability-21, 1-22)
+---
+qqroot(ROOT-0, call-13)
+case(common-7, in-6)
+case(one-9, with-8)
+punct(call-13, .-19)
+punct(call-13, ,-11)
+case(another-18, of-16)
+advmod(have-3, When-1)
+nsubj(have-3, propositions-2)
+advcl(call-13, have-3)
+neg(truth-arguments-5, no-4)
+dobj(have-3, truth-arguments-5)
+nmod:in(have-3, common-7)
+nmod:with(common-7, one-9)
+dep(one-9, another-10)
+nsubj(call-13, we-12)
+nsubj(independent-15, them-14)
+xcomp(call-13, independent-15)
+nummod(another-18, one-17)
+nmod:of(independent-15, another-18)
+root(ROOT-0, give-4)
+punct(give-4, .-10)
+det(probability-8, the-7)
+nummod(propositions-3, Two-1)
+amod(propositions-3, elementary-2)
+nsubj(give-4, propositions-3)
+dobj(give-4, one-5)
+dep(one-5, another-6)
+dep(another-6, probability-8)
+nummod(probability-8, 1/2-9)
+root(ROOT-0, gives-13)
+mark(follows-3, If-1)
+case(q-5, from-4)
+compound(q-11, proposition-9)
+det(q-11, the-8)
+punct(q-11, `-10)
+punct(q-11, '-12)
+punct(gives-13, ,-6)
+punct(gives-13, .-23)
+case(p-18, to-14)
+compound(p-18, proposition-16)
+det(p-18, the-15)
+punct(p-18, `-17)
+punct(p-18, '-19)
+det(probability-21, the-20)
+nsubj(follows-3, p-2)
+advcl:if(gives-13, follows-3)
+nmod:from(follows-3, q-5)
+advmod(q-11, then-7)
+nsubj(gives-13, q-11)
+nmod:to(gives-13, p-18)
+dep(p-18, probability-21)
+nummod(probability-21, 1-22)
+root(ROOT-0, case-9)
+det(certainty-2, The-1)
+case(inference-5, of-3)
+cop(case-9, is-6)
+det(case-9, a-7)
+punct(case-9, .-12)
+case(probability-11, of-10)
+nsubj(case-9, certainty-2)
+amod(inference-5, logical-4)
+nmod:of(certainty-2, inference-5)
+amod(case-9, limiting-8)
+nmod:of(case-9, probability-11)
+---
+qqroot(ROOT-0, call-13)
+case(common-7, in-6)
+case(one-9, with-8)
+punct(call-13, .-19)
+punct(call-13, ,-11)
+case(another-18, of-16)
+advmod(have-3, When-1)
+nsubj(have-3, propositions-2)
+advcl(call-13, have-3)
+neg(truth-arguments-5, no-4)
+dobj(have-3, truth-arguments-5)
+nmod:in(have-3, common-7)
+nmod:with(common-7, one-9)
+dep(one-9, another-10)
+nsubj(call-13, we-12)
+nsubj(independent-15, them-14)
+xcomp(call-13, independent-15)
+nummod(another-18, one-17)
+nmod:of(independent-15, another-18)
+root(ROOT-0, give-4)
+punct(give-4, .-10)
+det(probability-8, the-7)
+nummod(propositions-3, Two-1)
+amod(propositions-3, elementary-2)
+nsubj(give-4, propositions-3)
+dobj(give-4, one-5)
+dep(one-5, another-6)
+dep(another-6, probability-8)
+nummod(probability-8, 1/2-9)
+root(ROOT-0, gives-13)
+mark(follows-3, If-1)
+case(q-5, from-4)
+compound(q-11, proposition-9)
+det(q-11, the-8)
+punct(q-11, `-10)
+punct(q-11, '-12)
+punct(gives-13, ,-6)
+punct(gives-13, .-23)
+case(p-18, to-14)
+compound(p-18, proposition-16)
+det(p-18, the-15)
+punct(p-18, `-17)
+punct(p-18, '-19)
+det(probability-21, the-20)
+nsubj(follows-3, p-2)
+advcl:if(gives-13, follows-3)
+nmod:from(follows-3, q-5)
+advmod(q-11, then-7)
+nsubj(gives-13, q-11)
+nmod:to(gives-13, p-18)
+dep(p-18, probability-21)
+nummod(probability-21, 1-22)
+root(ROOT-0, case-9)
+det(certainty-2, The-1)
+case(inference-5, of-3)
+cop(case-9, is-6)
+det(case-9, a-7)
+punct(case-9, .-12)
+case(probability-11, of-10)
+nsubj(case-9, certainty-2)
+amod(inference-5, logical-4)
+nmod:of(certainty-2, inference-5)
+amod(case-9, limiting-8)
+nmod:of(case-9, probability-11)
+root(ROOT-0, Application-2)
+punct(Application-2, -LRB--1)
+punct(Application-2, .-9)
+punct(Application-2, -RRB--10)
+case(this-4, of-3)
+cc(tautology-6, and-7)
+mark(tautology-6, to-5)
+nmod:of(Application-2, this-4)
+acl:to(Application-2, tautology-6)
+acl:to(Application-2, contradiction-8)
+conj:and(tautology-6, contradiction-8)
+G[47, 44] [122, 1/29, ?1, ?2, ?3, ?4, ?5, ?6, Application2, Two1, When1, another18, another6, another10, call13, case2147483647, certainty2147483647, common7, contradiction8, elementary2, follows3, give4, gives13, have3, independent15, inference5, limiting8, logical4, no4, one5, one9, one17, p2, probability2147483647, probability2147483647, probability11, proposition p2147483647, proposition q2147483647, propositions3, propositions2, q5, tautology6, them14, then7, this4, truth-arguments5, we12]
+common7-in->have3
+logical4- ->inference5
+Two1- ->propositions3
+?3-the->proposition p2147483647
+q5-from->follows3
+?2- ->gives13
+contradiction8-to->Application2
+this4-of->Application2
+we12- ->call13
+122- ->?1
+then7- ->?2
+have3- ->call13
+?6-the->probability2147483647
+propositions3- ->give4
+?2-the->proposition q2147483647
+another10- ->one9
+probability11-of->?4
+?1- ->?3
+1/29- ->?6
+one5- ->give4
+elementary2- ->propositions3
+another6- ->one5
+limiting8-  : is ->?4
+When1- ->have3
+follows3-if->gives13
+?6- ->another6
+?5- ->?4
+no4- ->truth-arguments5
+one17- ->another18
+them14- ->elementary2
+?1-the->probability2147483647
+another18-of->independent15
+contradiction8-and->tautology6
+?3-to->gives13
+truth-arguments5- ->have3
+independent15- ->call13
+propositions2- ->have3
+tautology6-to->Application2
+them14- ->independent15
+?4-a->case2147483647
+?5-The->certainty2147483647
+one9-with->common7
+p2-  : If ->follows3
+inference5-of->?5
+------CorefChainz
+CHAIN7-["propositions" in sentence 1, "them" in sentence 1]
+representative mention: "propositions" in sentence 1

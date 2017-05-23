@@ -1,0 +1,47 @@
+ If p follows from q and q from p, then they are one and same proposition.
+------CorefChainz
+CHAIN3-["p" in sentence 1, "p" in sentence 1]
+representative mention: "p" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, one-14)
+cc(follows-3, and-6)
+mark(follows-3, If-1)
+case(q-5, from-4)
+case(p-9, from-8)
+cc(one-14, and-15)
+cop(one-14, are-13)
+punct(one-14, .-18)
+punct(one-14, ,-10)
+nsubj(follows-3, p-2)
+nsubj(q-7, p-2)
+advcl:if(one-14, follows-3)
+nmod:from(follows-3, q-5)
+conj:and(follows-3, q-7)
+advcl:if(one-14, q-7)
+nmod:from(q-7, p-9)
+advmod(they-12, then-11)
+nsubj(one-14, they-12)
+amod(proposition-17, same-16)
+conj:and(one-14, proposition-17)
+G[10, 11] [follows3, one14, p9, p2, proposition17, q7, q5, same16, then11, they12]
+p2-  : If ->follows3
+proposition17-and->one14
+follows3-if->one14
+p2- ->q7
+same16- ->proposition17
+p9-from->q7
+they12-  : are ->one14
+then11- ->they12
+q5-from->follows3
+q7-if->one14
+q7-and->follows3
+------CorefChainz
+CHAIN3-["p" in sentence 1, "p" in sentence 1]
+representative mention: "p" in sentence 1

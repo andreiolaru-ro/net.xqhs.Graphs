@@ -1,0 +1,23 @@
+ The generality-sign occurs as an argument.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, occurs-3)
+det(generality-sign-2, The-1)
+punct(occurs-3, .-7)
+case(argument-6, as-4)
+det(argument-6, an-5)
+nsubj(occurs-3, generality-sign-2)
+nmod:as(occurs-3, argument-6)
+G[5, 4] [?1, ?2, argument2147483647, generality-sign2147483647, occurs3]
+?2- ->occurs3
+?1-an->argument2147483647
+?1-as->occurs3
+?2-The->generality-sign2147483647
+------CorefChainz

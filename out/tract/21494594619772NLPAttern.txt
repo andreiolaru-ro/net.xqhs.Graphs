@@ -1,0 +1,36 @@
+ What is the case--a fact--is the existence of states of affairs.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, What-1)
+cop(What-1, is-2)
+punct(What-1, .-16)
+det(case-4, the-3)
+det(fact-7, a-6)
+punct(fact-7, ---5)
+punct(fact-7, ---8)
+cop(existence-11, is-9)
+det(existence-11, the-10)
+case(states-13, of-12)
+case(affairs-15, of-14)
+nsubj(existence-11, case-4)
+dep(case-4, fact-7)
+dep(What-1, existence-11)
+nmod:of(existence-11, states-13)
+nmod:of(states-13, affairs-15)
+G[9, 8] [?1, ?2, ?3, What1, affairs15, case2147483647, existence2147483647, fact2147483647, states13]
+?1- ->?3
+?3-the->case2147483647
+?1-a->fact2147483647
+affairs15-of->states13
+states13-of : is ->?2
+?2-the->existence2147483647
+?2-  : is ->What1
+?3- ->?2
+------CorefChainz

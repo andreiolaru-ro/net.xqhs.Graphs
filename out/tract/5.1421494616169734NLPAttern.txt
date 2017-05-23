@@ -1,0 +1,35 @@
+ A tautology follows from all propositions: it says nothing.
+------CorefChainz
+CHAIN2-["A tautology" in sentence 1, "it" in sentence 1]
+representative mention: "A tautology" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, follows-3)
+det(tautology-2, A-1)
+punct(follows-3, :-7)
+punct(follows-3, .-11)
+case(propositions-6, from-4)
+det(propositions-6, all-5)
+nsubj(follows-3, tautology-2)
+nmod:from(follows-3, propositions-6)
+nsubj(says-9, it-8)
+parataxis(follows-3, says-9)
+dobj(says-9, nothing-10)
+G[8, 8] [?1, ?2, follows3, it8, nothing10, propositions2147483647, says9, tautology2147483647]
+?2-from->follows3
+?1- ->follows3
+?1-A->tautology2147483647
+nothing10- ->says9
+says9- ->follows3
+it8- ->says9
+?2-all->propositions2147483647
+it8- ->?1
+------CorefChainz
+CHAIN2-["A tautology" in sentence 1, "it" in sentence 1]
+representative mention: "A tautology" in sentence 1

@@ -1,0 +1,32 @@
+ The substance is what subsists independently of what is the case.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, is-3)
+det(substance-2, The-1)
+punct(is-3, .-12)
+cop(case-11, is-9)
+det(case-11, the-10)
+mark(case-11, of-7)
+nsubj(is-3, substance-2)
+dep(is-3, what-4)
+nsubj(what-4, subsists-5)
+advmod(subsists-5, independently-6)
+nsubj(case-11, what-8)
+advcl:of(independently-6, case-11)
+G[9, 8] [?#1, ?#2, case, independently, is, subsists, substance, what, what]
+independently- ->subsists
+what-  : is ->?#1
+?#2-The->substance
+what- ->is
+?#1-of->independently
+subsists- ->what
+?#1-the->case
+?#2- ->is
+------CorefChainz

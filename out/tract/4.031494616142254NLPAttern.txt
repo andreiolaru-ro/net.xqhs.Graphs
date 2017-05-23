@@ -1,0 +1,211 @@
+ A proposition must use old expressions to communicate a new sense. A proposition communicates a situation to us, and so it must be essentially connected with the situation. And the connexion is precisely that it is its logical picture. A proposition states something only in so far as it is a picture.
+------CorefChainz
+CHAIN6-["a situation" in sentence 2, "the situation" in sentence 2]
+representative mention: "a situation" in sentence 2
+CHAIN12-["the connexion" in sentence 3, "it" in sentence 3, "its" in sentence 3, "it" in sentence 4]
+representative mention: "the connexion" in sentence 3
+CHAIN14-["A proposition" in sentence 1, "A proposition" in sentence 2, "it" in sentence 2, "A proposition" in sentence 4]
+representative mention: "A proposition" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, use-4)
+det(proposition-2, A-1)
+aux(use-4, must-3)
+punct(use-4, .-12)
+mark(communicate-8, to-7)
+det(sense-11, a-9)
+nsubj(use-4, proposition-2)
+amod(expressions-6, old-5)
+dobj(use-4, expressions-6)
+advcl:to(use-4, communicate-8)
+amod(sense-11, new-10)
+dobj(communicate-8, sense-11)
+---
+qqroot(ROOT-0, use-4)
+det(proposition-2, A-1)
+aux(use-4, must-3)
+punct(use-4, .-12)
+mark(communicate-8, to-7)
+det(sense-11, a-9)
+nsubj(use-4, proposition-2)
+amod(expressions-6, old-5)
+dobj(use-4, expressions-6)
+advcl:to(use-4, communicate-8)
+amod(sense-11, new-10)
+dobj(communicate-8, sense-11)
+root(ROOT-0, communicates-3)
+det(proposition-2, A-1)
+cc(communicates-3, and-9)
+punct(communicates-3, .-19)
+punct(communicates-3, ,-8)
+det(situation-5, a-4)
+case(us-7, to-6)
+aux(connected-15, must-12)
+auxpass(connected-15, be-13)
+mark(connected-15, so-10)
+case(situation-18, with-16)
+det(situation-18, the-17)
+nsubj(communicates-3, proposition-2)
+dobj(communicates-3, situation-5)
+nmod:to(communicates-3, us-7)
+nsubjpass(connected-15, it-11)
+advmod(connected-15, essentially-14)
+conj:and(communicates-3, connected-15)
+nmod:with(connected-15, situation-18)
+---
+qqroot(ROOT-0, use-4)
+det(proposition-2, A-1)
+aux(use-4, must-3)
+punct(use-4, .-12)
+mark(communicate-8, to-7)
+det(sense-11, a-9)
+nsubj(use-4, proposition-2)
+amod(expressions-6, old-5)
+dobj(use-4, expressions-6)
+advcl:to(use-4, communicate-8)
+amod(sense-11, new-10)
+dobj(communicate-8, sense-11)
+root(ROOT-0, communicates-3)
+det(proposition-2, A-1)
+cc(communicates-3, and-9)
+punct(communicates-3, .-19)
+punct(communicates-3, ,-8)
+det(situation-5, a-4)
+case(us-7, to-6)
+aux(connected-15, must-12)
+auxpass(connected-15, be-13)
+mark(connected-15, so-10)
+case(situation-18, with-16)
+det(situation-18, the-17)
+nsubj(communicates-3, proposition-2)
+dobj(communicates-3, situation-5)
+nmod:to(communicates-3, us-7)
+nsubjpass(connected-15, it-11)
+advmod(connected-15, essentially-14)
+conj:and(communicates-3, connected-15)
+nmod:with(connected-15, situation-18)
+root(ROOT-0, picture-11)
+det(connexion-3, the-2)
+cc(picture-11, And-1)
+cop(picture-11, is-8)
+cop(picture-11, is-4)
+mark(picture-11, that-6)
+punct(picture-11, .-12)
+nsubj(picture-11, connexion-3)
+advmod(picture-11, precisely-5)
+nsubj(picture-11, it-7)
+nmod:poss(picture-11, its-9)
+amod(picture-11, logical-10)
+---
+qqroot(ROOT-0, use-4)
+det(proposition-2, A-1)
+aux(use-4, must-3)
+punct(use-4, .-12)
+mark(communicate-8, to-7)
+det(sense-11, a-9)
+nsubj(use-4, proposition-2)
+amod(expressions-6, old-5)
+dobj(use-4, expressions-6)
+advcl:to(use-4, communicate-8)
+amod(sense-11, new-10)
+dobj(communicate-8, sense-11)
+root(ROOT-0, communicates-3)
+det(proposition-2, A-1)
+cc(communicates-3, and-9)
+punct(communicates-3, .-19)
+punct(communicates-3, ,-8)
+det(situation-5, a-4)
+case(us-7, to-6)
+aux(connected-15, must-12)
+auxpass(connected-15, be-13)
+mark(connected-15, so-10)
+case(situation-18, with-16)
+det(situation-18, the-17)
+nsubj(communicates-3, proposition-2)
+dobj(communicates-3, situation-5)
+nmod:to(communicates-3, us-7)
+nsubjpass(connected-15, it-11)
+advmod(connected-15, essentially-14)
+conj:and(communicates-3, connected-15)
+nmod:with(connected-15, situation-18)
+root(ROOT-0, picture-11)
+det(connexion-3, the-2)
+cc(picture-11, And-1)
+cop(picture-11, is-8)
+cop(picture-11, is-4)
+mark(picture-11, that-6)
+punct(picture-11, .-12)
+nsubj(picture-11, connexion-3)
+advmod(picture-11, precisely-5)
+nsubj(picture-11, it-7)
+nmod:poss(picture-11, its-9)
+amod(picture-11, logical-10)
+root(ROOT-0, states-3)
+det(proposition-2, A-1)
+punct(states-3, .-14)
+case(far-8, in-6)
+cop(picture-13, is-11)
+det(picture-13, a-12)
+mark(picture-13, as-9)
+nsubj(states-3, proposition-2)
+dobj(states-3, something-4)
+advmod(far-8, only-5)
+advmod(far-8, so-7)
+advmod(states-3, far-8)
+nsubj(picture-13, it-10)
+advcl:as(far-8, picture-13)
+G[37, 38] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, communicate8, communicates3, connected15, connexion2147483647, essentially14, expressions6, far8, it11, it10, it7, its9, logical10, new10, old5, only5, picture2147483647, picture11, precisely5, proposition2147483647, proposition2147483647, proposition2147483647, sense2147483647, situation2147483647, situation2147483647, so7, something4, states3, us7, use4]
+essentially14-  : be ->connected15
+?2-the->connexion2147483647
+communicate8-to->use4
+it11-  : so  : must ->connected15
+?8-A->proposition2147483647
+?6- ->communicates3
+new10- ->?2
+?1- ->communicate8
+?4-as->far8
+?3-  : must ->use4
+?4-a->picture2147483647
+?1-a->sense2147483647
+?7-the->situation2147483647
+?8- ->communicates3
+new10- ->?1
+?2-  : And  : is  : is ->picture11
+?5- ->states3
+?6-a->situation2147483647
+something4- ->states3
+far8- ->states3
+it7-  : is  : is ->picture11
+only5-  : in  : in ->far8
+?7- ->precisely5
+us7-to->communicates3
+so7- ->far8
+its9-poss->picture11
+?1- ->?3
+old5- ->expressions6
+its9- ->?2
+?7-with->connected15
+precisely5-  : that  : that ->picture11
+connected15-and->communicates3
+?3-A->proposition2147483647
+expressions6- ->use4
+logical10- ->picture11
+so7- ->?2
+it10-  : is ->?4
+?5-A->proposition2147483647
+------CorefChainz
+CHAIN6-["a situation" in sentence 2, "the situation" in sentence 2]
+representative mention: "a situation" in sentence 2
+CHAIN12-["the connexion" in sentence 3, "it" in sentence 3, "its" in sentence 3, "it" in sentence 4]
+representative mention: "the connexion" in sentence 3
+CHAIN14-["A proposition" in sentence 1, "A proposition" in sentence 2, "it" in sentence 2, "A proposition" in sentence 4]
+representative mention: "A proposition" in sentence 1

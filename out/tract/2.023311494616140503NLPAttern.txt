@@ -1,0 +1,255 @@
+ Either a thing has properties that nothing else has, in which case we can immediately use a description to distinguish it from the others and refer to it; or, on the other hand, there are several things that have the whole set of their properties in common, in which case it is quite impossible to indicate one of them. For it there is nothing to distinguish a thing, I cannot distinguish it, since otherwise it would be distinguished after all.
+------CorefChainz
+CHAIN17-["the others" in sentence 1, "them" in sentence 1]
+representative mention: "the others" in sentence 1
+CHAIN18-["a description" in sentence 1, "it" in sentence 1, "it" in sentence 1, "it" in sentence 2, "it" in sentence 2, "it" in sentence 2]
+representative mention: "a description" in sentence 1
+CHAIN20-["a thing" in sentence 1, "a thing" in sentence 2]
+representative mention: "a thing" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, has-4)
+det(thing-3, a-2)
+cc(has-4, Either-1)
+cc(has-4, or-31)
+punct(has-4, ,-32)
+punct(has-4, .-65)
+punct(has-4, ,-37)
+punct(has-4, ;-30)
+punct(has-9, ,-10)
+case(case-13, in-11)
+det(case-13, which-12)
+aux(use-17, can-15)
+det(description-19, a-18)
+cc(distinguish-21, and-26)
+mark(distinguish-21, to-20)
+case(others-25, from-23)
+det(others-25, the-24)
+case(it-29, to-28)
+case(hand-36, on-33)
+det(hand-36, the-34)
+det(set-46, the-44)
+case(properties-49, of-47)
+case(common-51, in-50)
+punct(common-51, ,-52)
+case(case-55, in-53)
+det(case-55, which-54)
+cop(impossible-59, is-57)
+mark(indicate-61, to-60)
+mwe(one-62, of-63)
+nsubj(has-4, thing-3)
+dobj(has-4, properties-5)
+dobj(has-9, properties-5)
+ref(properties-5, that-6)
+nsubj(has-9, nothing-7)
+amod(nothing-7, else-8)
+acl:relcl(properties-5, has-9)
+nmod:in(use-17, case-13)
+nsubj(use-17, we-14)
+advmod(use-17, immediately-16)
+conj(has-9, use-17)
+dobj(use-17, description-19)
+advcl:to(use-17, distinguish-21)
+dobj(distinguish-21, it-22)
+nmod:from(distinguish-21, others-25)
+advcl:to(use-17, refer-27)
+conj:and(distinguish-21, refer-27)
+nmod:to(refer-27, it-29)
+amod(hand-36, other-35)
+conj:or(has-4, hand-36)
+expl(are-39, there-38)
+conj:or(has-4, are-39)
+amod(things-41, several-40)
+nsubj(are-39, things-41)
+nsubj(have-43, things-41)
+ref(things-41, that-42)
+acl:relcl(things-41, have-43)
+amod(set-46, whole-45)
+dobj(have-43, set-46)
+nmod:poss(properties-49, their-48)
+nmod:of(set-46, properties-49)
+acl:in(set-46, common-51)
+nmod:in(impossible-59, case-55)
+nsubj(impossible-59, it-56)
+nsubj:xsubj(indicate-61, it-56)
+advmod(impossible-59, quite-58)
+ccomp(common-51, impossible-59)
+xcomp(impossible-59, indicate-61)
+det:qmod(them-64, one-62)
+dobj(indicate-61, them-64)
+---
+qqroot(ROOT-0, has-4)
+det(thing-3, a-2)
+cc(has-4, Either-1)
+cc(has-4, or-31)
+punct(has-4, ,-32)
+punct(has-4, .-65)
+punct(has-4, ,-37)
+punct(has-4, ;-30)
+punct(has-9, ,-10)
+case(case-13, in-11)
+det(case-13, which-12)
+aux(use-17, can-15)
+det(description-19, a-18)
+cc(distinguish-21, and-26)
+mark(distinguish-21, to-20)
+case(others-25, from-23)
+det(others-25, the-24)
+case(it-29, to-28)
+case(hand-36, on-33)
+det(hand-36, the-34)
+det(set-46, the-44)
+case(properties-49, of-47)
+case(common-51, in-50)
+punct(common-51, ,-52)
+case(case-55, in-53)
+det(case-55, which-54)
+cop(impossible-59, is-57)
+mark(indicate-61, to-60)
+mwe(one-62, of-63)
+nsubj(has-4, thing-3)
+dobj(has-4, properties-5)
+dobj(has-9, properties-5)
+ref(properties-5, that-6)
+nsubj(has-9, nothing-7)
+amod(nothing-7, else-8)
+acl:relcl(properties-5, has-9)
+nmod:in(use-17, case-13)
+nsubj(use-17, we-14)
+advmod(use-17, immediately-16)
+conj(has-9, use-17)
+dobj(use-17, description-19)
+advcl:to(use-17, distinguish-21)
+dobj(distinguish-21, it-22)
+nmod:from(distinguish-21, others-25)
+advcl:to(use-17, refer-27)
+conj:and(distinguish-21, refer-27)
+nmod:to(refer-27, it-29)
+amod(hand-36, other-35)
+conj:or(has-4, hand-36)
+expl(are-39, there-38)
+conj:or(has-4, are-39)
+amod(things-41, several-40)
+nsubj(are-39, things-41)
+nsubj(have-43, things-41)
+ref(things-41, that-42)
+acl:relcl(things-41, have-43)
+amod(set-46, whole-45)
+dobj(have-43, set-46)
+nmod:poss(properties-49, their-48)
+nmod:of(set-46, properties-49)
+acl:in(set-46, common-51)
+nmod:in(impossible-59, case-55)
+nsubj(impossible-59, it-56)
+nsubj:xsubj(indicate-61, it-56)
+advmod(impossible-59, quite-58)
+ccomp(common-51, impossible-59)
+xcomp(impossible-59, indicate-61)
+det:qmod(them-64, one-62)
+dobj(indicate-61, them-64)
+root(ROOT-0, distinguish-14)
+mark(distinguish-7, to-6)
+det(thing-9, a-8)
+aux(distinguish-14, can-12)
+mark(distinguish-14, For-1)
+punct(distinguish-14, ,-10)
+punct(distinguish-14, ,-16)
+aux(distinguished-22, would-20)
+auxpass(distinguished-22, be-21)
+mark(distinguished-22, since-17)
+punct(distinguished-22, .-25)
+case(all-24, after-23)
+nsubj(distinguish-14, it-2)
+expl(is-4, there-3)
+advcl(distinguish-14, is-4)
+nsubj(is-4, nothing-5)
+acl:to(nothing-5, distinguish-7)
+dobj(distinguish-7, thing-9)
+nsubj(distinguish-14, I-11)
+neg(distinguish-14, not-13)
+dobj(distinguish-14, it-15)
+advmod(distinguished-22, otherwise-18)
+nsubjpass(distinguished-22, it-19)
+root(,-16, distinguished-22)
+nmod:after(distinguished-22, all-24)
+G[60, 66] [,16, ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, I11, all24, are39, case2147483647, case2147483647, common51, description2147483647, distinguish7, distinguish21, distinguish14, distinguished22, else8, hand2147483647, has4, has9, have43, immediately16, impossible59, indicate61, is4, it56, it15, it29, it2, it19, it22, not13, nothing7, nothing5, one of62, other35, others2147483647, otherwise18, properties5, properties49, quite58, refer27, set2147483647, several40, that6, that42, their48, them64, there38, there3, thing2147483647, thing2147483647, things41, use17, we14, whole45]
+it2-  : For ->distinguish14
+it15- ->?3
+?7-the->set2147483647
+?5-which->case2147483647
+?6-the->others2147483647
+are39-or->has4
+things41- ->have43
+it2- ->?3
+refer27-and->distinguish21
+?6-from->distinguish21
+one of62-qmod->them64
+quite58- ->impossible59
+we14-  : can  : can ->use17
+indicate61-  : to ->impossible59
+there38- ->are39
+refer27-to->use17
+impossible59- ->common51
+properties49-of->?7
+?5-in->impossible59
+nothing7- ->has9
+it19-  : would  : would  : be  : be ->distinguished22
+distinguish7-to->nothing5
+whole45- ->?7
+?8-a->thing2147483647
+distinguish21-to->use17
+?1-which->case2147483647
+?4-the->hand2147483647
+several40- ->things41
+it15- ->distinguish14
+?2- ->distinguish7
+?1-in->use17
+?8-  : Either ->has4
+?4-or->has4
+other35-  : on ->?4
+otherwise18- ->distinguished22
+it29-to->refer27
+is4- ->distinguish14
+distinguished22-  : since  : since ->,16
+have43-relcl->things41
+that6- ->properties5
+use17- ->has9
+?2-a->thing2147483647
+else8- ->nothing7
+?3-a->description2147483647
+I11-  : can  : can ->distinguish14
+them64- ->indicate61
+all24-after->distinguished22
+there3- ->is4
+it56-  : is  : is ->impossible59
+?7- ->have43
+common51-in->?7
+nothing5- ->is4
+things41- ->are39
+properties5- ->has4
+it29- ->?3
+their48-poss->properties49
+?3- ->use17
+has9-relcl->properties5
+distinguished22- ->?3
+it22- ->distinguish21
+it56-xsubj->indicate61
+immediately16- ->use17
+that42- ->things41
+properties5- ->has9
+not13- ->distinguish14
+them64- ->?6
+------CorefChainz
+CHAIN17-["the others" in sentence 1, "them" in sentence 1]
+representative mention: "the others" in sentence 1
+CHAIN18-["a description" in sentence 1, "it" in sentence 1, "it" in sentence 1, "it" in sentence 2, "it" in sentence 2, "it" in sentence 2]
+representative mention: "a description" in sentence 1
+CHAIN20-["a thing" in sentence 1, "a thing" in sentence 2]
+representative mention: "a thing" in sentence 1
