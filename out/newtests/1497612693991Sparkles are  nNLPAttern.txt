@@ -1,0 +1,54 @@
+Sparkles are  nice.
+Sparkles are cute.
+------CorefChainz
+CHAIN1-["Sparkles" in sentence 1, "Sparkles" in sentence 2]
+representative mention: "Sparkles" in sentence 1
+Sparkles-NNS 
+are-VBP 
+nice-JJ 
+.-. 
+Sparkles-NNP 
+are-VBP 
+cute-JJ 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NNS 	-> Sparkles
+		 	-> VP 	-> VBP 	-> are
+	 	-> ADJP 	-> JJ 	-> nice
+			 	-> . 	-> .
+		 	-> NP 	-> NNP 	-> Sparkles
+		 	-> VP 	-> VBP 	-> are
+	 	-> ADJP 	-> JJ 	-> cute
+			 	-> . 	-> .
+			
+Dependensee repr
+nsubj(nice-3, Sparkles-1)
+cop(nice-3, are-2)
+dep(cute-7, nice-3)
+nsubj(cute-7, Sparkles-5)
+cop(cute-7, are-6)
+root(ROOT-0, cute-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, nice-3)
+nsubj(nice-3, Sparkles-1)
+cop(nice-3, are-2)
+punct(nice-3, .-4)
+---
+qqroot(ROOT-0, nice-3)
+nsubj(nice-3, Sparkles-1)
+cop(nice-3, are-2)
+punct(nice-3, .-4)
+root(ROOT-0, cute-3)
+nsubj(cute-3, Sparkles-1)
+cop(cute-3, are-2)
+punct(cute-3, .-4)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[4, 2] [Sparkles1, Sparkles1, cute3, nice3]
+Sparkles1-  : are ->cute3
+Sparkles1-  : are ->nice3

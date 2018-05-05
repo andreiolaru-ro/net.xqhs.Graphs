@@ -3,7 +3,7 @@ package net.xqhs.graphs.nlp;
 import net.xqhs.graphs.graph.Node;
 import edu.stanford.nlp.ling.IndexedWord;
 
-public class FunctionWord implements Node {
+public class FunctionWord implements NodeWithIndex {
 	public FunctionWord(String tag, String label, int index) {
 		super();
 		this.tag = tag;
@@ -60,7 +60,8 @@ public class FunctionWord implements Node {
 	/**
 	 * @return the index
 	 */
-	public int getIndex() {
+	@Override
+	public int getWordIndex() {
 		return index;
 	}
 
@@ -68,7 +69,8 @@ public class FunctionWord implements Node {
 	 * @param index
 	 *            the index to set
 	 */
-	public void setIndex(int index) {
+	@Override
+	public void setWordIndex(int index) {
 		this.index = index;
 	}
 

@@ -1,0 +1,74 @@
+Cows are steady on their feet, whereas cickens look less so.
+------CorefChainz
+CHAIN1-["Cows" in sentence 1, "their" in sentence 1]
+representative mention: "Cows" in sentence 1
+Cows-NNS 
+are-VBP 
+steady-JJ 
+on-IN 
+their-PRP$ 
+feet-NNS 
+,-, 
+whereas-IN 
+cickens-NNS 
+look-VBP 
+less-RBR 
+so-RB 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Cows
+		 	-> VP 	-> VBP 	-> are
+	 	-> ADJP 	-> JJ 	-> steady
+	 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NNS 	-> feet
+				 	-> , 	-> ,
+	 	-> SBAR 	-> IN 	-> whereas
+	 	-> S 	-> NP 	-> NNS 	-> cickens
+		 	-> VP 	-> VBP 	-> look
+	 	-> ADVP 	-> RBR 	-> less
+	 	-> RB 	-> so
+						 	-> . 	-> .
+			
+Dependensee repr
+nsubj(steady-3, Cows-1)
+cop(steady-3, are-2)
+root(ROOT-0, steady-3)
+case(feet-6, on-4)
+nmod:poss(feet-6, their-5)
+nmod:on(steady-3, feet-6)
+mark(look-10, whereas-8)
+nsubj(look-10, cickens-9)
+advcl(steady-3, look-10)
+advmod(so-12, less-11)
+advmod(look-10, so-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, steady-3)
+nsubj(steady-3, Cows-1)
+cop(steady-3, are-2)
+case(feet-6, on-4)
+nmod:poss(feet-6, their-5)
+nmod:on(steady-3, feet-6)
+punct(steady-3, ,-7)
+dep(steady-3, whereas-8)
+nsubj(look-10, cickens-9)
+parataxis(steady-3, look-10)
+advmod(so-12, less-11)
+advmod(look-10, so-12)
+punct(steady-3, .-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 9] [Cows1, cickens9, feet6, less11, look10, so12, steady3, their5, whereas8]
+Cows1-  : are ->steady3
+feet6-on->steady3
+their5-poss->feet6
+so12- ->look10
+cickens9- ->look10
+look10- ->steady3
+their5-==->Cows1
+whereas8- ->steady3
+less11- ->so12

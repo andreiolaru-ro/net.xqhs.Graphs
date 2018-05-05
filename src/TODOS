@@ -1,0 +1,5 @@
+1. serialize&deserialize graphs
+2. get subtree for all roots -filer thru the million fuctions designed for this purpose
+3. recreate sentence from subtrees: 
+	3.1 use matching process to compose new graphs
+	3.2 link subgraphs using edges-> grow forest from subtrees

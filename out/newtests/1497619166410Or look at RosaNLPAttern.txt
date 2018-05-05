@@ -1,0 +1,130 @@
+Or look at Rosalind Franklin, whose analysis laid the groundwork for Watson and Crick's discovery of the double helix shape of DNA. 
+------CorefChainz
+Or-CC 
+look-VB 
+at-IN 
+Rosalind-NNP 
+Franklin-NNP 
+,-, 
+whose-WP$ 
+analysis-NNS 
+laid-VBD 
+the-DT 
+groundwork-NN 
+for-IN 
+Watson-NNP 
+and-CC 
+Crick-NNP 
+'s-POS 
+discovery-NN 
+of-IN 
+the-DT 
+double-JJ 
+helix-NN 
+shape-NN 
+of-IN 
+DNA-NNP 
+.-. 
+ROOT 	-> FRAG 	-> CC 	-> Or
+	 	-> VP 	-> VB 	-> look
+	 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> NP 	-> NNP 	-> Rosalind
+	 	-> NNP 	-> Franklin
+		 	-> , 	-> ,
+	 	-> SBAR 	-> WHNP 	-> WP$ 	-> whose
+	 	-> NNS 	-> analysis
+		 	-> S 	-> VP 	-> VBD 	-> laid
+	 	-> NP 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> groundwork
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NNP 	-> Watson
+				 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> NP 	-> NNP 	-> Crick
+	 	-> POS 	-> 's
+		 	-> NN 	-> discovery
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> double
+	 	-> NN 	-> helix
+	 	-> NN 	-> shape
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NNP 	-> DNA
+													 	-> . 	-> .
+			
+Dependensee repr
+cc(look-2, Or-1)
+root(ROOT-0, look-2)
+case(Franklin-5, at-3)
+compound(Franklin-5, Rosalind-4)
+nmod:at(look-2, Franklin-5)
+nmod:poss(analysis-8, Franklin-5)
+ref(Franklin-5, whose-7)
+nsubj(laid-9, analysis-8)
+acl:relcl(Franklin-5, laid-9)
+det(groundwork-11, the-10)
+dobj(laid-9, groundwork-11)
+case(Watson-13, for-12)
+nmod:for(groundwork-11, Watson-13)
+cc(groundwork-11, and-14)
+nmod:poss(discovery-17, Crick-15)
+case(Crick-15, 's-16)
+dobj(laid-9, discovery-17)
+conj:and(groundwork-11, discovery-17)
+case(shape-22, of-18)
+det(shape-22, the-19)
+amod(shape-22, double-20)
+compound(shape-22, helix-21)
+nmod:of(discovery-17, shape-22)
+case(DNA-24, of-23)
+nmod:of(shape-22, DNA-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, look-2)
+cc(look-2, Or-1)
+case(Franklin-5, at-3)
+compound(Franklin-5, Rosalind-4)
+nmod:at(look-2, Franklin-5)
+nmod:poss(analysis-8, Franklin-5)
+punct(Franklin-5, ,-6)
+ref(Franklin-5, whose-7)
+nsubj(laid-9, analysis-8)
+acl:relcl(Franklin-5, laid-9)
+det(groundwork-11, the-10)
+dobj(laid-9, groundwork-11)
+case(Watson-13, for-12)
+nmod:for(groundwork-11, Watson-13)
+cc(Watson-13, and-14)
+nmod:poss(discovery-17, Crick-15)
+case(Crick-15, 's-16)
+nmod:for(groundwork-11, discovery-17)
+conj:and(Watson-13, discovery-17)
+case(shape-22, of-18)
+det(shape-22, the-19)
+amod(shape-22, double-20)
+compound(shape-22, helix-21)
+nmod:of(discovery-17, shape-22)
+case(DNA-24, of-23)
+nmod:of(shape-22, DNA-24)
+punct(look-2, .-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[14, 15] [?1, ?2, Crick15, DNA24, Rosalind Franklin5, Watson13, analysis8, discovery17, double20, groundwork2147483647, helix shape2147483647, laid9, look2, whose7]
+?2-of->discovery17
+DNA24-of->?2
+analysis8- ->laid9
+?1- ->laid9
+whose7- ->Rosalind Franklin5
+discovery17-for->?1
+Rosalind Franklin5-at : Or ->look2
+discovery17-and->Watson13
+double20- ->?2
+laid9-relcl->Rosalind Franklin5
+Crick15-poss : 's ->discovery17
+Rosalind Franklin5-poss->analysis8
+?1-the->groundwork2147483647
+?2-the->helix shape2147483647
+Watson13-for->?1

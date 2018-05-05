@@ -1,0 +1,125 @@
+. I've found some questions related to this one but I haven't found a convincing and well explained response.
+------CorefChainz
+CHAIN2-["I" in sentence 2, "I" in sentence 2]
+representative mention: "I" in sentence 2
+.-RB 
+I-PRP 
+'ve-VBP 
+found-VBN 
+some-DT 
+questions-NNS 
+related-VBN 
+to-TO 
+this-DT 
+one-NN 
+but-CC 
+I-PRP 
+have-VBP 
+n't-RB 
+found-VBN 
+a-DT 
+convincing-NN 
+and-CC 
+well-RB 
+explained-VBD 
+response-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> ADVP 	-> RB 	-> .
+		 	-> NP 	-> PRP 	-> I
+		 	-> VP 	-> VBP 	-> 've
+	 	-> VP 	-> VBN 	-> found
+	 	-> S 	-> NP 	-> DT 	-> some
+	 	-> NNS 	-> questions
+		 	-> ADJP 	-> VBN 	-> related
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> one
+								 	-> CC 	-> but
+	 	-> S 	-> NP 	-> PRP 	-> I
+		 	-> VP 	-> VP 	-> VBP 	-> have
+	 	-> RB 	-> n't
+	 	-> VP 	-> VBN 	-> found
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> convincing
+				 	-> CC 	-> and
+	 	-> VP 	-> ADVP 	-> RB 	-> well
+		 	-> VBD 	-> explained
+	 	-> NP 	-> NN 	-> response
+					 	-> . 	-> .
+			
+Dependensee repr
+advmod(found-4, .-1)
+nsubj(found-4, I-2)
+aux(found-4, 've-3)
+root(ROOT-0, found-4)
+det(questions-6, some-5)
+nsubj(related-7, questions-6)
+xcomp(found-4, related-7)
+case(one-10, to-8)
+det(one-10, this-9)
+nmod:to(related-7, one-10)
+cc(found-4, but-11)
+nsubj(found-15, I-12)
+nsubj(explained-20, I-12)
+aux(found-15, have-13)
+neg(found-15, n't-14)
+conj:but(found-4, found-15)
+det(convincing-17, a-16)
+dobj(found-15, convincing-17)
+cc(found-15, and-18)
+advmod(explained-20, well-19)
+conj:but(found-4, explained-20)
+conj:and(found-15, explained-20)
+dobj(explained-20, response-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, .-1)
+---
+qqroot(ROOT-0, .-1)
+root(ROOT-0, found-3)
+nsubj(found-3, I-1)
+aux(found-3, 've-2)
+det(questions-5, some-4)
+dobj(found-3, questions-5)
+acl(questions-5, related-6)
+case(one-9, to-7)
+det(one-9, this-8)
+nmod:to(related-6, one-9)
+cc(found-3, but-10)
+nsubj(found-14, I-11)
+nsubj(explained-19, I-11)
+aux(found-14, have-12)
+neg(found-14, n't-13)
+conj:but(found-3, found-14)
+det(convincing-16, a-15)
+dobj(found-14, convincing-16)
+cc(found-14, and-17)
+advmod(explained-19, well-18)
+conj:but(found-3, explained-19)
+conj:and(found-14, explained-19)
+dobj(explained-19, response-20)
+punct(found-3, .-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[15, 16] [?1, ?2, ?3, I11, I1, convincing2147483647, explained19, found14, found3, n't13, one2147483647, questions2147483647, related6, response20, well18]
+?1-some->questions2147483647
+explained19-but->found3
+?2-this->one2147483647
+I11- ->explained19
+?1- ->found3
+n't13- ->found14
+?3-a->convincing2147483647
+found14-but->found3
+I11-  : have  : have ->found14
+response20- ->explained19
+I1-  : 've ->found3
+?2-to->related6
+related6- ->?1
+?3- ->found14
+explained19-and->found14
+well18- ->explained19

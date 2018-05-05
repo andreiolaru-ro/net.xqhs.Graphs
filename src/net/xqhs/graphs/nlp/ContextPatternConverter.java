@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 import net.xqhs.graphs.context.ContextPattern;
 import net.xqhs.graphs.graph.Edge;
+import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.pattern.EdgeP;
@@ -20,10 +21,14 @@ import edu.stanford.nlp.coref.CorefCoreAnnotations;
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.coref.data.CorefChain.CorefMention;
 import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.util.ArraySet;
 import edu.stanford.nlp.util.IntPair;
 
 //should b static
 public class ContextPatternConverter {
+	public final static String determinerRole = "det";
+	public final static String equivalence = "=";
+
 	// private int genericIndex;
 	//
 	// public int getGenericIndex() {
@@ -109,8 +114,8 @@ public class ContextPatternConverter {
 				fw.sort(new Comparator<FunctionWord>() {
 					@Override
 					public int compare(FunctionWord o1, FunctionWord o2) {
-						return Integer.valueOf(o1.getIndex()).compareTo(
-								o2.getIndex());
+						return Integer.valueOf(o1.getWordIndex()).compareTo(
+								Integer.valueOf(o2.getWordIndex()));
 					}
 
 				});
@@ -121,7 +126,7 @@ public class ContextPatternConverter {
 					String finalLabel = null;
 					FunctionWord last = null;
 					for (int i = 0; i < fw.size()
-							&& fw.get(i).getIndex() < nlNode.getWordIndex(); i++) {
+							&& fw.get(i).getWordIndex() < nlNode.getWordIndex(); i++) {
 						FunctionWord w = fw.get(i);
 
 						finalLabel += w.getLabel();
@@ -185,7 +190,7 @@ public class ContextPatternConverter {
 
 							for (FunctionWord w : fw) {
 								distancesFromFWsPerNode.add(Math.abs(w
-										.getIndex()
+										.getWordIndex()
 										- neighborNode.getWordIndex()));
 							}
 							distances.add(distancesFromFWsPerNode);
@@ -345,7 +350,7 @@ public class ContextPatternConverter {
 				genericNode.setPos(parasite.getPos());
 				genericNode.setWordIndex(parasite.getWordIndex());
 				goG.moveEdges(parasite, genericNode, false);
-				goG.addEdge(genericNode, conceptNode, " ");
+				goG.addEdge(genericNode, conceptNode, " ", determinerRole);
 				goG.removeNode(parasite);
 			}
 		}
@@ -440,7 +445,8 @@ public class ContextPatternConverter {
 										+ mention.startIndex + " endindex"
 										+ mention.endIndex);
 								if (!nlNode.equals(headNLNode)) {
-									goCxt.addEdge(nlNode, headNLNode, "==");
+									goCxt.addEdge(nlNode, headNLNode, "==",
+											equivalence);
 								} else
 									System.out
 											.println("Not inserting reflexive edge.");
@@ -499,7 +505,7 @@ public class ContextPatternConverter {
 		return result;
 	}
 
-	private HashMap<NLNodeP, Set<NLNodeP>> getRoots(ContextPattern g) {
+	public static HashMap<NLNodeP, Set<NLNodeP>> getRoots(ContextPattern g) {
 		HashMap<NLNodeP, Set<NLNodeP>> global = new HashMap<NLNodeP, Set<NLNodeP>>();
 		for (Node n : g.getNodes()) {
 			global.put((NLNodeP) n, new HashSet<NLNodeP>());
@@ -540,13 +546,13 @@ public class ContextPatternConverter {
 
 		genericNode.setLemma(p.getLemma());
 		genericNode.setPos(p.getPos());
-		genericNode.setWordIndex(p.getWordIndex());// 2 do R 0 2 do
-		p.setWordIndex(Integer.MAX_VALUE);
-		genericNode.getAttributes().addAll(p.getAttributes());
-
+		// genericNode.setWordIndex(p.getWordIndex());// 2 do R 0 2 do
+		// p.setWordIndex(Integer.MAX_VALUE);
+		// genericNode.getAttributes().addAll(p.getAttributes());
+		genericNode.setWordIndex(Integer.MAX_VALUE);
 		gocxt.moveEdges(p, genericNode, false);
 
-		gocxt.addEdge(genericNode, p, label);
+		gocxt.addEdge(genericNode, p, label, "det");
 
 		return genericNode;
 	}
@@ -558,7 +564,7 @@ public class ContextPatternConverter {
 	 *         edges and connects to the initial node via an "is" edge
 	 */
 	public NodeP instantiate(ContextPattern g, NLNodeP p) {
-		return instantiate(g, p, "is");
+		return instantiate(g, p, "iz");
 	}
 
 	// just keeping it to have a list of all possible dependencies
@@ -572,7 +578,7 @@ public class ContextPatternConverter {
 
 		for (Edge edge : edges) {
 			switch (edge.getLabel()) {
-
+			// useful for quickly checking list of possible relations
 			case "det":
 				if (edge.getFrom().getLabel().toString()
 						.equalsIgnoreCase("the")) {
@@ -674,28 +680,52 @@ public class ContextPatternConverter {
 		return g;
 	}
 
+	public String flipToWords(ContextPattern pat) {
+		// int minindex = Integer.MAX_VALUE;
+		ArrayList<NodeWithIndex> wordz = new ArrayList<NodeWithIndex>();
+		for (Node node : pat.getNodes()) {
+			if (!(node instanceof NLNodeP)) {
+				return "FAIL";
+			}
+			NLNodeP nlnode = (NLNodeP) node;
+			// if(nlnode.getWordIndex()<minindex)
+			// minindex=nlnode.getWordIndex();
+			for (FunctionWord fw : nlnode.getAttributes()) {
+				// if(fw.getIndex()<minindex)
+				// minindex=fw.getIndex();
+				wordz.add(fw);
+			}
+			wordz.add(nlnode);
+		}
+		// sort by word index
+		wordz = (ArrayList<NodeWithIndex>) wordz.stream()
+				.sorted(new Comparator<NodeWithIndex>() {
+
+					@Override
+					public int compare(NodeWithIndex o1, NodeWithIndex o2) {
+						return o1.getWordIndex() < o2.getWordIndex() ? -1 : (o1
+								.getWordIndex() == o2.getWordIndex() ? 0 : 1);
+					}
+				}).collect(Collectors.toList());
+		String s = null;
+		for (NodeWithIndex nodeWithIndex : wordz) {
+			s += " " + nodeWithIndex.getLabel();
+		}
+		return s;
+	}
+
+	public ArraySet<GraphComponent> getSubgraphOfNode(ContextPattern p,
+			NLNodeP start) {
+		ArraySet<GraphComponent> result = new ArraySet<GraphComponent>();
+		result.add(start);
+		for (Edge inedge : p.getInEdges(start)) {
+			result.add(inedge);
+			// tryna prevent eternal cycling
+			if (result.addAll(getSubgraphOfNode(p, (NLNodeP) inedge.getFrom())) == false) {
+				return result;
+			}
+		}
+		return result;
+
+	}
 }
-// .stream().filter(dist -> dist);
-// ArrayList<FillerWord> toMovee =
-// (ArrayList<FillerWord>) fw
-// .stream()
-// .filter(w -> neighbors
-// .stream()
-// .map(NLNodeP::getWordIndex)
-// .map(x -> Math.abs(x
-// - currentOppositeNode
-// .getWordIndex()))
-// .reduce(Math.abs(w.getIndex()
-// - currentOppositeNode
-// .getWordIndex()),
-// (a, b) -> a < Math.abs(w
-// .getIndex()
-// - currentOppositeNode
-// .getWordIndex()) ? a
-// : Math.abs(w.getIndex()
-// - currentOppositeNode
-// .getWordIndex())) == Math
-// .abs(w.getIndex()
-// - currentOppositeNode
-// .getWordIndex()))
-// .collect(Collectors.toList());

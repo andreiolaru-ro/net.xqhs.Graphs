@@ -1,0 +1,33 @@
+Tears should be blue.
+------CorefChainz
+Tears-NNS 
+should-MD 
+be-VB 
+blue-JJ 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Tears
+		 	-> VP 	-> MD 	-> should
+	 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> JJ 	-> blue
+				 	-> . 	-> .
+			
+Dependensee repr
+nsubj(blue-4, Tears-1)
+aux(blue-4, should-2)
+cop(blue-4, be-3)
+root(ROOT-0, blue-4)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, blue-4)
+nsubj(blue-4, Tears-1)
+aux(blue-4, should-2)
+cop(blue-4, be-3)
+punct(blue-4, .-5)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[2, 1] [Tears1, blue4]
+Tears1-  : should  : be ->blue4

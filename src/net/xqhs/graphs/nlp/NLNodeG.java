@@ -7,15 +7,18 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 import net.xqhs.graphs.graph.Node;
+import net.xqhs.graphs.graph.SimpleNode;
+import net.xqhs.graphs.representation.VisualizableGraphComponent;
 import edu.stanford.nlp.ling.IndexedWord;
 
 /**
  *
  *
  */
-public class NLNodeG implements NLNode {
+public class NLNodeG extends SimpleNode implements NLNode,
+		VisualizableGraphComponent {
 
-	private String label;
+	// private String label;
 	String pos, lemma;
 	int wordIndex;
 	ArrayList<FunctionWord> attributes;
@@ -75,13 +78,28 @@ public class NLNodeG implements NLNode {
 
 	}
 
+	// public NLNodeG() {
+	//
+	// this.wordIndex = Integer.MAX_VALUE;
+	// this.attributes = new ArrayList<FunctionWord>();
+	// }
+
 	public NLNodeG(IndexedWord w) {
-		super();
+		super(w.word());
 		this.setLabel(w.word());
 		this.setWordIndex(w.index());
 		this.setLemma(w.lemma());
 		this.pos = w.tag();
 		this.attributes = new ArrayList<FunctionWord>();
+	}
+
+	public NLNodeG(NLNode other) {
+		super(other.getLabel());
+		this.wordIndex = other.getWordIndex();
+		this.lemma = other.getLemma();
+		this.pos = other.getPos();
+		this.attributes = new ArrayList<FunctionWord>();
+		attributes.addAll(other.getAttributes());
 	}
 
 	@Override

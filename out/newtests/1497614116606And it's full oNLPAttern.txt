@@ -1,0 +1,69 @@
+And it's full of people who are full of shit.
+
+------CorefChainz
+And-CC 
+it-PRP 
+'s-VBZ 
+full-JJ 
+of-IN 
+people-NNS 
+who-WP 
+are-VBP 
+full-JJ 
+of-IN 
+shit-NN 
+.-. 
+ROOT 	-> S 	-> CC 	-> And
+	 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> VBZ 	-> 's
+	 	-> ADJP 	-> JJ 	-> full
+	 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NNS 	-> people
+		 	-> SBAR 	-> WHNP 	-> WP 	-> who
+		 	-> S 	-> VP 	-> VBP 	-> are
+	 	-> ADJP 	-> JJ 	-> full
+	 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> shit
+											 	-> . 	-> .
+			
+Dependensee repr
+cc(full-4, And-1)
+nsubj(full-4, it-2)
+cop(full-4, 's-3)
+root(ROOT-0, full-4)
+case(people-6, of-5)
+nmod:of(full-4, people-6)
+nsubj(full-9, people-6)
+ref(people-6, who-7)
+cop(full-9, are-8)
+acl:relcl(people-6, full-9)
+case(shit-11, of-10)
+nmod:of(full-9, shit-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, full-4)
+cc(full-4, And-1)
+nsubj(full-4, it-2)
+cop(full-4, 's-3)
+case(people-6, of-5)
+nmod:of(full-4, people-6)
+nsubj(full-9, people-6)
+ref(people-6, who-7)
+cop(full-9, are-8)
+acl:relcl(people-6, full-9)
+case(shit-11, of-10)
+nmod:of(full-9, shit-11)
+punct(full-4, .-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[6, 6] [full4, full9, it2, people6, shit11, who7]
+people6-of->full4
+full9-relcl : are  : are ->people6
+who7- ->people6
+it2-  : And  : 's ->full4
+shit11-of->full9
+people6- ->full9

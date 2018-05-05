@@ -1,0 +1,49 @@
+And so I face the final curtain.
+------CorefChainz
+And-CC 
+so-RB 
+I-PRP 
+face-VBP 
+the-DT 
+final-JJ 
+curtain-NN 
+.-. 
+ROOT 	-> S 	-> CC 	-> And
+	 	-> ADVP 	-> RB 	-> so
+		 	-> NP 	-> PRP 	-> I
+		 	-> VP 	-> VBP 	-> face
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> final
+	 	-> NN 	-> curtain
+			 	-> . 	-> .
+			
+Dependensee repr
+cc(face-4, And-1)
+advmod(face-4, so-2)
+nsubj(face-4, I-3)
+root(ROOT-0, face-4)
+det(curtain-7, the-5)
+amod(curtain-7, final-6)
+dobj(face-4, curtain-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, And-1)
+mark(face-4, so-2)
+nsubj(face-4, I-3)
+dep(And-1, face-4)
+det(curtain-7, the-5)
+amod(curtain-7, final-6)
+dobj(face-4, curtain-7)
+punct(face-4, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[6, 5] [?1, And1, I3, curtain2147483647, face4, final6]
+face4-  : so  : so ->And1
+final6- ->?1
+?1-the->curtain2147483647
+I3- ->face4
+?1- ->face4

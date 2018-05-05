@@ -1,0 +1,186 @@
+Again bringing the psychoanalytic theory of Lacan to bear in political theory, Žižek argues that the attitude of subjects towards authority revealed by today’s ideological cynicism resembles the fetishist’s attitude towards his fetish.
+------CorefChainz
+CHAIN11-["the fetishist 's" in sentence 1, "his" in sentence 1]
+representative mention: "the fetishist 's" in sentence 1
+Again-RB 
+bringing-VBG 
+the-DT 
+psychoanalytic-JJ 
+theory-NN 
+of-IN 
+Lacan-NNP 
+to-TO 
+bear-VB 
+in-IN 
+political-JJ 
+theory-NN 
+,-, 
+Žižek-NNP 
+argues-VBZ 
+that-IN 
+the-DT 
+attitude-NN 
+of-IN 
+subjects-NNS 
+towards-IN 
+authority-NN 
+revealed-VBN 
+by-IN 
+today-NN 
+'s-POS 
+ideological-JJ 
+cynicism-NN 
+resembles-VBZ 
+the-DT 
+fetishist-NN 
+'s-POS 
+attitude-NN 
+towards-IN 
+his-PRP$ 
+fetish-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> ADVP 	-> RB 	-> Again
+		 	-> VP 	-> VBG 	-> bringing
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> psychoanalytic
+	 	-> NN 	-> theory
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NNP 	-> Lacan
+				 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> bear
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> JJ 	-> political
+	 	-> NN 	-> theory
+								 	-> , 	-> ,
+	 	-> NP 	-> NNP 	-> Žižek
+		 	-> VP 	-> VBZ 	-> argues
+	 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> attitude
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NNS 	-> subjects
+		 	-> PP 	-> IN 	-> towards
+	 	-> NP 	-> NP 	-> NN 	-> authority
+		 	-> VP 	-> VBN 	-> revealed
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> NN 	-> today
+	 	-> POS 	-> 's
+		 	-> JJ 	-> ideological
+	 	-> NN 	-> cynicism
+									 	-> VP 	-> VBZ 	-> resembles
+	 	-> NP 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> fetishist
+	 	-> POS 	-> 's
+		 	-> NN 	-> attitude
+		 	-> PP 	-> IN 	-> towards
+	 	-> NP 	-> PRP$ 	-> his
+	 	-> NN 	-> fetish
+								 	-> . 	-> .
+			
+Dependensee repr
+advmod(bringing-2, Again-1)
+advcl(argues-15, bringing-2)
+det(theory-5, the-3)
+amod(theory-5, psychoanalytic-4)
+dobj(bringing-2, theory-5)
+case(Lacan-7, of-6)
+nmod:of(theory-5, Lacan-7)
+mark(bear-9, to-8)
+advcl(bringing-2, bear-9)
+case(theory-12, in-10)
+amod(theory-12, political-11)
+nmod:in(bear-9, theory-12)
+nsubj(argues-15, Žižek-14)
+root(ROOT-0, argues-15)
+mark(resembles-29, that-16)
+det(attitude-18, the-17)
+nsubj(resembles-29, attitude-18)
+case(subjects-20, of-19)
+nmod:of(attitude-18, subjects-20)
+case(authority-22, towards-21)
+nmod:towards(subjects-20, authority-22)
+acl(authority-22, revealed-23)
+case(cynicism-28, by-24)
+nmod:poss(cynicism-28, today-25)
+case(today-25, 's-26)
+amod(cynicism-28, ideological-27)
+nmod:by(revealed-23, cynicism-28)
+ccomp(argues-15, resembles-29)
+det(fetishist-31, the-30)
+nmod:poss(attitude-33, fetishist-31)
+case(fetishist-31, 's-32)
+xcomp(resembles-29, attitude-33)
+case(fetish-36, towards-34)
+nmod:poss(fetish-36, his-35)
+nmod:towards(attitude-33, fetish-36)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, argues-15)
+advmod(bringing-2, Again-1)
+advcl(argues-15, bringing-2)
+det(theory-5, the-3)
+amod(theory-5, psychoanalytic-4)
+dobj(bringing-2, theory-5)
+case(Lacan-7, of-6)
+nmod:of(theory-5, Lacan-7)
+mark(bear-9, to-8)
+advcl:to(bringing-2, bear-9)
+case(theory-12, in-10)
+amod(theory-12, political-11)
+nmod:in(bear-9, theory-12)
+punct(argues-15, ,-13)
+nsubj(argues-15, Žižek-14)
+mark(resembles-29, that-16)
+det(attitude-18, the-17)
+nsubj(resembles-29, attitude-18)
+case(subjects-20, of-19)
+nmod:of(attitude-18, subjects-20)
+case(authority-22, towards-21)
+nmod:towards(attitude-18, authority-22)
+acl(authority-22, revealed-23)
+case(cynicism-28, by-24)
+nmod:poss(cynicism-28, today-25)
+case(today-25, 's-26)
+amod(cynicism-28, ideological-27)
+nmod:by(revealed-23, cynicism-28)
+ccomp(argues-15, resembles-29)
+det(fetishist-31, the-30)
+nmod:poss(attitude-33, fetishist-31)
+case(fetishist-31, 's-32)
+xcomp(resembles-29, attitude-33)
+case(fetish-36, towards-34)
+nmod:poss(fetish-36, his-35)
+nmod:towards(attitude-33, fetish-36)
+punct(argues-15, .-37)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[25, 25] [?1, ?2, ?3, Again1, Lacan7, argues15, attitude2147483647, attitude33, authority22, bear9, bringing2, cynicism28, fetish36, fetishist2147483647, his35, ideological27, political11, psychoanalytic4, resembles29, revealed23, subjects20, theory2147483647, theory12, today25, Žižek14]
+bear9-to->bringing2
+theory12-in->bear9
+cynicism28-by->revealed23
+his35-poss->fetish36
+Lacan7-of->?3
+ideological27- ->cynicism28
+?1-poss : 's ->attitude33
+?1-the->fetishist2147483647
+his35-==->?1
+revealed23- ->authority22
+?2- ->resembles29
+subjects20-of->?2
+fetish36-towards->attitude33
+bringing2- ->argues15
+?3- ->bringing2
+today25-poss : 's ->cynicism28
+Again1- ->bringing2
+resembles29-  : that ->argues15
+political11- ->theory12
+?2-the->attitude2147483647
+Žižek14- ->argues15
+?3-the->theory2147483647
+attitude33- ->resembles29
+authority22-towards->?2
+psychoanalytic4- ->?3

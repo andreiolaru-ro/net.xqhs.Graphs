@@ -1,0 +1,54 @@
+ The determinate way in which objects are connected in a state of affairs is the structure of the state of affairs.
+------CorefChainz
+CHAIN5-["a state of affairs" in sentence 1, "the state of affairs" in sentence 1]
+representative mention: "a state of affairs" in sentence 1
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, structure-16)
+det(way-3, The-1)
+case(which-5, in-4)
+auxpass(connected-8, are-7)
+case(state-11, in-9)
+det(state-11, a-10)
+case(affairs-13, of-12)
+cop(structure-16, is-14)
+det(structure-16, the-15)
+punct(structure-16, .-22)
+case(state-19, of-17)
+det(state-19, the-18)
+case(affairs-21, of-20)
+amod(way-3, determinate-2)
+nmod:in(connected-8, way-3)
+nsubj(structure-16, way-3)
+ref(way-3, which-5)
+nsubjpass(connected-8, objects-6)
+acl:relcl(way-3, connected-8)
+nmod:in(connected-8, state-11)
+nmod:of(state-11, affairs-13)
+nmod:of(structure-16, state-19)
+nmod:of(state-19, affairs-21)
+G[14, 15] [?1, ?2, ?3, ?4, affairs21, affairs13, connected8, determinate2, objects6, state2147483647, state2147483647, structure2147483647, way2147483647, which5]
+?1-a->state2147483647
+?3-of : is ->?4
+?2-The->way2147483647
+which5-  : in ->?2
+objects6-  : are ->connected8
+?2- ->?4
+?2-in->connected8
+?4-the->structure2147483647
+connected8-relcl->?2
+affairs13-of->?1
+determinate2- ->?2
+?1-in->connected8
+affairs21-of->?3
+?3- ->?1
+?3-the->state2147483647
+------CorefChainz
+CHAIN5-["a state of affairs" in sentence 1, "the state of affairs" in sentence 1]
+representative mention: "a state of affairs" in sentence 1

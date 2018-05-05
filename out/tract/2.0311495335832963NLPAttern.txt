@@ -1,0 +1,36 @@
+ In a state of affairs objects stand in a determinate relation to one another.
+------CorefChainz
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, state-3)
+case(state-3, In-1)
+det(state-3, a-2)
+punct(state-3, .-15)
+case(affairs-5, of-4)
+case(relation-11, in-8)
+det(relation-11, a-9)
+case(one-13, to-12)
+nmod:of(state-3, affairs-5)
+nsubj(stand-7, objects-6)
+acl:relcl(affairs-5, stand-7)
+amod(relation-11, determinate-10)
+nmod:in(stand-7, relation-11)
+nmod:to(relation-11, one-13)
+dep(one-13, another-14)
+G[10, 9] [?1, ?2, affairs5, another14, determinate10, objects6, one13, relation2147483647, stand7, state2147483647]
+stand7-relcl->affairs5
+another14- ->one13
+one13-to->?1
+?1-a->relation2147483647
+?1-in->stand7
+determinate10- ->?1
+affairs5-of : In ->?2
+objects6- ->stand7
+?2-a->state2147483647
+------CorefChainz

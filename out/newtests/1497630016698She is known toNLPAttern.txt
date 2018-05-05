@@ -1,0 +1,107 @@
+She is known to keep gloves in the kitchen, except in winter, when they are by the door.
+------CorefChainz
+She-PRP 
+is-VBZ 
+known-VBN 
+to-TO 
+keep-VB 
+gloves-NNS 
+in-IN 
+the-DT 
+kitchen-NN 
+,-, 
+except-IN 
+in-IN 
+winter-NN 
+,-, 
+when-WRB 
+they-PRP 
+are-VBP 
+by-IN 
+the-DT 
+door-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> She
+		 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBN 	-> known
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> keep
+	 	-> NP 	-> NNS 	-> gloves
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> kitchen
+						 	-> , 	-> ,
+	 	-> PP 	-> IN 	-> except
+	 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> NN 	-> winter
+		 	-> , 	-> ,
+	 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> VBP 	-> are
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> door
+										 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(known-3, She-1)
+nsubj:xsubj(keep-5, She-1)
+auxpass(known-3, is-2)
+root(ROOT-0, known-3)
+mark(keep-5, to-4)
+xcomp(known-3, keep-5)
+dobj(keep-5, gloves-6)
+case(kitchen-9, in-7)
+det(kitchen-9, the-8)
+nmod:in(keep-5, kitchen-9)
+case(winter-13, except-11)
+case(winter-13, in-12)
+nmod:in(known-3, winter-13)
+advmod(door-20, when-15)
+nsubj(door-20, they-16)
+cop(door-20, are-17)
+case(door-20, by-18)
+det(door-20, the-19)
+acl:relcl(winter-13, door-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, known-3)
+nsubjpass(known-3, She-1)
+nsubj:xsubj(keep-5, She-1)
+auxpass(known-3, is-2)
+mark(keep-5, to-4)
+xcomp(known-3, keep-5)
+dobj(keep-5, gloves-6)
+case(kitchen-9, in-7)
+det(kitchen-9, the-8)
+nmod:in(keep-5, kitchen-9)
+punct(keep-5, ,-10)
+case(winter-13, except-11)
+case(winter-13, in-12)
+nmod:in(keep-5, winter-13)
+punct(keep-5, ,-14)
+advmod(door-20, when-15)
+nsubj(door-20, they-16)
+cop(door-20, are-17)
+case(door-20, by-18)
+det(door-20, the-19)
+advcl:by(keep-5, door-20)
+punct(known-3, .-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[11, 11] [?1, ?2, She1, door2147483647, gloves6, keep5, kitchen2147483647, known3, they16, when15, winter13]
+She1-xsubj->keep5
+gloves6- ->keep5
+when15- ->?2
+winter13-in : except ->keep5
+?2-the->door2147483647
+they16-  : are ->?2
+She1-  : is ->known3
+?2-by->keep5
+keep5-  : to ->known3
+?1-in->keep5
+?1-the->kitchen2147483647

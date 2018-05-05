@@ -5,12 +5,14 @@ import java.io.PrintWriter;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import javax.swing.JFrame;
@@ -31,6 +33,10 @@ import org.graphstream.stream.file.FileSinkImages.LayoutPolicy;
 import org.graphstream.stream.file.FileSinkImages.OutputType;
 import org.graphstream.stream.file.FileSinkImages.Quality;
 import org.graphstream.stream.file.FileSinkImages.Resolutions;
+import org.graphstream.ui.layout.Layout;
+import org.graphstream.ui.layout.Layouts;
+import org.graphstream.ui.swingViewer.GraphRenderer;
+import org.graphstream.ui.view.Viewer;
 
 import com.chaoticity.dependensee.Main;
 
@@ -277,7 +283,7 @@ public class Parser {
 		return result;
 	}
 
-	public String printPrettyTree(Tree tree) {
+	public static String printPrettyTree(Tree tree) {
 		if (tree != null) {
 			String s = tree.label().toString();
 			if (!tree.isLeaf()) {
@@ -292,9 +298,7 @@ public class Parser {
 
 	}
 
-	public static void example(ArrayList<String> strs) throws Exception {
-
-		Parser parser = new Parser();
+	public static StanfordCoreNLP init() {
 		Properties props = new Properties();
 		props.setProperty("annotators",
 				"tokenize,ssplit,pos,lemma,ner,depparse,mention,coref");
@@ -302,53 +306,65 @@ public class Parser {
 		// "tokenize,ssplit,pos,lemma,ner,parse,mention,coref,relation");
 		props.setProperty("depparse.extradependencies", "MAXIMAL");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+		return pipeline;
+	}
 
-		// for (String str : strs) {
-		// String str =
-		// "The world is like an apple spinning silently in space.";
-		String str = "A speck in the visual field, though it need not be red, must have some colour: it is, so to speak, surrounded by colour-space.";
-		// make output file
-		String filename = "out//" + System.currentTimeMillis()
-				+ (str.substring(0, Math.min(str.length(), 15))).trim()
-				+ "NLPAttern.txt";
-		PrintWriter writer = new PrintWriter(filename, "UTF-8");
-		writer.println(str);
-		System.out.println("Output in " + filename);
+	public static ArrayList<ContextPattern> convertContextPatterns(
+			ArrayList<String> strs, StanfordCoreNLP pipeline) throws Exception {
 
-		Annotation document = new Annotation(str);
-		pipeline.annotate(document);
-		System.out.println(parser.getCorefChainz(document, writer));
-		// parser.getMentions(document, writer);
-		// ContextPattern g = parser.getContextPatternFromEnhanced(parser,
-		// writer,
-		// document);
-		// ContextPatternConverter cPc = new ContextPatternConverter(g);
-		parser.getVisual(str, writer, parser);
-		System.out.println(str);
-		// g = cPc.processCorefCP(g, document);
-		parser.getEnhancedPlusPlusPlusPlus(document, writer);
-		ContextPattern g = (ContextPattern) parser.getNLPattern(parser, writer,
-				document, NLGraphType.PATTERN);
+		Parser parser = new Parser();
+		ArrayList<ContextPattern> result = new ArrayList<ContextPattern>();
+		if (strs != null && !strs.isEmpty()) {
+			for (String str : strs) {
 
-		// ContextPatternConverter cxt = new ContextPatternConverter(g);
-		g = (ContextPattern) ContextPatternConverter
-				.relabelEdgesWithAuxWords(g);
-		g = (ContextPattern) ContextPatternConverter.processCorefCP(g.t, g,
-				document);
+				// make output file
+				String filename = "out//newtests//"
+						+ System.currentTimeMillis()
+						+ (str.substring(0, Math.min(str.length(), 15))).trim()
+						+ "NLPAttern.txt";
+				PrintWriter writer = new PrintWriter(filename, "UTF-8");
+				writer.println(str);
+				System.out.println("Output in " + filename);
 
-		g = fixDeterminers(g);
-		writer.println(g.toString());
-		// parser.getCorefChainz(document, writer);
-		// g = cPc.breakPatterns(g);
-		System.out.println(g.toString());
+				Annotation document = new Annotation(str);
+				pipeline.annotate(document);
+				System.out.println(parser.getCorefChainz(document, writer));
+				// parser.getMentions(document, writer);
+				// ContextPattern g =
+				// parser.getContextPatternFromEnhanced(parser,
+				// writer,
+				// document);
+				// ContextPatternConverter cPc = new ContextPatternConverter(g);
+				parser.getVisual(str, writer, parser);
+				System.out.println(str);
+				// g = cPc.processCorefCP(g, document);
+				parser.getEnhancedPlusPlusPlusPlus(document, writer);
+				ContextPattern g = (ContextPattern) parser.getNLPattern(parser,
+						writer, document, NLGraphType.PATTERN);
 
-		// g = cxt.removeDuplicateNN(g);
-		g = ContextPatternConverter.removeDuplicates(g);
-		// g=cxt.invertAllEdges(g);
-		parser.contextPatternVisualize(g, true);
-		// parser.getGraphicalGraph(true, g);
+				// ContextPatternConverter cxt = new ContextPatternConverter(g);
+				g = (ContextPattern) ContextPatternConverter
+						.relabelEdgesWithAuxWords(g);
+				g = (ContextPattern) ContextPatternConverter.processCorefCP(
+						g.t, g, document);
 
-		writer.close();
+				g = fixDeterminers(g);
+				writer.println(g.toString());
+				// parser.getCorefChainz(document, writer);
+				// g = cPc.breakPatterns(g);
+				System.out.println(g.toString());
+
+				// g = cxt.removeDuplicateNN(g);
+				g = ContextPatternConverter.removeDuplicates(g);
+				// parser.contextPatternVisualize(g, true);
+				// parser.getGraphicalGraph(true, g);
+
+				writer.close();
+				result.add(g);
+			}
+		} else
+			throw new Exception("Cannot convert nothing into context patterns");
+		return result;
 	}
 
 	/**
@@ -391,7 +407,7 @@ public class Parser {
 		SimpleGraph g = NLGraphFactory.makeGraph(t);
 		ArrayList<SemanticGraph> sgs = parser
 				.getEnhancedGraph(document, writer);
-		// foreach sentence in document make a graph and somehow stich it
+		// foreach sentence in document make a graph and somehow stitch it
 		// together
 		for (SemanticGraph sg : sgs) {
 
@@ -448,7 +464,7 @@ public class Parser {
 
 								for (FunctionWord fw : patGov.getAttributes()) {
 									if (fw.getLabel().equals(zombie.getLabel())
-											&& fw.getIndex() == zombie
+											&& fw.getWordIndex() == zombie
 													.getWordIndex()) {
 										found = true;
 										System.out
@@ -516,10 +532,14 @@ public class Parser {
 			// for (String key : patNodes.keySet()) {
 			// g.addNode(patNodes.get(key));
 			// }
+			// set unit name to use in print
+			String unitName = " ";
 			System.out.println("Total nodes:");
 			for (net.xqhs.graphs.graph.Node node : g.getNodes()) {
 				System.out.print(" , " + node);
+				unitName += node.getLabel() + " ";
 			}
+			g.setUnitName(unitName);
 			// g.addAll(patEdges.values());
 			for (net.xqhs.graphs.graph.Edge edgeP : patEdges.values()) {
 				System.out.println("Adding edge: " + edgeP);
@@ -604,9 +624,9 @@ public class Parser {
 		// doesn't seem to work
 		for (FunctionWord functionWord : fws) {
 			if (nodes.containsKey(functionWord.getLabel()
-					+ functionWord.getIndex())) {
+					+ functionWord.getWordIndex())) {
 				NLNode node = nodes.get(functionWord.getLabel()
-						+ functionWord.getIndex());
+						+ functionWord.getWordIndex());
 				// no idea why i'm doing this
 				System.out.println("Removed node " + node);
 				functionWord.setLabel(node.getLabel());
@@ -650,8 +670,8 @@ public class Parser {
 		return w;
 	}
 
-	public void contextPatternVisualize(SimpleGraph cxt, boolean andDisplay)
-			throws IOException, InterruptedException {
+	public static Viewer contextPatternVisualize(SimpleGraph cxt,
+			boolean andDisplay) throws IOException, InterruptedException {
 		String graphId = cxt.getUnitName();// System.currentTimeMillis() +
 											// cxtToSentence(cxt);
 
@@ -708,15 +728,26 @@ public class Parser {
 		pic.setLayoutPolicy(LayoutPolicy.COMPUTED_FULLY_AT_NEW_IMAGE);
 		pic.setQuality(Quality.HIGH);
 		pic.setResolution(Resolutions.HD720);
-		Thread.sleep(200);
-		pic.writeAll(sg, "out//newtests" + graphId + ".png");
+		Thread.sleep(300);
+		pic.writeAll(sg, "out//newtests//img" + graphId + ".png");
+		Viewer viewer;
 		if (andDisplay) {
 
-			sg.display().enableAutoLayout();
+			viewer = sg.display(true);
+
+		} else {
+			viewer = new Viewer(sg, Viewer.ThreadingModel.GRAPH_IN_GUI_THREAD);
+			GraphRenderer renderer = Viewer.newGraphRenderer();
+			viewer.addView(Viewer.DEFAULT_VIEW_ID, renderer);
+			Layout layout = Layouts.newLayoutAlgorithm();
+			viewer.enableAutoLayout(layout);
+
 		}
+		return viewer;
 	}
 
-	private String cxtToSentence(ContextPattern cxt) {
+	// no work very bad
+	public static String cxtToSentence(ContextPattern cxt) {
 		HashMap<Integer, NLNodeP> nodes = new HashMap<Integer, NLNodeP>();
 		int minOutEdges = Integer.MAX_VALUE;
 		NLNodeP root = null;
@@ -737,6 +768,93 @@ public class Parser {
 			out += " " + nlNodeP.getLabel();
 		}
 		return out;
+	}
+
+	// public static SimpleGraph collapseGenerix(SimpleGraph g) {
+	//
+	// }
+
+	public static ArrayList<TreeNode<NLNode>> cxtAsForest(SimpleGraph cxt) {
+		ArrayList<TreeNode<NLNode>> result = new ArrayList<TreeNode<NLNode>>();
+		// populate with subtree foreach node
+		for (net.xqhs.graphs.graph.Node nod : cxt.getNodes()) {
+
+			NLNode node = (NLNode) nod;
+			System.out.println("Creating subtree of node: " + node);
+			TreeNode<NLNode> root = new TreeNode<NLNode>(node);
+			root = getNodeSubtree(root, root, cxt);
+			final TreeNode<NLNode> rroot = root;
+			// if the subtree is already in the result
+			if (!result.stream().anyMatch(new Predicate<TreeNode<NLNode>>() {
+
+				@Override
+				public boolean test(TreeNode<NLNode> t) {
+					return t.containsSubtree(rroot);
+
+				}
+			}))
+				result.add(root);
+		}
+		return result;
+	}
+
+	public static TreeNode<NLNode> getNodeSubtree(TreeNode<NLNode> root,
+			TreeNode<NLNode> partialRoot, SimpleGraph cxt) {
+
+		// should i add partialRoot here or will it b added by the previous
+		// call? #qsqs
+		Collection<net.xqhs.graphs.graph.Edge> ins = cxt.getInEdges(partialRoot
+				.getData());
+		if (ins != null & !ins.isEmpty()) {
+			// System.out.println(" Children of: " + partialRoot.getData());
+
+			for (net.xqhs.graphs.graph.Edge e : ins) {
+				NLNode node = (NLNode) e.getFrom();
+				TreeNode<NLNode> child = new TreeNode<NLNode>(node);
+				// should make it into a binary search tree that keeps indexes
+				// in
+				// check to aid reverse transform
+
+				// check for cycles
+
+				if (partialRoot.addChildDuplicateSafe(root, child) != null) {
+					System.out.println("   Added: " + child.getData() + " ");
+					System.out.println();
+					getNodeSubtree(root, child, cxt);
+				} else {
+					System.out.println("   -| Cycle detected");
+					// return partialRoot;
+				}
+			}
+		} else
+			System.out.print(" -|");
+		return partialRoot;
+	}
+
+	public static String cxtToStr(SimpleGraph cxt) {
+		System.out.println("Turning to string...");
+		String blah = " ";
+		for (TreeNode<NLNode> root : cxtAsForest(cxt)) {
+			// System.out.println("Rounded up all children of " + root.getData()
+			// + " ");
+			blah += " " + root.getData().toString() + ": ";
+			root.getChildrenData().stream()
+					.forEach(x -> System.out.print(x + " "));
+			List<String> miniblah = root.getChildrenData().stream()
+					.sorted(new Comparator<NLNode>() {
+						@Override
+						public int compare(NLNode o1, NLNode o2) {
+							return Integer.valueOf(o1.getWordIndex())
+									.compareTo(
+											Integer.valueOf(o2.getWordIndex()));
+						}
+
+					}).map(n -> n.toString()).collect(Collectors.toList());
+			blah += " " + miniblah.toString();
+			blah += '\n';
+		}
+		System.out.println(blah);
+		return blah;
 	}
 
 	/**
@@ -762,63 +880,3 @@ public class Parser {
 
 	}
 }
-// dinosaurs
-
-// String eppdsa = parser
-// .getEnhancedPlusPlusPlusPlus(document, writer);
-
-// String[] eppdsas = eppdsa.split("\\(|\\,|\n");
-// System.out.println(eppdsas);
-// for (CoreMap sentence : document.get(SentencesAnnotation.class))
-// {
-// SemanticGraph dependencies1 = sentence
-// .get(CollapsedDependenciesAnnotation.class);
-// String dep_type = "CollapsedDependenciesAnnotation";
-// writer.println();
-// writer.println(dep_type + " ===>>");
-// writer.println("Sentence: " + sentence.toString());
-// writer.println("DEPENDENCIES: " + dependencies1.toList());
-// writer.println("DEPENDENCIES SIZE: " + dependencies1.size());
-
-// writer.println("---");
-// writer.println("coref chains");
-// for (CorefChain cc : document.get(
-// CorefCoreAnnotations.CorefChainAnnotation.class)
-// .values()) {
-// writer.println("\t" + cc);
-// // List<CorefChain.CorefMention> mentions=
-// for (CorefChain.CorefMention corefMention : cc
-// .getMentionsInTextualOrder()) {
-// writer.println(corefMention.mentionSpan + "  "
-// + corefMention.position + " "
-// + corefMention.mentionType);
-// }
-// }
-
-// // reset annotators / flush before
-// StanfordCoreNLP.clearAnnotatorPool();
-// props.setProperty("annotators",
-// "tokenize,ssplit,pos,lemma,ner,parse");
-// pipeline = new StanfordCoreNLP(props);
-//
-// System.out.println("----switching parsers -----");
-//
-// for (String str : strs) {
-// String filename = "out//"
-// + (str.substring(0, Math.min(str.length(), 10))).trim()
-// + "depCore.txt";
-// try {
-// PrintWriter writer = new PrintWriter(new BufferedWriter(
-// new FileWriter(filename, true)));
-// // printwriter that
-// //appends
-//
-// System.out.println("Output in " + filename);
-// Annotation document = new Annotation(str);
-// pipeline.annotate(document);
-// String treeStr = parser.getSkeleton(writer, document);
-// writer.close();
-// } catch (Exception e) {
-// throw e;
-// }
-// }

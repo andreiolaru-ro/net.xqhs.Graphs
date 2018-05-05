@@ -11,7 +11,7 @@ public class NLGraphFactory {
 		case GRAPH:
 			System.out.println("Creating context graph...");
 			ContextGraph g = new ContextGraph();
-			g.setTimeKeeper(new IntTimeKeeper());
+			g.setTimeKeeper(new IntTimeKeeper());// wtf
 			return g;
 		case PATTERN:
 			System.out.println("Creating context pattern...");

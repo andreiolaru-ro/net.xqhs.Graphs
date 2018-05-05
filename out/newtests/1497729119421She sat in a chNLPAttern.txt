@@ -1,0 +1,159 @@
+She sat in a chair across the room from him, and announced that she hadn't showered that morning, because the water in her apartment was too cold. 
+------CorefChainz
+CHAIN7-["She" in sentence 1, "she" in sentence 1, "her" in sentence 1]
+representative mention: "She" in sentence 1
+She-PRP 
+sat-VBD 
+in-IN 
+a-DT 
+chair-NN 
+across-IN 
+the-DT 
+room-NN 
+from-IN 
+him-PRP 
+,-, 
+and-CC 
+announced-VBD 
+that-IN 
+she-PRP 
+had-VBD 
+n't-RB 
+showered-VBN 
+that-DT 
+morning-NN 
+,-, 
+because-IN 
+the-DT 
+water-NN 
+in-IN 
+her-PRP$ 
+apartment-NN 
+was-VBD 
+too-RB 
+cold-JJ 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> She
+		 	-> VP 	-> VP 	-> VBD 	-> sat
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> chair
+		 	-> PP 	-> IN 	-> across
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> room
+					 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> PRP 	-> him
+				 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> VP 	-> VBD 	-> announced
+	 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> PRP 	-> she
+		 	-> VP 	-> VBD 	-> had
+	 	-> RB 	-> n't
+	 	-> VP 	-> VBN 	-> showered
+	 	-> NP 	-> DT 	-> that
+	 	-> NN 	-> morning
+		 	-> , 	-> ,
+	 	-> SBAR 	-> IN 	-> because
+	 	-> S 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> water
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> PRP$ 	-> her
+	 	-> NN 	-> apartment
+				 	-> VP 	-> VBD 	-> was
+	 	-> ADJP 	-> RB 	-> too
+	 	-> JJ 	-> cold
+											 	-> . 	-> .
+			
+Dependensee repr
+nsubj(sat-2, She-1)
+nsubj(announced-13, She-1)
+root(ROOT-0, sat-2)
+case(chair-5, in-3)
+det(chair-5, a-4)
+nmod:in(sat-2, chair-5)
+case(room-8, across-6)
+det(room-8, the-7)
+nmod:across(chair-5, room-8)
+case(him-10, from-9)
+nmod:from(sat-2, him-10)
+cc(sat-2, and-12)
+conj:and(sat-2, announced-13)
+mark(showered-18, that-14)
+nsubj(showered-18, she-15)
+aux(showered-18, had-16)
+neg(showered-18, n't-17)
+ccomp(announced-13, showered-18)
+det(morning-20, that-19)
+nmod:tmod(showered-18, morning-20)
+mark(cold-30, because-22)
+det(water-24, the-23)
+nsubj(cold-30, water-24)
+case(apartment-27, in-25)
+nmod:poss(apartment-27, her-26)
+nmod:in(water-24, apartment-27)
+cop(cold-30, was-28)
+advmod(cold-30, too-29)
+advcl(showered-18, cold-30)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, sat-2)
+nsubj(sat-2, She-1)
+nsubj(announced-13, She-1)
+case(chair-5, in-3)
+det(chair-5, a-4)
+nmod:in(sat-2, chair-5)
+case(room-8, across-6)
+det(room-8, the-7)
+nmod:across(sat-2, room-8)
+case(him-10, from-9)
+nmod:from(room-8, him-10)
+punct(sat-2, ,-11)
+cc(sat-2, and-12)
+conj:and(sat-2, announced-13)
+mark(showered-18, that-14)
+nsubj(showered-18, she-15)
+aux(showered-18, had-16)
+neg(showered-18, n't-17)
+ccomp(announced-13, showered-18)
+det(morning-20, that-19)
+nmod:tmod(showered-18, morning-20)
+punct(showered-18, ,-21)
+mark(cold-30, because-22)
+det(water-24, the-23)
+nsubj(cold-30, water-24)
+case(apartment-27, in-25)
+nmod:poss(apartment-27, her-26)
+nmod:in(water-24, apartment-27)
+cop(cold-30, was-28)
+advmod(cold-30, too-29)
+advcl:because(showered-18, cold-30)
+punct(sat-2, .-31)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[19, 21] [?1, ?2, ?3, ?4, She1, announced13, apartment27, chair2147483647, cold30, her26, him10, morning2147483647, n't17, room2147483647, sat2, she15, showered18, too29, water2147483647]
+cold30-because->showered18
+?3- ->cold30
+too29-  : was ->cold30
+him10-from->?4
+?1-a->chair2147483647
+?4-across->sat2
+showered18-  : that  : that ->announced13
+?3-the->water2147483647
+she15-  : had  : had ->showered18
+apartment27-in->?3
+?4-the->room2147483647
+?2-tmod->showered18
+?2-that->morning2147483647
+her26-poss->apartment27
+she15-==->She1
+?1-in->sat2
+n't17- ->showered18
+She1- ->sat2
+She1- ->announced13
+announced13-and->sat2
+her26-==->She1

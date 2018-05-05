@@ -1,0 +1,77 @@
+If Emily is at the front door, she is leaving the house.
+------CorefChainz
+CHAIN2-["Emily" in sentence 1, "she" in sentence 1]
+representative mention: "Emily" in sentence 1
+If-IN 
+Emily-NNP 
+is-VBZ 
+at-IN 
+the-DT 
+front-JJ 
+door-NN 
+,-, 
+she-PRP 
+is-VBZ 
+leaving-VBG 
+the-DT 
+house-NN 
+.-. 
+ROOT 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> NNP 	-> Emily
+		 	-> VP 	-> VBZ 	-> is
+	 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> front
+	 	-> NN 	-> door
+						 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> she
+		 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBG 	-> leaving
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> house
+				 	-> . 	-> .
+			
+Dependensee repr
+mark(door-7, If-1)
+nsubj(door-7, Emily-2)
+cop(door-7, is-3)
+case(door-7, at-4)
+det(door-7, the-5)
+amod(door-7, front-6)
+advcl(leaving-11, door-7)
+nsubj(leaving-11, she-9)
+aux(leaving-11, is-10)
+root(ROOT-0, leaving-11)
+det(house-13, the-12)
+dobj(leaving-11, house-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, leaving-11)
+mark(door-7, If-1)
+nsubj(door-7, Emily-2)
+cop(door-7, is-3)
+case(door-7, at-4)
+det(door-7, the-5)
+amod(door-7, front-6)
+advcl:at(leaving-11, door-7)
+punct(leaving-11, ,-8)
+nsubj(leaving-11, she-9)
+aux(leaving-11, is-10)
+det(house-13, the-12)
+dobj(leaving-11, house-13)
+punct(leaving-11, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 8] [?1, ?2, Emily2, door7, front6, house13, leaving11, she9]
+?1-the->house13
+?2-the->door7
+?1- ->leaving11
+she9-==->Emily2
+?2-at->leaving11
+front6- ->?2
+Emily2-  : If  : is ->?2
+she9-  : is ->leaving11

@@ -1,0 +1,153 @@
+Creating subtree of node: showered18
+ Children of: showered18
+   Added: cold30 
+ Children of: cold30
+   Added: ?2 
+ Children of: ?2
+   Added: apartment27 
+ Children of: apartment27
+   Added: her26 
+ Children of: her26
+   Added: too29 
+ Children of: too29
+   Added: she15 
+ Children of: she15
+   Added: ?1 
+ Children of: ?1
+   Added: n't17 
+ Children of: n't17
+Creating subtree of node: apartment27
+ Children of: apartment27
+   Added: her26 
+ Children of: her26
+Creating subtree of node: her26
+ Children of: her26
+Creating subtree of node: ?2
+ Children of: ?2
+   Added: apartment27 
+ Children of: apartment27
+   Added: her26 
+ Children of: her26
+Creating subtree of node: announced13
+ Children of: announced13
+   Added: showered18 
+ Children of: showered18
+   Added: cold30 
+ Children of: cold30
+   Added: ?2 
+ Children of: ?2
+   Added: apartment27 
+ Children of: apartment27
+   Added: her26 
+ Children of: her26
+   Added: too29 
+ Children of: too29
+   Added: she15 
+ Children of: she15
+   Added: ?1 
+ Children of: ?1
+   Added: n't17 
+ Children of: n't17
+   Added: She1 
+ Children of: She1
+ Node her26 already in tree
+   -| Cycle detected
+ Node she15 already in tree
+   -| Cycle detected
+Creating subtree of node: cold30
+ Children of: cold30
+   Added: ?2 
+ Children of: ?2
+   Added: apartment27 
+ Children of: apartment27
+   Added: her26 
+ Children of: her26
+   Added: too29 
+ Children of: too29
+Creating subtree of node: ?4
+ Children of: ?4
+   Added: him10 
+ Children of: him10
+Creating subtree of node: She1
+ Children of: She1
+   Added: her26 
+ Children of: her26
+   Added: she15 
+ Children of: she15
+Creating subtree of node: morning2147483647
+ Children of: morning2147483647
+   Added: ?1 
+ Children of: ?1
+Creating subtree of node: she15
+ Children of: she15
+Creating subtree of node: sat2
+ Children of: sat2
+   Added: announced13 
+ Children of: announced13
+   Added: showered18 
+ Children of: showered18
+   Added: cold30 
+ Children of: cold30
+   Added: ?2 
+ Children of: ?2
+   Added: apartment27 
+ Children of: apartment27
+   Added: her26 
+ Children of: her26
+   Added: too29 
+ Children of: too29
+   Added: she15 
+ Children of: she15
+   Added: ?1 
+ Children of: ?1
+   Added: n't17 
+ Children of: n't17
+   Added: She1 
+ Children of: She1
+ Node her26 already in tree
+   -| Cycle detected
+ Node she15 already in tree
+   -| Cycle detected
+   Added: ?3 
+ Children of: ?3
+   Added: ?4 
+ Children of: ?4
+   Added: him10 
+ Children of: him10
+ Node She1 already in tree
+   -| Cycle detected
+Creating subtree of node: n't17
+ Children of: n't17
+Creating subtree of node: water2147483647
+ Children of: water2147483647
+   Added: ?2 
+ Children of: ?2
+   Added: apartment27 
+ Children of: apartment27
+   Added: her26 
+ Children of: her26
+Creating subtree of node: ?3
+ Children of: ?3
+Creating subtree of node: too29
+ Children of: too29
+Creating subtree of node: chair2147483647
+ Children of: chair2147483647
+   Added: ?3 
+ Children of: ?3
+Creating subtree of node: him10
+ Children of: him10
+Creating subtree of node: room2147483647
+ Children of: room2147483647
+   Added: ?4 
+ Children of: ?4
+   Added: him10 
+ Children of: him10
+Creating subtree of node: ?1
+ Children of: ?1
+ 
+ 
+ 
+ 
+   [her26, apartment27] [] [him10] [] [] [?1] [] [] [she15, her26] [] [?2, her26, apartment27] [] [?3, him10] [She1, ?4, ?3, him10, announced13, she15, n't17, showered18, ?1, ?2, her26, apartment27, too29, cold30] [?4] [her26] [She1, she15, n't17, showered18, ?1, ?2, her26, apartment27, too29, cold30] [she15, n't17, ?1, ?2, her26, apartment27, too29, cold30] [?2, her26, apartment27, too29]
+ 
+   [her26, apartment27] [] [him10] [] [] [?1] [] [] [she15, her26] [] [?2, her26, apartment27] [] [?3, him10] [She1, ?4, ?3, him10, announced13, she15, n't17, showered18, ?1, ?2, her26, apartment27, too29, cold30] [?4] [her26] [She1, she15, n't17, showered18, ?1, ?2, her26, apartment27, too29, cold30] [she15, n't17, ?1, ?2, her26, apartment27, too29, cold30] [?2, her26, apartment27, too29]

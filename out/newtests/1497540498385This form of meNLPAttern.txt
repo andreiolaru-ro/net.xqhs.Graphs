@@ -1,0 +1,256 @@
+This form of meditation is one in which the meditator becomes concentrated and focuses on the absence or presence of disturbances in their mind, if they find a disturbance they notice it and allow it drop away, this leads to deeper states of calmness.
+------CorefChainz
+CHAIN13-["This form of meditation" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "This form of meditation" in sentence 1
+CHAIN14-["their" in sentence 1, "they" in sentence 1, "they" in sentence 1, "this" in sentence 1]
+representative mention: "this" in sentence 1
+This-DT 
+form-NN 
+of-IN 
+meditation-NN 
+is-VBZ 
+one-CD 
+in-IN 
+which-WDT 
+the-DT 
+meditator-NN 
+becomes-VBZ 
+concentrated-JJ 
+and-CC 
+focuses-VBZ 
+on-IN 
+the-DT 
+absence-NN 
+or-CC 
+presence-NN 
+of-IN 
+disturbances-NNS 
+in-IN 
+their-PRP$ 
+mind-NN 
+,-, 
+if-IN 
+they-PRP 
+find-VB 
+a-DT 
+disturbance-NN 
+they-PRP 
+notice-VBP 
+it-PRP 
+and-CC 
+allow-VB 
+it-PRP 
+drop-VB 
+away-RP 
+,-, 
+this-DT 
+leads-VBZ 
+to-TO 
+deeper-JJR 
+states-NNS 
+of-IN 
+calmness-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NP 	-> DT 	-> This
+	 	-> NN 	-> form
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> meditation
+				 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> CD 	-> one
+		 	-> SBAR 	-> WHPP 	-> IN 	-> in
+	 	-> WHNP 	-> WDT 	-> which
+			 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> meditator
+		 	-> VP 	-> VP 	-> VBZ 	-> becomes
+	 	-> ADJP 	-> JJ 	-> concentrated
+			 	-> CC 	-> and
+	 	-> VP 	-> VBZ 	-> focuses
+	 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> absence
+	 	-> CC 	-> or
+	 	-> NN 	-> presence
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NNS 	-> disturbances
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NN 	-> mind
+												 	-> , 	-> ,
+	 	-> SBAR 	-> IN 	-> if
+	 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> VP 	-> VB 	-> find
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> disturbance
+		 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> VBP 	-> notice
+	 	-> NP 	-> PRP 	-> it
+							 	-> CC 	-> and
+	 	-> VP 	-> VB 	-> allow
+	 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> VB 	-> drop
+	 	-> PRT 	-> RP 	-> away
+										 	-> , 	-> ,
+	 	-> NP 	-> DT 	-> this
+		 	-> VP 	-> VBZ 	-> leads
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> JJR 	-> deeper
+	 	-> NNS 	-> states
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> calmness
+						 	-> . 	-> .
+			
+Dependensee repr
+det(form-2, This-1)
+nsubj(one-6, form-2)
+case(meditation-4, of-3)
+nmod:of(form-2, meditation-4)
+cop(one-6, is-5)
+nmod:in(becomes-11, one-6)
+ccomp(leads-41, one-6)
+case(which-8, in-7)
+ref(one-6, which-8)
+det(meditator-10, the-9)
+nsubj(becomes-11, meditator-10)
+nsubj(focuses-14, meditator-10)
+acl:relcl(one-6, becomes-11)
+xcomp(becomes-11, concentrated-12)
+cc(becomes-11, and-13)
+acl:relcl(one-6, focuses-14)
+conj:and(becomes-11, focuses-14)
+case(absence-17, on-15)
+det(absence-17, the-16)
+nmod:on(focuses-14, absence-17)
+cc(absence-17, or-18)
+nmod:on(focuses-14, presence-19)
+conj:or(absence-17, presence-19)
+case(disturbances-21, of-20)
+nmod:of(absence-17, disturbances-21)
+case(mind-24, in-22)
+nmod:poss(mind-24, their-23)
+nmod:in(disturbances-21, mind-24)
+mark(find-28, if-26)
+nsubj(find-28, they-27)
+nsubj(allow-35, they-27)
+advcl(one-6, find-28)
+det(disturbance-30, a-29)
+dobj(find-28, disturbance-30)
+nsubj(notice-32, they-31)
+acl:relcl(disturbance-30, notice-32)
+dobj(notice-32, it-33)
+cc(find-28, and-34)
+advcl(one-6, allow-35)
+conj:and(find-28, allow-35)
+nsubj(drop-37, it-36)
+ccomp(allow-35, drop-37)
+compound:prt(drop-37, away-38)
+nsubj(leads-41, this-40)
+root(ROOT-0, leads-41)
+case(states-44, to-42)
+amod(states-44, deeper-43)
+nmod:to(leads-41, states-44)
+case(calmness-46, of-45)
+nmod:of(states-44, calmness-46)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, one-6)
+det(form-2, This-1)
+nsubj(one-6, form-2)
+case(meditation-4, of-3)
+nmod:of(form-2, meditation-4)
+cop(one-6, is-5)
+nmod:in(becomes-11, one-6)
+case(which-8, in-7)
+ref(one-6, which-8)
+det(meditator-10, the-9)
+nsubj(becomes-11, meditator-10)
+nsubj(focuses-14, meditator-10)
+acl:relcl(one-6, becomes-11)
+xcomp(becomes-11, concentrated-12)
+cc(becomes-11, and-13)
+acl:relcl(one-6, focuses-14)
+conj:and(becomes-11, focuses-14)
+case(absence-17, on-15)
+det(absence-17, the-16)
+nmod:on(focuses-14, absence-17)
+cc(absence-17, or-18)
+nmod:on(focuses-14, presence-19)
+conj:or(absence-17, presence-19)
+case(disturbances-21, of-20)
+nmod:of(absence-17, disturbances-21)
+case(mind-24, in-22)
+nmod:poss(mind-24, their-23)
+nmod:in(disturbances-21, mind-24)
+punct(one-6, ,-25)
+mark(find-28, if-26)
+nsubj(find-28, they-27)
+advcl:if(leads-41, find-28)
+det(disturbance-30, a-29)
+dobj(find-28, disturbance-30)
+nsubj(notice-32, they-31)
+nsubj(allow-35, they-31)
+acl:relcl(disturbance-30, notice-32)
+dobj(notice-32, it-33)
+cc(notice-32, and-34)
+acl:relcl(disturbance-30, allow-35)
+conj:and(notice-32, allow-35)
+nsubj(drop-37, it-36)
+ccomp(allow-35, drop-37)
+advmod(drop-37, away-38)
+punct(leads-41, ,-39)
+nsubj(leads-41, this-40)
+dep(one-6, leads-41)
+case(states-44, to-42)
+amod(states-44, deeper-43)
+nmod:to(leads-41, states-44)
+case(calmness-46, of-45)
+nmod:of(states-44, calmness-46)
+punct(one-6, .-47)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[32, 42] [?1, ?2, ?3, ?4, absence2147483647, allow35, away38, becomes11, calmness46, concentrated12, deeper43, disturbance2147483647, disturbances21, drop37, find28, focuses14, form2147483647, it33, it36, leads41, meditation4, meditator2147483647, mind24, notice32, one6, presence19, states44, their23, they31, they27, this40, which8]
+it36- ->drop37
+focuses14-relcl->one6
+?1-  : is  : is ->one6
+?2-the->meditator2147483647
+notice32-relcl->?4
+find28-if->leads41
+one6-in->becomes11
+they27-==->this40
+?1-This->form2147483647
+disturbances21-of->?3
+focuses14-and->becomes11
+allow35-relcl->?4
+?4-a->disturbance2147483647
+they31-==->this40
+it33- ->notice32
+allow35-and->notice32
+?2- ->becomes11
+meditation4-of->?1
+?4- ->find28
+?3-the->absence2147483647
+presence19-on->focuses14
+presence19-or->?3
+states44-to->leads41
+calmness46-of->states44
+?2- ->focuses14
+mind24-in->disturbances21
+it33-==->?1
+leads41- ->one6
+which8-  : in ->one6
+becomes11-relcl->one6
+concentrated12- ->becomes11
+?3-on->focuses14
+it36-==->?1
+they27- ->find28
+away38- ->drop37
+this40- ->leads41
+their23-==->this40
+they31- ->allow35
+drop37- ->allow35
+their23-poss->mind24
+they31- ->notice32
+deeper43- ->states44

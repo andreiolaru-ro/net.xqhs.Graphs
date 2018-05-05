@@ -1,0 +1,87 @@
+When Emily is leaving the house through the front door, she should be restrained.
+------CorefChainz
+CHAIN3-["Emily" in sentence 1, "she" in sentence 1]
+representative mention: "Emily" in sentence 1
+When-WRB 
+Emily-NNP 
+is-VBZ 
+leaving-VBG 
+the-DT 
+house-NN 
+through-IN 
+the-DT 
+front-JJ 
+door-NN 
+,-, 
+she-PRP 
+should-MD 
+be-VB 
+restrained-JJ 
+.-. 
+ROOT 	-> S 	-> SBAR 	-> WHADVP 	-> WRB 	-> When
+		 	-> S 	-> NP 	-> NNP 	-> Emily
+		 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBG 	-> leaving
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> house
+		 	-> PP 	-> IN 	-> through
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> front
+	 	-> NN 	-> door
+							 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> she
+		 	-> VP 	-> MD 	-> should
+	 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> JJ 	-> restrained
+				 	-> . 	-> .
+			
+Dependensee repr
+advmod(leaving-4, When-1)
+nsubj(leaving-4, Emily-2)
+aux(leaving-4, is-3)
+advcl(restrained-15, leaving-4)
+det(house-6, the-5)
+dobj(leaving-4, house-6)
+case(door-10, through-7)
+det(door-10, the-8)
+amod(door-10, front-9)
+nmod:through(leaving-4, door-10)
+nsubj(restrained-15, she-12)
+aux(restrained-15, should-13)
+cop(restrained-15, be-14)
+root(ROOT-0, restrained-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, restrained-15)
+advmod(leaving-4, When-1)
+nsubj(leaving-4, Emily-2)
+aux(leaving-4, is-3)
+advcl(restrained-15, leaving-4)
+det(house-6, the-5)
+dobj(leaving-4, house-6)
+case(door-10, through-7)
+det(door-10, the-8)
+amod(door-10, front-9)
+nmod:through(leaving-4, door-10)
+punct(restrained-15, ,-11)
+nsubjpass(restrained-15, she-12)
+aux(restrained-15, should-13)
+auxpass(restrained-15, be-14)
+punct(restrained-15, .-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[10, 10] [?1, ?2, Emily2, When1, door2147483647, front9, house2147483647, leaving4, restrained15, she12]
+Emily2-  : is ->leaving4
+she12-==->Emily2
+?2-the->door2147483647
+?1- ->leaving4
+?1-the->house2147483647
+she12-  : should  : be ->restrained15
+?2-through->leaving4
+When1- ->leaving4
+leaving4- ->restrained15
+front9- ->?2

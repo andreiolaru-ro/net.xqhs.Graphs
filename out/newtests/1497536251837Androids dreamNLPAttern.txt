@@ -1,0 +1,38 @@
+Androids dream of electric sheep.
+------CorefChainz
+Androids-NNS 
+dream-VBP 
+of-IN 
+electric-JJ 
+sheep-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Androids
+		 	-> VP 	-> VBP 	-> dream
+	 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> JJ 	-> electric
+	 	-> NN 	-> sheep
+				 	-> . 	-> .
+			
+Dependensee repr
+nsubj(dream-2, Androids-1)
+root(ROOT-0, dream-2)
+case(sheep-5, of-3)
+amod(sheep-5, electric-4)
+nmod:of(dream-2, sheep-5)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, dream-2)
+compound(dream-2, Androids-1)
+case(sheep-5, of-3)
+amod(sheep-5, electric-4)
+nmod:of(dream-2, sheep-5)
+punct(dream-2, .-6)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[3, 2] [Androids dream2, electric4, sheep5]
+sheep5-of->Androids dream2
+electric4- ->sheep5

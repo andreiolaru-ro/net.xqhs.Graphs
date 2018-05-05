@@ -1,0 +1,97 @@
+Shopping is Emily leaving the house through the front door with a bag and her wallet.
+------CorefChainz
+CHAIN5-["Emily" in sentence 1, "her" in sentence 1]
+representative mention: "Emily" in sentence 1
+Shopping-NNP 
+is-VBZ 
+Emily-VBG 
+leaving-VBG 
+the-DT 
+house-NN 
+through-IN 
+the-DT 
+front-JJ 
+door-NN 
+with-IN 
+a-DT 
+bag-NN 
+and-CC 
+her-PRP$ 
+wallet-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> Shopping
+		 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBG 	-> Emily
+	 	-> S 	-> VP 	-> VBG 	-> leaving
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> house
+		 	-> PP 	-> IN 	-> through
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> front
+	 	-> NN 	-> door
+		 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> bag
+		 	-> CC 	-> and
+	 	-> NP 	-> PRP$ 	-> her
+	 	-> NN 	-> wallet
+										 	-> . 	-> .
+			
+Dependensee repr
+nsubj(Emily-3, Shopping-1)
+aux(Emily-3, is-2)
+root(ROOT-0, Emily-3)
+advcl(Emily-3, leaving-4)
+det(house-6, the-5)
+dobj(leaving-4, house-6)
+case(door-10, through-7)
+det(door-10, the-8)
+amod(door-10, front-9)
+nmod:through(leaving-4, door-10)
+case(bag-13, with-11)
+det(bag-13, a-12)
+nmod:with(door-10, bag-13)
+cc(bag-13, and-14)
+nmod:poss(wallet-16, her-15)
+nmod:with(door-10, wallet-16)
+conj:and(bag-13, wallet-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, Emily-3)
+nsubj(Emily-3, Shopping-1)
+cop(Emily-3, is-2)
+acl(Emily-3, leaving-4)
+det(house-6, the-5)
+dobj(leaving-4, house-6)
+case(door-10, through-7)
+det(door-10, the-8)
+amod(door-10, front-9)
+nmod:through(leaving-4, door-10)
+case(bag-13, with-11)
+det(bag-13, a-12)
+nmod:with(door-10, bag-13)
+cc(bag-13, and-14)
+nmod:poss(wallet-16, her-15)
+nmod:with(door-10, wallet-16)
+conj:and(bag-13, wallet-16)
+punct(Emily-3, .-17)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[12, 13] [?1, ?2, ?3, Emily3, Shopping1, bag2147483647, door2147483647, front9, her15, house2147483647, leaving4, wallet16]
+?3-the->house2147483647
+wallet16-with->?2
+wallet16-and->?1
+her15-==->Emily3
+?2-through->leaving4
+?1-with->?2
+Shopping1-  : is ->Emily3
+her15-poss->wallet16
+leaving4- ->Emily3
+?3- ->leaving4
+?1-a->bag2147483647
+?2-the->door2147483647
+front9- ->?2

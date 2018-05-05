@@ -1,0 +1,80 @@
+Mary's mother watched from the window while she played with her dolls.
+------CorefChainz
+CHAIN4-["Mary 's" in sentence 1, "she" in sentence 1, "her" in sentence 1]
+representative mention: "Mary 's" in sentence 1
+Mary-NNP 
+'s-POS 
+mother-NN 
+watched-VBD 
+from-IN 
+the-DT 
+window-NN 
+while-IN 
+she-PRP 
+played-VBD 
+with-IN 
+her-PRP$ 
+dolls-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NNP 	-> Mary
+	 	-> POS 	-> 's
+		 	-> NN 	-> mother
+		 	-> VP 	-> VBD 	-> watched
+	 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> window
+			 	-> SBAR 	-> IN 	-> while
+	 	-> S 	-> NP 	-> PRP 	-> she
+		 	-> VP 	-> VBD 	-> played
+	 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> PRP$ 	-> her
+	 	-> NNS 	-> dolls
+							 	-> . 	-> .
+			
+Dependensee repr
+nmod:poss(mother-3, Mary-1)
+case(Mary-1, 's-2)
+nsubj(watched-4, mother-3)
+root(ROOT-0, watched-4)
+case(window-7, from-5)
+det(window-7, the-6)
+nmod:from(watched-4, window-7)
+mark(played-10, while-8)
+nsubj(played-10, she-9)
+advcl(watched-4, played-10)
+case(dolls-13, with-11)
+nmod:poss(dolls-13, her-12)
+nmod:with(played-10, dolls-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, watched-4)
+nmod:poss(mother-3, Mary-1)
+case(Mary-1, 's-2)
+nsubj(watched-4, mother-3)
+case(window-7, from-5)
+det(window-7, the-6)
+nmod:from(watched-4, window-7)
+mark(played-10, while-8)
+nsubj(played-10, she-9)
+advcl:while(watched-4, played-10)
+case(dolls-13, with-11)
+nmod:poss(dolls-13, her-12)
+nmod:with(played-10, dolls-13)
+punct(watched-4, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 10] [?1, Mary1, dolls13, her12, mother3, played10, she9, watched4, window2147483647]
+dolls13-with->played10
+her12-poss->dolls13
+she9- ->played10
+played10-while->watched4
+her12-==->Mary1
+?1-from->watched4
+?1-the->window2147483647
+mother3- ->watched4
+she9-==->Mary1
+Mary1-poss : 's ->mother3

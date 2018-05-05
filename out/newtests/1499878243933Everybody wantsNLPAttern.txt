@@ -1,0 +1,52 @@
+Everybody wants to buy a blue house.
+------CorefChainz
+Everybody-NN 
+wants-VBZ 
+to-TO 
+buy-VB 
+a-DT 
+blue-JJ 
+house-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NN 	-> Everybody
+		 	-> VP 	-> VBZ 	-> wants
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> buy
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> blue
+	 	-> NN 	-> house
+						 	-> . 	-> .
+			
+Dependensee repr
+nsubj(wants-2, Everybody-1)
+nsubj:xsubj(buy-4, Everybody-1)
+root(ROOT-0, wants-2)
+mark(buy-4, to-3)
+xcomp(wants-2, buy-4)
+det(house-7, a-5)
+amod(house-7, blue-6)
+dobj(buy-4, house-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, wants-2)
+nsubj(wants-2, Everybody-1)
+nsubj:xsubj(buy-4, Everybody-1)
+mark(buy-4, to-3)
+xcomp(wants-2, buy-4)
+det(house-7, a-5)
+amod(house-7, blue-6)
+dobj(buy-4, house-7)
+punct(wants-2, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[6, 6] [?1, Everybody1, blue6, buy4, house2147483647, wants2]
+?1-a->house2147483647
+?1- ->buy4
+Everybody1- ->wants2
+buy4-  : to ->wants2
+Everybody1-xsubj->buy4
+blue6- ->?1

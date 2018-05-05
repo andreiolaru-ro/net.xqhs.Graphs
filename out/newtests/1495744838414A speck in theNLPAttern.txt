@@ -1,0 +1,148 @@
+ A speck in the visual field, though it need not be red, must have some colour: it is, so to speak, surrounded by colour-space.
+------CorefChainz
+CHAIN4-["A speck in the visual field" in sentence 1, "it" in sentence 1, "it" in sentence 1]
+representative mention: "A speck in the visual field" in sentence 1
+A-DT 
+speck-NN 
+in-IN 
+the-DT 
+visual-JJ 
+field-NN 
+,-, 
+though-IN 
+it-PRP 
+need-VBP 
+not-RB 
+be-VB 
+red-JJ 
+,-, 
+must-MD 
+have-VB 
+some-DT 
+colour-NN 
+:-: 
+it-PRP 
+is-VBZ 
+,-, 
+so-RB 
+to-TO 
+speak-VB 
+,-, 
+surrounded-VBN 
+by-IN 
+colour-space-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NP 	-> DT 	-> A
+	 	-> NN 	-> speck
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> visual
+	 	-> NN 	-> field
+			 	-> , 	-> ,
+	 	-> SBAR 	-> IN 	-> though
+	 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> VBP 	-> need
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> JJ 	-> red
+						 	-> , 	-> ,
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> DT 	-> some
+	 	-> NN 	-> colour
+					 	-> : 	-> :
+	 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> VBZ 	-> is
+	 	-> , 	-> ,
+	 	-> S 	-> RB 	-> so
+	 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> speak
+				 	-> , 	-> ,
+	 	-> S 	-> VP 	-> VBN 	-> surrounded
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NN 	-> colour-space
+							 	-> . 	-> .
+			
+Dependensee repr
+det(speck-2, A-1)
+nsubj(have-16, speck-2)
+case(field-6, in-3)
+det(field-6, the-4)
+amod(field-6, visual-5)
+nmod:in(speck-2, field-6)
+mark(need-10, though-8)
+nsubj(need-10, it-9)
+acl:relcl(speck-2, need-10)
+neg(need-10, not-11)
+cop(red-13, be-12)
+dep(need-10, red-13)
+aux(have-16, must-15)
+root(ROOT-0, have-16)
+det(colour-18, some-17)
+dobj(have-16, colour-18)
+nsubj(is-21, it-20)
+nsubj:xsubj(speak-25, it-20)
+parataxis(have-16, is-21)
+advmod(speak-25, so-23)
+mark(speak-25, to-24)
+xcomp(is-21, speak-25)
+dep(is-21, surrounded-27)
+case(colour-space-29, by-28)
+nmod:by(surrounded-27, colour-space-29)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-16)
+det(speck-2, A-1)
+nsubj(have-16, speck-2)
+case(field-6, in-3)
+det(field-6, the-4)
+amod(field-6, visual-5)
+nmod:in(speck-2, field-6)
+punct(have-16, ,-7)
+mark(red-13, though-8)
+nsubj(red-13, it-9)
+aux(red-13, need-10)
+neg(red-13, not-11)
+cop(red-13, be-12)
+dep(have-16, red-13)
+punct(have-16, ,-14)
+aux(have-16, must-15)
+det(colour-18, some-17)
+dobj(have-16, colour-18)
+punct(have-16, :-19)
+nsubj(is-21, it-20)
+parataxis(have-16, is-21)
+punct(is-21, ,-22)
+advmod(speak-25, so-23)
+mark(speak-25, to-24)
+advcl:to(is-21, speak-25)
+punct(speak-25, ,-26)
+dep(speak-25, surrounded-27)
+case(colour-space-29, by-28)
+nmod:by(surrounded-27, colour-space-29)
+punct(have-16, .-30)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[17, 18] [?1, ?2, ?3, colour2147483647, colour-space29, field2147483647, have16, is21, it9, it20, not11, red13, so23, speak25, speck2147483647, surrounded27, visual5]
+colour-space29-by->surrounded27
+?1-the->field2147483647
+surrounded27- ->speak25
+?2- ->have16
+?3- ->have16
+so23- ->speak25
+it20- ->is21
+is21- ->have16
+red13-  : must ->have16
+visual5- ->?1
+not11-  : be ->red13
+?1-in->?3
+speak25-to->is21
+it9-==->?3
+it9-  : though  : need  : need ->red13
+it20-==->?3
+?3-A->speck2147483647
+?2-some->colour2147483647

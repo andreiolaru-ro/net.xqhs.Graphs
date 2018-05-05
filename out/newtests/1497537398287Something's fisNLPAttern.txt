@@ -1,0 +1,38 @@
+Something's fishy in Wisconsin.
+------CorefChainz
+Something-NN 
+'s-VBZ 
+fishy-RB 
+in-IN 
+Wisconsin-NNP 
+.-. 
+ROOT 	-> S 	-> NP 	-> NN 	-> Something
+		 	-> VP 	-> VBZ 	-> 's
+	 	-> ADVP 	-> RB 	-> fishy
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NNP 	-> Wisconsin
+				 	-> . 	-> .
+			
+Dependensee repr
+nsubj(Wisconsin-5, Something-1)
+cop(Wisconsin-5, 's-2)
+advmod(Wisconsin-5, fishy-3)
+case(Wisconsin-5, in-4)
+root(ROOT-0, Wisconsin-5)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, fishy-3)
+nmod:poss(fishy-3, Something-1)
+case(Something-1, 's-2)
+case(Wisconsin-5, in-4)
+nmod:in(fishy-3, Wisconsin-5)
+punct(fishy-3, .-6)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[3, 2] [Something1, Wisconsin5, fishy3]
+Wisconsin5-in->fishy3
+Something1-poss : 's ->fishy3

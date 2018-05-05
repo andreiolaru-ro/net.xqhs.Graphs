@@ -108,6 +108,7 @@ public class NLNodeP extends NodeP implements NLNode {
 		this.lemma = other.lemma;
 		this.pos = other.pos;
 		this.attributes = new ArrayList<FunctionWord>();
+		attributes.addAll(other.getAttributes());
 
 	}
 

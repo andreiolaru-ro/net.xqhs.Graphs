@@ -33,12 +33,13 @@ public class GraphOperations {
 		deletables = new ArrayList<GraphComponent>();
 	}
 
-	public NLEdge addEdge(NLNode from, NLNode to, String edgeLabel) {
+	public NLEdge addEdge(NLNode from, NLNode to, String edgeLabel, String role) {
 		NLEdge edgeAlreadyThere = (NLEdge) containsEdge(from, to);
 		if (edgeAlreadyThere == null) {
 			System.out.println("Adding edge " + from + " -" + edgeLabel + "-> "
 					+ to);
-			NLEdge edge = NLEdgeFactory.makeNLEdge(t, from, to, edgeLabel);
+			NLEdge edge = NLEdgeFactory
+					.makeNLEdge(t, from, to, edgeLabel, role);
 			// new NLEdgeP(from, to, edgeLabel);
 
 			cxt.addEdge(edge);

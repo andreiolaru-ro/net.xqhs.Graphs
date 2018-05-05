@@ -1,0 +1,50 @@
+Emily needs keys when leaving the house.
+------CorefChainz
+Emily-NNP 
+needs-VBZ 
+keys-NNS 
+when-WRB 
+leaving-VBG 
+the-DT 
+house-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> Emily
+		 	-> VP 	-> VBZ 	-> needs
+	 	-> NP 	-> NNS 	-> keys
+		 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> VP 	-> VBG 	-> leaving
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> house
+						 	-> . 	-> .
+			
+Dependensee repr
+nsubj(needs-2, Emily-1)
+root(ROOT-0, needs-2)
+dobj(needs-2, keys-3)
+advmod(leaving-5, when-4)
+advcl(needs-2, leaving-5)
+det(house-7, the-6)
+dobj(leaving-5, house-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, needs-2)
+nsubj(needs-2, Emily-1)
+dobj(needs-2, keys-3)
+advmod(leaving-5, when-4)
+advcl(needs-2, leaving-5)
+det(house-7, the-6)
+dobj(leaving-5, house-7)
+punct(needs-2, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 6] [?1, Emily1, house7, keys3, leaving5, needs2, when4]
+leaving5- ->needs2
+Emily1- ->needs2
+keys3- ->needs2
+?1-the->house7
+?1- ->leaving5
+when4- ->leaving5

@@ -1,0 +1,44 @@
+He goes south in the winter.
+------CorefChainz
+He-PRP 
+goes-VBZ 
+south-RB 
+in-IN 
+the-DT 
+winter-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> He
+		 	-> VP 	-> VBZ 	-> goes
+	 	-> ADVP 	-> RB 	-> south
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> winter
+					 	-> . 	-> .
+			
+Dependensee repr
+nsubj(goes-2, He-1)
+root(ROOT-0, goes-2)
+advmod(goes-2, south-3)
+case(winter-6, in-4)
+det(winter-6, the-5)
+nmod:in(south-3, winter-6)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, goes-2)
+nsubj(goes-2, He-1)
+advmod(goes-2, south-3)
+case(winter-6, in-4)
+det(winter-6, the-5)
+nmod:in(goes-2, winter-6)
+punct(goes-2, .-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[5, 4] [?1, He1, goes2, south3, winter2147483647]
+south3- ->goes2
+?1-in->goes2
+He1- ->goes2
+?1-the->winter2147483647

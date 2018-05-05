@@ -15,8 +15,10 @@ public class NLEdgeG extends ContextEdge implements NLEdge {
 	public NLEdgeG(NLNodeG fromNode, NLNodeG toNode, String edgeLabel,
 			String role) {
 		super(fromNode, toNode, edgeLabel, new Offset(1));
-
-		role = label.contains(":") ? label.split(":")[0] : label;
+		// TODO:Investigate wtf is this
+		// role = label.contains(":") ? label.split(":")[0] : label;
+		this.role = role == null ? label.contains(":") ? label.split(":")[0]
+				: label : role;
 
 	}
 
@@ -25,6 +27,13 @@ public class NLEdgeG extends ContextEdge implements NLEdge {
 
 		role = label.contains(":") ? label.split(":")[0] : label;
 
+	}
+
+	public NLEdgeG(NLEdge ee) {
+
+		super(new NLNodeG((NLNode) ee.getFrom()), new NLNodeG(
+				(NLNode) ee.getTo()), ee.getLabel(), new Offset(1));
+		role = ee.getRole();
 	}
 
 	private String role;

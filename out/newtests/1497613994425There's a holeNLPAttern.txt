@@ -1,0 +1,73 @@
+There's a hole in the world like a big black pit.
+------CorefChainz
+There-EX 
+'s-VBZ 
+a-DT 
+hole-NN 
+in-IN 
+the-DT 
+world-NN 
+like-IN 
+a-DT 
+big-JJ 
+black-JJ 
+pit-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> EX 	-> There
+		 	-> VP 	-> VBZ 	-> 's
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> hole
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> world
+		 	-> PP 	-> IN 	-> like
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> big
+	 	-> JJ 	-> black
+	 	-> NN 	-> pit
+							 	-> . 	-> .
+			
+Dependensee repr
+expl('s-2, There-1)
+root(ROOT-0, 's-2)
+det(hole-4, a-3)
+nsubj('s-2, hole-4)
+case(world-7, in-5)
+det(world-7, the-6)
+nmod:in(hole-4, world-7)
+case(pit-12, like-8)
+det(pit-12, a-9)
+amod(pit-12, big-10)
+amod(pit-12, black-11)
+nmod:like(world-7, pit-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, 's-2)
+expl('s-2, There-1)
+det(hole-4, a-3)
+nsubj('s-2, hole-4)
+case(world-7, in-5)
+det(world-7, the-6)
+nmod:in('s-2, world-7)
+case(pit-12, like-8)
+det(pit-12, a-9)
+amod(pit-12, big-10)
+amod(pit-12, black-11)
+nmod:like('s-2, pit-12)
+punct('s-2, .-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[10, 9] ['s2, ?1, ?2, ?3, There1, big10, black11, hole2147483647, pit2147483647, world2147483647]
+?3-like->'s2
+?3-a->pit2147483647
+?1-in->'s2
+?2- ->'s2
+black11- ->?3
+?1-the->world2147483647
+?2-a->hole2147483647
+There1- ->'s2
+big10- ->?3

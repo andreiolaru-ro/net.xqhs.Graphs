@@ -1,0 +1,34 @@
+The end is near.
+------CorefChainz
+The-DT 
+end-NN 
+is-VBZ 
+near-JJ 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> end
+		 	-> VP 	-> VBZ 	-> is
+	 	-> ADJP 	-> JJ 	-> near
+			 	-> . 	-> .
+			
+Dependensee repr
+det(end-2, The-1)
+nsubj(near-4, end-2)
+cop(near-4, is-3)
+root(ROOT-0, near-4)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, near-4)
+det(end-2, The-1)
+nsubj(near-4, end-2)
+cop(near-4, is-3)
+punct(near-4, .-5)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[3, 2] [?1, end2147483647, near4]
+?1-  : is ->near4
+?1-The->end2147483647
