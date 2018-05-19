@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -355,7 +356,8 @@ public class Parser {
 				System.out.println(g.toString());
 
 				// g = cxt.removeDuplicateNN(g);
-				g = ContextPatternConverter.removeDuplicates(g);
+				g = (ContextPattern) ContextPatternConverter.removeDuplicates(
+						NLGraphType.PATTERN, g);
 				// parser.contextPatternVisualize(g, true);
 				// parser.getGraphicalGraph(true, g);
 
@@ -581,7 +583,6 @@ public class Parser {
 				case "mark":
 					// case "dep":
 
-					// case "ref":
 					String label = edge.getRelation().getShortName();
 					FunctionWord fw = new FunctionWord(label,
 							edge.getDependent());
@@ -595,24 +596,46 @@ public class Parser {
 					}
 
 					break;
-				case "flat":
-				case "fixed":
-				case "compound":
-				case "comp":
-				case "mwe":
+				// this one is sometimes smth u want as a graph othertimes a
+				// node so xtra conditions must be set, more elegantly as I find
+				// moore xamplz n make the effort to make a lil enum
+				case "ref":
+					String l = edge.getRelation().getShortName();
+					List<String> undesirables = Arrays.asList("that", "which");
 
-					if (dep.index() < gov.getWordIndex()) {
-						gov.setLabel(dep.word() + " " + gov.getLabel());
+					if (undesirables.contains(dep.tag().toLowerCase())) {
+
+						FunctionWord f = new FunctionWord(l,
+								edge.getDependent());
+						gov.getAttributes().add(f);
+						fws.add(f);
+						edge.setWeight(Double.MIN_VALUE);
+
+						dep.setPseudoPosition(Integer.MIN_VALUE);
+						if (depp != null) {
+							nodes.remove(depp.getLabel() + depp.getWordIndex());
+						}
 					} else
-						gov.setLabel(gov.getLabel() + " " + dep.word());
-
-					edge.setWeight(Double.MIN_VALUE);
-					// dep.setIndex(Integer.MIN_VALUE);
-					dep.setPseudoPosition(Integer.MIN_VALUE);
-					if (depp != null) {
-						nodes.remove(depp.getLabel() + depp.getWordIndex());
-					}
+						createOrRetrieveNLNode(t, nodes, dep);
 					break;
+				// case "flat":
+				// case "fixed":
+				// case "compound":
+				// case "comp":
+				// case "mwe":
+
+				// if (dep.index() < gov.getWordIndex()) {
+				// gov.setLabel(dep.word() + " " + gov.getLabel());
+				// } else
+				// gov.setLabel(gov.getLabel() + " " + dep.word());
+				//
+				// edge.setWeight(Double.MIN_VALUE);
+				// // dep.setIndex(Integer.MIN_VALUE);
+				// dep.setPseudoPosition(Integer.MIN_VALUE);
+				// if (depp != null) {
+				// nodes.remove(depp.getLabel() + depp.getWordIndex());
+				// }
+				// break;
 
 				default:
 					depp = createOrRetrieveNLNode(t, nodes, dep);
@@ -675,7 +698,7 @@ public class Parser {
 		String graphId = cxt.getUnitName();// System.currentTimeMillis() +
 											// cxtToSentence(cxt);
 
-		DefaultGraph sg = new DefaultGraph(graphId, false, false);
+		DefaultGraph sg = new DefaultGraph(cxt.getUnitName(), false, false);
 		Map<NLNode, Node> isomorphism = new IdentityHashMap<NLNode, Node>();
 		// add nodes to new graph
 		for (net.xqhs.graphs.graph.Node nodd : cxt.getNodes()) {

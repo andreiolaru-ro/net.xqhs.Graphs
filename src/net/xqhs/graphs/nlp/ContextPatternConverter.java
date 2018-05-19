@@ -16,6 +16,7 @@ import net.xqhs.graphs.graph.GraphComponent;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.pattern.EdgeP;
+import net.xqhs.graphs.pattern.GraphPattern;
 import net.xqhs.graphs.pattern.NodeP;
 import edu.stanford.nlp.coref.CorefCoreAnnotations;
 import edu.stanford.nlp.coref.data.CorefChain;
@@ -77,7 +78,10 @@ public class ContextPatternConverter {
 							((NLEdge) m).setRole(splitLabel[0]);
 							String label = m.getLabel().substring(
 									splitLabel[0].length());
-							m.setLabel(label.isEmpty() ? " " : label
+							// TODO:complete this list
+							m.setLabel(label.isEmpty() ? " " : Arrays.asList(
+									"xsubj", "relcl").contains(
+									label.substring(1)) ? " " : label
 									.substring(1));
 							System.out.println(m.getFrom() + " --"
 									+ m.getLabel() + " -->" + m.getTo()
@@ -286,31 +290,42 @@ public class ContextPatternConverter {
 		return g;
 	}
 
-	public static ContextPattern removeDuplicates(ContextPattern g) {
+	// public static SimpleGraph removeDuplicates(SimpleGraph g) {
+	//
+	// for (Node node : g.getNodes()) {
+	// if(g.getNodesNamed(node.getLabel()).size()>1){
+	// System.out.println("Perform reduction");
+	//
+	// }
+	// }
+	//
+	// }
+
+	public static SimpleGraph removeDuplicates(NLGraphType t, SimpleGraph g) {
 		System.out
 				.println("------------------DUPLICATES REMOVAL---------------------");
-		GraphOperations goG = new GraphOperations(NLGraphType.PATTERN, g);
-		ArrayList<NLNodeP> froms = new ArrayList<NLNodeP>(), tos = new ArrayList<NLNodeP>();
-		HashMap<String, ArrayList<NLNodeP>> abstractables = new HashMap<String, ArrayList<NLNodeP>>();
+		GraphOperations goG = new GraphOperations(t, g);
+		ArrayList<NLNode> froms = new ArrayList<NLNode>(), tos = new ArrayList<NLNode>();
+		HashMap<String, ArrayList<NLNode>> abstractables = new HashMap<String, ArrayList<NLNode>>();
 		for (Node node : g.getNodes()) {
 
 			System.out.println("current node: " + node.getLabel()
-					+ ((NLNodeP) node).getWordIndex());
-			NLNodeP nlNode = (NLNodeP) node;
-			if (!nlNode.isGeneric() && !tos.contains(nlNode)
-					&& !froms.contains(nlNode)) {
+					+ ((NLNode) node).getWordIndex());
+			NLNode nlNode = (NLNode) node;
+			if (!(g instanceof ContextPattern && ((NLNodeP) nlNode).isGeneric())
+					&& !tos.contains(nlNode) && !froms.contains(nlNode)) {
 				// check that node not already marked & not generic
-				if (nlNode.getPos().contains("NN")) {
+				if (nlNode.getPos().contains("NN")) {// only nouns
 					if (g.getNodesNamed(nlNode.getLabel()).size() > 1) {
 
 						for (Node duplicateNode : g.getNodesNamed(nlNode
 								.getLabel())) {
 
-							if (!((NLNodeP) duplicateNode).equals(nlNode)) {
-								froms.add((NLNodeP) duplicateNode);
+							if (!((NLNode) duplicateNode).equals(nlNode)) {
+								froms.add((NLNode) duplicateNode);
 								tos.add(nlNode);
 								System.out.println("NLNode " + node.getLabel()
-										+ ((NLNodeP) node).getWordIndex()
+										+ ((NLNode) node).getWordIndex()
 										+ nlNode.getPos() + " will be removed");
 								// goG.mergeNodes((NodeP) n, (NodeP) nlNode);
 							}
@@ -324,7 +339,7 @@ public class ContextPatternConverter {
 							abstractables.get(nlNode.getLabel()).add(nlNode);
 
 						} else {
-							ArrayList<NLNodeP> nodesWithSameName = new ArrayList<NLNodeP>();
+							ArrayList<NLNode> nodesWithSameName = new ArrayList<NLNode>();
 							nodesWithSameName.add(nlNode);
 							abstractables.put(nlNode.getLabel(),
 									nodesWithSameName);
@@ -337,25 +352,27 @@ public class ContextPatternConverter {
 		}
 		// doDelete
 		// all nodes that require instantiation
-		for (String key : abstractables.keySet()) {
-			// create copy node
-			NLNodeP conceptNode = (NLNodeP) goG.addNode(new NLNodeP(
-					(abstractables.get(key)).iterator().next()));
-			// /delete duplicates & reattach edges to instance nodes
-			for (NLNodeP parasite : abstractables.get(key)) {
+		if (t.equals(NLGraphType.PATTERN)) {
+			for (String key : abstractables.keySet()) {
+				// create copy node
+				NLNodeP conceptNode = (NLNodeP) goG.addNode(new NLNodeP(
+						(NLNodeP) (abstractables.get(key)).iterator().next()));
+				// /delete duplicates & reattach edges to instance nodes
+				for (NLNode parasite : abstractables.get(key)) {
 
-				NLNodeP genericNode = new NLNodeP();
-				g.addNode(genericNode, true);
-				genericNode.setLemma(parasite.getLemma());
-				genericNode.setPos(parasite.getPos());
-				genericNode.setWordIndex(parasite.getWordIndex());
-				goG.moveEdges(parasite, genericNode, false);
-				goG.addEdge(genericNode, conceptNode, " ", determinerRole);
-				goG.removeNode(parasite);
+					NLNodeP genericNode = new NLNodeP();
+					((GraphPattern) g).addNode(genericNode, true);
+					genericNode.setLemma(parasite.getLemma());
+					genericNode.setPos(parasite.getPos());
+					genericNode.setWordIndex(parasite.getWordIndex());
+					goG.moveEdges(parasite, genericNode, false);
+					goG.addEdge(genericNode, conceptNode, " ", determinerRole);
+					goG.removeNode(parasite);
+				}
 			}
 		}
 
-		for (NLNodeP fromNode : froms) {
+		for (NLNode fromNode : froms) {
 			goG.mergeNodes(fromNode, tos.get(froms.indexOf(fromNode)));
 		}
 
@@ -552,19 +569,10 @@ public class ContextPatternConverter {
 		genericNode.setWordIndex(Integer.MAX_VALUE);
 		gocxt.moveEdges(p, genericNode, false);
 
-		gocxt.addEdge(genericNode, p, label, "det");
+		gocxt.addEdge(genericNode, p, label,
+				ContextPatternConverter.determinerRole);
 
 		return genericNode;
-	}
-
-	/**
-	 * @param g
-	 * @param p
-	 * @return The graph with an extra generic node that takes over all its
-	 *         edges and connects to the initial node via an "is" edge
-	 */
-	public NodeP instantiate(ContextPattern g, NLNodeP p) {
-		return instantiate(g, p, "iz");
 	}
 
 	// just keeping it to have a list of all possible dependencies

@@ -76,7 +76,7 @@ public class FunctionWord implements NodeWithIndex {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

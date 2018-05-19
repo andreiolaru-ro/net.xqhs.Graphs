@@ -654,6 +654,16 @@ public class GraphMatcherQuick implements GraphMatchingProcess {
 		boolean fromGeneric = (fromP instanceof NodeP)
 				&& ((NodeP) fromP).isGeneric();
 		boolean toGeneric = (toP instanceof NodeP) && ((NodeP) toP).isGeneric();
+		// gabriela isi baga coada= GBC
+		NodeP typeTo = null, typeFrom = null;
+		if (fromGeneric)
+			typeFrom = (NodeP) MatchMaker.findTypeOfGenericNode(pattern,
+					(NodeP) fromP);
+		if (toGeneric) {
+			typeTo = (NodeP) MatchMaker.findTypeOfGenericNode(pattern,
+					(NodeP) toP);
+		}
+		// end GBC
 
 		monitor.incrementNodeLabelComparison();
 		// reject if: the from node of eP is not generic and does not have the
@@ -665,6 +675,12 @@ public class GraphMatcherQuick implements GraphMatchingProcess {
 		monitor.incrementNodeLabelComparison();
 		if (!toGeneric && !toP.getLabel().equals(e.getTo().getLabel()))
 			return false;
+		// GBC: reject if generic & label of type doesn't match label of node
+		if (fromGeneric && !typeFrom.getLabel().equals(e.getFrom().getLabel()))
+			return false;
+		if (toGeneric && !typeTo.getLabel().equals(e.getTo().getLabel()))
+			return false;
+		// end GBC
 
 		// accept if: eP is not labeled
 		// accept if: e is not labeled (or has a void label)

@@ -78,6 +78,10 @@ public class Tests {
 		}
 	}
 
+	// public static HashMap<String, String> readPrisonrules(){
+	//
+	// }
+
 	public static HashMap<String, String> readTractatus() {
 		ArrayList<String> lines = new ArrayList<String>();
 		HashMap<String, String> hashLines = new HashMap<String, String>();
