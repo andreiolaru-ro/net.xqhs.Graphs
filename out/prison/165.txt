@@ -1,0 +1,111 @@
+The envelope or package containing the contraband will also be confiscated by staff and placed into evidence.
+------CorefChainz
+The-DT 
+envelope-NN 
+or-CC 
+package-NN 
+containing-VBG 
+the-DT 
+contraband-NN 
+will-MD 
+also-RB 
+be-VB 
+confiscated-VBN 
+by-IN 
+staff-NN 
+and-CC 
+placed-VBN 
+into-IN 
+evidence-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> envelope
+	 	-> CC 	-> or
+	 	-> NN 	-> package
+		 	-> VP 	-> VBG 	-> containing
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> contraband
+				 	-> VP 	-> MD 	-> will
+	 	-> ADVP 	-> RB 	-> also
+		 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VP 	-> VBN 	-> confiscated
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NN 	-> staff
+				 	-> CC 	-> and
+	 	-> VP 	-> VBN 	-> placed
+	 	-> PP 	-> IN 	-> into
+	 	-> NP 	-> NN 	-> evidence
+							 	-> . 	-> .
+			
+Dependensee repr
+det(envelope-2, The-1)
+nsubjpass(confiscated-11, envelope-2)
+nsubjpass(placed-15, envelope-2)
+cc(envelope-2, or-3)
+conj:or(envelope-2, package-4)
+nsubjpass(confiscated-11, package-4)
+acl(envelope-2, containing-5)
+det(contraband-7, the-6)
+dobj(containing-5, contraband-7)
+aux(confiscated-11, will-8)
+advmod(confiscated-11, also-9)
+auxpass(confiscated-11, be-10)
+root(ROOT-0, confiscated-11)
+case(staff-13, by-12)
+nmod:agent(confiscated-11, staff-13)
+cc(confiscated-11, and-14)
+conj:and(confiscated-11, placed-15)
+case(evidence-17, into-16)
+nmod:into(placed-15, evidence-17)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, confiscated-11)
+det(envelope-2, The-1)
+nsubjpass(confiscated-11, envelope-2)
+nsubjpass(placed-15, envelope-2)
+cc(envelope-2, or-3)
+conj:or(envelope-2, package-4)
+nsubjpass(confiscated-11, package-4)
+acl(envelope-2, containing-5)
+det(contraband-7, the-6)
+dobj(containing-5, contraband-7)
+aux(confiscated-11, will-8)
+advmod(confiscated-11, also-9)
+auxpass(confiscated-11, be-10)
+case(staff-13, by-12)
+nmod:agent(confiscated-11, staff-13)
+cc(confiscated-11, and-14)
+conj:and(confiscated-11, placed-15)
+case(evidence-17, into-16)
+nmod:into(placed-15, evidence-17)
+punct(confiscated-11, .-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[11, 12] [?1, ?2, also9, confiscated11, containing5, contraband7, envelope2, evidence17, package4, placed15, staff13]
+placed15-and->confiscated11
+package4-or->?2
+package4- ->confiscated11
+?2- ->placed15
+staff13-agent : by ->confiscated11
+?1- ->containing5
+evidence17-into->placed15
+?2- ->confiscated11
+also9-  : will  : be ->confiscated11
+?1-the->contraband7
+containing5- ->?2
+?2-The->envelope2
+
+[confiscated11
+	(<-and-placed15
+		(<- -?2(<- -containing5<- -?1)<-or-package4)
+		<-into-evidence17)
+	(<- -*?2)
+	(<- -*package4)
+	(<-  : will  : be -also9)
+	<-agent : by -staff13;
+contraband7<-the-*?1;
+envelope2<-The-*?2]

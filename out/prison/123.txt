@@ -1,0 +1,167 @@
+No inmate shall make or possess any instrument, which could be used as a tool for escape, or used to assault jail staff or another inmate.
+------CorefChainz
+No-DT 
+inmate-NN 
+shall-MD 
+make-VB 
+or-CC 
+possess-VB 
+any-DT 
+instrument-NN 
+,-, 
+which-WDT 
+could-MD 
+be-VB 
+used-VBN 
+as-IN 
+a-DT 
+tool-NN 
+for-IN 
+escape-NN 
+,-, 
+or-CC 
+used-VBN 
+to-TO 
+assault-NN 
+jail-NN 
+staff-NN 
+or-CC 
+another-DT 
+inmate-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> make
+	 	-> CC 	-> or
+	 	-> VB 	-> possess
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> instrument
+		 	-> , 	-> ,
+	 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> VP 	-> MD 	-> could
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VP 	-> VBN 	-> used
+	 	-> PP 	-> IN 	-> as
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> tool
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NN 	-> escape
+						 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VBN 	-> used
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> NN 	-> assault
+	 	-> NN 	-> jail
+	 	-> NN 	-> staff
+		 	-> CC 	-> or
+	 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> inmate
+													 	-> . 	-> .
+			
+Dependensee repr
+neg(inmate-2, No-1)
+nsubj(make-4, inmate-2)
+nsubj(possess-6, inmate-2)
+aux(make-4, shall-3)
+root(ROOT-0, make-4)
+cc(make-4, or-5)
+conj:or(make-4, possess-6)
+det(instrument-8, any-7)
+dobj(make-4, instrument-8)
+nsubjpass(used-13, instrument-8)
+nsubjpass(used-21, instrument-8)
+ref(instrument-8, which-10)
+aux(used-13, could-11)
+auxpass(used-13, be-12)
+acl:relcl(instrument-8, used-13)
+case(tool-16, as-14)
+det(tool-16, a-15)
+nmod:as(used-13, tool-16)
+case(escape-18, for-17)
+nmod:for(tool-16, escape-18)
+cc(used-13, or-20)
+acl:relcl(instrument-8, used-21)
+conj:or(used-13, used-21)
+case(staff-25, to-22)
+compound(staff-25, assault-23)
+compound(staff-25, jail-24)
+nmod:to(used-21, staff-25)
+cc(staff-25, or-26)
+det(inmate-28, another-27)
+nmod:to(used-21, inmate-28)
+conj:or(staff-25, inmate-28)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, make-4)
+neg(inmate-2, No-1)
+nsubj(make-4, inmate-2)
+nsubj(possess-6, inmate-2)
+aux(make-4, shall-3)
+cc(make-4, or-5)
+conj:or(make-4, possess-6)
+det(instrument-8, any-7)
+dobj(make-4, instrument-8)
+nsubjpass(used-13, instrument-8)
+punct(instrument-8, ,-9)
+ref(instrument-8, which-10)
+aux(used-13, could-11)
+auxpass(used-13, be-12)
+acl:relcl(instrument-8, used-13)
+case(tool-16, as-14)
+det(tool-16, a-15)
+nmod:as(used-13, tool-16)
+case(escape-18, for-17)
+nmod:for(tool-16, escape-18)
+punct(instrument-8, ,-19)
+cc(instrument-8, or-20)
+dobj(make-4, used-21)
+conj:or(instrument-8, used-21)
+nsubjpass(used-13, used-21)
+case(staff-25, to-22)
+compound(staff-25, assault-23)
+compound(staff-25, jail-24)
+nmod:to(used-21, staff-25)
+cc(staff-25, or-26)
+det(inmate-28, another-27)
+nmod:to(used-21, inmate-28)
+conj:or(staff-25, inmate-28)
+punct(make-4, .-29)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[16, 20] [?1, ?2, ?3, No1, assault23, escape18, inmate2, inmate28, instrument8, jail24, make4, possess6, staff25, tool16, used13, used21]
+jail24- ->staff25
+?1- ->used13
+staff25-to->used21
+assault23- ->staff25
+used21-or->?1
+?2-or->staff25
+inmate2-  : shall ->make4
+escape18-for->?3
+possess6-or->make4
+?1-any->instrument8
+No1- ->inmate2
+inmate2- ->possess6
+?2-another->inmate28
+used21- ->make4
+?2-to->used21
+?3-as->used13
+used13-  : which  : which  : could  : could  : be  : be  : be ->?1
+?1- ->make4
+?3-a->tool16
+used21- ->used13
+
+[instrument8<-any-?1
+	(<-  : which  : which  : could  : could  : be  : be  : be -used13(<- -*?1)(<- -used21(<-to-staff25(<-or-?2)(<- -assault23)<- -jail24)<-to-*?2)<-as-?3<-for-escape18)
+	<-or-*used21;
+make4
+	(<- -*?1)
+	(<- -*used21)
+	(<-or-possess6<- -inmate2<- -No1)
+	<-  : shall -*inmate2;
+inmate28<-another-*?2;
+tool16<-a-*?3]

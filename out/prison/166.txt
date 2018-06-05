@@ -1,0 +1,192 @@
+Allowed Underwear: Men: boxers, or briefs, and socks in WHITE ONLY and Women: bras(no under wire style), boxers, or panties, and socks in WHITE ONLY
+------CorefChainz
+CHAIN13-["WHITE ONLY" in sentence 1, "WHITE ONLY" in sentence 1]
+representative mention: "WHITE ONLY" in sentence 1
+Allowed-JJ 
+Underwear-NN 
+:-: 
+Men-NNS 
+:-: 
+boxers-NNS 
+,-, 
+or-CC 
+briefs-NNS 
+,-, 
+and-CC 
+socks-NNS 
+in-IN 
+WHITE-NNP 
+ONLY-NNP 
+and-CC 
+Women-NNP 
+:-: 
+bras-NNS 
+-LRB---LRB- 
+no-DT 
+under-JJ 
+wire-NN 
+style-NN 
+-RRB---RRB- 
+,-, 
+boxers-NNS 
+,-, 
+or-CC 
+panties-NNS 
+,-, 
+and-CC 
+socks-NNS 
+in-IN 
+WHITE-NNP 
+ONLY-NNP 
+ROOT 	-> NP 	-> NP 	-> JJ 	-> Allowed
+	 	-> NN 	-> Underwear
+		 	-> : 	-> :
+	 	-> NP 	-> NP 	-> NNS 	-> Men
+		 	-> : 	-> :
+	 	-> NP 	-> NP 	-> NP 	-> NNS 	-> boxers
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NNS 	-> briefs
+		 	-> , 	-> ,
+		 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> NNS 	-> socks
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NNP 	-> WHITE
+	 	-> NNP 	-> ONLY
+	 	-> CC 	-> and
+	 	-> NNP 	-> Women
+				 	-> : 	-> :
+	 	-> NP 	-> NP 	-> NP 	-> NNS 	-> bras
+		 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> NP 	-> QP 	-> DT 	-> no
+	 	-> JJ 	-> under
+		 	-> NN 	-> wire
+	 	-> NN 	-> style
+		 	-> -RRB- 	-> -RRB-
+			 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> NNS 	-> boxers
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NNS 	-> panties
+		 	-> , 	-> ,
+		 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> NNS 	-> socks
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NNP 	-> WHITE
+	 	-> NNP 	-> ONLY
+									
+Dependensee repr
+amod(Underwear-2, Allowed-1)
+root(ROOT-0, Underwear-2)
+dep(Underwear-2, Men-4)
+dep(Men-4, boxers-6)
+cc(boxers-6, or-8)
+dep(Men-4, briefs-9)
+conj:or(boxers-6, briefs-9)
+cc(boxers-6, and-11)
+dep(Men-4, socks-12)
+conj:and(boxers-6, socks-12)
+case(ONLY-15, in-13)
+compound(ONLY-15, WHITE-14)
+nmod:in(socks-12, ONLY-15)
+cc(ONLY-15, and-16)
+nmod:in(socks-12, Women-17)
+conj:and(ONLY-15, Women-17)
+dep(Men-4, bras-19)
+conj:and(boxers-6, bras-19)
+advmod(under-22, no-21)
+nummod(style-24, under-22)
+compound(style-24, wire-23)
+appos(bras-19, style-24)
+conj:and(boxers-6, boxers-27)
+conj:and(bras-19, boxers-27)
+cc(boxers-27, or-29)
+conj:and(bras-19, panties-30)
+conj:or(boxers-27, panties-30)
+cc(bras-19, and-32)
+conj:and(boxers-6, socks-33)
+conj:and(bras-19, socks-33)
+case(ONLY-36, in-34)
+compound(ONLY-36, WHITE-35)
+nmod:in(socks-33, ONLY-36)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, Underwear-2)
+amod(Underwear-2, Allowed-1)
+punct(Underwear-2, :-3)
+dep(Underwear-2, Men-4)
+punct(Men-4, :-5)
+dep(Men-4, boxers-6)
+punct(boxers-6, ,-7)
+cc(boxers-6, or-8)
+dep(Men-4, briefs-9)
+conj:or(boxers-6, briefs-9)
+punct(boxers-6, ,-10)
+cc(boxers-6, and-11)
+dep(Men-4, socks-12)
+conj:and(boxers-6, socks-12)
+case(ONLY-15, in-13)
+compound(ONLY-15, WHITE-14)
+nmod:in(boxers-6, ONLY-15)
+cc(ONLY-15, and-16)
+nmod:in(boxers-6, Women-17)
+conj:and(ONLY-15, Women-17)
+punct(boxers-6, :-18)
+dep(boxers-6, bras-19)
+punct(style-24, -LRB--20)
+neg(style-24, no-21)
+case(style-24, under-22)
+compound(style-24, wire-23)
+appos(bras-19, style-24)
+punct(style-24, -RRB--25)
+punct(bras-19, ,-26)
+dep(boxers-6, boxers-27)
+conj:and(bras-19, boxers-27)
+punct(bras-19, ,-28)
+cc(bras-19, or-29)
+dep(boxers-6, panties-30)
+conj:or(bras-19, panties-30)
+punct(bras-19, ,-31)
+cc(bras-19, and-32)
+dep(boxers-6, socks-33)
+conj:or(bras-19, socks-33)
+case(ONLY-36, in-34)
+compound(ONLY-36, WHITE-35)
+nmod:in(bras-19, ONLY-36)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[18, 23] [Allowed1, Men4, ONLY36, ONLY15, Underwear2, WHITE35, WHITE14, Women17, boxers27, boxers6, bras19, briefs9, no21, panties30, socks12, socks33, style24, wire23]
+WHITE14- ->ONLY15
+Allowed1- ->Underwear2
+Men4- ->Underwear2
+socks33- ->boxers6
+panties30- ->boxers6
+style24- ->bras19
+boxers27-and->bras19
+boxers6- ->Men4
+ONLY36-in->bras19
+socks33-or->bras19
+briefs9- ->Men4
+boxers27- ->boxers6
+socks12-and->boxers6
+panties30-or->bras19
+Women17-and->ONLY15
+ONLY15-in->boxers6
+WHITE35- ->ONLY36
+no21-  : under  : under ->style24
+socks12- ->Men4
+Women17-in->boxers6
+wire23- ->style24
+briefs9-or->boxers6
+bras19- ->boxers6
+
+[Underwear2
+	(<- -Men4
+		(<- -boxers6(<- -bras19(<-in-ONLY36<- -WHITE35)(<- -style24(<-  : under  : under -no21)<- -wire23)(<-and-boxers27)(<-or-panties30)<-or-socks33)(<-in-ONLY15(<- -WHITE14)<-and-Women17)(<-in-*Women17)(<- -*boxers27)(<- -*panties30)(<- -*socks33)(<-or-briefs9)<-and-socks12)
+		(<- -*briefs9)
+		<- -*socks12)
+	<- -Allowed1]

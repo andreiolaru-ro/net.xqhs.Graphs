@@ -1,0 +1,126 @@
+NO INMATE will assign work to another inmate, control another inmate, or supervise another inmate in any way.
+------CorefChainz
+NO-DT 
+INMATE-NNP 
+will-MD 
+assign-VB 
+work-NN 
+to-TO 
+another-DT 
+inmate-NN 
+,-, 
+control-VB 
+another-DT 
+inmate-NN 
+,-, 
+or-CC 
+supervise-VB 
+another-DT 
+inmate-NN 
+in-IN 
+any-DT 
+way-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> NO
+	 	-> NNP 	-> INMATE
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VP 	-> VB 	-> assign
+	 	-> NP 	-> NN 	-> work
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> inmate
+				 	-> , 	-> ,
+	 	-> VP 	-> VB 	-> control
+	 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> inmate
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VB 	-> supervise
+	 	-> NP 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> inmate
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> way
+							 	-> . 	-> .
+			
+Dependensee repr
+neg(INMATE-2, NO-1)
+nsubj(assign-4, INMATE-2)
+nsubj(control-10, INMATE-2)
+nsubj(supervise-15, INMATE-2)
+aux(assign-4, will-3)
+root(ROOT-0, assign-4)
+dobj(assign-4, work-5)
+case(inmate-8, to-6)
+det(inmate-8, another-7)
+nmod:to(assign-4, inmate-8)
+conj:or(assign-4, control-10)
+det(inmate-12, another-11)
+dobj(control-10, inmate-12)
+cc(assign-4, or-14)
+conj:or(assign-4, supervise-15)
+det(inmate-17, another-16)
+dobj(supervise-15, inmate-17)
+case(way-20, in-18)
+det(way-20, any-19)
+nmod:in(inmate-17, way-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, assign-4)
+compound(INMATE-2, NO-1)
+nsubj(assign-4, INMATE-2)
+aux(assign-4, will-3)
+dobj(assign-4, work-5)
+case(inmate-8, to-6)
+det(inmate-8, another-7)
+nmod:to(assign-4, inmate-8)
+punct(inmate-8, ,-9)
+compound(inmate-12, control-10)
+det(inmate-12, another-11)
+nmod:to(assign-4, inmate-12)
+conj:or(inmate-8, inmate-12)
+punct(inmate-8, ,-13)
+cc(inmate-8, or-14)
+nmod:to(assign-4, supervise-15)
+conj:or(inmate-8, supervise-15)
+det(inmate-17, another-16)
+dobj(supervise-15, inmate-17)
+case(way-20, in-18)
+det(way-20, any-19)
+nmod:in(supervise-15, way-20)
+punct(assign-4, .-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[14, 15] [?1, ?2, ?3, ?4, INMATE2, NO1, assign4, control10, inmate8, inmate17, inmate12, supervise15, way20, work5]
+work5- ->assign4
+?2-another->inmate17
+supervise15-to->assign4
+?1-another->inmate8
+NO1- ->INMATE2
+?4-to->assign4
+?4-another->inmate12
+?3-in->supervise15
+control10- ->?4
+?1-to->assign4
+?3-any->way20
+?2- ->supervise15
+supervise15-or->?1
+?4-or->?1
+INMATE2-  : will ->assign4
+
+[inmate8<-another-?1
+	(<-or-?4<- -control10)
+	<-or-supervise15(<- -?2)<-in-?3;
+assign4
+	(<-to-*?1)
+	(<-to-*?4)
+	(<-to-*supervise15)
+	(<-  : will -INMATE2<- -NO1)
+	<- -work5;
+inmate17<-another-*?2;
+inmate12<-another-*?4;
+way20<-any-*?3]

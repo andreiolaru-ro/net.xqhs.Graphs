@@ -59,7 +59,7 @@ public class GraphConverter {
 					.relabelEdgesWithAuxWords(g);
 			g = (ContextGraph) ContextPatternConverter.removeDuplicates(
 					NLGraphType.GRAPH, g);
-			Parser.contextPatternVisualize(g, true);
+			Parser.displayContextPattern(g, true);
 		}
 	}
 
@@ -103,7 +103,7 @@ public class GraphConverter {
 						.relabelEdgesWithAuxWords(g);
 				g = (ContextGraph) ContextPatternConverter.removeDuplicates(
 						NLGraphType.GRAPH, g);
-				Parser.contextPatternVisualize(g, true);
+				Parser.displayContextPattern(g, true);
 			}
 		}
 	}

@@ -1,0 +1,104 @@
+There may be some exceptions to this rule as the medical department of the jail deems necessary.
+------CorefChainz
+There-EX 
+may-MD 
+be-VB 
+some-DT 
+exceptions-NNS 
+to-TO 
+this-DT 
+rule-NN 
+as-IN 
+the-DT 
+medical-JJ 
+department-NN 
+of-IN 
+the-DT 
+jail-NN 
+deems-VBZ 
+necessary-JJ 
+.-. 
+ROOT 	-> S 	-> NP 	-> EX 	-> There
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> be
+	 	-> NP 	-> DT 	-> some
+	 	-> NNS 	-> exceptions
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> rule
+			 	-> SBAR 	-> IN 	-> as
+	 	-> S 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> medical
+	 	-> NN 	-> department
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+				 	-> VP 	-> VBZ 	-> deems
+	 	-> ADJP 	-> JJ 	-> necessary
+							 	-> . 	-> .
+			
+Dependensee repr
+expl(exceptions-5, There-1)
+aux(exceptions-5, may-2)
+cop(exceptions-5, be-3)
+det(exceptions-5, some-4)
+root(ROOT-0, exceptions-5)
+case(rule-8, to-6)
+det(rule-8, this-7)
+nmod:to(exceptions-5, rule-8)
+mark(deems-16, as-9)
+det(department-12, the-10)
+amod(department-12, medical-11)
+nsubj(deems-16, department-12)
+case(jail-15, of-13)
+det(jail-15, the-14)
+nmod:of(department-12, jail-15)
+advcl(exceptions-5, deems-16)
+xcomp(deems-16, necessary-17)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, exceptions-5)
+expl(exceptions-5, There-1)
+aux(exceptions-5, may-2)
+cop(exceptions-5, be-3)
+det(exceptions-5, some-4)
+case(rule-8, to-6)
+det(rule-8, this-7)
+nmod:to(exceptions-5, rule-8)
+case(department-12, as-9)
+det(department-12, the-10)
+amod(department-12, medical-11)
+nmod:as(exceptions-5, department-12)
+case(jail-15, of-13)
+det(jail-15, the-14)
+nmod:of(department-12, jail-15)
+acl(exceptions-5, deems-16)
+xcomp(deems-16, necessary-17)
+punct(exceptions-5, .-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[12, 11] [?1, ?2, ?3, ?4, There1, deems16, department12, exceptions5, jail15, medical11, necessary17, rule8]
+There1-  : may  : be ->?3
+?4-the->department12
+?2-the->jail15
+medical11- ->?4
+deems16- ->?3
+?2-of->?4
+?1-to->?3
+?4-as->?3
+necessary17- ->deems16
+?3-some->exceptions5
+?1-this->rule8
+
+[exceptions5<-some-?3
+	(<- -deems16<- -necessary17)
+	(<-as-?4(<-of-?2)<- -medical11)
+	(<-to-?1)
+	<-  : may  : be -There1;
+department12<-the-*?4;
+jail15<-the-*?2;
+rule8<-this-*?1]

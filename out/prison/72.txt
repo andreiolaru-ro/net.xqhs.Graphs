@@ -1,0 +1,73 @@
+The charges will be based on what medical services are provided.
+------CorefChainz
+The-DT 
+charges-NNS 
+will-MD 
+be-VB 
+based-VBN 
+on-IN 
+what-WP 
+medical-JJ 
+services-NNS 
+are-VBP 
+provided-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> The
+	 	-> NNS 	-> charges
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> based
+	 	-> PP 	-> IN 	-> on
+	 	-> SBAR 	-> WHNP 	-> WP 	-> what
+		 	-> S 	-> NP 	-> JJ 	-> medical
+	 	-> NNS 	-> services
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> provided
+									 	-> . 	-> .
+			
+Dependensee repr
+det(charges-2, The-1)
+nsubjpass(based-5, charges-2)
+aux(based-5, will-3)
+auxpass(based-5, be-4)
+root(ROOT-0, based-5)
+mark(provided-11, on-6)
+dobj(provided-11, what-7)
+amod(services-9, medical-8)
+nsubjpass(provided-11, services-9)
+auxpass(provided-11, are-10)
+advcl(based-5, provided-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, based-5)
+det(charges-2, The-1)
+nsubjpass(based-5, charges-2)
+aux(based-5, will-3)
+auxpass(based-5, be-4)
+mark(provided-11, on-6)
+dobj(provided-11, what-7)
+amod(services-9, medical-8)
+nsubjpass(provided-11, services-9)
+auxpass(provided-11, are-10)
+advcl:on(based-5, provided-11)
+punct(based-5, .-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 6] [?1, based5, charges2, medical8, provided11, services9, what7]
+provided11-on->based5
+medical8- ->services9
+?1-The->charges2
+what7- ->provided11
+services9-  : are ->provided11
+?1-  : will  : be ->based5
+
+[based5
+	(<-on-provided11
+		(<-  : are -services9<- -medical8)
+		<- -what7)
+	<-  : will  : be -?1;
+charges2<-The-*?1]

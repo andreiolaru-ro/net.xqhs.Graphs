@@ -1,0 +1,85 @@
+All writing on the label must be legible and the prescription must be current.
+------CorefChainz
+All-DT 
+writing-NN 
+on-IN 
+the-DT 
+label-NN 
+must-MD 
+be-VB 
+legible-JJ 
+and-CC 
+the-DT 
+prescription-NN 
+must-MD 
+be-VB 
+current-JJ 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NP 	-> DT 	-> All
+	 	-> NN 	-> writing
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> label
+				 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> JJ 	-> legible
+					 	-> CC 	-> and
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> prescription
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> JJ 	-> current
+					 	-> . 	-> .
+			
+Dependensee repr
+det(writing-2, All-1)
+nsubj(legible-8, writing-2)
+case(label-5, on-3)
+det(label-5, the-4)
+nmod:on(writing-2, label-5)
+aux(legible-8, must-6)
+cop(legible-8, be-7)
+root(ROOT-0, legible-8)
+cc(legible-8, and-9)
+det(prescription-11, the-10)
+nsubj(current-14, prescription-11)
+aux(current-14, must-12)
+cop(current-14, be-13)
+conj:and(legible-8, current-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, legible-8)
+nsubj(legible-8, All-1)
+acl(All-1, writing-2)
+case(label-5, on-3)
+det(label-5, the-4)
+nmod:on(writing-2, label-5)
+aux(legible-8, must-6)
+cop(legible-8, be-7)
+cc(legible-8, and-9)
+det(prescription-11, the-10)
+nsubj(current-14, prescription-11)
+aux(current-14, must-12)
+cop(current-14, be-13)
+conj:and(legible-8, current-14)
+punct(legible-8, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 7] [?1, ?2, All1, current14, label5, legible8, prescription11, writing2]
+All1-  : must  : be ->legible8
+?1-  : must  : be ->current14
+?1-the->prescription11
+writing2- ->All1
+?2-on->writing2
+current14-and->legible8
+?2-the->label5
+
+[legible8
+	(<-  : must  : be -All1<- -writing2<-on-?2)
+	<-and-current14<-  : must  : be -?1;
+label5<-the-*?2;
+prescription11<-the-*?1]

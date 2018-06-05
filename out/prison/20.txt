@@ -1,0 +1,121 @@
+Property damage to the visiting booths, by inmate, or visitor, will result in the loss of visiting privileges.
+------CorefChainz
+Property-NN 
+damage-NN 
+to-TO 
+the-DT 
+visiting-VBG 
+booths-NNS 
+,-, 
+by-IN 
+inmate-NN 
+,-, 
+or-CC 
+visitor-NN 
+,-, 
+will-MD 
+result-VB 
+in-IN 
+the-DT 
+loss-NN 
+of-IN 
+visiting-VBG 
+privileges-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NN 	-> Property
+	 	-> NN 	-> damage
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> VBG 	-> visiting
+	 	-> NNS 	-> booths
+				 	-> , 	-> ,
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> NN 	-> inmate
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NN 	-> visitor
+				 	-> , 	-> ,
+	 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> result
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> loss
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> VBG 	-> visiting
+	 	-> NNS 	-> privileges
+							 	-> . 	-> .
+			
+Dependensee repr
+compound(damage-2, Property-1)
+nsubj(result-15, damage-2)
+case(booths-6, to-3)
+det(booths-6, the-4)
+amod(booths-6, visiting-5)
+nmod:to(damage-2, booths-6)
+case(inmate-9, by-8)
+nmod:by(result-15, inmate-9)
+cc(inmate-9, or-11)
+conj:or(inmate-9, visitor-12)
+nmod:by(result-15, visitor-12)
+aux(result-15, will-14)
+root(ROOT-0, result-15)
+case(loss-18, in-16)
+det(loss-18, the-17)
+nmod:in(result-15, loss-18)
+case(privileges-21, of-19)
+amod(privileges-21, visiting-20)
+nmod:of(loss-18, privileges-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, result-15)
+compound(damage-2, Property-1)
+nsubj(result-15, damage-2)
+case(booths-6, to-3)
+det(booths-6, the-4)
+amod(booths-6, visiting-5)
+nmod:to(damage-2, booths-6)
+punct(inmate-9, ,-7)
+case(inmate-9, by-8)
+nmod:by(damage-2, inmate-9)
+punct(inmate-9, ,-10)
+cc(inmate-9, or-11)
+nmod:by(damage-2, visitor-12)
+conj:or(inmate-9, visitor-12)
+punct(inmate-9, ,-13)
+aux(result-15, will-14)
+case(loss-18, in-16)
+det(loss-18, the-17)
+nmod:in(result-15, loss-18)
+case(privileges-21, of-19)
+amod(privileges-21, visiting-20)
+nmod:of(loss-18, privileges-21)
+punct(result-15, .-22)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[12, 12] [?1, ?2, Property1, booths6, damage2, inmate9, loss18, privileges21, result15, visiting20, visiting5, visitor12]
+?2-to->damage2
+visiting20- ->privileges21
+visitor12-or->inmate9
+visitor12-by->damage2
+inmate9-by->damage2
+Property1- ->damage2
+?1-the->loss18
+?2-the->booths6
+damage2- ->result15
+?1-in : will ->result15
+privileges21-of->?1
+visiting5- ->?2
+
+[loss18<-the-?1<-of-privileges21<- -visiting20;
+result15
+	(<-in : will -*?1)
+	<- -damage2
+		(<-to-?2<- -visiting5)
+		(<-by-inmate9<-or-visitor12)
+		(<-by-*visitor12)
+		<- -Property1;
+booths6<-the-*?2]

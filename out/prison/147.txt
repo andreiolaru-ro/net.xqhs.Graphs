@@ -1,0 +1,119 @@
+If the mail contains cash or money order, it will be posted to the inmate’s canteen account.
+------CorefChainz
+CHAIN3-["the mail" in sentence 1, "it" in sentence 1]
+representative mention: "the mail" in sentence 1
+If-IN 
+the-DT 
+mail-NN 
+contains-VBZ 
+cash-NN 
+or-CC 
+money-NN 
+order-NN 
+,-, 
+it-PRP 
+will-MD 
+be-VB 
+posted-VBN 
+to-TO 
+the-DT 
+inmate-NN 
+'s-POS 
+canteen-NN 
+account-NN 
+.-. 
+ROOT 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> mail
+		 	-> VP 	-> VBZ 	-> contains
+	 	-> NP 	-> NN 	-> cash
+	 	-> CC 	-> or
+	 	-> NN 	-> money
+	 	-> NN 	-> order
+					 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> posted
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> canteen
+	 	-> NN 	-> account
+						 	-> . 	-> .
+			
+Dependensee repr
+mark(contains-4, If-1)
+det(mail-3, the-2)
+nsubj(contains-4, mail-3)
+advcl(posted-13, contains-4)
+compound(order-8, cash-5)
+cc(cash-5, or-6)
+conj:or(cash-5, money-7)
+compound(order-8, money-7)
+dobj(contains-4, order-8)
+nsubjpass(posted-13, it-10)
+aux(posted-13, will-11)
+auxpass(posted-13, be-12)
+root(ROOT-0, posted-13)
+case(account-19, to-14)
+det(inmate-16, the-15)
+nmod:poss(account-19, inmate-16)
+case(inmate-16, 's-17)
+compound(account-19, canteen-18)
+nmod:to(posted-13, account-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, posted-13)
+mark(contains-4, If-1)
+det(mail-3, the-2)
+nsubj(contains-4, mail-3)
+advcl:if(posted-13, contains-4)
+compound(order-8, cash-5)
+cc(cash-5, or-6)
+conj:or(cash-5, money-7)
+compound(order-8, money-7)
+dobj(contains-4, order-8)
+punct(posted-13, ,-9)
+nsubjpass(posted-13, it-10)
+aux(posted-13, will-11)
+auxpass(posted-13, be-12)
+case(account-19, to-14)
+det(inmate-16, the-15)
+nmod:poss(account-19, inmate-16)
+case(inmate-16, 's-17)
+compound(account-19, canteen-18)
+nmod:to(posted-13, account-19)
+punct(posted-13, .-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[12, 13] [?1, ?2, account19, canteen18, cash5, contains4, inmate16, it10, mail3, money7, order8, posted13]
+?1-the->mail3
+money7-or->cash5
+order8- ->contains4
+it10-==->?1
+account19-to->posted13
+it10-  : will  : be ->posted13
+?2-poss : 's ->account19
+contains4-if->posted13
+canteen18- ->account19
+?1-  : If ->contains4
+cash5- ->order8
+?2-the->inmate16
+money7- ->order8
+
+[posted13
+	(<-if-contains4
+		(<- -order8(<- -cash5<-or-money7)<- -*money7)
+		<-  : If -?1<-==-it10)
+	(<-  : will  : be -*it10)
+	<-to-account19
+		(<-poss : 's -?2)
+		<- -canteen18;
+inmate16<-the-*?2;
+mail3<-the-*?1]

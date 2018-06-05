@@ -1,0 +1,181 @@
+Canteen items purchased at another correctional facility will not be allowed in unless it is an identical item available on our commissary list. (no exceptions)
+------CorefChainz
+CHAIN2-["another correctional facility" in sentence 1, "it" in sentence 1]
+representative mention: "another correctional facility" in sentence 1
+Canteen-NN 
+items-NNS 
+purchased-VBN 
+at-IN 
+another-DT 
+correctional-JJ 
+facility-NN 
+will-MD 
+not-RB 
+be-VB 
+allowed-VBN 
+in-IN 
+unless-IN 
+it-PRP 
+is-VBZ 
+an-DT 
+identical-JJ 
+item-NN 
+available-JJ 
+on-IN 
+our-PRP$ 
+commissary-JJ 
+list-NN 
+.-. 
+-LRB---LRB- 
+no-DT 
+exceptions-CD 
+-RRB---RRB- 
+ROOT 	-> S 	-> NP 	-> NP 	-> NN 	-> Canteen
+	 	-> NNS 	-> items
+		 	-> VP 	-> VBN 	-> purchased
+	 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> DT 	-> another
+	 	-> JJ 	-> correctional
+	 	-> NN 	-> facility
+					 	-> VP 	-> MD 	-> will
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> PP 	-> IN 	-> in
+	 	-> SBAR 	-> IN 	-> unless
+	 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> JJ 	-> identical
+	 	-> NN 	-> item
+		 	-> RRC 	-> ADJP 	-> JJ 	-> available
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> PRP$ 	-> our
+	 	-> JJ 	-> commissary
+	 	-> NN 	-> list
+		 	-> . 	-> .
+				 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> NP 	-> QP 	-> DT 	-> no
+	 	-> CD 	-> exceptions
+			 	-> -RRB- 	-> -RRB-
+												
+Dependensee repr
+compound(items-2, Canteen-1)
+nsubjpass(allowed-11, items-2)
+acl(items-2, purchased-3)
+case(facility-7, at-4)
+det(facility-7, another-5)
+amod(facility-7, correctional-6)
+nmod:at(purchased-3, facility-7)
+aux(allowed-11, will-8)
+neg(allowed-11, not-9)
+auxpass(allowed-11, be-10)
+root(ROOT-0, allowed-11)
+mark(item-18, in-12)
+mark(item-18, unless-13)
+nsubj(item-18, it-14)
+cop(item-18, is-15)
+det(item-18, an-16)
+amod(item-18, identical-17)
+advcl(allowed-11, item-18)
+acl:relcl(item-18, available-19)
+case(list-23, on-20)
+nmod:poss(list-23, our-21)
+amod(list-23, commissary-22)
+nmod:on(available-19, list-23)
+advmod(exceptions-27, no-26)
+dep(item-18, exceptions-27)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, purchased-3)
+compound(items-2, Canteen-1)
+nsubj(purchased-3, items-2)
+case(facility-7, at-4)
+det(facility-7, another-5)
+amod(facility-7, correctional-6)
+nmod:at(purchased-3, facility-7)
+aux(allowed-11, will-8)
+neg(allowed-11, not-9)
+auxpass(allowed-11, be-10)
+ccomp(purchased-3, allowed-11)
+compound:prt(allowed-11, in-12)
+mark(item-18, unless-13)
+nsubj(item-18, it-14)
+cop(item-18, is-15)
+det(item-18, an-16)
+amod(item-18, identical-17)
+advcl:unless(allowed-11, item-18)
+amod(item-18, available-19)
+case(list-23, on-20)
+nmod:poss(list-23, our-21)
+compound(list-23, commissary-22)
+nmod:on(available-19, list-23)
+punct(purchased-3, .-24)
+---
+qqroot(ROOT-0, purchased-3)
+compound(items-2, Canteen-1)
+nsubj(purchased-3, items-2)
+case(facility-7, at-4)
+det(facility-7, another-5)
+amod(facility-7, correctional-6)
+nmod:at(purchased-3, facility-7)
+aux(allowed-11, will-8)
+neg(allowed-11, not-9)
+auxpass(allowed-11, be-10)
+ccomp(purchased-3, allowed-11)
+compound:prt(allowed-11, in-12)
+mark(item-18, unless-13)
+nsubj(item-18, it-14)
+cop(item-18, is-15)
+det(item-18, an-16)
+amod(item-18, identical-17)
+advcl:unless(allowed-11, item-18)
+amod(item-18, available-19)
+case(list-23, on-20)
+nmod:poss(list-23, our-21)
+compound(list-23, commissary-22)
+nmod:on(available-19, list-23)
+punct(purchased-3, .-24)
+root(ROOT-0, exceptions-3)
+punct(exceptions-3, -LRB--1)
+neg(exceptions-3, no-2)
+punct(exceptions-3, -RRB--4)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[19, 18] [?1, ?2, Canteen1, allowed11, available19, commissary22, correctional6, exceptions3, facility7, identical17, in12, it14, item18, items2, list23, no2, not9, our21, purchased3]
+allowed11- ->purchased3
+list23-on->available19
+?2-another->facility7
+it14-==->?2
+?1-unless->allowed11
+it14-  : is ->?1
+items2- ->purchased3
+correctional6- ->?2
+available19- ->?1
+identical17- ->?1
+commissary22- ->list23
+?2-at->purchased3
+Canteen1- ->items2
+?1-an->item18
+in12-prt->allowed11
+no2- ->exceptions3
+our21-poss->list23
+not9-  : will  : be ->allowed11
+
+[purchased3
+	(<- -allowed11
+		(<-unless-?1(<- -available19<-on-list23(<- -commissary22)<-poss-our21)(<- -identical17)<-  : is -it14)
+		(<-prt-in12)
+		<-  : will  : be -not9)
+	(<- -items2<- -Canteen1)
+	<-at-?2
+		(<-==-*it14)
+		<- -correctional6;
+facility7<-another-*?2;
+exceptions3<- -no2;
+item18<-an-*?1]

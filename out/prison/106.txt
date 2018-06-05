@@ -1,0 +1,265 @@
+During your confinement you will be issued items that must be returned upon the completion of your incarceration period. These items will be returned in the same condition in which they were given to you outside of normal wear and tear.
+------CorefChainz
+CHAIN8-["items that must be returned upon the completion of your incarceration period" in sentence 1, "These items" in sentence 2, "they" in sentence 2]
+representative mention: "These items" in sentence 2
+CHAIN9-["your" in sentence 1, "you" in sentence 1, "your" in sentence 1, "you" in sentence 2]
+representative mention: "your" in sentence 1
+During-IN 
+your-PRP$ 
+confinement-NN 
+you-PRP 
+will-MD 
+be-VB 
+issued-VBN 
+items-NNS 
+that-WDT 
+must-MD 
+be-VB 
+returned-VBN 
+upon-IN 
+the-DT 
+completion-NN 
+of-IN 
+your-PRP$ 
+incarceration-NN 
+period-NN 
+.-. 
+These-DT 
+items-NNS 
+will-MD 
+be-VB 
+returned-VBN 
+in-IN 
+the-DT 
+same-JJ 
+condition-NN 
+in-IN 
+which-WDT 
+they-PRP 
+were-VBD 
+given-VBN 
+to-TO 
+you-PRP 
+outside-IN 
+of-IN 
+normal-JJ 
+wear-NN 
+and-CC 
+tear-VB 
+.-. 
+ROOT 	-> S 	-> S 	-> PP 	-> IN 	-> During
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> confinement
+			 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> issued
+	 	-> NP 	-> NP 	-> NNS 	-> items
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> returned
+	 	-> PP 	-> IN 	-> upon
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> completion
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> incarceration
+	 	-> NN 	-> period
+					 	-> . 	-> .
+											 	-> NP 	-> DT 	-> These
+	 	-> NNS 	-> items
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> returned
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> same
+	 	-> NN 	-> condition
+		 	-> SBAR 	-> WHPP 	-> IN 	-> in
+	 	-> WHNP 	-> WDT 	-> which
+			 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> VBD 	-> were
+	 	-> VP 	-> VBN 	-> given
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> PRP 	-> you
+			 	-> PP 	-> IN 	-> outside
+	 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> JJ 	-> normal
+	 	-> NN 	-> wear
+												 	-> CC 	-> and
+	 	-> VP 	-> VB 	-> tear
+				 	-> . 	-> .
+			
+Dependensee repr
+case(confinement-3, During-1)
+nmod:poss(confinement-3, your-2)
+nmod:during(issued-7, confinement-3)
+nsubjpass(issued-7, you-4)
+aux(issued-7, will-5)
+auxpass(issued-7, be-6)
+dep(returned-25, issued-7)
+dobj(issued-7, items-8)
+nsubjpass(returned-12, items-8)
+ref(items-8, that-9)
+aux(returned-12, must-10)
+auxpass(returned-12, be-11)
+acl:relcl(items-8, returned-12)
+case(completion-15, upon-13)
+det(completion-15, the-14)
+nmod:upon(returned-12, completion-15)
+case(period-19, of-16)
+nmod:poss(period-19, your-17)
+compound(period-19, incarceration-18)
+nmod:of(completion-15, period-19)
+det(items-22, These-21)
+nsubjpass(returned-25, items-22)
+nsubj(tear-42, items-22)
+aux(returned-25, will-23)
+auxpass(returned-25, be-24)
+root(ROOT-0, returned-25)
+case(condition-29, in-26)
+det(condition-29, the-27)
+amod(condition-29, same-28)
+nmod:in(returned-25, condition-29)
+nmod:in(given-34, condition-29)
+case(which-31, in-30)
+ref(condition-29, which-31)
+nsubjpass(given-34, they-32)
+auxpass(given-34, were-33)
+acl:relcl(condition-29, given-34)
+case(you-36, to-35)
+nmod:to(given-34, you-36)
+case(wear-40, outside-37)
+mwe(outside-37, of-38)
+amod(wear-40, normal-39)
+nmod:outside_of(given-34, wear-40)
+cc(returned-25, and-41)
+conj:and(returned-25, tear-42)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, issued-7)
+case(confinement-3, During-1)
+nmod:poss(confinement-3, your-2)
+nmod:during(issued-7, confinement-3)
+nsubjpass(issued-7, you-4)
+aux(issued-7, will-5)
+auxpass(issued-7, be-6)
+dobj(issued-7, items-8)
+nsubjpass(returned-12, items-8)
+ref(items-8, that-9)
+aux(returned-12, must-10)
+auxpass(returned-12, be-11)
+acl:relcl(items-8, returned-12)
+case(completion-15, upon-13)
+det(completion-15, the-14)
+nmod:upon(returned-12, completion-15)
+case(period-19, of-16)
+nmod:poss(period-19, your-17)
+compound(period-19, incarceration-18)
+nmod:of(completion-15, period-19)
+punct(issued-7, .-20)
+---
+qqroot(ROOT-0, issued-7)
+case(confinement-3, During-1)
+nmod:poss(confinement-3, your-2)
+nmod:during(issued-7, confinement-3)
+nsubjpass(issued-7, you-4)
+aux(issued-7, will-5)
+auxpass(issued-7, be-6)
+dobj(issued-7, items-8)
+nsubjpass(returned-12, items-8)
+ref(items-8, that-9)
+aux(returned-12, must-10)
+auxpass(returned-12, be-11)
+acl:relcl(items-8, returned-12)
+case(completion-15, upon-13)
+det(completion-15, the-14)
+nmod:upon(returned-12, completion-15)
+case(period-19, of-16)
+nmod:poss(period-19, your-17)
+compound(period-19, incarceration-18)
+nmod:of(completion-15, period-19)
+punct(issued-7, .-20)
+root(ROOT-0, returned-5)
+det(items-2, These-1)
+nsubjpass(returned-5, items-2)
+aux(returned-5, will-3)
+auxpass(returned-5, be-4)
+case(condition-9, in-6)
+det(condition-9, the-7)
+amod(condition-9, same-8)
+nmod:in(returned-5, condition-9)
+nmod:in(given-14, condition-9)
+case(which-11, in-10)
+ref(condition-9, which-11)
+nsubjpass(given-14, they-12)
+nsubj(tear-22, they-12)
+auxpass(given-14, were-13)
+acl:relcl(condition-9, given-14)
+case(you-16, to-15)
+nmod:to(given-14, you-16)
+case(wear-20, outside-17)
+mwe(outside-17, of-18)
+amod(wear-20, normal-19)
+nmod:outside_of(given-14, wear-20)
+cc(given-14, and-21)
+acl:relcl(condition-9, tear-22)
+conj:and(given-14, tear-22)
+punct(returned-5, .-23)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[24, 29] [?1, ?2, ?3, completion15, condition9, confinement3, given14, incarceration18, issued7, items2, items8, normal19, of18, period19, returned12, returned5, same8, tear22, they12, wear20, you16, you4, your17, your2]
+?2-upon->returned12
+?1-  : will  : be ->returned5
+they12- ->tear22
+they12-  : were ->given14
+given14- ->?3
+you16-to->given14
+items8-==->?1
+period19-of->?2
+confinement3-during->issued7
+you4-  : will  : be  : be ->issued7
+returned12-==->?1
+?3-in->returned5
+items8-  : that ->issued7
+incarceration18- ->period19
+normal19-  : outside ->wear20
+you4-==->?1
+?3-in->given14
+your2-poss : During ->confinement3
+wear20-outside_of->given14
+same8-  : which  : which  : which ->?3
+returned12-  : must  : must  : be  : be ->items8
+?3-the->condition9
+tear22- ->?3
+you16-==->?1
+your17-poss->period19
+tear22-and->given14
+?2-the->completion15
+items8- ->returned12
+?1-These->items2
+
+[items2<-These-?1
+	(<-==-items8<-  : must  : must  : be  : be -returned12(<- -*items8)<-upon-?2<-of-period19(<- -incarceration18)<-poss-your17)
+	(<-==-*returned12)
+	(<-==-you4)
+	<-==-you16;
+condition9<-the-?3
+	(<- -given14(<-in-*?3)(<-and-tear22<- -they12)(<-  : were -*they12)(<-to-*you16)<-outside_of-wear20<-  : outside -normal19)
+	(<- -*tear22)
+	<-  : which  : which  : which -same8;
+issued7
+	(<-  : that -*items8)
+	(<-  : will  : be  : be -*you4)
+	<-during-confinement3<-poss : During -your2;
+of18;
+completion15<-the-*?2;
+returned5
+	(<-  : will  : be -*?1)
+	<-in-*?3]

@@ -1,0 +1,206 @@
+You are not allowed to write other inmates in the Grant County Jail, or an inmate that maybe housed in another facility as a safe keeper while you are an inmate in the jail.
+------CorefChainz
+CHAIN6-["You" in sentence 1, "you" in sentence 1]
+representative mention: "You" in sentence 1
+CHAIN8-["the Grant County Jail" in sentence 1, "the jail" in sentence 1]
+representative mention: "the Grant County Jail" in sentence 1
+You-PRP 
+are-VBP 
+not-RB 
+allowed-VBN 
+to-TO 
+write-VB 
+other-JJ 
+inmates-NNS 
+in-IN 
+the-DT 
+Grant-NNP 
+County-NNP 
+Jail-NN 
+,-, 
+or-CC 
+an-DT 
+inmate-NN 
+that-WDT 
+maybe-RB 
+housed-VBN 
+in-IN 
+another-DT 
+facility-NN 
+as-IN 
+a-DT 
+safe-JJ 
+keeper-NN 
+while-IN 
+you-PRP 
+are-VBP 
+an-DT 
+inmate-NN 
+in-IN 
+the-DT 
+jail-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> VBP 	-> are
+	 	-> RB 	-> not
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> write
+	 	-> NP 	-> NP 	-> NP 	-> JJ 	-> other
+	 	-> NNS 	-> inmates
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NN 	-> Jail
+				 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> ADVP 	-> RB 	-> maybe
+		 	-> VP 	-> VBN 	-> housed
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> facility
+		 	-> PP 	-> IN 	-> as
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> safe
+	 	-> NN 	-> keeper
+													 	-> SBAR 	-> IN 	-> while
+	 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> are
+	 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+									 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(allowed-4, You-1)
+nsubj:xsubj(write-6, You-1)
+auxpass(allowed-4, are-2)
+neg(allowed-4, not-3)
+root(ROOT-0, allowed-4)
+mark(write-6, to-5)
+xcomp(allowed-4, write-6)
+amod(inmates-8, other-7)
+dobj(write-6, inmates-8)
+case(Jail-13, in-9)
+det(Jail-13, the-10)
+compound(Jail-13, Grant-11)
+compound(Jail-13, County-12)
+nmod:in(inmates-8, Jail-13)
+cc(inmates-8, or-15)
+det(inmate-17, an-16)
+dobj(write-6, inmate-17)
+conj:or(inmates-8, inmate-17)
+nsubj(housed-20, inmate-17)
+ref(inmate-17, that-18)
+advmod(housed-20, maybe-19)
+acl:relcl(inmate-17, housed-20)
+case(facility-23, in-21)
+det(facility-23, another-22)
+nmod:in(housed-20, facility-23)
+case(keeper-27, as-24)
+det(keeper-27, a-25)
+amod(keeper-27, safe-26)
+nmod:as(facility-23, keeper-27)
+mark(inmate-32, while-28)
+nsubj(inmate-32, you-29)
+cop(inmate-32, are-30)
+det(inmate-32, an-31)
+advcl(allowed-4, inmate-32)
+case(jail-35, in-33)
+det(jail-35, the-34)
+nmod:in(inmate-32, jail-35)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-4)
+nsubjpass(allowed-4, You-1)
+nsubj:xsubj(write-6, You-1)
+auxpass(allowed-4, are-2)
+neg(allowed-4, not-3)
+mark(write-6, to-5)
+xcomp(allowed-4, write-6)
+amod(inmates-8, other-7)
+dobj(write-6, inmates-8)
+case(Jail-13, in-9)
+det(Jail-13, the-10)
+compound(Jail-13, Grant-11)
+compound(Jail-13, County-12)
+nmod:in(inmates-8, Jail-13)
+punct(inmates-8, ,-14)
+cc(inmates-8, or-15)
+det(inmate-17, an-16)
+dobj(write-6, inmate-17)
+conj:or(inmates-8, inmate-17)
+dep(inmate-17, that-18)
+advmod(housed-20, maybe-19)
+acl(that-18, housed-20)
+case(facility-23, in-21)
+det(facility-23, another-22)
+nmod:in(housed-20, facility-23)
+case(keeper-27, as-24)
+det(keeper-27, a-25)
+amod(keeper-27, safe-26)
+nmod:as(housed-20, keeper-27)
+mark(inmate-32, while-28)
+nsubj(inmate-32, you-29)
+cop(inmate-32, are-30)
+det(inmate-32, an-31)
+advcl:while(housed-20, inmate-32)
+case(jail-35, in-33)
+det(jail-35, the-34)
+nmod:in(inmate-32, jail-35)
+punct(allowed-4, .-36)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[25, 28] [?1, ?2, ?3, ?4, ?5, ?6, County12, Grant11, Jail13, You1, allowed4, facility23, housed20, inmate17, inmate32, inmates8, jail35, keeper27, maybe19, not3, other7, safe26, that18, write6, you29]
+write6-  : to ->allowed4
+housed20- ->that18
+?3- ->write6
+County12- ->?1
+?2-the->jail35
+not3- ->allowed4
+?4-in->housed20
+you29-  : are ->?6
+Grant11- ->?1
+?5-a->keeper27
+You1- ->write6
+?6-while->housed20
+?2-in->?6
+?2-==->?1
+other7- ->inmates8
+You1-  : are  : are ->allowed4
+?1-in->inmates8
+?3-or->inmates8
+you29-==->You1
+that18- ->?3
+maybe19- ->housed20
+inmates8- ->write6
+?3-an->inmate17
+?5-as->housed20
+?4-another->facility23
+?1-the->Jail13
+?6-an->inmate32
+safe26- ->?5
+
+[allowed4
+	(<-  : to -write6
+		(<- -inmates8(<-or-?3<- -that18<- -housed20(<-as-?5<- -safe26)(<-while-?6(<-in-?2)<-  : are -you29)(<-in-?4)<- -maybe19)(<-in-?1(<-==-*?2)(<- -County12)<- -Grant11)<- -other7)
+		(<- -*?3)
+		<- -You1<-==-*you29)
+	(<-  : are  : are -*You1)
+	<- -not3;
+Jail13<-the-*?1;
+facility23<-another-*?4;
+inmate17<-an-*?3;
+inmate32<-an-*?6;
+jail35<-the-*?2;
+keeper27<-a-*?5]

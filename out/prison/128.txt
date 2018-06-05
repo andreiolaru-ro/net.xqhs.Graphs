@@ -1,0 +1,397 @@
+The Grant County Jail is a smoke-free facility. Smoking or tobacco chewing, by inmates, is prohibited. While in jail inmates cannot have cigarettes, cigars, snuff, chewing tobacco, matches, lighters, or any type of smoking or tobacco paraphernalia. This includes the Huber lockers and dormitory.
+------CorefChainz
+CHAIN16-["The Grant County Jail" in sentence 1, "This" in sentence 4]
+representative mention: "The Grant County Jail" in sentence 1
+The-DT 
+Grant-NNP 
+County-NNP 
+Jail-NN 
+is-VBZ 
+a-DT 
+smoke-free-JJ 
+facility-NN 
+.-. 
+Smoking-NN 
+or-CC 
+tobacco-NN 
+chewing-NNS 
+,-, 
+by-IN 
+inmates-NNS 
+,-, 
+is-VBZ 
+prohibited-NNP 
+.-. 
+While-IN 
+in-IN 
+jail-NN 
+inmates-NNS 
+can-MD 
+not-RB 
+have-VB 
+cigarettes-NNS 
+,-, 
+cigars-NNS 
+,-, 
+snuff-NN 
+,-, 
+chewing-JJ 
+tobacco-NN 
+,-, 
+matches-NNP 
+,-, 
+lighters-NNS 
+,-, 
+or-CC 
+any-DT 
+type-NN 
+of-IN 
+smoking-NN 
+or-CC 
+tobacco-NN 
+paraphernalia-NNS 
+.-. 
+This-DT 
+includes-VBZ 
+the-DT 
+Huber-NNP 
+lockers-NNS 
+and-CC 
+dormitory-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> The
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NN 	-> Jail
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> smoke-free
+	 	-> NN 	-> facility
+		 	-> . 	-> .
+	 	-> NP 	-> NN 	-> Smoking
+	 	-> CC 	-> or
+	 	-> NN 	-> tobacco
+	 	-> NNS 	-> chewing
+		 	-> , 	-> ,
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NNS 	-> inmates
+			 	-> , 	-> ,
+	 	-> SBAR 	-> S 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> NNP 	-> prohibited
+	 	-> . 	-> .
+		 	-> SBAR 	-> S 	-> SBAR 	-> IN 	-> While
+	 	-> S 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NN 	-> jail
+	 	-> NNS 	-> inmates
+			 	-> VP 	-> MD 	-> can
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> NNS 	-> cigarettes
+						 	-> , 	-> ,
+	 	-> X 	-> NP 	-> NP 	-> NNS 	-> cigars
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> snuff
+		 	-> , 	-> ,
+	 	-> NP 	-> JJ 	-> chewing
+	 	-> NN 	-> tobacco
+		 	-> , 	-> ,
+	 	-> NP 	-> NNP 	-> matches
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> lighters
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> DT 	-> any
+			 	-> NP 	-> NP 	-> NN 	-> type
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> smoking
+	 	-> CC 	-> or
+	 	-> NN 	-> tobacco
+	 	-> NNS 	-> paraphernalia
+				 	-> . 	-> .
+		 	-> NP 	-> DT 	-> This
+		 	-> VP 	-> VBZ 	-> includes
+	 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Huber
+	 	-> NNS 	-> lockers
+	 	-> CC 	-> and
+	 	-> NN 	-> dormitory
+											 	-> . 	-> .
+			
+Dependensee repr
+det(Jail-4, The-1)
+compound(Jail-4, Grant-2)
+compound(Jail-4, County-3)
+nsubj(facility-8, Jail-4)
+cop(facility-8, is-5)
+det(facility-8, a-6)
+amod(facility-8, smoke-free-7)
+root(ROOT-0, facility-8)
+compound(chewing-13, Smoking-10)
+cc(Smoking-10, or-11)
+conj:or(Smoking-10, tobacco-12)
+compound(chewing-13, tobacco-12)
+dep(facility-8, chewing-13)
+case(inmates-16, by-15)
+nmod:by(facility-8, inmates-16)
+cop(prohibited-19, is-18)
+acl:relcl(facility-8, prohibited-19)
+mark(have-27, While-21)
+case(inmates-24, in-22)
+compound(inmates-24, jail-23)
+nmod:in(have-27, inmates-24)
+aux(have-27, can-25)
+neg(have-27, not-26)
+advcl(includes-51, have-27)
+dobj(have-27, cigarettes-28)
+dep(type-43, cigars-30)
+conj:or(cigars-30, snuff-32)
+dep(type-43, snuff-32)
+amod(tobacco-35, chewing-34)
+conj:or(cigars-30, tobacco-35)
+dep(type-43, tobacco-35)
+conj:or(cigars-30, matches-37)
+dep(type-43, matches-37)
+conj:or(cigars-30, lighters-39)
+dep(type-43, lighters-39)
+cc(cigars-30, or-41)
+conj:or(cigars-30, any-42)
+dep(type-43, any-42)
+dep(includes-51, type-43)
+case(paraphernalia-48, of-44)
+compound(paraphernalia-48, smoking-45)
+cc(smoking-45, or-46)
+conj:or(smoking-45, tobacco-47)
+compound(paraphernalia-48, tobacco-47)
+nmod:of(type-43, paraphernalia-48)
+nsubj(includes-51, This-50)
+acl:relcl(prohibited-19, includes-51)
+det(lockers-54, the-52)
+compound(lockers-54, Huber-53)
+dobj(includes-51, lockers-54)
+cc(lockers-54, and-55)
+dobj(includes-51, dormitory-56)
+conj:and(lockers-54, dormitory-56)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, facility-8)
+det(Jail-4, The-1)
+compound(Jail-4, Grant-2)
+compound(Jail-4, County-3)
+nsubj(facility-8, Jail-4)
+cop(facility-8, is-5)
+det(facility-8, a-6)
+amod(facility-8, smoke-free-7)
+punct(facility-8, .-9)
+---
+qqroot(ROOT-0, facility-8)
+det(Jail-4, The-1)
+compound(Jail-4, Grant-2)
+compound(Jail-4, County-3)
+nsubj(facility-8, Jail-4)
+cop(facility-8, is-5)
+det(facility-8, a-6)
+amod(facility-8, smoke-free-7)
+punct(facility-8, .-9)
+root(ROOT-0, prohibited-10)
+nsubjpass(prohibited-10, Smoking-1)
+cc(Smoking-1, or-2)
+conj:or(Smoking-1, tobacco-3)
+nsubjpass(prohibited-10, tobacco-3)
+dep(prohibited-10, chewing-4)
+punct(prohibited-10, ,-5)
+case(inmates-7, by-6)
+nmod:agent(prohibited-10, inmates-7)
+punct(prohibited-10, ,-8)
+auxpass(prohibited-10, is-9)
+punct(prohibited-10, .-11)
+---
+qqroot(ROOT-0, facility-8)
+det(Jail-4, The-1)
+compound(Jail-4, Grant-2)
+compound(Jail-4, County-3)
+nsubj(facility-8, Jail-4)
+cop(facility-8, is-5)
+det(facility-8, a-6)
+amod(facility-8, smoke-free-7)
+punct(facility-8, .-9)
+root(ROOT-0, prohibited-10)
+nsubjpass(prohibited-10, Smoking-1)
+cc(Smoking-1, or-2)
+conj:or(Smoking-1, tobacco-3)
+nsubjpass(prohibited-10, tobacco-3)
+dep(prohibited-10, chewing-4)
+punct(prohibited-10, ,-5)
+case(inmates-7, by-6)
+nmod:agent(prohibited-10, inmates-7)
+punct(prohibited-10, ,-8)
+auxpass(prohibited-10, is-9)
+punct(prohibited-10, .-11)
+root(ROOT-0, have-7)
+mark(have-7, While-1)
+case(inmates-4, in-2)
+compound(inmates-4, jail-3)
+nmod:in(have-7, inmates-4)
+aux(have-7, can-5)
+neg(have-7, not-6)
+dobj(have-7, cigarettes-8)
+punct(have-7, ,-9)
+root(,-9, cigars-10)
+punct(cigars-10, ,-11)
+conj(cigars-10, snuff-12)
+punct(cigars-10, ,-13)
+acl(cigars-10, chewing-14)
+dobj(chewing-14, tobacco-15)
+punct(tobacco-15, ,-16)
+dobj(chewing-14, matches-17)
+conj:or(tobacco-15, matches-17)
+punct(tobacco-15, ,-18)
+dobj(chewing-14, lighters-19)
+conj:or(tobacco-15, lighters-19)
+punct(tobacco-15, ,-20)
+cc(tobacco-15, or-21)
+det(type-23, any-22)
+dobj(chewing-14, type-23)
+conj:or(tobacco-15, type-23)
+case(smoking-25, of-24)
+nmod:of(type-23, smoking-25)
+cc(smoking-25, or-26)
+compound(paraphernalia-28, tobacco-27)
+nmod:of(type-23, paraphernalia-28)
+conj:or(smoking-25, paraphernalia-28)
+punct(cigars-10, .-29)
+---
+qqroot(ROOT-0, facility-8)
+det(Jail-4, The-1)
+compound(Jail-4, Grant-2)
+compound(Jail-4, County-3)
+nsubj(facility-8, Jail-4)
+cop(facility-8, is-5)
+det(facility-8, a-6)
+amod(facility-8, smoke-free-7)
+punct(facility-8, .-9)
+root(ROOT-0, prohibited-10)
+nsubjpass(prohibited-10, Smoking-1)
+cc(Smoking-1, or-2)
+conj:or(Smoking-1, tobacco-3)
+nsubjpass(prohibited-10, tobacco-3)
+dep(prohibited-10, chewing-4)
+punct(prohibited-10, ,-5)
+case(inmates-7, by-6)
+nmod:agent(prohibited-10, inmates-7)
+punct(prohibited-10, ,-8)
+auxpass(prohibited-10, is-9)
+punct(prohibited-10, .-11)
+root(ROOT-0, have-7)
+mark(have-7, While-1)
+case(inmates-4, in-2)
+compound(inmates-4, jail-3)
+nmod:in(have-7, inmates-4)
+aux(have-7, can-5)
+neg(have-7, not-6)
+dobj(have-7, cigarettes-8)
+punct(have-7, ,-9)
+root(,-9, cigars-10)
+punct(cigars-10, ,-11)
+conj(cigars-10, snuff-12)
+punct(cigars-10, ,-13)
+acl(cigars-10, chewing-14)
+dobj(chewing-14, tobacco-15)
+punct(tobacco-15, ,-16)
+dobj(chewing-14, matches-17)
+conj:or(tobacco-15, matches-17)
+punct(tobacco-15, ,-18)
+dobj(chewing-14, lighters-19)
+conj:or(tobacco-15, lighters-19)
+punct(tobacco-15, ,-20)
+cc(tobacco-15, or-21)
+det(type-23, any-22)
+dobj(chewing-14, type-23)
+conj:or(tobacco-15, type-23)
+case(smoking-25, of-24)
+nmod:of(type-23, smoking-25)
+cc(smoking-25, or-26)
+compound(paraphernalia-28, tobacco-27)
+nmod:of(type-23, paraphernalia-28)
+conj:or(smoking-25, paraphernalia-28)
+punct(cigars-10, .-29)
+root(ROOT-0, includes-2)
+nsubj(includes-2, This-1)
+det(lockers-5, the-3)
+compound(lockers-5, Huber-4)
+dobj(includes-2, lockers-5)
+cc(lockers-5, and-6)
+dobj(includes-2, dormitory-7)
+conj:and(lockers-5, dormitory-7)
+punct(includes-2, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+G[35, 37] [,9, ?1, ?2, ?3, ?4, County3, Grant2, Huber4, Jail4, Smoking1, This1, chewing14, chewing4, cigarettes8, cigars10, dormitory7, facility8, have7, includes2, inmates4, inmates7, jail3, lighters19, lockers5, matches17, not6, paraphernalia28, prohibited10, smoke-free7, smoking25, snuff12, tobacco3, tobacco27, tobacco15, type23]
+dormitory7- ->includes2
+?3-or->tobacco15
+?3-any->type23
+Smoking1-==->?1
+lighters19- ->chewing14
+tobacco3- ->prohibited10
+smoking25-of->?3
+?2-the->lockers5
+inmates4-in : While  : can  : can ->have7
+paraphernalia28-or->smoking25
+?2- ->includes2
+paraphernalia28-of->?3
+Huber4- ->?2
+snuff12- ->cigars10
+tobacco15- ->chewing14
+inmates7-agent : is  : by ->prohibited10
+chewing4- ->prohibited10
+tobacco3-or->Smoking1
+tobacco27- ->paraphernalia28
+?1-The->Jail4
+?3- ->chewing14
+?4-a->facility8
+Smoking1- ->prohibited10
+jail3- ->inmates4
+matches17- ->chewing14
+lighters19-or->tobacco15
+cigarettes8- ->have7
+not6- ->have7
+?1-  : is ->?4
+Grant2- ->?1
+smoke-free7- ->?4
+matches17-or->tobacco15
+This1- ->includes2
+cigars10- ->,9
+County3- ->?1
+dormitory7-and->?2
+chewing14- ->cigars10
+
+[,9<- -cigars10
+	(<- -chewing14(<- -tobacco15(<-or-?3(<-of-smoking25<-or-paraphernalia28<- -tobacco27)<-of-*paraphernalia28)(<-or-lighters19)<-or-matches17)(<- -*?3)(<- -*lighters19)<- -*matches17)
+	<- -snuff12;
+facility8<-a-?4
+	(<-  : is -?1(<-==-Smoking1<-or-tobacco3)(<- -County3)<- -Grant2)
+	<- -smoke-free7;
+lockers5<-the-?2
+	(<- -Huber4)
+	<-and-dormitory7;
+have7
+	(<-in : While  : can  : can -inmates4<- -jail3)
+	(<- -cigarettes8)
+	<- -not6;
+includes2
+	(<- -*?2)
+	(<- -*dormitory7)
+	<- -This1;
+prohibited10
+	(<- -*Smoking1)
+	(<- -*tobacco3)
+	(<- -chewing4)
+	<-agent : is  : by -inmates7;
+Jail4<-The-*?1;
+type23<-any-*?3]

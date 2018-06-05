@@ -1,0 +1,76 @@
+Inmates requesting to see the nurse shall do so on this form.
+------CorefChainz
+Inmates-NNS 
+requesting-VBG 
+to-TO 
+see-VB 
+the-DT 
+nurse-NN 
+shall-MD 
+do-VB 
+so-RB 
+on-IN 
+this-DT 
+form-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> VBG 	-> requesting
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> see
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> nurse
+							 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> do
+	 	-> ADVP 	-> RB 	-> so
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> form
+					 	-> . 	-> .
+			
+Dependensee repr
+nsubj(do-8, Inmates-1)
+acl(Inmates-1, requesting-2)
+mark(see-4, to-3)
+xcomp(requesting-2, see-4)
+det(nurse-6, the-5)
+dobj(see-4, nurse-6)
+aux(do-8, shall-7)
+root(ROOT-0, do-8)
+advmod(do-8, so-9)
+case(form-12, on-10)
+det(form-12, this-11)
+nmod:on(do-8, form-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, Inmates-1)
+acl(Inmates-1, requesting-2)
+mark(see-4, to-3)
+xcomp(requesting-2, see-4)
+det(nurse-6, the-5)
+nsubj(do-8, nurse-6)
+aux(do-8, shall-7)
+ccomp(see-4, do-8)
+advmod(do-8, so-9)
+case(form-12, on-10)
+det(form-12, this-11)
+nmod:on(do-8, form-12)
+punct(Inmates-1, .-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 8] [?1, ?2, Inmates1, do8, form12, nurse6, requesting2, see4, so9]
+so9- ->do8
+?1-  : shall ->do8
+requesting2- ->Inmates1
+?2-this->form12
+see4-  : to ->requesting2
+?2-on->do8
+do8- ->see4
+?1-the->nurse6
+
+[Inmates1<- -requesting2<-  : to -see4<- -do8(<-  : shall -?1)(<-on-?2)<- -so9;
+form12<-this-*?2;
+nurse6<-the-*?1]

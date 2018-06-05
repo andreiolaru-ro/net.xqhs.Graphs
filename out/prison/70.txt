@@ -1,0 +1,69 @@
+Inmates must have the jail nurse authorize a doctor visit
+------CorefChainz
+Inmates-NNS 
+must-MD 
+have-VB 
+the-DT 
+jail-NN 
+nurse-NN 
+authorize-VB 
+a-DT 
+doctor-NN 
+visit-NN 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> have
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> nurse
+		 	-> VP 	-> VB 	-> authorize
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> doctor
+	 	-> NN 	-> visit
+								
+Dependensee repr
+nsubj(have-3, Inmates-1)
+aux(have-3, must-2)
+root(ROOT-0, have-3)
+det(nurse-6, the-4)
+compound(nurse-6, jail-5)
+nsubj(authorize-7, nurse-6)
+ccomp(have-3, authorize-7)
+det(visit-10, a-8)
+compound(visit-10, doctor-9)
+dobj(authorize-7, visit-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-3)
+nsubj(have-3, Inmates-1)
+aux(have-3, must-2)
+det(nurse-6, the-4)
+compound(nurse-6, jail-5)
+nsubj(authorize-7, nurse-6)
+ccomp(have-3, authorize-7)
+det(visit-10, a-8)
+compound(visit-10, doctor-9)
+dobj(authorize-7, visit-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 8] [?1, ?2, Inmates1, authorize7, doctor9, have3, jail5, nurse6, visit10]
+jail5- ->?1
+?1- ->authorize7
+Inmates1-  : must ->have3
+doctor9- ->?2
+authorize7- ->have3
+?2- ->authorize7
+?1-the->nurse6
+?2-a->visit10
+
+[have3
+	(<- -authorize7
+		(<- -?1<- -jail5)
+		<- -?2<- -doctor9)
+	<-  : must -Inmates1;
+nurse6<-the-*?1;
+visit10<-a-*?2]

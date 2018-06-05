@@ -1,0 +1,149 @@
+You CAN NOT have any envelopes or stamped envelopes mailed in for your use. You must purchase from the canteen.
+------CorefChainz
+CHAIN6-["You" in sentence 1, "your" in sentence 1, "You" in sentence 2]
+representative mention: "You" in sentence 1
+You-PRP 
+CAN-VBP 
+NOT-RB 
+have-VBP 
+any-DT 
+envelopes-NNS 
+or-CC 
+stamped-JJ 
+envelopes-NNS 
+mailed-VBN 
+in-IN 
+for-IN 
+your-PRP$ 
+use-NN 
+.-. 
+You-PRP 
+must-MD 
+purchase-VB 
+from-IN 
+the-DT 
+canteen-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> VBP 	-> CAN
+	 	-> SBAR 	-> SINV 	-> ADVP 	-> RB 	-> NOT
+		 	-> VBP 	-> have
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NNS 	-> envelopes
+		 	-> CC 	-> or
+	 	-> NP 	-> JJ 	-> stamped
+	 	-> NNS 	-> envelopes
+			 	-> VP 	-> VBN 	-> mailed
+	 	-> PP 	-> IN 	-> in
+	 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> use
+					 	-> . 	-> .
+					 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> purchase
+	 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> canteen
+					 	-> . 	-> .
+			
+Dependensee repr
+nsubj(CAN-2, You-1)
+dep(purchase-18, CAN-2)
+neg(mailed-10, NOT-3)
+aux(mailed-10, have-4)
+det(envelopes-6, any-5)
+nsubj(mailed-10, envelopes-6)
+cc(envelopes-6, or-7)
+amod(envelopes-9, stamped-8)
+conj:or(envelopes-6, envelopes-9)
+nsubj(mailed-10, envelopes-9)
+dep(CAN-2, mailed-10)
+case(use-14, in-11)
+case(use-14, for-12)
+nmod:poss(use-14, your-13)
+nmod:for(mailed-10, use-14)
+nsubj(purchase-18, You-16)
+aux(purchase-18, must-17)
+root(ROOT-0, purchase-18)
+case(canteen-21, from-19)
+det(canteen-21, the-20)
+nmod:from(purchase-18, canteen-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, CAN-2)
+nsubj(CAN-2, You-1)
+advmod(have-4, NOT-3)
+ccomp(CAN-2, have-4)
+det(envelopes-6, any-5)
+dobj(have-4, envelopes-6)
+cc(envelopes-6, or-7)
+amod(envelopes-9, stamped-8)
+dobj(have-4, envelopes-9)
+conj:or(envelopes-6, envelopes-9)
+acl(envelopes-6, mailed-10)
+compound:prt(mailed-10, in-11)
+case(use-14, for-12)
+nmod:poss(use-14, your-13)
+nmod:for(mailed-10, use-14)
+punct(CAN-2, .-15)
+---
+qqroot(ROOT-0, CAN-2)
+nsubj(CAN-2, You-1)
+advmod(have-4, NOT-3)
+ccomp(CAN-2, have-4)
+det(envelopes-6, any-5)
+dobj(have-4, envelopes-6)
+cc(envelopes-6, or-7)
+amod(envelopes-9, stamped-8)
+dobj(have-4, envelopes-9)
+conj:or(envelopes-6, envelopes-9)
+acl(envelopes-6, mailed-10)
+compound:prt(mailed-10, in-11)
+case(use-14, for-12)
+nmod:poss(use-14, your-13)
+nmod:for(mailed-10, use-14)
+punct(CAN-2, .-15)
+root(ROOT-0, purchase-3)
+nsubj(purchase-3, You-1)
+aux(purchase-3, must-2)
+case(canteen-6, from-4)
+det(canteen-6, the-5)
+nmod:from(purchase-3, canteen-6)
+punct(purchase-3, .-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[16, 16] [?1, ?2, CAN2, NOT3, You1, You1, canteen6, envelopes6, envelopes9, have4, in11, mailed10, purchase3, stamped8, use14, your13]
+your13-poss->use14
+your13-==->You1
+You1-  : must ->purchase3
+?1- ->have4
+envelopes9-or->?1
+?2-from->purchase3
+?2-the->canteen6
+You1- ->CAN2
+?1-any->envelopes6
+stamped8- ->envelopes9
+envelopes9- ->have4
+mailed10- ->?1
+have4- ->CAN2
+in11-prt->mailed10
+use14-for->mailed10
+NOT3- ->have4
+
+[CAN2
+	(<- -have4
+		(<- -?1(<- -mailed10(<-for-use14<-poss-your13)<-prt-in11)<-or-envelopes9<- -stamped8)
+		(<- -*envelopes9)
+		<- -NOT3)
+	<- -You1<-==-*your13;
+canteen6<-the-?2;
+purchase3
+	(<-from-*?2)
+	<-  : must -You1;
+envelopes6<-any-*?1]

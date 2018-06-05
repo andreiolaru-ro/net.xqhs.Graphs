@@ -1,0 +1,531 @@
+All inmates shall be held financially responsible for all medical care, dental care, prescription, and non-prescription medication costs during their incarceration. The individual inmate shall pay for all medical care, dental care, and prescription, and non-prescription medication costs including those performed inside, or outside the jail while an inmate of this facility. These payments shall be deducted from the inmate’s canteen account maintained by the Grant County Jail.
+------CorefChainz
+CHAIN16-["All inmates" in sentence 1, "their" in sentence 1, "The individual inmate" in sentence 2, "the inmate 's" in sentence 3]
+representative mention: "The individual inmate" in sentence 2
+CHAIN18-["the jail while an inmate of this facility" in sentence 2, "the Grant County Jail" in sentence 3]
+representative mention: "the Grant County Jail" in sentence 3
+CHAIN9-["all medical care" in sentence 1, "all medical care" in sentence 2]
+representative mention: "all medical care" in sentence 1
+All-DT 
+inmates-NNS 
+shall-MD 
+be-VB 
+held-VBN 
+financially-RB 
+responsible-JJ 
+for-IN 
+all-PDT 
+medical-JJ 
+care-NN 
+,-, 
+dental-JJ 
+care-NN 
+,-, 
+prescription-NN 
+,-, 
+and-CC 
+non-prescription-JJ 
+medication-NN 
+costs-NNS 
+during-IN 
+their-PRP$ 
+incarceration-NN 
+.-. 
+The-DT 
+individual-JJ 
+inmate-NN 
+shall-MD 
+pay-VB 
+for-IN 
+all-DT 
+medical-JJ 
+care-NN 
+,-, 
+dental-JJ 
+care-NN 
+,-, 
+and-CC 
+prescription-NN 
+,-, 
+and-CC 
+non-prescription-JJ 
+medication-NN 
+costs-NNS 
+including-VBG 
+those-DT 
+performed-VBN 
+inside-IN 
+,-, 
+or-CC 
+outside-IN 
+the-DT 
+jail-NN 
+while-NN 
+an-DT 
+inmate-NN 
+of-IN 
+this-DT 
+facility-NN 
+.-. 
+These-DT 
+payments-NNS 
+shall-MD 
+be-VB 
+deducted-VBN 
+from-IN 
+the-DT 
+inmate-NN 
+'s-POS 
+canteen-NN 
+account-NN 
+maintained-VBN 
+by-IN 
+the-DT 
+Grant-NNP 
+County-NNP 
+Jail-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> All
+	 	-> NNS 	-> inmates
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> held
+	 	-> ADJP 	-> RB 	-> financially
+	 	-> JJ 	-> responsible
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> PDT 	-> all
+	 	-> NP 	-> NP 	-> JJ 	-> medical
+	 	-> NN 	-> care
+		 	-> , 	-> ,
+	 	-> NP 	-> JJ 	-> dental
+	 	-> NN 	-> care
+			 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> NN 	-> prescription
+		 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> JJ 	-> non-prescription
+	 	-> NN 	-> medication
+	 	-> NNS 	-> costs
+		 	-> PP 	-> IN 	-> during
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NN 	-> incarceration
+					 	-> . 	-> .
+	 	-> NP 	-> NP 	-> NP 	-> DT 	-> The
+	 	-> JJ 	-> individual
+	 	-> NN 	-> inmate
+		 	-> SBAR 	-> S 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> pay
+	 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> DT 	-> all
+	 	-> JJ 	-> medical
+	 	-> NN 	-> care
+		 	-> , 	-> ,
+	 	-> NP 	-> JJ 	-> dental
+	 	-> NN 	-> care
+		 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NP 	-> NN 	-> prescription
+									 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> JJ 	-> non-prescription
+	 	-> NN 	-> medication
+	 	-> NNS 	-> costs
+		 	-> PP 	-> VBG 	-> including
+	 	-> NP 	-> NP 	-> DT 	-> those
+		 	-> VP 	-> VBN 	-> performed
+	 	-> PP 	-> IN 	-> inside
+	 	-> PRN 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> PP 	-> IN 	-> outside
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> while
+				 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> facility
+										 	-> . 	-> .
+	 	-> NP 	-> NP 	-> DT 	-> These
+	 	-> NNS 	-> payments
+		 	-> SBAR 	-> S 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> deducted
+	 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> canteen
+	 	-> NN 	-> account
+		 	-> VP 	-> VBN 	-> maintained
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NN 	-> Jail
+																	 	-> . 	-> .
+			
+Dependensee repr
+det(inmates-2, All-1)
+nsubjpass(held-5, inmates-2)
+aux(held-5, shall-3)
+auxpass(held-5, be-4)
+root(ROOT-0, held-5)
+advmod(responsible-7, financially-6)
+xcomp(held-5, responsible-7)
+case(care-11, for-8)
+dep(care-11, all-9)
+amod(care-11, medical-10)
+nmod:for(held-5, care-11)
+amod(care-14, dental-13)
+appos(care-11, care-14)
+appos(care-11, prescription-16)
+cc(prescription-16, and-18)
+amod(costs-21, non-prescription-19)
+compound(costs-21, medication-20)
+appos(care-11, costs-21)
+conj:and(prescription-16, costs-21)
+case(incarceration-24, during-22)
+nmod:poss(incarceration-24, their-23)
+nmod:during(costs-21, incarceration-24)
+det(inmate-28, The-26)
+amod(inmate-28, individual-27)
+dep(care-11, inmate-28)
+aux(pay-30, shall-29)
+acl:relcl(inmate-28, pay-30)
+case(care-34, for-31)
+det(care-34, all-32)
+amod(care-34, medical-33)
+nmod:for(pay-30, care-34)
+amod(care-37, dental-36)
+nmod:for(pay-30, care-37)
+conj:and(care-34, care-37)
+cc(care-34, and-39)
+nmod:for(pay-30, prescription-40)
+conj:and(care-34, prescription-40)
+cc(inmate-28, and-42)
+amod(costs-45, non-prescription-43)
+compound(costs-45, medication-44)
+dep(care-11, costs-45)
+conj:and(inmate-28, costs-45)
+case(those-47, including-46)
+nmod:including(costs-45, those-47)
+acl(those-47, performed-48)
+case(inmate-57, inside-49)
+cc(while-55, or-51)
+case(while-55, outside-52)
+det(while-55, the-53)
+compound(while-55, jail-54)
+dep(inmate-57, while-55)
+det(inmate-57, an-56)
+nmod:inside(performed-48, inmate-57)
+case(facility-60, of-58)
+det(facility-60, this-59)
+nmod:of(inmate-57, facility-60)
+det(payments-63, These-62)
+dep(care-11, payments-63)
+aux(deducted-66, shall-64)
+auxpass(deducted-66, be-65)
+acl:relcl(payments-63, deducted-66)
+case(account-72, from-67)
+det(inmate-69, the-68)
+nmod:poss(account-72, inmate-69)
+case(inmate-69, 's-70)
+compound(account-72, canteen-71)
+nmod:from(deducted-66, account-72)
+acl(account-72, maintained-73)
+case(Jail-78, by-74)
+det(Jail-78, the-75)
+compound(Jail-78, Grant-76)
+compound(Jail-78, County-77)
+nmod:by(maintained-73, Jail-78)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, held-5)
+det(inmates-2, All-1)
+nsubjpass(held-5, inmates-2)
+aux(held-5, shall-3)
+auxpass(held-5, be-4)
+advmod(responsible-7, financially-6)
+xcomp(held-5, responsible-7)
+case(care-11, for-8)
+det(care-11, all-9)
+amod(care-11, medical-10)
+nmod:for(responsible-7, care-11)
+punct(care-11, ,-12)
+amod(care-14, dental-13)
+nmod:for(responsible-7, care-14)
+conj:and(care-11, care-14)
+punct(care-11, ,-15)
+nmod:for(responsible-7, prescription-16)
+conj:and(care-11, prescription-16)
+punct(care-11, ,-17)
+cc(care-11, and-18)
+amod(costs-21, non-prescription-19)
+compound(costs-21, medication-20)
+nmod:for(responsible-7, costs-21)
+conj:and(care-11, costs-21)
+case(incarceration-24, during-22)
+nmod:poss(incarceration-24, their-23)
+nmod:during(costs-21, incarceration-24)
+punct(held-5, .-25)
+---
+qqroot(ROOT-0, held-5)
+det(inmates-2, All-1)
+nsubjpass(held-5, inmates-2)
+aux(held-5, shall-3)
+auxpass(held-5, be-4)
+advmod(responsible-7, financially-6)
+xcomp(held-5, responsible-7)
+case(care-11, for-8)
+det(care-11, all-9)
+amod(care-11, medical-10)
+nmod:for(responsible-7, care-11)
+punct(care-11, ,-12)
+amod(care-14, dental-13)
+nmod:for(responsible-7, care-14)
+conj:and(care-11, care-14)
+punct(care-11, ,-15)
+nmod:for(responsible-7, prescription-16)
+conj:and(care-11, prescription-16)
+punct(care-11, ,-17)
+cc(care-11, and-18)
+amod(costs-21, non-prescription-19)
+compound(costs-21, medication-20)
+nmod:for(responsible-7, costs-21)
+conj:and(care-11, costs-21)
+case(incarceration-24, during-22)
+nmod:poss(incarceration-24, their-23)
+nmod:during(costs-21, incarceration-24)
+punct(held-5, .-25)
+root(ROOT-0, pay-5)
+det(inmate-3, The-1)
+amod(inmate-3, individual-2)
+nsubj(pay-5, inmate-3)
+aux(pay-5, shall-4)
+case(care-9, for-6)
+det(care-9, all-7)
+amod(care-9, medical-8)
+nmod:for(pay-5, care-9)
+punct(care-9, ,-10)
+amod(care-12, dental-11)
+nmod:for(pay-5, care-12)
+conj:and(care-9, care-12)
+punct(care-9, ,-13)
+cc(care-9, and-14)
+nmod:for(pay-5, prescription-15)
+conj:and(care-9, prescription-15)
+punct(pay-5, ,-16)
+cc(pay-5, and-17)
+amod(costs-20, non-prescription-18)
+compound(costs-20, medication-19)
+conj:and(pay-5, costs-20)
+case(those-22, including-21)
+nmod:including(costs-20, those-22)
+acl(those-22, performed-23)
+nmod(performed-23, inside-24)
+punct(inside-24, ,-25)
+cc(inside-24, or-26)
+case(jail-29, outside-27)
+det(jail-29, the-28)
+nmod(performed-23, jail-29)
+conj:or(inside-24, jail-29)
+amod(jail-29, while-30)
+det(inmate-32, an-31)
+dep(while-30, inmate-32)
+case(facility-35, of-33)
+det(facility-35, this-34)
+nmod:of(inmate-32, facility-35)
+punct(pay-5, .-36)
+---
+qqroot(ROOT-0, held-5)
+det(inmates-2, All-1)
+nsubjpass(held-5, inmates-2)
+aux(held-5, shall-3)
+auxpass(held-5, be-4)
+advmod(responsible-7, financially-6)
+xcomp(held-5, responsible-7)
+case(care-11, for-8)
+det(care-11, all-9)
+amod(care-11, medical-10)
+nmod:for(responsible-7, care-11)
+punct(care-11, ,-12)
+amod(care-14, dental-13)
+nmod:for(responsible-7, care-14)
+conj:and(care-11, care-14)
+punct(care-11, ,-15)
+nmod:for(responsible-7, prescription-16)
+conj:and(care-11, prescription-16)
+punct(care-11, ,-17)
+cc(care-11, and-18)
+amod(costs-21, non-prescription-19)
+compound(costs-21, medication-20)
+nmod:for(responsible-7, costs-21)
+conj:and(care-11, costs-21)
+case(incarceration-24, during-22)
+nmod:poss(incarceration-24, their-23)
+nmod:during(costs-21, incarceration-24)
+punct(held-5, .-25)
+root(ROOT-0, pay-5)
+det(inmate-3, The-1)
+amod(inmate-3, individual-2)
+nsubj(pay-5, inmate-3)
+aux(pay-5, shall-4)
+case(care-9, for-6)
+det(care-9, all-7)
+amod(care-9, medical-8)
+nmod:for(pay-5, care-9)
+punct(care-9, ,-10)
+amod(care-12, dental-11)
+nmod:for(pay-5, care-12)
+conj:and(care-9, care-12)
+punct(care-9, ,-13)
+cc(care-9, and-14)
+nmod:for(pay-5, prescription-15)
+conj:and(care-9, prescription-15)
+punct(pay-5, ,-16)
+cc(pay-5, and-17)
+amod(costs-20, non-prescription-18)
+compound(costs-20, medication-19)
+conj:and(pay-5, costs-20)
+case(those-22, including-21)
+nmod:including(costs-20, those-22)
+acl(those-22, performed-23)
+nmod(performed-23, inside-24)
+punct(inside-24, ,-25)
+cc(inside-24, or-26)
+case(jail-29, outside-27)
+det(jail-29, the-28)
+nmod(performed-23, jail-29)
+conj:or(inside-24, jail-29)
+amod(jail-29, while-30)
+det(inmate-32, an-31)
+dep(while-30, inmate-32)
+case(facility-35, of-33)
+det(facility-35, this-34)
+nmod:of(inmate-32, facility-35)
+punct(pay-5, .-36)
+root(ROOT-0, deducted-5)
+det(payments-2, These-1)
+nsubjpass(deducted-5, payments-2)
+aux(deducted-5, shall-3)
+auxpass(deducted-5, be-4)
+case(account-11, from-6)
+det(inmate-8, the-7)
+nmod:poss(account-11, inmate-8)
+case(inmate-8, 's-9)
+compound(account-11, canteen-10)
+nmod:from(deducted-5, account-11)
+acl(account-11, maintained-12)
+case(Jail-17, by-13)
+det(Jail-17, the-14)
+compound(Jail-17, Grant-15)
+compound(Jail-17, County-16)
+nmod:by(maintained-12, Jail-17)
+punct(deducted-5, .-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+G[51, 57] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, County16, Grant15, Jail17, account11, canteen10, care11, care14, care9, care12, costs20, costs21, deducted5, dental13, dental11, facility35, financially6, held5, incarceration24, individual2, inmate3, inmate32, inmate8, inmates2, inside24, jail29, maintained12, medical8, medical10, medication20, medication19, non-prescription19, non-prescription18, pay5, payments2, performed23, prescription16, prescription15, responsible7, their23, those22, while30]
+individual2- :==->?2
+?6-poss : 's ->account11
+?7-or : outside  : outside ->inside24
+medication20- ->costs21
+prescription16-for->responsible7
+care12-and->?10
+dental13- ->care14
+those22-including->costs20
+?7-the->jail29
+medical10- ->?4
+?3-by->maintained12
+prescription15-and->?10
+?10-all->care9
+financially6- ->responsible7
+care14-for->responsible7
+prescription16-and->?4
+costs20-and->pay5
+?4-all->care11
+?7-==->?3
+account11-from->deducted5
+?5- ->while30
+medical8- ->?10
+?9-  : shall  : be ->deducted5
+Grant15- ->?3
+inside24- ->performed23
+?5-an->inmate32
+?1-this->facility35
+?2-The->inmate3
+while30- ->?7
+?4-for->responsible7
+?9-These->payments2
+?1-of->?5
+responsible7- ->held5
+their23-poss->incarceration24
+care14-and->?4
+?6-==->?2
+?8-  : shall  : be ->held5
+non-prescription18- ->costs20
+medication19- ->costs20
+incarceration24-during->costs21
+dental11- ->care12
+performed23-==->?2
+?10-for->pay5
+costs21-for->responsible7
+costs21-and->?4
+?8-All->inmates2
+care12-for->pay5
+non-prescription19- ->costs21
+?2-  : shall ->pay5
+?6-the->inmate8
+maintained12- ->account11
+?7- ->performed23
+County16- ->?3
+performed23- ->those22
+prescription15-for->pay5
+canteen10- ->account11
+?3-the->Jail17
+
+[pay5
+	(<-and-costs20
+		(<-including-those22<- -performed23(<- -inside24<-or : outside  : outside -?7<- -while30<- -?5<-of-?1)<- -*?7)
+		(<- -medication19)
+		<- -non-prescription18)
+	(<-  : shall -?2
+		(<-==-*performed23)
+		(<-==-?6)
+		<- :==-individual2)
+	(<-for-?10
+		(<- -medical8)
+		(<-and-^prescription15)
+		<-and-^care12)
+	(<-for-care12<- -dental11)
+	<-for-prescription15;
+inmate3<-The-*?2;
+deducted5
+	(<-from-account11
+		(<-poss : 's -*?6)
+		(<- -maintained12<-by-?3(<-==-*?7)(<- -County16)<- -Grant15)
+		<- -canteen10)
+	<-  : shall  : be -?9;
+held5
+	(<- -responsible7
+		(<-for-?4(<-and-costs21(<-during-incarceration24<-poss-their23)(<- -medication20)<- -non-prescription19)(<-and-care14<- -dental13)(<- -medical10)<-and-prescription16)
+		(<-for-*costs21)
+		(<-for-*care14)
+		(<-for-*prescription16)
+		<- -financially6)
+	<-  : shall  : be -?8;
+care9<-all-*?10;
+inmates2<-All-*?8;
+payments2<-These-*?9;
+Jail17<-the-*?3;
+care11<-all-*?4;
+facility35<-this-*?1;
+inmate32<-an-*?5;
+inmate8<-the-*?6;
+jail29<-the-*?7]

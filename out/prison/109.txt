@@ -1,0 +1,84 @@
+You will not be allowed to have stamps mailed in to you.
+------CorefChainz
+CHAIN2-["You" in sentence 1, "you" in sentence 1]
+representative mention: "You" in sentence 1
+You-PRP 
+will-MD 
+not-RB 
+be-VB 
+allowed-VBN 
+to-TO 
+have-VB 
+stamps-NNS 
+mailed-VBN 
+in-IN 
+to-TO 
+you-PRP 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> will
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> NP 	-> NNS 	-> stamps
+		 	-> VP 	-> VBN 	-> mailed
+	 	-> PP 	-> IN 	-> in
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> PRP 	-> you
+												 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(allowed-5, You-1)
+nsubj:xsubj(have-7, You-1)
+aux(allowed-5, will-2)
+neg(allowed-5, not-3)
+auxpass(allowed-5, be-4)
+root(ROOT-0, allowed-5)
+mark(have-7, to-6)
+xcomp(allowed-5, have-7)
+dobj(have-7, stamps-8)
+acl(stamps-8, mailed-9)
+case(you-12, in-10)
+case(you-12, to-11)
+nmod:to(mailed-9, you-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-5)
+nsubjpass(allowed-5, You-1)
+nsubj:xsubj(have-7, You-1)
+aux(allowed-5, will-2)
+neg(allowed-5, not-3)
+auxpass(allowed-5, be-4)
+mark(have-7, to-6)
+xcomp(allowed-5, have-7)
+dobj(have-7, stamps-8)
+acl(stamps-8, mailed-9)
+compound:prt(mailed-9, in-10)
+case(you-12, to-11)
+nmod:to(mailed-9, you-12)
+punct(allowed-5, .-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 9] [You1, allowed5, have7, in10, mailed9, not3, stamps8, you12]
+mailed9- ->stamps8
+you12-to->mailed9
+stamps8- ->have7
+have7-  : to ->allowed5
+not3-  : be ->allowed5
+in10-prt->mailed9
+you12-==->You1
+You1-  : will  : will ->allowed5
+You1- ->have7
+
+[allowed5
+	(<-  : to -have7
+		(<- -stamps8<- -mailed9(<-prt-in10)<-to-you12)
+		<- -You1<-==-*you12)
+	(<-  : will  : will -*You1)
+	<-  : be -not3]

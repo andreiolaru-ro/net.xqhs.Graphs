@@ -1,0 +1,262 @@
+Inmates are required to shower daily. (Unless you are in isolation or administrative segregation.) The Grant County Nurse, other medical personnel, or staff may direct an inmate to shower for medical or hygiene reasons.
+------CorefChainz
+Inmates-NNS 
+are-VBP 
+required-VBN 
+to-TO 
+shower-VB 
+daily-RB 
+.-. 
+-LRB---LRB- 
+Unless-IN 
+you-PRP 
+are-VBP 
+in-IN 
+isolation-NN 
+or-CC 
+administrative-JJ 
+segregation-NN 
+.-. 
+-RRB---RRB- 
+The-DT 
+Grant-NNP 
+County-NNP 
+Nurse-NN 
+,-, 
+other-JJ 
+medical-JJ 
+personnel-NNS 
+,-, 
+or-CC 
+staff-NN 
+may-MD 
+direct-VB 
+an-DT 
+inmate-NN 
+to-TO 
+shower-VB 
+for-IN 
+medical-JJ 
+or-CC 
+hygiene-NN 
+reasons-NNS 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> required
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> shower
+	 	-> ADVP 	-> RB 	-> daily
+							 	-> . 	-> .
+		 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> SBAR 	-> IN 	-> Unless
+	 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> are
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> NN 	-> isolation
+		 	-> CC 	-> or
+	 	-> NP 	-> JJ 	-> administrative
+	 	-> NN 	-> segregation
+						 	-> . 	-> .
+		 	-> -RRB- 	-> -RRB-
+		 	-> S 	-> NP 	-> NP 	-> DT 	-> The
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NN 	-> Nurse
+		 	-> , 	-> ,
+	 	-> NP 	-> JJ 	-> other
+	 	-> JJ 	-> medical
+	 	-> NNS 	-> personnel
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NN 	-> staff
+			 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> direct
+	 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> shower
+	 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> JJ 	-> medical
+	 	-> CC 	-> or
+	 	-> NN 	-> hygiene
+	 	-> NNS 	-> reasons
+										 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(required-3, Inmates-1)
+nsubj:xsubj(shower-5, Inmates-1)
+auxpass(required-3, are-2)
+root(ROOT-0, required-3)
+mark(shower-5, to-4)
+xcomp(required-3, shower-5)
+advmod(shower-5, daily-6)
+mark(isolation-13, Unless-9)
+nsubj(isolation-13, you-10)
+cop(isolation-13, are-11)
+case(isolation-13, in-12)
+dep(required-3, isolation-13)
+cc(isolation-13, or-14)
+amod(segregation-16, administrative-15)
+dep(required-3, segregation-16)
+conj:or(isolation-13, segregation-16)
+det(Nurse-22, The-19)
+compound(Nurse-22, Grant-20)
+compound(Nurse-22, County-21)
+nsubj(direct-31, Nurse-22)
+amod(personnel-26, other-24)
+amod(personnel-26, medical-25)
+conj:or(Nurse-22, personnel-26)
+nsubj(direct-31, personnel-26)
+cc(Nurse-22, or-28)
+conj:or(Nurse-22, staff-29)
+nsubj(direct-31, staff-29)
+aux(direct-31, may-30)
+parataxis(required-3, direct-31)
+det(inmate-33, an-32)
+dobj(direct-31, inmate-33)
+mark(shower-35, to-34)
+acl(inmate-33, shower-35)
+case(reasons-40, for-36)
+amod(reasons-40, medical-37)
+cc(medical-37, or-38)
+conj:or(medical-37, hygiene-39)
+amod(reasons-40, hygiene-39)
+nmod:for(shower-35, reasons-40)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, required-3)
+nsubjpass(required-3, Inmates-1)
+nsubj:xsubj(shower-5, Inmates-1)
+auxpass(required-3, are-2)
+mark(shower-5, to-4)
+xcomp(required-3, shower-5)
+advmod(shower-5, daily-6)
+punct(required-3, .-7)
+---
+qqroot(ROOT-0, required-3)
+nsubjpass(required-3, Inmates-1)
+nsubj:xsubj(shower-5, Inmates-1)
+auxpass(required-3, are-2)
+mark(shower-5, to-4)
+xcomp(required-3, shower-5)
+advmod(shower-5, daily-6)
+punct(required-3, .-7)
+root(ROOT-0, -LRB--1)
+mark(isolation-6, Unless-2)
+nsubj(isolation-6, you-3)
+cop(isolation-6, are-4)
+case(isolation-6, in-5)
+root(-LRB--1, isolation-6)
+cc(isolation-6, or-7)
+amod(segregation-9, administrative-8)
+root(-LRB--1, segregation-9)
+conj:or(isolation-6, segregation-9)
+punct(isolation-6, .-10)
+punct(isolation-6, -RRB--11)
+---
+qqroot(ROOT-0, required-3)
+nsubjpass(required-3, Inmates-1)
+nsubj:xsubj(shower-5, Inmates-1)
+auxpass(required-3, are-2)
+mark(shower-5, to-4)
+xcomp(required-3, shower-5)
+advmod(shower-5, daily-6)
+punct(required-3, .-7)
+root(ROOT-0, -LRB--1)
+mark(isolation-6, Unless-2)
+nsubj(isolation-6, you-3)
+cop(isolation-6, are-4)
+case(isolation-6, in-5)
+root(-LRB--1, isolation-6)
+cc(isolation-6, or-7)
+amod(segregation-9, administrative-8)
+root(-LRB--1, segregation-9)
+conj:or(isolation-6, segregation-9)
+punct(isolation-6, .-10)
+punct(isolation-6, -RRB--11)
+root(ROOT-0, direct-13)
+det(Nurse-4, The-1)
+compound(Nurse-4, Grant-2)
+compound(Nurse-4, County-3)
+nsubj(direct-13, Nurse-4)
+punct(Nurse-4, ,-5)
+amod(personnel-8, other-6)
+amod(personnel-8, medical-7)
+conj:or(Nurse-4, personnel-8)
+nsubj(direct-13, personnel-8)
+punct(Nurse-4, ,-9)
+cc(Nurse-4, or-10)
+conj:or(Nurse-4, staff-11)
+nsubj(direct-13, staff-11)
+aux(direct-13, may-12)
+det(inmate-15, an-14)
+dobj(direct-13, inmate-15)
+case(shower-17, to-16)
+nmod:to(inmate-15, shower-17)
+case(reasons-22, for-18)
+amod(reasons-22, medical-19)
+cc(medical-19, or-20)
+conj:or(medical-19, hygiene-21)
+amod(reasons-22, hygiene-21)
+nmod:for(inmate-15, reasons-22)
+punct(direct-13, .-23)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+G[24, 26] [-LRB-1, ?1, ?2, County3, Grant2, Inmates1, Nurse4, administrative8, daily6, direct13, hygiene21, inmate15, isolation6, medical19, medical7, other6, personnel8, reasons22, required3, segregation9, shower17, shower5, staff11, you3]
+?1-an->inmate15
+shower17-to->?1
+personnel8-or->?2
+Grant2- ->?2
+personnel8- ->direct13
+medical7- ->personnel8
+Inmates1- ->shower5
+hygiene21-or->medical19
+?2- ->direct13
+medical19- ->reasons22
+you3-  : are  : in ->isolation6
+Inmates1-  : are ->required3
+County3- ->?2
+segregation9-or->isolation6
+reasons22-for->?1
+hygiene21- ->reasons22
+shower5-  : to ->required3
+administrative8- ->segregation9
+other6- ->personnel8
+staff11-  : may ->direct13
+daily6- ->shower5
+segregation9- ->-LRB-1
+?2-The->Nurse4
+?1- ->direct13
+staff11-or->?2
+isolation6-  : Unless  : Unless ->-LRB-1
+
+[inmate15<-an-?1
+	(<-for-reasons22(<- -medical19<-or-hygiene21)<- -*hygiene21)
+	<-to-shower17;
+Nurse4<-The-?2
+	(<-or-personnel8(<- -medical7)<- -other6)
+	(<- -County3)
+	(<- -Grant2)
+	<-or-staff11;
+-LRB-1
+	(<-  : Unless  : Unless -isolation6
+		(<-or-segregation9<- -administrative8)
+		<-  : are  : in -you3)
+	<- -*segregation9;
+required3
+	(<-  : to -shower5
+		(<- -Inmates1)
+		<- -daily6)
+	<-  : are -*Inmates1;
+direct13
+	(<- -*?1)
+	(<- -*?2)
+	(<- -*personnel8)
+	<-  : may -*staff11]

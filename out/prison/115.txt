@@ -1,0 +1,147 @@
+A safe keeper is defined as an inmate of the Grant County Jail being housed at another jail due to overcrowding or for other reasons.
+------CorefChainz
+A-DT 
+safe-JJ 
+keeper-NN 
+is-VBZ 
+defined-VBN 
+as-IN 
+an-DT 
+inmate-NN 
+of-IN 
+the-DT 
+Grant-NNP 
+County-NNP 
+Jail-NN 
+being-VBG 
+housed-VBN 
+at-IN 
+another-DT 
+jail-NN 
+due-JJ 
+to-TO 
+overcrowding-NN 
+or-CC 
+for-IN 
+other-JJ 
+reasons-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> A
+	 	-> JJ 	-> safe
+	 	-> NN 	-> keeper
+		 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBN 	-> defined
+	 	-> PP 	-> IN 	-> as
+	 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NN 	-> Jail
+		 	-> VP 	-> VBG 	-> being
+	 	-> VP 	-> VBN 	-> housed
+	 	-> PP 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> jail
+		 	-> ADJP 	-> JJ 	-> due
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NN 	-> overcrowding
+						 	-> CC 	-> or
+	 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> JJ 	-> other
+	 	-> NNS 	-> reasons
+												 	-> . 	-> .
+			
+Dependensee repr
+det(keeper-3, A-1)
+amod(keeper-3, safe-2)
+nsubjpass(defined-5, keeper-3)
+auxpass(defined-5, is-4)
+root(ROOT-0, defined-5)
+case(inmate-8, as-6)
+det(inmate-8, an-7)
+nmod:as(defined-5, inmate-8)
+case(Jail-13, of-9)
+det(Jail-13, the-10)
+compound(Jail-13, Grant-11)
+compound(Jail-13, County-12)
+nmod:of(inmate-8, Jail-13)
+auxpass(housed-15, being-14)
+acl(Jail-13, housed-15)
+acl(Jail-13, housed-15')
+conj:or(housed-15, housed-15')
+case(jail-18, at-16)
+det(jail-18, another-17)
+nmod:at(housed-15, jail-18)
+amod(jail-18, due-19)
+case(overcrowding-21, to-20)
+nmod:to(due-19, overcrowding-21)
+cc(housed-15, or-22)
+case(reasons-25, for-23)
+amod(reasons-25, other-24)
+nmod:for(housed-15', reasons-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, defined-5)
+det(keeper-3, A-1)
+amod(keeper-3, safe-2)
+nsubjpass(defined-5, keeper-3)
+auxpass(defined-5, is-4)
+case(inmate-8, as-6)
+det(inmate-8, an-7)
+nmod:as(defined-5, inmate-8)
+nmod:as(defined-5, inmate-8''')
+conj:or(inmate-8, inmate-8''')
+case(Jail-13, of-9)
+det(Jail-13, the-10)
+compound(Jail-13, Grant-11)
+compound(Jail-13, County-12)
+nmod:of(inmate-8, Jail-13)
+auxpass(housed-15, being-14)
+acl(Jail-13, housed-15)
+case(jail-18, at-16)
+det(jail-18, another-17)
+nmod:at(housed-15, jail-18)
+case(overcrowding-21, due-19)
+mwe(due-19, to-20)
+nmod:due_to(inmate-8, overcrowding-21)
+cc(inmate-8, or-22)
+case(reasons-25, for-23)
+amod(reasons-25, other-24)
+nmod:for(inmate-8''', reasons-25)
+punct(defined-5, .-26)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[17, 15] [?1, ?2, ?3, ?4, County12, Grant11, Jail13, defined5, housed15, inmate8, jail18, keeper3, other24, overcrowding21, reasons25, safe2, to20]
+County12- ->?4
+?2-at->housed15
+?1-A->keeper3
+Grant11- ->?4
+?2-another->jail18
+overcrowding21-due_to : or  : due ->?3
+?3-as->defined5
+?3-an->inmate8
+other24- ->reasons25
+safe2- ->?1
+?4-the->Jail13
+?1-  : is ->defined5
+reasons25-for->?3
+housed15-  : being ->?4
+?4-of->?3
+
+[inmate8<-an-?3
+	(<-of-?4(<-  : being -housed15<-at-?2)(<- -County12)<- -Grant11)
+	(<-for-reasons25<- -other24)
+	<-due_to : or  : due -overcrowding21;
+keeper3<-A-?1<- -safe2;
+to20;
+Jail13<-the-*?4;
+jail18<-another-*?2;
+defined5
+	(<-as-*?3)
+	<-  : is -*?1]

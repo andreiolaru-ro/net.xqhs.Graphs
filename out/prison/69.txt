@@ -1,0 +1,65 @@
+No mattresses are allowed in the day room area.
+------CorefChainz
+No-DT 
+mattresses-NNS 
+are-VBP 
+allowed-VBN 
+in-IN 
+the-DT 
+day-NN 
+room-NN 
+area-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NNS 	-> mattresses
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> day
+	 	-> NN 	-> room
+	 	-> NN 	-> area
+					 	-> . 	-> .
+			
+Dependensee repr
+neg(mattresses-2, No-1)
+nsubjpass(allowed-4, mattresses-2)
+auxpass(allowed-4, are-3)
+root(ROOT-0, allowed-4)
+case(area-9, in-5)
+det(area-9, the-6)
+compound(area-9, day-7)
+compound(area-9, room-8)
+nmod:in(allowed-4, area-9)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-4)
+neg(mattresses-2, No-1)
+nsubjpass(allowed-4, mattresses-2)
+auxpass(allowed-4, are-3)
+case(area-9, in-5)
+det(area-9, the-6)
+compound(area-9, day-7)
+compound(area-9, room-8)
+nmod:in(allowed-4, area-9)
+punct(allowed-4, .-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 6] [?1, No1, allowed4, area9, day7, mattresses2, room8]
+?1-the->area9
+room8- ->?1
+No1- ->mattresses2
+day7- ->?1
+?1-in->allowed4
+mattresses2-  : are ->allowed4
+
+[area9<-the-?1
+	(<- -day7)
+	<- -room8;
+allowed4
+	(<-in-*?1)
+	<-  : are -mattresses2<- -No1]

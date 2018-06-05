@@ -1,0 +1,82 @@
+Inmates cannot bring, or attempt to bring contraband into the jail.
+------CorefChainz
+Inmates-NNS 
+can-MD 
+not-RB 
+bring-VB 
+,-, 
+or-CC 
+attempt-VB 
+to-TO 
+bring-VB 
+contraband-VBN 
+into-IN 
+the-DT 
+jail-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> MD 	-> can
+	 	-> RB 	-> not
+	 	-> VP 	-> VP 	-> VB 	-> bring
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VB 	-> attempt
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> bring
+	 	-> VP 	-> VBN 	-> contraband
+	 	-> PP 	-> IN 	-> into
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+										 	-> . 	-> .
+			
+Dependensee repr
+nsubj(bring-4, Inmates-1)
+nsubj(attempt-7, Inmates-1)
+nsubj:xsubj(bring-9, Inmates-1)
+aux(bring-4, can-2)
+neg(bring-4, not-3)
+root(ROOT-0, bring-4)
+cc(bring-4, or-6)
+conj:or(bring-4, attempt-7)
+mark(bring-9, to-8)
+xcomp(attempt-7, bring-9)
+dep(bring-9, contraband-10)
+case(jail-13, into-11)
+det(jail-13, the-12)
+nmod:into(contraband-10, jail-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, bring-4)
+nsubj(bring-4, Inmates-1)
+aux(bring-4, can-2)
+neg(bring-4, not-3)
+punct(bring-4, ,-5)
+cc(bring-4, or-6)
+conj:or(bring-4, attempt-7)
+mark(bring-9, to-8)
+acl:to(attempt-7, bring-9)
+dobj(bring-9, contraband-10)
+case(jail-13, into-11)
+det(jail-13, the-12)
+nmod:into(bring-9, jail-13)
+punct(bring-4, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 7] [?1, Inmates1, attempt7, bring4, bring9, contraband10, jail13, not3]
+Inmates1-  : can  : can ->bring4
+bring9-to->attempt7
+not3- ->bring4
+?1-into->bring9
+attempt7-or->bring4
+?1-the->jail13
+contraband10- ->bring9
+
+[bring4
+	(<-or-attempt7<-to-bring9(<-into-?1)<- -contraband10)
+	(<-  : can  : can -Inmates1)
+	<- -not3;
+jail13<-the-*?1]

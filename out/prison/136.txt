@@ -1,0 +1,132 @@
+All newly admitted inmates must shower when they placed in their cellblock to maintain cleanliness and sanitation in the jail.
+------CorefChainz
+CHAIN2-["All newly admitted inmates" in sentence 1, "they" in sentence 1, "their" in sentence 1]
+representative mention: "All newly admitted inmates" in sentence 1
+All-DT 
+newly-RB 
+admitted-VBD 
+inmates-NNS 
+must-MD 
+shower-VB 
+when-WRB 
+they-PRP 
+placed-VBD 
+in-IN 
+their-PRP$ 
+cellblock-NN 
+to-TO 
+maintain-VB 
+cleanliness-NN 
+and-CC 
+sanitation-NN 
+in-IN 
+the-DT 
+jail-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> All
+		 	-> ADVP 	-> RB 	-> newly
+		 	-> VP 	-> VBD 	-> admitted
+	 	-> SBAR 	-> S 	-> NP 	-> NNS 	-> inmates
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> shower
+	 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> VBD 	-> placed
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NN 	-> cellblock
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> maintain
+	 	-> NP 	-> NN 	-> cleanliness
+	 	-> CC 	-> and
+	 	-> NN 	-> sanitation
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+																 	-> . 	-> .
+			
+Dependensee repr
+nsubj(admitted-3, All-1)
+advmod(admitted-3, newly-2)
+root(ROOT-0, admitted-3)
+nsubj(shower-6, inmates-4)
+aux(shower-6, must-5)
+ccomp(admitted-3, shower-6)
+advmod(placed-9, when-7)
+nsubj(placed-9, they-8)
+advcl(shower-6, placed-9)
+case(cellblock-12, in-10)
+nmod:poss(cellblock-12, their-11)
+nmod:in(placed-9, cellblock-12)
+mark(maintain-14, to-13)
+acl(cellblock-12, maintain-14)
+dobj(maintain-14, cleanliness-15)
+cc(cleanliness-15, and-16)
+dobj(maintain-14, sanitation-17)
+conj:and(cleanliness-15, sanitation-17)
+case(jail-20, in-18)
+det(jail-20, the-19)
+nmod:in(maintain-14, jail-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, shower-6)
+det(inmates-4, All-1)
+advmod(admitted-3, newly-2)
+amod(inmates-4, admitted-3)
+nsubj(shower-6, inmates-4)
+aux(shower-6, must-5)
+advmod(placed-9, when-7)
+nsubj(placed-9, they-8)
+nsubj:xsubj(maintain-14, they-8)
+advcl(shower-6, placed-9)
+case(cellblock-12, in-10)
+nmod:poss(cellblock-12, their-11)
+nmod:in(placed-9, cellblock-12)
+mark(maintain-14, to-13)
+xcomp(placed-9, maintain-14)
+dobj(maintain-14, cleanliness-15)
+cc(cleanliness-15, and-16)
+dobj(maintain-14, sanitation-17)
+conj:and(cleanliness-15, sanitation-17)
+case(jail-20, in-18)
+det(jail-20, the-19)
+nmod:in(cleanliness-15, jail-20)
+punct(shower-6, .-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[15, 18] [?1, ?2, admitted3, cellblock12, cleanliness15, inmates4, jail20, maintain14, newly2, placed9, sanitation17, shower6, their11, they8, when7]
+?2-in->cleanliness15
+when7- ->placed9
+cleanliness15-  : to ->maintain14
+their11-==->?1
+placed9- ->shower6
+they8- ->maintain14
+admitted3- ->?1
+they8-==->?1
+?1-  : must ->shower6
+cellblock12-in->placed9
+newly2- ->admitted3
+their11-poss->cellblock12
+they8- ->placed9
+sanitation17- ->maintain14
+maintain14- ->placed9
+sanitation17-and->cleanliness15
+?2-the->jail20
+?1-All->inmates4
+
+[shower6
+	(<- -placed9
+		(<- -maintain14(<-  : to -cleanliness15(<-in-?2)<-and-sanitation17)(<- -*sanitation17)<- -they8)
+		(<- -*they8)
+		(<-in-cellblock12<-poss-^their11)
+		<- -when7)
+	<-  : must -?1
+		(<-==-*they8)
+		(<- -admitted3<- -newly2)
+		<-==-their11;
+inmates4<-All-*?1;
+jail20<-the-*?2]

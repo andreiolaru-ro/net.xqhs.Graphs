@@ -1,0 +1,492 @@
+Covering or tampering with any security equipment including cameras is in direct violation of the rules and will not be tolerated. The covering of any camera or view port is a Class B Violation and will result in Discipline of 1 or more of the following penalties: disciplinary Detention up to 30 days, loss of one, or a number of privileges for up to 60 days, loss of up to 2 days of “Good Time", cell restriction for up to 30 days.
+------CorefChainz
+Covering-JJ 
+or-CC 
+tampering-VBN 
+with-IN 
+any-DT 
+security-NN 
+equipment-NN 
+including-VBG 
+cameras-NNS 
+is-VBZ 
+in-IN 
+direct-JJ 
+violation-NN 
+of-IN 
+the-DT 
+rules-NNS 
+and-CC 
+will-MD 
+not-RB 
+be-VB 
+tolerated-VBN 
+.-. 
+The-DT 
+covering-NN 
+of-IN 
+any-DT 
+camera-NN 
+or-CC 
+view-NN 
+port-NN 
+is-VBZ 
+a-DT 
+Class-NNP 
+B-NNP 
+Violation-NNP 
+and-CC 
+will-MD 
+result-VB 
+in-IN 
+Discipline-NNP 
+of-IN 
+1-CD 
+or-CC 
+more-JJR 
+of-IN 
+the-DT 
+following-VBG 
+penalties-NNS 
+:-: 
+disciplinary-JJ 
+Detention-NN 
+up-IN 
+to-TO 
+30-CD 
+days-NNS 
+,-, 
+loss-NN 
+of-IN 
+one-CD 
+,-, 
+or-CC 
+a-DT 
+number-NN 
+of-IN 
+privileges-NNS 
+for-IN 
+up-IN 
+to-TO 
+60-CD 
+days-NNS 
+,-, 
+loss-NN 
+of-IN 
+up-IN 
+to-TO 
+2-CD 
+days-NNS 
+of-IN 
+``-`` 
+Good-NNP 
+Time-NNP 
+''-'' 
+,-, 
+cell-NN 
+restriction-NN 
+for-IN 
+up-IN 
+to-TO 
+30-CD 
+days-NNS 
+.-. 
+ROOT 	-> S 	-> UCP 	-> ADJP 	-> JJ 	-> Covering
+		 	-> CC 	-> or
+	 	-> ADJP 	-> VBN 	-> tampering
+	 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> security
+	 	-> NN 	-> equipment
+				 	-> PP 	-> VBG 	-> including
+	 	-> NP 	-> NP 	-> NNS 	-> cameras
+		 	-> SBAR 	-> S 	-> VP 	-> VP 	-> VBZ 	-> is
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> JJ 	-> direct
+	 	-> NN 	-> violation
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> rules
+						 	-> CC 	-> and
+	 	-> VP 	-> MD 	-> will
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> tolerated
+								 	-> . 	-> .
+			 	-> NP 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> covering
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> camera
+	 	-> CC 	-> or
+	 	-> NN 	-> view
+	 	-> NN 	-> port
+				 	-> VP 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> DT 	-> a
+	 	-> NNP 	-> Class
+	 	-> NNP 	-> B
+	 	-> NNP 	-> Violation
+			 	-> CC 	-> and
+	 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> result
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> NNP 	-> Discipline
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NP 	-> NP 	-> QP 	-> CD 	-> 1
+	 	-> CC 	-> or
+	 	-> JJR 	-> more
+			 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> VBG 	-> following
+	 	-> NNS 	-> penalties
+				 	-> : 	-> :
+	 	-> NP 	-> NP 	-> JJ 	-> disciplinary
+	 	-> NN 	-> Detention
+		 	-> NP 	-> QP 	-> IN 	-> up
+	 	-> TO 	-> to
+	 	-> CD 	-> 30
+		 	-> NNS 	-> days
+			 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> NN 	-> loss
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> CD 	-> one
+				 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> number
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NNS 	-> privileges
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> QP 	-> IN 	-> up
+	 	-> TO 	-> to
+	 	-> CD 	-> 60
+		 	-> NNS 	-> days
+							 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> NN 	-> loss
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> QP 	-> IN 	-> up
+	 	-> TO 	-> to
+	 	-> CD 	-> 2
+		 	-> NNS 	-> days
+		 	-> PP 	-> IN 	-> of
+	 	-> `` 	-> ``
+	 	-> NP 	-> NNP 	-> Good
+	 	-> NNP 	-> Time
+		 	-> '' 	-> ''
+					 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> NN 	-> cell
+	 	-> NN 	-> restriction
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> QP 	-> IN 	-> up
+	 	-> TO 	-> to
+	 	-> CD 	-> 30
+		 	-> NNS 	-> days
+											 	-> . 	-> .
+			
+Dependensee repr
+dep(Violation-35, Covering-1)
+cc(Covering-1, or-2)
+conj:or(Covering-1, tampering-3)
+dep(Violation-35, tampering-3)
+case(equipment-7, with-4)
+det(equipment-7, any-5)
+compound(equipment-7, security-6)
+nmod:with(tampering-3, equipment-7)
+case(cameras-9, including-8)
+nmod:including(Covering-1, cameras-9)
+cop(violation-13, is-10)
+case(violation-13, in-11)
+amod(violation-13, direct-12)
+acl:relcl(cameras-9, violation-13)
+case(rules-16, of-14)
+det(rules-16, the-15)
+nmod:of(violation-13, rules-16)
+cc(violation-13, and-17)
+aux(tolerated-21, will-18)
+neg(tolerated-21, not-19)
+auxpass(tolerated-21, be-20)
+acl:relcl(cameras-9, tolerated-21)
+conj:and(violation-13, tolerated-21)
+det(covering-24, The-23)
+nsubj(Violation-35, covering-24)
+nsubj(result-38, covering-24)
+case(port-30, of-25)
+det(port-30, any-26)
+compound(port-30, camera-27)
+cc(camera-27, or-28)
+conj:or(camera-27, view-29)
+compound(port-30, view-29)
+nmod:of(covering-24, port-30)
+cop(Violation-35, is-31)
+det(Violation-35, a-32)
+compound(Violation-35, Class-33)
+compound(Violation-35, B-34)
+root(ROOT-0, Violation-35)
+cc(Violation-35, and-36)
+aux(result-38, will-37)
+conj:and(Violation-35, result-38)
+case(Discipline-40, in-39)
+nmod:in(result-38, Discipline-40)
+case(1-42, of-41)
+nmod:of(Discipline-40, 1-42)
+cc(1-42, or-43)
+nmod:of(Discipline-40, more-44)
+conj:or(1-42, more-44)
+case(penalties-48, of-45)
+det(penalties-48, the-46)
+amod(penalties-48, following-47)
+nmod:of(1-42, penalties-48)
+amod(Detention-51, disciplinary-50)
+nmod:of(Discipline-40, Detention-51)
+conj:or(1-42, Detention-51)
+dep(30-54, up-52)
+mwe(up-52, to-53)
+nummod(days-55, 30-54)
+dep(Detention-51, days-55)
+nmod:of(Discipline-40, loss-57)
+conj:or(1-42, loss-57)
+case(one-59, of-58)
+nmod:of(loss-57, one-59)
+cc(1-42, or-61)
+det(number-63, a-62)
+nmod:of(Discipline-40, number-63)
+conj:or(1-42, number-63)
+case(privileges-65, of-64)
+nmod:of(number-63, privileges-65)
+case(days-70, for-66)
+dep(60-69, up-67)
+mwe(up-67, to-68)
+nummod(days-70, 60-69)
+nmod:for(privileges-65, days-70)
+appos(1-42, loss-72)
+case(days-77, of-73)
+dep(2-76, up-74)
+mwe(up-74, to-75)
+nummod(days-77, 2-76)
+nmod:of(loss-72, days-77)
+case(Time-81, of-78)
+compound(Time-81, Good-80)
+nmod:of(days-77, Time-81)
+compound(restriction-85, cell-84)
+appos(1-42, restriction-85)
+case(days-90, for-86)
+dep(30-89, up-87)
+mwe(up-87, to-88)
+nummod(days-90, 30-89)
+nmod:for(restriction-85, days-90)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, violation-13)
+nsubj(violation-13, Covering-1)
+nsubjpass(tolerated-21, Covering-1)
+cc(Covering-1, or-2)
+conj:or(Covering-1, tampering-3)
+nsubj(violation-13, tampering-3)
+case(equipment-7, with-4)
+det(equipment-7, any-5)
+compound(equipment-7, security-6)
+nmod:with(Covering-1, equipment-7)
+case(cameras-9, including-8)
+nmod:including(equipment-7, cameras-9)
+cop(violation-13, is-10)
+case(violation-13, in-11)
+amod(violation-13, direct-12)
+case(rules-16, of-14)
+det(rules-16, the-15)
+nmod:of(violation-13, rules-16)
+cc(violation-13, and-17)
+aux(tolerated-21, will-18)
+neg(tolerated-21, not-19)
+auxpass(tolerated-21, be-20)
+conj:and(violation-13, tolerated-21)
+punct(violation-13, .-22)
+---
+qqroot(ROOT-0, violation-13)
+nsubj(violation-13, Covering-1)
+nsubjpass(tolerated-21, Covering-1)
+cc(Covering-1, or-2)
+conj:or(Covering-1, tampering-3)
+nsubj(violation-13, tampering-3)
+case(equipment-7, with-4)
+det(equipment-7, any-5)
+compound(equipment-7, security-6)
+nmod:with(Covering-1, equipment-7)
+case(cameras-9, including-8)
+nmod:including(equipment-7, cameras-9)
+cop(violation-13, is-10)
+case(violation-13, in-11)
+amod(violation-13, direct-12)
+case(rules-16, of-14)
+det(rules-16, the-15)
+nmod:of(violation-13, rules-16)
+cc(violation-13, and-17)
+aux(tolerated-21, will-18)
+neg(tolerated-21, not-19)
+auxpass(tolerated-21, be-20)
+conj:and(violation-13, tolerated-21)
+punct(violation-13, .-22)
+root(ROOT-0, Violation-13)
+det(covering-2, The-1)
+nsubj(Violation-13, covering-2)
+nsubj(result-16, covering-2)
+case(camera-5, of-3)
+det(camera-5, any-4)
+nmod:of(covering-2, camera-5)
+cc(camera-5, or-6)
+compound(port-8, view-7)
+nmod:of(covering-2, port-8)
+conj:or(camera-5, port-8)
+cop(Violation-13, is-9)
+det(Violation-13, a-10)
+compound(Violation-13, Class-11)
+compound(Violation-13, B-12)
+cc(Violation-13, and-14)
+aux(result-16, will-15)
+conj:and(Violation-13, result-16)
+case(Discipline-18, in-17)
+nmod:in(result-16, Discipline-18)
+acl(Discipline-18, of-19)
+dep(of-19, 1-20)
+cc(1-20, or-21)
+dep(of-19, more-22)
+conj:or(1-20, more-22)
+case(penalties-26, of-23)
+det(penalties-26, the-24)
+amod(penalties-26, following-25)
+nmod:of(1-20, penalties-26)
+punct(1-20, :-27)
+amod(Detention-29, disciplinary-28)
+dep(1-20, Detention-29)
+advmod(30-32, up-30)
+dep(30-32, to-31)
+nummod(days-33, 30-32)
+dep(Detention-29, days-33)
+punct(Detention-29, ,-34)
+appos(Detention-29, loss-35)
+case(one-37, of-36)
+nmod:of(loss-35, one-37)
+punct(Detention-29, ,-38)
+cc(Detention-29, or-39)
+det:qmod(privileges-43, a-40)
+mwe(a-40, number-41)
+mwe(a-40, of-42)
+dep(1-20, privileges-43)
+conj:or(Detention-29, privileges-43)
+case(days-48, for-44)
+dep(60-47, up-45)
+mwe(up-45, to-46)
+nummod(days-48, 60-47)
+nmod:for(number-41, days-48)
+punct(Detention-29, ,-49)
+dep(1-20, loss-50)
+conj:or(Detention-29, loss-50)
+case(days-55, of-51)
+dep(2-54, up-52)
+mwe(up-52, to-53)
+nummod(days-55, 2-54)
+nmod:of(loss-50, days-55)
+case(Time-59, of-56)
+punct(Time-59, ``-57)
+amod(Time-59, Good-58)
+nmod:of(days-55, Time-59)
+punct(Time-59, ''-60)
+punct(Detention-29, ,-61)
+compound(restriction-63, cell-62)
+appos(Detention-29, restriction-63)
+case(days-68, for-64)
+dep(30-67, up-65)
+mwe(up-65, to-66)
+nummod(days-68, 30-67)
+nmod:for(restriction-63, days-68)
+punct(Violation-13, .-69)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[59, 64] [120, 254, 3032, 3067, 6047, ?1, ?2, ?3, ?4, ?5, ?6, B12, Class11, Covering1, Detention29, Discipline18, Good58, Time59, Violation13, a40, camera5, cameras9, cell62, covering2, days55, days48, days33, days68, direct12, disciplinary28, equipment7, following25, loss50, loss35, more22, not19, number41, of42, of19, one37, penalties26, port8, privileges43, restriction63, result16, rules16, security6, tampering3, to46, to31, to53, to66, tolerated21, up30, up52, up65, up45, view7, violation13]
+restriction63- ->Detention29
+loss50- ->120
+following25- ->?5
+?3- ->?1
+one37-of->loss35
+tampering3- ->violation13
+cell62- ->restriction63
+?5-the->penalties26
+to66- ->up65
+days68-for->restriction63
+6047- ->days48
+direct12-  : is  : in ->violation13
+days48-for->number41
+more22- ->of19
+?4-the->rules16
+port8-or->?2
+Discipline18-in->result16
+Covering1- ->tolerated21
+of42- ->a40
+port8-of->?3
+Covering1- ->violation13
+up65- ->3067
+?4-of->violation13
+?6-any->equipment7
+not19-  : will  : be ->tolerated21
+Time59-of->days55
+days55-of->loss50
+to31- ->3032
+?3- ->result16
+tampering3-or->Covering1
+Good58- ->Time59
+to53- ->up52
+of19- ->Discipline18
+to46- ->up45
+Class11-  : is ->?1
+disciplinary28- ->Detention29
+loss50-or->Detention29
+security6- ->?6
+?6-with->Covering1
+B12- ->?1
+up52- ->254
+privileges43- ->120
+loss35- ->Detention29
+254- ->days55
+view7- ->port8
+3032- ->days33
+a40-qmod->privileges43
+result16-and : will ->?1
+3067- ->days68
+?1-a->Violation13
+?2-of->?3
+more22-or->120
+days33- ->Detention29
+up30- ->3032
+?2-any->camera5
+120- ->of19
+privileges43-or->Detention29
+?3-The->covering2
+cameras9-including->?6
+number41- ->a40
+Detention29- ->120
+tolerated21-and->violation13
+up45- ->6047
+?5-of->120
+
+[Violation13<-a-?1
+	(<-and : will -result16(<-in-Discipline18<- -of19(<- -120(<- -Detention29(<-or-privileges43<-qmod-a40(<- -number41<-for-days48<- -6047<- -up45<- -to46)<- -of42)(<-or-loss50<-of-days55(<- -254<- -up52<- -to53)<-of-Time59<- -Good58)(<- -restriction63(<-for-days68<- -3067<- -up65<- -to66)<- -cell62)(<- -days33<- -3032(<- -to31)<- -up30)(<- -loss35<-of-one37)<- -disciplinary28)(<- -*privileges43)(<- -*loss50)(<-of-?5<- -following25)<-or-more22)<- -*more22)<- -?3(<-of-?2<-or-port8<- -view7)<-of-*port8)
+	(<- -*?3)
+	(<- -B12)
+	<-  : is -Class11;
+violation13
+	(<-and-tolerated21
+		(<- -Covering1(<-with-?6(<-including-cameras9)<- -security6)<-or-tampering3)
+		<-  : will  : be -not19)
+	(<- -*Covering1)
+	(<- -*tampering3)
+	(<-of-?4)
+	<-  : is  : in -direct12;
+rules16<-the-*?4;
+camera5<-any-*?2;
+covering2<-The-*?3;
+equipment7<-any-*?6;
+penalties26<-the-*?5]

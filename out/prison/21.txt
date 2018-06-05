@@ -1,0 +1,192 @@
+No inmate shall threaten (verbally or physically), strike, use profanity or obscene gestures against, or throw anything at, a jail staff member, another inmate, or visitor.
+------CorefChainz
+No-DT 
+inmate-NN 
+shall-MD 
+threaten-VB 
+-LRB---LRB- 
+verbally-NNP 
+or-CC 
+physically-NNP 
+-RRB---RRB- 
+,-, 
+strike-VB 
+,-, 
+use-VB 
+profanity-JJ 
+or-CC 
+obscene-JJ 
+gestures-NNS 
+against-IN 
+,-, 
+or-CC 
+throw-VB 
+anything-NN 
+at-IN 
+,-, 
+a-DT 
+jail-NN 
+staff-NN 
+member-NN 
+,-, 
+another-DT 
+inmate-NN 
+,-, 
+or-CC 
+visitor-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VP 	-> VB 	-> threaten
+	 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> NP 	-> NNP 	-> verbally
+	 	-> CC 	-> or
+	 	-> NNP 	-> physically
+		 	-> -RRB- 	-> -RRB-
+			 	-> , 	-> ,
+	 	-> VP 	-> VB 	-> strike
+		 	-> , 	-> ,
+	 	-> VP 	-> VP 	-> VB 	-> use
+	 	-> NP 	-> JJ 	-> profanity
+	 	-> CC 	-> or
+	 	-> JJ 	-> obscene
+	 	-> NNS 	-> gestures
+		 	-> PP 	-> IN 	-> against
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VB 	-> throw
+	 	-> NP 	-> NN 	-> anything
+		 	-> PP 	-> IN 	-> at
+				 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> jail
+	 	-> NN 	-> staff
+	 	-> NN 	-> member
+		 	-> , 	-> ,
+	 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> inmate
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NN 	-> visitor
+					 	-> . 	-> .
+			
+Dependensee repr
+neg(inmate-2, No-1)
+nsubj(threaten-4, inmate-2)
+aux(threaten-4, shall-3)
+root(ROOT-0, threaten-4)
+dep(threaten-4, verbally-6)
+cc(verbally-6, or-7)
+dep(threaten-4, physically-8)
+conj:or(verbally-6, physically-8)
+dep(threaten-4, strike-11)
+dep(threaten-4, use-13)
+amod(gestures-17, profanity-14)
+cc(profanity-14, or-15)
+conj:or(profanity-14, obscene-16)
+amod(gestures-17, obscene-16)
+dobj(use-13, gestures-17)
+nmod(use-13, against-18)
+cc(use-13, or-20)
+dep(threaten-4, throw-21)
+conj:or(use-13, throw-21)
+dobj(throw-21, anything-22)
+nmod(throw-21, at-23)
+det(member-28, a-25)
+compound(member-28, jail-26)
+compound(member-28, staff-27)
+dobj(threaten-4, member-28)
+det(inmate-31, another-30)
+dobj(threaten-4, inmate-31)
+conj:or(member-28, inmate-31)
+cc(member-28, or-33)
+dobj(threaten-4, visitor-34)
+conj:or(member-28, visitor-34)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, threaten-4)
+neg(inmate-2, No-1)
+nsubj(threaten-4, inmate-2)
+aux(threaten-4, shall-3)
+punct(threaten-4, -LRB--5)
+root(-LRB--5, verbally-6)
+cc(verbally-6, or-7)
+root(-LRB--5, physically-8)
+conj:or(verbally-6, physically-8)
+punct(,-10, -RRB--9)
+punct(verbally-6, ,-10)
+root(,-10, strike-11)
+punct(strike-11, ,-12)
+compound(profanity-14, use-13)
+root(,-12, profanity-14)
+cc(profanity-14, or-15)
+amod(gestures-17, obscene-16)
+root(,-12, gestures-17)
+conj:or(profanity-14, gestures-17)
+case(member-28, against-18)
+punct(throw-21, ,-19)
+cc(throw-21, or-20)
+dep(member-28, throw-21)
+dobj(throw-21, anything-22)
+compound:prt(throw-21, at-23)
+punct(throw-21, ,-24)
+det(member-28, a-25)
+compound(member-28, jail-26)
+compound(member-28, staff-27)
+nmod:against(profanity-14, member-28)
+punct(member-28, ,-29)
+det(inmate-31, another-30)
+nmod:against(profanity-14, inmate-31)
+conj:or(member-28, inmate-31)
+punct(member-28, ,-32)
+cc(member-28, or-33)
+nmod:against(profanity-14, visitor-34)
+conj:or(member-28, visitor-34)
+punct(profanity-14, .-35)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[23, 23] [,10, ,12, -LRB-5, ?1, ?2, No1, anything22, at23, gestures17, inmate2, inmate31, jail26, member28, obscene16, physically8, profanity14, staff27, strike11, threaten4, throw21, use13, verbally6, visitor34]
+physically8-or->verbally6
+anything22-  : or ->throw21
+?1-another->inmate31
+?2-a->member28
+staff27- ->?2
+No1- ->inmate2
+inmate2-  : shall ->threaten4
+?1-or->?2
+?2-against->profanity14
+visitor34-or->?2
+at23-prt->throw21
+gestures17- ->,12
+jail26- ->?2
+gestures17-or->profanity14
+physically8- ->-LRB-5
+?1-against->profanity14
+verbally6- ->-LRB-5
+use13- ->profanity14
+profanity14- ->,12
+throw21- ->?2
+visitor34-against->profanity14
+obscene16- ->gestures17
+strike11- ->,10
+
+[,12
+	(<- -profanity14
+		(<-against-?2(<- -throw21(<-  : or -anything22)<-prt-at23)(<-or-?1)(<- -jail26)(<- -staff27)<-or-visitor34)
+		(<-against-*?1)
+		(<-against-*visitor34)
+		(<-or-gestures17<- -obscene16)
+		<- -use13)
+	<- -*gestures17;
+threaten4<-  : shall -inmate2<- -No1;
+-LRB-5
+	(<- -verbally6<-or-physically8)
+	<- -*physically8;
+,10<- -strike11;
+inmate31<-another-*?1;
+member28<-a-*?2]

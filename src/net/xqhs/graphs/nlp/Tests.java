@@ -70,7 +70,7 @@ public class Tests {
 				System.out.println(g.toString());
 				// g = cxt.removeDuplicates(g);
 				// g=cxt.invertAllEdges(g);
-				parser.contextPatternVisualize(g, false);
+				parser.displayContextPattern(g, false);
 				// parser.getGraphicalGraph(true, g);
 
 				writer.close();
@@ -118,5 +118,33 @@ public class Tests {
 			e.printStackTrace();
 		}
 		return hashLines;
+	}
+
+	public static HashMap<String, String> readPrisonRules() {
+
+		HashMap<String, String> hashLines = new HashMap<String, String>();
+		try {
+			FileReader f = new FileReader("playground//rules//prison.txt");
+
+			BufferedReader br = new BufferedReader(f);
+
+			String sCurrentLine;
+			int k = 0;
+
+			while ((sCurrentLine = br.readLine()) != null) {
+
+				if (sCurrentLine != null && !sCurrentLine.isEmpty()) {
+					k++;
+					hashLines.put(Integer.toString(k), sCurrentLine);
+
+				}
+			}
+			br.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return hashLines;
+
 	}
 }

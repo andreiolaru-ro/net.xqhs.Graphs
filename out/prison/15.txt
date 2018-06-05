@@ -1,0 +1,143 @@
+Grant County Jail will also deduct 50% of your current balance when entering a new medical expense bill to your canteen account.
+------CorefChainz
+CHAIN5-["your" in sentence 1, "your" in sentence 1]
+representative mention: "your" in sentence 1
+Grant-NNP 
+County-NNP 
+Jail-NNP 
+will-MD 
+also-RB 
+deduct-VB 
+50-CD 
+%-NN 
+of-IN 
+your-PRP$ 
+current-JJ 
+balance-NN 
+when-WRB 
+entering-VBG 
+a-DT 
+new-JJ 
+medical-JJ 
+expense-NN 
+bill-NN 
+to-TO 
+your-PRP$ 
+canteen-NN 
+account-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NNP 	-> Jail
+		 	-> VP 	-> MD 	-> will
+	 	-> ADVP 	-> RB 	-> also
+		 	-> VP 	-> VB 	-> deduct
+	 	-> NP 	-> NP 	-> CD 	-> 50
+	 	-> NN 	-> %
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> JJ 	-> current
+	 	-> NN 	-> balance
+				 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> VP 	-> VBG 	-> entering
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> new
+	 	-> JJ 	-> medical
+	 	-> NN 	-> expense
+	 	-> NN 	-> bill
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> canteen
+	 	-> NN 	-> account
+								 	-> . 	-> .
+			
+Dependensee repr
+compound(Jail-3, Grant-1)
+compound(Jail-3, County-2)
+nsubj(deduct-6, Jail-3)
+aux(deduct-6, will-4)
+advmod(deduct-6, also-5)
+root(ROOT-0, deduct-6)
+nummod(%-8, 50-7)
+dobj(deduct-6, %-8)
+case(balance-12, of-9)
+nmod:poss(balance-12, your-10)
+amod(balance-12, current-11)
+nmod:of(%-8, balance-12)
+advmod(entering-14, when-13)
+advcl(deduct-6, entering-14)
+det(bill-19, a-15)
+amod(bill-19, new-16)
+amod(bill-19, medical-17)
+compound(bill-19, expense-18)
+dobj(entering-14, bill-19)
+case(account-23, to-20)
+nmod:poss(account-23, your-21)
+compound(account-23, canteen-22)
+nmod:to(entering-14, account-23)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, deduct-6)
+compound(Jail-3, Grant-1)
+compound(Jail-3, County-2)
+nsubj(deduct-6, Jail-3)
+aux(deduct-6, will-4)
+advmod(deduct-6, also-5)
+nummod(%-8, 50-7)
+dobj(deduct-6, %-8)
+case(balance-12, of-9)
+nmod:poss(balance-12, your-10)
+amod(balance-12, current-11)
+nmod:of(%-8, balance-12)
+advmod(entering-14, when-13)
+advcl(deduct-6, entering-14)
+det(bill-19, a-15)
+amod(bill-19, new-16)
+amod(bill-19, medical-17)
+compound(bill-19, expense-18)
+dobj(entering-14, bill-19)
+case(account-23, to-20)
+nmod:poss(account-23, your-21)
+compound(account-23, canteen-22)
+nmod:to(entering-14, account-23)
+punct(deduct-6, .-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[20, 19] [%8, 507, ?1, County2, Grant1, Jail3, account23, also5, balance12, bill19, canteen22, current11, deduct6, entering14, expense18, medical17, new16, when13, your21, your10]
+Jail3-  : will  : will ->deduct6
+expense18- ->?1
+balance12-of->%8
+your10-poss->balance12
+current11- ->balance12
+507- ->%8
+County2- ->Jail3
+?1-a->bill19
+entering14- ->deduct6
+%8- ->deduct6
+your21-poss->account23
+also5- ->deduct6
+account23-to->entering14
+Grant1- ->Jail3
+when13- ->entering14
+?1- ->entering14
+medical17- ->?1
+canteen22- ->account23
+new16- ->?1
+
+[deduct6
+	(<- -%8
+		(<-of-balance12(<- -current11)<-poss-your10)
+		<- -507)
+	(<- -entering14
+		(<-to-account23(<- -canteen22)<-poss-your21)
+		(<- -?1(<- -expense18)(<- -medical17)<- -new16)
+		<- -when13)
+	(<-  : will  : will -Jail3
+		(<- -County2)
+		<- -Grant1)
+	<- -also5;
+bill19<-a-*?1]

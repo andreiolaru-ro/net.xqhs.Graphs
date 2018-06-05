@@ -1,0 +1,94 @@
+Money received in any form in the incoming mail will be removed from the envelope.
+------CorefChainz
+Money-NNP 
+received-VBN 
+in-IN 
+any-DT 
+form-NN 
+in-IN 
+the-DT 
+incoming-JJ 
+mail-NN 
+will-MD 
+be-VB 
+removed-VBN 
+from-IN 
+the-DT 
+envelope-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NNP 	-> Money
+		 	-> VP 	-> VBN 	-> received
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> form
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> incoming
+	 	-> NN 	-> mail
+							 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> removed
+	 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> envelope
+						 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(removed-12, Money-1)
+acl(Money-1, received-2)
+case(form-5, in-3)
+det(form-5, any-4)
+nmod:in(received-2, form-5)
+case(mail-9, in-6)
+det(mail-9, the-7)
+amod(mail-9, incoming-8)
+nmod:in(form-5, mail-9)
+aux(removed-12, will-10)
+auxpass(removed-12, be-11)
+root(ROOT-0, removed-12)
+case(envelope-15, from-13)
+det(envelope-15, the-14)
+nmod:from(removed-12, envelope-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, received-2)
+nsubj(received-2, Money-1)
+case(form-5, in-3)
+det(form-5, any-4)
+nmod:in(received-2, form-5)
+case(mail-9, in-6)
+det(mail-9, the-7)
+amod(mail-9, incoming-8)
+nmod:in(received-2, mail-9)
+aux(removed-12, will-10)
+auxpass(removed-12, be-11)
+ccomp(received-2, removed-12)
+case(envelope-15, from-13)
+det(envelope-15, the-14)
+nmod:from(removed-12, envelope-15)
+punct(received-2, .-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[10, 9] [?1, ?2, ?3, Money1, envelope15, form5, incoming8, mail9, received2, removed12]
+?2-from : will  : be ->removed12
+?2-the->envelope15
+?3-the->mail9
+removed12- ->received2
+Money1- ->received2
+?1-in->received2
+incoming8- ->?3
+?1-any->form5
+?3-in->received2
+
+[mail9<-the-?3<- -incoming8;
+received2
+	(<-in-*?3)
+	(<- -removed12<-from : will  : be -?2)
+	(<-in-?1)
+	<- -Money1;
+form5<-any-*?1;
+envelope15<-the-*?2]

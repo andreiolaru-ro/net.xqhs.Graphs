@@ -1,0 +1,214 @@
+Indigent inmates may request a weekly indigent pack which contains soap, shampoo, and toothpaste. There will be a small charge for this pack which will be added to your account.
+------CorefChainz
+CHAIN6-["a weekly indigent pack which contains soap , shampoo , and toothpaste" in sentence 1, "this pack which will be added to your account" in sentence 2]
+representative mention: "a weekly indigent pack which contains soap , shampoo , and toothpaste" in sentence 1
+Indigent-JJ 
+inmates-NNS 
+may-MD 
+request-VB 
+a-DT 
+weekly-JJ 
+indigent-NN 
+pack-NN 
+which-WDT 
+contains-VBZ 
+soap-NN 
+,-, 
+shampoo-NN 
+,-, 
+and-CC 
+toothpaste-NN 
+.-. 
+There-EX 
+will-MD 
+be-VB 
+a-DT 
+small-JJ 
+charge-NN 
+for-IN 
+this-DT 
+pack-NN 
+which-WDT 
+will-MD 
+be-VB 
+added-VBN 
+to-TO 
+your-PRP$ 
+account-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> JJ 	-> Indigent
+	 	-> NNS 	-> inmates
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> request
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> weekly
+	 	-> NN 	-> indigent
+	 	-> NN 	-> pack
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> VP 	-> VBZ 	-> contains
+	 	-> NP 	-> NN 	-> soap
+	 	-> , 	-> ,
+	 	-> NN 	-> shampoo
+	 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NN 	-> toothpaste
+								 	-> . 	-> .
+		 	-> NP 	-> EX 	-> There
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> small
+	 	-> NN 	-> charge
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> pack
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> added
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> account
+													 	-> . 	-> .
+			
+Dependensee repr
+amod(inmates-2, Indigent-1)
+nsubj(request-4, inmates-2)
+aux(request-4, may-3)
+dep(charge-23, request-4)
+det(pack-8, a-5)
+amod(pack-8, weekly-6)
+compound(pack-8, indigent-7)
+dobj(request-4, pack-8)
+nsubj(contains-10, pack-8)
+ref(pack-8, which-9)
+acl:relcl(pack-8, contains-10)
+dobj(contains-10, soap-11)
+dobj(contains-10, shampoo-13)
+conj:and(soap-11, shampoo-13)
+cc(soap-11, and-15)
+dobj(contains-10, toothpaste-16)
+conj:and(soap-11, toothpaste-16)
+expl(charge-23, There-18)
+aux(charge-23, will-19)
+cop(charge-23, be-20)
+det(charge-23, a-21)
+amod(charge-23, small-22)
+root(ROOT-0, charge-23)
+case(pack-26, for-24)
+det(pack-26, this-25)
+nmod:for(charge-23, pack-26)
+nsubjpass(added-30, pack-26)
+ref(pack-26, which-27)
+aux(added-30, will-28)
+auxpass(added-30, be-29)
+acl:relcl(pack-26, added-30)
+case(account-33, to-31)
+nmod:poss(account-33, your-32)
+nmod:to(added-30, account-33)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, request-4)
+amod(inmates-2, Indigent-1)
+nsubj(request-4, inmates-2)
+aux(request-4, may-3)
+det(pack-8, a-5)
+amod(pack-8, weekly-6)
+amod(pack-8, indigent-7)
+dobj(request-4, pack-8)
+nsubj(contains-10, pack-8)
+ref(pack-8, which-9)
+acl:relcl(pack-8, contains-10)
+dobj(contains-10, soap-11)
+punct(soap-11, ,-12)
+dobj(contains-10, shampoo-13)
+conj:and(soap-11, shampoo-13)
+punct(soap-11, ,-14)
+cc(soap-11, and-15)
+dobj(contains-10, toothpaste-16)
+conj:and(soap-11, toothpaste-16)
+punct(request-4, .-17)
+---
+qqroot(ROOT-0, request-4)
+amod(inmates-2, Indigent-1)
+nsubj(request-4, inmates-2)
+aux(request-4, may-3)
+det(pack-8, a-5)
+amod(pack-8, weekly-6)
+amod(pack-8, indigent-7)
+dobj(request-4, pack-8)
+nsubj(contains-10, pack-8)
+ref(pack-8, which-9)
+acl:relcl(pack-8, contains-10)
+dobj(contains-10, soap-11)
+punct(soap-11, ,-12)
+dobj(contains-10, shampoo-13)
+conj:and(soap-11, shampoo-13)
+punct(soap-11, ,-14)
+cc(soap-11, and-15)
+dobj(contains-10, toothpaste-16)
+conj:and(soap-11, toothpaste-16)
+punct(request-4, .-17)
+root(ROOT-0, charge-6)
+expl(charge-6, There-1)
+aux(charge-6, will-2)
+cop(charge-6, be-3)
+det(charge-6, a-4)
+amod(charge-6, small-5)
+case(pack-9, for-7)
+det(pack-9, this-8)
+nmod:for(charge-6, pack-9)
+nsubjpass(added-13, pack-9)
+ref(pack-9, which-10)
+aux(added-13, will-11)
+auxpass(added-13, be-12)
+acl:relcl(pack-9, added-13)
+case(account-16, to-14)
+nmod:poss(account-16, your-15)
+nmod:to(added-13, account-16)
+punct(charge-6, .-17)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[20, 23] [?1, ?2, ?3, Indigent1, There1, account16, added13, charge6, contains10, indigent7, inmates2, pack9, pack8, request4, shampoo13, small5, soap11, toothpaste16, weekly6, your15]
+There1-  : will  : be  : be ->?1
+Indigent1- ->inmates2
+?3- ->contains10
+toothpaste16-and->soap11
+inmates2-  : may ->request4
+?2-==->?3
+?3- ->request4
+account16-to->added13
+small5- ->?1
+added13-  : will  : will  : be  : be  : which  : which ->?2
+?2-this->pack9
+shampoo13- ->contains10
+?3-a->pack8
+?1-a->charge6
+toothpaste16- ->contains10
+?2-for->?1
+shampoo13-and->soap11
+?2- ->added13
+indigent7- ->?3
+weekly6- ->?3
+soap11- ->contains10
+your15-poss->account16
+contains10-  : which  : which ->?3
+
+[charge6<-a-?1
+	(<-for-?2<-  : will  : will  : be  : be  : which  : which -added13(<- -*?2)<-to-account16<-poss-your15)
+	(<-  : will  : be  : be -There1)
+	<- -small5;
+pack8<-a-?3
+	(<-==-*?2)
+	(<-  : which  : which -contains10(<- -*?3)(<- -soap11(<-and-shampoo13)<-and-toothpaste16)(<- -*shampoo13)<- -*toothpaste16)
+	(<- -indigent7)
+	<- -weekly6;
+request4
+	(<- -*?3)
+	<-  : may -inmates2<- -Indigent1;
+pack9<-this-*?2]

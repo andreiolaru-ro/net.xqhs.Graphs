@@ -1,0 +1,337 @@
+Upon your admission to this facility, you will be issued the following: (1) Jail uniform, (2) sheets, (1) towel, (1) washcloth, (1) mattress, (1) blanket. During the months between Oct. 1st and May 1st you may request a second blanket.
+------CorefChainz
+CHAIN15-["your" in sentence 1, "you" in sentence 1, "you" in sentence 2]
+representative mention: "your" in sentence 1
+Upon-IN 
+your-PRP$ 
+admission-NN 
+to-TO 
+this-DT 
+facility-NN 
+,-, 
+you-PRP 
+will-MD 
+be-VB 
+issued-VBN 
+the-DT 
+following-VBG 
+:-: 
+-LRB---LRB- 
+1-LS 
+-RRB---RRB- 
+Jail-VBN 
+uniform-NN 
+,-, 
+-LRB---LRB- 
+2-CD 
+-RRB---RRB- 
+sheets-NNS 
+,-, 
+-LRB---LRB- 
+1-CD 
+-RRB---RRB- 
+towel-NN 
+,-, 
+-LRB---LRB- 
+1-CD 
+-RRB---RRB- 
+washcloth-NN 
+,-, 
+-LRB---LRB- 
+1-CD 
+-RRB---RRB- 
+mattress-NNS 
+,-, 
+-LRB---LRB- 
+1-CD 
+-RRB---RRB- 
+blanket-NNP 
+.-. 
+During-IN 
+the-DT 
+months-NNS 
+between-IN 
+Oct.-NNP 
+1st-CD 
+and-CC 
+May-NNP 
+1st-CD 
+you-PRP 
+may-MD 
+request-VB 
+a-DT 
+second-JJ 
+blanket-NN 
+.-. 
+ROOT 	-> S 	-> PP 	-> IN 	-> Upon
+	 	-> NP 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> admission
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> facility
+					 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> issued
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> VBG 	-> following
+		 	-> : 	-> :
+	 	-> NP 	-> LST 	-> -LRB- 	-> -LRB-
+	 	-> LS 	-> 1
+	 	-> -RRB- 	-> -RRB-
+		 	-> VBN 	-> Jail
+	 	-> NN 	-> uniform
+					 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> NP 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> NP 	-> CD 	-> 2
+		 	-> -RRB- 	-> -RRB-
+		 	-> NNS 	-> sheets
+		 	-> , 	-> ,
+	 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> NP 	-> CD 	-> 1
+		 	-> -RRB- 	-> -RRB-
+			 	-> NP 	-> NP 	-> NN 	-> towel
+		 	-> , 	-> ,
+	 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> NP 	-> CD 	-> 1
+		 	-> -RRB- 	-> -RRB-
+		 	-> NP 	-> NP 	-> NN 	-> washcloth
+		 	-> , 	-> ,
+	 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> NP 	-> CD 	-> 1
+		 	-> -RRB- 	-> -RRB-
+		 	-> NP 	-> NP 	-> NNS 	-> mattress
+		 	-> , 	-> ,
+	 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> NP 	-> CD 	-> 1
+		 	-> -RRB- 	-> -RRB-
+		 	-> NP 	-> NP 	-> NNP 	-> blanket
+	 	-> . 	-> .
+		 	-> SBAR 	-> S 	-> PP 	-> IN 	-> During
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> months
+		 	-> PP 	-> IN 	-> between
+	 	-> NP 	-> NP 	-> NNP 	-> Oct.
+	 	-> CD 	-> 1st
+		 	-> CC 	-> and
+	 	-> NP 	-> NNP 	-> May
+	 	-> CD 	-> 1st
+						 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> request
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> second
+	 	-> NN 	-> blanket
+													 	-> . 	-> .
+			
+Dependensee repr
+case(admission-3, Upon-1)
+nmod:poss(admission-3, your-2)
+nmod:upon(issued-11, admission-3)
+case(facility-6, to-4)
+det(facility-6, this-5)
+nmod:to(admission-3, facility-6)
+nsubjpass(issued-11, you-8)
+aux(issued-11, will-9)
+auxpass(issued-11, be-10)
+root(ROOT-0, issued-11)
+dobj(issued-11, the-12)
+amod(the-12, following-13)
+dep(uniform-19, 1-16)
+amod(uniform-19, Jail-18)
+dep(the-12, uniform-19)
+appos(sheets-24, 2-22)
+dobj(issued-11, sheets-24)
+appos(sheets-24, 1-27)
+dep(sheets-24, towel-29)
+appos(towel-29, 1-32)
+dep(towel-29, washcloth-34)
+appos(washcloth-34, 1-37)
+dep(washcloth-34, mattress-39)
+appos(mattress-39, 1-42)
+dep(mattress-39, blanket-44)
+case(months-48, During-46)
+det(months-48, the-47)
+nmod:during(request-57, months-48)
+case(Oct.-50, between-49)
+nmod:between(months-48, Oct.-50)
+nummod(Oct.-50, 1st-51)
+cc(Oct.-50, and-52)
+nmod:between(months-48, May-53)
+conj:and(Oct.-50, May-53)
+nummod(May-53, 1st-54)
+nsubj(request-57, you-55)
+aux(request-57, may-56)
+acl:relcl(blanket-44, request-57)
+det(blanket-60, a-58)
+amod(blanket-60, second-59)
+dobj(request-57, blanket-60)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, issued-11)
+case(admission-3, Upon-1)
+nmod:poss(admission-3, your-2)
+nmod:upon(issued-11, admission-3)
+case(facility-6, to-4)
+det(facility-6, this-5)
+nmod:to(admission-3, facility-6)
+punct(issued-11, ,-7)
+nsubjpass(issued-11, you-8)
+aux(issued-11, will-9)
+auxpass(issued-11, be-10)
+det(following-13, the-12)
+dobj(issued-11, following-13)
+punct(following-13, :-14)
+punct(1-16, -LRB--15)
+dep(uniform-19, 1-16)
+punct(1-16, -RRB--17)
+compound(uniform-19, Jail-18)
+dep(following-13, uniform-19)
+punct(uniform-19, ,-20)
+punct(2-22, -LRB--21)
+dep(sheets-24, 2-22)
+punct(2-22, -RRB--23)
+appos(uniform-19, sheets-24)
+punct(uniform-19, ,-25)
+punct(1-27, -LRB--26)
+dep(towel-29, 1-27)
+punct(1-27, -RRB--28)
+appos(uniform-19, towel-29)
+punct(uniform-19, ,-30)
+punct(1-32, -LRB--31)
+dep(washcloth-34, 1-32)
+punct(1-32, -RRB--33)
+appos(uniform-19, washcloth-34)
+punct(uniform-19, ,-35)
+punct(1-37, -LRB--36)
+dep(mattress-39, 1-37)
+punct(1-37, -RRB--38)
+appos(uniform-19, mattress-39)
+punct(uniform-19, ,-40)
+punct(1-42, -LRB--41)
+dep(blanket-44, 1-42)
+punct(1-42, -RRB--43)
+appos(uniform-19, blanket-44)
+punct(issued-11, .-45)
+---
+qqroot(ROOT-0, issued-11)
+case(admission-3, Upon-1)
+nmod:poss(admission-3, your-2)
+nmod:upon(issued-11, admission-3)
+case(facility-6, to-4)
+det(facility-6, this-5)
+nmod:to(admission-3, facility-6)
+punct(issued-11, ,-7)
+nsubjpass(issued-11, you-8)
+aux(issued-11, will-9)
+auxpass(issued-11, be-10)
+det(following-13, the-12)
+dobj(issued-11, following-13)
+punct(following-13, :-14)
+punct(1-16, -LRB--15)
+dep(uniform-19, 1-16)
+punct(1-16, -RRB--17)
+compound(uniform-19, Jail-18)
+dep(following-13, uniform-19)
+punct(uniform-19, ,-20)
+punct(2-22, -LRB--21)
+dep(sheets-24, 2-22)
+punct(2-22, -RRB--23)
+appos(uniform-19, sheets-24)
+punct(uniform-19, ,-25)
+punct(1-27, -LRB--26)
+dep(towel-29, 1-27)
+punct(1-27, -RRB--28)
+appos(uniform-19, towel-29)
+punct(uniform-19, ,-30)
+punct(1-32, -LRB--31)
+dep(washcloth-34, 1-32)
+punct(1-32, -RRB--33)
+appos(uniform-19, washcloth-34)
+punct(uniform-19, ,-35)
+punct(1-37, -LRB--36)
+dep(mattress-39, 1-37)
+punct(1-37, -RRB--38)
+appos(uniform-19, mattress-39)
+punct(uniform-19, ,-40)
+punct(1-42, -LRB--41)
+dep(blanket-44, 1-42)
+punct(1-42, -RRB--43)
+appos(uniform-19, blanket-44)
+punct(issued-11, .-45)
+root(ROOT-0, request-12)
+case(months-3, During-1)
+det(months-3, the-2)
+nmod:during(request-12, months-3)
+case(Oct.-5, between-4)
+nmod:between(months-3, Oct.-5)
+nummod(Oct.-5, 1st-6)
+cc(Oct.-5, and-7)
+nmod:between(months-3, May-8)
+conj:and(Oct.-5, May-8)
+nummod(May-8, 1st-9)
+nsubj(request-12, you-10)
+aux(request-12, may-11)
+det(blanket-15, a-13)
+amod(blanket-15, second-14)
+dobj(request-12, blanket-15)
+punct(request-12, .-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[32, 33] [132, 127, 137, 142, 116, 1st9, 1st6, 222, ?1, ?2, ?3, ?4, Jail18, May8, Oct.5, admission3, blanket15, blanket44, facility6, following13, issued11, mattress39, months3, request12, second14, sheets24, towel29, uniform19, washcloth34, you8, you10, your2]
+?4-the->following13
+sheets24- ->uniform19
+you10-  : may ->request12
+?3-this->facility6
+admission3-upon->issued11
+second14- ->?1
+127- ->towel29
+137- ->mattress39
+1st6- ->Oct.5
+your2-poss : Upon ->admission3
+?1-a->blanket15
+washcloth34- ->uniform19
+May8-between->?2
+May8-and->Oct.5
+towel29- ->uniform19
+?4- ->issued11
+132- ->washcloth34
+?2-the->months3
+222- ->sheets24
+Oct.5-between : During ->?2
+?3-to->admission3
+116- ->uniform19
+142- ->blanket44
+?1- ->request12
+mattress39- ->uniform19
+you10-==->your2
+Jail18- ->uniform19
+uniform19- ->?4
+blanket44- ->uniform19
+1st9- ->May8
+May8-==->your2
+you8-  : will  : be ->issued11
+?2-during->request12
+
+[following13<-the-?4<- -uniform19(<- -blanket44<- -142)(<- -mattress39<- -137)(<- -sheets24<- -222)(<- -towel29<- -127)(<- -washcloth34<- -132)(<- -116)<- -Jail18;
+months3<-the-?2
+	(<-between : During -Oct.5(<-and-May8<- -1st9)<- -1st6)
+	<-between-*May8;
+issued11
+	(<- -*?4)
+	(<-upon-admission3
+		(<-poss : Upon -your2(<-==-*May8)<-==-you10)
+		<-to-?3)
+	<-  : will  : be -you8;
+blanket15<-a-?1<- -second14;
+facility6<-this-*?3;
+request12
+	(<-during-*?2)
+	(<- -*?1)
+	<-  : may -*you10]

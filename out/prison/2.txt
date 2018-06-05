@@ -1,0 +1,166 @@
+Each person entering the visiting room will be counted as a visitor. All visitors must show a photo ID when asked for verification of age.
+------CorefChainz
+Each-DT 
+person-NN 
+entering-VBG 
+the-DT 
+visiting-VBG 
+room-NN 
+will-MD 
+be-VB 
+counted-VBN 
+as-IN 
+a-DT 
+visitor-NN 
+.-. 
+All-DT 
+visitors-NNS 
+must-MD 
+show-VB 
+a-DT 
+photo-JJ 
+ID-NN 
+when-WRB 
+asked-VBD 
+for-IN 
+verification-NN 
+of-IN 
+age-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NP 	-> DT 	-> Each
+	 	-> NN 	-> person
+		 	-> VP 	-> VBG 	-> entering
+	 	-> NP 	-> DT 	-> the
+	 	-> VBG 	-> visiting
+	 	-> NN 	-> room
+				 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> counted
+	 	-> PP 	-> IN 	-> as
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> visitor
+			 	-> . 	-> .
+					 	-> NP 	-> DT 	-> All
+	 	-> NNS 	-> visitors
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> show
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> photo
+	 	-> NN 	-> ID
+		 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> VP 	-> VBD 	-> asked
+	 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> NN 	-> verification
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> age
+										 	-> . 	-> .
+			
+Dependensee repr
+det(person-2, Each-1)
+nsubjpass(counted-9, person-2)
+acl(person-2, entering-3)
+det(room-6, the-4)
+amod(room-6, visiting-5)
+dobj(entering-3, room-6)
+aux(counted-9, will-7)
+auxpass(counted-9, be-8)
+dep(show-17, counted-9)
+case(visitor-12, as-10)
+det(visitor-12, a-11)
+nmod:as(counted-9, visitor-12)
+det(visitors-15, All-14)
+nsubj(show-17, visitors-15)
+aux(show-17, must-16)
+root(ROOT-0, show-17)
+det(ID-20, a-18)
+amod(ID-20, photo-19)
+dobj(show-17, ID-20)
+advmod(asked-22, when-21)
+advcl(show-17, asked-22)
+case(verification-24, for-23)
+nmod:for(asked-22, verification-24)
+case(age-26, of-25)
+nmod:of(verification-24, age-26)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, counted-9)
+det(person-2, Each-1)
+nsubjpass(counted-9, person-2)
+acl(person-2, entering-3)
+det(room-6, the-4)
+amod(room-6, visiting-5)
+dobj(entering-3, room-6)
+aux(counted-9, will-7)
+auxpass(counted-9, be-8)
+case(visitor-12, as-10)
+det(visitor-12, a-11)
+nmod:as(counted-9, visitor-12)
+punct(counted-9, .-13)
+---
+qqroot(ROOT-0, counted-9)
+det(person-2, Each-1)
+nsubjpass(counted-9, person-2)
+acl(person-2, entering-3)
+det(room-6, the-4)
+amod(room-6, visiting-5)
+dobj(entering-3, room-6)
+aux(counted-9, will-7)
+auxpass(counted-9, be-8)
+case(visitor-12, as-10)
+det(visitor-12, a-11)
+nmod:as(counted-9, visitor-12)
+punct(counted-9, .-13)
+root(ROOT-0, show-4)
+det(visitors-2, All-1)
+nsubj(show-4, visitors-2)
+aux(show-4, must-3)
+det(ID-7, a-5)
+compound(ID-7, photo-6)
+dobj(show-4, ID-7)
+advmod(asked-9, when-8)
+advcl(show-4, asked-9)
+case(verification-11, for-10)
+nmod:for(asked-9, verification-11)
+case(age-13, of-12)
+nmod:of(verification-11, age-13)
+punct(show-4, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[19, 17] [?1, ?2, ?3, ?4, ?5, ID7, age13, asked9, counted9, entering3, person2, photo6, room6, show4, verification11, visiting5, visitor12, visitors2, when8]
+?4-  : will  : will ->counted9
+?1-the->room6
+?1- ->entering3
+?5-  : must ->show4
+asked9- ->show4
+visiting5- ->?1
+age13-of->verification11
+?3-as : be ->counted9
+when8- ->asked9
+?2-a->ID7
+?2- ->show4
+photo6- ->?2
+?3-a->visitor12
+verification11-for->asked9
+?4-Each->person2
+entering3- ->?4
+?5-All->visitors2
+
+[person2<-Each-?4<- -entering3<- -?1<- -visiting5;
+show4
+	(<- -asked9
+		(<-for-verification11<-of-age13)
+		<- -when8)
+	(<- -?2<- -photo6)
+	<-  : must -?5;
+ID7<-a-*?2;
+visitor12<-a-?3;
+visitors2<-All-*?5;
+room6<-the-*?1;
+counted9
+	(<-  : will  : will -*?4)
+	<-as : be -*?3]

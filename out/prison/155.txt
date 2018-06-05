@@ -1,0 +1,112 @@
+No metal, glass, or spray containers will be allowed in the inmate’s possession unless authorized.
+------CorefChainz
+No-DT 
+metal-NN 
+,-, 
+glass-NN 
+,-, 
+or-CC 
+spray-NN 
+containers-NNS 
+will-MD 
+be-VB 
+allowed-VBN 
+in-IN 
+the-DT 
+inmate-NN 
+'s-POS 
+possession-NN 
+unless-IN 
+authorized-VBD 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> metal
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> glass
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NN 	-> spray
+	 	-> NNS 	-> containers
+			 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> possession
+			 	-> SBAR 	-> IN 	-> unless
+	 	-> S 	-> VP 	-> VBD 	-> authorized
+							 	-> . 	-> .
+			
+Dependensee repr
+neg(metal-2, No-1)
+nsubjpass(allowed-11, metal-2)
+conj:or(metal-2, glass-4)
+nsubjpass(allowed-11, glass-4)
+cc(metal-2, or-6)
+compound(containers-8, spray-7)
+conj:or(metal-2, containers-8)
+nsubjpass(allowed-11, containers-8)
+aux(allowed-11, will-9)
+auxpass(allowed-11, be-10)
+root(ROOT-0, allowed-11)
+case(possession-16, in-12)
+det(inmate-14, the-13)
+nmod:poss(possession-16, inmate-14)
+case(inmate-14, 's-15)
+nmod:in(allowed-11, possession-16)
+mark(authorized-18, unless-17)
+advcl(allowed-11, authorized-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-11)
+neg(metal-2, No-1)
+nsubjpass(allowed-11, metal-2)
+punct(metal-2, ,-3)
+conj:or(metal-2, glass-4)
+nsubjpass(allowed-11, glass-4)
+punct(metal-2, ,-5)
+cc(metal-2, or-6)
+compound(containers-8, spray-7)
+conj:or(metal-2, containers-8)
+nsubjpass(allowed-11, containers-8)
+aux(allowed-11, will-9)
+auxpass(allowed-11, be-10)
+case(possession-16, in-12)
+det(inmate-14, the-13)
+nmod:poss(possession-16, inmate-14)
+case(inmate-14, 's-15)
+nmod:in(allowed-11, possession-16)
+mark(authorized-18, unless-17)
+advcl:unless(allowed-11, authorized-18)
+punct(allowed-11, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[10, 11] [?1, No1, allowed11, authorized18, containers8, glass4, inmate14, metal2, possession16, spray7]
+?1-the->inmate14
+spray7- ->containers8
+No1- ->metal2
+glass4- ->allowed11
+possession16-in->allowed11
+containers8-or->metal2
+containers8-  : will  : be ->allowed11
+glass4-or->metal2
+metal2- ->allowed11
+authorized18-unless->allowed11
+?1-poss : 's ->possession16
+
+[allowed11
+	(<- -metal2
+		(<-or-containers8<- -spray7)
+		(<- -No1)
+		<-or-glass4)
+	(<-  : will  : be -*containers8)
+	(<- -*glass4)
+	(<-in-possession16<-poss : 's -?1)
+	<-unless-authorized18;
+inmate14<-the-*?1]

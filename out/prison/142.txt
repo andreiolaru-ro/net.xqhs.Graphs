@@ -1,0 +1,142 @@
+Female hygiene products may be purchased off the weekly Stellar Commissary list. If inmate is indigent we will provide pads.
+------CorefChainz
+Female-JJ 
+hygiene-NN 
+products-NNS 
+may-MD 
+be-VB 
+purchased-VBN 
+off-IN 
+the-DT 
+weekly-JJ 
+Stellar-NNP 
+Commissary-NNP 
+list-NN 
+.-. 
+If-IN 
+inmate-NN 
+is-VBZ 
+indigent-JJ 
+we-PRP 
+will-MD 
+provide-VB 
+pads-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> JJ 	-> Female
+	 	-> NN 	-> hygiene
+	 	-> NNS 	-> products
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> purchased
+	 	-> PP 	-> IN 	-> off
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> weekly
+	 	-> NNP 	-> Stellar
+	 	-> NNP 	-> Commissary
+	 	-> NN 	-> list
+			 	-> . 	-> .
+				 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> NN 	-> inmate
+		 	-> VP 	-> VBZ 	-> is
+	 	-> ADJP 	-> JJ 	-> indigent
+	 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> we
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> provide
+	 	-> NP 	-> NNS 	-> pads
+										 	-> . 	-> .
+			
+Dependensee repr
+amod(products-3, Female-1)
+compound(products-3, hygiene-2)
+nsubjpass(purchased-6, products-3)
+aux(purchased-6, may-4)
+auxpass(purchased-6, be-5)
+root(ROOT-0, purchased-6)
+case(list-12, off-7)
+det(list-12, the-8)
+amod(list-12, weekly-9)
+compound(list-12, Stellar-10)
+compound(list-12, Commissary-11)
+nmod:off(purchased-6, list-12)
+mark(indigent-17, If-14)
+nsubj(indigent-17, inmate-15)
+cop(indigent-17, is-16)
+dep(purchased-6, indigent-17)
+nsubj(provide-20, we-18)
+aux(provide-20, will-19)
+ccomp(indigent-17, provide-20)
+dobj(provide-20, pads-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, purchased-6)
+amod(products-3, Female-1)
+compound(products-3, hygiene-2)
+nsubjpass(purchased-6, products-3)
+aux(purchased-6, may-4)
+auxpass(purchased-6, be-5)
+compound:prt(purchased-6, off-7)
+det(list-12, the-8)
+amod(list-12, weekly-9)
+amod(list-12, Stellar-10)
+compound(list-12, Commissary-11)
+dobj(purchased-6, list-12)
+punct(purchased-6, .-13)
+---
+qqroot(ROOT-0, purchased-6)
+amod(products-3, Female-1)
+compound(products-3, hygiene-2)
+nsubjpass(purchased-6, products-3)
+aux(purchased-6, may-4)
+auxpass(purchased-6, be-5)
+compound:prt(purchased-6, off-7)
+det(list-12, the-8)
+amod(list-12, weekly-9)
+amod(list-12, Stellar-10)
+compound(list-12, Commissary-11)
+dobj(purchased-6, list-12)
+punct(purchased-6, .-13)
+root(ROOT-0, provide-7)
+mark(indigent-4, If-1)
+nsubj(indigent-4, inmate-2)
+cop(indigent-4, is-3)
+advcl:if(provide-7, indigent-4)
+nsubj(provide-7, we-5)
+aux(provide-7, will-6)
+dobj(provide-7, pads-8)
+punct(provide-7, .-9)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[15, 13] [?1, Commissary11, Female1, Stellar10, hygiene2, indigent4, inmate2, list12, off7, pads8, products3, provide7, purchased6, we5, weekly9]
+Female1- ->products3
+Stellar10- ->?1
+?1- ->purchased6
+hygiene2- ->products3
+we5-  : will ->provide7
+products3-  : may  : be  : be ->purchased6
+inmate2-  : If  : is ->indigent4
+indigent4-if->provide7
+pads8- ->provide7
+off7-prt->purchased6
+?1-the->list12
+Commissary11- ->?1
+weekly9- ->?1
+
+[list12<-the-?1
+	(<- -Commissary11)
+	(<- -Stellar10)
+	<- -weekly9;
+provide7
+	(<-if-indigent4<-  : If  : is -inmate2)
+	(<- -pads8)
+	<-  : will -we5;
+purchased6
+	(<- -*?1)
+	(<-  : may  : be  : be -products3
+		(<- -Female1)
+		<- -hygiene2)
+	<-prt-off7]

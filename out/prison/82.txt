@@ -1,0 +1,115 @@
+It is the inmate’s responsibility to pay for any hospital visits emergency or non-emergency, and ambulance fees.
+------CorefChainz
+It-PRP 
+is-VBZ 
+the-DT 
+inmate-NN 
+'s-POS 
+responsibility-NN 
+to-TO 
+pay-VB 
+for-IN 
+any-DT 
+hospital-NN 
+visits-NNS 
+emergency-NN 
+or-CC 
+non-emergency-JJ 
+,-, 
+and-CC 
+ambulance-NN 
+fees-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> It
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> responsibility
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> pay
+	 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> hospital
+	 	-> NNS 	-> visits
+	 	-> NN 	-> emergency
+		 	-> CC 	-> or
+	 	-> NP 	-> JJ 	-> non-emergency
+	 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NN 	-> ambulance
+	 	-> NNS 	-> fees
+									 	-> . 	-> .
+			
+Dependensee repr
+nsubj(responsibility-6, It-1)
+cop(responsibility-6, is-2)
+det(inmate-4, the-3)
+nmod:poss(responsibility-6, inmate-4)
+case(inmate-4, 's-5)
+root(ROOT-0, responsibility-6)
+mark(pay-8, to-7)
+acl(responsibility-6, pay-8)
+case(emergency-13, for-9)
+det(emergency-13, any-10)
+compound(emergency-13, hospital-11)
+compound(emergency-13, visits-12)
+nmod:for(pay-8, emergency-13)
+cc(emergency-13, or-14)
+nmod:for(pay-8, non-emergency-15)
+conj:or(emergency-13, non-emergency-15)
+cc(non-emergency-15, and-17)
+compound(fees-19, ambulance-18)
+conj:or(emergency-13, fees-19)
+conj:and(non-emergency-15, fees-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, responsibility-6)
+nsubj(responsibility-6, It-1)
+cop(responsibility-6, is-2)
+det(inmate-4, the-3)
+nmod:poss(responsibility-6, inmate-4)
+case(inmate-4, 's-5)
+mark(pay-8, to-7)
+acl:to(responsibility-6, pay-8)
+case(visits-12, for-9)
+det(visits-12, any-10)
+compound(visits-12, hospital-11)
+nmod:for(pay-8, visits-12)
+dep(visits-12, emergency-13)
+cc(emergency-13, or-14)
+dep(visits-12, non-emergency-15)
+conj:or(emergency-13, non-emergency-15)
+punct(emergency-13, ,-16)
+cc(emergency-13, and-17)
+compound(fees-19, ambulance-18)
+dep(visits-12, fees-19)
+conj:or(emergency-13, fees-19)
+punct(responsibility-6, .-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[12, 13] [?1, ?2, It1, ambulance18, emergency13, fees19, hospital11, inmate4, non-emergency15, pay8, responsibility6, visits12]
+It1-  : is ->responsibility6
+?2-poss : 's ->responsibility6
+non-emergency15- ->?1
+hospital11- ->?1
+non-emergency15-or : and  : and ->emergency13
+?1-for->pay8
+pay8-to->responsibility6
+fees19- ->?1
+ambulance18- ->fees19
+?2-the->inmate4
+fees19-or->emergency13
+?1-any->visits12
+emergency13- ->?1
+
+[responsibility6
+	(<-to-pay8<-for-?1(<- -emergency13(<-or-fees19<- -ambulance18)<-or : and  : and -non-emergency15)(<- -*fees19)(<- -*non-emergency15)<- -hospital11)
+	(<-poss : 's -?2)
+	<-  : is -It1;
+inmate4<-the-*?2;
+visits12<-any-*?1]

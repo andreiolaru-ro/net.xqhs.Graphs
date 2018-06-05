@@ -1,0 +1,325 @@
+Only approved visitors on the list will be allowed in for visits. All others will be turned away. This does not apply to attorneys visiting inmates. You do not need to place the name of your attorney(s) on your visiting list.
+------CorefChainz
+CHAIN6-["the list" in sentence 1, "This" in sentence 3, "your visiting list" in sentence 4]
+representative mention: "your visiting list" in sentence 4
+CHAIN10-["You" in sentence 4, "your" in sentence 4, "your" in sentence 4]
+representative mention: "You" in sentence 4
+Only-RB 
+approved-VBN 
+visitors-NNS 
+on-IN 
+the-DT 
+list-NN 
+will-MD 
+be-VB 
+allowed-VBN 
+in-IN 
+for-IN 
+visits-FW 
+.-. 
+All-DT 
+others-NNS 
+will-MD 
+be-VB 
+turned-VBN 
+away-RP 
+.-. 
+This-DT 
+does-VBZ 
+not-RB 
+apply-VB 
+to-TO 
+attorneys-NNS 
+visiting-VBG 
+inmates-NNP 
+.-. 
+You-PRP 
+do-VBP 
+not-RB 
+need-VB 
+to-TO 
+place-VB 
+the-DT 
+name-NN 
+of-IN 
+your-PRP$ 
+attorney-NN 
+-LRB---LRB- 
+s-PRP 
+-RRB---RRB- 
+on-IN 
+your-PRP$ 
+visiting-VBG 
+list-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NP 	-> RB 	-> Only
+	 	-> VBN 	-> approved
+	 	-> NNS 	-> visitors
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> list
+				 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> PP 	-> IN 	-> in
+	 	-> PP 	-> IN 	-> for
+	 	-> FRAG 	-> ADJP 	-> FW 	-> visits
+	 	-> . 	-> .
+		 	-> S 	-> NP 	-> DT 	-> All
+	 	-> NNS 	-> others
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> turned
+	 	-> PRT 	-> RP 	-> away
+						 	-> . 	-> .
+								 	-> NP 	-> DT 	-> This
+		 	-> VP 	-> VBZ 	-> does
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> apply
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> NNS 	-> attorneys
+		 	-> VP 	-> VBG 	-> visiting
+	 	-> NP 	-> NP 	-> NNP 	-> inmates
+	 	-> . 	-> .
+		 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> VBP 	-> do
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> need
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> place
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> name
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> attorney
+		 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> PRP 	-> s
+	 	-> -RRB- 	-> -RRB-
+					 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> VBG 	-> visiting
+	 	-> NN 	-> list
+																 	-> . 	-> .
+			
+Dependensee repr
+advmod(visitors-3, Only-1)
+amod(visitors-3, approved-2)
+nsubjpass(allowed-9, visitors-3)
+case(list-6, on-4)
+det(list-6, the-5)
+nmod:on(visitors-3, list-6)
+aux(allowed-9, will-7)
+auxpass(allowed-9, be-8)
+dep(apply-24, allowed-9)
+case(visits-12, in-10)
+case(visits-12, for-11)
+dep(allowed-9, visits-12)
+det(others-15, All-14)
+nsubjpass(turned-18, others-15)
+aux(turned-18, will-16)
+auxpass(turned-18, be-17)
+dep(visits-12, turned-18)
+compound:prt(turned-18, away-19)
+nsubj(apply-24, This-21)
+aux(apply-24, does-22)
+neg(apply-24, not-23)
+root(ROOT-0, apply-24)
+case(attorneys-26, to-25)
+nmod:to(apply-24, attorneys-26)
+acl(attorneys-26, visiting-27)
+dobj(visiting-27, inmates-28)
+nsubj(need-33, You-30)
+nsubj:xsubj(place-35, You-30)
+aux(need-33, do-31)
+neg(need-33, not-32)
+acl:relcl(inmates-28, need-33)
+mark(place-35, to-34)
+xcomp(need-33, place-35)
+det(name-37, the-36)
+dobj(place-35, name-37)
+case(attorney-40, of-38)
+nmod:poss(attorney-40, your-39)
+nmod:of(name-37, attorney-40)
+dep(attorney-40, s-42)
+case(list-47, on-44)
+nmod:poss(list-47, your-45)
+amod(list-47, visiting-46)
+nmod:on(place-35, list-47)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-9)
+advmod(approved-2, Only-1)
+amod(visitors-3, approved-2)
+nsubjpass(allowed-9, visitors-3)
+case(list-6, on-4)
+det(list-6, the-5)
+nmod:on(visitors-3, list-6)
+aux(allowed-9, will-7)
+auxpass(allowed-9, be-8)
+case(visits-12, in-10)
+case(visits-12, for-11)
+nmod:for(allowed-9, visits-12)
+punct(allowed-9, .-13)
+---
+qqroot(ROOT-0, allowed-9)
+advmod(approved-2, Only-1)
+amod(visitors-3, approved-2)
+nsubjpass(allowed-9, visitors-3)
+case(list-6, on-4)
+det(list-6, the-5)
+nmod:on(visitors-3, list-6)
+aux(allowed-9, will-7)
+auxpass(allowed-9, be-8)
+case(visits-12, in-10)
+case(visits-12, for-11)
+nmod:for(allowed-9, visits-12)
+punct(allowed-9, .-13)
+root(ROOT-0, turned-5)
+det(others-2, All-1)
+nsubjpass(turned-5, others-2)
+aux(turned-5, will-3)
+auxpass(turned-5, be-4)
+advmod(turned-5, away-6)
+punct(turned-5, .-7)
+---
+qqroot(ROOT-0, allowed-9)
+advmod(approved-2, Only-1)
+amod(visitors-3, approved-2)
+nsubjpass(allowed-9, visitors-3)
+case(list-6, on-4)
+det(list-6, the-5)
+nmod:on(visitors-3, list-6)
+aux(allowed-9, will-7)
+auxpass(allowed-9, be-8)
+case(visits-12, in-10)
+case(visits-12, for-11)
+nmod:for(allowed-9, visits-12)
+punct(allowed-9, .-13)
+root(ROOT-0, turned-5)
+det(others-2, All-1)
+nsubjpass(turned-5, others-2)
+aux(turned-5, will-3)
+auxpass(turned-5, be-4)
+advmod(turned-5, away-6)
+punct(turned-5, .-7)
+root(ROOT-0, apply-4)
+nsubj(apply-4, This-1)
+aux(apply-4, does-2)
+neg(apply-4, not-3)
+case(attorneys-6, to-5)
+nmod:to(apply-4, attorneys-6)
+acl(attorneys-6, visiting-7)
+dobj(visiting-7, inmates-8)
+punct(apply-4, .-9)
+---
+qqroot(ROOT-0, allowed-9)
+advmod(approved-2, Only-1)
+amod(visitors-3, approved-2)
+nsubjpass(allowed-9, visitors-3)
+case(list-6, on-4)
+det(list-6, the-5)
+nmod:on(visitors-3, list-6)
+aux(allowed-9, will-7)
+auxpass(allowed-9, be-8)
+case(visits-12, in-10)
+case(visits-12, for-11)
+nmod:for(allowed-9, visits-12)
+punct(allowed-9, .-13)
+root(ROOT-0, turned-5)
+det(others-2, All-1)
+nsubjpass(turned-5, others-2)
+aux(turned-5, will-3)
+auxpass(turned-5, be-4)
+advmod(turned-5, away-6)
+punct(turned-5, .-7)
+root(ROOT-0, apply-4)
+nsubj(apply-4, This-1)
+aux(apply-4, does-2)
+neg(apply-4, not-3)
+case(attorneys-6, to-5)
+nmod:to(apply-4, attorneys-6)
+acl(attorneys-6, visiting-7)
+dobj(visiting-7, inmates-8)
+punct(apply-4, .-9)
+root(ROOT-0, need-4)
+nsubj(need-4, You-1)
+nsubj:xsubj(place-6, You-1)
+aux(need-4, do-2)
+neg(need-4, not-3)
+mark(place-6, to-5)
+xcomp(need-4, place-6)
+det(name-8, the-7)
+dobj(place-6, name-8)
+case(attorney-11, of-9)
+nmod:poss(attorney-11, your-10)
+nmod:of(name-8, attorney-11)
+punct(s-13, -LRB--12)
+appos(attorney-11, s-13)
+punct(s-13, -RRB--14)
+case(list-18, on-15)
+nmod:poss(list-18, your-16)
+amod(list-18, visiting-17)
+nmod:on(attorney-11, list-18)
+punct(need-4, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+G[29, 30] [?1, ?2, ?3, Only1, This1, You1, allowed9, apply4, approved2, attorney11, attorneys6, away6, inmates8, list6, list18, name8, need4, not3, not3, others2, place6, s13, turned5, visiting17, visiting7, visitors3, visits12, your10, your16]
+You1-  : do  : do ->need4
+s13- ->attorney11
+visiting7- ->attorneys6
+visiting17- ->list18
+not3- ->apply4
+You1- ->place6
+attorneys6-to->apply4
+your16-==->You1
+?3- ->place6
+You1-==->list18
+your10-==->You1
+visits12-for : in  : be ->allowed9
+your10-poss->attorney11
+?3-the->name8
+not3- ->need4
+?2-  : will  : be  : be ->turned5
+?1-on->visitors3
+inmates8- ->visiting7
+away6- ->turned5
+?1-==->list18
+attorney11-of->?3
+Only1- ->approved2
+your16-poss->list18
+?1-the->list6
+This1-  : does  : does ->apply4
+visitors3-  : will ->allowed9
+list18-on->attorney11
+place6-  : to ->need4
+approved2- ->visitors3
+?2-All->others2
+
+[need4
+	(<-  : to -place6
+		(<- -?3<-of-attorney11(<-on-list18(<-==-You1(<-==-your16)<-==-your10)(<-poss-*your16)(<-==-?1)<- -visiting17)(<-poss-*your10)<- -s13)
+		<- -*You1)
+	(<-  : do  : do -*You1)
+	<- -not3;
+allowed9
+	(<-  : will -visitors3
+		(<-on-*?1)
+		<- -approved2<- -Only1)
+	<-for : in  : be -visits12;
+apply4
+	(<-to-attorneys6<- -visiting7<- -inmates8)
+	(<-  : does  : does -This1)
+	<- -not3;
+others2<-All-?2;
+turned5
+	(<-  : will  : be  : be -*?2)
+	<- -away6;
+list6<-the-*?1;
+name8<-the-*?3]

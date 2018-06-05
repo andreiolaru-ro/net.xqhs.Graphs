@@ -1,0 +1,145 @@
+There shall be NO INCOMING PHONE CALLS for any inmate, unless such a call is an emergency, and the emergency can be verified.
+------CorefChainz
+There-EX 
+shall-MD 
+be-VB 
+NO-DT 
+INCOMING-NNP 
+PHONE-NNP 
+CALLS-NNPS 
+for-IN 
+any-DT 
+inmate-NN 
+,-, 
+unless-IN 
+such-PDT 
+a-DT 
+call-NN 
+is-VBZ 
+an-DT 
+emergency-NN 
+,-, 
+and-CC 
+the-DT 
+emergency-NN 
+can-MD 
+be-VB 
+verified-VBN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> EX 	-> There
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> NP 	-> NP 	-> DT 	-> NO
+	 	-> NNP 	-> INCOMING
+	 	-> NNP 	-> PHONE
+	 	-> NNPS 	-> CALLS
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> inmate
+				 	-> , 	-> ,
+	 	-> SBAR 	-> IN 	-> unless
+	 	-> S 	-> NP 	-> PDT 	-> such
+	 	-> DT 	-> a
+	 	-> NN 	-> call
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> emergency
+								 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> emergency
+		 	-> VP 	-> MD 	-> can
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> verified
+					 	-> . 	-> .
+			
+Dependensee repr
+expl(CALLS-7, There-1)
+aux(CALLS-7, shall-2)
+cop(CALLS-7, be-3)
+neg(CALLS-7, NO-4)
+compound(CALLS-7, INCOMING-5)
+compound(CALLS-7, PHONE-6)
+root(ROOT-0, CALLS-7)
+case(inmate-10, for-8)
+det(inmate-10, any-9)
+nmod:for(CALLS-7, inmate-10)
+mark(emergency-18, unless-12)
+det:predet(call-15, such-13)
+det(call-15, a-14)
+nsubj(emergency-18, call-15)
+cop(emergency-18, is-16)
+det(emergency-18, an-17)
+advcl(CALLS-7, emergency-18)
+cc(CALLS-7, and-20)
+det(emergency-22, the-21)
+nsubjpass(verified-25, emergency-22)
+aux(verified-25, can-23)
+auxpass(verified-25, be-24)
+conj:and(CALLS-7, verified-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, CALLS-7)
+expl(CALLS-7, There-1)
+aux(CALLS-7, shall-2)
+cop(CALLS-7, be-3)
+compound(CALLS-7, NO-4)
+amod(CALLS-7, INCOMING-5)
+compound(CALLS-7, PHONE-6)
+case(inmate-10, for-8)
+det(inmate-10, any-9)
+nmod:for(CALLS-7, inmate-10)
+punct(CALLS-7, ,-11)
+mark(emergency-18, unless-12)
+det:predet(call-15, such-13)
+det(call-15, a-14)
+nsubj(emergency-18, call-15)
+cop(emergency-18, is-16)
+det(emergency-18, an-17)
+advcl:unless(CALLS-7, emergency-18)
+punct(emergency-18, ,-19)
+cc(emergency-18, and-20)
+det(emergency-22, the-21)
+nsubjpass(verified-25, emergency-22)
+aux(verified-25, can-23)
+auxpass(verified-25, be-24)
+advcl:unless(CALLS-7, verified-25)
+conj:and(emergency-18, verified-25)
+punct(CALLS-7, .-26)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[15, 15] [?1, ?2, ?3, ?4, CALLS7, INCOMING5, NO4, PHONE6, There1, call15, emergency22, emergency18, inmate10, such13, verified25]
+?1-any->inmate10
+?4-the->emergency22
+?1-for->CALLS7
+NO4-  : be ->CALLS7
+verified25-unless->CALLS7
+PHONE6- ->CALLS7
+INCOMING5- ->CALLS7
+?4-  : can  : be ->verified25
+There1-  : shall ->CALLS7
+?2-unless->CALLS7
+?3-a->call15
+?2-an->emergency18
+verified25-and->?2
+?3-  : is ->?2
+such13-predet->?3
+
+[emergency18<-an-?2
+	(<-  : is -?3<-predet-such13)
+	<-and-verified25<-  : can  : be -?4;
+inmate10<-any-?1;
+CALLS7
+	(<-unless-*?2)
+	(<-unless-*verified25)
+	(<-for-*?1)
+	(<- -INCOMING5)
+	(<-  : be -NO4)
+	(<- -PHONE6)
+	<-  : shall -There1;
+call15<-a-*?3;
+emergency22<-the-*?4]

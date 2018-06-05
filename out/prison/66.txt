@@ -1,0 +1,82 @@
+Inmates are not allowed to gamble or play games of chance.
+------CorefChainz
+Inmates-NNS 
+are-VBP 
+not-RB 
+allowed-VBN 
+to-TO 
+gamble-VB 
+or-CC 
+play-VB 
+games-NNS 
+of-IN 
+chance-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> VBP 	-> are
+	 	-> RB 	-> not
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> gamble
+	 	-> CC 	-> or
+	 	-> VB 	-> play
+	 	-> NP 	-> NP 	-> NNS 	-> games
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> chance
+									 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(allowed-4, Inmates-1)
+nsubj:xsubj(gamble-6, Inmates-1)
+nsubj:xsubj(play-8, Inmates-1)
+auxpass(allowed-4, are-2)
+neg(allowed-4, not-3)
+root(ROOT-0, allowed-4)
+mark(gamble-6, to-5)
+xcomp(allowed-4, gamble-6)
+cc(gamble-6, or-7)
+xcomp(allowed-4, play-8)
+conj:or(gamble-6, play-8)
+dobj(gamble-6, games-9)
+case(chance-11, of-10)
+nmod:of(games-9, chance-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-4)
+nsubjpass(allowed-4, Inmates-1)
+nsubj:xsubj(gamble-6, Inmates-1)
+auxpass(allowed-4, are-2)
+neg(allowed-4, not-3)
+mark(gamble-6, to-5)
+xcomp(allowed-4, gamble-6)
+cc(gamble-6, or-7)
+xcomp(allowed-4, play-8)
+conj:or(gamble-6, play-8)
+dobj(gamble-6, games-9)
+case(chance-11, of-10)
+nmod:of(games-9, chance-11)
+punct(allowed-4, .-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 8] [Inmates1, allowed4, chance11, gamble6, games9, not3, play8]
+Inmates1-  : are  : are ->allowed4
+play8-or->gamble6
+not3- ->allowed4
+Inmates1- ->gamble6
+chance11-of->games9
+play8- ->allowed4
+games9- ->gamble6
+gamble6-  : to ->allowed4
+
+[allowed4
+	(<-  : to -gamble6
+		(<- -games9<-of-chance11)
+		(<- -Inmates1)
+		<-or-play8)
+	(<-  : are  : are -*Inmates1)
+	(<- -*play8)
+	<- -not3]

@@ -1,0 +1,155 @@
+Used toothbrushes, combs, empty toothpaste packet, empty toilet paper tubes, and pen must be returned prior to getting new ones issued.
+------CorefChainz
+Used-JJ 
+toothbrushes-NNS 
+,-, 
+combs-NNS 
+,-, 
+empty-JJ 
+toothpaste-NN 
+packet-NN 
+,-, 
+empty-JJ 
+toilet-NN 
+paper-NN 
+tubes-NNS 
+,-, 
+and-CC 
+pen-NN 
+must-MD 
+be-VB 
+returned-VBN 
+prior-RB 
+to-TO 
+getting-VBG 
+new-JJ 
+ones-NNS 
+issued-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> JJ 	-> Used
+	 	-> NNS 	-> toothbrushes
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> combs
+		 	-> , 	-> ,
+	 	-> NP 	-> JJ 	-> empty
+	 	-> NN 	-> toothpaste
+	 	-> NN 	-> packet
+		 	-> , 	-> ,
+	 	-> NP 	-> JJ 	-> empty
+	 	-> NN 	-> toilet
+	 	-> NN 	-> paper
+	 	-> NNS 	-> tubes
+		 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NP 	-> NN 	-> pen
+			 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> returned
+	 	-> ADVP 	-> RB 	-> prior
+	 	-> PP 	-> TO 	-> to
+	 	-> S 	-> VP 	-> VBG 	-> getting
+	 	-> NP 	-> NP 	-> JJ 	-> new
+	 	-> NNS 	-> ones
+		 	-> VP 	-> VBN 	-> issued
+										 	-> . 	-> .
+			
+Dependensee repr
+amod(toothbrushes-2, Used-1)
+nsubjpass(returned-19, toothbrushes-2)
+conj:and(toothbrushes-2, combs-4)
+nsubjpass(returned-19, combs-4)
+amod(packet-8, empty-6)
+compound(packet-8, toothpaste-7)
+conj:and(toothbrushes-2, packet-8)
+nsubjpass(returned-19, packet-8)
+amod(tubes-13, empty-10)
+compound(tubes-13, toilet-11)
+compound(tubes-13, paper-12)
+conj:and(toothbrushes-2, tubes-13)
+nsubjpass(returned-19, tubes-13)
+cc(toothbrushes-2, and-15)
+conj:and(toothbrushes-2, pen-16)
+nsubjpass(returned-19, pen-16)
+aux(returned-19, must-17)
+auxpass(returned-19, be-18)
+root(ROOT-0, returned-19)
+advmod(returned-19, prior-20)
+mark(getting-22, to-21)
+advcl(prior-20, getting-22)
+amod(ones-24, new-23)
+dobj(getting-22, ones-24)
+acl(ones-24, issued-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, returned-19)
+amod(toothbrushes-2, Used-1)
+nsubjpass(returned-19, toothbrushes-2)
+punct(toothbrushes-2, ,-3)
+conj:and(toothbrushes-2, combs-4)
+nsubjpass(returned-19, combs-4)
+punct(toothbrushes-2, ,-5)
+amod(packet-8, empty-6)
+compound(packet-8, toothpaste-7)
+conj:and(toothbrushes-2, packet-8)
+nsubjpass(returned-19, packet-8)
+punct(toothbrushes-2, ,-9)
+amod(tubes-13, empty-10)
+compound(tubes-13, toilet-11)
+compound(tubes-13, paper-12)
+conj:and(toothbrushes-2, tubes-13)
+nsubjpass(returned-19, tubes-13)
+punct(toothbrushes-2, ,-14)
+cc(toothbrushes-2, and-15)
+conj:and(toothbrushes-2, pen-16)
+nsubjpass(returned-19, pen-16)
+aux(returned-19, must-17)
+auxpass(returned-19, be-18)
+advmod(getting-22, prior-20)
+mark(getting-22, to-21)
+advcl:to(returned-19, getting-22)
+amod(ones-24, new-23)
+nsubj(issued-25, ones-24)
+xcomp(getting-22, issued-25)
+punct(returned-19, .-26)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[17, 20] [Used1, combs4, empty6, empty10, getting22, issued25, new23, ones24, packet8, paper12, pen16, prior20, returned19, toilet11, toothbrushes2, toothpaste7, tubes13]
+pen16-and->toothbrushes2
+combs4- ->returned19
+pen16-  : must  : be ->returned19
+Used1- ->toothbrushes2
+getting22-to->returned19
+issued25- ->getting22
+packet8- ->returned19
+paper12- ->tubes13
+packet8-and->toothbrushes2
+toothbrushes2- ->returned19
+prior20- ->getting22
+toothpaste7- ->packet8
+toilet11- ->tubes13
+tubes13-and->toothbrushes2
+combs4-and->toothbrushes2
+empty6- ->packet8
+tubes13- ->returned19
+empty10- ->tubes13
+ones24- ->issued25
+new23- ->ones24
+
+[returned19
+	(<-to-getting22
+		(<- -issued25<- -ones24<- -new23)
+		<- -prior20)
+	(<- -toothbrushes2
+		(<-and-packet8(<- -empty6)<- -toothpaste7)
+		(<-and-tubes13(<- -empty10)(<- -paper12)<- -toilet11)
+		(<- -Used1)
+		(<-and-combs4)
+		<-and-pen16)
+	(<- -*packet8)
+	(<- -*tubes13)
+	(<- -*combs4)
+	<-  : must  : be -*pen16]

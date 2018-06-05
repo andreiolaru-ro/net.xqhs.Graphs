@@ -1,0 +1,238 @@
+In the event you are observed, or suspected to be in violation of the jail rules, the staff member making the observation shall prepare and submit a written report to their supervisor within 24 hours of the violation.
+------CorefChainz
+CHAIN7-["the staff member making the observation" in sentence 1, "their" in sentence 1]
+representative mention: "the staff member making the observation" in sentence 1
+CHAIN10-["violation of the jail rules" in sentence 1, "the violation" in sentence 1]
+representative mention: "the violation" in sentence 1
+In-IN 
+the-DT 
+event-NN 
+you-PRP 
+are-VBP 
+observed-JJ 
+,-, 
+or-CC 
+suspected-VBD 
+to-TO 
+be-VB 
+in-IN 
+violation-NN 
+of-IN 
+the-DT 
+jail-NN 
+rules-NNS 
+,-, 
+the-DT 
+staff-NN 
+member-NN 
+making-VBG 
+the-DT 
+observation-NN 
+shall-MD 
+prepare-VB 
+and-CC 
+submit-VB 
+a-DT 
+written-JJ 
+report-NN 
+to-TO 
+their-PRP$ 
+supervisor-NN 
+within-IN 
+24-CD 
+hours-NNS 
+of-IN 
+the-DT 
+violation-NN 
+.-. 
+ROOT 	-> S 	-> PP 	-> IN 	-> In
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> event
+		 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VP 	-> VBP 	-> are
+	 	-> ADJP 	-> JJ 	-> observed
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VBD 	-> suspected
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> be
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> NN 	-> violation
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NNS 	-> rules
+														 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> staff
+	 	-> NN 	-> member
+		 	-> VP 	-> VBG 	-> making
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> observation
+				 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> prepare
+	 	-> CC 	-> and
+	 	-> VB 	-> submit
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> written
+	 	-> NN 	-> report
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NN 	-> supervisor
+				 	-> PP 	-> IN 	-> within
+	 	-> NP 	-> NP 	-> CD 	-> 24
+	 	-> NNS 	-> hours
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> violation
+							 	-> . 	-> .
+			
+Dependensee repr
+case(event-3, In-1)
+det(event-3, the-2)
+nmod:in(prepare-26, event-3)
+nsubj(observed-6, you-4)
+nsubj(suspected-9, you-4)
+nsubj:xsubj(violation-13, you-4)
+cop(observed-6, are-5)
+acl:relcl(event-3, observed-6)
+cc(observed-6, or-8)
+acl:relcl(event-3, suspected-9)
+conj:or(observed-6, suspected-9)
+mark(violation-13, to-10)
+cop(violation-13, be-11)
+case(violation-13, in-12)
+xcomp(suspected-9, violation-13)
+case(rules-17, of-14)
+det(rules-17, the-15)
+compound(rules-17, jail-16)
+nmod:of(violation-13, rules-17)
+det(member-21, the-19)
+compound(member-21, staff-20)
+nsubj(prepare-26, member-21)
+nsubj(submit-28, member-21)
+acl(member-21, making-22)
+det(observation-24, the-23)
+dobj(making-22, observation-24)
+aux(prepare-26, shall-25)
+root(ROOT-0, prepare-26)
+cc(prepare-26, and-27)
+conj:and(prepare-26, submit-28)
+det(report-31, a-29)
+amod(report-31, written-30)
+dobj(prepare-26, report-31)
+case(supervisor-34, to-32)
+nmod:poss(supervisor-34, their-33)
+nmod:to(report-31, supervisor-34)
+case(hours-37, within-35)
+nummod(hours-37, 24-36)
+nmod:within(prepare-26, hours-37)
+case(violation-40, of-38)
+det(violation-40, the-39)
+nmod:of(hours-37, violation-40)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, prepare-26)
+case(event-3, In-1)
+det(event-3, the-2)
+nmod:in(observed-6, event-3)
+nsubjpass(observed-6, you-4)
+nsubjpass(suspected-9, you-4)
+nsubj:xsubj(violation-13, you-4)
+auxpass(observed-6, are-5)
+ccomp(prepare-26, observed-6)
+punct(observed-6, ,-7)
+cc(observed-6, or-8)
+conj:or(observed-6, suspected-9)
+ccomp(prepare-26, suspected-9)
+mark(violation-13, to-10)
+cop(violation-13, be-11)
+case(violation-13, in-12)
+xcomp(suspected-9, violation-13)
+case(rules-17, of-14)
+det(rules-17, the-15)
+compound(rules-17, jail-16)
+nmod:of(violation-13, rules-17)
+punct(prepare-26, ,-18)
+det(member-21, the-19)
+compound(member-21, staff-20)
+nsubj(prepare-26, member-21)
+nsubj(submit-28, member-21)
+acl(member-21, making-22)
+det(observation-24, the-23)
+dobj(making-22, observation-24)
+aux(prepare-26, shall-25)
+cc(prepare-26, and-27)
+conj:and(prepare-26, submit-28)
+det(report-31, a-29)
+amod(report-31, written-30)
+dobj(prepare-26, report-31)
+case(supervisor-34, to-32)
+nmod:poss(supervisor-34, their-33)
+nmod:to(report-31, supervisor-34)
+case(hours-37, within-35)
+nummod(hours-37, 24-36)
+nmod:within(prepare-26, hours-37)
+case(violation-40, of-38)
+det(violation-40, the-39)
+nmod:of(hours-37, violation-40)
+punct(prepare-26, .-41)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[26, 31] [2436, ?1, ?2, ?3, ?4, ?5, ?6, event3, hours37, jail16, making22, member21, observation24, observed6, prepare26, report31, rules17, staff20, submit28, supervisor34, suspected9, their33, violation40, violation13, written30, you4]
+written30- ->?1
+?4-the->member21
+you4- ->suspected9
+?6-of->hours37
+?5-in : In ->observed6
+their33-poss->supervisor34
+?3- ->making22
+?4- ->submit28
+?1-a->report31
+violation13-==->?6
+staff20- ->?4
+?1- ->prepare26
+?4- ->prepare26
+observed6- ->prepare26
+?2-the->rules17
+supervisor34-to->?1
+?3-the->observation24
+hours37-within->prepare26
+their33-==->?4
+violation13-  : to  : be  : in ->suspected9
+suspected9-or->observed6
+submit28-and : shall ->prepare26
+making22- ->?4
+you4-  : are ->observed6
+you4- ->violation13
+suspected9- ->prepare26
+2436- ->hours37
+?6-the->violation40
+jail16- ->?2
+?5-the->event3
+?2-of->violation13
+
+[prepare26
+	(<-within-hours37
+		(<-of-?6<-==-violation13(<-of-?2<- -jail16)<- -you4)
+		<- -2436)
+	(<-and : shall -submit28<- -?4(<- -making22<- -?3)(<- -staff20)<-==-their33)
+	(<- -*?4)
+	(<- -?1
+		(<-to-supervisor34<-poss-*their33)
+		<- -written30)
+	(<- -observed6
+		(<-  : are -*you4)
+		(<-in : In -?5)
+		<-or-suspected9(<-  : to  : be  : in -*violation13)<- -*you4)
+	<- -*suspected9;
+report31<-a-*?1;
+event3<-the-*?5;
+member21<-the-*?4;
+observation24<-the-*?3;
+rules17<-the-*?2;
+violation40<-the-*?6]

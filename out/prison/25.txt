@@ -1,0 +1,417 @@
+Inmates shall not alter in any way the condition of the walls, ceilings, locks, windows, vents, or any other fixture or equipment of the Grant County Jail. This includes tampering with televisions, television outlets, cables, or cords. If tampering occurs, the television shall be removed.
+------CorefChainz
+CHAIN15-["the walls" in sentence 1, "This" in sentence 2]
+representative mention: "the walls" in sentence 1
+Inmates-NNS 
+shall-MD 
+not-RB 
+alter-VB 
+in-IN 
+any-DT 
+way-NN 
+the-DT 
+condition-NN 
+of-IN 
+the-DT 
+walls-NNS 
+,-, 
+ceilings-NNS 
+,-, 
+locks-NNS 
+,-, 
+windows-NNS 
+,-, 
+vents-NNS 
+,-, 
+or-CC 
+any-DT 
+other-JJ 
+fixture-NN 
+or-CC 
+equipment-NN 
+of-IN 
+the-DT 
+Grant-NNP 
+County-NNP 
+Jail-NNP 
+.-. 
+This-DT 
+includes-VBZ 
+tampering-VBG 
+with-IN 
+televisions-NNS 
+,-, 
+television-NN 
+outlets-NNS 
+,-, 
+cables-NNS 
+,-, 
+or-CC 
+cords-NNS 
+.-. 
+If-IN 
+tampering-NNP 
+occurs-VBZ 
+,-, 
+the-DT 
+television-NN 
+shall-MD 
+be-VB 
+removed-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> MD 	-> shall
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> alter
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> way
+			 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> condition
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> walls
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> ceilings
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> locks
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> windows
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> vents
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> other
+	 	-> NN 	-> fixture
+	 	-> CC 	-> or
+	 	-> NN 	-> equipment
+				 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NNP 	-> Jail
+	 	-> . 	-> .
+		 	-> SBAR 	-> S 	-> NP 	-> DT 	-> This
+		 	-> VP 	-> VBZ 	-> includes
+	 	-> S 	-> VP 	-> VBG 	-> tampering
+	 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> NP 	-> NNS 	-> televisions
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> television
+	 	-> NNS 	-> outlets
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> cables
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NNS 	-> cords
+							 	-> . 	-> .
+			 	-> SBAR 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> NNP 	-> tampering
+		 	-> VP 	-> VBZ 	-> occurs
+				 	-> , 	-> ,
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> television
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> removed
+											 	-> . 	-> .
+			
+Dependensee repr
+nsubj(alter-4, Inmates-1)
+aux(alter-4, shall-2)
+neg(alter-4, not-3)
+root(ROOT-0, alter-4)
+case(way-7, in-5)
+det(way-7, any-6)
+nmod:in(alter-4, way-7)
+det(condition-9, the-8)
+dobj(alter-4, condition-9)
+case(walls-12, of-10)
+det(walls-12, the-11)
+nmod:of(condition-9, walls-12)
+nmod:of(condition-9, ceilings-14)
+conj:or(walls-12, ceilings-14)
+nmod:of(condition-9, locks-16)
+conj:or(walls-12, locks-16)
+nmod:of(condition-9, windows-18)
+conj:or(walls-12, windows-18)
+nmod:of(condition-9, vents-20)
+conj:or(walls-12, vents-20)
+cc(walls-12, or-22)
+det(fixture-25, any-23)
+amod(fixture-25, other-24)
+nmod:of(condition-9, fixture-25)
+conj:or(walls-12, fixture-25)
+cc(fixture-25, or-26)
+conj:or(walls-12, equipment-27)
+conj:or(fixture-25, equipment-27)
+case(Jail-32, of-28)
+det(Jail-32, the-29)
+compound(Jail-32, Grant-30)
+compound(Jail-32, County-31)
+nmod:of(condition-9, Jail-32)
+nsubj(includes-35, This-34)
+acl:relcl(Jail-32, includes-35)
+xcomp(includes-35, tampering-36)
+case(televisions-38, with-37)
+nmod:with(tampering-36, televisions-38)
+compound(outlets-41, television-40)
+nmod:with(tampering-36, outlets-41)
+conj:or(televisions-38, outlets-41)
+nmod:with(tampering-36, cables-43)
+conj:or(televisions-38, cables-43)
+cc(televisions-38, or-45)
+nmod:with(tampering-36, cords-46)
+conj:or(televisions-38, cords-46)
+mark(occurs-50, If-48)
+nsubj(occurs-50, tampering-49)
+advcl(removed-56, occurs-50)
+det(television-53, the-52)
+nsubjpass(removed-56, television-53)
+aux(removed-56, shall-54)
+auxpass(removed-56, be-55)
+acl:relcl(Jail-32, removed-56)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, alter-4)
+nsubj(alter-4, Inmates-1)
+aux(alter-4, shall-2)
+neg(alter-4, not-3)
+case(way-7, in-5)
+det(way-7, any-6)
+nmod:in(alter-4, way-7)
+det(condition-9, the-8)
+dobj(alter-4, condition-9)
+case(walls-12, of-10)
+det(walls-12, the-11)
+nmod:of(condition-9, walls-12)
+punct(walls-12, ,-13)
+nmod:of(condition-9, ceilings-14)
+conj:or(walls-12, ceilings-14)
+punct(walls-12, ,-15)
+nmod:of(condition-9, locks-16)
+conj:or(walls-12, locks-16)
+punct(walls-12, ,-17)
+nmod:of(condition-9, windows-18)
+conj:or(walls-12, windows-18)
+punct(walls-12, ,-19)
+nmod:of(condition-9, vents-20)
+conj:or(walls-12, vents-20)
+punct(walls-12, ,-21)
+cc(walls-12, or-22)
+det(fixture-25, any-23)
+amod(fixture-25, other-24)
+nmod:of(condition-9, fixture-25)
+conj:or(walls-12, fixture-25)
+cc(fixture-25, or-26)
+conj:or(walls-12, equipment-27)
+conj:or(fixture-25, equipment-27)
+case(Jail-32, of-28)
+det(Jail-32, the-29)
+compound(Jail-32, Grant-30)
+compound(Jail-32, County-31)
+nmod:of(fixture-25, Jail-32)
+punct(alter-4, .-33)
+---
+qqroot(ROOT-0, alter-4)
+nsubj(alter-4, Inmates-1)
+aux(alter-4, shall-2)
+neg(alter-4, not-3)
+case(way-7, in-5)
+det(way-7, any-6)
+nmod:in(alter-4, way-7)
+det(condition-9, the-8)
+dobj(alter-4, condition-9)
+case(walls-12, of-10)
+det(walls-12, the-11)
+nmod:of(condition-9, walls-12)
+punct(walls-12, ,-13)
+nmod:of(condition-9, ceilings-14)
+conj:or(walls-12, ceilings-14)
+punct(walls-12, ,-15)
+nmod:of(condition-9, locks-16)
+conj:or(walls-12, locks-16)
+punct(walls-12, ,-17)
+nmod:of(condition-9, windows-18)
+conj:or(walls-12, windows-18)
+punct(walls-12, ,-19)
+nmod:of(condition-9, vents-20)
+conj:or(walls-12, vents-20)
+punct(walls-12, ,-21)
+cc(walls-12, or-22)
+det(fixture-25, any-23)
+amod(fixture-25, other-24)
+nmod:of(condition-9, fixture-25)
+conj:or(walls-12, fixture-25)
+cc(fixture-25, or-26)
+conj:or(walls-12, equipment-27)
+conj:or(fixture-25, equipment-27)
+case(Jail-32, of-28)
+det(Jail-32, the-29)
+compound(Jail-32, Grant-30)
+compound(Jail-32, County-31)
+nmod:of(fixture-25, Jail-32)
+punct(alter-4, .-33)
+root(ROOT-0, includes-2)
+nsubj(includes-2, This-1)
+xcomp(includes-2, tampering-3)
+case(televisions-5, with-4)
+nmod:with(tampering-3, televisions-5)
+punct(televisions-5, ,-6)
+compound(outlets-8, television-7)
+nmod:with(tampering-3, outlets-8)
+conj:or(televisions-5, outlets-8)
+punct(televisions-5, ,-9)
+nmod:with(tampering-3, cables-10)
+conj:or(televisions-5, cables-10)
+punct(televisions-5, ,-11)
+cc(televisions-5, or-12)
+nmod:with(tampering-3, cords-13)
+conj:or(televisions-5, cords-13)
+punct(includes-2, .-14)
+---
+qqroot(ROOT-0, alter-4)
+nsubj(alter-4, Inmates-1)
+aux(alter-4, shall-2)
+neg(alter-4, not-3)
+case(way-7, in-5)
+det(way-7, any-6)
+nmod:in(alter-4, way-7)
+det(condition-9, the-8)
+dobj(alter-4, condition-9)
+case(walls-12, of-10)
+det(walls-12, the-11)
+nmod:of(condition-9, walls-12)
+punct(walls-12, ,-13)
+nmod:of(condition-9, ceilings-14)
+conj:or(walls-12, ceilings-14)
+punct(walls-12, ,-15)
+nmod:of(condition-9, locks-16)
+conj:or(walls-12, locks-16)
+punct(walls-12, ,-17)
+nmod:of(condition-9, windows-18)
+conj:or(walls-12, windows-18)
+punct(walls-12, ,-19)
+nmod:of(condition-9, vents-20)
+conj:or(walls-12, vents-20)
+punct(walls-12, ,-21)
+cc(walls-12, or-22)
+det(fixture-25, any-23)
+amod(fixture-25, other-24)
+nmod:of(condition-9, fixture-25)
+conj:or(walls-12, fixture-25)
+cc(fixture-25, or-26)
+conj:or(walls-12, equipment-27)
+conj:or(fixture-25, equipment-27)
+case(Jail-32, of-28)
+det(Jail-32, the-29)
+compound(Jail-32, Grant-30)
+compound(Jail-32, County-31)
+nmod:of(fixture-25, Jail-32)
+punct(alter-4, .-33)
+root(ROOT-0, includes-2)
+nsubj(includes-2, This-1)
+xcomp(includes-2, tampering-3)
+case(televisions-5, with-4)
+nmod:with(tampering-3, televisions-5)
+punct(televisions-5, ,-6)
+compound(outlets-8, television-7)
+nmod:with(tampering-3, outlets-8)
+conj:or(televisions-5, outlets-8)
+punct(televisions-5, ,-9)
+nmod:with(tampering-3, cables-10)
+conj:or(televisions-5, cables-10)
+punct(televisions-5, ,-11)
+cc(televisions-5, or-12)
+nmod:with(tampering-3, cords-13)
+conj:or(televisions-5, cords-13)
+punct(includes-2, .-14)
+root(ROOT-0, removed-9)
+mark(occurs-3, If-1)
+nsubj(occurs-3, tampering-2)
+advcl:if(removed-9, occurs-3)
+punct(removed-9, ,-4)
+det(television-6, the-5)
+nsubjpass(removed-9, television-6)
+aux(removed-9, shall-7)
+auxpass(removed-9, be-8)
+punct(removed-9, .-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+G[34, 41] [?1, ?2, ?3, ?4, ?5, ?6, County31, Grant30, Inmates1, Jail32, This1, alter4, cables10, ceilings14, condition9, cords13, equipment27, fixture25, includes2, locks16, not3, occurs3, other24, outlets8, removed9, tampering2, tampering3, television6, television7, televisions5, vents20, walls12, way7, windows18]
+locks16-or->?5
+cords13-with->tampering3
+?3-of->?2
+Grant30- ->?3
+?4-the->television6
+ceilings14-or->?5
+locks16-of->?1
+equipment27-or->?5
+?3-the->Jail32
+televisions5-with->tampering3
+cables10-or->televisions5
+tampering2-  : If ->occurs3
+?2-any->fixture25
+ceilings14-of->?1
+?1-the->condition9
+?2-or->?5
+cords13-or->televisions5
+tampering3- ->includes2
+Inmates1-==->?5
+This1- ->includes2
+outlets8-or->televisions5
+County31- ->?3
+windows18-or->?5
+?4-  : shall  : be ->removed9
+television7- ->outlets8
+vents20-or->?5
+windows18-of->?1
+not3- ->alter4
+equipment27-or->?2
+cables10-with->tampering3
+?2-of->?1
+?5-the->walls12
+Inmates1-  : shall  : shall ->alter4
+other24- ->?2
+occurs3-if->removed9
+?1- ->alter4
+?5-of->?1
+outlets8-with->tampering3
+?6-in->alter4
+?6-any->way7
+vents20-of->?1
+
+[condition9<-the-?1
+	(<-of-?5(<-or-?2(<-of-?3(<- -County31)<- -Grant30)(<-or-equipment27)<- -other24)(<-or-*equipment27)(<-==-Inmates1)(<-or-ceilings14)(<-or-locks16)(<-or-vents20)<-or-windows18)
+	(<-of-*?2)
+	(<-of-*ceilings14)
+	(<-of-*locks16)
+	(<-of-*vents20)
+	<-of-*windows18;
+includes2
+	(<- -tampering3
+		(<-with-televisions5(<-or-outlets8<- -television7)(<-or-cables10)<-or-cords13)
+		(<-with-*outlets8)
+		(<-with-*cables10)
+		<-with-*cords13)
+	<- -This1;
+removed9
+	(<-if-occurs3<-  : If -tampering2)
+	<-  : shall  : be -?4;
+television6<-the-*?4;
+way7<-any-?6;
+alter4
+	(<- -*?1)
+	(<-in-*?6)
+	(<-  : shall  : shall -*Inmates1)
+	<- -not3;
+Jail32<-the-*?3;
+fixture25<-any-*?2;
+walls12<-the-*?5]

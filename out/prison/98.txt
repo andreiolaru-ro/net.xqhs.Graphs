@@ -1,0 +1,184 @@
+No inmate shall possess or use any substance, which may affect the inmate's mental or physical functioning, unless jail staff lawfully dispenses such a substance to the inmate.
+------CorefChainz
+CHAIN3-["No inmate" in sentence 1, "the inmate 's" in sentence 1]
+representative mention: "the inmate 's" in sentence 1
+No-DT 
+inmate-NN 
+shall-MD 
+possess-VB 
+or-CC 
+use-VB 
+any-DT 
+substance-NN 
+,-, 
+which-WDT 
+may-MD 
+affect-VB 
+the-DT 
+inmate-NN 
+'s-POS 
+mental-JJ 
+or-CC 
+physical-JJ 
+functioning-NN 
+,-, 
+unless-IN 
+jail-NN 
+staff-NN 
+lawfully-RB 
+dispenses-VBZ 
+such-PDT 
+a-DT 
+substance-NN 
+to-TO 
+the-DT 
+inmate-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> possess
+	 	-> CC 	-> or
+	 	-> VB 	-> use
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> substance
+		 	-> , 	-> ,
+	 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> affect
+	 	-> NP 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> ADJP 	-> JJ 	-> mental
+	 	-> CC 	-> or
+	 	-> JJ 	-> physical
+		 	-> NN 	-> functioning
+		 	-> , 	-> ,
+	 	-> SBAR 	-> IN 	-> unless
+	 	-> S 	-> NP 	-> NN 	-> jail
+	 	-> NN 	-> staff
+		 	-> ADVP 	-> RB 	-> lawfully
+		 	-> VP 	-> VBZ 	-> dispenses
+	 	-> NP 	-> PDT 	-> such
+	 	-> DT 	-> a
+	 	-> NN 	-> substance
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+														 	-> . 	-> .
+			
+Dependensee repr
+neg(inmate-2, No-1)
+nsubj(possess-4, inmate-2)
+nsubj(use-6, inmate-2)
+aux(possess-4, shall-3)
+root(ROOT-0, possess-4)
+cc(possess-4, or-5)
+conj:or(possess-4, use-6)
+det(substance-8, any-7)
+dobj(possess-4, substance-8)
+nsubj(affect-12, substance-8)
+ref(substance-8, which-10)
+aux(affect-12, may-11)
+acl:relcl(substance-8, affect-12)
+det(inmate-14, the-13)
+nmod:poss(functioning-19, inmate-14)
+case(inmate-14, 's-15)
+amod(functioning-19, mental-16)
+cc(mental-16, or-17)
+conj:or(mental-16, physical-18)
+amod(functioning-19, physical-18)
+dobj(affect-12, functioning-19)
+mark(dispenses-25, unless-21)
+compound(staff-23, jail-22)
+nsubj(dispenses-25, staff-23)
+advmod(dispenses-25, lawfully-24)
+dep(functioning-19, dispenses-25)
+det:predet(substance-28, such-26)
+det(substance-28, a-27)
+dobj(dispenses-25, substance-28)
+case(inmate-31, to-29)
+det(inmate-31, the-30)
+nmod:to(dispenses-25, inmate-31)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, possess-4)
+neg(inmate-2, No-1)
+nsubj(possess-4, inmate-2)
+nsubj(use-6, inmate-2)
+aux(possess-4, shall-3)
+cc(possess-4, or-5)
+conj:or(possess-4, use-6)
+det(substance-8, any-7)
+dobj(possess-4, substance-8)
+nsubj(affect-12, substance-8)
+punct(substance-8, ,-9)
+ref(substance-8, which-10)
+aux(affect-12, may-11)
+acl:relcl(substance-8, affect-12)
+det(inmate-14, the-13)
+nmod:poss(functioning-19, inmate-14)
+case(inmate-14, 's-15)
+amod(functioning-19, mental-16)
+cc(mental-16, or-17)
+conj:or(mental-16, physical-18)
+amod(functioning-19, physical-18)
+dobj(affect-12, functioning-19)
+punct(possess-4, ,-20)
+mark(dispenses-25, unless-21)
+compound(staff-23, jail-22)
+nsubj(dispenses-25, staff-23)
+advmod(dispenses-25, lawfully-24)
+advcl:unless(possess-4, dispenses-25)
+amod(substance-28, such-26)
+det(substance-28, a-27)
+dobj(dispenses-25, substance-28)
+case(inmate-31, to-29)
+det(inmate-31, the-30)
+nmod:to(dispenses-25, inmate-31)
+punct(possess-4, .-32)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[21, 24] [?1, ?2, ?3, ?4, No1, affect12, dispenses25, functioning19, inmate31, inmate14, inmate2, jail22, lawfully24, mental16, physical18, possess4, staff23, substance8, substance28, such26, use6]
+?3-to->dispenses25
+?4-the->inmate14
+functioning19- ->affect12
+inmate2-  : shall ->possess4
+?1- ->possess4
+mental16- ->functioning19
+jail22- ->staff23
+inmate2- ->use6
+affect12-  : which  : which  : may  : may ->?1
+?4-poss : 's ->functioning19
+physical18-or->mental16
+No1- ->inmate2
+?1- ->affect12
+lawfully24- ->dispenses25
+?2- ->dispenses25
+dispenses25-unless->possess4
+inmate2-==->?4
+staff23- ->dispenses25
+physical18- ->functioning19
+?1-any->substance8
+such26- ->?2
+?3-the->inmate31
+?2-a->substance28
+use6-or->possess4
+
+[substance8<-any-?1<-  : which  : which  : may  : may -affect12(<- -*?1)<- -functioning19(<-poss : 's -?4<-==-^inmate2)(<- -mental16<-or-physical18)<- -*physical18;
+possess4
+	(<- -*?1)
+	(<-unless-dispenses25
+		(<- -?2<- -such26)
+		(<- -staff23<- -jail22)
+		(<-to-?3)
+		<- -lawfully24)
+	(<-  : shall -inmate2<- -No1)
+	<-or-use6<- -*inmate2;
+inmate31<-the-*?3;
+inmate14<-the-*?4;
+substance28<-a-*?2]

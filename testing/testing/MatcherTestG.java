@@ -26,6 +26,7 @@ import net.xqhs.graphs.nlp.GraphConverter;
 import net.xqhs.graphs.nlp.NLNodeP;
 import net.xqhs.graphs.nlp.Parser;
 import net.xqhs.graphs.pattern.GraphPattern;
+import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.util.logging.LoggerSimple;
 import net.xqhs.util.logging.LoggerSimple.Level;
 import net.xqhs.util.logging.UnitComponent;
@@ -91,21 +92,30 @@ public class MatcherTestG<E> extends GraphMatcherTest {
 
 				GraphMatchingProcess GMQ = GraphMatcherQuick.getMatcher(G, GP,
 						monitoring);
+				if (!GMQ.getBestMatches().isEmpty()) {
+					printSeparator(0, "best Matches["
+							+ GMQ.getBestMatches().get(0).getK() + "] : ");
+					Match bestMatch = GMQ.getBestMatches().get(0);
+					SimpleGraph gph = (SimpleGraph) bestMatch.getGraph();
+					GraphPattern uns = bestMatch.getUnsolvedPart();
+					MatchMaker mm = new MatchMaker();
+					SimpleGraph g = mm.nowKiss(gph, uns);
+					TextGraphRepresentation GR = new TextGraphRepresentation(g)
+							.setLayout("\n", "\t", 15);
+					GR.update();
+					System.out.println(GR.displayRepresentation());
 
-				printSeparator(0, "best Matches["
-						+ GMQ.getBestMatches().get(0).getK() + "] : ");
-				Match bestMatch = GMQ.getBestMatches().get(0);
-				SimpleGraph gph = (SimpleGraph) bestMatch.getGraph();
-				GraphPattern uns = bestMatch.getUnsolvedPart();
-				MatchMaker mm = new MatchMaker();
-				SimpleGraph g = mm.nowKiss(gph, uns);
-				try {
-					Parser.contextPatternVisualize(g, true);
-				} catch (IOException | InterruptedException e) {
+					try {
+						Parser.displayContextPattern(g, true);
+						SimpleGraph sg = new SimpleGraph();
+						sg.addAll(bestMatch.getMatchedGraph().getComponents());
+						Parser.displayContextPattern(sg, true);
+					} catch (IOException | InterruptedException e) {
 
-					e.printStackTrace();
-				}
-
+						e.printStackTrace();
+					}
+				} else
+					System.out.println("NO match :( ");
 				frame.add(canvas);
 				frame.pack();
 				frame.setVisible(true);
@@ -121,17 +131,20 @@ public class MatcherTestG<E> extends GraphMatcherTest {
 		ArrayList<String> patterns = new ArrayList<String>();
 		// patterns.add("When Emily is leaving the house through the front door, she should be restrained.");
 		// patterns.add("Emily needs keys when leaving the house.");
-		patterns.add("If Emily is at the front door, she is leaving the house.");
-
+		// patterns.add("If Emily is at the front door, she must be leaving the house.");
+		patterns.add("Recommend me a restaurant which serves fries.");
+		// patterns.add("If rain is forecast, bring along an umbrella.");
 		StanfordCoreNLP pipeline = Parser.init();
 		ArrayList<ContextPattern> pat = Parser.convertContextPatterns(patterns,
 				pipeline);
 		for (ContextPattern contextPattern : pat) {
-			Viewer v = Parser.contextPatternVisualize(contextPattern, true);
+			Viewer v = Parser.displayContextPattern(contextPattern, true);
 		}
 
 		ContextGraph cgh = new GraphConverter(
-				Arrays.asList("Emily is at the front door."), pipeline).getG();
+				Arrays.asList("McDonalds is a fast-food restaurant and it serves french fries."),
+				// Arrays.asList("rain is forecast."),
+				pipeline).getG();
 		if (pat != null && cgh != null) {
 			result.put(NAME_GRAPH, cgh);
 			result.put(NAME_PATTERN, pat.get(0));

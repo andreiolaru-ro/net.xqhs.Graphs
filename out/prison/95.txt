@@ -1,0 +1,48 @@
+No inmate shall communicate false information.
+------CorefChainz
+No-DT 
+inmate-NN 
+shall-MD 
+communicate-VB 
+false-JJ 
+information-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> communicate
+	 	-> NP 	-> JJ 	-> false
+	 	-> NN 	-> information
+				 	-> . 	-> .
+			
+Dependensee repr
+neg(inmate-2, No-1)
+nsubj(communicate-4, inmate-2)
+aux(communicate-4, shall-3)
+root(ROOT-0, communicate-4)
+amod(information-6, false-5)
+dobj(communicate-4, information-6)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, communicate-4)
+neg(inmate-2, No-1)
+nsubj(communicate-4, inmate-2)
+aux(communicate-4, shall-3)
+amod(information-6, false-5)
+dobj(communicate-4, information-6)
+punct(communicate-4, .-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[5, 4] [No1, communicate4, false5, information6, inmate2]
+No1- ->inmate2
+inmate2-  : shall ->communicate4
+information6- ->communicate4
+false5- ->information6
+
+[communicate4
+	(<- -information6<- -false5)
+	<-  : shall -inmate2<- -No1]

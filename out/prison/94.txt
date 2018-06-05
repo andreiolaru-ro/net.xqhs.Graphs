@@ -1,0 +1,187 @@
+DO NOT pass notes to, or from inmates or visitors, either in person, or by placing notes in books, or other places for other inmates to find.
+------CorefChainz
+DO-NNP 
+NOT-NNP 
+pass-VBP 
+notes-NNS 
+to-TO 
+,-, 
+or-CC 
+from-IN 
+inmates-NNS 
+or-CC 
+visitors-NNS 
+,-, 
+either-RB 
+in-IN 
+person-NN 
+,-, 
+or-CC 
+by-IN 
+placing-VBG 
+notes-NNS 
+in-IN 
+books-NNS 
+,-, 
+or-CC 
+other-JJ 
+places-NNS 
+for-IN 
+other-JJ 
+inmates-NNS 
+to-TO 
+find-VB 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> DO
+	 	-> NNP 	-> NOT
+		 	-> VP 	-> VBP 	-> pass
+	 	-> NP 	-> NNS 	-> notes
+		 	-> PP 	-> PP 	-> TO 	-> to
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> NNS 	-> inmates
+	 	-> CC 	-> or
+	 	-> NNS 	-> visitors
+			 	-> , 	-> ,
+	 	-> PP 	-> ADVP 	-> RB 	-> either
+		 	-> IN 	-> in
+	 	-> NP 	-> NN 	-> person
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> PP 	-> IN 	-> by
+	 	-> S 	-> VP 	-> VBG 	-> placing
+	 	-> NP 	-> NP 	-> NP 	-> NNS 	-> notes
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NNS 	-> books
+				 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> JJ 	-> other
+	 	-> NNS 	-> places
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> JJ 	-> other
+	 	-> NNS 	-> inmates
+					 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> find
+									 	-> . 	-> .
+			
+Dependensee repr
+compound(NOT-2, DO-1)
+nsubj(pass-3, NOT-2)
+root(ROOT-0, pass-3)
+dobj(pass-3, notes-4)
+nmod(pass-3, to-5)
+cc(to-5, or-7)
+case(inmates-9, from-8)
+nmod(pass-3, inmates-9)
+conj:or(to-5, inmates-9)
+cc(inmates-9, or-10)
+conj:or(to-5, visitors-11)
+conj:or(inmates-9, visitors-11)
+advmod(person-15, either-13)
+case(person-15, in-14)
+nmod(pass-3, person-15)
+conj:or(to-5, person-15)
+cc(to-5, or-17)
+mark(placing-19, by-18)
+nmod(pass-3, placing-19)
+conj:or(to-5, placing-19)
+dobj(placing-19, notes-20)
+case(books-22, in-21)
+nmod:in(notes-20, books-22)
+cc(notes-20, or-24)
+amod(places-26, other-25)
+dobj(placing-19, places-26)
+conj:or(notes-20, places-26)
+case(inmates-29, for-27)
+amod(inmates-29, other-28)
+nmod:for(places-26, inmates-29)
+mark(find-31, to-30)
+advcl(placing-19, find-31)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, pass-3)
+compound(NOT-2, DO-1)
+nsubj(pass-3, NOT-2)
+nsubj(pass-3''', NOT-2)
+conj:or(pass-3, pass-3''')
+dobj(pass-3, notes-4)
+case(inmates-9, to-5)
+punct(to-5, ,-6)
+cc(to-5, or-7)
+conj:or(to-5, from-8)
+nmod:to(pass-3, inmates-9)
+nmod:from(pass-3''', inmates-9)
+cc(inmates-9, or-10)
+nmod:to(pass-3, visitors-11)
+nmod:from(pass-3''', visitors-11)
+conj:or(inmates-9, visitors-11)
+punct(inmates-9, ,-12)
+cc:preconj(person-15, either-13)
+case(person-15, in-14)
+nmod:in(inmates-9, person-15)
+punct(person-15, ,-16)
+cc(person-15, or-17)
+mark(placing-19, by-18)
+nmod:in(inmates-9, placing-19)
+conj:or(person-15, placing-19)
+dobj(placing-19, notes-20)
+case(books-22, in-21)
+nmod:in(placing-19, books-22)
+punct(person-15, ,-23)
+cc(person-15, or-24)
+amod(places-26, other-25)
+nmod:in(inmates-9, places-26)
+conj:or(person-15, places-26)
+mark(find-31, for-27)
+amod(inmates-29, other-28)
+nsubj(find-31, inmates-29)
+mark(find-31, to-30)
+acl:relcl(places-26, find-31)
+punct(pass-3, .-32)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[17, 20] [DO1, NOT2, books22, either13, find31, from8, inmates29, inmates9, notes20, notes4, other28, other25, pass3, person15, places26, placing19, visitors11]
+person15-in->inmates9
+inmates9-from->pass3
+notes20-  : by ->placing19
+NOT2- ->pass3
+either13-preconj->person15
+visitors11-or->inmates9
+placing19-in->inmates9
+inmates9-to->pass3
+find31-  : for ->places26
+inmates29-  : to ->find31
+books22-in->placing19
+places26-in->inmates9
+placing19-or->person15
+notes4- ->pass3
+visitors11-from->pass3
+DO1- ->NOT2
+visitors11-to->pass3
+other28- ->inmates29
+other25- ->places26
+places26-or->person15
+
+[pass3
+	(<-from-inmates9
+		(<-in-person15(<-or-places26(<-  : for -find31<-  : to -inmates29<- -other28)<- -other25)(<-or-placing19(<-in-books22)<-  : by -notes20)<-preconj-either13)
+		(<-in-*places26)
+		(<-in-*placing19)
+		<-or-visitors11)
+	(<-to-*inmates9
+		(<-in-*places26)
+		(<-in-*placing19)
+		(<-in-person15(<-or-places26(<-  : for -find31<-  : to -inmates29<- -other28)<- -other25)(<-or-placing19(<-in-books22)<-  : by -notes20)<-preconj-either13)
+		<-or-visitors11)
+	(<-from-*inmates9)
+	(<-to-*inmates9)
+	(<-from-*visitors11)
+	(<-to-*visitors11)
+	(<- -NOT2<- -DO1)
+	<- -notes4;
+from8]

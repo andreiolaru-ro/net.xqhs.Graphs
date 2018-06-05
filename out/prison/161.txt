@@ -1,0 +1,153 @@
+Personal checks that an inmate receives in the mail will not be cashed . They will be place with the inmate’s property.
+------CorefChainz
+CHAIN4-["an inmate" in sentence 1, "the inmate 's" in sentence 2]
+representative mention: "the inmate 's" in sentence 2
+Personal-NNP 
+checks-VBZ 
+that-IN 
+an-DT 
+inmate-NN 
+receives-VBZ 
+in-IN 
+the-DT 
+mail-NN 
+will-MD 
+not-RB 
+be-VB 
+cashed-VBN 
+.-. 
+They-PRP 
+will-MD 
+be-VB 
+place-NN 
+with-IN 
+the-DT 
+inmate-NN 
+'s-POS 
+property-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NNP 	-> Personal
+		 	-> VP 	-> VBZ 	-> checks
+	 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+		 	-> VP 	-> VBZ 	-> receives
+	 	-> SBAR 	-> IN 	-> in
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> mail
+		 	-> VP 	-> MD 	-> will
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> cashed
+										 	-> . 	-> .
+		 	-> NP 	-> PRP 	-> They
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> NP 	-> NP 	-> NN 	-> place
+		 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> property
+						 	-> . 	-> .
+			
+Dependensee repr
+nsubj(checks-2, Personal-1)
+dep(place-18, checks-2)
+mark(receives-6, that-3)
+det(inmate-5, an-4)
+nsubj(receives-6, inmate-5)
+ccomp(checks-2, receives-6)
+mark(cashed-13, in-7)
+det(mail-9, the-8)
+nsubjpass(cashed-13, mail-9)
+aux(cashed-13, will-10)
+neg(cashed-13, not-11)
+auxpass(cashed-13, be-12)
+advcl(receives-6, cashed-13)
+nsubj(place-18, They-15)
+aux(place-18, will-16)
+cop(place-18, be-17)
+root(ROOT-0, place-18)
+case(property-23, with-19)
+det(inmate-21, the-20)
+nmod:poss(property-23, inmate-21)
+case(inmate-21, 's-22)
+nmod:with(place-18, property-23)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, cashed-13)
+amod(checks-2, Personal-1)
+dobj(receives-6, checks-2)
+nsubjpass(cashed-13, checks-2)
+ref(checks-2, that-3)
+det(inmate-5, an-4)
+nsubj(receives-6, inmate-5)
+acl:relcl(checks-2, receives-6)
+case(mail-9, in-7)
+det(mail-9, the-8)
+nmod:in(receives-6, mail-9)
+aux(cashed-13, will-10)
+neg(cashed-13, not-11)
+auxpass(cashed-13, be-12)
+punct(cashed-13, .-14)
+---
+qqroot(ROOT-0, cashed-13)
+amod(checks-2, Personal-1)
+dobj(receives-6, checks-2)
+nsubjpass(cashed-13, checks-2)
+ref(checks-2, that-3)
+det(inmate-5, an-4)
+nsubj(receives-6, inmate-5)
+acl:relcl(checks-2, receives-6)
+case(mail-9, in-7)
+det(mail-9, the-8)
+nmod:in(receives-6, mail-9)
+aux(cashed-13, will-10)
+neg(cashed-13, not-11)
+auxpass(cashed-13, be-12)
+punct(cashed-13, .-14)
+root(ROOT-0, place-4)
+nsubj(place-4, They-1)
+aux(place-4, will-2)
+cop(place-4, be-3)
+case(property-9, with-5)
+det(inmate-7, the-6)
+nmod:poss(property-9, inmate-7)
+case(inmate-7, 's-8)
+nmod:with(place-4, property-9)
+punct(place-4, .-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[14, 14] [?1, ?2, ?3, Personal1, They1, cashed13, checks2, inmate5, inmate7, mail9, not11, place4, property9, receives6]
+?2-in->receives6
+not11-  : will  : be ->cashed13
+?3-the->inmate7
+?1- ->receives6
+checks2- ->cashed13
+property9-with->place4
+?2-the->mail9
+?1-==->?3
+Personal1-  : that ->checks2
+?1-an->inmate5
+receives6- ->checks2
+They1-  : will  : be ->place4
+?3-poss : 's ->property9
+checks2- ->receives6
+
+[cashed13
+	(<- -checks2
+		(<- -receives6(<- -*checks2)(<- -?1)<-in-?2)
+		<-  : that -Personal1)
+	<-  : will  : be -not11;
+place4
+	(<-with-property9<-poss : 's -?3<-==-*?1)
+	<-  : will  : be -They1;
+inmate5<-an-*?1;
+inmate7<-the-*?3;
+mail9<-the-*?2]

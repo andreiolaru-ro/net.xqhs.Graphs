@@ -1,0 +1,376 @@
+The only things on the envelope should be the inmate’s full name, and the return address of the jail in the upper left-hand corner of the envelope, and the full name and address of the person the letter is being sent to. Mail that does not adhere to this rule will be returned to the inmate.
+------CorefChainz
+CHAIN7-["the envelope" in sentence 1, "the envelope" in sentence 1]
+representative mention: "the envelope" in sentence 1
+The-DT 
+only-JJ 
+things-NNS 
+on-IN 
+the-DT 
+envelope-NN 
+should-MD 
+be-VB 
+the-DT 
+inmate-NN 
+'s-POS 
+full-JJ 
+name-NN 
+,-, 
+and-CC 
+the-DT 
+return-NN 
+address-NN 
+of-IN 
+the-DT 
+jail-NN 
+in-IN 
+the-DT 
+upper-JJ 
+left-hand-JJ 
+corner-NN 
+of-IN 
+the-DT 
+envelope-NN 
+,-, 
+and-CC 
+the-DT 
+full-JJ 
+name-NN 
+and-CC 
+address-NN 
+of-IN 
+the-DT 
+person-NN 
+the-DT 
+letter-NN 
+is-VBZ 
+being-VBG 
+sent-VBN 
+to-TO 
+.-. 
+Mail-NNP 
+that-WDT 
+does-VBZ 
+not-RB 
+adhere-VB 
+to-TO 
+this-DT 
+rule-NN 
+will-MD 
+be-VB 
+returned-VBN 
+to-TO 
+the-DT 
+inmate-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NP 	-> DT 	-> The
+	 	-> JJ 	-> only
+	 	-> NNS 	-> things
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> envelope
+				 	-> VP 	-> MD 	-> should
+	 	-> VP 	-> VB 	-> be
+	 	-> NP 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> JJ 	-> full
+	 	-> NN 	-> name
+		 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> return
+	 	-> NN 	-> address
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> upper
+	 	-> JJ 	-> left-hand
+	 	-> NN 	-> corner
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> envelope
+												 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> S 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> full
+	 	-> NN 	-> name
+		 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> NP 	-> NN 	-> address
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> person
+		 	-> SBAR 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> letter
+		 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBG 	-> being
+	 	-> VP 	-> VBN 	-> sent
+	 	-> PP 	-> TO 	-> to
+		 	-> . 	-> .
+									 	-> NP 	-> NP 	-> NNP 	-> Mail
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> VP 	-> VBZ 	-> does
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> adhere
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> rule
+										 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> returned
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+							 	-> . 	-> .
+			
+Dependensee repr
+det(things-3, The-1)
+amod(things-3, only-2)
+nsubj(name-13, things-3)
+case(envelope-6, on-4)
+det(envelope-6, the-5)
+nmod:on(things-3, envelope-6)
+aux(name-13, should-7)
+cop(name-13, be-8)
+det(inmate-10, the-9)
+nmod:poss(name-13, inmate-10)
+case(inmate-10, 's-11)
+amod(name-13, full-12)
+root(ROOT-0, name-13)
+cc(name-13, and-15)
+det(address-18, the-16)
+compound(address-18, return-17)
+conj:and(name-13, address-18)
+case(jail-21, of-19)
+det(jail-21, the-20)
+nmod:of(address-18, jail-21)
+case(corner-26, in-22)
+det(corner-26, the-23)
+amod(corner-26, upper-24)
+amod(corner-26, left-hand-25)
+nmod:in(jail-21, corner-26)
+case(envelope-29, of-27)
+det(envelope-29, the-28)
+nmod:of(corner-26, envelope-29)
+cc(name-13, and-31)
+det(name-34, the-32)
+amod(name-34, full-33)
+nsubjpass(returned-57, name-34)
+cc(name-34, and-35)
+conj:and(name-34, address-36)
+nsubjpass(returned-57, address-36)
+case(person-39, of-37)
+det(person-39, the-38)
+nmod:of(address-36, person-39)
+det(letter-41, the-40)
+nsubjpass(sent-44, letter-41)
+aux(sent-44, is-42)
+auxpass(sent-44, being-43)
+acl:relcl(person-39, sent-44)
+nmod(sent-44, to-45)
+dep(address-36, Mail-47)
+nsubj(adhere-51, Mail-47)
+ref(Mail-47, that-48)
+aux(adhere-51, does-49)
+neg(adhere-51, not-50)
+acl:relcl(Mail-47, adhere-51)
+case(rule-54, to-52)
+det(rule-54, this-53)
+nmod:to(adhere-51, rule-54)
+aux(returned-57, will-55)
+auxpass(returned-57, be-56)
+conj:and(name-13, returned-57)
+case(inmate-60, to-58)
+det(inmate-60, the-59)
+nmod:to(returned-57, inmate-60)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, name-13)
+det(things-3, The-1)
+amod(things-3, only-2)
+nsubj(name-13, things-3)
+case(envelope-6, on-4)
+det(envelope-6, the-5)
+nmod:on(things-3, envelope-6)
+aux(name-13, should-7)
+cop(name-13, be-8)
+det(inmate-10, the-9)
+nmod:poss(name-13, inmate-10)
+case(inmate-10, 's-11)
+amod(name-13, full-12)
+punct(name-13, ,-14)
+cc(name-13, and-15)
+det(address-18, the-16)
+compound(address-18, return-17)
+conj:and(name-13, address-18)
+case(jail-21, of-19)
+det(jail-21, the-20)
+nmod:of(address-18, jail-21)
+case(corner-26, in-22)
+det(corner-26, the-23)
+amod(corner-26, upper-24)
+amod(corner-26, left-hand-25)
+nmod:in(jail-21, corner-26)
+case(envelope-29, of-27)
+det(envelope-29, the-28)
+nmod:of(corner-26, envelope-29)
+punct(name-13, ,-30)
+cc(name-13, and-31)
+det(name-34, the-32)
+amod(name-34, full-33)
+conj:and(name-13, name-34)
+cc(name-34, and-35)
+conj:and(name-13, address-36)
+conj:and(name-34, address-36)
+case(person-39, of-37)
+det(person-39, the-38)
+nmod:of(name-34, person-39)
+det(letter-41, the-40)
+nsubjpass(sent-44, letter-41)
+aux(sent-44, is-42)
+auxpass(sent-44, being-43)
+acl:relcl(person-39, sent-44)
+nmod(sent-44, to-45)
+punct(name-13, .-46)
+---
+qqroot(ROOT-0, name-13)
+det(things-3, The-1)
+amod(things-3, only-2)
+nsubj(name-13, things-3)
+case(envelope-6, on-4)
+det(envelope-6, the-5)
+nmod:on(things-3, envelope-6)
+aux(name-13, should-7)
+cop(name-13, be-8)
+det(inmate-10, the-9)
+nmod:poss(name-13, inmate-10)
+case(inmate-10, 's-11)
+amod(name-13, full-12)
+punct(name-13, ,-14)
+cc(name-13, and-15)
+det(address-18, the-16)
+compound(address-18, return-17)
+conj:and(name-13, address-18)
+case(jail-21, of-19)
+det(jail-21, the-20)
+nmod:of(address-18, jail-21)
+case(corner-26, in-22)
+det(corner-26, the-23)
+amod(corner-26, upper-24)
+amod(corner-26, left-hand-25)
+nmod:in(jail-21, corner-26)
+case(envelope-29, of-27)
+det(envelope-29, the-28)
+nmod:of(corner-26, envelope-29)
+punct(name-13, ,-30)
+cc(name-13, and-31)
+det(name-34, the-32)
+amod(name-34, full-33)
+conj:and(name-13, name-34)
+cc(name-34, and-35)
+conj:and(name-13, address-36)
+conj:and(name-34, address-36)
+case(person-39, of-37)
+det(person-39, the-38)
+nmod:of(name-34, person-39)
+det(letter-41, the-40)
+nsubjpass(sent-44, letter-41)
+aux(sent-44, is-42)
+auxpass(sent-44, being-43)
+acl:relcl(person-39, sent-44)
+nmod(sent-44, to-45)
+punct(name-13, .-46)
+root(ROOT-0, returned-11)
+nsubj(adhere-5, Mail-1)
+nsubjpass(returned-11, Mail-1)
+ref(Mail-1, that-2)
+aux(adhere-5, does-3)
+neg(adhere-5, not-4)
+acl:relcl(Mail-1, adhere-5)
+case(rule-8, to-6)
+det(rule-8, this-7)
+nmod:to(adhere-5, rule-8)
+aux(returned-11, will-9)
+auxpass(returned-11, be-10)
+case(inmate-14, to-12)
+det(inmate-14, the-13)
+nmod:to(returned-11, inmate-14)
+punct(returned-11, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[38, 38] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, Mail1, address18, address36, adhere5, corner26, envelope6, envelope29, full12, full33, inmate14, inmate10, jail21, left-hand25, letter41, name13, name34, not4, only2, person39, return17, returned11, rule8, sent44, things3, to45, upper24]
+left-hand25- ->?2
+?10-and->name13
+?8-of->?10
+?12-the->letter41
+?11-to->adhere5
+?9-The->things3
+address36-and->name13
+?8-the->person39
+adhere5-  : that  : that ->Mail1
+?2-in->?1
+?1-of->?3
+Mail1- ->adhere5
+?3-the->address18
+?1-the->jail21
+full12- ->name13
+?2-the->corner26
+return17- ->?3
+?5-poss : 's  : should  : be ->name13
+?6-on->?9
+?11-this->rule8
+?7-the->envelope29
+Mail1- ->returned11
+?4-to : will  : be ->returned11
+?3-and->name13
+?6-the->envelope6
+?10-the->name34
+?9- ->name13
+?4-the->inmate14
+not4-  : does ->adhere5
+to45- ->sent44
+sent44- ->?8
+upper24- ->?2
+?5-the->inmate10
+?12-  : is  : being  : being ->sent44
+address36-and->?10
+?7-of->?2
+only2- ->?9
+full33- ->?10
+
+[address18<-the-?3
+	(<-of-?1<-in-?2(<-of-?7)(<- -left-hand25)<- -upper24)
+	<- -return17;
+name34<-the-?10
+	(<-of-?8<- -sent44(<-  : is  : being  : being -?12)<- -to45)
+	(<-and-address36)
+	<- -full33;
+returned11
+	(<- -Mail1<-  : that  : that -adhere5(<- -*Mail1)(<-to-?11)<-  : does -not4)
+	<-to : will  : be -?4;
+things3<-The-?9
+	(<-on-?6)
+	<- -only2;
+inmate14<-the-*?4;
+inmate10<-the-?5;
+name13
+	(<-and-*?3)
+	(<-and-*?10)
+	(<- -*?9)
+	(<-poss : 's  : should  : be -*?5)
+	(<-and-*address36)
+	<- -full12;
+corner26<-the-*?2;
+envelope6<-the-*?6;
+envelope29<-the-*?7;
+jail21<-the-*?1;
+letter41<-the-*?12;
+person39<-the-*?8;
+rule8<-this-*?11]

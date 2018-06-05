@@ -1,0 +1,176 @@
+Mail is picked up at the Post Office by a department supervisor Monday through Friday. There may be exceptions to this rule on occasion for holidays etc.
+------CorefChainz
+Mail-NNP 
+is-VBZ 
+picked-VBN 
+up-RP 
+at-IN 
+the-DT 
+Post-NNP 
+Office-NNP 
+by-IN 
+a-DT 
+department-NN 
+supervisor-NN 
+Monday-NNP 
+through-IN 
+Friday-NNP 
+.-. 
+There-EX 
+may-MD 
+be-VB 
+exceptions-NNS 
+to-TO 
+this-DT 
+rule-NN 
+on-IN 
+occasion-NN 
+for-IN 
+holidays-FW 
+etc.-FW 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> Mail
+		 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBN 	-> picked
+	 	-> PRT 	-> RP 	-> up
+		 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Post
+	 	-> NNP 	-> Office
+		 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> department
+	 	-> NN 	-> supervisor
+					 	-> NP 	-> NNP 	-> Monday
+		 	-> PP 	-> IN 	-> through
+	 	-> NP 	-> NP 	-> NNP 	-> Friday
+	 	-> . 	-> .
+		 	-> SBAR 	-> S 	-> NP 	-> EX 	-> There
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> be
+	 	-> NP 	-> NNS 	-> exceptions
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> rule
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> NN 	-> occasion
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> FW 	-> holidays
+	 	-> FW 	-> etc.
+															 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(picked-3, Mail-1)
+auxpass(picked-3, is-2)
+root(ROOT-0, picked-3)
+compound:prt(picked-3, up-4)
+case(Office-8, at-5)
+det(Office-8, the-6)
+compound(Office-8, Post-7)
+nmod:at(picked-3, Office-8)
+case(supervisor-12, by-9)
+det(supervisor-12, a-10)
+compound(supervisor-12, department-11)
+nmod:by(Office-8, supervisor-12)
+nmod:tmod(picked-3, Monday-13)
+case(Friday-15, through-14)
+nmod:through(picked-3, Friday-15)
+expl(exceptions-20, There-17)
+aux(exceptions-20, may-18)
+cop(exceptions-20, be-19)
+acl:relcl(Friday-15, exceptions-20)
+case(rule-23, to-21)
+det(rule-23, this-22)
+nmod:to(exceptions-20, rule-23)
+case(occasion-25, on-24)
+nmod:on(rule-23, occasion-25)
+case(etc.-28, for-26)
+compound(etc.-28, holidays-27)
+nmod:for(occasion-25, etc.-28)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, picked-3)
+nsubjpass(picked-3, Mail-1)
+auxpass(picked-3, is-2)
+compound:prt(picked-3, up-4)
+case(Office-8, at-5)
+det(Office-8, the-6)
+compound(Office-8, Post-7)
+nmod:at(picked-3, Office-8)
+case(supervisor-12, by-9)
+det(supervisor-12, a-10)
+compound(supervisor-12, department-11)
+nmod:agent(picked-3, supervisor-12)
+nmod:tmod(picked-3, Monday-13)
+case(Friday-15, through-14)
+nmod:through(picked-3, Friday-15)
+punct(picked-3, .-16)
+---
+qqroot(ROOT-0, picked-3)
+nsubjpass(picked-3, Mail-1)
+auxpass(picked-3, is-2)
+compound:prt(picked-3, up-4)
+case(Office-8, at-5)
+det(Office-8, the-6)
+compound(Office-8, Post-7)
+nmod:at(picked-3, Office-8)
+case(supervisor-12, by-9)
+det(supervisor-12, a-10)
+compound(supervisor-12, department-11)
+nmod:agent(picked-3, supervisor-12)
+nmod:tmod(picked-3, Monday-13)
+case(Friday-15, through-14)
+nmod:through(picked-3, Friday-15)
+punct(picked-3, .-16)
+root(ROOT-0, exceptions-4)
+expl(exceptions-4, There-1)
+aux(exceptions-4, may-2)
+cop(exceptions-4, be-3)
+case(rule-7, to-5)
+det(rule-7, this-6)
+nmod:to(exceptions-4, rule-7)
+case(occasion-9, on-8)
+nmod:on(exceptions-4, occasion-9)
+case(holidays-11, for-10)
+nmod:for(occasion-9, holidays-11)
+dep(holidays-11, etc.-12)
+punct(exceptions-4, .-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[18, 16] [?1, ?2, ?3, Friday15, Mail1, Monday13, Office8, Post7, There1, department11, etc.12, exceptions4, holidays11, occasion9, picked3, rule7, supervisor12, up4]
+Friday15-through->picked3
+occasion9-on->exceptions4
+There1-  : may  : be ->exceptions4
+?2-the->Office8
+?3-a->supervisor12
+Post7- ->?2
+holidays11-for->occasion9
+?1-to->exceptions4
+?1-this->rule7
+Mail1-  : is ->picked3
+?3-agent->picked3
+up4-prt->picked3
+etc.12- ->holidays11
+?2-at->picked3
+department11-  : by ->?3
+Monday13-tmod->picked3
+
+[exceptions4
+	(<-on-occasion9<-for-holidays11<- -etc.12)
+	(<-to-?1)
+	<-  : may  : be -There1;
+Office8<-the-?2<- -Post7;
+supervisor12<-a-?3<-  : by -department11;
+rule7<-this-*?1;
+picked3
+	(<-at-*?2)
+	(<-agent-*?3)
+	(<-through-Friday15)
+	(<-  : is -Mail1)
+	(<-tmod-Monday13)
+	<-prt-up4]

@@ -1,0 +1,63 @@
+The fees are set by the doctor’s office.
+------CorefChainz
+The-DT 
+fees-NNS 
+are-VBP 
+set-VBN 
+by-IN 
+the-DT 
+doctor-NN 
+'s-POS 
+office-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> The
+	 	-> NNS 	-> fees
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> set
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> doctor
+	 	-> POS 	-> 's
+		 	-> NN 	-> office
+					 	-> . 	-> .
+			
+Dependensee repr
+det(fees-2, The-1)
+nsubjpass(set-4, fees-2)
+auxpass(set-4, are-3)
+root(ROOT-0, set-4)
+case(office-9, by-5)
+det(doctor-7, the-6)
+nmod:poss(office-9, doctor-7)
+case(doctor-7, 's-8)
+nmod:agent(set-4, office-9)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, set-4)
+det(fees-2, The-1)
+nsubjpass(set-4, fees-2)
+auxpass(set-4, are-3)
+case(office-9, by-5)
+det(doctor-7, the-6)
+nmod:poss(office-9, doctor-7)
+case(doctor-7, 's-8)
+nmod:agent(set-4, office-9)
+punct(set-4, .-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[6, 5] [?1, ?2, doctor7, fees2, office9, set4]
+office9-agent : by ->set4
+?2-The->fees2
+?1-poss : 's ->office9
+?1-the->doctor7
+?2-  : are ->set4
+
+[set4
+	(<-agent : by -office9<-poss : 's -?1)
+	<-  : are -?2;
+fees2<-The-*?2;
+doctor7<-the-*?1]

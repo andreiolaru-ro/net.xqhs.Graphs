@@ -1,0 +1,301 @@
+The jail staff will not accept requests from individuals to be put on an inmate’s list. Individuals wishing to be on an inmates visiting list, must send a letter in the mail to the inmate, asking the inmate to put them on the their visiting list.
+------CorefChainz
+CHAIN11-["an inmate 's" in sentence 1, "the inmate" in sentence 2]
+representative mention: "an inmate 's" in sentence 1
+CHAIN13-["Individuals wishing to be on an inmates visiting list" in sentence 2, "them" in sentence 2, "their" in sentence 2]
+representative mention: "Individuals wishing to be on an inmates visiting list" in sentence 2
+CHAIN14-["an inmate 's list" in sentence 1, "the their visiting list" in sentence 2]
+representative mention: "an inmate 's list" in sentence 1
+The-DT 
+jail-NN 
+staff-NN 
+will-MD 
+not-RB 
+accept-VB 
+requests-NNS 
+from-IN 
+individuals-NNS 
+to-TO 
+be-VB 
+put-VBN 
+on-IN 
+an-DT 
+inmate-NN 
+'s-POS 
+list-NN 
+.-. 
+Individuals-NNS 
+wishing-VBG 
+to-TO 
+be-VB 
+on-IN 
+an-DT 
+inmates-NNS 
+visiting-VBG 
+list-NN 
+,-, 
+must-MD 
+send-VB 
+a-DT 
+letter-NN 
+in-IN 
+the-DT 
+mail-NN 
+to-TO 
+the-DT 
+inmate-NN 
+,-, 
+asking-VBG 
+the-DT 
+inmate-NN 
+to-TO 
+put-VB 
+them-PRP 
+on-IN 
+the-DT 
+their-PRP$ 
+visiting-JJ 
+list-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> jail
+	 	-> NN 	-> staff
+		 	-> VP 	-> MD 	-> will
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> accept
+	 	-> NP 	-> NNS 	-> requests
+		 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> NP 	-> NNS 	-> individuals
+		 	-> SBAR 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> put
+	 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> list
+			 	-> . 	-> .
+						 	-> SBAR 	-> S 	-> NP 	-> NP 	-> NNS 	-> Individuals
+		 	-> VP 	-> VBG 	-> wishing
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> be
+	 	-> PP 	-> IN 	-> on
+	 	-> S 	-> NP 	-> DT 	-> an
+	 	-> NNS 	-> inmates
+		 	-> VP 	-> VBG 	-> visiting
+	 	-> NP 	-> NN 	-> list
+										 	-> , 	-> ,
+	 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> send
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> letter
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> mail
+				 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+			 	-> , 	-> ,
+	 	-> S 	-> VP 	-> VBG 	-> asking
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> put
+	 	-> NP 	-> PRP 	-> them
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> DT 	-> the
+	 	-> PRP$ 	-> their
+	 	-> JJ 	-> visiting
+	 	-> NN 	-> list
+																	 	-> . 	-> .
+			
+Dependensee repr
+det(staff-3, The-1)
+compound(staff-3, jail-2)
+nsubj(accept-6, staff-3)
+aux(accept-6, will-4)
+neg(accept-6, not-5)
+root(ROOT-0, accept-6)
+dobj(accept-6, requests-7)
+case(individuals-9, from-8)
+nmod:from(accept-6, individuals-9)
+mark(put-12, to-10)
+auxpass(put-12, be-11)
+acl(individuals-9, put-12)
+case(list-17, on-13)
+det(inmate-15, an-14)
+nmod:poss(list-17, inmate-15)
+case(inmate-15, 's-16)
+nmod:on(put-12, list-17)
+nsubj(send-30, Individuals-19)
+acl(Individuals-19, wishing-20)
+mark(visiting-26, to-21)
+cop(visiting-26, be-22)
+mark(visiting-26, on-23)
+det(inmates-25, an-24)
+nsubj(visiting-26, inmates-25)
+xcomp(wishing-20, visiting-26)
+dobj(visiting-26, list-27)
+aux(send-30, must-29)
+acl:relcl(individuals-9, send-30)
+det(letter-32, a-31)
+dobj(send-30, letter-32)
+case(mail-35, in-33)
+det(mail-35, the-34)
+nmod:in(letter-32, mail-35)
+case(inmate-38, to-36)
+det(inmate-38, the-37)
+nmod:to(send-30, inmate-38)
+advcl(send-30, asking-40)
+det(inmate-42, the-41)
+dobj(asking-40, inmate-42)
+mark(put-44, to-43)
+acl(inmate-42, put-44)
+dobj(put-44, them-45)
+case(list-50, on-46)
+det:predet(list-50, the-47)
+nmod:poss(list-50, their-48)
+amod(list-50, visiting-49)
+nmod:on(put-44, list-50)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, accept-6)
+det(staff-3, The-1)
+compound(staff-3, jail-2)
+nsubj(accept-6, staff-3)
+aux(accept-6, will-4)
+neg(accept-6, not-5)
+dobj(accept-6, requests-7)
+case(individuals-9, from-8)
+nmod:from(requests-7, individuals-9)
+mark(put-12, to-10)
+auxpass(put-12, be-11)
+acl:to(requests-7, put-12)
+case(list-17, on-13)
+det(inmate-15, an-14)
+nmod:poss(list-17, inmate-15)
+case(inmate-15, 's-16)
+nmod:on(put-12, list-17)
+punct(accept-6, .-18)
+---
+qqroot(ROOT-0, accept-6)
+det(staff-3, The-1)
+compound(staff-3, jail-2)
+nsubj(accept-6, staff-3)
+aux(accept-6, will-4)
+neg(accept-6, not-5)
+dobj(accept-6, requests-7)
+case(individuals-9, from-8)
+nmod:from(requests-7, individuals-9)
+mark(put-12, to-10)
+auxpass(put-12, be-11)
+acl:to(requests-7, put-12)
+case(list-17, on-13)
+det(inmate-15, an-14)
+nmod:poss(list-17, inmate-15)
+case(inmate-15, 's-16)
+nmod:on(put-12, list-17)
+punct(accept-6, .-18)
+root(ROOT-0, send-12)
+nsubj(send-12, Individuals-1)
+acl(Individuals-1, wishing-2)
+mark(inmates-7, to-3)
+cop(inmates-7, be-4)
+case(inmates-7, on-5)
+det(inmates-7, an-6)
+xcomp(wishing-2, inmates-7)
+amod(list-9, visiting-8)
+dobj(inmates-7, list-9)
+punct(send-12, ,-10)
+aux(send-12, must-11)
+det(letter-14, a-13)
+dobj(send-12, letter-14)
+case(mail-17, in-15)
+det(mail-17, the-16)
+nmod:in(letter-14, mail-17)
+case(inmate-20, to-18)
+det(inmate-20, the-19)
+nmod:to(send-12, inmate-20)
+punct(send-12, ,-21)
+advcl(send-12, asking-22)
+det(inmate-24, the-23)
+dobj(asking-22, inmate-24)
+nsubj:xsubj(put-26, inmate-24)
+mark(put-26, to-25)
+xcomp(asking-22, put-26)
+dobj(put-26, them-27)
+case(list-32, on-28)
+det(list-32, the-29)
+nmod:poss(list-32, their-30)
+amod(list-32, visiting-31)
+nmod:on(put-26, list-32)
+punct(send-12, .-33)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[33, 36] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, Individuals1, accept6, asking22, individuals9, inmate20, inmate15, inmate24, inmates7, jail2, letter14, list17, list32, list9, mail17, not5, put26, put12, requests7, send12, staff3, their30, them27, visiting31, visiting8, wishing2]
+?2-an->inmate15
+requests7- ->accept6
+put12-to : be ->requests7
+?1-the->inmate20
+put26- ->asking22
+visiting8- ->list9
+them27-==->Individuals1
+?8- ->asking22
+?4-  : will  : will ->accept6
+?7-a->letter14
+?5-on->put26
+?3-in->?7
+list9- ->?6
+wishing2- ->Individuals1
+?5-the->list32
+?1-to->send12
+their30-poss->?5
+?7-  : must ->send12
+?6-  : to  : be  : on ->wishing2
+jail2- ->?4
+individuals9-from->requests7
+asking22- ->send12
+?3-the->mail17
+?8-==->?2
+their30-==->Individuals1
+?4-The->staff3
+?2-poss : 's ->list17
+?5-==->list17
+them27- ->put26
+Individuals1- ->send12
+not5- ->accept6
+?8-the->inmate24
+list17-on->put12
+?8-  : to ->put26
+?6-an->inmates7
+visiting31- ->?5
+
+[accept6
+	(<- -requests7
+		(<-to : be -put12<-on-list17(<-poss : 's -?2<-==-^?8)<-==-?5(<- -visiting31)<-poss-^their30)
+		<-from-individuals9)
+	(<-  : will  : will -?4<- -jail2)
+	<- -not5;
+send12
+	(<- -Individuals1
+		(<- -wishing2<-  : to  : be  : on -?6<- -list9<- -visiting8)
+		(<-==-their30)
+		<-==-them27)
+	(<- -asking22
+		(<- -put26(<-on-*?5)(<-  : to -*?8)<- -*them27)
+		<- -?8)
+	(<-  : must -?7<-in-?3)
+	<-to-?1;
+letter14<-a-*?7;
+staff3<-The-*?4;
+inmate20<-the-*?1;
+inmate15<-an-*?2;
+inmate24<-the-*?8;
+inmates7<-an-*?6;
+list32<-the-*?5;
+mail17<-the-*?3]

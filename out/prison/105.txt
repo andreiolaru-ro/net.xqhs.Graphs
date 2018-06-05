@@ -1,0 +1,222 @@
+Confidential or privileged communications shall include letters to or from a judge, attorney, elected official or authorized members of the clergy.Outgoing mail by inmates to confidential or privileged communication sources as described here shall be SEALED.
+------CorefChainz
+Confidential-NNP 
+or-CC 
+privileged-JJ 
+communications-NNS 
+shall-MD 
+include-VB 
+letters-NNS 
+to-TO 
+or-CC 
+from-IN 
+a-DT 
+judge-NN 
+,-, 
+attorney-NN 
+,-, 
+elected-JJ 
+official-NN 
+or-CC 
+authorized-JJ 
+members-NNS 
+of-IN 
+the-DT 
+clergy.Outgoing-JJ 
+mail-NN 
+by-IN 
+inmates-NNS 
+to-TO 
+confidential-JJ 
+or-CC 
+privileged-JJ 
+communication-NN 
+sources-NNS 
+as-IN 
+described-VBN 
+here-RB 
+shall-MD 
+be-VB 
+SEALED-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NNP 	-> Confidential
+		 	-> CC 	-> or
+	 	-> NP 	-> JJ 	-> privileged
+	 	-> NNS 	-> communications
+			 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> include
+	 	-> NP 	-> NNS 	-> letters
+		 	-> PP 	-> TO 	-> to
+	 	-> CC 	-> or
+	 	-> IN 	-> from
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> judge
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> attorney
+		 	-> , 	-> ,
+	 	-> NP 	-> JJ 	-> elected
+	 	-> NN 	-> official
+		 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> JJ 	-> authorized
+	 	-> NNS 	-> members
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> clergy.Outgoing
+	 	-> NN 	-> mail
+		 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> NNS 	-> inmates
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> JJ 	-> confidential
+	 	-> CC 	-> or
+	 	-> JJ 	-> privileged
+	 	-> NN 	-> communication
+	 	-> NNS 	-> sources
+										 	-> SBAR 	-> IN 	-> as
+	 	-> S 	-> S 	-> VP 	-> VBN 	-> described
+	 	-> ADVP 	-> RB 	-> here
+				 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> SEALED
+								 	-> . 	-> .
+			
+Dependensee repr
+nsubj(include-6, Confidential-1)
+nsubj(include-6', Confidential-1)
+cc(Confidential-1, or-2)
+amod(communications-4, privileged-3)
+conj:or(Confidential-1, communications-4)
+nsubj(include-6, communications-4)
+aux(include-6, shall-5)
+root(ROOT-0, include-6)
+conj:or(include-6, include-6')
+dobj(include-6, letters-7)
+case(judge-12, to-8)
+cc(to-8, or-9)
+conj:or(to-8, from-10)
+det(judge-12, a-11)
+nmod:from(include-6', judge-12)
+nmod:to(include-6, judge-12)
+nmod:from(include-6', attorney-14)
+nmod:to(include-6, attorney-14)
+conj:or(judge-12, attorney-14)
+amod(official-17, elected-16)
+nmod:from(include-6', official-17)
+nmod:to(include-6, official-17)
+conj:or(judge-12, official-17)
+cc(judge-12, or-18)
+amod(members-20, authorized-19)
+nmod:from(include-6', members-20)
+nmod:to(include-6, members-20)
+conj:or(judge-12, members-20)
+case(mail-24, of-21)
+det(mail-24, the-22)
+amod(mail-24, clergy.Outgoing-23)
+nmod:of(members-20, mail-24)
+case(inmates-26, by-25)
+nmod:by(mail-24, inmates-26)
+case(sources-32, to-27)
+amod(sources-32, confidential-28)
+cc(confidential-28, or-29)
+conj:or(confidential-28, privileged-30)
+amod(sources-32, privileged-30)
+compound(sources-32, communication-31)
+nmod:to(inmates-26, sources-32)
+mark(SEALED-38, as-33)
+csubjpass(SEALED-38, described-34)
+advmod(described-34, here-35)
+aux(SEALED-38, shall-36)
+auxpass(SEALED-38, be-37)
+advcl(include-6, SEALED-38)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, include-6)
+compound(communications-4, Confidential-1)
+cc(Confidential-1, or-2)
+conj:or(Confidential-1, privileged-3)
+compound(communications-4, privileged-3)
+nsubj(include-6, communications-4)
+aux(include-6, shall-5)
+dobj(include-6, letters-7)
+dobj(include-6, letters-7''')
+conj:or(letters-7, letters-7''')
+case(judge-12, to-8)
+cc(to-8, or-9)
+conj:or(to-8, from-10)
+det(judge-12, a-11)
+nmod:to(letters-7, judge-12)
+nmod:from(letters-7''', judge-12)
+punct(judge-12, ,-13)
+appos(judge-12, attorney-14)
+punct(judge-12, ,-15)
+amod(official-17, elected-16)
+appos(judge-12, official-17)
+cc(official-17, or-18)
+amod(members-20, authorized-19)
+appos(judge-12, members-20)
+conj:or(official-17, members-20)
+case(mail-24, of-21)
+det(mail-24, the-22)
+amod(mail-24, clergy.Outgoing-23)
+nmod:of(members-20, mail-24)
+case(inmates-26, by-25)
+nmod:by(official-17, inmates-26)
+case(sources-32, to-27)
+amod(sources-32, confidential-28)
+cc(confidential-28, or-29)
+conj:or(confidential-28, privileged-30)
+amod(sources-32, privileged-30)
+compound(sources-32, communication-31)
+nmod:to(inmates-26, sources-32)
+mark(described-34, as-33)
+acl:as(official-17, described-34)
+advmod(described-34, here-35)
+aux(SEALED-38, shall-36)
+auxpass(SEALED-38, be-37)
+ccomp(described-34, SEALED-38)
+punct(include-6, .-39)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[24, 26] [?1, ?2, Confidential1, SEALED38, attorney14, authorized19, clergy.Outgoing23, communication31, communications4, confidential28, described34, elected16, from10, here35, include6, inmates26, judge12, letters7, mail24, members20, official17, privileged3, privileged30, sources32]
+?2-to->letters7
+communications4-  : shall ->include6
+members20- ->?2
+attorney14- ->?2
+?1-the->mail24
+elected16- ->official17
+members20-or->official17
+clergy.Outgoing23- ->?1
+?2-from->letters7
+communication31- ->sources32
+sources32-to->inmates26
+confidential28- ->sources32
+inmates26-by->official17
+privileged3- ->communications4
+here35- ->described34
+privileged30- ->sources32
+letters7- ->include6
+?1-of->members20
+described34-as->official17
+Confidential1- ->communications4
+privileged3-or->Confidential1
+official17- ->?2
+privileged30-or->confidential28
+SEALED38-  : shall  : be ->described34
+authorized19- ->members20
+?2-a->judge12
+
+[include6
+	(<- -letters7
+		(<-to-?2(<- -official17(<-by-inmates26<-to-sources32(<- -confidential28<-or-privileged30)(<- -*privileged30)<- -communication31)(<-or-members20(<-of-?1<- -clergy.Outgoing23)<- -authorized19)(<-as-described34(<-  : shall  : be -SEALED38)<- -here35)<- -elected16)(<- -*members20)<- -attorney14)
+		(<-from-*?2(<- -*members20)(<- -official17(<-by-inmates26<-to-sources32(<- -*privileged30)(<- -confidential28<-or-privileged30)<- -communication31)(<-or-members20(<-of-?1<- -clergy.Outgoing23)<- -authorized19)(<-as-described34(<-  : shall  : be -SEALED38)<- -here35)<- -elected16)<- -attorney14)
+		<-to-*?2
+		<-from-*?2)
+	<-  : shall -communications4
+		(<- -Confidential1<-or-privileged3)
+		<- -*privileged3;
+from10;
+judge12<-a-*?2;
+mail24<-the-*?1]

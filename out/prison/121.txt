@@ -1,0 +1,150 @@
+Jail staff will conduct a breath test, and do random urinalysis on any inmate suspected of consuming alcoholic beverages or abusing any controlled substances.
+------CorefChainz
+Jail-NN 
+staff-NN 
+will-MD 
+conduct-VB 
+a-DT 
+breath-NN 
+test-NN 
+,-, 
+and-CC 
+do-VB 
+random-JJ 
+urinalysis-NNS 
+on-IN 
+any-DT 
+inmate-NN 
+suspected-VBN 
+of-IN 
+consuming-VBG 
+alcoholic-JJ 
+beverages-NNS 
+or-CC 
+abusing-VBG 
+any-DT 
+controlled-JJ 
+substances-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> NN 	-> Jail
+	 	-> NN 	-> staff
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VP 	-> VB 	-> conduct
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> breath
+	 	-> NN 	-> test
+			 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> VP 	-> VB 	-> do
+	 	-> NP 	-> JJ 	-> random
+	 	-> NNS 	-> urinalysis
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> inmate
+		 	-> VP 	-> VBN 	-> suspected
+	 	-> PP 	-> IN 	-> of
+	 	-> S 	-> VP 	-> VP 	-> VBG 	-> consuming
+	 	-> NP 	-> JJ 	-> alcoholic
+	 	-> NNS 	-> beverages
+			 	-> CC 	-> or
+	 	-> VP 	-> VBG 	-> abusing
+	 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> controlled
+	 	-> NNS 	-> substances
+												 	-> . 	-> .
+			
+Dependensee repr
+compound(staff-2, Jail-1)
+nsubj(conduct-4, staff-2)
+nsubj(do-10, staff-2)
+aux(conduct-4, will-3)
+root(ROOT-0, conduct-4)
+det(test-7, a-5)
+compound(test-7, breath-6)
+dobj(conduct-4, test-7)
+cc(conduct-4, and-9)
+conj:and(conduct-4, do-10)
+amod(urinalysis-12, random-11)
+dobj(do-10, urinalysis-12)
+case(inmate-15, on-13)
+det(inmate-15, any-14)
+nmod:on(do-10, inmate-15)
+acl(inmate-15, suspected-16)
+mark(consuming-18, of-17)
+advcl(suspected-16, consuming-18)
+amod(beverages-20, alcoholic-19)
+dobj(consuming-18, beverages-20)
+cc(consuming-18, or-21)
+advcl(suspected-16, abusing-22)
+conj:or(consuming-18, abusing-22)
+det(substances-25, any-23)
+amod(substances-25, controlled-24)
+dobj(abusing-22, substances-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, conduct-4)
+compound(staff-2, Jail-1)
+nsubj(conduct-4, staff-2)
+nsubj(do-10, staff-2)
+aux(conduct-4, will-3)
+det(test-7, a-5)
+compound(test-7, breath-6)
+dobj(conduct-4, test-7)
+punct(conduct-4, ,-8)
+cc(conduct-4, and-9)
+conj:and(conduct-4, do-10)
+amod(urinalysis-12, random-11)
+dobj(do-10, urinalysis-12)
+case(inmate-15, on-13)
+det(inmate-15, any-14)
+nmod:on(do-10, inmate-15)
+acl(inmate-15, suspected-16)
+mark(consuming-18, of-17)
+advcl:of(suspected-16, consuming-18)
+amod(beverages-20, alcoholic-19)
+dobj(consuming-18, beverages-20)
+cc(consuming-18, or-21)
+advcl:of(suspected-16, abusing-22)
+conj:or(consuming-18, abusing-22)
+det(substances-25, any-23)
+amod(substances-25, controlled-24)
+dobj(abusing-22, substances-25)
+punct(conduct-4, .-26)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[19, 20] [?1, ?2, ?3, Jail1, abusing22, alcoholic19, beverages20, breath6, conduct4, consuming18, controlled24, do10, inmate15, random11, staff2, substances25, suspected16, test7, urinalysis12]
+controlled24- ->?3
+staff2-  : will ->conduct4
+abusing22-of->suspected16
+beverages20- ->consuming18
+consuming18-of->suspected16
+?3- ->abusing22
+random11- ->urinalysis12
+abusing22-or->consuming18
+?2-any->inmate15
+?3-any->substances25
+alcoholic19- ->beverages20
+do10-and->conduct4
+breath6- ->?1
+suspected16- ->?2
+Jail1- ->staff2
+?1- ->conduct4
+?1-a->test7
+staff2- ->do10
+?2-on->do10
+urinalysis12- ->do10
+
+[conduct4
+	(<-and-do10
+		(<-on-?2<- -suspected16(<-of-consuming18(<-or-abusing22<- -?3<- -controlled24)<- -beverages20<- -alcoholic19)<-of-*abusing22)
+		(<- -staff2<- -Jail1)
+		<- -urinalysis12<- -random11)
+	(<-  : will -*staff2)
+	<- -?1<- -breath6;
+test7<-a-*?1;
+inmate15<-any-*?2;
+substances25<-any-*?3]

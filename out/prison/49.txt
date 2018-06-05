@@ -1,0 +1,149 @@
+You WILL NOT be allowed to call someone at another phone number if the number you are trying to call has a phone block.
+------CorefChainz
+CHAIN4-["You" in sentence 1, "you" in sentence 1]
+representative mention: "You" in sentence 1
+You-PRP 
+WILL-MD 
+NOT-RB 
+be-VB 
+allowed-VBN 
+to-TO 
+call-VB 
+someone-NN 
+at-IN 
+another-DT 
+phone-NN 
+number-NN 
+if-IN 
+the-DT 
+number-NN 
+you-PRP 
+are-VBP 
+trying-VBG 
+to-TO 
+call-VB 
+has-VBZ 
+a-DT 
+phone-NN 
+block-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> WILL
+	 	-> ADVP 	-> RB 	-> NOT
+		 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> call
+	 	-> NP 	-> NN 	-> someone
+		 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> phone
+	 	-> NN 	-> number
+			 	-> SBAR 	-> IN 	-> if
+	 	-> S 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> number
+		 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBG 	-> trying
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> call
+									 	-> VP 	-> VBZ 	-> has
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> phone
+	 	-> NN 	-> block
+											 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(allowed-5, You-1)
+nsubj:xsubj(call-7, You-1)
+aux(allowed-5, WILL-2)
+neg(allowed-5, NOT-3)
+auxpass(allowed-5, be-4)
+root(ROOT-0, allowed-5)
+mark(call-7, to-6)
+xcomp(allowed-5, call-7)
+dobj(call-7, someone-8)
+case(number-12, at-9)
+det(number-12, another-10)
+compound(number-12, phone-11)
+nmod:at(call-7, number-12)
+mark(has-21, if-13)
+det(number-15, the-14)
+nsubj(has-21, number-15)
+nsubj(trying-18, you-16)
+nsubj:xsubj(call-20, you-16)
+aux(trying-18, are-17)
+acl:relcl(number-15, trying-18)
+mark(call-20, to-19)
+xcomp(trying-18, call-20)
+advcl(call-7, has-21)
+det(block-24, a-22)
+compound(block-24, phone-23)
+dobj(has-21, block-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-5)
+nsubjpass(allowed-5, You-1)
+nsubj:xsubj(call-7, You-1)
+aux(allowed-5, WILL-2)
+advmod(allowed-5, NOT-3)
+auxpass(allowed-5, be-4)
+mark(call-7, to-6)
+xcomp(allowed-5, call-7)
+dobj(call-7, someone-8)
+case(number-12, at-9)
+det(number-12, another-10)
+compound(number-12, phone-11)
+nmod:at(call-7, number-12)
+mark(has-21, if-13)
+det(number-15, the-14)
+nsubj(has-21, number-15)
+nsubj(trying-18, you-16)
+nsubj:xsubj(call-20, you-16)
+aux(trying-18, are-17)
+acl:relcl(number-15, trying-18)
+mark(call-20, to-19)
+xcomp(trying-18, call-20)
+advcl:if(call-7, has-21)
+det(block-24, a-22)
+compound(block-24, phone-23)
+dobj(has-21, block-24)
+punct(allowed-5, .-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[17, 19] [?1, ?2, ?3, NOT3, You1, allowed5, block24, call20, call7, has21, number12, number15, phone11, phone23, someone8, trying18, you16]
+has21-if->call7
+phone23- ->?2
+you16-==->You1
+phone11- ->?1
+call20-  : to ->trying18
+you16- ->call20
+?3-the->number15
+call7-  : to ->allowed5
+?2- ->has21
+?3- ->has21
+You1-  : WILL  : WILL ->allowed5
+?1-at->call7
+trying18- ->?3
+?1-another->number12
+NOT3-  : be ->allowed5
+you16-  : are ->trying18
+You1- ->call7
+?2-a->block24
+someone8- ->call7
+
+[allowed5
+	(<-  : to -call7
+		(<-if-has21(<- -?3<- -trying18(<-  : to -call20<- -you16)<-  : are -*you16)<- -?2<- -phone23)
+		(<-at-?1<- -phone11)
+		(<- -someone8)
+		<- -You1<-==-*you16)
+	(<-  : WILL  : WILL -*You1)
+	<-  : be -NOT3;
+block24<-a-*?2;
+number12<-another-*?1;
+number15<-the-*?3]

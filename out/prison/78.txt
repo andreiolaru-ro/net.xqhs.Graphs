@@ -1,0 +1,102 @@
+All lab work, x-ray, medication, etc, is in addition to the doctor’s fee.
+------CorefChainz
+All-DT 
+lab-NN 
+work-NN 
+,-, 
+x-ray-NN 
+,-, 
+medication-NN 
+,-, 
+etc-FW 
+,-, 
+is-VBZ 
+in-IN 
+addition-NN 
+to-TO 
+the-DT 
+doctor-NN 
+'s-POS 
+fee-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> All
+	 	-> NN 	-> lab
+	 	-> NN 	-> work
+		 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> NN 	-> x-ray
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> medication
+		 	-> , 	-> ,
+	 	-> FW 	-> etc
+		 	-> , 	-> ,
+		 	-> VP 	-> VBZ 	-> is
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NN 	-> addition
+			 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> doctor
+	 	-> POS 	-> 's
+		 	-> NN 	-> fee
+				 	-> . 	-> .
+			
+Dependensee repr
+det(work-3, All-1)
+compound(work-3, lab-2)
+nsubj(fee-18, work-3)
+appos(work-3, x-ray-5)
+conj(x-ray-5, medication-7)
+conj(x-ray-5, etc-9)
+cop(fee-18, is-11)
+case(fee-18, in-12)
+mwe(in-12, addition-13)
+mwe(in-12, to-14)
+det(doctor-16, the-15)
+nmod:poss(fee-18, doctor-16)
+case(doctor-16, 's-17)
+root(ROOT-0, fee-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, fee-18)
+det(work-3, All-1)
+compound(work-3, lab-2)
+nsubj(fee-18, work-3)
+punct(work-3, ,-4)
+appos(work-3, x-ray-5)
+punct(x-ray-5, ,-6)
+conj(x-ray-5, medication-7)
+punct(x-ray-5, ,-8)
+conj(x-ray-5, etc-9)
+punct(x-ray-5, ,-10)
+cop(fee-18, is-11)
+case(fee-18, in-12)
+mwe(in-12, addition-13)
+mwe(in-12, to-14)
+det(doctor-16, the-15)
+nmod:poss(fee-18, doctor-16)
+case(doctor-16, 's-17)
+punct(fee-18, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[11, 8] [?1, ?2, addition13, doctor16, etc9, fee18, lab2, medication7, to14, work3, x-ray5]
+medication7- ->x-ray5
+etc9- ->x-ray5
+?2-the->doctor16
+?2-poss : is  : in  : 's ->fee18
+?1-All->work3
+x-ray5- ->?1
+?1- ->fee18
+lab2- ->?1
+
+[work3<-All-?1
+	(<- -x-ray5(<- -etc9)<- -medication7)
+	<- -lab2;
+doctor16<-the-?2;
+addition13;
+to14;
+fee18
+	(<- -*?1)
+	<-poss : is  : in  : 's -*?2]

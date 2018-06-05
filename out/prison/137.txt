@@ -1,0 +1,130 @@
+All incoming mail must contain the full name and address of both the sender and the inmate on the envelope.
+------CorefChainz
+All-DT 
+incoming-JJ 
+mail-NN 
+must-MD 
+contain-VB 
+the-DT 
+full-JJ 
+name-NN 
+and-CC 
+address-NN 
+of-IN 
+both-PDT 
+the-DT 
+sender-NN 
+and-CC 
+the-DT 
+inmate-NN 
+on-IN 
+the-DT 
+envelope-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> All
+	 	-> JJ 	-> incoming
+	 	-> NN 	-> mail
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> contain
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> full
+	 	-> NN 	-> name
+	 	-> CC 	-> and
+	 	-> NN 	-> address
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> PDT 	-> both
+	 	-> DT 	-> the
+	 	-> NN 	-> sender
+		 	-> CC 	-> and
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+					 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> envelope
+					 	-> . 	-> .
+			
+Dependensee repr
+det(mail-3, All-1)
+amod(mail-3, incoming-2)
+nsubj(contain-5, mail-3)
+aux(contain-5, must-4)
+root(ROOT-0, contain-5)
+det(name-8, the-6)
+amod(name-8, full-7)
+dobj(contain-5, name-8)
+cc(name-8, and-9)
+dobj(contain-5, address-10)
+conj:and(name-8, address-10)
+case(sender-14, of-11)
+det:predet(sender-14, both-12)
+det(sender-14, the-13)
+nmod:of(name-8, sender-14)
+cc(sender-14, and-15)
+det(inmate-17, the-16)
+nmod:of(name-8, inmate-17)
+conj:and(sender-14, inmate-17)
+case(envelope-20, on-18)
+det(envelope-20, the-19)
+nmod:on(contain-5, envelope-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, contain-5)
+det(mail-3, All-1)
+amod(mail-3, incoming-2)
+nsubj(contain-5, mail-3)
+aux(contain-5, must-4)
+det(name-8, the-6)
+amod(name-8, full-7)
+dobj(contain-5, name-8)
+cc(name-8, and-9)
+dobj(contain-5, address-10)
+conj:and(name-8, address-10)
+case(sender-14, of-11)
+cc:preconj(sender-14, both-12)
+det(sender-14, the-13)
+nmod:of(name-8, sender-14)
+cc(sender-14, and-15)
+det(inmate-17, the-16)
+nmod:of(name-8, inmate-17)
+conj:and(sender-14, inmate-17)
+case(envelope-20, on-18)
+det(envelope-20, the-19)
+nmod:on(inmate-17, envelope-20)
+punct(contain-5, .-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[15, 16] [?1, ?2, ?3, ?4, ?5, address10, both12, contain5, envelope20, full7, incoming2, inmate17, mail3, name8, sender14]
+address10-and->?2
+?1-  : must ->contain5
+?2- ->contain5
+?5-and->?4
+?1-All->mail3
+?2-the->name8
+?3-the->envelope20
+?4-of->?2
+incoming2- ->?1
+?5-the->inmate17
+address10- ->contain5
+?3-on->?5
+both12-preconj->?4
+?5-of->?2
+full7- ->?2
+?4-the->sender14
+
+[name8<-the-?2
+	(<-of-?4(<-and-?5<-on-?3)<-preconj-both12)
+	(<-of-*?5)
+	(<-and-address10)
+	<- -full7;
+mail3<-All-?1<- -incoming2;
+envelope20<-the-*?3;
+inmate17<-the-*?5;
+sender14<-the-*?4;
+contain5
+	(<- -*?2)
+	(<-  : must -*?1)
+	<- -*address10]

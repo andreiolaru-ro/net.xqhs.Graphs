@@ -1,0 +1,69 @@
+These request forms can be obtained when canteen is delivered.
+------CorefChainz
+These-DT 
+request-NN 
+forms-NNS 
+can-MD 
+be-VB 
+obtained-VBN 
+when-WRB 
+canteen-NN 
+is-VBZ 
+delivered-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> These
+	 	-> NN 	-> request
+	 	-> NNS 	-> forms
+		 	-> VP 	-> MD 	-> can
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> obtained
+	 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> NP 	-> NN 	-> canteen
+		 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBN 	-> delivered
+								 	-> . 	-> .
+			
+Dependensee repr
+det(forms-3, These-1)
+compound(forms-3, request-2)
+nsubjpass(obtained-6, forms-3)
+aux(obtained-6, can-4)
+auxpass(obtained-6, be-5)
+root(ROOT-0, obtained-6)
+advmod(delivered-10, when-7)
+nsubjpass(delivered-10, canteen-8)
+auxpass(delivered-10, is-9)
+advcl(obtained-6, delivered-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, obtained-6)
+det(forms-3, These-1)
+compound(forms-3, request-2)
+nsubjpass(obtained-6, forms-3)
+aux(obtained-6, can-4)
+auxpass(obtained-6, be-5)
+advmod(delivered-10, when-7)
+nsubjpass(delivered-10, canteen-8)
+auxpass(delivered-10, is-9)
+advcl(obtained-6, delivered-10)
+punct(obtained-6, .-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 6] [?1, canteen8, delivered10, forms3, obtained6, request2, when7]
+when7- ->delivered10
+request2- ->?1
+canteen8-  : is ->delivered10
+delivered10- ->obtained6
+?1-These->forms3
+?1-  : can  : be ->obtained6
+
+[forms3<-These-?1<- -request2;
+obtained6
+	(<-  : can  : be -*?1)
+	<- -delivered10
+		(<-  : is -canteen8)
+		<- -when7]

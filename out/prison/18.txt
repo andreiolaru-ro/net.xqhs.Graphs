@@ -1,0 +1,115 @@
+Visitors that become unruly, or demanding with staff, will be denied visitation and ask to leave.
+------CorefChainz
+Visitors-NNS 
+that-WDT 
+become-VBN 
+unruly-JJ 
+,-, 
+or-CC 
+demanding-VBG 
+with-IN 
+staff-NN 
+,-, 
+will-MD 
+be-VB 
+denied-VBN 
+visitation-NN 
+and-CC 
+ask-VB 
+to-TO 
+leave-VB 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NNS 	-> Visitors
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> VP 	-> VBN 	-> become
+	 	-> UCP 	-> NP 	-> JJ 	-> unruly
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VBG 	-> demanding
+	 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> NN 	-> staff
+									 	-> , 	-> ,
+	 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> denied
+	 	-> NP 	-> NN 	-> visitation
+				 	-> CC 	-> and
+	 	-> VP 	-> VB 	-> ask
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> leave
+							 	-> . 	-> .
+			
+Dependensee repr
+nsubj(become-3, Visitors-1)
+nsubjpass(denied-13, Visitors-1)
+nsubj(ask-16, Visitors-1)
+nsubj:xsubj(leave-18, Visitors-1)
+ref(Visitors-1, that-2)
+acl:relcl(Visitors-1, become-3)
+xcomp(become-3, unruly-4)
+cc(unruly-4, or-6)
+acl(unruly-4, demanding-7)
+case(staff-9, with-8)
+nmod:with(demanding-7, staff-9)
+aux(denied-13, will-11)
+auxpass(denied-13, be-12)
+root(ROOT-0, denied-13)
+dobj(denied-13, visitation-14)
+cc(denied-13, and-15)
+conj:and(denied-13, ask-16)
+mark(leave-18, to-17)
+xcomp(ask-16, leave-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, denied-13)
+nsubj(become-3, Visitors-1)
+nsubjpass(denied-13, Visitors-1)
+nsubj(ask-16, Visitors-1)
+nsubj:xsubj(leave-18, Visitors-1)
+ref(Visitors-1, that-2)
+acl:relcl(Visitors-1, become-3)
+xcomp(become-3, unruly-4)
+punct(Visitors-1, ,-5)
+cc(Visitors-1, or-6)
+conj:or(Visitors-1, demanding-7)
+nsubj(become-3, demanding-7)
+nsubjpass(denied-13, demanding-7)
+case(staff-9, with-8)
+nmod:with(demanding-7, staff-9)
+punct(Visitors-1, ,-10)
+aux(denied-13, will-11)
+auxpass(denied-13, be-12)
+dobj(denied-13, visitation-14)
+cc(denied-13, and-15)
+conj:and(denied-13, ask-16)
+mark(leave-18, to-17)
+xcomp(ask-16, leave-18)
+punct(denied-13, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 13] [Visitors1, ask16, become3, demanding7, denied13, leave18, staff9, unruly4, visitation14]
+become3-  : that  : that ->Visitors1
+Visitors1- ->become3
+Visitors1- ->ask16
+ask16-and->denied13
+visitation14-  : will  : be ->denied13
+Visitors1- ->denied13
+leave18-  : to ->ask16
+demanding7- ->denied13
+staff9-with->demanding7
+demanding7- ->become3
+demanding7-or->Visitors1
+unruly4- ->become3
+Visitors1- ->leave18
+
+[denied13
+	(<-and-ask16
+		(<-  : to -leave18<- -Visitors1(<-  : that  : that -become3(<- -*Visitors1)(<- -demanding7<-with-staff9)<- -unruly4)<-or-*demanding7)
+		<- -*Visitors1)
+	(<- -*Visitors1)
+	(<- -*demanding7)
+	<-  : will  : be -visitation14]

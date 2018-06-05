@@ -1,0 +1,99 @@
+Inmates will be allowed to sleep in their underclothes with all private areas appropriately covered.
+------CorefChainz
+CHAIN1-["Inmates" in sentence 1, "their" in sentence 1]
+representative mention: "Inmates" in sentence 1
+Inmates-NNS 
+will-MD 
+be-VB 
+allowed-VBN 
+to-TO 
+sleep-VB 
+in-IN 
+their-PRP$ 
+underclothes-NNS 
+with-IN 
+all-DT 
+private-JJ 
+areas-NNS 
+appropriately-RB 
+covered-JJ 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> sleep
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NNS 	-> underclothes
+			 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> NP 	-> DT 	-> all
+	 	-> JJ 	-> private
+	 	-> NNS 	-> areas
+		 	-> ADJP 	-> RB 	-> appropriately
+	 	-> JJ 	-> covered
+										 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(allowed-4, Inmates-1)
+nsubj:xsubj(sleep-6, Inmates-1)
+aux(allowed-4, will-2)
+auxpass(allowed-4, be-3)
+root(ROOT-0, allowed-4)
+mark(sleep-6, to-5)
+xcomp(allowed-4, sleep-6)
+case(underclothes-9, in-7)
+nmod:poss(underclothes-9, their-8)
+nmod:in(sleep-6, underclothes-9)
+case(areas-13, with-10)
+det(areas-13, all-11)
+amod(areas-13, private-12)
+nmod:with(sleep-6, areas-13)
+advmod(covered-15, appropriately-14)
+amod(areas-13, covered-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-4)
+nsubjpass(allowed-4, Inmates-1)
+nsubj:xsubj(sleep-6, Inmates-1)
+aux(allowed-4, will-2)
+auxpass(allowed-4, be-3)
+mark(sleep-6, to-5)
+xcomp(allowed-4, sleep-6)
+case(underclothes-9, in-7)
+nmod:poss(underclothes-9, their-8)
+nmod:in(sleep-6, underclothes-9)
+case(areas-13, with-10)
+det(areas-13, all-11)
+amod(areas-13, private-12)
+nmod:with(sleep-6, areas-13)
+advmod(covered-15, appropriately-14)
+acl(areas-13, covered-15)
+punct(allowed-4, .-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[10, 11] [?1, Inmates1, allowed4, appropriately14, areas13, covered15, private12, sleep6, their8, underclothes9]
+sleep6-  : to ->allowed4
+their8-==->Inmates1
+Inmates1- ->sleep6
+covered15- ->?1
+their8-poss->underclothes9
+appropriately14- ->covered15
+private12- ->?1
+?1-all->areas13
+?1-with->sleep6
+Inmates1-  : will  : be ->allowed4
+underclothes9-in->sleep6
+
+[allowed4
+	(<-  : to -sleep6
+		(<-with-?1(<- -covered15<- -appropriately14)<- -private12)
+		(<- -Inmates1<-==-their8)
+		<-in-underclothes9<-poss-*their8)
+	<-  : will  : be -*Inmates1;
+areas13<-all-*?1]

@@ -1,0 +1,115 @@
+Any type of gang membership, gang activity, display of gang signs or display of gang colors is prohibited.
+------CorefChainz
+Any-DT 
+type-NN 
+of-IN 
+gang-NN 
+membership-NN 
+,-, 
+gang-NN 
+activity-NN 
+,-, 
+display-NN 
+of-IN 
+gang-NN 
+signs-NNS 
+or-CC 
+display-NN 
+of-IN 
+gang-NN 
+colors-NNS 
+is-VBZ 
+prohibited-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> Any
+	 	-> NN 	-> type
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NP 	-> NN 	-> gang
+	 	-> NN 	-> membership
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> gang
+	 	-> NN 	-> activity
+			 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> NN 	-> display
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> gang
+	 	-> NNS 	-> signs
+				 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> NN 	-> display
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> gang
+	 	-> NNS 	-> colors
+							 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBN 	-> prohibited
+			 	-> . 	-> .
+			
+Dependensee repr
+det(type-2, Any-1)
+nsubjpass(prohibited-20, type-2)
+case(membership-5, of-3)
+compound(membership-5, gang-4)
+nmod:of(type-2, membership-5)
+compound(activity-8, gang-7)
+appos(membership-5, activity-8)
+nmod:of(type-2, display-10)
+conj:or(membership-5, display-10)
+case(signs-13, of-11)
+compound(signs-13, gang-12)
+nmod:of(display-10, signs-13)
+cc(membership-5, or-14)
+nmod:of(type-2, display-15)
+conj:or(membership-5, display-15)
+case(colors-18, of-16)
+compound(colors-18, gang-17)
+nmod:of(display-15, colors-18)
+auxpass(prohibited-20, is-19)
+root(ROOT-0, prohibited-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, type-2)
+det(type-2, Any-1)
+case(membership-5, of-3)
+compound(membership-5, gang-4)
+nmod:of(type-2, membership-5)
+punct(type-2, ,-6)
+compound(activity-8, gang-7)
+appos(type-2, activity-8)
+punct(type-2, ,-9)
+nsubjpass(prohibited-20, display-10)
+case(signs-13, of-11)
+compound(signs-13, gang-12)
+nmod:of(display-10, signs-13)
+cc(signs-13, or-14)
+nmod:of(display-10, display-15)
+conj:or(signs-13, display-15)
+case(colors-18, of-16)
+compound(colors-18, gang-17)
+nmod:of(signs-13, colors-18)
+auxpass(prohibited-20, is-19)
+acl:relcl(type-2, prohibited-20)
+punct(type-2, .-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[13, 13] [?1, activity8, colors18, display15, display10, gang17, gang12, gang4, gang7, membership5, prohibited20, signs13, type2]
+display15-of->display10
+colors18-of->signs13
+membership5-of->?1
+prohibited20- ->?1
+?1-Any->type2
+signs13-of->display10
+gang4- ->membership5
+display15-or->signs13
+gang12- ->signs13
+display10-  : is ->prohibited20
+gang7- ->activity8
+gang17- ->colors18
+activity8- ->?1
+
+[type2<-Any-?1
+	(<- -prohibited20<-  : is -display10(<-of-signs13(<-of-colors18<- -gang17)(<-or-display15)<- -gang12)<-of-*display15)
+	(<- -activity8<- -gang7)
+	<-of-membership5<- -gang4]

@@ -1,0 +1,122 @@
+Attempting to make a 3-way call, or completing a 3-way call will result in the phone number being blocked.
+------CorefChainz
+CHAIN1-["a 3-way call" in sentence 1, "a 3-way call" in sentence 1]
+representative mention: "a 3-way call" in sentence 1
+Attempting-VBG 
+to-TO 
+make-VB 
+a-DT 
+3-way-JJ 
+call-NN 
+,-, 
+or-CC 
+completing-VBG 
+a-DT 
+3-way-JJ 
+call-NN 
+will-MD 
+result-VB 
+in-IN 
+the-DT 
+phone-NN 
+number-NN 
+being-VBG 
+blocked-VBN 
+.-. 
+ROOT 	-> S 	-> S 	-> VP 	-> VP 	-> VBG 	-> Attempting
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> make
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> 3-way
+	 	-> NN 	-> call
+						 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VBG 	-> completing
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> 3-way
+	 	-> NN 	-> call
+					 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> result
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> phone
+	 	-> NN 	-> number
+		 	-> VP 	-> VBG 	-> being
+	 	-> VP 	-> VBN 	-> blocked
+							 	-> . 	-> .
+			
+Dependensee repr
+csubj(result-14, Attempting-1)
+mark(make-3, to-2)
+xcomp(Attempting-1, make-3)
+det(call-6, a-4)
+amod(call-6, 3-way-5)
+dobj(make-3, call-6)
+cc(Attempting-1, or-8)
+conj:or(Attempting-1, completing-9)
+csubj(result-14, completing-9)
+det(call-12, a-10)
+amod(call-12, 3-way-11)
+dobj(completing-9, call-12)
+aux(result-14, will-13)
+root(ROOT-0, result-14)
+case(number-18, in-15)
+det(number-18, the-16)
+compound(number-18, phone-17)
+nmod:in(result-14, number-18)
+auxpass(blocked-20, being-19)
+acl(number-18, blocked-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, result-14)
+csubj(result-14, Attempting-1)
+mark(make-3, to-2)
+xcomp(Attempting-1, make-3)
+det(call-6, a-4)
+amod(call-6, 3-way-5)
+dobj(make-3, call-6)
+punct(call-6, ,-7)
+cc(call-6, or-8)
+dobj(make-3, completing-9)
+conj:or(call-6, completing-9)
+det(call-12, a-10)
+amod(call-12, 3-way-11)
+dobj(completing-9, call-12)
+aux(result-14, will-13)
+case(number-18, in-15)
+det(number-18, the-16)
+compound(number-18, phone-17)
+nmod:in(result-14, number-18)
+auxpass(blocked-20, being-19)
+acl(number-18, blocked-20)
+punct(result-14, .-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[14, 14] [3-way11, 3-way5, ?1, ?2, ?3, Attempting1, blocked20, call12, call6, completing9, make3, number18, phone17, result14]
+?1-a->call12
+make3-  : to ->Attempting1
+blocked20-  : being ->?3
+3-way5- ->?2
+completing9-or->?2
+Attempting1- ->result14
+?2- ->make3
+?3-the->number18
+3-way11- ->?1
+?3-in : will ->result14
+completing9- ->make3
+?2-a->call6
+phone17- ->?3
+?1- ->completing9
+
+[result14
+	(<- -Attempting1<-  : to -make3(<- -?2(<-or-completing9<- -?1<- -3-way11)<- -3-way5)<- -*completing9)
+	<-in : will -?3
+		(<-  : being -blocked20)
+		<- -phone17;
+number18<-the-*?3;
+call12<-a-*?1;
+call6<-a-*?2]

@@ -1,0 +1,240 @@
+No jewelry will be allowed except wedding rings. All rings on or in any body part, or any other pierced or piercing mechanism, such as studs, shall be removed and placed in the inmate’s personal property.
+------CorefChainz
+No-DT 
+jewelry-NN 
+will-MD 
+be-VB 
+allowed-VBN 
+except-IN 
+wedding-NN 
+rings-NNS 
+.-. 
+All-DT 
+rings-NNS 
+on-IN 
+or-CC 
+in-IN 
+any-DT 
+body-NN 
+part-NN 
+,-, 
+or-CC 
+any-DT 
+other-JJ 
+pierced-JJ 
+or-CC 
+piercing-JJ 
+mechanism-NN 
+,-, 
+such-JJ 
+as-IN 
+studs-NNS 
+,-, 
+shall-MD 
+be-VB 
+removed-VBN 
+and-CC 
+placed-VBN 
+in-IN 
+the-DT 
+inmate-NN 
+'s-POS 
+personal-JJ 
+property-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NP 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> jewelry
+		 	-> SBAR 	-> S 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> PP 	-> IN 	-> except
+	 	-> NP 	-> NN 	-> wedding
+	 	-> NNS 	-> rings
+									 	-> . 	-> .
+	 	-> NP 	-> NP 	-> DT 	-> All
+	 	-> NNS 	-> rings
+		 	-> PP 	-> IN 	-> on
+	 	-> CC 	-> or
+	 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> body
+	 	-> NN 	-> part
+					 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> other
+	 	-> ADJP 	-> JJ 	-> pierced
+	 	-> CC 	-> or
+	 	-> JJ 	-> piercing
+		 	-> NN 	-> mechanism
+		 	-> , 	-> ,
+	 	-> PP 	-> JJ 	-> such
+	 	-> IN 	-> as
+	 	-> NP 	-> NNS 	-> studs
+				 	-> , 	-> ,
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> removed
+	 	-> CC 	-> and
+	 	-> VBN 	-> placed
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> JJ 	-> personal
+	 	-> NN 	-> property
+						 	-> . 	-> .
+			
+Dependensee repr
+neg(jewelry-2, No-1)
+nsubjpass(removed-33, jewelry-2)
+nsubjpass(placed-35, jewelry-2)
+aux(allowed-5, will-3)
+auxpass(allowed-5, be-4)
+acl:relcl(jewelry-2, allowed-5)
+case(rings-8, except-6)
+compound(rings-8, wedding-7)
+nmod:except(allowed-5, rings-8)
+det(rings-11, All-10)
+dep(jewelry-2, rings-11)
+dep(jewelry-2, rings-11')
+conj:or(rings-11, rings-11')
+case(part-17, on-12)
+cc(on-12, or-13)
+conj:or(on-12, in-14)
+det(part-17, any-15)
+compound(part-17, body-16)
+nmod:in(rings-11', part-17)
+nmod:on(rings-11, part-17)
+cc(jewelry-2, or-19)
+det(mechanism-25, any-20)
+amod(mechanism-25, other-21)
+amod(mechanism-25, pierced-22)
+cc(pierced-22, or-23)
+conj:or(pierced-22, piercing-24)
+amod(mechanism-25, piercing-24)
+conj:or(jewelry-2, mechanism-25)
+nsubjpass(removed-33, mechanism-25)
+case(studs-29, such-27)
+mwe(such-27, as-28)
+nmod:such_as(mechanism-25, studs-29)
+aux(removed-33, shall-31)
+auxpass(removed-33, be-32)
+root(ROOT-0, removed-33)
+cc(removed-33, and-34)
+conj:and(removed-33, placed-35)
+case(property-41, in-36)
+det(inmate-38, the-37)
+nmod:poss(property-41, inmate-38)
+case(inmate-38, 's-39)
+amod(property-41, personal-40)
+nmod:in(removed-33, property-41)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-5)
+neg(jewelry-2, No-1)
+nsubjpass(allowed-5, jewelry-2)
+aux(allowed-5, will-3)
+auxpass(allowed-5, be-4)
+case(rings-8, except-6)
+compound(rings-8, wedding-7)
+nmod:except(allowed-5, rings-8)
+punct(allowed-5, .-9)
+---
+qqroot(ROOT-0, allowed-5)
+neg(jewelry-2, No-1)
+nsubjpass(allowed-5, jewelry-2)
+aux(allowed-5, will-3)
+auxpass(allowed-5, be-4)
+case(rings-8, except-6)
+compound(rings-8, wedding-7)
+nmod:except(allowed-5, rings-8)
+punct(allowed-5, .-9)
+root(ROOT-0, removed-24)
+det(rings-2, All-1)
+nsubjpass(removed-24, rings-2)
+nsubjpass(placed-26, rings-2)
+conj:or(rings-2, rings-2''')
+nsubjpass(removed-24, rings-2''')
+case(part-8, on-3)
+cc(on-3, or-4)
+conj:or(on-3, in-5)
+det(part-8, any-6)
+compound(part-8, body-7)
+nmod:on(rings-2, part-8)
+nmod:in(rings-2''', part-8)
+punct(rings-2, ,-9)
+cc(rings-2, or-10)
+det(mechanism-16, any-11)
+amod(mechanism-16, other-12)
+amod(mechanism-16, pierced-13)
+cc(pierced-13, or-14)
+conj:or(pierced-13, piercing-15)
+amod(mechanism-16, piercing-15)
+conj:or(rings-2, mechanism-16)
+nsubjpass(removed-24, mechanism-16)
+punct(mechanism-16, ,-17)
+case(studs-20, such-18)
+mwe(such-18, as-19)
+nmod:such_as(mechanism-16, studs-20)
+punct(rings-2, ,-21)
+aux(removed-24, shall-22)
+auxpass(removed-24, be-23)
+cc(removed-24, and-25)
+conj:and(removed-24, placed-26)
+case(property-32, in-27)
+det(inmate-29, the-28)
+nmod:poss(property-32, inmate-29)
+case(inmate-29, 's-30)
+amod(property-32, personal-31)
+nmod:in(removed-24, property-32)
+punct(removed-24, .-33)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[24, 24] [?1, ?2, ?3, ?4, No1, allowed5, as19, body7, in5, inmate29, jewelry2, mechanism16, other12, part8, personal31, pierced13, piercing15, placed26, property32, removed24, rings8, rings2, studs20, wedding7]
+?2-in->?4
+?4-All->rings2
+No1- ->jewelry2
+personal31- ->property32
+?3-any->mechanism16
+property32-in->removed24
+?2-any->part8
+?3- ->removed24
+jewelry2-  : will  : be ->allowed5
+?2-on->?4
+rings8-except->allowed5
+?1-the->inmate29
+?3-or->?4
+placed26-and : shall  : be ->removed24
+?4- ->placed26
+piercing15-or->pierced13
+?4- ->removed24
+pierced13- ->?3
+studs20-such_as : such ->?3
+piercing15- ->?3
+body7- ->?2
+?1-poss : 's ->property32
+wedding7- ->rings8
+other12- ->?3
+
+[removed24
+	(<-and : shall  : be -placed26<- -?4(<-or-?3(<- -pierced13<-or-piercing15)(<- -*piercing15)(<- -other12)<-such_as : such -studs20)(<-in-?2<- -body7)(<-on-*?2<- -body7)<-in-*?2<-on-*?2)
+	(<- -*?4)
+	(<- -*?3)
+	<-in-property32
+		(<-poss : 's -?1)
+		<- -personal31;
+allowed5
+	(<-  : will  : be -jewelry2<- -No1)
+	<-except-rings8<- -wedding7;
+as19;
+in5;
+inmate29<-the-*?1;
+mechanism16<-any-*?3;
+part8<-any-*?2;
+rings2<-All-*?4]

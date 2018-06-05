@@ -1,0 +1,76 @@
+All medical request forms are treated with confidentially by the staff.
+------CorefChainz
+All-DT 
+medical-JJ 
+request-NN 
+forms-NNS 
+are-VBP 
+treated-VBN 
+with-IN 
+confidentially-NN 
+by-IN 
+the-DT 
+staff-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> All
+	 	-> JJ 	-> medical
+	 	-> NN 	-> request
+	 	-> NNS 	-> forms
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> treated
+	 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> NN 	-> confidentially
+			 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> staff
+					 	-> . 	-> .
+			
+Dependensee repr
+det(forms-4, All-1)
+amod(forms-4, medical-2)
+compound(forms-4, request-3)
+nsubjpass(treated-6, forms-4)
+auxpass(treated-6, are-5)
+root(ROOT-0, treated-6)
+case(confidentially-8, with-7)
+nmod:with(treated-6, confidentially-8)
+case(staff-11, by-9)
+det(staff-11, the-10)
+nmod:agent(treated-6, staff-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, treated-6)
+det(forms-4, All-1)
+amod(forms-4, medical-2)
+compound(forms-4, request-3)
+nsubjpass(treated-6, forms-4)
+auxpass(treated-6, are-5)
+case(confidentially-8, with-7)
+nmod:with(treated-6, confidentially-8)
+case(staff-11, by-9)
+det(staff-11, the-10)
+nmod:agent(treated-6, staff-11)
+punct(treated-6, .-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 7] [?1, ?2, confidentially8, forms4, medical2, request3, staff11, treated6]
+?1-All->forms4
+confidentially8-with->treated6
+?2-agent : by ->treated6
+?1-  : are ->treated6
+?2-the->staff11
+request3- ->?1
+medical2- ->?1
+
+[forms4<-All-?1
+	(<- -medical2)
+	<- -request3;
+staff11<-the-?2;
+treated6
+	(<-  : are -*?1)
+	(<-agent : by -*?2)
+	<-with-confidentially8]

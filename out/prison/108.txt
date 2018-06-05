@@ -1,0 +1,173 @@
+All inmates will be held financially responsible for any damage or loss of property owned by the Grant County Sheriff’s Department due to any inappropriate and deliberate inmate misbehavior.
+------CorefChainz
+All-DT 
+inmates-NNS 
+will-MD 
+be-VB 
+held-VBN 
+financially-RB 
+responsible-JJ 
+for-IN 
+any-DT 
+damage-NN 
+or-CC 
+loss-NN 
+of-IN 
+property-NN 
+owned-VBN 
+by-IN 
+the-DT 
+Grant-NNP 
+County-NNP 
+Sheriff-NNP 
+'s-POS 
+Department-NNP 
+due-JJ 
+to-TO 
+any-DT 
+inappropriate-JJ 
+and-CC 
+deliberate-JJ 
+inmate-NN 
+misbehavior-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> All
+	 	-> NNS 	-> inmates
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> held
+	 	-> ADJP 	-> RB 	-> financially
+	 	-> JJ 	-> responsible
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> damage
+	 	-> CC 	-> or
+	 	-> NN 	-> loss
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NN 	-> property
+		 	-> VP 	-> VBN 	-> owned
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NNP 	-> Sheriff
+	 	-> POS 	-> 's
+		 	-> NNP 	-> Department
+	 	-> ADJP 	-> JJ 	-> due
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> any
+	 	-> ADJP 	-> JJ 	-> inappropriate
+	 	-> CC 	-> and
+	 	-> JJ 	-> deliberate
+		 	-> NN 	-> inmate
+				 	-> NN 	-> misbehavior
+											 	-> . 	-> .
+			
+Dependensee repr
+det(inmates-2, All-1)
+nsubjpass(held-5, inmates-2)
+aux(held-5, will-3)
+auxpass(held-5, be-4)
+root(ROOT-0, held-5)
+advmod(responsible-7, financially-6)
+xcomp(held-5, responsible-7)
+case(damage-10, for-8)
+det(damage-10, any-9)
+nmod:for(held-5, damage-10)
+cc(damage-10, or-11)
+nmod:for(held-5, loss-12)
+conj:or(damage-10, loss-12)
+case(property-14, of-13)
+nmod:of(damage-10, property-14)
+acl(property-14, owned-15)
+case(misbehavior-30, by-16)
+det(Sheriff-20, the-17)
+compound(Sheriff-20, Grant-18)
+compound(Sheriff-20, County-19)
+nmod:poss(misbehavior-30, Sheriff-20)
+case(Sheriff-20, 's-21)
+compound(misbehavior-30, Department-22)
+amod(misbehavior-30, due-23)
+case(inmate-29, to-24)
+det(inmate-29, any-25)
+amod(inmate-29, inappropriate-26)
+cc(inappropriate-26, and-27)
+conj:and(inappropriate-26, deliberate-28)
+amod(inmate-29, deliberate-28)
+nmod:to(due-23, inmate-29)
+nmod:by(owned-15, misbehavior-30)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, held-5)
+det(inmates-2, All-1)
+nsubjpass(held-5, inmates-2)
+aux(held-5, will-3)
+auxpass(held-5, be-4)
+advmod(responsible-7, financially-6)
+xcomp(held-5, responsible-7)
+case(damage-10, for-8)
+det(damage-10, any-9)
+nmod:for(responsible-7, damage-10)
+cc(damage-10, or-11)
+nmod:for(responsible-7, loss-12)
+conj:or(damage-10, loss-12)
+case(property-14, of-13)
+nmod:of(loss-12, property-14)
+acl(property-14, owned-15)
+case(Department-22, by-16)
+det(Sheriff-20, the-17)
+compound(Sheriff-20, Grant-18)
+compound(Sheriff-20, County-19)
+nmod:poss(Department-22, Sheriff-20)
+case(Sheriff-20, 's-21)
+nmod:by(owned-15, Department-22)
+case(misbehavior-30, due-23)
+mwe(due-23, to-24)
+det(misbehavior-30, any-25)
+amod(misbehavior-30, inappropriate-26)
+cc(inappropriate-26, and-27)
+conj:and(inappropriate-26, deliberate-28)
+amod(misbehavior-30, deliberate-28)
+compound(misbehavior-30, inmate-29)
+nmod:due_to(damage-10, misbehavior-30)
+punct(held-5, .-31)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[21, 21] [?1, ?2, ?3, ?4, County19, Department22, Grant18, Sheriff20, damage10, deliberate28, financially6, held5, inappropriate26, inmate29, inmates2, loss12, misbehavior30, owned15, property14, responsible7, to24]
+responsible7- ->held5
+?1-poss : 's ->Department22
+?3-any->misbehavior30
+deliberate28- ->?3
+?2-  : will  : be ->held5
+financially6- ->responsible7
+inappropriate26-  : due ->?3
+loss12-for->responsible7
+inmate29- ->?3
+property14-of->loss12
+?4-any->damage10
+deliberate28-and->inappropriate26
+Grant18- ->?1
+Department22-by->owned15
+County19- ->?1
+?2-All->inmates2
+?4-for->responsible7
+loss12-or->?4
+owned15- ->property14
+?1-the->Sheriff20
+?3-due_to->?4
+
+[held5
+	(<- -responsible7
+		(<-for-?4(<-or-loss12<-of-property14<- -owned15<-by-Department22<-poss : 's -?1(<- -County19)<- -Grant18)<-due_to-?3(<-  : due -inappropriate26<-and-deliberate28)(<- -*deliberate28)<- -inmate29)
+		(<-for-*loss12)
+		<- -financially6)
+	<-  : will  : be -?2;
+inmates2<-All-*?2;
+to24;
+Sheriff20<-the-*?1;
+damage10<-any-*?4;
+misbehavior30<-any-*?3]

@@ -1,0 +1,140 @@
+You must use the following return address:(Inmate's Name), Grant County Jail, 1000 North Adams St, Lancaster, WI 53813
+------CorefChainz
+You-PRP 
+must-MD 
+use-VB 
+the-DT 
+following-VBG 
+return-NN 
+address-NN 
+:-: 
+-LRB---LRB- 
+Inmate-NNP 
+'s-NNP 
+Name-NNP 
+-RRB---RRB- 
+,-, 
+Grant-NNP 
+County-NNP 
+Jail-NNP 
+,-, 
+1000-NNP 
+North-NNP 
+Adams-NNP 
+St-NNP 
+,-, 
+Lancaster-NNP 
+,-, 
+WI-NNP 
+53813-CD 
+ROOT 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> use
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> VBG 	-> following
+	 	-> NN 	-> return
+	 	-> NN 	-> address
+		 	-> : 	-> :
+	 	-> NP 	-> NP 	-> -LRB- 	-> -LRB-
+	 	-> NNP 	-> Inmate
+	 	-> NNP 	-> 's
+	 	-> NNP 	-> Name
+	 	-> -RRB- 	-> -RRB-
+		 	-> , 	-> ,
+	 	-> NP 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NNP 	-> Jail
+		 	-> , 	-> ,
+	 	-> NP 	-> NNP 	-> 1000
+	 	-> NNP 	-> North
+	 	-> NNP 	-> Adams
+	 	-> NNP 	-> St
+		 	-> , 	-> ,
+	 	-> NP 	-> NNP 	-> Lancaster
+		 	-> , 	-> ,
+	 	-> NP 	-> NNP 	-> WI
+	 	-> CD 	-> 53813
+								
+Dependensee repr
+nsubj(use-3, You-1)
+aux(use-3, must-2)
+root(ROOT-0, use-3)
+det(address-7, the-4)
+amod(address-7, following-5)
+compound(address-7, return-6)
+dobj(use-3, address-7)
+compound(Name-12, Inmate-10)
+compound(Name-12, 's-11)
+dep(address-7, Name-12)
+compound(Jail-17, Grant-15)
+compound(Jail-17, County-16)
+appos(Name-12, Jail-17)
+compound(St-22, 1000-19)
+compound(St-22, North-20)
+compound(St-22, Adams-21)
+appos(Name-12, St-22)
+appos(Name-12, Lancaster-24)
+appos(Name-12, WI-26)
+nummod(WI-26, 53813-27)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, use-3)
+nsubj(use-3, You-1)
+aux(use-3, must-2)
+det(address-7, the-4)
+amod(address-7, following-5)
+compound(address-7, return-6)
+dobj(use-3, address-7)
+punct(address-7, :-8)
+punct(Name-12, -LRB--9)
+nmod:poss(Name-12, Inmate-10)
+case(Inmate-10, 's-11)
+appos(address-7, Name-12)
+punct(Name-12, -RRB--13)
+punct(address-7, ,-14)
+compound(Jail-17, Grant-15)
+compound(Jail-17, County-16)
+appos(address-7, Jail-17)
+punct(Jail-17, ,-18)
+nummod(St-22, 1000-19)
+compound(St-22, North-20)
+compound(St-22, Adams-21)
+appos(Jail-17, St-22)
+punct(St-22, ,-23)
+appos(St-22, Lancaster-24)
+punct(St-22, ,-25)
+dep(Jail-17, WI-26)
+nummod(WI-26, 53813-27)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[18, 17] [100019, 5381327, ?1, Adams21, County16, Grant15, Inmate10, Jail17, Lancaster24, Name12, North20, St22, WI26, You1, address7, following5, return6, use3]
+WI26- ->Jail17
+North20- ->St22
+St22- ->Jail17
+100019- ->St22
+Jail17- ->?1
+Name12- ->?1
+Inmate10-poss : 's ->Name12
+Adams21- ->St22
+Lancaster24- ->St22
+Grant15- ->Jail17
+5381327- ->WI26
+County16- ->Jail17
+return6- ->?1
+?1- ->use3
+?1-the->address7
+You1-  : must ->use3
+following5- ->?1
+
+[address7<-the-?1
+	(<- -Jail17(<- -WI26<- -5381327)(<- -St22(<- -100019)(<- -Adams21)(<- -Lancaster24)<- -North20)(<- -County16)<- -Grant15)
+	(<- -Name12<-poss : 's -Inmate10)
+	(<- -following5)
+	<- -return6;
+use3
+	(<- -*?1)
+	<-  : must -You1]

@@ -1,0 +1,53 @@
+No fires of any kind are permitted.
+------CorefChainz
+No-DT 
+fires-NNS 
+of-IN 
+any-DT 
+kind-NN 
+are-VBP 
+permitted-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> No
+	 	-> NNS 	-> fires
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> kind
+				 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> permitted
+			 	-> . 	-> .
+			
+Dependensee repr
+neg(fires-2, No-1)
+nsubjpass(permitted-7, fires-2)
+case(kind-5, of-3)
+det(kind-5, any-4)
+nmod:of(fires-2, kind-5)
+auxpass(permitted-7, are-6)
+root(ROOT-0, permitted-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, permitted-7)
+neg(fires-2, No-1)
+nsubjpass(permitted-7, fires-2)
+case(kind-5, of-3)
+det(kind-5, any-4)
+nmod:of(fires-2, kind-5)
+auxpass(permitted-7, are-6)
+punct(permitted-7, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[5, 4] [?1, No1, fires2, kind5, permitted7]
+fires2-  : are ->permitted7
+?1-any->kind5
+No1- ->fires2
+?1-of->fires2
+
+[permitted7<-  : are -fires2
+	(<-of-?1)
+	<- -No1;
+kind5<-any-*?1]

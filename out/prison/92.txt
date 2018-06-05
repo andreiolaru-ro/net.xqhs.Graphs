@@ -1,0 +1,132 @@
+It is prohibited to yell through the food pass; pass notes, books, magazines, etc. from one cellblock to another.
+------CorefChainz
+It-PRP 
+is-VBZ 
+prohibited-VBN 
+to-TO 
+yell-VB 
+through-IN 
+the-DT 
+food-NN 
+pass-NN 
+;-: 
+pass-VB 
+notes-NNS 
+,-, 
+books-NNS 
+,-, 
+magazines-NNS 
+,-, 
+etc.-FW 
+from-IN 
+one-CD 
+cellblock-NN 
+to-TO 
+another-DT 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> It
+		 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBN 	-> prohibited
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VP 	-> VB 	-> yell
+	 	-> PP 	-> IN 	-> through
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> food
+	 	-> NN 	-> pass
+				 	-> : 	-> ;
+	 	-> VP 	-> VB 	-> pass
+	 	-> PP 	-> NP 	-> NNS 	-> notes
+	 	-> , 	-> ,
+	 	-> NNS 	-> books
+	 	-> , 	-> ,
+	 	-> NNS 	-> magazines
+	 	-> , 	-> ,
+	 	-> FW 	-> etc.
+		 	-> IN 	-> from
+	 	-> NP 	-> CD 	-> one
+	 	-> NN 	-> cellblock
+			 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> another
+									 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(prohibited-3, It-1)
+nsubj:xsubj(yell-5, It-1)
+auxpass(prohibited-3, is-2)
+root(ROOT-0, prohibited-3)
+mark(yell-5, to-4)
+xcomp(prohibited-3, yell-5)
+case(pass-9, through-6)
+det(pass-9, the-7)
+compound(pass-9, food-8)
+nmod:through(yell-5, pass-9)
+dep(yell-5, pass-11)
+compound(magazines-16, notes-12)
+dep(magazines-16, books-14)
+nmod:from(pass-11, magazines-16)
+dep(magazines-16, etc.-18)
+case(magazines-16, from-19)
+nummod(cellblock-21, one-20)
+dep(magazines-16, cellblock-21)
+case(another-23, to-22)
+nmod:to(pass-11, another-23)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, prohibited-3)
+nsubjpass(prohibited-3, It-1)
+nsubj:xsubj(yell-5, It-1)
+auxpass(prohibited-3, is-2)
+mark(yell-5, to-4)
+xcomp(prohibited-3, yell-5)
+case(pass-9, through-6)
+det(pass-9, the-7)
+compound(pass-9, food-8)
+nmod:through(yell-5, pass-9)
+punct(prohibited-3, ;-10)
+compound(notes-12, pass-11)
+dep(prohibited-3, notes-12)
+punct(notes-12, ,-13)
+conj(notes-12, books-14)
+punct(notes-12, ,-15)
+conj(notes-12, magazines-16)
+punct(notes-12, ,-17)
+conj(notes-12, etc.-18)
+case(cellblock-21, from-19)
+nummod(cellblock-21, one-20)
+nmod:from(etc.-18, cellblock-21)
+case(another-23, to-22)
+nmod:to(cellblock-21, another-23)
+punct(prohibited-3, .-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[14, 14] [?1, It1, another23, books14, cellblock21, etc.18, food8, magazines16, notes12, one20, pass9, pass11, prohibited3, yell5]
+?1-the->pass9
+books14- ->notes12
+cellblock21-from->etc.18
+food8- ->?1
+It1-  : is ->prohibited3
+pass11- ->notes12
+one20- ->cellblock21
+notes12- ->prohibited3
+yell5-  : to ->prohibited3
+?1-through->yell5
+etc.18- ->notes12
+It1- ->yell5
+magazines16- ->notes12
+another23-to->cellblock21
+
+[prohibited3
+	(<- -notes12
+		(<- -etc.18<-from-cellblock21(<-to-another23)<- -one20)
+		(<- -books14)
+		(<- -magazines16)
+		<- -pass11)
+	(<-  : to -yell5
+		(<-through-?1<- -food8)
+		<- -It1)
+	<-  : is -*It1;
+pass9<-the-*?1]

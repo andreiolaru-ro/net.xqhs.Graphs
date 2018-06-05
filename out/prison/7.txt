@@ -1,0 +1,174 @@
+Inmates are responsible for providing proof of medical insurance or medical assistance to the jail. The inmate remains responsible for all costs not covered by insurance.
+------CorefChainz
+Inmates-NNS 
+are-VBP 
+responsible-JJ 
+for-IN 
+providing-VBG 
+proof-NN 
+of-IN 
+medical-JJ 
+insurance-NN 
+or-CC 
+medical-JJ 
+assistance-NN 
+to-TO 
+the-DT 
+jail-NN 
+.-. 
+The-DT 
+inmate-NN 
+remains-VBZ 
+responsible-JJ 
+for-IN 
+all-DT 
+costs-NNS 
+not-RB 
+covered-VBN 
+by-IN 
+insurance-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> VBP 	-> are
+	 	-> ADJP 	-> JJ 	-> responsible
+	 	-> PP 	-> IN 	-> for
+	 	-> S 	-> VP 	-> VBG 	-> providing
+	 	-> NP 	-> NP 	-> NN 	-> proof
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> UCP 	-> JJ 	-> medical
+	 	-> NN 	-> insurance
+	 	-> CC 	-> or
+	 	-> JJ 	-> medical
+		 	-> NN 	-> assistance
+				 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+								 	-> . 	-> .
+		 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> inmate
+		 	-> VP 	-> VBZ 	-> remains
+	 	-> ADJP 	-> JJ 	-> responsible
+	 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> DT 	-> all
+	 	-> NNS 	-> costs
+		 	-> VP 	-> RB 	-> not
+	 	-> VBN 	-> covered
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NN 	-> insurance
+								 	-> . 	-> .
+			
+Dependensee repr
+nsubj(responsible-3, Inmates-1)
+cop(responsible-3, are-2)
+dep(remains-19, responsible-3)
+mark(providing-5, for-4)
+advcl(responsible-3, providing-5)
+dobj(providing-5, proof-6)
+case(assistance-12, of-7)
+dep(insurance-9, medical-8)
+amod(assistance-12, insurance-9)
+cc(insurance-9, or-10)
+conj:or(insurance-9, medical-11)
+amod(assistance-12, medical-11)
+nmod:of(proof-6, assistance-12)
+case(jail-15, to-13)
+det(jail-15, the-14)
+nmod:to(providing-5, jail-15)
+det(inmate-18, The-17)
+nsubj(remains-19, inmate-18)
+root(ROOT-0, remains-19)
+xcomp(remains-19, responsible-20)
+case(costs-23, for-21)
+det(costs-23, all-22)
+nmod:for(responsible-20, costs-23)
+neg(covered-25, not-24)
+acl(costs-23, covered-25)
+case(insurance-27, by-26)
+nmod:by(covered-25, insurance-27)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, responsible-3)
+nsubj(responsible-3, Inmates-1)
+cop(responsible-3, are-2)
+mark(providing-5, for-4)
+advcl:for(responsible-3, providing-5)
+dobj(providing-5, proof-6)
+case(insurance-9, of-7)
+amod(insurance-9, medical-8)
+nmod:of(proof-6, insurance-9)
+cc(insurance-9, or-10)
+amod(assistance-12, medical-11)
+nmod:of(proof-6, assistance-12)
+conj:or(insurance-9, assistance-12)
+case(jail-15, to-13)
+det(jail-15, the-14)
+nmod:to(providing-5, jail-15)
+punct(responsible-3, .-16)
+---
+qqroot(ROOT-0, responsible-3)
+nsubj(responsible-3, Inmates-1)
+cop(responsible-3, are-2)
+mark(providing-5, for-4)
+advcl:for(responsible-3, providing-5)
+dobj(providing-5, proof-6)
+case(insurance-9, of-7)
+amod(insurance-9, medical-8)
+nmod:of(proof-6, insurance-9)
+cc(insurance-9, or-10)
+amod(assistance-12, medical-11)
+nmod:of(proof-6, assistance-12)
+conj:or(insurance-9, assistance-12)
+case(jail-15, to-13)
+det(jail-15, the-14)
+nmod:to(providing-5, jail-15)
+punct(responsible-3, .-16)
+root(ROOT-0, remains-3)
+det(inmate-2, The-1)
+nsubj(remains-3, inmate-2)
+xcomp(remains-3, responsible-4)
+case(costs-7, for-5)
+det(costs-7, all-6)
+nmod:for(responsible-4, costs-7)
+neg(covered-9, not-8)
+acl(costs-7, covered-9)
+case(insurance-11, by-10)
+nmod:by(covered-9, insurance-11)
+punct(remains-3, .-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[19, 18] [?1, ?2, ?3, Inmates1, assistance12, costs7, covered9, inmate2, insurance11, insurance9, jail15, medical8, medical11, not8, proof6, providing5, remains3, responsible3, responsible4]
+covered9- ->?1
+responsible4- ->remains3
+?3-The->inmate2
+insurance9-of->proof6
+providing5-for->responsible3
+not8- ->covered9
+insurance11-by->covered9
+Inmates1-  : are ->responsible3
+medical11- ->assistance12
+?2-to->providing5
+?2-the->jail15
+?3- ->remains3
+?1-all->costs7
+medical8- ->insurance9
+assistance12-or->insurance9
+?1-for->responsible4
+proof6- ->providing5
+assistance12-of->proof6
+
+[responsible3
+	(<-for-providing5
+		(<- -proof6(<-of-insurance9(<-or-assistance12<- -medical11)<- -medical8)<-of-*assistance12)
+		<-to-?2)
+	<-  : are -Inmates1;
+remains3
+	(<- -responsible4<-for-?1<- -covered9(<-by-insurance11)<- -not8)
+	<- -?3;
+inmate2<-The-*?3;
+costs7<-all-*?1;
+jail15<-the-*?2]

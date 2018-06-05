@@ -1,0 +1,156 @@
+You will furnish your own underwear and socks. Boxer shorts, socks, and sports bra may be purchased from the commissary.
+------CorefChainz
+CHAIN1-["You" in sentence 1, "your" in sentence 1]
+representative mention: "You" in sentence 1
+You-PRP 
+will-MD 
+furnish-VB 
+your-PRP$ 
+own-JJ 
+underwear-NN 
+and-CC 
+socks-NNP 
+.-. 
+Boxer-NNP 
+shorts-NNP 
+,-, 
+socks-NNS 
+,-, 
+and-CC 
+sports-NNS 
+bra-NN 
+may-MD 
+be-VB 
+purchased-VBN 
+from-IN 
+the-DT 
+commissary-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> furnish
+	 	-> NP 	-> NP 	-> PRP$ 	-> your
+	 	-> JJ 	-> own
+	 	-> NN 	-> underwear
+		 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> NNP 	-> socks
+	 	-> . 	-> .
+	 	-> NNP 	-> Boxer
+	 	-> NNP 	-> shorts
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> socks
+							 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> S 	-> NP 	-> NNS 	-> sports
+	 	-> NN 	-> bra
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> purchased
+	 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> commissary
+							 	-> . 	-> .
+			
+Dependensee repr
+nsubj(furnish-3, You-1)
+aux(furnish-3, will-2)
+root(ROOT-0, furnish-3)
+nmod:poss(underwear-6, your-4)
+amod(underwear-6, own-5)
+dobj(furnish-3, underwear-6)
+cc(underwear-6, and-7)
+compound(shorts-11, socks-8)
+compound(shorts-11, Boxer-10)
+dobj(furnish-3, shorts-11)
+conj:and(underwear-6, shorts-11)
+appos(shorts-11, socks-13)
+cc(furnish-3, and-15)
+compound(bra-17, sports-16)
+nsubjpass(purchased-20, bra-17)
+aux(purchased-20, may-18)
+auxpass(purchased-20, be-19)
+conj:and(furnish-3, purchased-20)
+case(commissary-23, from-21)
+det(commissary-23, the-22)
+nmod:from(purchased-20, commissary-23)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, furnish-3)
+nsubj(furnish-3, You-1)
+aux(furnish-3, will-2)
+nmod:poss(underwear-6, your-4)
+amod(underwear-6, own-5)
+dobj(furnish-3, underwear-6)
+cc(underwear-6, and-7)
+dobj(furnish-3, socks-8)
+conj:and(underwear-6, socks-8)
+punct(furnish-3, .-9)
+---
+qqroot(ROOT-0, furnish-3)
+nsubj(furnish-3, You-1)
+aux(furnish-3, will-2)
+nmod:poss(underwear-6, your-4)
+amod(underwear-6, own-5)
+dobj(furnish-3, underwear-6)
+cc(underwear-6, and-7)
+dobj(furnish-3, socks-8)
+conj:and(underwear-6, socks-8)
+punct(furnish-3, .-9)
+root(ROOT-0, purchased-11)
+compound(shorts-2, Boxer-1)
+nsubjpass(purchased-11, shorts-2)
+punct(shorts-2, ,-3)
+conj:and(shorts-2, socks-4)
+nsubjpass(purchased-11, socks-4)
+punct(shorts-2, ,-5)
+cc(shorts-2, and-6)
+compound(bra-8, sports-7)
+conj:and(shorts-2, bra-8)
+nsubjpass(purchased-11, bra-8)
+aux(purchased-11, may-9)
+auxpass(purchased-11, be-10)
+case(commissary-14, from-12)
+det(commissary-14, the-13)
+nmod:from(purchased-11, commissary-14)
+punct(purchased-11, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[14, 16] [?1, Boxer1, You1, bra8, commissary14, furnish3, own5, purchased11, shorts2, socks8, socks4, sports7, underwear6, your4]
+You1-  : will ->furnish3
+socks4-and->shorts2
+?1-from->purchased11
+socks4- ->purchased11
+Boxer1- ->shorts2
+bra8-  : may  : be ->purchased11
+own5- ->underwear6
+shorts2- ->purchased11
+your4-poss->underwear6
+underwear6- ->furnish3
+sports7- ->bra8
+socks8-and->underwear6
+socks8- ->furnish3
+?1-the->commissary14
+your4-==->You1
+bra8-and->shorts2
+
+[purchased11
+	(<- -shorts2
+		(<-and-bra8<- -sports7)
+		(<- -Boxer1)
+		<-and-socks4)
+	(<-  : may  : be -*bra8)
+	(<- -*socks4)
+	<-from-?1;
+furnish3
+	(<-  : will -You1<-==-your4)
+	(<- -underwear6
+		(<-poss-*your4)
+		(<- -own5)
+		<-and-socks8)
+	<- -*socks8;
+commissary14<-the-*?1]

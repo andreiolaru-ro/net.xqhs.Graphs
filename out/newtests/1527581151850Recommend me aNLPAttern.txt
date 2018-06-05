@@ -1,0 +1,53 @@
+Recommend me a restaurant which serves fries.
+------CorefChainz
+Recommend-VB 
+me-PRP 
+a-DT 
+restaurant-NN 
+which-WDT 
+serves-VBZ 
+fries-NNS 
+.-. 
+ROOT 	-> S 	-> VP 	-> VB 	-> Recommend
+	 	-> S 	-> NP 	-> PRP 	-> me
+		 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> restaurant
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> VP 	-> VBZ 	-> serves
+	 	-> NP 	-> NNS 	-> fries
+								 	-> . 	-> .
+			
+Dependensee repr
+root(ROOT-0, Recommend-1)
+nsubj(restaurant-4, me-2)
+det(restaurant-4, a-3)
+xcomp(Recommend-1, restaurant-4)
+nsubj(serves-6, restaurant-4)
+ref(restaurant-4, which-5)
+acl:relcl(restaurant-4, serves-6)
+dobj(serves-6, fries-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, Recommend-1)
+iobj(Recommend-1, me-2)
+det(restaurant-4, a-3)
+dobj(Recommend-1, restaurant-4)
+nsubj(serves-6, restaurant-4)
+ref(restaurant-4, which-5)
+acl:relcl(restaurant-4, serves-6)
+dobj(serves-6, fries-7)
+punct(Recommend-1, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 7] [?1, Recommend1, fries7, me2, restaurant4, serves6, which5]
+?1- ->Recommend1
+?1- ->serves6
+fries7- ->serves6
+serves6- ->?1
+?1-a->restaurant4
+which5- ->?1
+me2- ->Recommend1

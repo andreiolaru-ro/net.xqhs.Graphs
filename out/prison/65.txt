@@ -1,0 +1,128 @@
+Inmates shall not engage in selling, buying, lending, borrowing, or trading of anything with another inmate.
+------CorefChainz
+Inmates-NNS 
+shall-MD 
+not-RB 
+engage-VB 
+in-IN 
+selling-NN 
+,-, 
+buying-NN 
+,-, 
+lending-NN 
+,-, 
+borrowing-NN 
+,-, 
+or-CC 
+trading-NN 
+of-IN 
+anything-NN 
+with-IN 
+another-DT 
+inmate-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> MD 	-> shall
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> engage
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> NN 	-> selling
+	 	-> , 	-> ,
+	 	-> NN 	-> buying
+	 	-> , 	-> ,
+	 	-> NN 	-> lending
+	 	-> , 	-> ,
+	 	-> NN 	-> borrowing
+	 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NN 	-> trading
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> anything
+					 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> inmate
+					 	-> . 	-> .
+			
+Dependensee repr
+nsubj(engage-4, Inmates-1)
+aux(engage-4, shall-2)
+neg(engage-4, not-3)
+root(ROOT-0, engage-4)
+case(selling-6, in-5)
+nmod:in(engage-4, selling-6)
+nmod:in(engage-4, buying-8)
+conj:or(selling-6, buying-8)
+nmod:in(engage-4, lending-10)
+conj:or(selling-6, lending-10)
+nmod:in(engage-4, borrowing-12)
+conj:or(selling-6, borrowing-12)
+cc(selling-6, or-14)
+nmod:in(engage-4, trading-15)
+conj:or(selling-6, trading-15)
+case(anything-17, of-16)
+nmod:of(selling-6, anything-17)
+case(inmate-20, with-18)
+det(inmate-20, another-19)
+nmod:with(engage-4, inmate-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, engage-4)
+nsubj(engage-4, Inmates-1)
+aux(engage-4, shall-2)
+neg(engage-4, not-3)
+case(selling-6, in-5)
+nmod:in(engage-4, selling-6)
+punct(selling-6, ,-7)
+nmod:in(engage-4, buying-8)
+conj:or(selling-6, buying-8)
+punct(selling-6, ,-9)
+nmod:in(engage-4, lending-10)
+conj:or(selling-6, lending-10)
+punct(selling-6, ,-11)
+nmod:in(engage-4, borrowing-12)
+conj:or(selling-6, borrowing-12)
+punct(selling-6, ,-13)
+cc(selling-6, or-14)
+nmod:in(engage-4, trading-15)
+conj:or(selling-6, trading-15)
+case(anything-17, of-16)
+nmod:of(trading-15, anything-17)
+case(inmate-20, with-18)
+det(inmate-20, another-19)
+nmod:with(trading-15, inmate-20)
+punct(engage-4, .-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[11, 14] [?1, Inmates1, anything17, borrowing12, buying8, engage4, inmate20, lending10, not3, selling6, trading15]
+borrowing12-or->selling6
+lending10-in->engage4
+trading15-in->engage4
+selling6-in->engage4
+buying8-in->engage4
+trading15-or->selling6
+anything17-of->trading15
+Inmates1-  : shall  : shall ->engage4
+lending10-or->selling6
+?1-with->trading15
+buying8-or->selling6
+borrowing12-in->engage4
+?1-another->inmate20
+not3- ->engage4
+
+[engage4
+	(<-in-selling6
+		(<-or-trading15(<-with-?1)<-of-anything17)
+		(<-or-borrowing12)
+		(<-or-buying8)
+		<-or-lending10)
+	(<-in-*trading15)
+	(<-in-*borrowing12)
+	(<-in-*buying8)
+	(<-in-*lending10)
+	(<-  : shall  : shall -Inmates1)
+	<- -not3;
+inmate20<-another-*?1]

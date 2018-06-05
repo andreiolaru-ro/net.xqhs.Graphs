@@ -1,0 +1,90 @@
+Administration will reply back within ten working days of receipt of the Grievance Form.
+------CorefChainz
+Administration-NNP 
+will-MD 
+reply-VB 
+back-RP 
+within-IN 
+ten-CD 
+working-JJ 
+days-NNS 
+of-IN 
+receipt-NN 
+of-IN 
+the-DT 
+Grievance-NNP 
+Form-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> Administration
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> reply
+	 	-> PRT 	-> RP 	-> back
+		 	-> PP 	-> IN 	-> within
+	 	-> NP 	-> NP 	-> CD 	-> ten
+	 	-> JJ 	-> working
+	 	-> NNS 	-> days
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NN 	-> receipt
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grievance
+	 	-> NN 	-> Form
+									 	-> . 	-> .
+			
+Dependensee repr
+nsubj(reply-3, Administration-1)
+aux(reply-3, will-2)
+root(ROOT-0, reply-3)
+compound:prt(reply-3, back-4)
+case(days-8, within-5)
+nummod(days-8, ten-6)
+amod(days-8, working-7)
+nmod:within(reply-3, days-8)
+case(receipt-10, of-9)
+nmod:of(days-8, receipt-10)
+case(Form-14, of-11)
+det(Form-14, the-12)
+compound(Form-14, Grievance-13)
+nmod:of(receipt-10, Form-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, reply-3)
+nsubj(reply-3, Administration-1)
+aux(reply-3, will-2)
+advmod(reply-3, back-4)
+case(days-8, within-5)
+nummod(days-8, ten-6)
+amod(days-8, working-7)
+nmod:within(reply-3, days-8)
+case(receipt-10, of-9)
+nmod:of(days-8, receipt-10)
+case(Form-14, of-11)
+det(Form-14, the-12)
+compound(Form-14, Grievance-13)
+nmod:of(receipt-10, Form-14)
+punct(reply-3, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[10, 9] [?1, Administration1, Form14, Grievance13, back4, days8, receipt10, reply3, ten6, working7]
+working7- ->days8
+ten6- ->days8
+receipt10-of->days8
+?1-of->receipt10
+Administration1-  : will ->reply3
+Grievance13- ->?1
+days8-within->reply3
+?1-the->Form14
+back4- ->reply3
+
+[reply3
+	(<-within-days8
+		(<-of-receipt10<-of-?1<- -Grievance13)
+		(<- -ten6)
+		<- -working7)
+	(<-  : will -Administration1)
+	<- -back4;
+Form14<-the-*?1]

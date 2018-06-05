@@ -1,0 +1,213 @@
+Any prescriptions that are dropped off at the jail for an inmate, or that the inmate brings to the jail must be approved by the jail nurse before the medication can be administered to the inmate.
+------CorefChainz
+CHAIN3-["an inmate" in sentence 1, "the inmate" in sentence 1]
+representative mention: "an inmate" in sentence 1
+Any-DT 
+prescriptions-NNS 
+that-WDT 
+are-VBP 
+dropped-VBN 
+off-RP 
+at-IN 
+the-DT 
+jail-NN 
+for-IN 
+an-DT 
+inmate-NN 
+,-, 
+or-CC 
+that-IN 
+the-DT 
+inmate-NN 
+brings-VBZ 
+to-TO 
+the-DT 
+jail-NN 
+must-MD 
+be-VB 
+approved-VBN 
+by-IN 
+the-DT 
+jail-NN 
+nurse-NN 
+before-IN 
+the-DT 
+medication-NN 
+can-MD 
+be-VB 
+administered-VBN 
+to-TO 
+the-DT 
+inmate-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> Any
+	 	-> NNS 	-> prescriptions
+		 	-> SBAR 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> dropped
+	 	-> PRT 	-> RP 	-> off
+		 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+									 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+		 	-> VP 	-> VBZ 	-> brings
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+								 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> approved
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> nurse
+			 	-> SBAR 	-> IN 	-> before
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> medication
+		 	-> VP 	-> MD 	-> can
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> administered
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+											 	-> . 	-> .
+			
+Dependensee repr
+det(prescriptions-2, Any-1)
+nsubjpass(dropped-5, prescriptions-2)
+nsubjpass(approved-24, prescriptions-2)
+ref(prescriptions-2, that-3)
+auxpass(dropped-5, are-4)
+acl:relcl(prescriptions-2, dropped-5)
+compound:prt(dropped-5, off-6)
+case(jail-9, at-7)
+det(jail-9, the-8)
+nmod:at(dropped-5, jail-9)
+case(inmate-12, for-10)
+det(inmate-12, an-11)
+nmod:for(jail-9, inmate-12)
+cc(dropped-5, or-14)
+mark(brings-18, that-15)
+det(inmate-17, the-16)
+nsubj(brings-18, inmate-17)
+acl:relcl(prescriptions-2, brings-18)
+conj:or(dropped-5, brings-18)
+case(jail-21, to-19)
+det(jail-21, the-20)
+nmod:to(brings-18, jail-21)
+aux(approved-24, must-22)
+auxpass(approved-24, be-23)
+root(ROOT-0, approved-24)
+case(nurse-28, by-25)
+det(nurse-28, the-26)
+compound(nurse-28, jail-27)
+nmod:agent(approved-24, nurse-28)
+mark(administered-34, before-29)
+det(medication-31, the-30)
+nsubjpass(administered-34, medication-31)
+aux(administered-34, can-32)
+auxpass(administered-34, be-33)
+advcl(approved-24, administered-34)
+case(inmate-37, to-35)
+det(inmate-37, the-36)
+nmod:to(administered-34, inmate-37)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, approved-24)
+det(prescriptions-2, Any-1)
+nsubjpass(dropped-5, prescriptions-2)
+nsubjpass(approved-24, prescriptions-2)
+ref(prescriptions-2, that-3)
+auxpass(dropped-5, are-4)
+acl:relcl(prescriptions-2, dropped-5)
+compound:prt(dropped-5, off-6)
+case(jail-9, at-7)
+det(jail-9, the-8)
+nmod:at(dropped-5, jail-9)
+case(inmate-12, for-10)
+det(inmate-12, an-11)
+nmod:for(dropped-5, inmate-12)
+punct(prescriptions-2, ,-13)
+cc(prescriptions-2, or-14)
+mark(brings-18, that-15)
+det(inmate-17, the-16)
+nsubj(brings-18, inmate-17)
+conj:or(prescriptions-2, brings-18)
+nsubjpass(dropped-5, brings-18)
+nsubjpass(approved-24, brings-18)
+case(jail-21, to-19)
+det(jail-21, the-20)
+nmod:to(brings-18, jail-21)
+aux(approved-24, must-22)
+auxpass(approved-24, be-23)
+case(nurse-28, by-25)
+det(nurse-28, the-26)
+compound(nurse-28, jail-27)
+nmod:agent(approved-24, nurse-28)
+mark(administered-34, before-29)
+det(medication-31, the-30)
+nsubjpass(administered-34, medication-31)
+aux(administered-34, can-32)
+auxpass(administered-34, be-33)
+advcl:before(approved-24, administered-34)
+case(inmate-37, to-35)
+det(inmate-37, the-36)
+nmod:to(administered-34, inmate-37)
+punct(approved-24, .-38)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[22, 25] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, administered34, approved24, brings18, dropped5, inmate12, inmate17, inmate37, jail27, jail21, jail9, medication31, nurse28, off6, prescriptions2]
+?7-the->nurse28
+administered34-before->approved24
+off6-prt->dropped5
+?3-at->dropped5
+?6- ->dropped5
+?3-the->jail9
+?4-the->inmate17
+?6- ->approved24
+?7-agent : by ->approved24
+?8-the->inmate37
+?8-to->administered34
+brings18-or->?6
+brings18-  : must  : be  : be ->approved24
+?1-an->inmate12
+dropped5-  : are  : are  : are  : that  : that ->?6
+brings18- ->dropped5
+?4-==->?1
+?5-  : can  : be ->administered34
+?5-the->medication31
+?2-to->brings18
+?6-Any->prescriptions2
+?4-  : that ->brings18
+?2-the->jail21
+?1-for->dropped5
+jail27- ->?7
+
+[prescriptions2<-Any-?6
+	(<-  : are  : are  : are  : that  : that -dropped5(<- -*?6)(<-for-?1<-==-?4)(<- -brings18(<-  : that -*?4)<-to-?2)(<-at-?3)<-prt-off6)
+	<-or-*brings18;
+nurse28<-the-?7<- -jail27;
+approved24
+	(<- -*?6)
+	(<-agent : by -*?7)
+	(<-  : must  : be  : be -*brings18)
+	<-before-administered34
+		(<-  : can  : be -?5)
+		<-to-?8;
+inmate12<-an-*?1;
+inmate17<-the-*?4;
+inmate37<-the-*?8;
+jail21<-the-*?2;
+jail9<-the-*?3;
+medication31<-the-*?5]

@@ -1,0 +1,181 @@
+You will be charged for any expenses in the event you are required, or you have requested to see a medical doctor, dentist, or any other medical professional.
+------CorefChainz
+CHAIN4-["You" in sentence 1, "you" in sentence 1, "you" in sentence 1]
+representative mention: "You" in sentence 1
+You-PRP 
+will-MD 
+be-VB 
+charged-VBN 
+for-IN 
+any-DT 
+expenses-NNS 
+in-IN 
+the-DT 
+event-NN 
+you-PRP 
+are-VBP 
+required-VBN 
+,-, 
+or-CC 
+you-PRP 
+have-VBP 
+requested-VBN 
+to-TO 
+see-VB 
+a-DT 
+medical-JJ 
+doctor-NN 
+,-, 
+dentist-NN 
+,-, 
+or-CC 
+any-DT 
+other-JJ 
+medical-JJ 
+professional-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> charged
+	 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NNS 	-> expenses
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> event
+		 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> required
+													 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> have
+	 	-> VP 	-> VBN 	-> requested
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> see
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> medical
+	 	-> NN 	-> doctor
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> dentist
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> other
+	 	-> JJ 	-> medical
+	 	-> NN 	-> professional
+									 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(charged-4, You-1)
+aux(charged-4, will-2)
+auxpass(charged-4, be-3)
+root(ROOT-0, charged-4)
+case(expenses-7, for-5)
+det(expenses-7, any-6)
+nmod:for(charged-4, expenses-7)
+case(event-10, in-8)
+det(event-10, the-9)
+nmod:in(expenses-7, event-10)
+nsubjpass(required-13, you-11)
+auxpass(required-13, are-12)
+acl:relcl(event-10, required-13)
+cc(charged-4, or-15)
+nsubj(requested-18, you-16)
+nsubj:xsubj(see-20, you-16)
+aux(requested-18, have-17)
+conj:or(charged-4, requested-18)
+mark(see-20, to-19)
+xcomp(requested-18, see-20)
+det(doctor-23, a-21)
+amod(doctor-23, medical-22)
+dobj(see-20, doctor-23)
+dobj(see-20, dentist-25)
+conj:or(doctor-23, dentist-25)
+cc(doctor-23, or-27)
+det(professional-31, any-28)
+amod(professional-31, other-29)
+amod(professional-31, medical-30)
+dobj(see-20, professional-31)
+conj:or(doctor-23, professional-31)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, charged-4)
+nsubjpass(charged-4, You-1)
+aux(charged-4, will-2)
+auxpass(charged-4, be-3)
+case(expenses-7, for-5)
+det(expenses-7, any-6)
+nmod:for(charged-4, expenses-7)
+case(event-10, in-8)
+det(event-10, the-9)
+nmod:in(expenses-7, event-10)
+nsubjpass(required-13, you-11)
+auxpass(required-13, are-12)
+acl:relcl(event-10, required-13)
+punct(charged-4, ,-14)
+cc(charged-4, or-15)
+nsubj(requested-18, you-16)
+nsubj:xsubj(see-20, you-16)
+aux(requested-18, have-17)
+conj:or(charged-4, requested-18)
+mark(see-20, to-19)
+xcomp(requested-18, see-20)
+det(doctor-23, a-21)
+amod(doctor-23, medical-22)
+dobj(see-20, doctor-23)
+punct(doctor-23, ,-24)
+dobj(see-20, dentist-25)
+conj:or(doctor-23, dentist-25)
+punct(doctor-23, ,-26)
+cc(doctor-23, or-27)
+det(professional-31, any-28)
+amod(professional-31, other-29)
+amod(professional-31, medical-30)
+dobj(see-20, professional-31)
+conj:or(doctor-23, professional-31)
+punct(charged-4, .-32)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[19, 23] [?1, ?2, ?3, ?4, You1, charged4, dentist25, doctor23, event10, expenses7, medical22, medical30, other29, professional31, requested18, required13, see20, you11, you16]
+You1-  : will  : be ->charged4
+?4- ->see20
+requested18-or->charged4
+you11-  : are ->required13
+?3- ->see20
+?3-or->?4
+other29- ->?3
+?3-any->professional31
+?4-a->doctor23
+dentist25-or->?4
+?1-for->charged4
+required13- ->?2
+?2-the->event10
+you16-==->You1
+dentist25- ->see20
+see20-  : to ->requested18
+you11-==->You1
+you16- ->see20
+?1-any->expenses7
+medical30- ->?3
+medical22- ->?4
+you16-  : have ->requested18
+?2-in->?1
+
+[charged4
+	(<-or-requested18
+		(<-  : to -see20(<- -?4(<-or-?3(<- -medical30)<- -other29)(<-or-dentist25)<- -medical22)(<- -*?3)(<- -*dentist25)<- -you16)
+		<-  : have -*you16)
+	(<-for-?1<-in-?2<- -required13<-  : are -you11)
+	<-  : will  : be -You1
+		(<-==-*you11)
+		<-==-*you16;
+expenses7<-any-*?1;
+doctor23<-a-*?4;
+event10<-the-*?2;
+professional31<-any-*?3]

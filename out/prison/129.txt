@@ -1,0 +1,236 @@
+Food products may only be purchased through the commissary. Food products will be stored in inmate totes. Inmates are NOT allowed to have food items that are brought or mailed to them in jail.
+------CorefChainz
+CHAIN3-["Food products" in sentence 1, "Food products" in sentence 2]
+representative mention: "Food products" in sentence 1
+CHAIN5-["Inmates" in sentence 3, "them" in sentence 3]
+representative mention: "Inmates" in sentence 3
+Food-NNP 
+products-NNS 
+may-MD 
+only-RB 
+be-VB 
+purchased-VBN 
+through-IN 
+the-DT 
+commissary-NN 
+.-. 
+Food-NNP 
+products-NNS 
+will-MD 
+be-VB 
+stored-VBN 
+in-IN 
+inmate-NNP 
+totes-NNPS 
+.-. 
+Inmates-NNPS 
+are-VBP 
+NOT-RB 
+allowed-VBN 
+to-TO 
+have-VB 
+food-NN 
+items-NNS 
+that-WDT 
+are-VBP 
+brought-VBN 
+or-CC 
+mailed-VBN 
+to-TO 
+them-PRP 
+in-IN 
+jail-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NNP 	-> Food
+	 	-> NNS 	-> products
+		 	-> VP 	-> MD 	-> may
+	 	-> ADVP 	-> RB 	-> only
+		 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> purchased
+	 	-> PP 	-> IN 	-> through
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> commissary
+						 	-> . 	-> .
+		 	-> NP 	-> NNP 	-> Food
+	 	-> NNS 	-> products
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> stored
+	 	-> SBAR 	-> IN 	-> in
+	 	-> S 	-> NP 	-> NNP 	-> inmate
+	 	-> NNPS 	-> totes
+	 	-> . 	-> .
+	 	-> NNPS 	-> Inmates
+		 	-> VP 	-> VBP 	-> are
+	 	-> ADVP 	-> RB 	-> NOT
+		 	-> VP 	-> VBN 	-> allowed
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> NP 	-> NN 	-> food
+	 	-> NNS 	-> items
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> brought
+	 	-> CC 	-> or
+	 	-> VBN 	-> mailed
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> PRP 	-> them
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NN 	-> jail
+																				 	-> . 	-> .
+			
+Dependensee repr
+compound(products-2, Food-1)
+nsubjpass(purchased-6, products-2)
+aux(purchased-6, may-3)
+advmod(purchased-6, only-4)
+auxpass(purchased-6, be-5)
+dep(stored-15, purchased-6)
+case(commissary-9, through-7)
+det(commissary-9, the-8)
+nmod:through(purchased-6, commissary-9)
+compound(products-12, Food-11)
+nsubjpass(stored-15, products-12)
+aux(stored-15, will-13)
+auxpass(stored-15, be-14)
+root(ROOT-0, stored-15)
+mark(allowed-23, in-16)
+compound(Inmates-20, inmate-17)
+compound(Inmates-20, totes-18)
+nsubjpass(allowed-23, Inmates-20)
+nsubj:xsubj(have-25, Inmates-20)
+auxpass(allowed-23, are-21)
+neg(allowed-23, NOT-22)
+advcl(stored-15, allowed-23)
+mark(have-25, to-24)
+xcomp(allowed-23, have-25)
+compound(items-27, food-26)
+dobj(have-25, items-27)
+nsubjpass(brought-30, items-27)
+nsubjpass(mailed-32, items-27)
+ref(items-27, that-28)
+auxpass(brought-30, are-29)
+acl:relcl(items-27, brought-30)
+cc(brought-30, or-31)
+acl:relcl(items-27, mailed-32)
+conj:or(brought-30, mailed-32)
+case(them-34, to-33)
+nmod:to(brought-30, them-34)
+case(jail-36, in-35)
+nmod:in(them-34, jail-36)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, purchased-6)
+compound(products-2, Food-1)
+nsubjpass(purchased-6, products-2)
+aux(purchased-6, may-3)
+advmod(purchased-6, only-4)
+auxpass(purchased-6, be-5)
+case(commissary-9, through-7)
+det(commissary-9, the-8)
+nmod:through(purchased-6, commissary-9)
+punct(purchased-6, .-10)
+---
+qqroot(ROOT-0, purchased-6)
+compound(products-2, Food-1)
+nsubjpass(purchased-6, products-2)
+aux(purchased-6, may-3)
+advmod(purchased-6, only-4)
+auxpass(purchased-6, be-5)
+case(commissary-9, through-7)
+det(commissary-9, the-8)
+nmod:through(purchased-6, commissary-9)
+punct(purchased-6, .-10)
+root(ROOT-0, stored-5)
+compound(products-2, Food-1)
+nsubjpass(stored-5, products-2)
+aux(stored-5, will-3)
+auxpass(stored-5, be-4)
+case(totes-8, in-6)
+compound(totes-8, inmate-7)
+nmod:in(stored-5, totes-8)
+punct(stored-5, .-9)
+---
+qqroot(ROOT-0, purchased-6)
+compound(products-2, Food-1)
+nsubjpass(purchased-6, products-2)
+aux(purchased-6, may-3)
+advmod(purchased-6, only-4)
+auxpass(purchased-6, be-5)
+case(commissary-9, through-7)
+det(commissary-9, the-8)
+nmod:through(purchased-6, commissary-9)
+punct(purchased-6, .-10)
+root(ROOT-0, stored-5)
+compound(products-2, Food-1)
+nsubjpass(stored-5, products-2)
+aux(stored-5, will-3)
+auxpass(stored-5, be-4)
+case(totes-8, in-6)
+compound(totes-8, inmate-7)
+nmod:in(stored-5, totes-8)
+punct(stored-5, .-9)
+root(ROOT-0, NOT-3)
+nsubj(NOT-3, Inmates-1)
+cop(NOT-3, are-2)
+acl(NOT-3, allowed-4)
+mark(have-6, to-5)
+xcomp(allowed-4, have-6)
+compound(items-8, food-7)
+dobj(have-6, items-8)
+nsubjpass(brought-11, items-8)
+nsubjpass(mailed-13, items-8)
+ref(items-8, that-9)
+auxpass(brought-11, are-10)
+acl:relcl(items-8, brought-11)
+cc(brought-11, or-12)
+acl:relcl(items-8, mailed-13)
+conj:or(brought-11, mailed-13)
+case(them-15, to-14)
+nmod:to(mailed-13, them-15)
+case(jail-17, in-16)
+nmod:in(brought-11, jail-17)
+punct(NOT-3, .-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+G[21, 22] [?1, Food1, Food1, Inmates1, NOT3, allowed4, brought11, commissary9, food7, have6, inmate7, items8, jail17, mailed13, only4, products2, products2, purchased6, stored5, them15, totes8]
+food7-  : that  : that  : that ->items8
+?1-the->commissary9
+Inmates1-  : are ->NOT3
+them15-to->mailed13
+items8- ->brought11
+brought11-  : are  : are ->items8
+have6-  : to ->allowed4
+totes8-in->stored5
+items8- ->have6
+them15-==->Inmates1
+Food1- ->products2
+inmate7- ->totes8
+products2-  : will  : be ->stored5
+Food1- ->products2
+mailed13- ->items8
+mailed13-or->brought11
+?1-through->purchased6
+jail17-in->brought11
+allowed4- ->NOT3
+products2-  : may  : may ->purchased6
+items8- ->mailed13
+only4-  : be ->purchased6
+
+[NOT3
+	(<- -allowed4<-  : to -have6<- -items8(<-  : are  : are -brought11(<- -*items8)(<-or-mailed13(<- -*items8)<-to-them15)<-in-jail17)(<- -*mailed13)<-  : that  : that  : that -food7)
+	<-  : are -Inmates1<-==-*them15;
+stored5
+	(<-  : will  : be -products2<- -Food1)
+	<-in-totes8<- -inmate7;
+purchased6
+	(<-  : may  : may -products2<- -Food1)
+	(<-through-?1)
+	<-  : be -only4;
+commissary9<-the-*?1]

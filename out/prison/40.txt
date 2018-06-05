@@ -1,0 +1,126 @@
+Items no longer needed or wanted by an inmate in jail, shall be mailed out at the inmate's expense.
+------CorefChainz
+CHAIN3-["an inmate in jail" in sentence 1, "the inmate 's" in sentence 1]
+representative mention: "an inmate in jail" in sentence 1
+Items-NNS 
+no-RB 
+longer-RB 
+needed-VBD 
+or-CC 
+wanted-VBD 
+by-IN 
+an-DT 
+inmate-NN 
+in-IN 
+jail-NN 
+,-, 
+shall-MD 
+be-VB 
+mailed-VBN 
+out-RP 
+at-IN 
+the-DT 
+inmate-NN 
+'s-POS 
+expense-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Items
+		 	-> ADVP 	-> RB 	-> no
+	 	-> RB 	-> longer
+		 	-> VP 	-> VP 	-> VBD 	-> needed
+		 	-> CC 	-> or
+	 	-> VP 	-> VBD 	-> wanted
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+			 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NN 	-> jail
+				 	-> , 	-> ,
+	 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> mailed
+	 	-> PRT 	-> RP 	-> out
+		 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> expense
+							 	-> . 	-> .
+			
+Dependensee repr
+nsubj(needed-4, Items-1)
+nsubj(wanted-6, Items-1)
+neg(longer-3, no-2)
+advmod(needed-4, longer-3)
+root(ROOT-0, needed-4)
+cc(needed-4, or-5)
+conj:or(needed-4, wanted-6)
+case(inmate-9, by-7)
+det(inmate-9, an-8)
+nmod:by(wanted-6, inmate-9)
+case(jail-11, in-10)
+nmod:in(wanted-6, jail-11)
+aux(mailed-15, shall-13)
+auxpass(mailed-15, be-14)
+dep(needed-4, mailed-15)
+compound:prt(mailed-15, out-16)
+case(expense-21, at-17)
+det(inmate-19, the-18)
+nmod:poss(expense-21, inmate-19)
+case(inmate-19, 's-20)
+nmod:at(mailed-15, expense-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, mailed-15)
+nsubjpass(mailed-15, Items-1)
+neg(longer-3, no-2)
+advmod(needed-4, longer-3)
+acl(Items-1, needed-4)
+cc(needed-4, or-5)
+acl(Items-1, wanted-6)
+conj:or(needed-4, wanted-6)
+case(inmate-9, by-7)
+det(inmate-9, an-8)
+nmod:by(needed-4, inmate-9)
+case(jail-11, in-10)
+nmod:in(inmate-9, jail-11)
+punct(mailed-15, ,-12)
+aux(mailed-15, shall-13)
+auxpass(mailed-15, be-14)
+compound:prt(mailed-15, out-16)
+case(expense-21, at-17)
+det(inmate-19, the-18)
+nmod:poss(expense-21, inmate-19)
+case(inmate-19, 's-20)
+nmod:at(mailed-15, expense-21)
+punct(mailed-15, .-22)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[13, 14] [?1, ?2, Items1, expense21, inmate9, inmate19, jail11, longer3, mailed15, needed4, no2, out16, wanted6]
+?1-an->inmate9
+wanted6-or->needed4
+?2-poss : 's ->expense21
+needed4- ->Items1
+longer3- ->needed4
+jail11-in->?1
+Items1- ->mailed15
+?2-==->?1
+out16-prt : shall  : be ->mailed15
+?2-the->inmate19
+no2- ->longer3
+expense21-at->mailed15
+wanted6- ->Items1
+?1-by->needed4
+
+[mailed15
+	(<- -Items1
+		(<- -needed4(<- -longer3<- -no2)(<-by-?1(<-==-?2)<-in-jail11)<-or-wanted6)
+		<- -*wanted6)
+	(<-prt : shall  : be -out16)
+	<-at-expense21<-poss : 's -*?2;
+inmate9<-an-*?1;
+inmate19<-the-*?2]

@@ -1,0 +1,147 @@
+Former inmates must have been out of jail for a period of at least 60 days prior to be listed on a current inmate’s visiting list.
+------CorefChainz
+Former-JJ 
+inmates-NNS 
+must-MD 
+have-VB 
+been-VBN 
+out-IN 
+of-IN 
+jail-NN 
+for-IN 
+a-DT 
+period-NN 
+of-IN 
+at-IN 
+least-JJS 
+60-CD 
+days-NNS 
+prior-RB 
+to-TO 
+be-VB 
+listed-VBN 
+on-IN 
+a-DT 
+current-JJ 
+inmate-NN 
+'s-POS 
+visiting-VBG 
+list-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> JJ 	-> Former
+	 	-> NNS 	-> inmates
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> have
+	 	-> VP 	-> VBN 	-> been
+	 	-> ADJP 	-> IN 	-> out
+	 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NN 	-> jail
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> period
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> QP 	-> IN 	-> at
+	 	-> JJS 	-> least
+	 	-> CD 	-> 60
+		 	-> NNS 	-> days
+								 	-> ADVP 	-> RB 	-> prior
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> listed
+	 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> current
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> VBG 	-> visiting
+	 	-> NN 	-> list
+											 	-> . 	-> .
+			
+Dependensee repr
+amod(inmates-2, Former-1)
+nsubj(jail-8, inmates-2)
+aux(jail-8, must-3)
+aux(jail-8, have-4)
+cop(jail-8, been-5)
+case(jail-8, out-6)
+mwe(out-6, of-7)
+root(ROOT-0, jail-8)
+case(period-11, for-9)
+det(period-11, a-10)
+nmod:for(jail-8, period-11)
+case(days-16, of-12)
+case(least-14, at-13)
+nmod:npmod(60-15, least-14)
+nummod(days-16, 60-15)
+nmod:of(period-11, days-16)
+advmod(jail-8, prior-17)
+mark(listed-20, to-18)
+auxpass(listed-20, be-19)
+dep(prior-17, listed-20)
+case(list-27, on-21)
+det(inmate-24, a-22)
+amod(inmate-24, current-23)
+nmod:poss(list-27, inmate-24)
+case(inmate-24, 's-25)
+amod(list-27, visiting-26)
+nmod:on(listed-20, list-27)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, jail-8)
+amod(inmates-2, Former-1)
+nsubj(jail-8, inmates-2)
+aux(jail-8, must-3)
+aux(jail-8, have-4)
+cop(jail-8, been-5)
+case(jail-8, out-6)
+mwe(out-6, of-7)
+case(period-11, for-9)
+det(period-11, a-10)
+nmod:for(jail-8, period-11)
+case(days-16, of-12)
+case(least-14, at-13)
+nmod:npmod(60-15, least-14)
+nummod(days-16, 60-15)
+nmod:of(period-11, days-16)
+advmod(listed-20, prior-17)
+mark(listed-20, to-18)
+auxpass(listed-20, be-19)
+acl:to(period-11, listed-20)
+case(list-27, on-21)
+det(inmate-24, a-22)
+amod(inmate-24, current-23)
+nmod:poss(list-27, inmate-24)
+case(inmate-24, 's-25)
+amod(list-27, visiting-26)
+nmod:on(listed-20, list-27)
+punct(jail-8, .-28)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[16, 14] [6015, ?1, ?2, Former1, current23, days16, inmate24, inmates2, jail8, least14, list27, listed20, of7, period11, prior17, visiting26]
+?1-a->period11
+prior17-  : be ->listed20
+current23-  : 's  : 's ->?2
+visiting26- ->list27
+least14-npmod : at ->6015
+?1-for->jail8
+listed20-to->?1
+6015- ->days16
+Former1- ->inmates2
+?2-poss->list27
+inmates2-  : must  : have  : been  : out ->jail8
+?2-a->inmate24
+days16-of->?1
+list27-on->listed20
+
+[period11<-a-?1
+	(<-to-listed20(<-on-list27(<-poss-?2<-  : 's  : 's -current23)<- -visiting26)<-  : be -prior17)
+	<-of-days16<- -6015<-npmod : at -least14;
+jail8
+	(<-for-*?1)
+	<-  : must  : have  : been  : out -inmates2<- -Former1;
+of7;
+inmate24<-a-*?2]

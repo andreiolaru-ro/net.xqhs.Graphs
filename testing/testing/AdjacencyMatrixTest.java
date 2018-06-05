@@ -148,7 +148,7 @@ public class AdjacencyMatrixTest extends GraphMatcherTest {
 		// TODO:Atentie carpeala
 		ContextPattern pat = Parser.convertContextPatterns(patterns, pipeline)
 				.get(0);
-		Viewer v = Parser.contextPatternVisualize(pat, true);
+		Viewer v = Parser.displayContextPattern(pat, true);
 		System.out.println("Adjacency matrix:");
 
 		ContextGraph cgh = new GraphConverter(

@@ -23,6 +23,7 @@ import net.xqhs.graphs.graph.Graph;
 import net.xqhs.graphs.graph.SimpleGraph;
 import net.xqhs.graphs.representation.graphical.GraphicalGraphRepresentation;
 import net.xqhs.graphs.representation.graphical.RadialGraphRepresentation;
+import net.xqhs.graphs.representation.text.TextGraphRepresentation;
 import net.xqhs.util.logging.LoggerSimple.Level;
 import net.xqhs.util.logging.Unit;
 
@@ -73,6 +74,8 @@ import edu.stanford.nlp.util.CoreMap;
 public class Parser {
 
 	private final static String PCG_MODEL = "edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz";
+
+	private static final String DEFAULT_PATH_FOR_IMAGES = "img";
 
 	private final TokenizerFactory<CoreLabel> tokenizerFactory = PTBTokenizer
 			.factory(new CoreLabelTokenFactory(), "invertible=true");
@@ -312,17 +315,39 @@ public class Parser {
 
 	public static ArrayList<ContextPattern> convertContextPatterns(
 			ArrayList<String> strs, StanfordCoreNLP pipeline) throws Exception {
+		return Parser.convertContextPatterns(strs, pipeline, null);
+	}
+
+	/**
+	 * @param strs
+	 *            : List of text units to convert to individual graphs. may be
+	 *            sentences or whole paragraphs
+	 * @param pipeline
+	 *            : from Parser.init
+	 * @param path
+	 *            : name of the subfolder of out/ with no trailing slashes eg:
+	 *            out/prison = prison and out/prison/dummy= prison//dummy. The
+	 *            images will be added in a subfolder called img
+	 * @return
+	 * @throws Exception
+	 */
+	public static ArrayList<ContextPattern> convertContextPatterns(
+			ArrayList<String> strs, StanfordCoreNLP pipeline, String path)
+			throws Exception {
 
 		Parser parser = new Parser();
 		ArrayList<ContextPattern> result = new ArrayList<ContextPattern>();
 		if (strs != null && !strs.isEmpty()) {
+			int k = 0;
 			for (String str : strs) {
-
+				k++;
 				// make output file
-				String filename = "out//newtests//"
-						+ System.currentTimeMillis()
-						+ (str.substring(0, Math.min(str.length(), 15))).trim()
-						+ "NLPAttern.txt";
+				if (path == null)
+					path = "newtests";
+				String filename = "out//" + path + "//" + k + ".txt";
+				// + System.currentTimeMillis()
+				// + (str.substring(0, Math.min(str.length(), 15))).trim()
+				// + "NLPAttern.txt";
 				PrintWriter writer = new PrintWriter(filename, "UTF-8");
 				writer.println(str);
 				System.out.println("Output in " + filename);
@@ -351,6 +376,11 @@ public class Parser {
 
 				g = fixDeterminers(g);
 				writer.println(g.toString());
+				TextGraphRepresentation GR = new TextGraphRepresentation(g)
+						.setLayout("\n", "\t", 2);
+				GR.update();
+				writer.println(GR.displayRepresentation());
+
 				// parser.getCorefChainz(document, writer);
 				// g = cPc.breakPatterns(g);
 				System.out.println(g.toString());
@@ -358,6 +388,7 @@ public class Parser {
 				// g = cxt.removeDuplicateNN(g);
 				g = (ContextPattern) ContextPatternConverter.removeDuplicates(
 						NLGraphType.PATTERN, g);
+				Parser.printGraphPicture(g, Integer.toString(k), path + "//img");
 				// parser.contextPatternVisualize(g, true);
 				// parser.getGraphicalGraph(true, g);
 
@@ -603,7 +634,7 @@ public class Parser {
 					String l = edge.getRelation().getShortName();
 					List<String> undesirables = Arrays.asList("that", "which");
 
-					if (undesirables.contains(dep.tag().toLowerCase())) {
+					if (undesirables.contains(dep.word().toLowerCase())) {
 
 						FunctionWord f = new FunctionWord(l,
 								edge.getDependent());
@@ -693,10 +724,22 @@ public class Parser {
 		return w;
 	}
 
-	public static Viewer contextPatternVisualize(SimpleGraph cxt,
-			boolean andDisplay) throws IOException, InterruptedException {
-		String graphId = cxt.getUnitName();// System.currentTimeMillis() +
-											// cxtToSentence(cxt);
+	/**
+	 * Use if you don't want to generate a view
+	 *
+	 * @param cxt
+	 * @param path
+	 *            : only folder name, no slashes. Filename is generated here
+	 * @return
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
+	public static DefaultGraph printGraphPicture(SimpleGraph cxt,
+			String filename, String path) throws IOException,
+			InterruptedException {
+		String graphId = filename;// cxt.getUnitName();//
+									// System.currentTimeMillis() +
+		// cxtToSentence(cxt);
 
 		DefaultGraph sg = new DefaultGraph(cxt.getUnitName(), false, false);
 		Map<NLNode, Node> isomorphism = new IdentityHashMap<NLNode, Node>();
@@ -752,7 +795,28 @@ public class Parser {
 		pic.setQuality(Quality.HIGH);
 		pic.setResolution(Resolutions.HD720);
 		Thread.sleep(300);
-		pic.writeAll(sg, "out//newtests//img" + graphId + ".png");
+		if (path == null)
+			path = "img";
+		// my curr path is prison//img
+		pic.writeAll(sg, "out//" + path + "//" + graphId + ".png");
+		return sg;
+	}
+
+	/**
+	 * @param cxt
+	 * @param andDisplay
+	 *            : doesn't work, so it should only be used as true. If you need
+	 *            it simply printed to a file use the
+	 *            contextPatternVisualize(graph, path)
+	 * @param path
+	 * @return
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
+	public static Viewer displayContextPattern(SimpleGraph cxt,
+			boolean andDisplay) throws IOException, InterruptedException {
+		DefaultGraph sg = printGraphPicture(cxt,
+				"g" + System.currentTimeMillis(), DEFAULT_PATH_FOR_IMAGES);
 		Viewer viewer;
 		if (andDisplay) {
 

@@ -163,7 +163,7 @@ public class MatchMaker {
 
 		}
 		try {
-			Parser.contextPatternVisualize(newg, true);
+			Parser.displayContextPattern(newg, true);
 
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block

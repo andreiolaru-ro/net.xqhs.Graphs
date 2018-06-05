@@ -1,0 +1,143 @@
+Anything other than money, must have prior approval by jail administration before being dropped off, or mailed to the jail for an inmate.
+------CorefChainz
+Anything-NN 
+other-JJ 
+than-IN 
+money-NN 
+,-, 
+must-MD 
+have-VB 
+prior-JJ 
+approval-NN 
+by-IN 
+jail-NN 
+administration-NN 
+before-IN 
+being-VBG 
+dropped-VBN 
+off-RP 
+,-, 
+or-CC 
+mailed-VBN 
+to-TO 
+the-DT 
+jail-NN 
+for-IN 
+an-DT 
+inmate-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NN 	-> Anything
+	 	-> JJ 	-> other
+		 	-> PP 	-> IN 	-> than
+	 	-> NP 	-> NN 	-> money
+				 	-> , 	-> ,
+	 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> JJ 	-> prior
+	 	-> NN 	-> approval
+		 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> NN 	-> jail
+	 	-> NN 	-> administration
+		 	-> PP 	-> IN 	-> before
+	 	-> S 	-> VP 	-> VBG 	-> being
+	 	-> VP 	-> VP 	-> VBN 	-> dropped
+	 	-> PRT 	-> RP 	-> off
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VBN 	-> mailed
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+														 	-> . 	-> .
+			
+Dependensee repr
+nsubj(have-7, Anything-1)
+amod(Anything-1, other-2)
+case(money-4, than-3)
+nmod:than(Anything-1, money-4)
+aux(have-7, must-6)
+root(ROOT-0, have-7)
+amod(approval-9, prior-8)
+dobj(have-7, approval-9)
+case(administration-12, by-10)
+compound(administration-12, jail-11)
+nmod:by(have-7, administration-12)
+mark(dropped-15, before-13)
+auxpass(dropped-15, being-14)
+acl(administration-12, dropped-15)
+compound:prt(dropped-15, off-16)
+cc(dropped-15, or-18)
+acl(administration-12, mailed-19)
+conj:or(dropped-15, mailed-19)
+case(jail-22, to-20)
+det(jail-22, the-21)
+nmod:to(mailed-19, jail-22)
+case(inmate-25, for-23)
+det(inmate-25, an-24)
+nmod:for(jail-22, inmate-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-7)
+nsubj(have-7, Anything-1)
+amod(Anything-1, other-2)
+case(money-4, than-3)
+nmod:than(other-2, money-4)
+punct(have-7, ,-5)
+aux(have-7, must-6)
+amod(approval-9, prior-8)
+dobj(have-7, approval-9)
+case(administration-12, by-10)
+compound(administration-12, jail-11)
+nmod:by(approval-9, administration-12)
+mark(dropped-15, before-13)
+auxpass(dropped-15, being-14)
+advcl:before(have-7, dropped-15)
+compound:prt(dropped-15, off-16)
+punct(dropped-15, ,-17)
+cc(dropped-15, or-18)
+advcl:before(have-7, mailed-19)
+conj:or(dropped-15, mailed-19)
+case(jail-22, to-20)
+det(jail-22, the-21)
+nmod:to(mailed-19, jail-22)
+case(inmate-25, for-23)
+det(inmate-25, an-24)
+nmod:for(mailed-19, inmate-25)
+punct(have-7, .-26)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[15, 15] [?1, ?2, Anything1, administration12, approval9, dropped15, have7, inmate25, jail22, jail11, mailed19, money4, off16, other2, prior8]
+prior8- ->approval9
+mailed19-before->have7
+administration12-by->approval9
+?1-to->mailed19
+?1-the->jail22
+?2-an->inmate25
+mailed19-or->dropped15
+approval9-  : must ->have7
+off16-prt : being ->dropped15
+other2- ->Anything1
+Anything1- ->have7
+?2-for->mailed19
+jail11- ->administration12
+money4-than->other2
+dropped15-before->have7
+
+[have7
+	(<- -Anything1<- -other2<-than-money4)
+	(<-  : must -approval9
+		(<-by-administration12<- -jail11)
+		<- -prior8)
+	(<-before-dropped15
+		(<-or-mailed19(<-to-?1)<-for-?2)
+		<-prt : being -off16)
+	<-before-*mailed19;
+inmate25<-an-*?2;
+jail22<-the-*?1]

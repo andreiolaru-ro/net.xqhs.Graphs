@@ -1,0 +1,226 @@
+Talking or yelling, or any other means of communication between cellblocks, vents, doors, or windows is prohibited. This includes moving from the cellblock to another destination in the jail.
+------CorefChainz
+CHAIN9-["cellblocks , vents , doors , or windows" in sentence 1, "This" in sentence 2]
+representative mention: "cellblocks , vents , doors , or windows" in sentence 1
+Talking-VBG 
+or-CC 
+yelling-VBG 
+,-, 
+or-CC 
+any-DT 
+other-JJ 
+means-NN 
+of-IN 
+communication-NN 
+between-IN 
+cellblocks-NNS 
+,-, 
+vents-NNS 
+,-, 
+doors-NNS 
+,-, 
+or-CC 
+windows-NNS 
+is-VBZ 
+prohibited-NNP 
+.-. 
+This-DT 
+includes-VBZ 
+moving-VBG 
+from-IN 
+the-DT 
+cellblock-NN 
+to-TO 
+another-DT 
+destination-NN 
+in-IN 
+the-DT 
+jail-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> VP 	-> VBG 	-> Talking
+	 	-> CC 	-> or
+	 	-> VBG 	-> yelling
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> S 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> other
+	 	-> NN 	-> means
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NN 	-> communication
+		 	-> PP 	-> IN 	-> between
+	 	-> NP 	-> NNS 	-> cellblocks
+	 	-> , 	-> ,
+	 	-> NNS 	-> vents
+	 	-> , 	-> ,
+	 	-> NNS 	-> doors
+	 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NNS 	-> windows
+						 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> NNP 	-> prohibited
+	 	-> . 	-> .
+		 	-> SBAR 	-> S 	-> NP 	-> DT 	-> This
+		 	-> VP 	-> VBZ 	-> includes
+	 	-> S 	-> VP 	-> VBG 	-> moving
+	 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> cellblock
+			 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> destination
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+													 	-> . 	-> .
+			
+Dependensee repr
+root(ROOT-0, Talking-1)
+cc(Talking-1, or-2)
+conj:or(Talking-1, yelling-3)
+cc(Talking-1, or-5)
+det(means-8, any-6)
+amod(means-8, other-7)
+nsubj(prohibited-21, means-8)
+case(communication-10, of-9)
+nmod:of(means-8, communication-10)
+case(cellblocks-12, between-11)
+nmod:between(communication-10, cellblocks-12)
+nmod:between(communication-10, vents-14)
+conj:or(cellblocks-12, vents-14)
+nmod:between(communication-10, doors-16)
+conj:or(cellblocks-12, doors-16)
+cc(cellblocks-12, or-18)
+nmod:between(communication-10, windows-19)
+conj:or(cellblocks-12, windows-19)
+cop(prohibited-21, is-20)
+conj:or(Talking-1, prohibited-21)
+nsubj(includes-24, This-23)
+acl:relcl(prohibited-21, includes-24)
+xcomp(includes-24, moving-25)
+case(cellblock-28, from-26)
+det(cellblock-28, the-27)
+nmod:from(moving-25, cellblock-28)
+case(destination-31, to-29)
+det(destination-31, another-30)
+nmod:to(moving-25, destination-31)
+case(jail-34, in-32)
+det(jail-34, the-33)
+nmod:in(destination-31, jail-34)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, prohibited-21)
+csubjpass(prohibited-21, Talking-1)
+cc(Talking-1, or-2)
+conj:or(Talking-1, yelling-3)
+csubjpass(prohibited-21, yelling-3)
+punct(Talking-1, ,-4)
+cc(Talking-1, or-5)
+det(means-8, any-6)
+amod(means-8, other-7)
+conj:or(Talking-1, means-8)
+csubjpass(prohibited-21, means-8)
+case(communication-10, of-9)
+nmod:of(means-8, communication-10)
+case(cellblocks-12, between-11)
+nmod:between(communication-10, cellblocks-12)
+punct(cellblocks-12, ,-13)
+nmod:between(communication-10, vents-14)
+conj:or(cellblocks-12, vents-14)
+punct(cellblocks-12, ,-15)
+nmod:between(communication-10, doors-16)
+conj:or(cellblocks-12, doors-16)
+punct(cellblocks-12, ,-17)
+cc(cellblocks-12, or-18)
+nmod:between(communication-10, windows-19)
+conj:or(cellblocks-12, windows-19)
+auxpass(prohibited-21, is-20)
+punct(prohibited-21, .-22)
+---
+qqroot(ROOT-0, prohibited-21)
+csubjpass(prohibited-21, Talking-1)
+cc(Talking-1, or-2)
+conj:or(Talking-1, yelling-3)
+csubjpass(prohibited-21, yelling-3)
+punct(Talking-1, ,-4)
+cc(Talking-1, or-5)
+det(means-8, any-6)
+amod(means-8, other-7)
+conj:or(Talking-1, means-8)
+csubjpass(prohibited-21, means-8)
+case(communication-10, of-9)
+nmod:of(means-8, communication-10)
+case(cellblocks-12, between-11)
+nmod:between(communication-10, cellblocks-12)
+punct(cellblocks-12, ,-13)
+nmod:between(communication-10, vents-14)
+conj:or(cellblocks-12, vents-14)
+punct(cellblocks-12, ,-15)
+nmod:between(communication-10, doors-16)
+conj:or(cellblocks-12, doors-16)
+punct(cellblocks-12, ,-17)
+cc(cellblocks-12, or-18)
+nmod:between(communication-10, windows-19)
+conj:or(cellblocks-12, windows-19)
+auxpass(prohibited-21, is-20)
+punct(prohibited-21, .-22)
+root(ROOT-0, includes-2)
+nsubj(includes-2, This-1)
+xcomp(includes-2, moving-3)
+case(cellblock-6, from-4)
+det(cellblock-6, the-5)
+nmod:from(moving-3, cellblock-6)
+case(destination-9, to-7)
+det(destination-9, another-8)
+nmod:to(moving-3, destination-9)
+case(jail-12, in-10)
+det(jail-12, the-11)
+nmod:in(destination-9, jail-12)
+punct(includes-2, .-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[20, 24] [?1, ?2, ?3, ?4, Talking1, This1, cellblock6, cellblocks12, communication10, destination9, doors16, includes2, jail12, means8, moving3, other7, prohibited21, vents14, windows19, yelling3]
+windows19-or->cellblocks12
+?1-the->jail12
+windows19-between->communication10
+yelling3- ->prohibited21
+This1- ->includes2
+doors16-between->communication10
+?2-from->moving3
+?1-in->?4
+yelling3-or->Talking1
+Talking1- ->prohibited21
+?3-or->Talking1
+cellblocks12-between->communication10
+This1-==->?1
+vents14-or->cellblocks12
+?3-  : is ->prohibited21
+?4-another->destination9
+?4-to->moving3
+communication10-of->?3
+?2-the->cellblock6
+doors16-or->cellblocks12
+moving3- ->includes2
+vents14-between->communication10
+other7- ->?3
+?3-any->means8
+
+[prohibited21
+	(<- -Talking1
+		(<-or-?3(<-of-communication10(<-between-cellblocks12(<-or-doors16)(<-or-vents14)<-or-windows19)(<-between-*doors16)(<-between-*vents14)<-between-*windows19)<- -other7)
+		<-or-yelling3)
+	(<-  : is -*?3)
+	<- -*yelling3;
+includes2
+	(<- -moving3
+		(<-to-?4<-in-?1<-==-This1)
+		<-from-?2)
+	<- -*This1;
+cellblock6<-the-*?2;
+destination9<-another-*?4;
+jail12<-the-*?1;
+means8<-any-*?3]

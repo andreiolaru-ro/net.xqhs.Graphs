@@ -1,0 +1,270 @@
+No inmate may bring from home, or have anyone mail in personal items unless they have a doctor’s order for the item needed. The item will also need to be approved by the jail nurse and the jail administrator.
+------CorefChainz
+CHAIN11-["the item needed" in sentence 1, "The item" in sentence 2]
+representative mention: "the item needed" in sentence 1
+No-DT 
+inmate-NN 
+may-MD 
+bring-VB 
+from-IN 
+home-NN 
+,-, 
+or-CC 
+have-VB 
+anyone-NN 
+mail-NN 
+in-IN 
+personal-JJ 
+items-NNS 
+unless-IN 
+they-PRP 
+have-VBP 
+a-DT 
+doctor-NN 
+'s-POS 
+order-NN 
+for-IN 
+the-DT 
+item-NN 
+needed-VBN 
+.-. 
+The-DT 
+item-NN 
+will-MD 
+also-RB 
+need-VB 
+to-TO 
+be-VB 
+approved-VBN 
+by-IN 
+the-DT 
+jail-NN 
+nurse-NN 
+and-CC 
+the-DT 
+jail-NN 
+administrator-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VP 	-> VB 	-> bring
+	 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> NN 	-> home
+				 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> NP 	-> NN 	-> anyone
+	 	-> NN 	-> mail
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> JJ 	-> personal
+	 	-> NNS 	-> items
+				 	-> SBAR 	-> IN 	-> unless
+	 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> VBP 	-> have
+	 	-> NP 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> doctor
+	 	-> POS 	-> 's
+		 	-> NN 	-> order
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> item
+		 	-> VP 	-> VBN 	-> needed
+											 	-> . 	-> .
+		 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> item
+		 	-> VP 	-> MD 	-> will
+	 	-> ADVP 	-> RB 	-> also
+		 	-> VP 	-> VB 	-> need
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> approved
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> nurse
+		 	-> CC 	-> and
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> administrator
+										 	-> . 	-> .
+			
+Dependensee repr
+neg(inmate-2, No-1)
+nsubj(bring-4, inmate-2)
+nsubj(have-9, inmate-2)
+aux(bring-4, may-3)
+dep(need-31, bring-4)
+case(home-6, from-5)
+nmod:from(bring-4, home-6)
+cc(bring-4, or-8)
+conj:or(bring-4, have-9)
+dep(need-31, have-9)
+compound(mail-11, anyone-10)
+dobj(have-9, mail-11)
+case(items-14, in-12)
+amod(items-14, personal-13)
+nmod:in(mail-11, items-14)
+mark(have-17, unless-15)
+nsubj(have-17, they-16)
+advcl(have-9, have-17)
+det(doctor-19, a-18)
+nmod:poss(order-21, doctor-19)
+case(doctor-19, 's-20)
+dobj(have-17, order-21)
+case(item-24, for-22)
+det(item-24, the-23)
+nmod:for(order-21, item-24)
+acl(item-24, needed-25)
+det(item-28, The-27)
+nsubj(need-31, item-28)
+nsubjpass:xsubj(approved-34, item-28)
+aux(need-31, will-29)
+advmod(need-31, also-30)
+root(ROOT-0, need-31)
+mark(approved-34, to-32)
+auxpass(approved-34, be-33)
+xcomp(need-31, approved-34)
+case(nurse-38, by-35)
+det(nurse-38, the-36)
+compound(nurse-38, jail-37)
+nmod:agent(approved-34, nurse-38)
+cc(nurse-38, and-39)
+det(administrator-42, the-40)
+compound(administrator-42, jail-41)
+nmod:agent(approved-34, administrator-42)
+conj:and(nurse-38, administrator-42)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, bring-4)
+neg(inmate-2, No-1)
+nsubj(bring-4, inmate-2)
+nsubj(have-9, inmate-2)
+aux(bring-4, may-3)
+case(home-6, from-5)
+nmod:from(bring-4, home-6)
+punct(bring-4, ,-7)
+cc(bring-4, or-8)
+conj:or(bring-4, have-9)
+compound(mail-11, anyone-10)
+dobj(have-9, mail-11)
+case(items-14, in-12)
+amod(items-14, personal-13)
+nmod:in(mail-11, items-14)
+mark(have-17, unless-15)
+nsubj(have-17, they-16)
+advcl:unless(have-9, have-17)
+det(doctor-19, a-18)
+nmod:poss(order-21, doctor-19)
+case(doctor-19, 's-20)
+dobj(have-17, order-21)
+case(item-24, for-22)
+det(item-24, the-23)
+nmod:for(order-21, item-24)
+acl(item-24, needed-25)
+punct(bring-4, .-26)
+---
+qqroot(ROOT-0, bring-4)
+neg(inmate-2, No-1)
+nsubj(bring-4, inmate-2)
+nsubj(have-9, inmate-2)
+aux(bring-4, may-3)
+case(home-6, from-5)
+nmod:from(bring-4, home-6)
+punct(bring-4, ,-7)
+cc(bring-4, or-8)
+conj:or(bring-4, have-9)
+compound(mail-11, anyone-10)
+dobj(have-9, mail-11)
+case(items-14, in-12)
+amod(items-14, personal-13)
+nmod:in(mail-11, items-14)
+mark(have-17, unless-15)
+nsubj(have-17, they-16)
+advcl:unless(have-9, have-17)
+det(doctor-19, a-18)
+nmod:poss(order-21, doctor-19)
+case(doctor-19, 's-20)
+dobj(have-17, order-21)
+case(item-24, for-22)
+det(item-24, the-23)
+nmod:for(order-21, item-24)
+acl(item-24, needed-25)
+punct(bring-4, .-26)
+root(ROOT-0, need-5)
+det(item-2, The-1)
+nsubj(need-5, item-2)
+nsubjpass:xsubj(approved-8, item-2)
+aux(need-5, will-3)
+advmod(need-5, also-4)
+mark(approved-8, to-6)
+auxpass(approved-8, be-7)
+xcomp(need-5, approved-8)
+case(nurse-12, by-9)
+det(nurse-12, the-10)
+compound(nurse-12, jail-11)
+nmod:agent(approved-8, nurse-12)
+cc(nurse-12, and-13)
+det(administrator-16, the-14)
+compound(administrator-16, jail-15)
+nmod:agent(approved-8, administrator-16)
+conj:and(nurse-12, administrator-16)
+punct(need-5, .-17)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[28, 30] [?1, ?2, ?3, ?4, ?5, No1, administrator16, also4, anyone10, approved8, bring4, doctor19, have17, have9, home6, inmate2, item2, item24, items14, jail15, jail11, mail11, need5, needed25, nurse12, order21, personal13, they16]
+inmate2-  : may ->bring4
+order21- ->have17
+inmate2- ->have9
+inmate2-==->?2
+personal13- ->items14
+anyone10- ->mail11
+?4-poss : 's ->order21
+?1-and->?3
+?1-the->administrator16
+?1-agent->approved8
+jail15- ->?1
+home6-from->bring4
+?2-for->order21
+?5-  : will  : will ->need5
+mail11- ->have9
+also4- ->need5
+?5- ->approved8
+items14-in->mail11
+approved8-  : to  : be ->need5
+jail11- ->?3
+have9-or->bring4
+needed25- ->?2
+?3-the->nurse12
+have17-unless->have9
+they16- ->have17
+No1- ->inmate2
+?2-the->item24
+?3-agent : by ->approved8
+?4-a->doctor19
+?5-The->item2
+
+[bring4
+	(<-or-have9
+		(<-unless-have17(<- -order21(<-for-?2(<-==-inmate2<- -No1)<- -needed25)<-poss : 's -?4)<- -they16)
+		(<- -*inmate2)
+		<- -mail11(<-in-items14<- -personal13)<- -anyone10)
+	(<-  : may -*inmate2)
+	<-from-home6;
+need5
+	(<-  : to  : be -approved8
+		(<-agent : by -?3(<-and-?1<- -jail15)<- -jail11)
+		(<-agent-*?1)
+		<- -?5)
+	(<-  : will  : will -*?5)
+	<- -also4;
+administrator16<-the-*?1;
+doctor19<-a-*?4;
+item2<-The-*?5;
+item24<-the-*?2;
+nurse12<-the-*?3]

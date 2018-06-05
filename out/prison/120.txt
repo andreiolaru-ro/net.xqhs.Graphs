@@ -1,0 +1,93 @@
+Prescription drugs and medications will be taken by the inmate in the manner prescribed.
+------CorefChainz
+Prescription-NN 
+drugs-NNS 
+and-CC 
+medications-NNS 
+will-MD 
+be-VB 
+taken-VBN 
+by-IN 
+the-DT 
+inmate-NN 
+in-IN 
+the-DT 
+manner-NN 
+prescribed-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NN 	-> Prescription
+	 	-> NNS 	-> drugs
+	 	-> CC 	-> and
+	 	-> NNS 	-> medications
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> taken
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> manner
+		 	-> VP 	-> VBN 	-> prescribed
+									 	-> . 	-> .
+			
+Dependensee repr
+compound(drugs-2, Prescription-1)
+nsubjpass(taken-7, drugs-2)
+cc(drugs-2, and-3)
+conj:and(drugs-2, medications-4)
+nsubjpass(taken-7, medications-4)
+aux(taken-7, will-5)
+auxpass(taken-7, be-6)
+root(ROOT-0, taken-7)
+case(inmate-10, by-8)
+det(inmate-10, the-9)
+nmod:agent(taken-7, inmate-10)
+case(manner-13, in-11)
+det(manner-13, the-12)
+nmod:in(inmate-10, manner-13)
+acl(manner-13, prescribed-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, taken-7)
+compound(drugs-2, Prescription-1)
+nsubjpass(taken-7, drugs-2)
+cc(drugs-2, and-3)
+conj:and(drugs-2, medications-4)
+nsubjpass(taken-7, medications-4)
+aux(taken-7, will-5)
+auxpass(taken-7, be-6)
+case(inmate-10, by-8)
+det(inmate-10, the-9)
+nmod:agent(taken-7, inmate-10)
+case(manner-13, in-11)
+det(manner-13, the-12)
+nmod:in(taken-7, manner-13)
+acl(manner-13, prescribed-14)
+punct(taken-7, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 9] [?1, ?2, Prescription1, drugs2, inmate10, manner13, medications4, prescribed14, taken7]
+?2-in->taken7
+?1-the->inmate10
+medications4-  : will  : be ->taken7
+drugs2- ->taken7
+Prescription1- ->drugs2
+?2-the->manner13
+?1-agent : by ->taken7
+medications4-and->drugs2
+prescribed14- ->?2
+
+[manner13<-the-?2<- -prescribed14;
+taken7
+	(<-in-*?2)
+	(<- -drugs2
+		(<- -Prescription1)
+		<-and-medications4)
+	(<-  : will  : be -*medications4)
+	<-agent : by -?1;
+inmate10<-the-*?1]

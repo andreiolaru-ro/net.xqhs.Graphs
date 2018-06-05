@@ -1,0 +1,89 @@
+Inmates cannot change their bunk assignments without permission from the jail staff.
+------CorefChainz
+CHAIN1-["Inmates" in sentence 1, "their" in sentence 1]
+representative mention: "Inmates" in sentence 1
+Inmates-NNS 
+can-MD 
+not-RB 
+change-VB 
+their-PRP$ 
+bunk-NN 
+assignments-NNS 
+without-IN 
+permission-NN 
+from-IN 
+the-DT 
+jail-NN 
+staff-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> MD 	-> can
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> change
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NN 	-> bunk
+	 	-> NNS 	-> assignments
+		 	-> PP 	-> IN 	-> without
+	 	-> NP 	-> NN 	-> permission
+			 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> staff
+					 	-> . 	-> .
+			
+Dependensee repr
+nsubj(change-4, Inmates-1)
+aux(change-4, can-2)
+neg(change-4, not-3)
+root(ROOT-0, change-4)
+nmod:poss(assignments-7, their-5)
+compound(assignments-7, bunk-6)
+dobj(change-4, assignments-7)
+case(permission-9, without-8)
+nmod:without(change-4, permission-9)
+case(staff-13, from-10)
+det(staff-13, the-11)
+compound(staff-13, jail-12)
+nmod:from(change-4, staff-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, change-4)
+nsubj(change-4, Inmates-1)
+aux(change-4, can-2)
+neg(change-4, not-3)
+nmod:poss(assignments-7, their-5)
+compound(assignments-7, bunk-6)
+dobj(change-4, assignments-7)
+case(permission-9, without-8)
+nmod:without(change-4, permission-9)
+case(staff-13, from-10)
+det(staff-13, the-11)
+compound(staff-13, jail-12)
+nmod:from(permission-9, staff-13)
+punct(change-4, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[10, 10] [?1, Inmates1, assignments7, bunk6, change4, jail12, not3, permission9, staff13, their5]
+their5-poss->assignments7
+bunk6- ->assignments7
+jail12- ->?1
+?1-the->staff13
+assignments7- ->change4
+their5-==->Inmates1
+?1-from->permission9
+Inmates1-  : can  : can ->change4
+permission9-without->change4
+not3- ->change4
+
+[change4
+	(<-without-permission9<-from-?1<- -jail12)
+	(<-  : can  : can -Inmates1<-==-their5)
+	(<- -assignments7
+		(<-poss-*their5)
+		<- -bunk6)
+	<- -not3;
+staff13<-the-*?1]

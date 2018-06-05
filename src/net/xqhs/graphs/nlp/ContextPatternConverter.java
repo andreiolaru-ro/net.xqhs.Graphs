@@ -80,7 +80,7 @@ public class ContextPatternConverter {
 									splitLabel[0].length());
 							// TODO:complete this list
 							m.setLabel(label.isEmpty() ? " " : Arrays.asList(
-									"xsubj", "relcl").contains(
+									"nsubj", "xsubj", "relcl").contains(
 									label.substring(1)) ? " " : label
 									.substring(1));
 							System.out.println(m.getFrom() + " --"

@@ -1,0 +1,54 @@
+There will be no contact visits allowed.
+------CorefChainz
+There-EX 
+will-MD 
+be-VB 
+no-DT 
+contact-NN 
+visits-NNS 
+allowed-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> EX 	-> There
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> NP 	-> NP 	-> DT 	-> no
+	 	-> NN 	-> contact
+	 	-> NNS 	-> visits
+		 	-> VP 	-> VBN 	-> allowed
+					 	-> . 	-> .
+			
+Dependensee repr
+expl(visits-6, There-1)
+aux(visits-6, will-2)
+cop(visits-6, be-3)
+neg(visits-6, no-4)
+compound(visits-6, contact-5)
+root(ROOT-0, visits-6)
+acl(visits-6, allowed-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, visits-6)
+expl(visits-6, There-1)
+aux(visits-6, will-2)
+cop(visits-6, be-3)
+neg(visits-6, no-4)
+compound(visits-6, contact-5)
+acl(visits-6, allowed-7)
+punct(visits-6, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[5, 4] [There1, allowed7, contact5, no4, visits6]
+no4-  : be ->visits6
+allowed7- ->visits6
+contact5- ->visits6
+There1-  : will ->visits6
+
+[visits6
+	(<-  : will -There1)
+	(<- -allowed7)
+	(<- -contact5)
+	<-  : be -no4]

@@ -1,0 +1,94 @@
+You will be allowed to have in your possession a reasonable amount of underwear.
+------CorefChainz
+CHAIN1-["You" in sentence 1, "your" in sentence 1]
+representative mention: "You" in sentence 1
+You-PRP 
+will-MD 
+be-VB 
+allowed-VBN 
+to-TO 
+have-VB 
+in-IN 
+your-PRP$ 
+possession-NN 
+a-DT 
+reasonable-JJ 
+amount-NN 
+of-IN 
+underwear-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> possession
+			 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> reasonable
+	 	-> NN 	-> amount
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> underwear
+											 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(allowed-4, You-1)
+nsubj:xsubj(have-6, You-1)
+aux(allowed-4, will-2)
+auxpass(allowed-4, be-3)
+root(ROOT-0, allowed-4)
+mark(have-6, to-5)
+xcomp(allowed-4, have-6)
+case(possession-9, in-7)
+nmod:poss(possession-9, your-8)
+nmod:in(amount-12, possession-9)
+det(amount-12, a-10)
+amod(amount-12, reasonable-11)
+dobj(have-6, amount-12)
+case(underwear-14, of-13)
+nmod:of(amount-12, underwear-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-4)
+nsubjpass(allowed-4, You-1)
+nsubj:xsubj(have-6, You-1)
+aux(allowed-4, will-2)
+auxpass(allowed-4, be-3)
+mark(have-6, to-5)
+xcomp(allowed-4, have-6)
+case(possession-9, in-7)
+nmod:poss(possession-9, your-8)
+nmod:in(have-6, possession-9)
+det(amount-12, a-10)
+amod(amount-12, reasonable-11)
+dobj(have-6, amount-12)
+case(underwear-14, of-13)
+nmod:of(amount-12, underwear-14)
+punct(allowed-4, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 10] [?1, You1, allowed4, amount12, have6, possession9, reasonable11, underwear14, your8]
+your8-==->You1
+?1-a->amount12
+have6-  : to ->allowed4
+?1- ->have6
+underwear14-of->?1
+your8-poss->possession9
+You1- ->have6
+possession9-in->have6
+You1-  : will  : be ->allowed4
+reasonable11- ->?1
+
+[allowed4
+	(<-  : to -have6
+		(<- -You1<-==-your8)
+		(<- -?1(<- -reasonable11)<-of-underwear14)
+		<-in-possession9<-poss-*your8)
+	<-  : will  : be -*You1;
+amount12<-a-*?1]

@@ -1,0 +1,46 @@
+All incoming mail must be postmarked.
+------CorefChainz
+All-DT 
+incoming-JJ 
+mail-NN 
+must-MD 
+be-VB 
+postmarked-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> All
+	 	-> JJ 	-> incoming
+	 	-> NN 	-> mail
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> postmarked
+				 	-> . 	-> .
+			
+Dependensee repr
+det(mail-3, All-1)
+amod(mail-3, incoming-2)
+nsubjpass(postmarked-6, mail-3)
+aux(postmarked-6, must-4)
+auxpass(postmarked-6, be-5)
+root(ROOT-0, postmarked-6)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, postmarked-6)
+det(mail-3, All-1)
+amod(mail-3, incoming-2)
+nsubjpass(postmarked-6, mail-3)
+aux(postmarked-6, must-4)
+auxpass(postmarked-6, be-5)
+punct(postmarked-6, .-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[4, 3] [?1, incoming2, mail3, postmarked6]
+incoming2- ->?1
+?1-  : must  : be ->postmarked6
+?1-All->mail3
+
+[mail3<-All-?1<- -incoming2;
+postmarked6<-  : must  : be -*?1]

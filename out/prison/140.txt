@@ -1,0 +1,330 @@
+Razors must be purchased off the weekly Stellar Commissary list. You may request a razor by making your request for a razor on the daily hygiene product list. If you request a razor, you must return the razor to the jail staff by lunch that day.
+------CorefChainz
+CHAIN6-["the weekly Stellar Commissary list" in sentence 1, "the daily hygiene product list" in sentence 2]
+representative mention: "the weekly Stellar Commissary list" in sentence 1
+CHAIN8-["You" in sentence 2, "your" in sentence 2, "you" in sentence 3, "you" in sentence 3]
+representative mention: "You" in sentence 2
+CHAIN14-["a razor" in sentence 2, "a razor" in sentence 3, "the razor" in sentence 3]
+representative mention: "a razor" in sentence 2
+Razors-NNS 
+must-MD 
+be-VB 
+purchased-VBN 
+off-RP 
+the-DT 
+weekly-JJ 
+Stellar-NNP 
+Commissary-NNP 
+list-NNP 
+.-. 
+You-PRP 
+may-MD 
+request-VB 
+a-DT 
+razor-NN 
+by-IN 
+making-VBG 
+your-PRP$ 
+request-NN 
+for-IN 
+a-DT 
+razor-NN 
+on-IN 
+the-DT 
+daily-JJ 
+hygiene-NN 
+product-NN 
+list-NN 
+.-. 
+If-IN 
+you-PRP 
+request-VBP 
+a-DT 
+razor-NN 
+,-, 
+you-PRP 
+must-MD 
+return-VB 
+the-DT 
+razor-NN 
+to-TO 
+the-DT 
+jail-NN 
+staff-NN 
+by-IN 
+lunch-NN 
+that-DT 
+day-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Razors
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> ADJP 	-> VBN 	-> purchased
+	 	-> PRT 	-> RP 	-> off
+			 	-> FRAG 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> weekly
+	 	-> NNP 	-> Stellar
+	 	-> NNP 	-> Commissary
+	 	-> NNP 	-> list
+	 	-> . 	-> .
+		 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> request
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> razor
+		 	-> PP 	-> IN 	-> by
+	 	-> S 	-> VP 	-> VBG 	-> making
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> request
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> DT 	-> a
+	 	-> ADJP 	-> NN 	-> razor
+	 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> daily
+	 	-> NN 	-> hygiene
+				 	-> NN 	-> product
+	 	-> NN 	-> list
+										 	-> . 	-> .
+				 	-> SBAR 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> request
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> razor
+					 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> return
+	 	-> NP 	-> DT 	-> the
+	 	-> ADJP 	-> NN 	-> razor
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+				 	-> NN 	-> staff
+		 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> NN 	-> lunch
+		 	-> NP 	-> DT 	-> that
+	 	-> NN 	-> day
+										 	-> . 	-> .
+			
+Dependensee repr
+nsubj(purchased-4, Razors-1)
+aux(purchased-4, must-2)
+cop(purchased-4, be-3)
+root(ROOT-0, purchased-4)
+dep(purchased-4, off-5)
+det(list-10, the-6)
+amod(list-10, weekly-7)
+compound(list-10, Stellar-8)
+compound(list-10, Commissary-9)
+dep(purchased-4, list-10)
+nsubj(request-14, You-12)
+aux(request-14, may-13)
+acl:relcl(list-10, request-14)
+det(razor-16, a-15)
+dobj(request-14, razor-16)
+mark(making-18, by-17)
+advcl(request-14, making-18)
+nmod:poss(request-20, your-19)
+dobj(making-18, request-20)
+case(list-29, for-21)
+det(list-29, a-22)
+amod(list-29, razor-23)
+case(hygiene-27, on-24)
+det(hygiene-27, the-25)
+amod(hygiene-27, daily-26)
+nmod:on(razor-23, hygiene-27)
+compound(list-29, product-28)
+nmod:for(making-18, list-29)
+mark(request-33, If-31)
+nsubj(request-33, you-32)
+advcl(return-39, request-33)
+det(razor-35, a-34)
+dobj(request-33, razor-35)
+nsubj(return-39, you-37)
+aux(return-39, must-38)
+ccomp(purchased-4, return-39)
+det(staff-45, the-40)
+amod(staff-45, razor-41)
+case(jail-44, to-42)
+det(jail-44, the-43)
+nmod:to(razor-41, jail-44)
+dobj(return-39, staff-45)
+case(lunch-47, by-46)
+nmod:by(return-39, lunch-47)
+det(day-49, that-48)
+dep(lunch-47, day-49)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, purchased-4)
+nsubjpass(purchased-4, Razors-1)
+aux(purchased-4, must-2)
+auxpass(purchased-4, be-3)
+compound:prt(purchased-4, off-5)
+det(list-10, the-6)
+amod(list-10, weekly-7)
+amod(list-10, Stellar-8)
+compound(list-10, Commissary-9)
+dobj(purchased-4, list-10)
+punct(purchased-4, .-11)
+---
+qqroot(ROOT-0, purchased-4)
+nsubjpass(purchased-4, Razors-1)
+aux(purchased-4, must-2)
+auxpass(purchased-4, be-3)
+compound:prt(purchased-4, off-5)
+det(list-10, the-6)
+amod(list-10, weekly-7)
+amod(list-10, Stellar-8)
+compound(list-10, Commissary-9)
+dobj(purchased-4, list-10)
+punct(purchased-4, .-11)
+root(ROOT-0, request-3)
+nsubj(request-3, You-1)
+aux(request-3, may-2)
+det(razor-5, a-4)
+dobj(request-3, razor-5)
+mark(making-7, by-6)
+advcl:by(request-3, making-7)
+nmod:poss(request-9, your-8)
+dobj(making-7, request-9)
+case(razor-12, for-10)
+det(razor-12, a-11)
+nmod:for(request-9, razor-12)
+case(list-18, on-13)
+det(list-18, the-14)
+amod(list-18, daily-15)
+compound(list-18, hygiene-16)
+compound(list-18, product-17)
+nmod:on(razor-12, list-18)
+punct(request-3, .-19)
+---
+qqroot(ROOT-0, purchased-4)
+nsubjpass(purchased-4, Razors-1)
+aux(purchased-4, must-2)
+auxpass(purchased-4, be-3)
+compound:prt(purchased-4, off-5)
+det(list-10, the-6)
+amod(list-10, weekly-7)
+amod(list-10, Stellar-8)
+compound(list-10, Commissary-9)
+dobj(purchased-4, list-10)
+punct(purchased-4, .-11)
+root(ROOT-0, request-3)
+nsubj(request-3, You-1)
+aux(request-3, may-2)
+det(razor-5, a-4)
+dobj(request-3, razor-5)
+mark(making-7, by-6)
+advcl:by(request-3, making-7)
+nmod:poss(request-9, your-8)
+dobj(making-7, request-9)
+case(razor-12, for-10)
+det(razor-12, a-11)
+nmod:for(request-9, razor-12)
+case(list-18, on-13)
+det(list-18, the-14)
+amod(list-18, daily-15)
+compound(list-18, hygiene-16)
+compound(list-18, product-17)
+nmod:on(razor-12, list-18)
+punct(request-3, .-19)
+root(ROOT-0, return-9)
+mark(request-3, If-1)
+nsubj(request-3, you-2)
+advcl:if(return-9, request-3)
+det(razor-5, a-4)
+dobj(request-3, razor-5)
+punct(return-9, ,-6)
+nsubj(return-9, you-7)
+aux(return-9, must-8)
+det(razor-11, the-10)
+dobj(return-9, razor-11)
+case(staff-15, to-12)
+det(staff-15, the-13)
+compound(staff-15, jail-14)
+nmod:to(return-9, staff-15)
+case(lunch-17, by-16)
+nmod:by(return-9, lunch-17)
+det(day-19, that-18)
+nmod:tmod(lunch-17, day-19)
+punct(return-9, .-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+G[36, 38] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, Commissary9, Razors1, Stellar8, You1, daily15, day19, hygiene16, jail14, list10, list18, lunch17, making7, off5, product17, purchased4, razor5, razor5, razor11, razor12, request9, request3, request3, return9, staff15, weekly7, you2, you7, your8]
+?2-the->list10
+?4-the->list18
+request9- ->making7
+?6-a->razor5
+you2-  : If ->request3
+?7-==->off5
+Razors1-  : must  : be  : be ->purchased4
+your8-poss->request9
+off5-prt->purchased4
+?2- ->purchased4
+?6- ->request3
+?1-tmod->lunch17
+?5-to->return9
+weekly7-==->You1
+jail14- ->?5
+you2-==->You1
+?8-a->razor12
+daily15- ->?4
+?1-that->day19
+hygiene16- ->?4
+Stellar8-==->You1
+product17- ->?4
+you7-  : must ->return9
+?4-==->?2
+lunch17-by->return9
+request3-if->return9
+weekly7- ->?2
+?7- ->return9
+You1-  : may ->request3
+?4-on->?8
+?5-the->staff15
+Commissary9- ->?2
+?7-the->razor11
+making7-by->request3
+?3- ->request3
+?3-a->razor5
+Stellar8- ->?2
+?8-for->request9
+
+[request3
+	(<-by-making7<- -request9(<-for-?8<-on-?4(<- -daily15)(<- -hygiene16)<- -product17)<-poss-your8)
+	(<-  : may -You1
+		(<-==-you2)
+		(<-==-^Stellar8)
+		<-==-^weekly7)
+	<- -?6;
+list10<-the-?2
+	(<-==-*?4)
+	(<- -Commissary9)
+	(<- -Stellar8)
+	<- -weekly7;
+staff15<-the-?5<- -jail14;
+purchased4
+	(<- -*?2)
+	(<-prt-off5<-==-^?7)
+	<-  : must  : be  : be -Razors1;
+return9
+	(<-to-*?5)
+	(<-by-lunch17<-tmod-?1)
+	(<-if-request3
+		(<-  : If -*you2)
+		<- -?3)
+	(<- -?7)
+	<-  : must -you7;
+razor5<-a-*?6;
+day19<-that-*?1;
+list18<-the-*?4;
+razor5<-a-*?3;
+razor11<-the-*?7;
+razor12<-a-*?8]

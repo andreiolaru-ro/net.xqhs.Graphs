@@ -1,0 +1,54 @@
+Request to see the nurse costs $3.00
+------CorefChainz
+Request-VB 
+to-TO 
+see-VB 
+the-DT 
+nurse-NN 
+costs-VBZ 
+$-$ 
+3.00-CD 
+ROOT 	-> S 	-> VP 	-> VB 	-> Request
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> see
+	 	-> SBAR 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> nurse
+		 	-> VP 	-> VBZ 	-> costs
+	 	-> NP 	-> $ 	-> $
+	 	-> CD 	-> 3.00
+											
+Dependensee repr
+root(ROOT-0, Request-1)
+mark(see-3, to-2)
+xcomp(Request-1, see-3)
+det(nurse-5, the-4)
+nsubj(costs-6, nurse-5)
+ccomp(see-3, costs-6)
+dep(3.00-8, $-7)
+dobj(costs-6, 3.00-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, Request-1)
+mark(see-3, to-2)
+acl:to(Request-1, see-3)
+det(nurse-5, the-4)
+nsubj(costs-6, nurse-5)
+ccomp(see-3, costs-6)
+dep(3.00-8, $-7)
+dobj(costs-6, 3.00-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 6] [$7, 3.008, ?1, Request1, costs6, nurse5, see3]
+costs6- ->see3
+3.008- ->costs6
+see3-to->Request1
+?1- ->costs6
+$7- ->3.008
+?1-the->nurse5
+
+[Request1<-to-see3<- -costs6(<- -3.008<- -$7)<- -?1;
+nurse5<-the-*?1]

@@ -1,0 +1,111 @@
+Inmates shall not agitate, incite, or otherwise provoke other inmates to disobey the jail rules.
+------CorefChainz
+Inmates-NNS 
+shall-MD 
+not-RB 
+agitate-VB 
+,-, 
+incite-VB 
+,-, 
+or-CC 
+otherwise-RB 
+provoke-VB 
+other-JJ 
+inmates-NNS 
+to-TO 
+disobey-VB 
+the-DT 
+jail-NN 
+rules-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> MD 	-> shall
+	 	-> RB 	-> not
+	 	-> VP 	-> VP 	-> VB 	-> agitate
+		 	-> , 	-> ,
+	 	-> VP 	-> VB 	-> incite
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> ADVP 	-> RB 	-> otherwise
+		 	-> VB 	-> provoke
+	 	-> S 	-> NP 	-> JJ 	-> other
+	 	-> NNS 	-> inmates
+		 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> disobey
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NNS 	-> rules
+								 	-> . 	-> .
+			
+Dependensee repr
+nsubj(agitate-4, Inmates-1)
+nsubj(incite-6, Inmates-1)
+nsubj(provoke-10, Inmates-1)
+aux(agitate-4, shall-2)
+neg(agitate-4, not-3)
+root(ROOT-0, agitate-4)
+conj:or(agitate-4, incite-6)
+cc(agitate-4, or-8)
+advmod(provoke-10, otherwise-9)
+conj:or(agitate-4, provoke-10)
+amod(inmates-12, other-11)
+dobj(provoke-10, inmates-12)
+nsubj:xsubj(disobey-14, inmates-12)
+mark(disobey-14, to-13)
+xcomp(provoke-10, disobey-14)
+det(rules-17, the-15)
+compound(rules-17, jail-16)
+dobj(disobey-14, rules-17)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, agitate-4)
+nsubj(agitate-4, Inmates-1)
+nsubj(incite-6, Inmates-1)
+nsubj(provoke-10, Inmates-1)
+aux(agitate-4, shall-2)
+neg(agitate-4, not-3)
+punct(agitate-4, ,-5)
+conj:or(agitate-4, incite-6)
+punct(agitate-4, ,-7)
+cc(agitate-4, or-8)
+advmod(provoke-10, otherwise-9)
+conj:or(agitate-4, provoke-10)
+amod(inmates-12, other-11)
+dobj(provoke-10, inmates-12)
+mark(disobey-14, to-13)
+advcl:to(provoke-10, disobey-14)
+det(rules-17, the-15)
+compound(rules-17, jail-16)
+dobj(disobey-14, rules-17)
+punct(agitate-4, .-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[12, 13] [?1, Inmates1, agitate4, disobey14, incite6, inmates12, jail16, not3, other11, otherwise9, provoke10, rules17]
+inmates12- ->provoke10
+?1- ->disobey14
+otherwise9- ->provoke10
+not3- ->agitate4
+Inmates1-  : shall  : shall ->agitate4
+Inmates1- ->incite6
+provoke10-or->agitate4
+other11- ->inmates12
+Inmates1- ->provoke10
+?1-the->rules17
+disobey14-to->provoke10
+jail16- ->?1
+incite6-or->agitate4
+
+[agitate4
+	(<-or-provoke10
+		(<-to-disobey14<- -?1<- -jail16)
+		(<- -inmates12<- -other11)
+		(<- -Inmates1)
+		<- -otherwise9)
+	(<-  : shall  : shall -*Inmates1)
+	(<-or-incite6<- -*Inmates1)
+	<- -not3;
+rules17<-the-*?1]

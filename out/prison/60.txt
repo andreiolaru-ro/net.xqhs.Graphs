@@ -1,0 +1,398 @@
+Jail uniforms will be worn at all times when inmates are not in their cells. This includes the day room area, library, conference rooms, and all other areas of the jail. The only exception will be going to and from the shower, at which time the inmate shall be covered with a towel.
+------CorefChainz
+CHAIN3-["inmates" in sentence 1, "their" in sentence 1]
+representative mention: "inmates" in sentence 1
+CHAIN11-["Jail uniforms" in sentence 1, "This" in sentence 2]
+representative mention: "Jail uniforms" in sentence 1
+Jail-NN 
+uniforms-NNS 
+will-MD 
+be-VB 
+worn-VBN 
+at-IN 
+all-DT 
+times-NNS 
+when-WRB 
+inmates-NNS 
+are-VBP 
+not-RB 
+in-IN 
+their-PRP$ 
+cells-NNS 
+.-. 
+This-DT 
+includes-VBZ 
+the-DT 
+day-NN 
+room-NN 
+area-NN 
+,-, 
+library-NN 
+,-, 
+conference-NN 
+rooms-NNS 
+,-, 
+and-CC 
+all-DT 
+other-JJ 
+areas-NNS 
+of-IN 
+the-DT 
+jail-NN 
+.-. 
+The-DT 
+only-JJ 
+exception-NN 
+will-MD 
+be-VB 
+going-VBG 
+to-TO 
+and-CC 
+from-IN 
+the-DT 
+shower-NN 
+,-, 
+at-IN 
+which-WDT 
+time-NN 
+the-DT 
+inmate-NN 
+shall-MD 
+be-VB 
+covered-VBN 
+with-IN 
+a-DT 
+towel-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NN 	-> Jail
+	 	-> NNS 	-> uniforms
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> worn
+	 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> DT 	-> all
+	 	-> NNS 	-> times
+			 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> NP 	-> NNS 	-> inmates
+		 	-> VP 	-> VBP 	-> are
+	 	-> RB 	-> not
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NNS 	-> cells
+									 	-> . 	-> .
+		 	-> NP 	-> DT 	-> This
+		 	-> VP 	-> VBZ 	-> includes
+	 	-> SBAR 	-> SBAR 	-> X 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> day
+	 	-> NN 	-> room
+	 	-> NN 	-> area
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> library
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> conference
+	 	-> NNS 	-> rooms
+		 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NP 	-> DT 	-> all
+			 	-> NP 	-> NP 	-> JJ 	-> other
+	 	-> NNS 	-> areas
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+				 	-> . 	-> .
+		 	-> S 	-> NP 	-> DT 	-> The
+	 	-> JJ 	-> only
+	 	-> NN 	-> exception
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBG 	-> going
+	 	-> PP 	-> TO 	-> to
+	 	-> CC 	-> and
+	 	-> IN 	-> from
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> shower
+								 	-> , 	-> ,
+	 	-> SBAR 	-> WHPP 	-> IN 	-> at
+	 	-> WHNP 	-> WDT 	-> which
+	 	-> NN 	-> time
+			 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> covered
+	 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> towel
+										 	-> . 	-> .
+			
+Dependensee repr
+compound(uniforms-2, Jail-1)
+nsubjpass(worn-5, uniforms-2)
+aux(worn-5, will-3)
+auxpass(worn-5, be-4)
+dep(includes-18, worn-5)
+case(times-8, at-6)
+det(times-8, all-7)
+nmod:at(worn-5, times-8)
+advmod(cells-15, when-9)
+nsubj(cells-15, inmates-10)
+cop(cells-15, are-11)
+neg(cells-15, not-12)
+case(cells-15, in-13)
+nmod:poss(cells-15, their-14)
+advcl(worn-5, cells-15)
+nsubj(includes-18, This-17)
+root(ROOT-0, includes-18)
+det(area-22, the-19)
+compound(area-22, day-20)
+compound(area-22, room-21)
+dep(areas-32, area-22)
+conj:and(area-22, library-24)
+dep(areas-32, library-24)
+compound(rooms-27, conference-26)
+conj:and(area-22, rooms-27)
+dep(areas-32, rooms-27)
+cc(area-22, and-29)
+conj:and(area-22, all-30)
+dep(areas-32, all-30)
+amod(areas-32, other-31)
+dep(going-42, areas-32)
+case(jail-35, of-33)
+det(jail-35, the-34)
+nmod:of(areas-32, jail-35)
+det(exception-39, The-37)
+amod(exception-39, only-38)
+nsubj(going-42, exception-39)
+nsubj(going-42', exception-39)
+aux(going-42, will-40)
+aux(going-42, be-41)
+dep(includes-18, going-42)
+dep(includes-18, going-42')
+conj:and(going-42, going-42')
+case(shower-47, to-43)
+cc(to-43, and-44)
+conj:and(to-43, from-45)
+det(shower-47, the-46)
+nmod:from(going-42', shower-47)
+nmod:to(going-42, shower-47)
+case(time-51, at-49)
+det(time-51, which-50)
+nmod:at(covered-56, time-51)
+det(inmate-53, the-52)
+nsubjpass(covered-56, inmate-53)
+aux(covered-56, shall-54)
+auxpass(covered-56, be-55)
+dep(going-42, covered-56)
+case(towel-59, with-57)
+det(towel-59, a-58)
+nmod:with(covered-56, towel-59)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, worn-5)
+compound(uniforms-2, Jail-1)
+nsubjpass(worn-5, uniforms-2)
+aux(worn-5, will-3)
+auxpass(worn-5, be-4)
+case(times-8, at-6)
+det(times-8, all-7)
+nmod:at(worn-5, times-8)
+advmod(cells-15, when-9)
+nsubj(cells-15, inmates-10)
+cop(cells-15, are-11)
+neg(cells-15, not-12)
+case(cells-15, in-13)
+nmod:poss(cells-15, their-14)
+advcl:in(worn-5, cells-15)
+punct(worn-5, .-16)
+---
+qqroot(ROOT-0, worn-5)
+compound(uniforms-2, Jail-1)
+nsubjpass(worn-5, uniforms-2)
+aux(worn-5, will-3)
+auxpass(worn-5, be-4)
+case(times-8, at-6)
+det(times-8, all-7)
+nmod:at(worn-5, times-8)
+advmod(cells-15, when-9)
+nsubj(cells-15, inmates-10)
+cop(cells-15, are-11)
+neg(cells-15, not-12)
+case(cells-15, in-13)
+nmod:poss(cells-15, their-14)
+advcl:in(worn-5, cells-15)
+punct(worn-5, .-16)
+root(ROOT-0, includes-2)
+nsubj(includes-2, This-1)
+det(area-6, the-3)
+compound(area-6, day-4)
+compound(area-6, room-5)
+dobj(includes-2, area-6)
+punct(area-6, ,-7)
+dobj(includes-2, library-8)
+conj:and(area-6, library-8)
+punct(area-6, ,-9)
+compound(rooms-11, conference-10)
+dobj(includes-2, rooms-11)
+conj:and(area-6, rooms-11)
+punct(area-6, ,-12)
+cc(area-6, and-13)
+det(areas-16, all-14)
+amod(areas-16, other-15)
+dobj(includes-2, areas-16)
+conj:and(area-6, areas-16)
+case(jail-19, of-17)
+det(jail-19, the-18)
+nmod:of(areas-16, jail-19)
+punct(includes-2, .-20)
+---
+qqroot(ROOT-0, worn-5)
+compound(uniforms-2, Jail-1)
+nsubjpass(worn-5, uniforms-2)
+aux(worn-5, will-3)
+auxpass(worn-5, be-4)
+case(times-8, at-6)
+det(times-8, all-7)
+nmod:at(worn-5, times-8)
+advmod(cells-15, when-9)
+nsubj(cells-15, inmates-10)
+cop(cells-15, are-11)
+neg(cells-15, not-12)
+case(cells-15, in-13)
+nmod:poss(cells-15, their-14)
+advcl:in(worn-5, cells-15)
+punct(worn-5, .-16)
+root(ROOT-0, includes-2)
+nsubj(includes-2, This-1)
+det(area-6, the-3)
+compound(area-6, day-4)
+compound(area-6, room-5)
+dobj(includes-2, area-6)
+punct(area-6, ,-7)
+dobj(includes-2, library-8)
+conj:and(area-6, library-8)
+punct(area-6, ,-9)
+compound(rooms-11, conference-10)
+dobj(includes-2, rooms-11)
+conj:and(area-6, rooms-11)
+punct(area-6, ,-12)
+cc(area-6, and-13)
+det(areas-16, all-14)
+amod(areas-16, other-15)
+dobj(includes-2, areas-16)
+conj:and(area-6, areas-16)
+case(jail-19, of-17)
+det(jail-19, the-18)
+nmod:of(areas-16, jail-19)
+punct(includes-2, .-20)
+root(ROOT-0, going-6)
+det(exception-3, The-1)
+amod(exception-3, only-2)
+nsubj(going-6, exception-3)
+nsubj(going-6''', exception-3)
+aux(going-6, will-4)
+aux(going-6, be-5)
+conj:and(going-6, going-6''')
+case(shower-11, to-7)
+cc(to-7, and-8)
+conj:and(to-7, from-9)
+det(shower-11, the-10)
+nmod:to(going-6, shower-11)
+nmod:from(going-6''', shower-11)
+nmod:at(covered-20, shower-11)
+punct(shower-11, ,-12)
+case(which-14, at-13)
+ref(shower-11, which-14)
+dep(covered-20, time-15)
+det(inmate-17, the-16)
+nsubjpass(covered-20, inmate-17)
+aux(covered-20, shall-18)
+auxpass(covered-20, be-19)
+acl:relcl(shower-11, covered-20)
+case(towel-23, with-21)
+det(towel-23, a-22)
+nmod:with(covered-20, towel-23)
+punct(going-6, .-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+G[37, 40] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, Jail1, This1, area6, areas16, cells15, conference10, covered20, day4, exception3, from9, going6, includes2, inmate17, inmates10, jail19, library8, not12, only2, other15, room5, rooms11, shower11, their14, time15, times8, towel23, uniforms2, when9, worn5]
+Jail1- ->uniforms2
+conference10- ->rooms11
+time15- ->covered20
+?3-the->area6
+room5- ->?3
+cells15-in->worn5
+?7-a->towel23
+?8-the->inmate17
+uniforms2-  : will  : be ->worn5
+?2-to->going6
+their14-==->conference10
+?4-The->exception3
+?6-the->jail19
+?8-  : shall  : be ->covered20
+?5-all->times8
+day4- ->?3
+library8- ->includes2
+?6-of->?1
+?7-with->covered20
+rooms11-and->?3
+only2- ->?4
+?4-  : will  : be ->going6
+?2-from->going6
+their14-poss->cells15
+not12- ->cells15
+?2-at->covered20
+This1-==->uniforms2
+?1- ->includes2
+?1-all->areas16
+?5-at->worn5
+inmates10-  : are  : are ->cells15
+when9- ->cells15
+?2-the->shower11
+rooms11- ->includes2
+This1- ->includes2
+?3- ->includes2
+other15- ->?1
+covered20-  : which  : which ->?2
+?1-and->?3
+library8-and->?3
+
+[area6<-the-?3
+	(<-and-rooms11<- -conference10<-==-their14)
+	(<-and-?1(<-of-?6)<- -other15)
+	(<- -day4)
+	(<-and-library8)
+	<- -room5;
+shower11<-the-?2<-  : which  : which -covered20(<-at-*?2)(<-with-?7)(<-  : shall  : be -?8)<- -time15;
+exception3<-The-?4<- -only2;
+worn5
+	(<-  : will  : be -uniforms2
+		(<- -Jail1)
+		<-==-This1)
+	(<-in-cells15
+		(<-poss-*their14)
+		(<-  : are  : are -inmates10)
+		(<- -not12)
+		<- -when9)
+	<-at-?5;
+times8<-all-*?5;
+from9;
+areas16<-all-*?1;
+inmate17<-the-*?8;
+jail19<-the-*?6;
+towel23<-a-*?7;
+going6
+	(<-from-*?2)
+	(<-to-*?2)
+	<-  : will  : be -*?4;
+includes2
+	(<- -*?3)
+	(<- -*rooms11)
+	(<- -*?1)
+	(<- -*This1)
+	<- -*library8]

@@ -1,0 +1,103 @@
+If you are found to be in possession of contraband you may be subject to criminal charges.
+------CorefChainz
+CHAIN3-["you" in sentence 1, "you" in sentence 1]
+representative mention: "you" in sentence 1
+If-IN 
+you-PRP 
+are-VBP 
+found-VBN 
+to-TO 
+be-VB 
+in-IN 
+possession-NN 
+of-IN 
+contraband-NN 
+you-PRP 
+may-MD 
+be-VB 
+subject-JJ 
+to-TO 
+criminal-JJ 
+charges-NNS 
+.-. 
+ROOT 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> found
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> be
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> NN 	-> possession
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> contraband
+												 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> JJ 	-> subject
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> JJ 	-> criminal
+	 	-> NNS 	-> charges
+						 	-> . 	-> .
+			
+Dependensee repr
+mark(found-4, If-1)
+nsubjpass(found-4, you-2)
+nsubj:xsubj(possession-8, you-2)
+auxpass(found-4, are-3)
+advcl(subject-14, found-4)
+mark(possession-8, to-5)
+cop(possession-8, be-6)
+case(possession-8, in-7)
+xcomp(found-4, possession-8)
+case(contraband-10, of-9)
+nmod:of(possession-8, contraband-10)
+nsubj(subject-14, you-11)
+aux(subject-14, may-12)
+cop(subject-14, be-13)
+root(ROOT-0, subject-14)
+case(charges-17, to-15)
+amod(charges-17, criminal-16)
+nmod:to(subject-14, charges-17)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, subject-14)
+mark(found-4, If-1)
+nsubjpass(found-4, you-2)
+nsubj:xsubj(possession-8, you-2)
+auxpass(found-4, are-3)
+advcl:if(subject-14, found-4)
+mark(possession-8, to-5)
+cop(possession-8, be-6)
+case(possession-8, in-7)
+xcomp(found-4, possession-8)
+case(contraband-10, of-9)
+nmod:of(possession-8, contraband-10)
+nsubj(subject-14, you-11)
+aux(subject-14, may-12)
+cop(subject-14, be-13)
+case(charges-17, to-15)
+amod(charges-17, criminal-16)
+nmod:to(subject-14, charges-17)
+punct(subject-14, .-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 8] [charges17, contraband10, criminal16, found4, possession8, subject14, you2, you11]
+possession8-  : to  : be  : in  : in ->found4
+you11-  : may  : be ->subject14
+criminal16- ->charges17
+contraband10-of->possession8
+found4-if->subject14
+you2-  : If  : are ->found4
+charges17-to->subject14
+you2- ->possession8
+
+[subject14
+	(<-if-found4
+		(<-  : to  : be  : in  : in -possession8(<-of-contraband10)<- -you2)
+		<-  : If  : are -*you2)
+	(<-to-charges17<- -criminal16)
+	<-  : may  : be -you11]

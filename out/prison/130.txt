@@ -1,0 +1,341 @@
+You will be given (1) Admission Kit when you are booked into the Grant County Jail. You will be charged for this kit. It will contain personal hygiene items which include, soap, comb, toothbrush, toothpaste, shampoo, a pen, and a drinking cup.
+------CorefChainz
+CHAIN5-["You" in sentence 1, "you" in sentence 1, "You" in sentence 2]
+representative mention: "You" in sentence 1
+CHAIN14-["Admission Kit when you are booked into the Grant County Jail" in sentence 1, "this kit" in sentence 2, "It" in sentence 3]
+representative mention: "Admission Kit when you are booked into the Grant County Jail" in sentence 1
+You-PRP 
+will-MD 
+be-VB 
+given-VBN 
+-LRB---LRB- 
+1-CD 
+-RRB---RRB- 
+Admission-NNP 
+Kit-NNP 
+when-WRB 
+you-PRP 
+are-VBP 
+booked-VBN 
+into-IN 
+the-DT 
+Grant-NNP 
+County-NNP 
+Jail-NNP 
+.-. 
+You-PRP 
+will-MD 
+be-VB 
+charged-VBN 
+for-IN 
+this-DT 
+kit-NN 
+.-. 
+It-PRP 
+will-MD 
+contain-VB 
+personal-JJ 
+hygiene-NN 
+items-NNS 
+which-WDT 
+include-VBP 
+,-, 
+soap-NN 
+,-, 
+comb-NN 
+,-, 
+toothbrush-NN 
+,-, 
+toothpaste-NN 
+,-, 
+shampoo-NN 
+,-, 
+a-DT 
+pen-NN 
+,-, 
+and-CC 
+a-DT 
+drinking-NN 
+cup-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> given
+	 	-> NP 	-> NP 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> NP 	-> CD 	-> 1
+		 	-> -RRB- 	-> -RRB-
+		 	-> NNP 	-> Admission
+	 	-> NNP 	-> Kit
+		 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> booked
+	 	-> PP 	-> IN 	-> into
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NNP 	-> Jail
+	 	-> . 	-> .
+		 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> charged
+	 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> kit
+																		 	-> . 	-> .
+		 	-> NP 	-> PRP 	-> It
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> contain
+	 	-> NP 	-> NP 	-> NP 	-> JJ 	-> personal
+	 	-> NN 	-> hygiene
+	 	-> NNS 	-> items
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> VP 	-> VBP 	-> include
+					 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> NN 	-> soap
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> comb
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> toothbrush
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> toothpaste
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> shampoo
+		 	-> , 	-> ,
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> pen
+		 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> drinking
+	 	-> NN 	-> cup
+						 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(given-4, You-1)
+aux(given-4, will-2)
+auxpass(given-4, be-3)
+dep(contain-30, given-4)
+appos(Kit-9, 1-6)
+compound(Kit-9, Admission-8)
+dobj(given-4, Kit-9)
+advmod(booked-13, when-10)
+nsubjpass(booked-13, you-11)
+auxpass(booked-13, are-12)
+acl:relcl(Kit-9, booked-13)
+case(Jail-18, into-14)
+det(Jail-18, the-15)
+compound(Jail-18, Grant-16)
+compound(Jail-18, County-17)
+nmod:into(booked-13, Jail-18)
+nsubjpass(charged-23, You-20)
+aux(charged-23, will-21)
+auxpass(charged-23, be-22)
+acl:relcl(Jail-18, charged-23)
+case(kit-26, for-24)
+det(kit-26, this-25)
+nmod:for(charged-23, kit-26)
+nsubj(contain-30, It-28)
+aux(contain-30, will-29)
+root(ROOT-0, contain-30)
+amod(items-33, personal-31)
+compound(items-33, hygiene-32)
+dobj(contain-30, items-33)
+nsubj(include-35, items-33)
+ref(items-33, which-34)
+acl:relcl(items-33, include-35)
+appos(items-33, soap-37)
+appos(items-33, comb-39)
+conj:and(soap-37, comb-39)
+appos(items-33, toothbrush-41)
+conj:and(soap-37, toothbrush-41)
+appos(items-33, toothpaste-43)
+conj:and(soap-37, toothpaste-43)
+appos(items-33, shampoo-45)
+conj:and(soap-37, shampoo-45)
+det(pen-48, a-47)
+appos(items-33, pen-48)
+conj:and(soap-37, pen-48)
+cc(soap-37, and-50)
+det(cup-53, a-51)
+compound(cup-53, drinking-52)
+appos(items-33, cup-53)
+conj:and(soap-37, cup-53)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, given-4)
+nsubjpass(given-4, You-1)
+aux(given-4, will-2)
+auxpass(given-4, be-3)
+punct(1-6, -LRB--5)
+dep(given-4, 1-6)
+punct(1-6, -RRB--7)
+compound(Kit-9, Admission-8)
+dobj(1-6, Kit-9)
+advmod(booked-13, when-10)
+nsubjpass(booked-13, you-11)
+auxpass(booked-13, are-12)
+acl:relcl(Kit-9, booked-13)
+case(Jail-18, into-14)
+det(Jail-18, the-15)
+compound(Jail-18, Grant-16)
+compound(Jail-18, County-17)
+nmod:into(booked-13, Jail-18)
+punct(given-4, .-19)
+---
+qqroot(ROOT-0, given-4)
+nsubjpass(given-4, You-1)
+aux(given-4, will-2)
+auxpass(given-4, be-3)
+punct(1-6, -LRB--5)
+dep(given-4, 1-6)
+punct(1-6, -RRB--7)
+compound(Kit-9, Admission-8)
+dobj(1-6, Kit-9)
+advmod(booked-13, when-10)
+nsubjpass(booked-13, you-11)
+auxpass(booked-13, are-12)
+acl:relcl(Kit-9, booked-13)
+case(Jail-18, into-14)
+det(Jail-18, the-15)
+compound(Jail-18, Grant-16)
+compound(Jail-18, County-17)
+nmod:into(booked-13, Jail-18)
+punct(given-4, .-19)
+root(ROOT-0, charged-4)
+nsubjpass(charged-4, You-1)
+aux(charged-4, will-2)
+auxpass(charged-4, be-3)
+case(kit-7, for-5)
+det(kit-7, this-6)
+nmod:for(charged-4, kit-7)
+punct(charged-4, .-8)
+---
+qqroot(ROOT-0, given-4)
+nsubjpass(given-4, You-1)
+aux(given-4, will-2)
+auxpass(given-4, be-3)
+punct(1-6, -LRB--5)
+dep(given-4, 1-6)
+punct(1-6, -RRB--7)
+compound(Kit-9, Admission-8)
+dobj(1-6, Kit-9)
+advmod(booked-13, when-10)
+nsubjpass(booked-13, you-11)
+auxpass(booked-13, are-12)
+acl:relcl(Kit-9, booked-13)
+case(Jail-18, into-14)
+det(Jail-18, the-15)
+compound(Jail-18, Grant-16)
+compound(Jail-18, County-17)
+nmod:into(booked-13, Jail-18)
+punct(given-4, .-19)
+root(ROOT-0, charged-4)
+nsubjpass(charged-4, You-1)
+aux(charged-4, will-2)
+auxpass(charged-4, be-3)
+case(kit-7, for-5)
+det(kit-7, this-6)
+nmod:for(charged-4, kit-7)
+punct(charged-4, .-8)
+root(ROOT-0, contain-3)
+nsubj(contain-3, It-1)
+aux(contain-3, will-2)
+amod(items-6, personal-4)
+compound(items-6, hygiene-5)
+dobj(contain-3, items-6)
+nsubj(include-8, items-6)
+ref(items-6, which-7)
+acl:relcl(items-6, include-8)
+punct(include-8, ,-9)
+dobj(include-8, soap-10)
+punct(soap-10, ,-11)
+dobj(include-8, comb-12)
+conj:and(soap-10, comb-12)
+punct(soap-10, ,-13)
+dobj(include-8, toothbrush-14)
+conj:and(soap-10, toothbrush-14)
+punct(soap-10, ,-15)
+dobj(include-8, toothpaste-16)
+conj:and(soap-10, toothpaste-16)
+punct(soap-10, ,-17)
+dobj(include-8, shampoo-18)
+conj:and(soap-10, shampoo-18)
+punct(soap-10, ,-19)
+det(pen-21, a-20)
+dobj(include-8, pen-21)
+conj:and(soap-10, pen-21)
+punct(soap-10, ,-22)
+cc(soap-10, and-23)
+det(cup-26, a-24)
+compound(cup-26, drinking-25)
+dobj(include-8, cup-26)
+conj:and(soap-10, cup-26)
+punct(contain-3, .-27)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+G[32, 39] [16, ?1, ?2, ?3, ?4, Admission8, County17, Grant16, It1, Jail18, Kit9, You1, You1, booked13, charged4, comb12, contain3, cup26, drinking25, given4, hygiene5, include8, items6, kit7, pen21, personal4, shampoo18, soap10, toothbrush14, toothpaste16, when10, you11]
+?1-into->booked13
+?3-==->Kit9
+items6- ->contain3
+?2-and->soap10
+drinking25- ->?4
+hygiene5- ->items6
+?1-the->Jail18
+You1-==->Kit9
+you11-==->You1
+?3-for->charged4
+shampoo18-and->soap10
+?2-a->pen21
+?4-a->cup26
+Admission8- ->Kit9
+Kit9- ->16
+shampoo18- ->include8
+comb12-and->soap10
+?3-this->kit7
+16- ->given4
+It1-  : will ->contain3
+?2- ->include8
+toothbrush14- ->include8
+toothpaste16- ->include8
+soap10- ->include8
+You1-  : will  : be ->given4
+toothbrush14-and->soap10
+personal4- ->items6
+You1-  : will  : be ->charged4
+comb12- ->include8
+toothpaste16-and->soap10
+include8-  : which  : which ->items6
+items6- ->include8
+when10- ->booked13
+?4-and->soap10
+you11-  : are ->booked13
+County17- ->?1
+booked13- ->Kit9
+Grant16- ->?1
+?4- ->include8
+
+[contain3
+	(<- -items6
+		(<-  : which  : which -include8(<- -*items6)(<- -soap10(<-and-?4<- -drinking25)(<-and-?2)(<-and-comb12)(<-and-shampoo18)(<-and-toothbrush14)<-and-toothpaste16)(<- -*?4)(<- -*?2)(<- -*comb12)(<- -*shampoo18)(<- -*toothbrush14)<- -*toothpaste16)
+		(<- -hygiene5)
+		<- -personal4)
+	<-  : will -It1;
+given4
+	(<- -16<- -Kit9(<- -booked13(<-into-?1(<- -County17)<- -Grant16)(<- -when10)<-  : are -you11)(<-==-You1<-==-*you11)(<-==-?3)<- -Admission8)
+	<-  : will  : be -*You1;
+charged4
+	(<-for-*?3)
+	<-  : will  : be -You1;
+Jail18<-the-*?1;
+cup26<-a-*?4;
+kit7<-this-*?3;
+pen21<-a-*?2]

@@ -1,0 +1,151 @@
+Inmates who violate the jail rules are subject to discipline and/or criminal charges according to the Policy and Procedures of the Grant County Jail.
+------CorefChainz
+Inmates-NNS 
+who-WP 
+violate-VBP 
+the-DT 
+jail-NN 
+rules-NNS 
+are-VBP 
+subject-JJ 
+to-TO 
+discipline-NN 
+and/or-VBZ 
+criminal-JJ 
+charges-NNS 
+according-VBG 
+to-TO 
+the-DT 
+Policy-NNP 
+and-CC 
+Procedures-NNP 
+of-IN 
+the-DT 
+Grant-NNP 
+County-NNP 
+Jail-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NNS 	-> Inmates
+		 	-> SBAR 	-> WHNP 	-> WP 	-> who
+		 	-> S 	-> VP 	-> VBP 	-> violate
+	 	-> SBAR 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NNS 	-> rules
+		 	-> VP 	-> VBP 	-> are
+	 	-> ADJP 	-> JJ 	-> subject
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NN 	-> discipline
+											 	-> VP 	-> VBZ 	-> and/or
+	 	-> NP 	-> JJ 	-> criminal
+	 	-> NNS 	-> charges
+		 	-> PP 	-> VBG 	-> according
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Policy
+	 	-> CC 	-> and
+	 	-> NNP 	-> Procedures
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NN 	-> Jail
+							 	-> . 	-> .
+			
+Dependensee repr
+nsubj(violate-3, Inmates-1)
+nsubj(and/or-11, Inmates-1)
+ref(Inmates-1, who-2)
+acl:relcl(Inmates-1, violate-3)
+det(rules-6, the-4)
+compound(rules-6, jail-5)
+nsubj(subject-8, rules-6)
+cop(subject-8, are-7)
+ccomp(violate-3, subject-8)
+case(discipline-10, to-9)
+nmod:to(subject-8, discipline-10)
+root(ROOT-0, and/or-11)
+amod(charges-13, criminal-12)
+dobj(and/or-11, charges-13)
+case(Policy-17, according-14)
+mwe(according-14, to-15)
+det(Policy-17, the-16)
+nmod:according_to(and/or-11, Policy-17)
+cc(Policy-17, and-18)
+nmod:according_to(and/or-11, Procedures-19)
+conj:and(Policy-17, Procedures-19)
+case(Jail-24, of-20)
+det(Jail-24, the-21)
+compound(Jail-24, Grant-22)
+compound(Jail-24, County-23)
+nmod:of(Policy-17, Jail-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, subject-8)
+nsubj(violate-3, Inmates-1)
+nsubj(subject-8, Inmates-1)
+ref(Inmates-1, who-2)
+acl:relcl(Inmates-1, violate-3)
+det(rules-6, the-4)
+compound(rules-6, jail-5)
+dobj(violate-3, rules-6)
+cop(subject-8, are-7)
+case(discipline-10, to-9)
+nmod:to(subject-8, discipline-10)
+cc(discipline-10, and/or-11)
+amod(charges-13, criminal-12)
+nmod:to(subject-8, charges-13)
+conj:and/or(discipline-10, charges-13)
+case(Policy-17, according-14)
+mwe(according-14, to-15)
+det(Policy-17, the-16)
+nmod:according_to(subject-8, Policy-17)
+cc(Policy-17, and-18)
+nmod:according_to(subject-8, Procedures-19)
+conj:and(Policy-17, Procedures-19)
+case(Jail-24, of-20)
+det(Jail-24, the-21)
+compound(Jail-24, Grant-22)
+compound(Jail-24, County-23)
+nmod:of(Policy-17, Jail-24)
+punct(subject-8, .-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[18, 19] [?1, ?2, ?3, County23, Grant22, Inmates1, Jail24, Policy17, Procedures19, charges13, criminal12, discipline10, jail5, rules6, subject8, to15, violate3, who2]
+Inmates1- ->violate3
+Grant22- ->?2
+?1-the->rules6
+criminal12- ->charges13
+?1- ->violate3
+?3-the->Policy17
+discipline10-to : are ->subject8
+charges13-to->subject8
+?2-of->?3
+who2- ->Inmates1
+violate3- ->Inmates1
+?3-according_to->subject8
+Procedures19-and : according ->?3
+Inmates1- ->subject8
+Procedures19-according_to->subject8
+jail5- ->?1
+County23- ->?2
+?2-the->Jail24
+charges13-and/or->discipline10
+
+[subject8
+	(<- -Inmates1
+		(<- -violate3(<- -*Inmates1)<- -?1<- -jail5)
+		<- -who2)
+	(<-to : are -discipline10<-and/or-charges13<- -criminal12)
+	(<-to-*charges13)
+	(<-according_to-?3
+		(<-of-?2(<- -County23)<- -Grant22)
+		<-and : according -^Procedures19)
+	<-according_to-Procedures19;
+Policy17<-the-*?3;
+to15;
+Jail24<-the-*?2;
+rules6<-the-*?1]

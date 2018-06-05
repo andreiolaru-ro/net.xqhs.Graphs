@@ -1,0 +1,192 @@
+Money for inmates will only be accepted two ways: money for inmates may be deposited in the teller machine in the lobby and money for inmates may be sent to the jail by mail.
+------CorefChainz
+CHAIN4-["Money for inmates" in sentence 1, "money for inmates" in sentence 1]
+representative mention: "Money for inmates" in sentence 1
+Money-NNP 
+for-IN 
+inmates-NNS 
+will-MD 
+only-RB 
+be-VB 
+accepted-VBN 
+two-CD 
+ways-NNS 
+:-: 
+money-NN 
+for-IN 
+inmates-NNS 
+may-MD 
+be-VB 
+deposited-VBN 
+in-IN 
+the-DT 
+teller-NN 
+machine-NN 
+in-IN 
+the-DT 
+lobby-NN 
+and-CC 
+money-NN 
+for-IN 
+inmates-NNS 
+may-MD 
+be-VB 
+sent-VBN 
+to-TO 
+the-DT 
+jail-NN 
+by-IN 
+mail-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NP 	-> NNP 	-> Money
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NNS 	-> inmates
+				 	-> VP 	-> MD 	-> will
+	 	-> ADVP 	-> RB 	-> only
+		 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> accepted
+	 	-> NP 	-> CD 	-> two
+	 	-> NNS 	-> ways
+						 	-> : 	-> :
+	 	-> S 	-> NP 	-> NP 	-> NN 	-> money
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NNS 	-> inmates
+				 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> deposited
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> teller
+	 	-> NN 	-> machine
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> lobby
+	 	-> CC 	-> and
+	 	-> NN 	-> money
+					 	-> SBAR 	-> IN 	-> for
+	 	-> S 	-> NP 	-> NNS 	-> inmates
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> sent
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+			 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NN 	-> mail
+												 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(accepted-7, Money-1)
+case(inmates-3, for-2)
+nmod:for(Money-1, inmates-3)
+aux(accepted-7, will-4)
+advmod(accepted-7, only-5)
+auxpass(accepted-7, be-6)
+root(ROOT-0, accepted-7)
+nummod(ways-9, two-8)
+dobj(accepted-7, ways-9)
+nsubjpass(deposited-16, money-11)
+case(inmates-13, for-12)
+nmod:for(money-11, inmates-13)
+aux(deposited-16, may-14)
+auxpass(deposited-16, be-15)
+parataxis(accepted-7, deposited-16)
+case(machine-20, in-17)
+det(machine-20, the-18)
+compound(machine-20, teller-19)
+nmod:in(deposited-16, machine-20)
+case(lobby-23, in-21)
+det(lobby-23, the-22)
+nmod:in(machine-20, lobby-23)
+cc(lobby-23, and-24)
+nmod:in(machine-20, money-25)
+conj:and(lobby-23, money-25)
+mark(sent-30, for-26)
+nsubjpass(sent-30, inmates-27)
+aux(sent-30, may-28)
+auxpass(sent-30, be-29)
+advcl(deposited-16, sent-30)
+case(jail-33, to-31)
+det(jail-33, the-32)
+nmod:to(sent-30, jail-33)
+case(mail-35, by-34)
+nmod:agent(sent-30, mail-35)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, accepted-7)
+nsubjpass(accepted-7, Money-1)
+case(inmates-3, for-2)
+nmod:for(Money-1, inmates-3)
+aux(accepted-7, will-4)
+advmod(accepted-7, only-5)
+auxpass(accepted-7, be-6)
+nummod(ways-9, two-8)
+dobj(accepted-7, ways-9)
+punct(ways-9, :-10)
+nsubjpass(deposited-16, money-11)
+case(inmates-13, for-12)
+nmod:for(money-11, inmates-13)
+aux(deposited-16, may-14)
+auxpass(deposited-16, be-15)
+dep(ways-9, deposited-16)
+case(machine-20, in-17)
+det(machine-20, the-18)
+compound(machine-20, teller-19)
+nmod:in(deposited-16, machine-20)
+case(lobby-23, in-21)
+det(lobby-23, the-22)
+nmod:in(deposited-16, lobby-23)
+cc(lobby-23, and-24)
+nmod:in(deposited-16, money-25)
+conj:and(lobby-23, money-25)
+case(inmates-27, for-26)
+nmod:for(lobby-23, inmates-27)
+aux(sent-30, may-28)
+auxpass(sent-30, be-29)
+dep(deposited-16, sent-30)
+case(jail-33, to-31)
+det(jail-33, the-32)
+nmod:to(sent-30, jail-33)
+case(mail-35, by-34)
+nmod:agent(sent-30, mail-35)
+punct(accepted-7, .-36)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[20, 21] [?1, ?2, ?3, Money1, accepted7, deposited16, inmates13, inmates27, inmates3, jail33, lobby23, machine20, mail35, money25, money11, only5, sent30, teller19, two8, ways9]
+?1-the->lobby23
+ways9- ->accepted7
+inmates27-for->?1
+only5-  : will  : be ->accepted7
+?2-to : may  : be ->sent30
+teller19- ->?3
+sent30- ->deposited16
+two8- ->ways9
+deposited16- ->ways9
+?3-the->machine20
+inmates13-for->money11
+?1-in->deposited16
+money25-and->?1
+money11-==->Money1
+inmates3-for->Money1
+money11-  : may  : be ->deposited16
+?2-the->jail33
+?3-in->deposited16
+mail35-agent : by ->sent30
+Money1- ->accepted7
+money25-in->deposited16
+
+[accepted7
+	(<- -ways9
+		(<- -deposited16(<-in-?3<- -teller19)(<-  : may  : be -money11<-for-inmates13)(<-in-?1(<-for-inmates27)<-and-money25)(<-in-*money25)<- -sent30(<-to : may  : be -?2)<-agent : by -mail35)
+		<- -two8)
+	(<- -Money1
+		(<-==-*money11)
+		<-for-inmates3)
+	<-  : will  : be -only5;
+jail33<-the-*?2;
+lobby23<-the-*?1;
+machine20<-the-*?3]

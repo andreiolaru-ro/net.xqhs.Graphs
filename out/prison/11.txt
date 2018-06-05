@@ -1,0 +1,212 @@
+It is the policy of the Grant County Jail to require inmates to make a co-payment for medical services. These services will be deducted from the inmate’s canteen account when applicable.
+------CorefChainz
+CHAIN8-["medical services" in sentence 1, "These services" in sentence 2]
+representative mention: "medical services" in sentence 1
+It-PRP 
+is-VBZ 
+the-DT 
+policy-NN 
+of-IN 
+the-DT 
+Grant-NNP 
+County-NNP 
+Jail-NN 
+to-TO 
+require-VB 
+inmates-NNS 
+to-TO 
+make-VB 
+a-DT 
+co-payment-NN 
+for-IN 
+medical-JJ 
+services-NNS 
+.-. 
+These-DT 
+services-NNS 
+will-MD 
+be-VB 
+deducted-JJ 
+from-IN 
+the-DT 
+inmate-NN 
+'s-POS 
+canteen-NN 
+account-NN 
+when-WRB 
+applicable-JJ 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> PRP 	-> It
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> policy
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NN 	-> Jail
+			 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> require
+	 	-> S 	-> NP 	-> NNS 	-> inmates
+		 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> make
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> co-payment
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> JJ 	-> medical
+	 	-> NNS 	-> services
+												 	-> . 	-> .
+		 	-> NP 	-> DT 	-> These
+	 	-> NNS 	-> services
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> JJ 	-> deducted
+		 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> canteen
+	 	-> NN 	-> account
+			 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> ADJP 	-> JJ 	-> applicable
+						 	-> . 	-> .
+			
+Dependensee repr
+nsubj(policy-4, It-1)
+cop(policy-4, is-2)
+det(policy-4, the-3)
+dep(deducted-25, policy-4)
+case(Jail-9, of-5)
+det(Jail-9, the-6)
+compound(Jail-9, Grant-7)
+compound(Jail-9, County-8)
+nmod:of(policy-4, Jail-9)
+mark(require-11, to-10)
+acl(policy-4, require-11)
+dobj(require-11, inmates-12)
+nsubj:xsubj(make-14, inmates-12)
+mark(make-14, to-13)
+xcomp(require-11, make-14)
+det(co-payment-16, a-15)
+dobj(make-14, co-payment-16)
+case(services-19, for-17)
+amod(services-19, medical-18)
+nmod:for(co-payment-16, services-19)
+det(services-22, These-21)
+nsubj(deducted-25, services-22)
+aux(deducted-25, will-23)
+cop(deducted-25, be-24)
+root(ROOT-0, deducted-25)
+case(account-31, from-26)
+det(inmate-28, the-27)
+nmod:poss(account-31, inmate-28)
+case(inmate-28, 's-29)
+compound(account-31, canteen-30)
+nmod:from(deducted-25, account-31)
+advmod(applicable-33, when-32)
+advcl(deducted-25, applicable-33)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, policy-4)
+nsubj(policy-4, It-1)
+cop(policy-4, is-2)
+det(policy-4, the-3)
+case(Jail-9, of-5)
+det(Jail-9, the-6)
+compound(Jail-9, Grant-7)
+compound(Jail-9, County-8)
+nmod:of(policy-4, Jail-9)
+mark(require-11, to-10)
+acl:to(policy-4, require-11)
+dobj(require-11, inmates-12)
+nsubj:xsubj(make-14, inmates-12)
+mark(make-14, to-13)
+xcomp(require-11, make-14)
+det(co-payment-16, a-15)
+dobj(make-14, co-payment-16)
+case(services-19, for-17)
+amod(services-19, medical-18)
+nmod:for(co-payment-16, services-19)
+punct(policy-4, .-20)
+---
+qqroot(ROOT-0, policy-4)
+nsubj(policy-4, It-1)
+cop(policy-4, is-2)
+det(policy-4, the-3)
+case(Jail-9, of-5)
+det(Jail-9, the-6)
+compound(Jail-9, Grant-7)
+compound(Jail-9, County-8)
+nmod:of(policy-4, Jail-9)
+mark(require-11, to-10)
+acl:to(policy-4, require-11)
+dobj(require-11, inmates-12)
+nsubj:xsubj(make-14, inmates-12)
+mark(make-14, to-13)
+xcomp(require-11, make-14)
+det(co-payment-16, a-15)
+dobj(make-14, co-payment-16)
+case(services-19, for-17)
+amod(services-19, medical-18)
+nmod:for(co-payment-16, services-19)
+punct(policy-4, .-20)
+root(ROOT-0, deducted-5)
+det(services-2, These-1)
+nsubjpass(deducted-5, services-2)
+aux(deducted-5, will-3)
+auxpass(deducted-5, be-4)
+case(account-11, from-6)
+det(inmate-8, the-7)
+nmod:poss(account-11, inmate-8)
+case(inmate-8, 's-9)
+compound(account-11, canteen-10)
+nmod:from(deducted-5, account-11)
+advmod(applicable-13, when-12)
+advcl(deducted-5, applicable-13)
+punct(deducted-5, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[23, 23] [?1, ?2, ?3, ?4, ?5, County8, Grant7, It1, Jail9, account11, applicable13, canteen10, co-payment16, deducted5, inmate8, inmates12, make14, medical18, policy4, require11, services19, services2, when12]
+County8- ->?3
+require11-to->?1
+?2-the->inmate8
+?3-of->?1
+?4-a->co-payment16
+when12- ->applicable13
+?5-==->services19
+?3-the->Jail9
+inmates12-  : to ->make14
+?2-poss : 's ->account11
+inmates12- ->require11
+?5-These->services2
+account11-from->deducted5
+medical18- ->services19
+applicable13- ->deducted5
+It1-  : is ->?1
+Grant7- ->?3
+?5-  : will  : be ->deducted5
+make14- ->require11
+canteen10- ->account11
+services19-for->?4
+?4- ->make14
+?1-the->policy4
+
+[policy4<-the-?1
+	(<-to-require11(<- -make14(<- -?4<-for-services19(<- -medical18)<-==-^?5)<-  : to -inmates12)<- -*inmates12)
+	(<-of-?3(<- -County8)<- -Grant7)
+	<-  : is -It1;
+deducted5
+	(<- -applicable13<- -when12)
+	(<-from-account11
+		(<-poss : 's -?2)
+		<- -canteen10)
+	<-  : will  : be -?5;
+Jail9<-the-*?3;
+co-payment16<-a-*?4;
+inmate8<-the-*?2;
+services2<-These-*?5]

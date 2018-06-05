@@ -1,0 +1,139 @@
+These items will be returned in the same condition in which they were given to you outside of normal wear and tear.
+------CorefChainz
+CHAIN3-["These items" in sentence 1, "they" in sentence 1, "you" in sentence 1]
+representative mention: "These items" in sentence 1
+These-DT 
+items-NNS 
+will-MD 
+be-VB 
+returned-VBN 
+in-IN 
+the-DT 
+same-JJ 
+condition-NN 
+in-IN 
+which-WDT 
+they-PRP 
+were-VBD 
+given-VBN 
+to-TO 
+you-PRP 
+outside-IN 
+of-IN 
+normal-JJ 
+wear-NN 
+and-CC 
+tear-VB 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> These
+	 	-> NNS 	-> items
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> returned
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> same
+	 	-> NN 	-> condition
+		 	-> SBAR 	-> WHPP 	-> IN 	-> in
+	 	-> WHNP 	-> WDT 	-> which
+			 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> VBD 	-> were
+	 	-> VP 	-> VBN 	-> given
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> PRP 	-> you
+			 	-> PP 	-> IN 	-> outside
+	 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> JJ 	-> normal
+	 	-> NN 	-> wear
+												 	-> CC 	-> and
+	 	-> VP 	-> VB 	-> tear
+				 	-> . 	-> .
+			
+Dependensee repr
+det(items-2, These-1)
+nsubjpass(returned-5, items-2)
+nsubj(tear-22, items-2)
+aux(returned-5, will-3)
+auxpass(returned-5, be-4)
+root(ROOT-0, returned-5)
+case(condition-9, in-6)
+det(condition-9, the-7)
+amod(condition-9, same-8)
+nmod:in(returned-5, condition-9)
+nmod:in(given-14, condition-9)
+case(which-11, in-10)
+ref(condition-9, which-11)
+nsubjpass(given-14, they-12)
+auxpass(given-14, were-13)
+acl:relcl(condition-9, given-14)
+case(you-16, to-15)
+nmod:to(given-14, you-16)
+case(wear-20, outside-17)
+mwe(outside-17, of-18)
+amod(wear-20, normal-19)
+nmod:outside_of(given-14, wear-20)
+cc(returned-5, and-21)
+conj:and(returned-5, tear-22)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, returned-5)
+det(items-2, These-1)
+nsubjpass(returned-5, items-2)
+aux(returned-5, will-3)
+auxpass(returned-5, be-4)
+case(condition-9, in-6)
+det(condition-9, the-7)
+amod(condition-9, same-8)
+nmod:in(returned-5, condition-9)
+nmod:in(given-14, condition-9)
+case(which-11, in-10)
+ref(condition-9, which-11)
+nsubjpass(given-14, they-12)
+nsubj(tear-22, they-12)
+auxpass(given-14, were-13)
+acl:relcl(condition-9, given-14)
+case(you-16, to-15)
+nmod:to(given-14, you-16)
+case(wear-20, outside-17)
+mwe(outside-17, of-18)
+amod(wear-20, normal-19)
+nmod:outside_of(given-14, wear-20)
+cc(given-14, and-21)
+acl:relcl(condition-9, tear-22)
+conj:and(given-14, tear-22)
+punct(returned-5, .-23)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[13, 16] [?1, ?2, condition9, given14, items2, normal19, of18, returned5, same8, tear22, they12, wear20, you16]
+they12-==->?1
+they12- ->tear22
+they12-  : were ->given14
+?2-in->given14
+given14- ->?2
+normal19-  : outside ->wear20
+?1-These->items2
+you16-==->?1
+?2-the->condition9
+wear20-outside_of->given14
+tear22-and->given14
+?2-in->returned5
+?1-  : will  : be ->returned5
+same8-  : which  : which  : which ->?2
+you16-to->given14
+tear22- ->?2
+
+[condition9<-the-?2
+	(<- -given14(<-in-*?2)(<-and-tear22<- -they12)(<-  : were -*they12)(<-outside_of-wear20<-  : outside -normal19)<-to-you16)
+	(<- -*tear22)
+	<-  : which  : which  : which -same8;
+items2<-These-?1
+	(<-==-*they12)
+	<-==-*you16;
+of18;
+returned5
+	(<-in-*?2)
+	<-  : will  : be -*?1]

@@ -1,0 +1,155 @@
+Inmates who damage or destroy property of the Grant County Sheriff’s Department will have further disciplinary and/or have criminal actions taken against them.
+------CorefChainz
+CHAIN5-["Inmates who damage or destroy property of the Grant County Sheriff 's Department" in sentence 1, "them" in sentence 1]
+representative mention: "Inmates who damage or destroy property of the Grant County Sheriff 's Department" in sentence 1
+Inmates-NNS 
+who-WP 
+damage-NN 
+or-CC 
+destroy-NN 
+property-NN 
+of-IN 
+the-DT 
+Grant-NNP 
+County-NNP 
+Sheriff-NNP 
+'s-POS 
+Department-NNP 
+will-MD 
+have-VB 
+further-JJ 
+disciplinary-JJ 
+and/or-NNS 
+have-VBP 
+criminal-JJ 
+actions-NNS 
+taken-VBN 
+against-IN 
+them-PRP 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NNS 	-> Inmates
+		 	-> SBAR 	-> WHNP 	-> WP 	-> who
+		 	-> S 	-> NP 	-> NP 	-> NN 	-> damage
+	 	-> CC 	-> or
+	 	-> NN 	-> destroy
+	 	-> NN 	-> property
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NNP 	-> Sheriff
+	 	-> POS 	-> 's
+		 	-> NNP 	-> Department
+				 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> JJ 	-> further
+	 	-> JJ 	-> disciplinary
+	 	-> NNS 	-> and/or
+							 	-> VP 	-> VBP 	-> have
+	 	-> NP 	-> NP 	-> JJ 	-> criminal
+	 	-> NNS 	-> actions
+		 	-> VP 	-> VBN 	-> taken
+	 	-> PP 	-> IN 	-> against
+	 	-> NP 	-> PRP 	-> them
+						 	-> . 	-> .
+			
+Dependensee repr
+dobj(have-15, Inmates-1)
+nsubj(have-19, Inmates-1)
+ref(Inmates-1, who-2)
+compound(property-6, damage-3)
+cc(damage-3, or-4)
+conj:or(damage-3, destroy-5)
+compound(property-6, destroy-5)
+nsubj(have-15, property-6)
+case(Department-13, of-7)
+det(Sheriff-11, the-8)
+compound(Sheriff-11, Grant-9)
+compound(Sheriff-11, County-10)
+nmod:poss(Department-13, Sheriff-11)
+case(Sheriff-11, 's-12)
+nmod:of(property-6, Department-13)
+aux(have-15, will-14)
+acl:relcl(Inmates-1, have-15)
+amod(and/or-18, further-16)
+amod(and/or-18, disciplinary-17)
+dobj(have-15, and/or-18)
+root(ROOT-0, have-19)
+amod(actions-21, criminal-20)
+dobj(have-19, actions-21)
+acl(actions-21, taken-22)
+case(them-24, against-23)
+nmod:against(taken-22, them-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-15)
+nsubj(damage-3, Inmates-1)
+nsubj(destroy-5, Inmates-1)
+nsubj(have-15, Inmates-1)
+ref(Inmates-1, who-2)
+acl:relcl(Inmates-1, damage-3)
+cc(damage-3, or-4)
+acl:relcl(Inmates-1, destroy-5)
+conj:or(damage-3, destroy-5)
+dobj(damage-3, property-6)
+case(Department-13, of-7)
+det(Sheriff-11, the-8)
+compound(Sheriff-11, Grant-9)
+compound(Sheriff-11, County-10)
+nmod:poss(Department-13, Sheriff-11)
+case(Sheriff-11, 's-12)
+nmod:of(property-6, Department-13)
+aux(have-15, will-14)
+advmod(disciplinary-17, further-16)
+xcomp(have-15, disciplinary-17)
+cc(disciplinary-17, and/or-18)
+xcomp(have-15, have-19)
+conj:and/or(disciplinary-17, have-19)
+amod(actions-21, criminal-20)
+dobj(have-19, actions-21)
+acl(actions-21, taken-22)
+case(them-24, against-23)
+nmod:against(taken-22, them-24)
+punct(have-15, .-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[18, 22] [?1, County10, Department13, Grant9, Inmates1, Sheriff11, actions21, criminal20, damage3, destroy5, disciplinary17, further16, have15, have19, property6, taken22, them24, who2]
+Inmates1- ->have15
+Inmates1- ->damage3
+damage3- ->Inmates1
+them24-against->taken22
+disciplinary17-  : will ->have15
+who2- ->Inmates1
+?1-poss : 's ->Department13
+have19-and/or->disciplinary17
+County10- ->?1
+them24-==->Inmates1
+actions21- ->have19
+destroy5-or->damage3
+destroy5- ->Inmates1
+property6- ->damage3
+Grant9- ->?1
+Department13-of->property6
+taken22- ->actions21
+have19- ->have15
+further16- ->disciplinary17
+Inmates1- ->destroy5
+criminal20- ->actions21
+?1-the->Sheriff11
+
+[destroy5<- -Inmates1
+	(<- -*destroy5)
+	(<- -damage3(<-or-*destroy5)(<- -*Inmates1)<- -property6<-of-Department13<-poss : 's -?1(<- -County10)<- -Grant9)
+	(<-==-them24)
+	<- -who2;
+have15
+	(<- -*Inmates1)
+	(<-  : will -disciplinary17
+		(<-and/or-have19<- -actions21(<- -taken22<-against-*them24)<- -criminal20)
+		<- -further16)
+	<- -*have19;
+Sheriff11<-the-*?1]

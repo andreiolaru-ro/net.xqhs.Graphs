@@ -1,0 +1,113 @@
+Any inmate filing a Grievance Form must do so within five days of the date the act occurred.
+------CorefChainz
+Any-DT 
+inmate-NN 
+filing-VBG 
+a-DT 
+Grievance-NNP 
+Form-NN 
+must-MD 
+do-VB 
+so-IN 
+within-IN 
+five-CD 
+days-NNS 
+of-IN 
+the-DT 
+date-NN 
+the-DT 
+act-NN 
+occurred-VBD 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> Any
+	 	-> NN 	-> inmate
+		 	-> VP 	-> VBG 	-> filing
+	 	-> NP 	-> DT 	-> a
+	 	-> NNP 	-> Grievance
+	 	-> NN 	-> Form
+				 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> do
+	 	-> SBAR 	-> IN 	-> so
+	 	-> S 	-> PP 	-> IN 	-> within
+	 	-> NP 	-> NP 	-> CD 	-> five
+	 	-> NNS 	-> days
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> date
+					 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> act
+		 	-> VP 	-> VBD 	-> occurred
+						 	-> . 	-> .
+			
+Dependensee repr
+det(inmate-2, Any-1)
+nsubj(do-8, inmate-2)
+acl(inmate-2, filing-3)
+det(Form-6, a-4)
+compound(Form-6, Grievance-5)
+dobj(filing-3, Form-6)
+aux(do-8, must-7)
+root(ROOT-0, do-8)
+mark(occurred-18, so-9)
+case(days-12, within-10)
+nummod(days-12, five-11)
+nmod:within(occurred-18, days-12)
+case(date-15, of-13)
+det(date-15, the-14)
+nmod:of(days-12, date-15)
+det(act-17, the-16)
+nsubj(occurred-18, act-17)
+advcl(do-8, occurred-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, do-8)
+det(inmate-2, Any-1)
+nsubj(do-8, inmate-2)
+acl(inmate-2, filing-3)
+det(Form-6, a-4)
+compound(Form-6, Grievance-5)
+dobj(filing-3, Form-6)
+aux(do-8, must-7)
+advmod(do-8, so-9)
+case(days-12, within-10)
+nummod(days-12, five-11)
+nmod:within(occurred-18, days-12)
+case(date-15, of-13)
+det(date-15, the-14)
+nmod:of(days-12, date-15)
+det(act-17, the-16)
+nsubj(occurred-18, act-17)
+parataxis(do-8, occurred-18)
+punct(do-8, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[15, 14] [?1, ?2, ?3, ?4, Form6, Grievance5, act17, date15, days12, do8, filing3, five11, inmate2, occurred18, so9]
+?1- ->filing3
+five11- ->days12
+days12-within->occurred18
+?2-the->date15
+Grievance5- ->?1
+?2-of->days12
+?3-Any->inmate2
+?1-a->Form6
+filing3- ->?3
+so9-  : must ->do8
+?3- ->do8
+?4- ->occurred18
+occurred18- ->do8
+?4-the->act17
+
+[inmate2<-Any-?3<- -filing3<- -?1<- -Grievance5;
+do8
+	(<- -*?3)
+	(<- -occurred18
+		(<-within-days12(<-of-?2)<- -five11)
+		<- -?4)
+	<-  : must -so9;
+Form6<-a-*?1;
+act17<-the-*?4;
+date15<-the-*?2]

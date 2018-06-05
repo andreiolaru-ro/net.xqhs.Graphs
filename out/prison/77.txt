@@ -1,0 +1,114 @@
+You may put in as many pages as allowed by the U.S. Post Office per stamp in your envelope.
+------CorefChainz
+CHAIN4-["You" in sentence 1, "your" in sentence 1]
+representative mention: "You" in sentence 1
+You-PRP 
+may-MD 
+put-VB 
+in-RP 
+as-IN 
+many-JJ 
+pages-NNS 
+as-IN 
+allowed-VBD 
+by-IN 
+the-DT 
+U.S.-NNP 
+Post-NNP 
+Office-NNP 
+per-IN 
+stamp-NN 
+in-IN 
+your-PRP$ 
+envelope-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> put
+	 	-> PRT 	-> RP 	-> in
+		 	-> PP 	-> IN 	-> as
+	 	-> NP 	-> JJ 	-> many
+	 	-> NNS 	-> pages
+			 	-> SBAR 	-> IN 	-> as
+	 	-> S 	-> VP 	-> VBD 	-> allowed
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> U.S.
+	 	-> NNP 	-> Post
+	 	-> NNP 	-> Office
+		 	-> PP 	-> IN 	-> per
+	 	-> NP 	-> NN 	-> stamp
+					 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> envelope
+								 	-> . 	-> .
+			
+Dependensee repr
+nsubj(put-3, You-1)
+aux(put-3, may-2)
+root(ROOT-0, put-3)
+compound:prt(put-3, in-4)
+case(pages-7, as-5)
+amod(pages-7, many-6)
+nmod:as(put-3, pages-7)
+mark(allowed-9, as-8)
+advcl(put-3, allowed-9)
+case(Office-14, by-10)
+det(Office-14, the-11)
+compound(Office-14, U.S.-12)
+compound(Office-14, Post-13)
+nmod:by(allowed-9, Office-14)
+case(stamp-16, per-15)
+nmod:per(Office-14, stamp-16)
+case(envelope-19, in-17)
+nmod:poss(envelope-19, your-18)
+nmod:in(allowed-9, envelope-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, put-3)
+nsubj(put-3, You-1)
+aux(put-3, may-2)
+compound:prt(put-3, in-4)
+case(pages-7, as-5)
+amod(pages-7, many-6)
+nmod:as(put-3, pages-7)
+mark(allowed-9, as-8)
+advcl:as(put-3, allowed-9)
+case(Office-14, by-10)
+det(Office-14, the-11)
+compound(Office-14, U.S.-12)
+compound(Office-14, Post-13)
+nmod:by(allowed-9, Office-14)
+case(stamp-16, per-15)
+nmod:per(Office-14, stamp-16)
+case(envelope-19, in-17)
+nmod:poss(envelope-19, your-18)
+nmod:in(Office-14, envelope-19)
+punct(put-3, .-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[13, 13] [?1, Office14, Post13, U.S.12, You1, allowed9, envelope19, in4, many6, pages7, put3, stamp16, your18]
+?1-by->allowed9
+pages7-as->put3
+You1-  : may ->put3
+your18-poss->envelope19
+in4-prt->put3
+Post13- ->?1
+allowed9-as->put3
+?1-the->Office14
+many6- ->pages7
+stamp16-per->?1
+envelope19-in->?1
+your18-==->You1
+U.S.12- ->?1
+
+[put3
+	(<-as-allowed9<-by-?1(<-in-envelope19<-poss-your18)(<- -Post13)(<- -U.S.12)<-per-stamp16)
+	(<-as-pages7<- -many6)
+	(<-prt-in4)
+	<-  : may -You1<-==-*your18;
+Office14<-the-*?1]

@@ -1,0 +1,97 @@
+DO NOT converse with, or have contact with, an inmate of the opposite sex.
+------CorefChainz
+DO-NNP 
+NOT-NNP 
+converse-VBP 
+with-IN 
+,-, 
+or-CC 
+have-VBP 
+contact-NN 
+with-IN 
+,-, 
+an-DT 
+inmate-NN 
+of-IN 
+the-DT 
+opposite-JJ 
+sex-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> DO
+	 	-> NNP 	-> NOT
+		 	-> VP 	-> VP 	-> VBP 	-> converse
+	 	-> PP 	-> IN 	-> with
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VBP 	-> have
+	 	-> NP 	-> NN 	-> contact
+		 	-> PP 	-> IN 	-> with
+			 	-> , 	-> ,
+	 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> opposite
+	 	-> NN 	-> sex
+					 	-> . 	-> .
+			
+Dependensee repr
+compound(NOT-2, DO-1)
+nsubj(converse-3, NOT-2)
+nsubj(have-7, NOT-2)
+root(ROOT-0, converse-3)
+nmod(converse-3, with-4)
+cc(converse-3, or-6)
+conj:or(converse-3, have-7)
+dobj(have-7, contact-8)
+nmod(have-7, with-9)
+det(inmate-12, an-11)
+conj:or(converse-3, inmate-12)
+case(sex-16, of-13)
+det(sex-16, the-14)
+amod(sex-16, opposite-15)
+nmod:of(inmate-12, sex-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, converse-3)
+compound(NOT-2, DO-1)
+nsubj(converse-3, NOT-2)
+dep(converse-3, with-4)
+punct(have-7, ,-5)
+cc(have-7, or-6)
+root(with-4, have-7)
+dobj(have-7, contact-8)
+dep(contact-8, with-9)
+punct(with-9, ,-10)
+det(inmate-12, an-11)
+root(,-10, inmate-12)
+case(sex-16, of-13)
+det(sex-16, the-14)
+amod(sex-16, opposite-15)
+nmod:of(inmate-12, sex-16)
+punct(inmate-12, .-17)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[13, 11] [,10, ?1, ?2, DO1, NOT2, contact8, converse3, have7, inmate12, opposite15, sex16, with4, with9]
+with4- ->converse3
+have7-  : or  : or ->with4
+?1-the->sex16
+opposite15- ->?1
+?2- ->,10
+DO1- ->NOT2
+NOT2- ->converse3
+with9- ->contact8
+?2-an->inmate12
+contact8- ->have7
+?1-of->?2
+
+[converse3
+	(<- -with4<-  : or  : or -have7<- -contact8<- -with9)
+	<- -NOT2<- -DO1;
+,10<- -?2<-of-?1<- -opposite15;
+inmate12<-an-*?2;
+sex16<-the-*?1]

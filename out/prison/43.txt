@@ -1,0 +1,54 @@
+No photographs are allowed to be taken.
+------CorefChainz
+No-DT 
+photographs-NNS 
+are-VBP 
+allowed-VBN 
+to-TO 
+be-VB 
+taken-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NNS 	-> photographs
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> taken
+							 	-> . 	-> .
+			
+Dependensee repr
+neg(photographs-2, No-1)
+nsubjpass(allowed-4, photographs-2)
+nsubjpass:xsubj(taken-7, photographs-2)
+auxpass(allowed-4, are-3)
+root(ROOT-0, allowed-4)
+mark(taken-7, to-5)
+auxpass(taken-7, be-6)
+xcomp(allowed-4, taken-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-4)
+neg(photographs-2, No-1)
+nsubjpass(allowed-4, photographs-2)
+nsubjpass:xsubj(taken-7, photographs-2)
+auxpass(allowed-4, are-3)
+mark(taken-7, to-5)
+auxpass(taken-7, be-6)
+xcomp(allowed-4, taken-7)
+punct(allowed-4, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[4, 4] [No1, allowed4, photographs2, taken7]
+taken7-  : to  : be ->allowed4
+No1- ->photographs2
+photographs2-  : are ->allowed4
+photographs2- ->taken7
+
+[allowed4
+	(<-  : to  : be -taken7<- -photographs2<- -No1)
+	<-  : are -*photographs2]

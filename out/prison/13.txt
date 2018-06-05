@@ -1,0 +1,437 @@
+From the start of an inmate’s incarceration and up to five days prior to his or her release from the jail, the Grant County Jail staff shall be limited to deducting up to 50% of each deposit made by an inmate, or another person on behalf of an inmate to the canteen account for reimbursement of monies owed by the inmate to the jail for medical care, dental care, prescription, and non-prescription medication charges.
+------CorefChainz
+CHAIN1-["the jail" in sentence 1, "Grant County Jail" in sentence 1]
+representative mention: "Grant County Jail" in sentence 1
+CHAIN11-["an inmate 's" in sentence 1, "an inmate" in sentence 1, "the inmate" in sentence 1]
+representative mention: "an inmate 's" in sentence 1
+From-IN 
+the-DT 
+start-NN 
+of-IN 
+an-DT 
+inmate-NN 
+'s-POS 
+incarceration-NN 
+and-CC 
+up-IN 
+to-TO 
+five-CD 
+days-NNS 
+prior-RB 
+to-TO 
+his-PRP$ 
+or-CC 
+her-PRP$ 
+release-NN 
+from-IN 
+the-DT 
+jail-NN 
+,-, 
+the-DT 
+Grant-NNP 
+County-NNP 
+Jail-NN 
+staff-NN 
+shall-MD 
+be-VB 
+limited-VBN 
+to-TO 
+deducting-VBG 
+up-RP 
+to-TO 
+50-CD 
+%-NN 
+of-IN 
+each-DT 
+deposit-NN 
+made-VBN 
+by-IN 
+an-DT 
+inmate-NN 
+,-, 
+or-CC 
+another-DT 
+person-NN 
+on-IN 
+behalf-NN 
+of-IN 
+an-DT 
+inmate-NN 
+to-TO 
+the-DT 
+canteen-NN 
+account-NN 
+for-IN 
+reimbursement-NN 
+of-IN 
+monies-NNS 
+owed-VBN 
+by-IN 
+the-DT 
+inmate-NN 
+to-TO 
+the-DT 
+jail-NN 
+for-IN 
+medical-JJ 
+care-NN 
+,-, 
+dental-JJ 
+care-NN 
+,-, 
+prescription-NN 
+,-, 
+and-CC 
+non-prescription-JJ 
+medication-NN 
+charges-NNS 
+.-. 
+ROOT 	-> S 	-> PP 	-> IN 	-> From
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> start
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> incarceration
+		 	-> CC 	-> and
+	 	-> NP 	-> QP 	-> IN 	-> up
+	 	-> TO 	-> to
+	 	-> CD 	-> five
+		 	-> NNS 	-> days
+		 	-> ADVP 	-> RB 	-> prior
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> ADJP 	-> PRP$ 	-> his
+	 	-> CC 	-> or
+	 	-> PRP$ 	-> her
+		 	-> NN 	-> release
+		 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+										 	-> , 	-> ,
+	 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NN 	-> Jail
+	 	-> NN 	-> staff
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> VBN 	-> limited
+	 	-> PP 	-> TO 	-> to
+	 	-> S 	-> VP 	-> VBG 	-> deducting
+	 	-> PRT 	-> RP 	-> up
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> NP 	-> CD 	-> 50
+	 	-> NN 	-> %
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> each
+	 	-> NN 	-> deposit
+		 	-> VP 	-> VBN 	-> made
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+							 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> person
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> NN 	-> behalf
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> canteen
+	 	-> NN 	-> account
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> NN 	-> reimbursement
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> NNS 	-> monies
+		 	-> VP 	-> VBN 	-> owed
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+			 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> JJ 	-> medical
+	 	-> NN 	-> care
+		 	-> , 	-> ,
+	 	-> NP 	-> JJ 	-> dental
+	 	-> NN 	-> care
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> prescription
+		 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NP 	-> JJ 	-> non-prescription
+	 	-> NN 	-> medication
+	 	-> NNS 	-> charges
+																										 	-> . 	-> .
+			
+Dependensee repr
+case(start-3, From-1)
+det(start-3, the-2)
+nmod:from(limited-31, start-3)
+case(incarceration-8, of-4)
+det(inmate-6, an-5)
+nmod:poss(incarceration-8, inmate-6)
+case(inmate-6, 's-7)
+nmod:of(start-3, incarceration-8)
+cc(incarceration-8, and-9)
+dep(five-12, up-10)
+mwe(up-10, to-11)
+nummod(days-13, five-12)
+nmod:of(start-3, days-13)
+conj:and(incarceration-8, days-13)
+advmod(incarceration-8, prior-14)
+case(release-19, to-15)
+amod(release-19, his-16)
+cc(his-16, or-17)
+conj:or(his-16, her-18)
+amod(release-19, her-18)
+nmod:to(prior-14, release-19)
+case(jail-22, from-20)
+det(jail-22, the-21)
+nmod:from(release-19, jail-22)
+det(staff-28, the-24)
+compound(staff-28, Grant-25)
+compound(staff-28, County-26)
+compound(staff-28, Jail-27)
+nsubjpass(limited-31, staff-28)
+aux(limited-31, shall-29)
+auxpass(limited-31, be-30)
+root(ROOT-0, limited-31)
+mark(deducting-33, to-32)
+advcl(limited-31, deducting-33)
+compound:prt(deducting-33, up-34)
+case(%-37, to-35)
+nummod(%-37, 50-36)
+nmod:to(deducting-33, %-37)
+case(deposit-40, of-38)
+det(deposit-40, each-39)
+nmod:of(%-37, deposit-40)
+acl(deposit-40, made-41)
+case(inmate-44, by-42)
+det(inmate-44, an-43)
+nmod:by(made-41, inmate-44)
+cc(%-37, or-46)
+det(person-48, another-47)
+nmod:to(deducting-33, person-48)
+conj:or(%-37, person-48)
+case(inmate-53, on-49)
+mwe(on-49, behalf-50)
+mwe(on-49, of-51)
+det(inmate-53, an-52)
+nmod:on_behalf_of(person-48, inmate-53)
+case(account-57, to-54)
+det(account-57, the-55)
+compound(account-57, canteen-56)
+nmod:to(inmate-53, account-57)
+case(reimbursement-59, for-58)
+nmod:for(account-57, reimbursement-59)
+case(monies-61, of-60)
+nmod:of(reimbursement-59, monies-61)
+acl(monies-61, owed-62)
+case(inmate-65, by-63)
+det(inmate-65, the-64)
+nmod:by(owed-62, inmate-65)
+case(jail-68, to-66)
+det(jail-68, the-67)
+nmod:to(owed-62, jail-68)
+case(care-71, for-69)
+amod(care-71, medical-70)
+nmod:for(jail-68, care-71)
+amod(care-74, dental-73)
+nmod:for(jail-68, care-74)
+conj:and(care-71, care-74)
+nmod:for(jail-68, prescription-76)
+conj:and(care-71, prescription-76)
+cc(care-71, and-78)
+amod(charges-81, non-prescription-79)
+compound(charges-81, medication-80)
+nmod:for(jail-68, charges-81)
+conj:and(care-71, charges-81)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, limited-31)
+case(start-3, From-1)
+det(start-3, the-2)
+nmod:from(limited-31, start-3)
+case(incarceration-8, of-4)
+det(inmate-6, an-5)
+nmod:poss(incarceration-8, inmate-6)
+case(inmate-6, 's-7)
+nmod:of(start-3, incarceration-8)
+cc(incarceration-8, and-9)
+advmod(five-12, up-10)
+dep(five-12, to-11)
+nummod(days-13, five-12)
+nmod:npmod(prior-14, days-13)
+nmod:of(start-3, prior-14)
+conj:and(incarceration-8, prior-14)
+case(release-19, to-15)
+compound(release-19, his-16)
+cc(his-16, or-17)
+conj:or(his-16, her-18)
+compound(release-19, her-18)
+nmod:to(prior-14, release-19)
+case(jail-22, from-20)
+det(jail-22, the-21)
+nmod:from(release-19, jail-22)
+punct(limited-31, ,-23)
+det(staff-28, the-24)
+compound(staff-28, Grant-25)
+compound(staff-28, County-26)
+compound(staff-28, Jail-27)
+nsubjpass(limited-31, staff-28)
+aux(limited-31, shall-29)
+auxpass(limited-31, be-30)
+mark(deducting-33, to-32)
+advcl:to(limited-31, deducting-33)
+dep(50-36, up-34)
+mwe(up-34, to-35)
+nummod(%-37, 50-36)
+dobj(deducting-33, %-37)
+case(deposit-40, of-38)
+det(deposit-40, each-39)
+nmod:of(%-37, deposit-40)
+acl(deposit-40, made-41)
+case(inmate-44, by-42)
+det(inmate-44, an-43)
+nmod:by(made-41, inmate-44)
+punct(%-37, ,-45)
+cc(%-37, or-46)
+det(person-48, another-47)
+dobj(deducting-33, person-48)
+conj:or(%-37, person-48)
+case(inmate-53, on-49)
+mwe(on-49, behalf-50)
+mwe(on-49, of-51)
+det(inmate-53, an-52)
+nmod:on_behalf_of(person-48, inmate-53)
+case(account-57, to-54)
+det(account-57, the-55)
+compound(account-57, canteen-56)
+nmod:to(inmate-53, account-57)
+case(reimbursement-59, for-58)
+nmod:for(inmate-53, reimbursement-59)
+case(monies-61, of-60)
+nmod:of(reimbursement-59, monies-61)
+acl(monies-61, owed-62)
+case(inmate-65, by-63)
+det(inmate-65, the-64)
+nmod:by(owed-62, inmate-65)
+case(jail-68, to-66)
+det(jail-68, the-67)
+nmod:to(owed-62, jail-68)
+case(care-71, for-69)
+amod(care-71, medical-70)
+nmod:for(jail-68, care-71)
+punct(care-71, ,-72)
+amod(care-74, dental-73)
+nmod:for(jail-68, care-74)
+conj:and(care-71, care-74)
+punct(care-71, ,-75)
+nmod:for(jail-68, prescription-76)
+conj:and(care-71, prescription-76)
+punct(care-71, ,-77)
+cc(care-71, and-78)
+amod(charges-81, non-prescription-79)
+compound(charges-81, medication-80)
+nmod:for(jail-68, charges-81)
+conj:and(care-71, charges-81)
+punct(limited-31, .-82)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[55, 61] [%37, 5036, ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, County26, Grant25, Jail27, account57, behalf50, canteen56, care71, care74, charges81, days13, deducting33, dental73, deposit40, five12, her18, his16, incarceration8, inmate65, inmate44, inmate6, inmate53, jail22, jail68, limited31, made41, medical70, medication80, monies61, non-prescription79, of51, owed62, person48, prescription76, prior14, reimbursement59, release19, staff28, start3, to35, to11, up34, up10]
+?2-from->limited31
+?5-the->staff28
+release19-to->prior14
+up10- ->five12
+care74-for->?11
+?10-from->release19
+care71-for->?11
+owed62- ->monies61
+medication80- ->charges81
+?7-on_behalf_of : on ->?8
+?3-poss : 's ->incarceration8
+?9-the->account57
+?9-to->?7
+?7-an->inmate53
+Grant25- ->?5
+to11- ->five12
+non-prescription79- ->charges81
+?1-==->?3
+?4-by->made41
+?11-the->jail68
+?3-an->inmate6
+made41- ->?6
+medical70- ->care71
+incarceration8-of : From ->?2
+?8-or->%37
+his16- ->release19
+?1-the->inmate65
+?8-another->person48
+?4-==->?3
+?4-an->inmate44
+reimbursement59-for->?7
+5036- ->%37
+?2-the->start3
+charges81-for->?11
+care74-and->care71
+prior14-and->incarceration8
+Jail27- ->?5
+prescription76-for->?11
+to35- ->up34
+deducting33-to->limited31
+?1-by->owed62
+prescription76-and->care71
+prior14-of->?2
+?10-==->Jail27
+?8- ->deducting33
+?11-to->owed62
+five12- ->days13
+?6-of->%37
+monies61-of->reimbursement59
+?10-the->jail22
+up34- ->5036
+?5-  : shall  : be ->limited31
+County26- ->?5
+?6-each->deposit40
+her18- ->release19
+days13-npmod->prior14
+canteen56- ->?9
+charges81-and->care71
+dental73- ->care74
+her18-or->his16
+%37- ->deducting33
+
+[limited31
+	(<-to-deducting33
+		(<- -%37(<-or-?8<-on_behalf_of : on -?7(<-for-reimbursement59<-of-monies61<- -owed62(<-to-?11(<-for-care71(<-and-care74<- -dental73)(<-and-charges81(<- -medication80)<- -non-prescription79)(<- -medical70)<-and-prescription76)(<-for-*care74)(<-for-*charges81)<-for-*prescription76)<-by-?1)<-to-?9<- -canteen56)(<- -5036<- -up34<- -to35)<-of-?6<- -made41<-by-?4)
+		<- -*?8)
+	(<-from-?2
+		(<-of : From -incarceration8(<-and-prior14(<-npmod-days13<- -five12(<- -to11)<- -up10)<-to-release19(<- -his16<-or-her18)(<- -*her18)<-from-?10)<-poss : 's -?3(<-==-*?1)<-==-*?4)
+		<-of-*prior14)
+	<-  : shall  : be -?5
+		(<- -County26)
+		(<- -Grant25)
+		<- -Jail27<-==-*?10;
+start3<-the-*?2;
+staff28<-the-*?5;
+behalf50;
+of51;
+account57<-the-*?9;
+deposit40<-each-*?6;
+inmate65<-the-*?1;
+inmate44<-an-*?4;
+inmate6<-an-*?3;
+inmate53<-an-*?7;
+jail22<-the-*?10;
+jail68<-the-*?11;
+person48<-another-*?8]

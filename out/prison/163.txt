@@ -1,0 +1,84 @@
+Any contraband found in incoming mail shall be confiscated and preserved as evidence.
+------CorefChainz
+Any-DT 
+contraband-NN 
+found-VBN 
+in-IN 
+incoming-JJ 
+mail-NN 
+shall-MD 
+be-VB 
+confiscated-VBN 
+and-CC 
+preserved-VBN 
+as-IN 
+evidence-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> Any
+	 	-> NN 	-> contraband
+		 	-> VP 	-> VBN 	-> found
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> JJ 	-> incoming
+	 	-> NN 	-> mail
+					 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> confiscated
+	 	-> CC 	-> and
+	 	-> VBN 	-> preserved
+	 	-> PP 	-> IN 	-> as
+	 	-> NP 	-> NN 	-> evidence
+						 	-> . 	-> .
+			
+Dependensee repr
+det(contraband-2, Any-1)
+nsubjpass(confiscated-9, contraband-2)
+nsubjpass(preserved-11, contraband-2)
+acl(contraband-2, found-3)
+case(mail-6, in-4)
+amod(mail-6, incoming-5)
+nmod:in(found-3, mail-6)
+aux(confiscated-9, shall-7)
+auxpass(confiscated-9, be-8)
+root(ROOT-0, confiscated-9)
+cc(confiscated-9, and-10)
+conj:and(confiscated-9, preserved-11)
+case(evidence-13, as-12)
+nmod:as(confiscated-9, evidence-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, confiscated-9)
+det(contraband-2, Any-1)
+nsubjpass(confiscated-9, contraband-2)
+nsubjpass(preserved-11, contraband-2)
+acl(contraband-2, found-3)
+case(mail-6, in-4)
+amod(mail-6, incoming-5)
+nmod:in(found-3, mail-6)
+aux(confiscated-9, shall-7)
+auxpass(confiscated-9, be-8)
+cc(confiscated-9, and-10)
+conj:and(confiscated-9, preserved-11)
+case(evidence-13, as-12)
+nmod:as(confiscated-9, evidence-13)
+punct(confiscated-9, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 8] [?1, confiscated9, contraband2, evidence13, found3, incoming5, mail6, preserved11]
+?1- ->confiscated9
+?1- ->preserved11
+?1-Any->contraband2
+evidence13-as->confiscated9
+preserved11-and : shall  : be ->confiscated9
+incoming5- ->mail6
+found3- ->?1
+mail6-in->found3
+
+[confiscated9
+	(<-and : shall  : be -preserved11<- -?1<- -found3<-in-mail6<- -incoming5)
+	(<- -*?1)
+	<-as-evidence13;
+contraband2<-Any-*?1]

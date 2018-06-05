@@ -1,0 +1,350 @@
+Each inmate will also be issued (1) plastic container. You are to keep all of your personal property in this container. What does not fit into container will not be allowed in your cell. DO NOT SIT OR STAND ON THESE CONTAINERS.
+------CorefChainz
+CHAIN5-["plastic container" in sentence 1, "this container" in sentence 2]
+representative mention: "plastic container" in sentence 1
+CHAIN8-["You" in sentence 2, "your" in sentence 2, "your" in sentence 3]
+representative mention: "You" in sentence 2
+Each-DT 
+inmate-NN 
+will-MD 
+also-RB 
+be-VB 
+issued-VBN 
+-LRB---LRB- 
+1-CD 
+-RRB---RRB- 
+plastic-NNP 
+container-NNP 
+.-. 
+You-PRP 
+are-VBP 
+to-TO 
+keep-VB 
+all-DT 
+of-IN 
+your-PRP$ 
+personal-JJ 
+property-NN 
+in-IN 
+this-DT 
+container-NN 
+.-. 
+What-WP 
+does-VBZ 
+not-RB 
+fit-VB 
+into-IN 
+container-NN 
+will-MD 
+not-RB 
+be-VB 
+allowed-VBN 
+in-IN 
+your-PRP$ 
+cell-NN 
+.-. 
+DO-NNP 
+NOT-NNP 
+SIT-NNP 
+OR-NNP 
+STAND-NNP 
+ON-IN 
+THESE-NNP 
+CONTAINERS-NNP 
+.-. 
+ROOT 	-> SINV 	-> S 	-> NP 	-> DT 	-> Each
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> will
+	 	-> ADVP 	-> RB 	-> also
+		 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> VBN 	-> issued
+	 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> NP 	-> CD 	-> 1
+		 	-> -RRB- 	-> -RRB-
+		 	-> SBAR 	-> X 	-> NNP 	-> plastic
+	 	-> NNP 	-> container
+	 	-> . 	-> .
+		 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> VBP 	-> are
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> keep
+	 	-> NP 	-> NP 	-> DT 	-> all
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NX 	-> JJ 	-> personal
+	 	-> NN 	-> property
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> container
+		 	-> . 	-> .
+					 	-> SBAR 	-> WHNP 	-> WP 	-> What
+		 	-> S 	-> VP 	-> VBZ 	-> does
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> fit
+	 	-> PP 	-> IN 	-> into
+	 	-> NP 	-> NN 	-> container
+																		 	-> VP 	-> MD 	-> will
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> cell
+			 	-> . 	-> .
+				 	-> NP 	-> NP 	-> NNP 	-> DO
+	 	-> NNP 	-> NOT
+	 	-> NNP 	-> SIT
+	 	-> NNP 	-> OR
+	 	-> NNP 	-> STAND
+		 	-> PP 	-> IN 	-> ON
+	 	-> NP 	-> NNP 	-> THESE
+	 	-> NNP 	-> CONTAINERS
+				 	-> . 	-> .
+			
+Dependensee repr
+det(inmate-2, Each-1)
+nsubjpass(issued-6, inmate-2)
+aux(issued-6, will-3)
+advmod(issued-6, also-4)
+auxpass(issued-6, be-5)
+dep(allowed-35, issued-6)
+dep(issued-6, 1-8)
+dep(container-11, plastic-10)
+dep(are-14, container-11)
+nsubj(are-14, You-13)
+nsubj:xsubj(keep-16, You-13)
+ccomp(issued-6, are-14)
+mark(keep-16, to-15)
+xcomp(are-14, keep-16)
+dobj(keep-16, all-17)
+nsubj(fit-29, all-17)
+case(property-21, of-18)
+nmod:poss(property-21, your-19)
+amod(property-21, personal-20)
+nmod:of(all-17, property-21)
+case(container-24, in-22)
+det(container-24, this-23)
+nmod:in(property-21, container-24)
+ref(all-17, What-26)
+aux(fit-29, does-27)
+neg(fit-29, not-28)
+acl:relcl(all-17, fit-29)
+case(container-31, into-30)
+nmod:into(fit-29, container-31)
+aux(allowed-35, will-32)
+neg(allowed-35, not-33)
+auxpass(allowed-35, be-34)
+root(ROOT-0, allowed-35)
+case(cell-38, in-36)
+nmod:poss(cell-38, your-37)
+nmod:in(allowed-35, cell-38)
+compound(STAND-44, DO-40)
+compound(STAND-44, NOT-41)
+compound(STAND-44, SIT-42)
+compound(STAND-44, OR-43)
+nsubjpass(allowed-35, STAND-44)
+case(CONTAINERS-47, ON-45)
+compound(CONTAINERS-47, THESE-46)
+nmod:on(STAND-44, CONTAINERS-47)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, issued-6)
+det(inmate-2, Each-1)
+nsubjpass(issued-6, inmate-2)
+aux(issued-6, will-3)
+advmod(issued-6, also-4)
+auxpass(issued-6, be-5)
+punct(1-8, -LRB--7)
+dep(container-11, 1-8)
+punct(1-8, -RRB--9)
+compound(container-11, plastic-10)
+dobj(issued-6, container-11)
+punct(issued-6, .-12)
+---
+qqroot(ROOT-0, issued-6)
+det(inmate-2, Each-1)
+nsubjpass(issued-6, inmate-2)
+aux(issued-6, will-3)
+advmod(issued-6, also-4)
+auxpass(issued-6, be-5)
+punct(1-8, -LRB--7)
+dep(container-11, 1-8)
+punct(1-8, -RRB--9)
+compound(container-11, plastic-10)
+dobj(issued-6, container-11)
+punct(issued-6, .-12)
+root(ROOT-0, are-2)
+nsubj(are-2, You-1)
+nsubj:xsubj(keep-4, You-1)
+mark(keep-4, to-3)
+xcomp(are-2, keep-4)
+dobj(keep-4, all-5)
+case(property-9, of-6)
+nmod:poss(property-9, your-7)
+amod(property-9, personal-8)
+nmod:of(all-5, property-9)
+case(container-12, in-10)
+det(container-12, this-11)
+nmod:in(keep-4, container-12)
+punct(are-2, .-13)
+---
+qqroot(ROOT-0, issued-6)
+det(inmate-2, Each-1)
+nsubjpass(issued-6, inmate-2)
+aux(issued-6, will-3)
+advmod(issued-6, also-4)
+auxpass(issued-6, be-5)
+punct(1-8, -LRB--7)
+dep(container-11, 1-8)
+punct(1-8, -RRB--9)
+compound(container-11, plastic-10)
+dobj(issued-6, container-11)
+punct(issued-6, .-12)
+root(ROOT-0, are-2)
+nsubj(are-2, You-1)
+nsubj:xsubj(keep-4, You-1)
+mark(keep-4, to-3)
+xcomp(are-2, keep-4)
+dobj(keep-4, all-5)
+case(property-9, of-6)
+nmod:poss(property-9, your-7)
+amod(property-9, personal-8)
+nmod:of(all-5, property-9)
+case(container-12, in-10)
+det(container-12, this-11)
+nmod:in(keep-4, container-12)
+punct(are-2, .-13)
+root(ROOT-0, allowed-10)
+nsubj(fit-4, What-1)
+aux(fit-4, does-2)
+neg(fit-4, not-3)
+csubjpass(allowed-10, fit-4)
+case(container-6, into-5)
+nmod:into(fit-4, container-6)
+aux(allowed-10, will-7)
+neg(allowed-10, not-8)
+auxpass(allowed-10, be-9)
+case(cell-13, in-11)
+nmod:poss(cell-13, your-12)
+nmod:in(allowed-10, cell-13)
+punct(allowed-10, .-14)
+---
+qqroot(ROOT-0, issued-6)
+det(inmate-2, Each-1)
+nsubjpass(issued-6, inmate-2)
+aux(issued-6, will-3)
+advmod(issued-6, also-4)
+auxpass(issued-6, be-5)
+punct(1-8, -LRB--7)
+dep(container-11, 1-8)
+punct(1-8, -RRB--9)
+compound(container-11, plastic-10)
+dobj(issued-6, container-11)
+punct(issued-6, .-12)
+root(ROOT-0, are-2)
+nsubj(are-2, You-1)
+nsubj:xsubj(keep-4, You-1)
+mark(keep-4, to-3)
+xcomp(are-2, keep-4)
+dobj(keep-4, all-5)
+case(property-9, of-6)
+nmod:poss(property-9, your-7)
+amod(property-9, personal-8)
+nmod:of(all-5, property-9)
+case(container-12, in-10)
+det(container-12, this-11)
+nmod:in(keep-4, container-12)
+punct(are-2, .-13)
+root(ROOT-0, allowed-10)
+nsubj(fit-4, What-1)
+aux(fit-4, does-2)
+neg(fit-4, not-3)
+csubjpass(allowed-10, fit-4)
+case(container-6, into-5)
+nmod:into(fit-4, container-6)
+aux(allowed-10, will-7)
+neg(allowed-10, not-8)
+auxpass(allowed-10, be-9)
+case(cell-13, in-11)
+nmod:poss(cell-13, your-12)
+nmod:in(allowed-10, cell-13)
+punct(allowed-10, .-14)
+root(ROOT-0, STAND-5)
+compound(OR-4, DO-1)
+compound(OR-4, NOT-2)
+compound(OR-4, SIT-3)
+nsubj(STAND-5, OR-4)
+case(CONTAINERS-8, ON-6)
+compound(CONTAINERS-8, THESE-7)
+nmod:on(STAND-5, CONTAINERS-8)
+punct(STAND-5, .-9)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+G[31, 31] [18, ?1, ?2, CONTAINERS8, DO1, NOT2, OR4, SIT3, STAND5, THESE7, What1, You1, all5, allowed10, also4, are2, cell13, container12, container11, container6, fit4, inmate2, issued6, keep4, not8, not3, personal8, plastic10, property9, your12, your7]
+your12-==->DO1
+property9-of->all5
+not3- ->fit4
+?2-this->container12
+container6-into->fit4
+SIT3- ->OR4
+plastic10- ->container11
+?1-  : will  : will ->issued6
+CONTAINERS8-on : ON  : ON ->STAND5
+THESE7- ->CONTAINERS8
+?1-Each->inmate2
+container11- ->issued6
+also4-  : be ->issued6
+OR4- ->STAND5
+your7-poss->property9
+cell13-in->allowed10
+NOT2- ->OR4
+You1- ->keep4
+What1-  : does  : does ->fit4
+You1- ->are2
+fit4- ->allowed10
+18- ->container11
+your12-poss->cell13
+DO1- ->OR4
+your12-==->container11
+keep4-  : to ->are2
+your7-==->DO1
+all5- ->keep4
+?2-in->keep4
+not8-  : will  : be ->allowed10
+personal8- ->property9
+
+[are2
+	(<-  : to -keep4
+		(<- -all5<-of-property9(<- -personal8)<-poss-your7)
+		(<-in-?2)
+		<- -You1)
+	<- -*You1;
+STAND5
+	(<- -OR4
+		(<- -DO1(<-==-*your7)<-==-your12)
+		(<- -NOT2)
+		<- -SIT3)
+	<-on : ON  : ON -CONTAINERS8<- -THESE7;
+allowed10
+	(<- -fit4
+		(<-  : does  : does -What1)
+		(<-into-container6)
+		<- -not3)
+	(<-  : will  : be -not8)
+	<-in-cell13<-poss-*your12;
+issued6
+	(<- -container11
+		(<-==-*your12)
+		(<- -18)
+		<- -plastic10)
+	(<-  : will  : will -?1)
+	<-  : be -also4;
+inmate2<-Each-*?1;
+container12<-this-*?2]

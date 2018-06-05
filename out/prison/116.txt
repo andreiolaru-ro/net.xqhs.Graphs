@@ -1,0 +1,92 @@
+Inmates will be held financially responsible for any damage or loss of these items.
+------CorefChainz
+Inmates-NNS 
+will-MD 
+be-VB 
+held-VBN 
+financially-RB 
+responsible-JJ 
+for-IN 
+any-DT 
+damage-NN 
+or-CC 
+loss-NN 
+of-IN 
+these-DT 
+items-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> held
+	 	-> ADJP 	-> RB 	-> financially
+	 	-> JJ 	-> responsible
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> damage
+	 	-> CC 	-> or
+	 	-> NN 	-> loss
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> these
+	 	-> NNS 	-> items
+								 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(held-4, Inmates-1)
+aux(held-4, will-2)
+auxpass(held-4, be-3)
+root(ROOT-0, held-4)
+advmod(responsible-6, financially-5)
+xcomp(held-4, responsible-6)
+case(damage-9, for-7)
+det(damage-9, any-8)
+nmod:for(held-4, damage-9)
+cc(damage-9, or-10)
+nmod:for(held-4, loss-11)
+conj:or(damage-9, loss-11)
+case(items-14, of-12)
+det(items-14, these-13)
+nmod:of(damage-9, items-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, held-4)
+nsubjpass(held-4, Inmates-1)
+aux(held-4, will-2)
+auxpass(held-4, be-3)
+advmod(responsible-6, financially-5)
+xcomp(held-4, responsible-6)
+case(damage-9, for-7)
+det(damage-9, any-8)
+nmod:for(responsible-6, damage-9)
+cc(damage-9, or-10)
+nmod:for(responsible-6, loss-11)
+conj:or(damage-9, loss-11)
+case(items-14, of-12)
+det(items-14, these-13)
+nmod:of(damage-9, items-14)
+punct(held-4, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 9] [?1, ?2, Inmates1, damage9, financially5, held4, items14, loss11, responsible6]
+?2-of->?1
+loss11-for->responsible6
+?1-for->responsible6
+financially5- ->responsible6
+?2-these->items14
+responsible6- ->held4
+loss11-or->?1
+?1-any->damage9
+Inmates1-  : will  : be ->held4
+
+[held4
+	(<- -responsible6
+		(<-for-?1(<-of-?2)<-or-loss11)
+		(<-for-*loss11)
+		<- -financially5)
+	<-  : will  : be -Inmates1;
+damage9<-any-*?1;
+items14<-these-*?2]

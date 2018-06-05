@@ -1,0 +1,180 @@
+Indigent inmates are allowed one free letter per week. If the inmate sends more than one letter per week the other letters will be returned to them.
+------CorefChainz
+CHAIN5-["Indigent inmates" in sentence 1, "the inmate" in sentence 2]
+representative mention: "Indigent inmates" in sentence 1
+CHAIN9-["the other letters" in sentence 2, "them" in sentence 2]
+representative mention: "the other letters" in sentence 2
+Indigent-JJ 
+inmates-NNS 
+are-VBP 
+allowed-VBN 
+one-CD 
+free-JJ 
+letter-NN 
+per-IN 
+week-NN 
+.-. 
+If-IN 
+the-DT 
+inmate-NN 
+sends-VBZ 
+more-JJR 
+than-IN 
+one-CD 
+letter-NN 
+per-IN 
+week-NN 
+the-DT 
+other-JJ 
+letters-NNS 
+will-MD 
+be-VB 
+returned-VBN 
+to-TO 
+them-PRP 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> JJ 	-> Indigent
+	 	-> NNS 	-> inmates
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> NP 	-> NP 	-> CD 	-> one
+	 	-> JJ 	-> free
+	 	-> NN 	-> letter
+		 	-> PP 	-> IN 	-> per
+	 	-> NP 	-> NN 	-> week
+						 	-> . 	-> .
+		 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+		 	-> VP 	-> VBZ 	-> sends
+	 	-> NP 	-> NP 	-> QP 	-> JJR 	-> more
+	 	-> IN 	-> than
+	 	-> CD 	-> one
+		 	-> NN 	-> letter
+		 	-> PP 	-> IN 	-> per
+	 	-> NP 	-> NN 	-> week
+							 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> other
+	 	-> NNS 	-> letters
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> returned
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> PRP 	-> them
+							 	-> . 	-> .
+			
+Dependensee repr
+amod(inmates-2, Indigent-1)
+nsubjpass(allowed-4, inmates-2)
+auxpass(allowed-4, are-3)
+root(ROOT-0, allowed-4)
+nummod(letter-7, one-5)
+amod(letter-7, free-6)
+dobj(allowed-4, letter-7)
+case(week-9, per-8)
+nmod:per(letter-7, week-9)
+mark(sends-14, If-11)
+det(inmate-13, the-12)
+nsubj(sends-14, inmate-13)
+advcl(returned-26, sends-14)
+advmod(one-17, more-15)
+mwe(more-15, than-16)
+nummod(letter-18, one-17)
+dobj(sends-14, letter-18)
+case(week-20, per-19)
+nmod:per(letter-18, week-20)
+det(letters-23, the-21)
+amod(letters-23, other-22)
+nsubjpass(returned-26, letters-23)
+aux(returned-26, will-24)
+auxpass(returned-26, be-25)
+parataxis(allowed-4, returned-26)
+case(them-28, to-27)
+nmod:to(returned-26, them-28)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-4)
+amod(inmates-2, Indigent-1)
+nsubjpass(allowed-4, inmates-2)
+auxpass(allowed-4, are-3)
+nummod(letter-7, one-5)
+amod(letter-7, free-6)
+dobj(allowed-4, letter-7)
+case(week-9, per-8)
+nmod:per(letter-7, week-9)
+punct(allowed-4, .-10)
+---
+qqroot(ROOT-0, allowed-4)
+amod(inmates-2, Indigent-1)
+nsubjpass(allowed-4, inmates-2)
+auxpass(allowed-4, are-3)
+nummod(letter-7, one-5)
+amod(letter-7, free-6)
+dobj(allowed-4, letter-7)
+case(week-9, per-8)
+nmod:per(letter-7, week-9)
+punct(allowed-4, .-10)
+root(ROOT-0, sends-4)
+mark(sends-4, If-1)
+det(inmate-3, the-2)
+nsubj(sends-4, inmate-3)
+advmod(one-7, more-5)
+mwe(more-5, than-6)
+nummod(letter-8, one-7)
+dobj(sends-4, letter-8)
+case(week-10, per-9)
+nmod:per(letter-8, week-10)
+det(letters-13, the-11)
+amod(letters-13, other-12)
+nsubjpass(returned-16, letters-13)
+aux(returned-16, will-14)
+auxpass(returned-16, be-15)
+acl:relcl(letter-8, returned-16)
+case(them-18, to-17)
+nmod:to(returned-16, them-18)
+punct(sends-4, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[20, 20] [?1, ?2, Indigent1, allowed4, free6, inmate3, inmates2, letter8, letter7, letters13, more5, one5, one7, other12, returned16, sends4, than6, them18, week9, week10]
+one5- ->letter7
+Indigent1- ->inmates2
+?1-  : will  : be ->returned16
+?2-  : If ->sends4
+free6- ->letter7
+them18-==->?1
+one7- ->letter8
+returned16- ->letter8
+than6- ->more5
+other12- ->?1
+letter8- ->sends4
+week9-per->letter7
+inmates2-  : are ->allowed4
+?2-the->inmate3
+letter7- ->allowed4
+them18-to->returned16
+more5- ->one7
+?1-the->letters13
+?2-==->inmates2
+week10-per->letter8
+
+[sends4
+	(<- -letter8
+		(<- -one7<- -more5<- -than6)
+		(<- -returned16(<-  : will  : be -?1(<- -other12)<-==-them18)<-to-*them18)
+		<-per-week10)
+	<-  : If -?2;
+allowed4
+	(<-  : are -inmates2
+		(<-==-*?2)
+		<- -Indigent1)
+	<- -letter7
+		(<- -free6)
+		(<- -one5)
+		<-per-week9;
+inmate3<-the-*?2;
+letters13<-the-*?1]

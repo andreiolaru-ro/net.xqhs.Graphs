@@ -1,0 +1,54 @@
+Inmates shall not steal anything from anyone.
+------CorefChainz
+Inmates-NNS 
+shall-MD 
+not-RB 
+steal-VB 
+anything-NN 
+from-IN 
+anyone-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> MD 	-> shall
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> steal
+	 	-> NP 	-> NN 	-> anything
+		 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> NN 	-> anyone
+					 	-> . 	-> .
+			
+Dependensee repr
+nsubj(steal-4, Inmates-1)
+aux(steal-4, shall-2)
+neg(steal-4, not-3)
+root(ROOT-0, steal-4)
+dobj(steal-4, anything-5)
+case(anyone-7, from-6)
+nmod:from(steal-4, anyone-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, steal-4)
+nsubj(steal-4, Inmates-1)
+aux(steal-4, shall-2)
+neg(steal-4, not-3)
+dobj(steal-4, anything-5)
+case(anyone-7, from-6)
+nmod:from(steal-4, anyone-7)
+punct(steal-4, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[5, 4] [Inmates1, anyone7, anything5, not3, steal4]
+not3- ->steal4
+Inmates1-  : shall  : shall ->steal4
+anyone7-from->steal4
+anything5- ->steal4
+
+[steal4
+	(<-  : shall  : shall -Inmates1)
+	(<-from-anyone7)
+	(<- -anything5)
+	<- -not3]

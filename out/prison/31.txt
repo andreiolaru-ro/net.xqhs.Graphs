@@ -1,0 +1,158 @@
+An inmate requesting medical services must complete the Medical Request Form; inmates must sign and date this form before any action will be taken.
+------CorefChainz
+CHAIN4-["the Medical Request Form" in sentence 1, "this form" in sentence 1]
+representative mention: "the Medical Request Form" in sentence 1
+An-DT 
+inmate-NN 
+requesting-VBG 
+medical-JJ 
+services-NNS 
+must-MD 
+complete-VB 
+the-DT 
+Medical-NNP 
+Request-NNP 
+Form-NN 
+;-: 
+inmates-NNS 
+must-MD 
+sign-VB 
+and-CC 
+date-VBP 
+this-DT 
+form-NN 
+before-IN 
+any-DT 
+action-NN 
+will-MD 
+be-VB 
+taken-VBN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NP 	-> DT 	-> An
+	 	-> NN 	-> inmate
+		 	-> VP 	-> VBG 	-> requesting
+	 	-> NP 	-> JJ 	-> medical
+	 	-> NNS 	-> services
+				 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> complete
+	 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Medical
+	 	-> NNP 	-> Request
+	 	-> NN 	-> Form
+					 	-> : 	-> ;
+	 	-> S 	-> NP 	-> NNS 	-> inmates
+		 	-> VP 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> sign
+			 	-> CC 	-> and
+	 	-> VP 	-> VBP 	-> date
+	 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> form
+		 	-> SBAR 	-> IN 	-> before
+	 	-> S 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> action
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> taken
+									 	-> . 	-> .
+			
+Dependensee repr
+det(inmate-2, An-1)
+nsubj(complete-7, inmate-2)
+acl(inmate-2, requesting-3)
+amod(services-5, medical-4)
+dobj(requesting-3, services-5)
+aux(complete-7, must-6)
+root(ROOT-0, complete-7)
+det(Form-11, the-8)
+compound(Form-11, Medical-9)
+compound(Form-11, Request-10)
+dobj(complete-7, Form-11)
+nsubj(sign-15, inmates-13)
+nsubj(date-17, inmates-13)
+aux(sign-15, must-14)
+parataxis(complete-7, sign-15)
+cc(sign-15, and-16)
+parataxis(complete-7, date-17)
+conj:and(sign-15, date-17)
+det(form-19, this-18)
+dobj(date-17, form-19)
+mark(taken-25, before-20)
+det(action-22, any-21)
+nsubjpass(taken-25, action-22)
+aux(taken-25, will-23)
+auxpass(taken-25, be-24)
+advcl(date-17, taken-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, complete-7)
+det(inmate-2, An-1)
+nsubj(complete-7, inmate-2)
+acl(inmate-2, requesting-3)
+amod(services-5, medical-4)
+dobj(requesting-3, services-5)
+aux(complete-7, must-6)
+det(Form-11, the-8)
+compound(Form-11, Medical-9)
+compound(Form-11, Request-10)
+dobj(complete-7, Form-11)
+punct(complete-7, ;-12)
+nsubj(sign-15, inmates-13)
+nsubj(date-17, inmates-13)
+aux(sign-15, must-14)
+parataxis(complete-7, sign-15)
+cc(sign-15, and-16)
+parataxis(complete-7, date-17)
+conj:and(sign-15, date-17)
+det(form-19, this-18)
+dobj(sign-15, form-19)
+mark(taken-25, before-20)
+det(action-22, any-21)
+nsubjpass(taken-25, action-22)
+aux(taken-25, will-23)
+auxpass(taken-25, be-24)
+advcl:before(sign-15, taken-25)
+punct(complete-7, .-26)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[18, 20] [?1, ?2, ?3, ?4, Form11, Medical9, Request10, action22, complete7, date17, form19, inmate2, inmates13, medical4, requesting3, services5, sign15, taken25]
+inmates13- ->date17
+?4-  : must ->complete7
+date17-and->sign15
+taken25-before->sign15
+sign15- ->complete7
+?2-the->Form11
+?1-this->form19
+requesting3- ->?4
+?4-An->inmate2
+?2- ->complete7
+inmates13-  : must ->sign15
+Request10- ->?2
+medical4- ->services5
+?1-==->?2
+date17- ->complete7
+services5- ->requesting3
+Medical9- ->?2
+?1- ->sign15
+?3-  : will  : be ->taken25
+?3-any->action22
+
+[inmate2<-An-?4<- -requesting3<- -services5<- -medical4;
+complete7
+	(<-  : must -*?4)
+	(<- -sign15
+		(<-and-date17<- -inmates13)
+		(<-  : must -*inmates13)
+		(<-before-taken25<-  : will  : be -?3)
+		<- -?1)
+	(<- -*date17)
+	<- -?2
+		(<-==-*?1)
+		(<- -Medical9)
+		<- -Request10;
+Form11<-the-*?2;
+action22<-any-*?3;
+form19<-this-*?1]

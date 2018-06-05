@@ -1,0 +1,208 @@
+You will treat the Corrections Staff with courtesy and due respect at all times. Any misbehavior, disrespect, or profanity will be investigated, and if appropriate, charges will be filed.
+------CorefChainz
+You-PRP 
+will-MD 
+treat-VB 
+the-DT 
+Corrections-NNP 
+Staff-NNP 
+with-IN 
+courtesy-NN 
+and-CC 
+due-JJ 
+respect-VB 
+at-IN 
+all-DT 
+times-NNS 
+.-. 
+Any-DT 
+misbehavior-NN 
+,-, 
+disrespect-NN 
+,-, 
+or-CC 
+profanity-RB 
+will-MD 
+be-VB 
+investigated-VBN 
+,-, 
+and-CC 
+if-IN 
+appropriate-JJ 
+,-, 
+charges-NNS 
+will-MD 
+be-VB 
+filed-VBN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VP 	-> VB 	-> treat
+	 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Corrections
+	 	-> NNP 	-> Staff
+		 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> NN 	-> courtesy
+				 	-> CC 	-> and
+	 	-> ADVP 	-> JJ 	-> due
+		 	-> VP 	-> VB 	-> respect
+	 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> DT 	-> all
+	 	-> NNS 	-> times
+				 	-> . 	-> .
+	 	-> FRAG 	-> NP 	-> NP 	-> DT 	-> Any
+	 	-> NN 	-> misbehavior
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> disrespect
+		 	-> , 	-> ,
+					 	-> CC 	-> or
+	 	-> VP 	-> ADVP 	-> RB 	-> profanity
+		 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> investigated
+						 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> S 	-> SBAR 	-> IN 	-> if
+	 	-> FRAG 	-> ADJP 	-> JJ 	-> appropriate
+				 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> charges
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> filed
+					 	-> . 	-> .
+			
+Dependensee repr
+nsubj(treat-3, You-1)
+nsubj(respect-11, You-1)
+nsubjpass(investigated-25, You-1)
+aux(treat-3, will-2)
+root(ROOT-0, treat-3)
+det(Staff-6, the-4)
+compound(Staff-6, Corrections-5)
+dobj(treat-3, Staff-6)
+case(courtesy-8, with-7)
+nmod:with(treat-3, courtesy-8)
+cc(treat-3, and-9)
+advmod(treat-3, due-10)
+conj:and(treat-3, respect-11)
+case(times-14, at-12)
+det(times-14, all-13)
+nmod:at(respect-11, times-14)
+det(misbehavior-17, Any-16)
+dep(treat-3, misbehavior-17)
+appos(misbehavior-17, disrespect-19)
+cc(treat-3, or-21)
+advmod(investigated-25, profanity-22)
+aux(investigated-25, will-23)
+auxpass(investigated-25, be-24)
+conj:and(treat-3, investigated-25)
+cc(treat-3, and-27)
+mark(appropriate-29, if-28)
+advcl(filed-34, appropriate-29)
+nsubjpass(filed-34, charges-31)
+aux(filed-34, will-32)
+auxpass(filed-34, be-33)
+conj:and(treat-3, filed-34)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, treat-3)
+nsubj(treat-3, You-1)
+aux(treat-3, will-2)
+det(Staff-6, the-4)
+compound(Staff-6, Corrections-5)
+dobj(treat-3, Staff-6)
+case(courtesy-8, with-7)
+nmod:with(treat-3, courtesy-8)
+cc(courtesy-8, and-9)
+amod(respect-11, due-10)
+nmod:with(treat-3, respect-11)
+conj:and(courtesy-8, respect-11)
+case(times-14, at-12)
+det(times-14, all-13)
+nmod:at(treat-3, times-14)
+punct(treat-3, .-15)
+---
+qqroot(ROOT-0, treat-3)
+nsubj(treat-3, You-1)
+aux(treat-3, will-2)
+det(Staff-6, the-4)
+compound(Staff-6, Corrections-5)
+dobj(treat-3, Staff-6)
+case(courtesy-8, with-7)
+nmod:with(treat-3, courtesy-8)
+cc(courtesy-8, and-9)
+amod(respect-11, due-10)
+nmod:with(treat-3, respect-11)
+conj:and(courtesy-8, respect-11)
+case(times-14, at-12)
+det(times-14, all-13)
+nmod:at(treat-3, times-14)
+punct(treat-3, .-15)
+root(ROOT-0, investigated-10)
+det(misbehavior-2, Any-1)
+nsubjpass(investigated-10, misbehavior-2)
+punct(misbehavior-2, ,-3)
+conj:or(misbehavior-2, disrespect-4)
+nsubjpass(investigated-10, disrespect-4)
+punct(misbehavior-2, ,-5)
+cc(misbehavior-2, or-6)
+conj:or(misbehavior-2, profanity-7)
+nsubjpass(investigated-10, profanity-7)
+aux(investigated-10, will-8)
+auxpass(investigated-10, be-9)
+punct(investigated-10, ,-11)
+cc(investigated-10, and-12)
+mark(appropriate-14, if-13)
+advcl:if(filed-19, appropriate-14)
+punct(filed-19, ,-15)
+nsubjpass(filed-19, charges-16)
+aux(filed-19, will-17)
+auxpass(filed-19, be-18)
+conj:and(investigated-10, filed-19)
+punct(investigated-10, .-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[18, 19] [?1, ?2, ?3, Corrections5, Staff6, You1, appropriate14, charges16, courtesy8, disrespect4, due10, filed19, investigated10, misbehavior2, profanity7, respect11, times14, treat3]
+respect11-and->courtesy8
+filed19-and->investigated10
+?3- ->treat3
+?1-all->times14
+disrespect4-or->?2
+?1-at->treat3
+profanity7-  : will  : be ->investigated10
+profanity7-or->?2
+?2-Any->misbehavior2
+charges16-  : will  : be ->filed19
+disrespect4- ->investigated10
+?3-the->Staff6
+?2- ->investigated10
+respect11-with->treat3
+You1-  : will ->treat3
+courtesy8-with->treat3
+due10- ->respect11
+appropriate14-if->filed19
+Corrections5- ->?3
+
+[treat3
+	(<-with-courtesy8<-and-respect11<- -due10)
+	(<-with-*respect11)
+	(<- -?3<- -Corrections5)
+	(<-at-?1)
+	<-  : will -You1;
+Staff6<-the-*?3;
+misbehavior2<-Any-?2
+	(<-or-^disrespect4)
+	<-or-^profanity7;
+investigated10
+	(<- -*?2)
+	(<-and-filed19
+		(<-if-appropriate14)
+		<-  : will  : be -charges16)
+	(<- -disrespect4)
+	<-  : will  : be -profanity7;
+times14<-all-*?1]

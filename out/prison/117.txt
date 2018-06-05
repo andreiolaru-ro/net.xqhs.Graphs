@@ -1,0 +1,266 @@
+It is the policy of the jail to process all mail promptly. The mail may, be delayed a reasonable time for staff to evaluate it. Staff while not disregard other essential jail duties to evaluate the mail.
+------CorefChainz
+CHAIN6-["all mail" in sentence 1, "The mail" in sentence 2, "it" in sentence 2, "the mail" in sentence 3]
+representative mention: "all mail" in sentence 1
+It-PRP 
+is-VBZ 
+the-DT 
+policy-NN 
+of-IN 
+the-DT 
+jail-NN 
+to-TO 
+process-VB 
+all-DT 
+mail-NN 
+promptly-RB 
+.-. 
+The-DT 
+mail-NN 
+may-MD 
+,-, 
+be-VB 
+delayed-VBN 
+a-DT 
+reasonable-JJ 
+time-NN 
+for-IN 
+staff-NN 
+to-TO 
+evaluate-VB 
+it-PRP 
+.-. 
+Staff-NNP 
+while-IN 
+not-RB 
+disregard-VB 
+other-JJ 
+essential-JJ 
+jail-NN 
+duties-NNS 
+to-TO 
+evaluate-VB 
+the-DT 
+mail-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> It
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> policy
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> process
+	 	-> NP 	-> NP 	-> DT 	-> all
+	 	-> NN 	-> mail
+		 	-> FRAG 	-> ADVP 	-> RB 	-> promptly
+	 	-> . 	-> .
+		 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> mail
+	 	-> SBAR 	-> S 	-> VP 	-> VP 	-> MD 	-> may
+		 	-> , 	-> ,
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> delayed
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> reasonable
+	 	-> NN 	-> time
+				 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NN 	-> staff
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> evaluate
+	 	-> NP 	-> PRP 	-> it
+											 	-> . 	-> .
+								 	-> SBAR 	-> S 	-> NP 	-> NNP 	-> Staff
+		 	-> ADVP 	-> IN 	-> while
+	 	-> RB 	-> not
+		 	-> VP 	-> VB 	-> disregard
+	 	-> S 	-> NP 	-> JJ 	-> other
+	 	-> JJ 	-> essential
+	 	-> NN 	-> jail
+	 	-> NNS 	-> duties
+		 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> evaluate
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> mail
+										 	-> . 	-> .
+			
+Dependensee repr
+nsubj(policy-4, It-1)
+cop(policy-4, is-2)
+det(policy-4, the-3)
+root(ROOT-0, policy-4)
+case(jail-7, of-5)
+det(jail-7, the-6)
+nmod:of(policy-4, jail-7)
+mark(process-9, to-8)
+acl(jail-7, process-9)
+det(mail-11, all-10)
+dobj(process-9, mail-11)
+dep(mail-15, promptly-12)
+det(mail-15, The-14)
+dep(mail-11, mail-15)
+ccomp(mail-15, may-16)
+auxpass(delayed-19, be-18)
+dep(may-16, delayed-19)
+det(time-22, a-20)
+amod(time-22, reasonable-21)
+dobj(delayed-19, time-22)
+case(staff-24, for-23)
+nmod:for(may-16, staff-24)
+mark(evaluate-26, to-25)
+acl(staff-24, evaluate-26)
+dobj(evaluate-26, it-27)
+nsubj(disregard-32, Staff-29)
+case(not-31, while-30)
+neg(disregard-32, not-31)
+acl:relcl(policy-4, disregard-32)
+amod(duties-36, other-33)
+amod(duties-36, essential-34)
+compound(duties-36, jail-35)
+dobj(disregard-32, duties-36)
+nsubj:xsubj(evaluate-38, duties-36)
+mark(evaluate-38, to-37)
+xcomp(disregard-32, evaluate-38)
+det(mail-40, the-39)
+dobj(evaluate-38, mail-40)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, policy-4)
+nsubj(policy-4, It-1)
+cop(policy-4, is-2)
+det(policy-4, the-3)
+case(jail-7, of-5)
+det(jail-7, the-6)
+nmod:of(policy-4, jail-7)
+mark(process-9, to-8)
+acl:to(policy-4, process-9)
+det(mail-11, all-10)
+dobj(process-9, mail-11)
+advmod(process-9, promptly-12)
+punct(policy-4, .-13)
+---
+qqroot(ROOT-0, policy-4)
+nsubj(policy-4, It-1)
+cop(policy-4, is-2)
+det(policy-4, the-3)
+case(jail-7, of-5)
+det(jail-7, the-6)
+nmod:of(policy-4, jail-7)
+mark(process-9, to-8)
+acl:to(policy-4, process-9)
+det(mail-11, all-10)
+dobj(process-9, mail-11)
+advmod(process-9, promptly-12)
+punct(policy-4, .-13)
+root(ROOT-0, delayed-6)
+det(mail-2, The-1)
+nsubjpass(delayed-6, mail-2)
+aux(delayed-6, may-3)
+punct(delayed-6, ,-4)
+auxpass(delayed-6, be-5)
+det(time-9, a-7)
+amod(time-9, reasonable-8)
+dobj(delayed-6, time-9)
+mark(evaluate-13, for-10)
+nsubj(evaluate-13, staff-11)
+mark(evaluate-13, to-12)
+acl:to(time-9, evaluate-13)
+dobj(evaluate-13, it-14)
+punct(delayed-6, .-15)
+---
+qqroot(ROOT-0, policy-4)
+nsubj(policy-4, It-1)
+cop(policy-4, is-2)
+det(policy-4, the-3)
+case(jail-7, of-5)
+det(jail-7, the-6)
+nmod:of(policy-4, jail-7)
+mark(process-9, to-8)
+acl:to(policy-4, process-9)
+det(mail-11, all-10)
+dobj(process-9, mail-11)
+advmod(process-9, promptly-12)
+punct(policy-4, .-13)
+root(ROOT-0, delayed-6)
+det(mail-2, The-1)
+nsubjpass(delayed-6, mail-2)
+aux(delayed-6, may-3)
+punct(delayed-6, ,-4)
+auxpass(delayed-6, be-5)
+det(time-9, a-7)
+amod(time-9, reasonable-8)
+dobj(delayed-6, time-9)
+mark(evaluate-13, for-10)
+nsubj(evaluate-13, staff-11)
+mark(evaluate-13, to-12)
+acl:to(time-9, evaluate-13)
+dobj(evaluate-13, it-14)
+punct(delayed-6, .-15)
+root(ROOT-0, Staff-1)
+dep(Staff-1, while-2)
+neg(disregard-4, not-3)
+dep(while-2, disregard-4)
+amod(duties-8, other-5)
+amod(duties-8, essential-6)
+compound(duties-8, jail-7)
+dobj(disregard-4, duties-8)
+mark(evaluate-10, to-9)
+acl:to(duties-8, evaluate-10)
+det(mail-12, the-11)
+dobj(evaluate-10, mail-12)
+punct(Staff-1, .-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+G[29, 29] [?1, ?2, ?3, ?4, ?5, ?6, It1, Staff1, delayed6, disregard4, duties8, essential6, evaluate10, evaluate13, it14, jail7, jail7, mail11, mail2, mail12, not3, other5, policy4, process9, promptly12, reasonable8, staff11, time9, while2]
+jail7- ->duties8
+?3- ->process9
+promptly12-==->?3
+?4-==->?3
+evaluate10-to->duties8
+?2-the->policy4
+reasonable8- ->?5
+It1-  : is ->?2
+?5- ->delayed6
+evaluate13-to : for  : for ->?5
+?6-the->mail12
+staff11- ->evaluate13
+essential6- ->duties8
+it14-==->?3
+it14- ->evaluate13
+while2- ->Staff1
+?1-of->?2
+other5- ->duties8
+promptly12- ->process9
+?4-  : may  : be ->delayed6
+not3- ->disregard4
+disregard4- ->while2
+?3-all->mail11
+?5-a->time9
+process9-to->?2
+?4-The->mail2
+?1-the->jail7
+duties8- ->disregard4
+?6- ->evaluate10
+
+[Staff1<- -while2<- -disregard4(<- -duties8(<-to-evaluate10<- -?6)(<- -essential6)(<- -jail7)<- -other5)<- -not3;
+policy4<-the-?2
+	(<-to-process9(<- -?3(<-==-?4)(<-==-it14)<-==-promptly12)<- -*promptly12)
+	(<-of-?1)
+	<-  : is -It1;
+time9<-a-?5
+	(<-to : for  : for -evaluate13(<- -*it14)<- -staff11)
+	<- -reasonable8;
+jail7<-the-*?1;
+mail11<-all-*?3;
+mail2<-The-*?4;
+mail12<-the-*?6;
+delayed6
+	(<- -*?5)
+	<-  : may  : be -*?4]

@@ -1,0 +1,198 @@
+The cost of all prescription and non-prescription medications that are given out, or prescribed by the nurse, doctor, or any other physician or medical provider will be assessed to the inmate.
+------CorefChainz
+The-DT 
+cost-NN 
+of-IN 
+all-DT 
+prescription-NN 
+and-CC 
+non-prescription-JJ 
+medications-NNS 
+that-WDT 
+are-VBP 
+given-VBN 
+out-RP 
+,-, 
+or-CC 
+prescribed-VBN 
+by-IN 
+the-DT 
+nurse-NN 
+,-, 
+doctor-NN 
+,-, 
+or-CC 
+any-DT 
+other-JJ 
+physician-NN 
+or-CC 
+medical-JJ 
+provider-NN 
+will-MD 
+be-VB 
+assessed-VBN 
+to-TO 
+the-DT 
+inmate-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> cost
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> all
+	 	-> NN 	-> prescription
+		 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> JJ 	-> non-prescription
+	 	-> NNS 	-> medications
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VP 	-> VBN 	-> given
+	 	-> PRT 	-> RP 	-> out
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VBN 	-> prescribed
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> nurse
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> doctor
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> other
+	 	-> NN 	-> physician
+		 	-> CC 	-> or
+	 	-> NP 	-> JJ 	-> medical
+	 	-> NN 	-> provider
+													 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> assessed
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+						 	-> . 	-> .
+			
+Dependensee repr
+det(cost-2, The-1)
+nsubjpass(assessed-31, cost-2)
+case(prescription-5, of-3)
+det(prescription-5, all-4)
+nmod:of(cost-2, prescription-5)
+cc(prescription-5, and-6)
+amod(medications-8, non-prescription-7)
+nmod:of(cost-2, medications-8)
+conj:and(prescription-5, medications-8)
+nsubjpass(given-11, medications-8)
+nsubjpass(prescribed-15, medications-8)
+ref(medications-8, that-9)
+auxpass(given-11, are-10)
+acl:relcl(medications-8, given-11)
+compound:prt(given-11, out-12)
+cc(given-11, or-14)
+acl:relcl(medications-8, prescribed-15)
+conj:or(given-11, prescribed-15)
+case(nurse-18, by-16)
+det(nurse-18, the-17)
+nmod:by(prescribed-15, nurse-18)
+nmod:by(prescribed-15, doctor-20)
+conj:or(nurse-18, doctor-20)
+cc(nurse-18, or-22)
+det(physician-25, any-23)
+amod(physician-25, other-24)
+nmod:by(prescribed-15, physician-25)
+conj:or(nurse-18, physician-25)
+cc(nurse-18, or-26)
+amod(provider-28, medical-27)
+nmod:by(prescribed-15, provider-28)
+conj:or(nurse-18, provider-28)
+aux(assessed-31, will-29)
+auxpass(assessed-31, be-30)
+root(ROOT-0, assessed-31)
+case(inmate-34, to-32)
+det(inmate-34, the-33)
+nmod:to(assessed-31, inmate-34)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, assessed-31)
+det(cost-2, The-1)
+nsubjpass(assessed-31, cost-2)
+case(medications-8, of-3)
+det(medications-8, all-4)
+compound(medications-8, prescription-5)
+cc(prescription-5, and-6)
+conj:and(prescription-5, non-prescription-7)
+compound(medications-8, non-prescription-7)
+nmod:of(cost-2, medications-8)
+nsubjpass(given-11, medications-8)
+nsubjpass(prescribed-15, medications-8)
+ref(medications-8, that-9)
+auxpass(given-11, are-10)
+acl:relcl(medications-8, given-11)
+compound:prt(given-11, out-12)
+punct(given-11, ,-13)
+cc(given-11, or-14)
+acl:relcl(medications-8, prescribed-15)
+conj:or(given-11, prescribed-15)
+case(nurse-18, by-16)
+det(nurse-18, the-17)
+nmod:by(prescribed-15, nurse-18)
+punct(nurse-18, ,-19)
+nmod:by(prescribed-15, doctor-20)
+conj:or(nurse-18, doctor-20)
+punct(nurse-18, ,-21)
+cc(nurse-18, or-22)
+det(physician-25, any-23)
+amod(physician-25, other-24)
+nmod:by(prescribed-15, physician-25)
+conj:or(nurse-18, physician-25)
+cc(physician-25, or-26)
+amod(provider-28, medical-27)
+conj:or(nurse-18, provider-28)
+conj:or(physician-25, provider-28)
+aux(assessed-31, will-29)
+auxpass(assessed-31, be-30)
+case(inmate-34, to-32)
+det(inmate-34, the-33)
+nmod:to(assessed-31, inmate-34)
+punct(assessed-31, .-35)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[20, 26] [?1, ?2, ?3, ?4, ?5, assessed31, cost2, doctor20, given11, inmate34, medical27, medications8, non-prescription7, nurse18, other24, out12, physician25, prescribed15, prescription5, provider28]
+?2-by->prescribed15
+?3- ->given11
+out12-prt->given11
+non-prescription7-and->prescription5
+other24- ->?2
+doctor20-by->prescribed15
+provider28-or->?2
+prescribed15- ->?3
+?3-of->?5
+medical27- ->provider28
+given11-  : are  : are  : are ->?3
+?5-The->cost2
+?2-any->physician25
+?5- ->assessed31
+?4-the->inmate34
+prescribed15-or->given11
+non-prescription7-  : that  : that  : that ->?3
+provider28-or->?1
+doctor20-or->?1
+prescription5- ->?3
+?1-by->prescribed15
+?2-or->?1
+?4-to : will  : be ->assessed31
+?1-the->nurse18
+?3- ->prescribed15
+?3-all->medications8
+
+[cost2<-The-?5<-of-?3(<-  : are  : are  : are -given11(<- -*?3)(<-or-prescribed15(<- -*?3)(<-by-?1(<-or-?2(<-or-provider28<- -medical27)<- -other24)(<-or-*provider28)<-or-doctor20)(<-by-*?2)<-by-*doctor20)<-prt-out12)(<- -*prescribed15)(<- -prescription5<-and-non-prescription7)<-  : that  : that  : that -*non-prescription7;
+inmate34<-the-?4;
+medications8<-all-*?3;
+nurse18<-the-*?1;
+physician25<-any-*?2;
+assessed31
+	(<- -*?5)
+	<-to : will  : be -*?4]

@@ -1,0 +1,156 @@
+All outgoing mail received into the jail office by 10pm (lock down) will be mailed the next day except on Saturday, Sunday and Holidays.
+------CorefChainz
+All-DT 
+outgoing-JJ 
+mail-NN 
+received-VBN 
+into-IN 
+the-DT 
+jail-NN 
+office-NN 
+by-IN 
+10pm-CD 
+-LRB---LRB- 
+lock-VB 
+down-RP 
+-RRB---RRB- 
+will-MD 
+be-VB 
+mailed-VBN 
+the-DT 
+next-JJ 
+day-NN 
+except-IN 
+on-IN 
+Saturday-NNP 
+,-, 
+Sunday-NNP 
+and-CC 
+Holidays-NNP 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> All
+	 	-> JJ 	-> outgoing
+	 	-> NN 	-> mail
+		 	-> VP 	-> VBN 	-> received
+	 	-> PP 	-> IN 	-> into
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> office
+			 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> CD 	-> 10pm
+					 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> S 	-> VP 	-> VB 	-> lock
+	 	-> PRT 	-> RP 	-> down
+				 	-> -RRB- 	-> -RRB-
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> mailed
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> next
+	 	-> NN 	-> day
+		 	-> PP 	-> IN 	-> except
+	 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NNP 	-> Saturday
+	 	-> , 	-> ,
+	 	-> NNP 	-> Sunday
+	 	-> CC 	-> and
+	 	-> NNP 	-> Holidays
+							 	-> . 	-> .
+			
+Dependensee repr
+det(mail-3, All-1)
+amod(mail-3, outgoing-2)
+nsubjpass(mailed-17, mail-3)
+acl(mail-3, received-4)
+case(office-8, into-5)
+det(office-8, the-6)
+compound(office-8, jail-7)
+nmod:into(received-4, office-8)
+case(10pm-10, by-9)
+nmod:by(received-4, 10pm-10)
+parataxis(mailed-17, lock-12)
+compound:prt(lock-12, down-13)
+aux(mailed-17, will-15)
+auxpass(mailed-17, be-16)
+root(ROOT-0, mailed-17)
+det(day-20, the-18)
+amod(day-20, next-19)
+nmod:tmod(mailed-17, day-20)
+case(Saturday-23, except-21)
+case(Saturday-23, on-22)
+nmod:on(mailed-17, Saturday-23)
+nmod:on(mailed-17, Sunday-25)
+conj:and(Saturday-23, Sunday-25)
+cc(Saturday-23, and-26)
+nmod:on(mailed-17, Holidays-27)
+conj:and(Saturday-23, Holidays-27)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, received-4)
+det(mail-3, All-1)
+amod(mail-3, outgoing-2)
+nsubj(received-4, mail-3)
+case(office-8, into-5)
+det(office-8, the-6)
+compound(office-8, jail-7)
+nmod:into(received-4, office-8)
+case(10pm-10, by-9)
+nmod:by(received-4, 10pm-10)
+punct(lock-12, -LRB--11)
+appos(10pm-10, lock-12)
+advmod(lock-12, down-13)
+punct(lock-12, -RRB--14)
+aux(mailed-17, will-15)
+auxpass(mailed-17, be-16)
+ccomp(received-4, mailed-17)
+det(day-20, the-18)
+amod(day-20, next-19)
+nmod:tmod(mailed-17, day-20)
+case(Saturday-23, except-21)
+case(Saturday-23, on-22)
+nmod:on(mailed-17, Saturday-23)
+punct(Saturday-23, ,-24)
+nmod:on(mailed-17, Sunday-25)
+conj:and(Saturday-23, Sunday-25)
+cc(Saturday-23, and-26)
+nmod:on(mailed-17, Holidays-27)
+conj:and(Saturday-23, Holidays-27)
+punct(received-4, .-28)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[17, 18] [10pm10, ?1, ?2, ?3, Holidays27, Saturday23, Sunday25, day20, down13, jail7, lock12, mail3, mailed17, next19, office8, outgoing2, received4]
+?1-tmod : will  : be ->mailed17
+?2-the->office8
+down13- ->lock12
+outgoing2- ->?3
+mailed17- ->received4
+Holidays27-and->Saturday23
+?3- ->received4
+lock12- ->10pm10
+?2-into->received4
+Holidays27-on->mailed17
+10pm10-by->received4
+Sunday25-on->mailed17
+?1-the->day20
+Sunday25-and->Saturday23
+Saturday23-on : except  : except ->mailed17
+next19- ->?1
+jail7- ->?2
+?3-All->mail3
+
+[received4
+	(<-by-10pm10<- -lock12<- -down13)
+	(<- -mailed17
+		(<-tmod : will  : be -?1<- -next19)
+		(<-on : except  : except -Saturday23(<-and-Holidays27)<-and-Sunday25)
+		(<-on-*Holidays27)
+		<-on-*Sunday25)
+	(<-into-?2<- -jail7)
+	<- -?3<- -outgoing2;
+mail3<-All-*?3;
+office8<-the-*?2;
+day20<-the-*?1]

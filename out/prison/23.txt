@@ -1,0 +1,115 @@
+Inmates are subject to room, locker, and strip searches at any time per Policy and Procedures.
+------CorefChainz
+Inmates-NNS 
+are-VBP 
+subject-JJ 
+to-TO 
+room-NN 
+,-, 
+locker-NN 
+,-, 
+and-CC 
+strip-NN 
+searches-NNS 
+at-IN 
+any-DT 
+time-NN 
+per-IN 
+Policy-NNP 
+and-CC 
+Procedures-NNP 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> VBP 	-> are
+	 	-> ADJP 	-> JJ 	-> subject
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NN 	-> room
+	 	-> , 	-> ,
+	 	-> NN 	-> locker
+	 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NN 	-> strip
+	 	-> NNS 	-> searches
+				 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> time
+		 	-> PP 	-> IN 	-> per
+	 	-> NP 	-> NNP 	-> Policy
+	 	-> CC 	-> and
+	 	-> NNP 	-> Procedures
+						 	-> . 	-> .
+			
+Dependensee repr
+nsubj(subject-3, Inmates-1)
+cop(subject-3, are-2)
+root(ROOT-0, subject-3)
+case(locker-7, to-4)
+compound(locker-7, room-5)
+nmod:to(subject-3, locker-7)
+cc(locker-7, and-9)
+compound(searches-11, strip-10)
+nmod:to(subject-3, searches-11)
+conj:and(locker-7, searches-11)
+case(time-14, at-12)
+det(time-14, any-13)
+nmod:at(subject-3, time-14)
+case(Policy-16, per-15)
+nmod:per(time-14, Policy-16)
+cc(Policy-16, and-17)
+nmod:per(time-14, Procedures-18)
+conj:and(Policy-16, Procedures-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, subject-3)
+nsubj(subject-3, Inmates-1)
+cop(subject-3, are-2)
+case(room-5, to-4)
+nmod:to(subject-3, room-5)
+punct(room-5, ,-6)
+nmod:to(subject-3, locker-7)
+conj:and(room-5, locker-7)
+punct(room-5, ,-8)
+cc(room-5, and-9)
+compound(searches-11, strip-10)
+nmod:to(subject-3, searches-11)
+conj:and(room-5, searches-11)
+case(time-14, at-12)
+det(time-14, any-13)
+nmod:at(subject-3, time-14)
+case(Policy-16, per-15)
+nmod:per(time-14, Policy-16)
+cc(Policy-16, and-17)
+nmod:per(time-14, Procedures-18)
+conj:and(Policy-16, Procedures-18)
+punct(subject-3, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[10, 12] [?1, Inmates1, Policy16, Procedures18, locker7, room5, searches11, strip10, subject3, time14]
+Procedures18-and->Policy16
+searches11-to->subject3
+?1-any->time14
+locker7-to->subject3
+?1-at->subject3
+Procedures18-per->?1
+Inmates1-  : are ->subject3
+searches11-and->room5
+room5-to->subject3
+Policy16-per->?1
+locker7-and->room5
+strip10- ->searches11
+
+[time14<-any-?1
+	(<-per-Policy16<-and-Procedures18)
+	<-per-*Procedures18;
+subject3
+	(<-at-*?1)
+	(<-to-room5
+		(<-and-searches11<- -strip10)
+		<-and-locker7)
+	(<-to-*searches11)
+	(<-to-*locker7)
+	<-  : are -Inmates1]

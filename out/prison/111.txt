@@ -1,0 +1,195 @@
+All outgoing non-privileged mail shall be given to jail staff UNSEALED so it can be monitored before mailing to see if the communication would be in violation of the law or disrupt jail security.
+------CorefChainz
+CHAIN2-["All outgoing non-privileged mail" in sentence 1, "it" in sentence 1]
+representative mention: "All outgoing non-privileged mail" in sentence 1
+All-DT 
+outgoing-JJ 
+non-privileged-JJ 
+mail-NN 
+shall-MD 
+be-VB 
+given-VBN 
+to-TO 
+jail-NN 
+staff-NN 
+UNSEALED-VBD 
+so-IN 
+it-PRP 
+can-MD 
+be-VB 
+monitored-VBN 
+before-IN 
+mailing-VBG 
+to-TO 
+see-VB 
+if-IN 
+the-DT 
+communication-NN 
+would-MD 
+be-VB 
+in-IN 
+violation-NN 
+of-IN 
+the-DT 
+law-NN 
+or-CC 
+disrupt-VB 
+jail-NN 
+security-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> DT 	-> All
+	 	-> JJ 	-> outgoing
+	 	-> JJ 	-> non-privileged
+	 	-> NN 	-> mail
+		 	-> SBAR 	-> S 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> given
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NN 	-> jail
+	 	-> NN 	-> staff
+									 	-> VP 	-> VBD 	-> UNSEALED
+	 	-> SBAR 	-> IN 	-> so
+	 	-> S 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> MD 	-> can
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> monitored
+	 	-> PP 	-> IN 	-> before
+	 	-> S 	-> VP 	-> VBG 	-> mailing
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> see
+	 	-> SBAR 	-> IN 	-> if
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> communication
+		 	-> VP 	-> MD 	-> would
+	 	-> VP 	-> VP 	-> VB 	-> be
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> NN 	-> violation
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> law
+						 	-> CC 	-> or
+	 	-> VP 	-> VB 	-> disrupt
+	 	-> NP 	-> NN 	-> jail
+	 	-> NN 	-> security
+																			 	-> . 	-> .
+			
+Dependensee repr
+det(mail-4, All-1)
+amod(mail-4, outgoing-2)
+amod(mail-4, non-privileged-3)
+nsubj(UNSEALED-11, mail-4)
+aux(given-7, shall-5)
+auxpass(given-7, be-6)
+acl:relcl(mail-4, given-7)
+case(staff-10, to-8)
+compound(staff-10, jail-9)
+nmod:to(given-7, staff-10)
+root(ROOT-0, UNSEALED-11)
+mark(monitored-16, so-12)
+nsubjpass(monitored-16, it-13)
+aux(monitored-16, can-14)
+auxpass(monitored-16, be-15)
+advcl(UNSEALED-11, monitored-16)
+mark(mailing-18, before-17)
+advcl(monitored-16, mailing-18)
+mark(see-20, to-19)
+xcomp(mailing-18, see-20)
+mark(violation-27, if-21)
+det(communication-23, the-22)
+nsubj(violation-27, communication-23)
+nsubj(disrupt-32, communication-23)
+aux(violation-27, would-24)
+cop(violation-27, be-25)
+case(violation-27, in-26)
+advcl(see-20, violation-27)
+case(law-30, of-28)
+det(law-30, the-29)
+nmod:of(violation-27, law-30)
+cc(violation-27, or-31)
+advcl(see-20, disrupt-32)
+conj:or(violation-27, disrupt-32)
+compound(security-34, jail-33)
+dobj(disrupt-32, security-34)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, given-7)
+det(mail-4, All-1)
+amod(mail-4, outgoing-2)
+amod(mail-4, non-privileged-3)
+nsubjpass(given-7, mail-4)
+aux(given-7, shall-5)
+auxpass(given-7, be-6)
+case(UNSEALED-11, to-8)
+compound(UNSEALED-11, jail-9)
+compound(UNSEALED-11, staff-10)
+nmod:to(given-7, UNSEALED-11)
+mark(monitored-16, so-12)
+nsubjpass(monitored-16, it-13)
+aux(monitored-16, can-14)
+auxpass(monitored-16, be-15)
+advcl:so(given-7, monitored-16)
+mark(mailing-18, before-17)
+advcl:before(monitored-16, mailing-18)
+mark(see-20, to-19)
+xcomp(mailing-18, see-20)
+mark(violation-27, if-21)
+det(communication-23, the-22)
+nsubj(violation-27, communication-23)
+nsubj(disrupt-32, communication-23)
+aux(violation-27, would-24)
+cop(violation-27, be-25)
+case(violation-27, in-26)
+advcl:in(see-20, violation-27)
+case(law-30, of-28)
+det(law-30, the-29)
+nmod:of(violation-27, law-30)
+cc(violation-27, or-31)
+advcl:in(see-20, disrupt-32)
+conj:or(violation-27, disrupt-32)
+compound(security-34, jail-33)
+dobj(disrupt-32, security-34)
+punct(given-7, .-35)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[20, 22] [?1, ?2, ?3, UNSEALED11, communication23, disrupt32, given7, it13, jail9, jail33, law30, mail4, mailing18, monitored16, non-privileged3, outgoing2, security34, see20, staff10, violation27]
+?3-  : shall  : be ->given7
+non-privileged3- ->?3
+?2-the->law30
+staff10- ->UNSEALED11
+mailing18-before->monitored16
+?2-of->violation27
+monitored16-so->given7
+?1-the->communication23
+outgoing2- ->?3
+jail9- ->UNSEALED11
+see20-  : to ->mailing18
+?3-All->mail4
+jail33- ->security34
+violation27-in : if ->see20
+it13-==->?3
+?1-  : would  : be ->violation27
+disrupt32-or->violation27
+it13-  : can  : be ->monitored16
+?1- ->disrupt32
+security34- ->disrupt32
+disrupt32-in->see20
+UNSEALED11-to->given7
+
+[given7
+	(<-so-monitored16
+		(<-before-mailing18<-  : to -see20(<-in : if -violation27(<-or-disrupt32(<- -security34<- -jail33)<- -?1)(<-  : would  : be -*?1)<-of-?2)<-in-*disrupt32)
+		<-  : can  : be -it13)
+	(<-to-UNSEALED11
+		(<- -jail9)
+		<- -staff10)
+	<-  : shall  : be -?3
+		(<-==-*it13)
+		(<- -non-privileged3)
+		<- -outgoing2;
+mail4<-All-*?3;
+communication23<-the-*?1;
+law30<-the-*?2]

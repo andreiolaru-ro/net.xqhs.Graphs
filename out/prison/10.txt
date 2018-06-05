@@ -1,0 +1,187 @@
+A visitor can only see one inmate per visit. A visitor’s name cannot be on more than one inmate’s visiting list during the same visit.
+------CorefChainz
+CHAIN6-["one inmate per visit" in sentence 1, "more than one inmate 's" in sentence 2]
+representative mention: "more than one inmate 's" in sentence 2
+CHAIN8-["visit" in sentence 1, "the same visit" in sentence 2]
+representative mention: "the same visit" in sentence 2
+CHAIN9-["A visitor" in sentence 1, "A visitor 's" in sentence 2]
+representative mention: "A visitor 's" in sentence 2
+A-DT 
+visitor-NN 
+can-MD 
+only-RB 
+see-VB 
+one-CD 
+inmate-NN 
+per-IN 
+visit-NN 
+.-. 
+A-DT 
+visitor-NN 
+'s-POS 
+name-NN 
+can-MD 
+not-RB 
+be-VB 
+on-IN 
+more-JJR 
+than-IN 
+one-CD 
+inmate-NN 
+'s-POS 
+visiting-VBG 
+list-NN 
+during-IN 
+the-DT 
+same-JJ 
+visit-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> DT 	-> A
+	 	-> NN 	-> visitor
+		 	-> VP 	-> MD 	-> can
+	 	-> ADVP 	-> RB 	-> only
+		 	-> VP 	-> VB 	-> see
+	 	-> NP 	-> NP 	-> CD 	-> one
+	 	-> NN 	-> inmate
+		 	-> PP 	-> IN 	-> per
+	 	-> NP 	-> NN 	-> visit
+						 	-> . 	-> .
+		 	-> NP 	-> NP 	-> DT 	-> A
+	 	-> NN 	-> visitor
+	 	-> POS 	-> 's
+		 	-> NN 	-> name
+		 	-> VP 	-> MD 	-> can
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> QP 	-> JJR 	-> more
+	 	-> IN 	-> than
+	 	-> CD 	-> one
+				 	-> PP 	-> NP 	-> NP 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> VBG 	-> visiting
+	 	-> NN 	-> list
+		 	-> IN 	-> during
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> same
+	 	-> NN 	-> visit
+					 	-> . 	-> .
+			
+Dependensee repr
+det(visitor-2, A-1)
+nsubj(see-5, visitor-2)
+aux(see-5, can-3)
+advmod(see-5, only-4)
+dep(one-21, see-5)
+nummod(inmate-7, one-6)
+dobj(see-5, inmate-7)
+case(visit-9, per-8)
+nmod:per(inmate-7, visit-9)
+det(visitor-12, A-11)
+nmod:poss(name-14, visitor-12)
+case(visitor-12, 's-13)
+nsubj(one-21, name-14)
+aux(one-21, can-15)
+neg(one-21, not-16)
+cop(one-21, be-17)
+case(one-21, on-18)
+advmod(one-21, more-19)
+mwe(more-19, than-20)
+root(ROOT-0, one-21)
+nmod:poss(list-25, inmate-22)
+case(inmate-22, 's-23)
+amod(list-25, visiting-24)
+nmod:during(one-21, list-25)
+case(list-25, during-26)
+det(visit-29, the-27)
+amod(visit-29, same-28)
+dep(list-25, visit-29)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, see-5)
+det(visitor-2, A-1)
+nsubj(see-5, visitor-2)
+aux(see-5, can-3)
+advmod(see-5, only-4)
+nummod(inmate-7, one-6)
+dobj(see-5, inmate-7)
+case(visit-9, per-8)
+nmod:per(inmate-7, visit-9)
+punct(see-5, .-10)
+---
+qqroot(ROOT-0, see-5)
+det(visitor-2, A-1)
+nsubj(see-5, visitor-2)
+aux(see-5, can-3)
+advmod(see-5, only-4)
+nummod(inmate-7, one-6)
+dobj(see-5, inmate-7)
+case(visit-9, per-8)
+nmod:per(inmate-7, visit-9)
+punct(see-5, .-10)
+root(ROOT-0, list-15)
+det(visitor-2, A-1)
+nmod:poss(name-4, visitor-2)
+case(visitor-2, 's-3)
+nsubj(list-15, name-4)
+aux(list-15, can-5)
+neg(list-15, not-6)
+cop(list-15, be-7)
+case(list-15, on-8)
+advmod(one-11, more-9)
+mwe(more-9, than-10)
+nummod(inmate-12, one-11)
+nmod:poss(list-15, inmate-12)
+case(inmate-12, 's-13)
+amod(list-15, visiting-14)
+case(visit-19, during-16)
+det(visit-19, the-17)
+amod(visit-19, same-18)
+nmod:during(list-15, visit-19)
+punct(list-15, .-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[20, 20] [?1, ?2, ?3, inmate7, inmate12, list15, more9, name4, not6, one6, one11, only4, same18, see5, than10, visit19, visit9, visiting14, visitor2, visitor2]
+than10- ->more9
+one11-  : 's  : 's ->inmate12
+not6-  : be  : on ->list15
+?3-the->visit19
+same18- ->?3
+name4-  : can  : can ->list15
+more9- ->one11
+?2-  : can  : can ->see5
+?1-poss : 's ->name4
+inmate7- ->see5
+visit9-per->inmate7
+visiting14- ->list15
+inmate12-poss->list15
+inmate7-==->inmate12
+one6- ->inmate7
+?2-A->visitor2
+only4- ->see5
+?3-during->list15
+more9-==->?3
+?1-A->visitor2
+
+[list15
+	(<-poss-inmate12
+		(<-  : 's  : 's -one11<- -more9<- -than10)
+		<-==-inmate7(<- -one6)<-per-visit9)
+	(<-during-?3
+		(<-==-*more9)
+		<- -same18)
+	(<-  : can  : can -name4<-poss : 's -?1)
+	(<-  : be  : on -not6)
+	<- -visiting14;
+visit19<-the-*?3;
+visitor2<-A-?2;
+see5
+	(<- -*inmate7)
+	(<-  : can  : can -*?2)
+	<- -only4;
+visitor2<-A-*?1]

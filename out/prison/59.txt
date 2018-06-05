@@ -1,0 +1,138 @@
+Inmates are required to follow all oral and written orders immediately when given by the jail staff or sheriff’s department staff.
+------CorefChainz
+Inmates-NNS 
+are-VBP 
+required-VBN 
+to-TO 
+follow-VB 
+all-DT 
+oral-JJ 
+and-CC 
+written-JJ 
+orders-NNS 
+immediately-RB 
+when-WRB 
+given-VBN 
+by-IN 
+the-DT 
+jail-NN 
+staff-NN 
+or-CC 
+sheriff-NN 
+'s-POS 
+department-NN 
+staff-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> required
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> follow
+	 	-> NP 	-> DT 	-> all
+	 	-> JJ 	-> oral
+	 	-> CC 	-> and
+	 	-> JJ 	-> written
+	 	-> NNS 	-> orders
+		 	-> ADVP 	-> RB 	-> immediately
+		 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> VP 	-> VBN 	-> given
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> staff
+		 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> NN 	-> sheriff
+	 	-> POS 	-> 's
+		 	-> NN 	-> department
+	 	-> NN 	-> staff
+												 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(required-3, Inmates-1)
+nsubj:xsubj(follow-5, Inmates-1)
+auxpass(required-3, are-2)
+root(ROOT-0, required-3)
+mark(follow-5, to-4)
+xcomp(required-3, follow-5)
+det(orders-10, all-6)
+amod(orders-10, oral-7)
+cc(oral-7, and-8)
+conj:and(oral-7, written-9)
+amod(orders-10, written-9)
+dobj(follow-5, orders-10)
+advmod(follow-5, immediately-11)
+advmod(given-13, when-12)
+advcl(follow-5, given-13)
+case(staff-17, by-14)
+det(staff-17, the-15)
+compound(staff-17, jail-16)
+nmod:by(given-13, staff-17)
+cc(staff-17, or-18)
+nmod:poss(staff-22, sheriff-19)
+case(sheriff-19, 's-20)
+compound(staff-22, department-21)
+nmod:by(given-13, staff-22)
+conj:or(staff-17, staff-22)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, required-3)
+nsubjpass(required-3, Inmates-1)
+nsubj:xsubj(follow-5, Inmates-1)
+auxpass(required-3, are-2)
+mark(follow-5, to-4)
+xcomp(required-3, follow-5)
+det(orders-10, all-6)
+amod(orders-10, oral-7)
+cc(oral-7, and-8)
+conj:and(oral-7, written-9)
+amod(orders-10, written-9)
+dobj(follow-5, orders-10)
+advmod(follow-5, immediately-11)
+advmod(given-13, when-12)
+advcl(follow-5, given-13)
+case(staff-17, by-14)
+det(staff-17, the-15)
+compound(staff-17, jail-16)
+nmod:by(given-13, staff-17)
+cc(staff-17, or-18)
+nmod:poss(staff-22, sheriff-19)
+case(sheriff-19, 's-20)
+compound(staff-22, department-21)
+nmod:by(given-13, staff-22)
+conj:or(staff-17, staff-22)
+punct(required-3, .-23)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[16, 18] [?1, ?2, Inmates1, department21, follow5, given13, immediately11, jail16, oral7, orders10, required3, sheriff19, staff22, staff17, when12, written9]
+?2- ->follow5
+written9- ->?2
+sheriff19-poss : 's ->staff22
+?1-the->staff17
+given13- ->follow5
+Inmates1- ->follow5
+department21- ->staff22
+when12- ->given13
+Inmates1-  : are ->required3
+immediately11- ->follow5
+?1-by->given13
+written9-and->oral7
+jail16- ->?1
+?2-all->orders10
+staff22-or->?1
+follow5-  : to ->required3
+staff22-by->given13
+oral7- ->?2
+
+[required3
+	(<-  : to -follow5
+		(<- -given13(<-by-?1(<-or-staff22(<- -department21)<-poss : 's -sheriff19)<- -jail16)(<-by-*staff22)<- -when12)
+		(<- -?2(<- -oral7<-and-written9)<- -*written9)
+		(<- -Inmates1)
+		<- -immediately11)
+	<-  : are -*Inmates1;
+orders10<-all-*?2;
+staff17<-the-*?1]

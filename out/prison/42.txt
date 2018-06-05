@@ -1,0 +1,87 @@
+YOU WILL OBEY ALL RULES OF THE JAIL AND THE JAILER’S INSTRUCTIONS.
+------CorefChainz
+YOU-PRP 
+WILL-MD 
+OBEY-VB 
+ALL-NNP 
+RULES-NNS 
+OF-IN 
+THE-DT 
+JAIL-NNP 
+AND-CC 
+THE-NNP 
+JAILER-NNP 
+'S-POS 
+INSTRUCTIONS-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> PRP 	-> YOU
+		 	-> VP 	-> MD 	-> WILL
+	 	-> VP 	-> VB 	-> OBEY
+	 	-> NP 	-> NP 	-> NNP 	-> ALL
+	 	-> NNS 	-> RULES
+		 	-> PP 	-> IN 	-> OF
+	 	-> NP 	-> NP 	-> DT 	-> THE
+	 	-> NNP 	-> JAIL
+	 	-> CC 	-> AND
+	 	-> NNP 	-> THE
+	 	-> NNP 	-> JAILER
+	 	-> POS 	-> 'S
+		 	-> NNS 	-> INSTRUCTIONS
+						 	-> . 	-> .
+			
+Dependensee repr
+nsubj(OBEY-3, YOU-1)
+aux(OBEY-3, WILL-2)
+root(ROOT-0, OBEY-3)
+compound(RULES-5, ALL-4)
+dobj(OBEY-3, RULES-5)
+case(INSTRUCTIONS-13, OF-6)
+det(JAIL-8, THE-7)
+nmod:poss(INSTRUCTIONS-13, JAIL-8)
+cc(JAIL-8, AND-9)
+compound(JAILER-11, THE-10)
+conj:and(JAIL-8, JAILER-11)
+nmod:poss(INSTRUCTIONS-13, JAILER-11)
+case(JAILER-11, 'S-12)
+nmod:of(RULES-5, INSTRUCTIONS-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, OBEY-3)
+nsubj(OBEY-3, YOU-1)
+aux(OBEY-3, WILL-2)
+compound(RULES-5, ALL-4)
+dobj(OBEY-3, RULES-5)
+case(JAIL-8, OF-6)
+det(JAIL-8, THE-7)
+nmod:of(OBEY-3, JAIL-8)
+cc(JAIL-8, AND-9)
+det(JAILER-11, THE-10)
+nmod:poss(INSTRUCTIONS-13, JAILER-11)
+case(JAILER-11, 'S-12)
+nmod:of(OBEY-3, INSTRUCTIONS-13)
+conj:and(JAIL-8, INSTRUCTIONS-13)
+punct(OBEY-3, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 9] [?1, ?2, ALL4, INSTRUCTIONS13, JAIL8, JAILER11, OBEY3, RULES5, YOU1]
+?2-of : OF ->OBEY3
+INSTRUCTIONS13-and : AND ->?2
+?2-THE->JAIL8
+INSTRUCTIONS13-of->OBEY3
+?1-poss : 'S ->INSTRUCTIONS13
+RULES5- ->OBEY3
+YOU1-  : WILL ->OBEY3
+ALL4- ->RULES5
+?1-THE->JAILER11
+
+[JAIL8<-THE-?2<-and : AND -INSTRUCTIONS13<-poss : 'S -?1;
+OBEY3
+	(<-of : OF -*?2)
+	(<-of-*INSTRUCTIONS13)
+	(<- -RULES5<- -ALL4)
+	<-  : WILL -YOU1;
+JAILER11<-THE-*?1]

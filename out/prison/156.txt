@@ -1,0 +1,258 @@
+Special permission to have items not listed above must be approved by the Jail Administrator before the items can be allowed in the cell, or cell block. All such requests shall be made in writing on a REQUEST FORM.
+------CorefChainz
+CHAIN3-["items not listed above" in sentence 1, "the items" in sentence 1]
+representative mention: "the items" in sentence 1
+Special-JJ 
+permission-NN 
+to-TO 
+have-VB 
+items-NNS 
+not-RB 
+listed-VBN 
+above-IN 
+must-MD 
+be-VB 
+approved-VBN 
+by-IN 
+the-DT 
+Jail-NN 
+Administrator-NNP 
+before-IN 
+the-DT 
+items-NNS 
+can-MD 
+be-VB 
+allowed-VBN 
+in-IN 
+the-DT 
+cell-NN 
+,-, 
+or-CC 
+cell-NN 
+block-NN 
+.-. 
+All-DT 
+such-JJ 
+requests-NNS 
+shall-MD 
+be-VB 
+made-VBN 
+in-IN 
+writing-VBG 
+on-IN 
+a-DT 
+REQUEST-NNP 
+FORM-NNP 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> JJ 	-> Special
+	 	-> NN 	-> permission
+		 	-> SBAR 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> NNS 	-> items
+							 	-> PRN 	-> SINV 	-> RB 	-> not
+	 	-> VP 	-> VBN 	-> listed
+	 	-> PP 	-> IN 	-> above
+			 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> approved
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> Jail
+						 	-> NP 	-> NP 	-> NNP 	-> Administrator
+		 	-> SBAR 	-> IN 	-> before
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> items
+		 	-> VP 	-> MD 	-> can
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> cell
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NN 	-> cell
+	 	-> NN 	-> block
+										 	-> . 	-> .
+			 	-> NP 	-> DT 	-> All
+	 	-> JJ 	-> such
+	 	-> NNS 	-> requests
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> made
+	 	-> PP 	-> IN 	-> in
+	 	-> S 	-> VP 	-> VBG 	-> writing
+	 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> DT 	-> a
+	 	-> NNP 	-> REQUEST
+	 	-> NNP 	-> FORM
+									 	-> . 	-> .
+			
+Dependensee repr
+amod(permission-2, Special-1)
+nsubjpass(made-35, permission-2)
+mark(have-4, to-3)
+acl(permission-2, have-4)
+dobj(have-4, items-5)
+dep(listed-7, not-6)
+parataxis(made-35, listed-7)
+nmod(listed-7, above-8)
+aux(approved-11, must-9)
+auxpass(approved-11, be-10)
+auxpass(listed-7, approved-11)
+case(Jail-14, by-12)
+det(Jail-14, the-13)
+nmod:agent(approved-11, Jail-14)
+nsubjpass(listed-7, Administrator-15)
+mark(allowed-21, before-16)
+det(items-18, the-17)
+nsubjpass(allowed-21, items-18)
+aux(allowed-21, can-19)
+auxpass(allowed-21, be-20)
+acl(Administrator-15, allowed-21)
+case(cell-24, in-22)
+det(cell-24, the-23)
+nmod:in(allowed-21, cell-24)
+cc(cell-24, or-26)
+compound(block-28, cell-27)
+nmod:in(allowed-21, block-28)
+conj:or(cell-24, block-28)
+det(requests-32, All-30)
+amod(requests-32, such-31)
+nsubjpass(made-35, requests-32)
+aux(made-35, shall-33)
+auxpass(made-35, be-34)
+root(ROOT-0, made-35)
+mark(writing-37, in-36)
+advcl(made-35, writing-37)
+case(FORM-41, on-38)
+det(FORM-41, a-39)
+compound(FORM-41, REQUEST-40)
+nmod:on(writing-37, FORM-41)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, approved-11)
+amod(permission-2, Special-1)
+nsubjpass(approved-11, permission-2)
+mark(have-4, to-3)
+acl:to(permission-2, have-4)
+dobj(have-4, items-5)
+neg(listed-7, not-6)
+acl(items-5, listed-7)
+advmod(listed-7, above-8)
+aux(approved-11, must-9)
+auxpass(approved-11, be-10)
+case(Administrator-15, by-12)
+det(Administrator-15, the-13)
+compound(Administrator-15, Jail-14)
+nmod:agent(approved-11, Administrator-15)
+mark(allowed-21, before-16)
+det(items-18, the-17)
+nsubjpass(allowed-21, items-18)
+aux(allowed-21, can-19)
+auxpass(allowed-21, be-20)
+advcl:before(approved-11, allowed-21)
+case(cell-24, in-22)
+det(cell-24, the-23)
+nmod:in(allowed-21, cell-24)
+punct(cell-24, ,-25)
+cc(cell-24, or-26)
+compound(block-28, cell-27)
+nmod:in(allowed-21, block-28)
+conj:or(cell-24, block-28)
+punct(approved-11, .-29)
+---
+qqroot(ROOT-0, approved-11)
+amod(permission-2, Special-1)
+nsubjpass(approved-11, permission-2)
+mark(have-4, to-3)
+acl:to(permission-2, have-4)
+dobj(have-4, items-5)
+neg(listed-7, not-6)
+acl(items-5, listed-7)
+advmod(listed-7, above-8)
+aux(approved-11, must-9)
+auxpass(approved-11, be-10)
+case(Administrator-15, by-12)
+det(Administrator-15, the-13)
+compound(Administrator-15, Jail-14)
+nmod:agent(approved-11, Administrator-15)
+mark(allowed-21, before-16)
+det(items-18, the-17)
+nsubjpass(allowed-21, items-18)
+aux(allowed-21, can-19)
+auxpass(allowed-21, be-20)
+advcl:before(approved-11, allowed-21)
+case(cell-24, in-22)
+det(cell-24, the-23)
+nmod:in(allowed-21, cell-24)
+punct(cell-24, ,-25)
+cc(cell-24, or-26)
+compound(block-28, cell-27)
+nmod:in(allowed-21, block-28)
+conj:or(cell-24, block-28)
+punct(approved-11, .-29)
+root(ROOT-0, made-6)
+det(requests-3, All-1)
+amod(requests-3, such-2)
+nsubjpass(made-6, requests-3)
+aux(made-6, shall-4)
+auxpass(made-6, be-5)
+mark(writing-8, in-7)
+advcl:in(made-6, writing-8)
+case(FORM-12, on-9)
+det(FORM-12, a-10)
+compound(FORM-12, REQUEST-11)
+nmod:on(writing-8, FORM-12)
+punct(made-6, .-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[26, 26] [?1, ?2, ?3, ?4, ?5, Administrator15, FORM12, Jail14, REQUEST11, Special1, above8, allowed21, approved11, block28, cell24, cell27, have4, items5, items18, listed7, made6, not6, permission2, requests3, such2, writing8]
+listed7- ->items5
+?1-All->requests3
+above8- ->listed7
+Jail14- ->?4
+Special1- ->permission2
+have4-to->permission2
+items5- ->have4
+permission2- ->approved11
+?4-agent : by  : must  : be ->approved11
+allowed21-before->approved11
+writing8-in->made6
+block28-in->allowed21
+?4-the->Administrator15
+?5-the->items18
+block28-or->?2
+?3-on->writing8
+?5-  : can  : be ->allowed21
+?1-  : shall  : be ->made6
+?2-the->cell24
+such2- ->?1
+REQUEST11- ->?3
+cell27- ->block28
+?3-a->FORM12
+not6- ->listed7
+?2-in->allowed21
+items5-==->?5
+
+[approved11
+	(<- -permission2
+		(<-to-have4<- -items5<- -listed7(<- -above8)<- -not6)
+		<- -Special1)
+	(<-before-allowed21
+		(<-in-?2<-or-block28<- -cell27)
+		(<-in-*block28)
+		<-  : can  : be -?5<-==-*items5)
+	<-agent : by  : must  : be -?4<- -Jail14;
+made6
+	(<-in-writing8<-on-?3<- -REQUEST11)
+	<-  : shall  : be -?1<- -such2;
+Administrator15<-the-*?4;
+requests3<-All-*?1;
+FORM12<-a-*?3;
+cell24<-the-*?2;
+items18<-the-*?5]

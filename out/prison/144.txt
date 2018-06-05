@@ -1,0 +1,418 @@
+No inmate will be denied hygiene products if they are indigent. We will maintain an account for all hygiene products which you requested and did not pay for at the time of use. If at any time during your incarceration you receive money, the jail staff will apply the money towards your balance owed for hygiene products until your debts are paid off.
+------CorefChainz
+CHAIN3-["hygiene products" in sentence 1, "they" in sentence 1]
+representative mention: "hygiene products" in sentence 1
+CHAIN19-["you" in sentence 2, "your" in sentence 3, "you" in sentence 3, "your" in sentence 3, "your" in sentence 3]
+representative mention: "you" in sentence 2
+No-DT 
+inmate-NN 
+will-MD 
+be-VB 
+denied-VBN 
+hygiene-NN 
+products-NNS 
+if-IN 
+they-PRP 
+are-VBP 
+indigent-JJ 
+.-. 
+We-PRP 
+will-MD 
+maintain-VB 
+an-DT 
+account-NN 
+for-IN 
+all-DT 
+hygiene-NN 
+products-NNS 
+which-WDT 
+you-PRP 
+requested-VBD 
+and-CC 
+did-VBD 
+not-RB 
+pay-VB 
+for-IN 
+at-IN 
+the-DT 
+time-NN 
+of-IN 
+use-NN 
+.-. 
+If-IN 
+at-IN 
+any-DT 
+time-NN 
+during-IN 
+your-PRP$ 
+incarceration-NN 
+you-PRP 
+receive-VBP 
+money-NN 
+,-, 
+the-DT 
+jail-NN 
+staff-NN 
+will-MD 
+apply-VB 
+the-DT 
+money-NN 
+towards-IN 
+your-PRP$ 
+balance-NN 
+owed-VBN 
+for-IN 
+hygiene-NN 
+products-NNS 
+until-IN 
+your-PRP$ 
+debts-NNS 
+are-VBP 
+paid-VBN 
+off-RP 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> denied
+	 	-> NP 	-> NN 	-> hygiene
+	 	-> NNS 	-> products
+		 	-> SBAR 	-> IN 	-> if
+	 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> VBP 	-> are
+	 	-> ADJP 	-> JJ 	-> indigent
+								 	-> . 	-> .
+		 	-> NP 	-> PRP 	-> We
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> maintain
+	 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> account
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> DT 	-> all
+	 	-> NN 	-> hygiene
+	 	-> NNS 	-> products
+			 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VP 	-> VBD 	-> requested
+		 	-> CC 	-> and
+	 	-> VP 	-> VBD 	-> did
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> pay
+	 	-> PP 	-> IN 	-> for
+	 	-> IN 	-> at
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> time
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> use
+								 	-> . 	-> .
+				 	-> SBAR 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> time
+		 	-> PP 	-> IN 	-> during
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> incarceration
+					 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> receive
+	 	-> NP 	-> NN 	-> money
+					 	-> , 	-> ,
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> staff
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> apply
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> money
+		 	-> PP 	-> IN 	-> towards
+	 	-> NP 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> balance
+		 	-> VP 	-> VBN 	-> owed
+	 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NN 	-> hygiene
+	 	-> NNS 	-> products
+										 	-> SBAR 	-> IN 	-> until
+	 	-> S 	-> NP 	-> PRP$ 	-> your
+	 	-> NNS 	-> debts
+		 	-> VP 	-> VBP 	-> are
+	 	-> VP 	-> VBN 	-> paid
+	 	-> PRT 	-> RP 	-> off
+								 	-> . 	-> .
+			
+Dependensee repr
+neg(inmate-2, No-1)
+nsubjpass(denied-5, inmate-2)
+aux(denied-5, will-3)
+auxpass(denied-5, be-4)
+dep(maintain-15, denied-5)
+compound(products-7, hygiene-6)
+dobj(denied-5, products-7)
+mark(indigent-11, if-8)
+nsubj(indigent-11, they-9)
+cop(indigent-11, are-10)
+advcl(denied-5, indigent-11)
+nsubj(maintain-15, We-13)
+aux(maintain-15, will-14)
+root(ROOT-0, maintain-15)
+det(account-17, an-16)
+dobj(maintain-15, account-17)
+dobj(requested-24, account-17)
+case(products-21, for-18)
+det(products-21, all-19)
+compound(products-21, hygiene-20)
+nmod:for(account-17, products-21)
+ref(account-17, which-22)
+nsubj(requested-24, you-23)
+nsubj(pay-28, you-23)
+acl:relcl(account-17, requested-24)
+cc(requested-24, and-25)
+aux(pay-28, did-26)
+neg(pay-28, not-27)
+acl:relcl(account-17, pay-28)
+conj:and(requested-24, pay-28)
+case(time-32, for-29)
+case(time-32, at-30)
+det(time-32, the-31)
+nmod:at(pay-28, time-32)
+case(use-34, of-33)
+nmod:of(time-32, use-34)
+mark(receive-44, If-36)
+case(time-39, at-37)
+det(time-39, any-38)
+nmod:at(receive-44, time-39)
+case(incarceration-42, during-40)
+nmod:poss(incarceration-42, your-41)
+nmod:during(time-39, incarceration-42)
+nsubj(receive-44, you-43)
+advcl(apply-51, receive-44)
+dobj(receive-44, money-45)
+det(staff-49, the-47)
+compound(staff-49, jail-48)
+nsubj(apply-51, staff-49)
+aux(apply-51, will-50)
+dep(maintain-15, apply-51)
+det(money-53, the-52)
+dobj(apply-51, money-53)
+case(balance-56, towards-54)
+nmod:poss(balance-56, your-55)
+nmod:towards(apply-51, balance-56)
+acl(balance-56, owed-57)
+case(products-60, for-58)
+compound(products-60, hygiene-59)
+nmod:for(owed-57, products-60)
+mark(paid-65, until-61)
+nmod:poss(debts-63, your-62)
+nsubjpass(paid-65, debts-63)
+auxpass(paid-65, are-64)
+advcl(maintain-15, paid-65)
+compound:prt(paid-65, off-66)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, denied-5)
+neg(inmate-2, No-1)
+nsubjpass(denied-5, inmate-2)
+aux(denied-5, will-3)
+auxpass(denied-5, be-4)
+compound(products-7, hygiene-6)
+dobj(denied-5, products-7)
+mark(indigent-11, if-8)
+nsubj(indigent-11, they-9)
+cop(indigent-11, are-10)
+advcl:if(denied-5, indigent-11)
+punct(denied-5, .-12)
+---
+qqroot(ROOT-0, denied-5)
+neg(inmate-2, No-1)
+nsubjpass(denied-5, inmate-2)
+aux(denied-5, will-3)
+auxpass(denied-5, be-4)
+compound(products-7, hygiene-6)
+dobj(denied-5, products-7)
+mark(indigent-11, if-8)
+nsubj(indigent-11, they-9)
+cop(indigent-11, are-10)
+advcl:if(denied-5, indigent-11)
+punct(denied-5, .-12)
+root(ROOT-0, maintain-3)
+nsubj(maintain-3, We-1)
+aux(maintain-3, will-2)
+det(account-5, an-4)
+dobj(maintain-3, account-5)
+case(products-9, for-6)
+det(products-9, all-7)
+compound(products-9, hygiene-8)
+nmod:for(account-5, products-9)
+dobj(requested-12, products-9)
+ref(products-9, which-10)
+nsubj(requested-12, you-11)
+nsubj(pay-16, you-11)
+acl:relcl(products-9, requested-12)
+cc(requested-12, and-13)
+aux(pay-16, did-14)
+neg(pay-16, not-15)
+acl:relcl(products-9, pay-16)
+conj:and(requested-12, pay-16)
+nmod(pay-16, for-17)
+case(time-20, at-18)
+det(time-20, the-19)
+nmod:at(requested-12, time-20)
+case(use-22, of-21)
+nmod:of(time-20, use-22)
+punct(maintain-3, .-23)
+---
+qqroot(ROOT-0, denied-5)
+neg(inmate-2, No-1)
+nsubjpass(denied-5, inmate-2)
+aux(denied-5, will-3)
+auxpass(denied-5, be-4)
+compound(products-7, hygiene-6)
+dobj(denied-5, products-7)
+mark(indigent-11, if-8)
+nsubj(indigent-11, they-9)
+cop(indigent-11, are-10)
+advcl:if(denied-5, indigent-11)
+punct(denied-5, .-12)
+root(ROOT-0, maintain-3)
+nsubj(maintain-3, We-1)
+aux(maintain-3, will-2)
+det(account-5, an-4)
+dobj(maintain-3, account-5)
+case(products-9, for-6)
+det(products-9, all-7)
+compound(products-9, hygiene-8)
+nmod:for(account-5, products-9)
+dobj(requested-12, products-9)
+ref(products-9, which-10)
+nsubj(requested-12, you-11)
+nsubj(pay-16, you-11)
+acl:relcl(products-9, requested-12)
+cc(requested-12, and-13)
+aux(pay-16, did-14)
+neg(pay-16, not-15)
+acl:relcl(products-9, pay-16)
+conj:and(requested-12, pay-16)
+nmod(pay-16, for-17)
+case(time-20, at-18)
+det(time-20, the-19)
+nmod:at(requested-12, time-20)
+case(use-22, of-21)
+nmod:of(time-20, use-22)
+punct(maintain-3, .-23)
+root(ROOT-0, apply-16)
+mark(receive-9, If-1)
+case(time-4, at-2)
+det(time-4, any-3)
+nmod:at(receive-9, time-4)
+case(incarceration-7, during-5)
+nmod:poss(incarceration-7, your-6)
+nmod:during(time-4, incarceration-7)
+nsubj(receive-9, you-8)
+advcl:if(apply-16, receive-9)
+dobj(receive-9, money-10)
+punct(apply-16, ,-11)
+det(staff-14, the-12)
+compound(staff-14, jail-13)
+nsubj(apply-16, staff-14)
+aux(apply-16, will-15)
+det(money-18, the-17)
+dobj(apply-16, money-18)
+case(balance-21, towards-19)
+nmod:poss(balance-21, your-20)
+nmod:towards(apply-16, balance-21)
+acl(balance-21, owed-22)
+case(products-25, for-23)
+compound(products-25, hygiene-24)
+nmod:for(owed-22, products-25)
+mark(paid-30, until-26)
+nmod:poss(debts-28, your-27)
+nsubjpass(paid-30, debts-28)
+auxpass(paid-30, are-29)
+advcl:until(apply-16, paid-30)
+compound:prt(paid-30, off-31)
+punct(apply-16, .-32)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+G[44, 48] [?1, ?2, ?3, ?4, ?5, ?6, No1, We1, account5, apply16, balance21, debts28, denied5, for17, hygiene24, hygiene8, hygiene6, incarceration7, indigent11, inmate2, jail13, maintain3, money18, money10, not15, off31, owed22, paid30, pay16, products7, products25, products9, receive9, requested12, staff14, they9, time20, time4, use22, you11, you8, your20, your27, your6]
+you8- ->receive9
+your20-poss->balance21
+hygiene24- ->products25
+hygiene8-  : which  : which  : which ->?5
+owed22- ->balance21
+?1-the->time20
+inmate2-  : will  : be ->denied5
+products7- ->denied5
+pay16-and->requested12
+paid30-until->apply16
+?3-an->account5
+?5- ->requested12
+balance21-towards->apply16
+you11- ->requested12
+?3- ->maintain3
+your6-poss->incarceration7
+?5-for->?3
+they9-  : are ->indigent11
+?4-any->time4
+for17- ->pay16
+you11- ->pay16
+receive9-if->apply16
+your6-==->you11
+use22-of->?1
+?6- ->apply16
+?5-all->products9
+?2-  : will ->apply16
+off31-prt->paid30
+your27-poss->debts28
+products25-for->owed22
+debts28-  : are ->paid30
+your20-==->you11
+incarceration7-during->?4
+requested12- ->?5
+they9-==->products7
+We1-  : will ->maintain3
+?1-at->requested12
+jail13- ->?2
+?6-the->money18
+?2-the->staff14
+hygiene6- ->products7
+money10- ->receive9
+your27-==->you11
+pay16- ->?5
+No1- ->inmate2
+indigent11-if->denied5
+not15-  : did ->pay16
+?4-at : If ->receive9
+
+[account5<-an-?3<-for-?5(<- -requested12(<- -*?5)(<-and-pay16(<- -you11(<-==-your6)(<-==-your27)<-==-^your20)(<- -for17)<-  : did -not15)(<- -*you11)<-at-?1<-of-use22)(<- -*pay16)<-  : which  : which  : which -hygiene8;
+apply16
+	(<-towards-balance21
+		(<- -owed22<-for-products25<- -hygiene24)
+		<-poss-your20)
+	(<-if-receive9
+		(<-at : If -?4<-during-incarceration7<-poss-*your6)
+		(<- -money10)
+		<- -you8)
+	(<-  : will -?2<- -jail13)
+	(<-until-paid30
+		(<-prt-off31)
+		<-  : are -debts28<-poss-*your27)
+	<- -?6;
+staff14<-the-*?2;
+denied5
+	(<-if-indigent11<-  : are -they9)
+	(<-  : will  : be -inmate2<- -No1)
+	<- -products7
+		(<-==-*they9)
+		<- -hygiene6;
+money18<-the-*?6;
+maintain3
+	(<- -*?3)
+	<-  : will -We1;
+products9<-all-*?5;
+time20<-the-*?1;
+time4<-any-*?4]

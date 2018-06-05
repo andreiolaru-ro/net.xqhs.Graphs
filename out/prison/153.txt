@@ -1,0 +1,82 @@
+Inmates are not allowed to have any money in their possession.
+------CorefChainz
+CHAIN2-["Inmates" in sentence 1, "their" in sentence 1]
+representative mention: "Inmates" in sentence 1
+Inmates-NNS 
+are-VBP 
+not-RB 
+allowed-VBN 
+to-TO 
+have-VB 
+any-DT 
+money-NN 
+in-IN 
+their-PRP$ 
+possession-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> VBP 	-> are
+	 	-> RB 	-> not
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> money
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NN 	-> possession
+									 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(allowed-4, Inmates-1)
+nsubj:xsubj(have-6, Inmates-1)
+auxpass(allowed-4, are-2)
+neg(allowed-4, not-3)
+root(ROOT-0, allowed-4)
+mark(have-6, to-5)
+xcomp(allowed-4, have-6)
+det(money-8, any-7)
+dobj(have-6, money-8)
+case(possession-11, in-9)
+nmod:poss(possession-11, their-10)
+nmod:in(money-8, possession-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-4)
+nsubjpass(allowed-4, Inmates-1)
+nsubj:xsubj(have-6, Inmates-1)
+auxpass(allowed-4, are-2)
+neg(allowed-4, not-3)
+mark(have-6, to-5)
+xcomp(allowed-4, have-6)
+det(money-8, any-7)
+dobj(have-6, money-8)
+case(possession-11, in-9)
+nmod:poss(possession-11, their-10)
+nmod:in(have-6, possession-11)
+punct(allowed-4, .-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 9] [?1, Inmates1, allowed4, have6, money8, not3, possession11, their10]
+have6-  : to ->allowed4
+Inmates1-  : are  : are ->allowed4
+their10-==->Inmates1
+?1-any->money8
+not3- ->allowed4
+possession11-in->have6
+Inmates1- ->have6
+their10-poss->possession11
+?1- ->have6
+
+[allowed4
+	(<-  : to -have6
+		(<- -Inmates1<-==-their10)
+		(<- -?1)
+		<-in-possession11<-poss-*their10)
+	(<-  : are  : are -*Inmates1)
+	<- -not3;
+money8<-any-*?1]

@@ -1,0 +1,386 @@
+If the inmate would like them to remove the phone block, (provided we have the block placed, and not their phone carrier), the inmate will need to write them a letter. In the letter the inmate will need to ask them to write a letter to the Jail Administrator requesting the block be removed.
+------CorefChainz
+CHAIN5-["them" in sentence 1, "their" in sentence 1, "them" in sentence 1, "them" in sentence 2]
+representative mention: "them" in sentence 1
+CHAIN7-["the inmate" in sentence 1, "the inmate" in sentence 1, "the inmate" in sentence 2]
+representative mention: "the inmate" in sentence 1
+CHAIN10-["a letter" in sentence 1, "the letter" in sentence 2]
+representative mention: "a letter" in sentence 1
+CHAIN15-["the phone block" in sentence 1, "the block" in sentence 1, "the block" in sentence 2]
+representative mention: "the phone block" in sentence 1
+If-IN 
+the-DT 
+inmate-NN 
+would-MD 
+like-VB 
+them-PRP 
+to-TO 
+remove-VB 
+the-DT 
+phone-NN 
+block-NN 
+,-, 
+-LRB---LRB- 
+provided-VBN 
+we-PRP 
+have-VBP 
+the-DT 
+block-NN 
+placed-VBN 
+,-, 
+and-CC 
+not-RB 
+their-PRP$ 
+phone-NN 
+carrier-NN 
+-RRB---RRB- 
+,-, 
+the-DT 
+inmate-NN 
+will-MD 
+need-VB 
+to-TO 
+write-VB 
+them-PRP 
+a-DT 
+letter-NN 
+.-. 
+In-IN 
+the-DT 
+letter-NN 
+the-DT 
+inmate-NN 
+will-MD 
+need-VB 
+to-TO 
+ask-VB 
+them-PRP 
+to-TO 
+write-VB 
+a-DT 
+letter-NN 
+to-TO 
+the-DT 
+Jail-NN 
+Administrator-NN 
+requesting-VBG 
+the-DT 
+block-NN 
+be-VB 
+removed-VBN 
+.-. 
+ROOT 	-> S 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> would
+	 	-> VP 	-> VB 	-> like
+	 	-> S 	-> NP 	-> PRP 	-> them
+		 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> remove
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> phone
+	 	-> NN 	-> block
+	 	-> , 	-> ,
+		 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> VP 	-> VBN 	-> provided
+	 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> we
+		 	-> VP 	-> VBP 	-> have
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> block
+		 	-> VP 	-> VP 	-> VBN 	-> placed
+		 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> VP 	-> RB 	-> not
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NN 	-> phone
+	 	-> NN 	-> carrier
+									 	-> -RRB- 	-> -RRB-
+										 	-> , 	-> ,
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> need
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> write
+	 	-> NP 	-> PRP 	-> them
+		 	-> FRAG 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> letter
+	 	-> . 	-> .
+		 	-> PP 	-> IN 	-> In
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> letter
+										 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> need
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> ask
+	 	-> S 	-> NP 	-> PRP 	-> them
+		 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> write
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> letter
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> Jail
+	 	-> NN 	-> Administrator
+		 	-> VP 	-> VBG 	-> requesting
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> block
+		 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> removed
+															 	-> . 	-> .
+			
+Dependensee repr
+mark(like-5, If-1)
+det(inmate-3, the-2)
+nsubj(like-5, inmate-3)
+aux(like-5, would-4)
+advcl(need-31, like-5)
+dobj(like-5, them-6)
+nsubj:xsubj(remove-8, them-6)
+mark(remove-8, to-7)
+xcomp(like-5, remove-8)
+det(block-11, the-9)
+compound(block-11, phone-10)
+dobj(remove-8, block-11)
+dep(block-11, provided-14)
+nsubj(have-16, we-15)
+ccomp(provided-14, have-16)
+det(block-18, the-17)
+dobj(have-16, block-18)
+dep(block-18, placed-19)
+cc(placed-19, and-21)
+neg(carrier-25, not-22)
+nmod:poss(carrier-25, their-23)
+compound(carrier-25, phone-24)
+dep(block-18, carrier-25)
+conj:and(placed-19, carrier-25)
+det(inmate-29, the-28)
+nsubj(need-31, inmate-29)
+nsubj:xsubj(write-33, inmate-29)
+aux(need-31, will-30)
+dep(need-44, need-31)
+mark(write-33, to-32)
+xcomp(need-31, write-33)
+dobj(write-33, them-34)
+det(letter-36, a-35)
+dep(write-33, letter-36)
+case(letter-40, In-38)
+det(letter-40, the-39)
+nmod:in(letter-36, letter-40)
+det(inmate-42, the-41)
+nsubj(need-44, inmate-42)
+nsubj:xsubj(ask-46, inmate-42)
+aux(need-44, will-43)
+root(ROOT-0, need-44)
+mark(ask-46, to-45)
+xcomp(need-44, ask-46)
+dobj(ask-46, them-47)
+nsubj:xsubj(write-49, them-47)
+mark(write-49, to-48)
+xcomp(ask-46, write-49)
+det(letter-51, a-50)
+dobj(write-49, letter-51)
+case(Administrator-55, to-52)
+det(Administrator-55, the-53)
+compound(Administrator-55, Jail-54)
+nmod:to(write-49, Administrator-55)
+acl(Administrator-55, requesting-56)
+det(block-58, the-57)
+nsubjpass(removed-60, block-58)
+auxpass(removed-60, be-59)
+ccomp(requesting-56, removed-60)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, provided-14)
+mark(like-5, If-1)
+det(inmate-3, the-2)
+nsubj(like-5, inmate-3)
+aux(like-5, would-4)
+advcl:if(provided-14, like-5)
+dobj(like-5, them-6)
+nsubj:xsubj(remove-8, them-6)
+mark(remove-8, to-7)
+xcomp(like-5, remove-8)
+det(block-11, the-9)
+compound(block-11, phone-10)
+dobj(remove-8, block-11)
+punct(provided-14, ,-12)
+punct(provided-14, -LRB--13)
+nsubj(have-16, we-15)
+ccomp(provided-14, have-16)
+det(block-18, the-17)
+nsubj(placed-19, block-18)
+ccomp(have-16, placed-19)
+punct(placed-19, ,-20)
+cc(placed-19, and-21)
+neg(carrier-25, not-22)
+nmod:poss(carrier-25, their-23)
+compound(carrier-25, phone-24)
+ccomp(have-16, carrier-25)
+conj:and(placed-19, carrier-25)
+punct(carrier-25, -RRB--26)
+punct(placed-19, ,-27)
+det(inmate-29, the-28)
+nsubj(need-31, inmate-29)
+nsubj:xsubj(write-33, inmate-29)
+aux(need-31, will-30)
+ccomp(placed-19, need-31)
+mark(write-33, to-32)
+xcomp(need-31, write-33)
+iobj(write-33, them-34)
+det(letter-36, a-35)
+dobj(write-33, letter-36)
+punct(provided-14, .-37)
+---
+qqroot(ROOT-0, provided-14)
+mark(like-5, If-1)
+det(inmate-3, the-2)
+nsubj(like-5, inmate-3)
+aux(like-5, would-4)
+advcl:if(provided-14, like-5)
+dobj(like-5, them-6)
+nsubj:xsubj(remove-8, them-6)
+mark(remove-8, to-7)
+xcomp(like-5, remove-8)
+det(block-11, the-9)
+compound(block-11, phone-10)
+dobj(remove-8, block-11)
+punct(provided-14, ,-12)
+punct(provided-14, -LRB--13)
+nsubj(have-16, we-15)
+ccomp(provided-14, have-16)
+det(block-18, the-17)
+nsubj(placed-19, block-18)
+ccomp(have-16, placed-19)
+punct(placed-19, ,-20)
+cc(placed-19, and-21)
+neg(carrier-25, not-22)
+nmod:poss(carrier-25, their-23)
+compound(carrier-25, phone-24)
+ccomp(have-16, carrier-25)
+conj:and(placed-19, carrier-25)
+punct(carrier-25, -RRB--26)
+punct(placed-19, ,-27)
+det(inmate-29, the-28)
+nsubj(need-31, inmate-29)
+nsubj:xsubj(write-33, inmate-29)
+aux(need-31, will-30)
+ccomp(placed-19, need-31)
+mark(write-33, to-32)
+xcomp(need-31, write-33)
+iobj(write-33, them-34)
+det(letter-36, a-35)
+dobj(write-33, letter-36)
+punct(provided-14, .-37)
+root(ROOT-0, need-7)
+case(letter-3, In-1)
+det(letter-3, the-2)
+nmod:in(need-7, letter-3)
+det(inmate-5, the-4)
+nsubj(need-7, inmate-5)
+nsubj:xsubj(ask-9, inmate-5)
+aux(need-7, will-6)
+mark(ask-9, to-8)
+xcomp(need-7, ask-9)
+dobj(ask-9, them-10)
+nsubj:xsubj(write-12, them-10)
+mark(write-12, to-11)
+xcomp(ask-9, write-12)
+det(letter-14, a-13)
+dobj(write-12, letter-14)
+case(Administrator-18, to-15)
+det(Administrator-18, the-16)
+compound(Administrator-18, Jail-17)
+nmod:to(letter-14, Administrator-18)
+acl(letter-14, requesting-19)
+det(block-21, the-20)
+nsubjpass(removed-23, block-21)
+auxpass(removed-23, be-22)
+ccomp(requesting-19, removed-23)
+punct(need-7, .-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[42, 49] [?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, Administrator18, Jail17, ask9, block18, block11, block21, carrier25, have16, inmate3, inmate5, inmate29, letter36, letter3, letter14, like5, need7, need31, not22, phone24, phone10, placed19, provided14, remove8, removed23, requesting19, their23, them34, them10, them6, we15, write12, write33]
+need31- ->placed19
+?4- ->remove8
+?6-  : be ->removed23
+?7-the->inmate29
+requesting19- ->?10
+?3-the->inmate3
+like5-if->provided14
+ask9-  : to ->need7
+?9-in : In ->need7
+them6- ->like5
+?7- ->write33
+them6-  : to ->remove8
+?9-the->letter3
+their23-poss->carrier25
+placed19- ->have16
+have16- ->provided14
+write12- ->ask9
+removed23- ->requesting19
+?1- ->placed19
+phone10- ->?4
+them10-  : to ->write12
+write33-  : to ->need31
+?1-the->block18
+?2-to->?10
+?5-  : will ->need7
+?10- ->write12
+phone24- ->carrier25
+we15- ->have16
+?10-a->letter14
+?4-the->block11
+?3-==->?8
+?2-the->Administrator18
+?6-the->block21
+?8-a->letter36
+not22- ->carrier25
+?1-==->?4
+them10- ->ask9
+?8- ->write33
+carrier25-and->placed19
+them34- ->write33
+?6-==->?4
+Jail17- ->?2
+carrier25- ->have16
+?5-the->inmate5
+remove8- ->like5
+?5- ->ask9
+removed23-==->them6
+?7-  : will ->need31
+?3-  : If  : would ->like5
+
+[provided14
+	(<- -have16
+		(<- -placed19(<- -need31(<-  : to -write33(<- -?8<-==-^?3)(<- -?7)<- -them34)<-  : will -*?7)(<-and-carrier25(<- -not22)(<- -phone24)<-poss-their23)<- -?1)
+		(<- -*carrier25)
+		<- -we15)
+	<-if-like5
+		(<- -remove8(<- -?4(<-==-*?1)(<- -phone10)<-==-^?6)<-  : to -them6<-==-^removed23)
+		(<- -*them6)
+		<-  : If  : would -?3;
+need7
+	(<-  : to -ask9
+		(<- -write12(<- -?10(<- -requesting19<- -removed23<-  : be -?6)<-to-?2<- -Jail17)<-  : to -them10)
+		(<- -*them10)
+		<- -?5)
+	(<-  : will -*?5)
+	<-in : In -?9;
+letter3<-the-*?9;
+Administrator18<-the-*?2;
+block18<-the-*?1;
+block11<-the-*?4;
+block21<-the-*?6;
+inmate3<-the-*?3;
+inmate5<-the-*?5;
+inmate29<-the-*?7;
+letter36<-a-*?8;
+letter14<-a-*?10]

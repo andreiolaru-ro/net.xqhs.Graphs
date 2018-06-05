@@ -1,0 +1,168 @@
+Visits will last a maximum of 15 minutes. Jail staff may allow a longer visit if no other inmates have a visitor waiting to see them.
+------CorefChainz
+CHAIN7-["no other inmates" in sentence 2, "them" in sentence 2]
+representative mention: "no other inmates" in sentence 2
+Visits-NNS 
+will-MD 
+last-VB 
+a-DT 
+maximum-NN 
+of-IN 
+15-CD 
+minutes-NNS 
+.-. 
+Jail-NN 
+staff-NN 
+may-MD 
+allow-VB 
+a-DT 
+longer-JJR 
+visit-NN 
+if-IN 
+no-DT 
+other-JJ 
+inmates-NNS 
+have-VBP 
+a-DT 
+visitor-NN 
+waiting-VBG 
+to-TO 
+see-VB 
+them-PRP 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NNS 	-> Visits
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> last
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> maximum
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> CD 	-> 15
+	 	-> NNS 	-> minutes
+						 	-> . 	-> .
+		 	-> NP 	-> NN 	-> Jail
+	 	-> NN 	-> staff
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> allow
+	 	-> NP 	-> DT 	-> a
+	 	-> JJR 	-> longer
+	 	-> NN 	-> visit
+		 	-> SBAR 	-> IN 	-> if
+	 	-> S 	-> NP 	-> DT 	-> no
+	 	-> JJ 	-> other
+	 	-> NNS 	-> inmates
+		 	-> VP 	-> VBP 	-> have
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> visitor
+		 	-> VP 	-> VBG 	-> waiting
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> see
+	 	-> NP 	-> PRP 	-> them
+												 	-> . 	-> .
+			
+Dependensee repr
+nsubj(last-3, Visits-1)
+aux(last-3, will-2)
+dep(allow-13, last-3)
+det(maximum-5, a-4)
+dobj(last-3, maximum-5)
+case(minutes-8, of-6)
+nummod(minutes-8, 15-7)
+nmod:of(maximum-5, minutes-8)
+compound(staff-11, Jail-10)
+nsubj(allow-13, staff-11)
+aux(allow-13, may-12)
+root(ROOT-0, allow-13)
+det(visit-16, a-14)
+amod(visit-16, longer-15)
+dobj(allow-13, visit-16)
+mark(have-21, if-17)
+neg(inmates-20, no-18)
+amod(inmates-20, other-19)
+nsubj(have-21, inmates-20)
+advcl(allow-13, have-21)
+det(visitor-23, a-22)
+dobj(have-21, visitor-23)
+acl(visitor-23, waiting-24)
+mark(see-26, to-25)
+xcomp(waiting-24, see-26)
+dobj(see-26, them-27)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, last-3)
+nsubj(last-3, Visits-1)
+aux(last-3, will-2)
+det(maximum-5, a-4)
+dobj(last-3, maximum-5)
+case(minutes-8, of-6)
+nummod(minutes-8, 15-7)
+nmod:of(maximum-5, minutes-8)
+punct(last-3, .-9)
+---
+qqroot(ROOT-0, last-3)
+nsubj(last-3, Visits-1)
+aux(last-3, will-2)
+det(maximum-5, a-4)
+dobj(last-3, maximum-5)
+case(minutes-8, of-6)
+nummod(minutes-8, 15-7)
+nmod:of(maximum-5, minutes-8)
+punct(last-3, .-9)
+root(ROOT-0, allow-4)
+compound(staff-2, Jail-1)
+nsubj(allow-4, staff-2)
+aux(allow-4, may-3)
+nsubj(visit-7, a-5)
+advmod(visit-7, longer-6)
+ccomp(allow-4, visit-7)
+mark(have-12, if-8)
+neg(inmates-11, no-9)
+amod(inmates-11, other-10)
+nsubj(have-12, inmates-11)
+advcl:if(visit-7, have-12)
+det(visitor-14, a-13)
+dobj(have-12, visitor-14)
+acl(visitor-14, waiting-15)
+mark(see-17, to-16)
+xcomp(waiting-15, see-17)
+dobj(see-17, them-18)
+punct(allow-4, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[21, 20] [157, ?1, ?2, Jail1, Visits1, a5, allow4, have12, inmates11, last3, longer6, maximum5, minutes8, no9, other10, see17, staff2, them18, visit7, visitor14, waiting15]
+staff2-  : may ->allow4
+have12-if->visit7
+157- ->minutes8
+other10- ->inmates11
+no9- ->inmates11
+?1- ->last3
+longer6- ->visit7
+visit7- ->allow4
+Visits1-  : will ->last3
+Jail1- ->staff2
+minutes8-of->?1
+?1-a->maximum5
+a5- ->visit7
+see17-  : to ->waiting15
+?2- ->have12
+inmates11- ->have12
+them18- ->see17
+waiting15- ->?2
+them18-==->inmates11
+?2-a->visitor14
+
+[allow4
+	(<- -visit7
+		(<-if-have12(<- -?2<- -waiting15<-  : to -see17<- -them18)<- -inmates11(<-==-*them18)(<- -no9)<- -other10)
+		(<- -a5)
+		<- -longer6)
+	<-  : may -staff2<- -Jail1;
+maximum5<-a-?1<-of-minutes8<- -157;
+last3
+	(<- -*?1)
+	<-  : will -Visits1;
+visitor14<-a-*?2]

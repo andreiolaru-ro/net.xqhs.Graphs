@@ -1,0 +1,65 @@
+McDonalds is a restaurant. McDonalds serves french fries.
+------CorefChainz
+CHAIN2-["McDonalds" in sentence 1, "McDonalds" in sentence 2]
+representative mention: "McDonalds" in sentence 1
+McDonalds-NNP 
+is-VBZ 
+a-DT 
+restaurant-NN 
+.-. 
+McDonalds-NNP 
+serves-VBZ 
+french-JJ 
+fries-NNS 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NNP 	-> McDonalds
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> restaurant
+			 	-> . 	-> .
+		 	-> NP 	-> NNP 	-> McDonalds
+		 	-> VP 	-> VBZ 	-> serves
+	 	-> NP 	-> JJ 	-> french
+	 	-> NNS 	-> fries
+			 	-> . 	-> .
+			
+Dependensee repr
+nsubj(restaurant-4, McDonalds-1)
+cop(restaurant-4, is-2)
+det(restaurant-4, a-3)
+dep(serves-7, restaurant-4)
+nsubj(serves-7, McDonalds-6)
+root(ROOT-0, serves-7)
+amod(fries-9, french-8)
+dobj(serves-7, fries-9)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, restaurant-4)
+nsubj(restaurant-4, McDonalds-1)
+cop(restaurant-4, is-2)
+det(restaurant-4, a-3)
+punct(restaurant-4, .-5)
+---
+qqroot(ROOT-0, restaurant-4)
+nsubj(restaurant-4, McDonalds-1)
+cop(restaurant-4, is-2)
+det(restaurant-4, a-3)
+punct(restaurant-4, .-5)
+root(ROOT-0, serves-2)
+nsubj(serves-2, McDonalds-1)
+amod(fries-4, french-3)
+dobj(serves-2, fries-4)
+punct(serves-2, .-5)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[7, 5] [?1, McDonalds1, McDonalds1, french3, fries4, restaurant4, serves2]
+McDonalds1- ->serves2
+?1-a->restaurant4
+McDonalds1-  : is ->?1
+fries4- ->serves2
+french3- ->fries4

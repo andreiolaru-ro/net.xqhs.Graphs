@@ -1,0 +1,76 @@
+Plugging a sink, shower drain, or toilet is prohibited.
+------CorefChainz
+Plugging-VBG 
+a-DT 
+sink-NN 
+,-, 
+shower-NN 
+drain-NN 
+,-, 
+or-CC 
+toilet-NN 
+is-VBZ 
+prohibited-VBN 
+.-. 
+ROOT 	-> S 	-> S 	-> VP 	-> VBG 	-> Plugging
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> sink
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> shower
+	 	-> NN 	-> drain
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NN 	-> toilet
+					 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBN 	-> prohibited
+			 	-> . 	-> .
+			
+Dependensee repr
+csubjpass(prohibited-11, Plugging-1)
+det(sink-3, a-2)
+dobj(Plugging-1, sink-3)
+compound(drain-6, shower-5)
+dobj(Plugging-1, drain-6)
+conj:or(sink-3, drain-6)
+cc(sink-3, or-8)
+dobj(Plugging-1, toilet-9)
+conj:or(sink-3, toilet-9)
+auxpass(prohibited-11, is-10)
+root(ROOT-0, prohibited-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, prohibited-11)
+advcl(prohibited-11, Plugging-1)
+det(sink-3, a-2)
+dobj(Plugging-1, sink-3)
+punct(prohibited-11, ,-4)
+compound(drain-6, shower-5)
+nsubjpass(prohibited-11, drain-6)
+punct(drain-6, ,-7)
+cc(drain-6, or-8)
+conj:or(drain-6, toilet-9)
+nsubjpass(prohibited-11, toilet-9)
+auxpass(prohibited-11, is-10)
+punct(prohibited-11, .-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 7] [?1, Plugging1, drain6, prohibited11, shower5, sink3, toilet9]
+toilet9-  : is ->prohibited11
+drain6- ->prohibited11
+Plugging1- ->prohibited11
+toilet9-or->drain6
+?1- ->Plugging1
+?1-a->sink3
+shower5- ->drain6
+
+[prohibited11
+	(<- -Plugging1<- -?1)
+	(<- -drain6
+		(<- -shower5)
+		<-or-toilet9)
+	<-  : is -*toilet9;
+sink3<-a-*?1]

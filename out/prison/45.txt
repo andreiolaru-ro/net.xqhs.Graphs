@@ -1,0 +1,179 @@
+While in custody, you will be expected to comply with the following rules, which have been made to maintain proper custody, control, and safety of the inmate population.
+------CorefChainz
+While-IN 
+in-IN 
+custody-NN 
+,-, 
+you-PRP 
+will-MD 
+be-VB 
+expected-VBN 
+to-TO 
+comply-VB 
+with-IN 
+the-DT 
+following-VBG 
+rules-NNS 
+,-, 
+which-WDT 
+have-VBP 
+been-VBN 
+made-VBN 
+to-TO 
+maintain-VB 
+proper-JJ 
+custody-NN 
+,-, 
+control-NN 
+,-, 
+and-CC 
+safety-NN 
+of-IN 
+the-DT 
+inmate-NN 
+population-NN 
+.-. 
+ROOT 	-> S 	-> SBAR 	-> IN 	-> While
+	 	-> FRAG 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NN 	-> custody
+					 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> expected
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> comply
+	 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> VBG 	-> following
+	 	-> NNS 	-> rules
+		 	-> , 	-> ,
+	 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> VP 	-> VBP 	-> have
+	 	-> VP 	-> VBN 	-> been
+	 	-> VP 	-> VBN 	-> made
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> maintain
+	 	-> NP 	-> NP 	-> JJ 	-> proper
+	 	-> NN 	-> custody
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> control
+		 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> NN 	-> safety
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> NN 	-> population
+																					 	-> . 	-> .
+			
+Dependensee repr
+mark(custody-3, While-1)
+case(custody-3, in-2)
+advcl(expected-8, custody-3)
+nsubjpass(expected-8, you-5)
+nsubj:xsubj(comply-10, you-5)
+aux(expected-8, will-6)
+auxpass(expected-8, be-7)
+root(ROOT-0, expected-8)
+mark(comply-10, to-9)
+xcomp(expected-8, comply-10)
+case(rules-14, with-11)
+det(rules-14, the-12)
+amod(rules-14, following-13)
+nmod:with(comply-10, rules-14)
+nsubjpass(made-19, rules-14)
+nsubj:xsubj(maintain-21, rules-14)
+ref(rules-14, which-16)
+aux(made-19, have-17)
+auxpass(made-19, been-18)
+acl:relcl(rules-14, made-19)
+mark(maintain-21, to-20)
+xcomp(made-19, maintain-21)
+amod(custody-23, proper-22)
+dobj(maintain-21, custody-23)
+dobj(maintain-21, control-25)
+conj:and(custody-23, control-25)
+cc(custody-23, and-27)
+dobj(maintain-21, safety-28)
+conj:and(custody-23, safety-28)
+case(population-32, of-29)
+det(population-32, the-30)
+compound(population-32, inmate-31)
+nmod:of(safety-28, population-32)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, expected-8)
+mark(expected-8, While-1)
+case(custody-3, in-2)
+nmod:in(expected-8, custody-3)
+punct(expected-8, ,-4)
+nsubjpass(expected-8, you-5)
+nsubj:xsubj(comply-10, you-5)
+aux(expected-8, will-6)
+auxpass(expected-8, be-7)
+mark(comply-10, to-9)
+xcomp(expected-8, comply-10)
+case(rules-14, with-11)
+det(rules-14, the-12)
+amod(rules-14, following-13)
+nmod:with(comply-10, rules-14)
+nsubjpass(made-19, rules-14)
+nsubj:xsubj(maintain-21, rules-14)
+punct(rules-14, ,-15)
+ref(rules-14, which-16)
+aux(made-19, have-17)
+auxpass(made-19, been-18)
+acl:relcl(rules-14, made-19)
+mark(maintain-21, to-20)
+xcomp(made-19, maintain-21)
+amod(custody-23, proper-22)
+dobj(maintain-21, custody-23)
+punct(custody-23, ,-24)
+dobj(maintain-21, control-25)
+conj:and(custody-23, control-25)
+punct(custody-23, ,-26)
+cc(custody-23, and-27)
+dobj(maintain-21, safety-28)
+conj:and(custody-23, safety-28)
+case(population-32, of-29)
+det(population-32, the-30)
+compound(population-32, inmate-31)
+nmod:of(safety-28, population-32)
+punct(expected-8, .-33)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[16, 20] [?1, ?2, comply10, control25, custody23, custody3, expected8, following13, inmate31, made19, maintain21, population32, proper22, rules14, safety28, you5]
+safety28- ->maintain21
+you5-  : will  : be ->expected8
+you5- ->comply10
+?1- ->maintain21
+inmate31- ->?2
+proper22- ->custody23
+?1-the->rules14
+?2-the->population32
+safety28-and->custody23
+?1-with->comply10
+control25- ->maintain21
+custody23- ->maintain21
+custody3-in : While ->expected8
+made19-  : have  : have ->?1
+control25-and->custody23
+following13-  : which  : which  : which ->?1
+maintain21-  : been  : to ->made19
+comply10-  : to ->expected8
+?1- ->made19
+?2-of->safety28
+
+[expected8
+	(<-  : to -comply10
+		(<-with-?1(<-  : have  : have -made19(<- -*?1)<-  : been  : to -maintain21(<- -*?1)(<- -custody23(<-and-safety28<-of-?2<- -inmate31)(<-and-control25)<- -proper22)(<- -*safety28)<- -*control25)<-  : which  : which  : which -following13)
+		<- -you5)
+	(<-  : will  : be -*you5)
+	<-in : While -custody3;
+population32<-the-*?2;
+rules14<-the-*?1]

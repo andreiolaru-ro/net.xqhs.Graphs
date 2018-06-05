@@ -1,0 +1,186 @@
+If your letter is overweight, it will be returned to you. You can remove some pages, or separate the pages into two or more letters.
+------CorefChainz
+CHAIN2-["your letter" in sentence 1, "it" in sentence 1]
+representative mention: "your letter" in sentence 1
+CHAIN6-["some pages" in sentence 2, "the pages" in sentence 2]
+representative mention: "some pages" in sentence 2
+CHAIN8-["your" in sentence 1, "you" in sentence 1, "You" in sentence 2]
+representative mention: "your" in sentence 1
+If-IN 
+your-PRP$ 
+letter-NN 
+is-VBZ 
+overweight-NN 
+,-, 
+it-PRP 
+will-MD 
+be-VB 
+returned-VBN 
+to-TO 
+you-PRP 
+.-. 
+You-PRP 
+can-MD 
+remove-VB 
+some-DT 
+pages-NNS 
+,-, 
+or-CC 
+separate-VB 
+the-DT 
+pages-NNS 
+into-IN 
+two-CD 
+or-CC 
+more-JJR 
+letters-NNS 
+.-. 
+ROOT 	-> S 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> letter
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NN 	-> overweight
+					 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> it
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> returned
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> PRP 	-> you
+			 	-> . 	-> .
+					 	-> NP 	-> PRP 	-> You
+		 	-> VP 	-> MD 	-> can
+	 	-> VP 	-> VP 	-> VB 	-> remove
+	 	-> NP 	-> DT 	-> some
+	 	-> NNS 	-> pages
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VB 	-> separate
+	 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> pages
+		 	-> PP 	-> IN 	-> into
+	 	-> NP 	-> QP 	-> CD 	-> two
+	 	-> CC 	-> or
+	 	-> JJR 	-> more
+		 	-> NNS 	-> letters
+						 	-> . 	-> .
+			
+Dependensee repr
+mark(overweight-5, If-1)
+nmod:poss(letter-3, your-2)
+nsubj(overweight-5, letter-3)
+cop(overweight-5, is-4)
+advcl(returned-10, overweight-5)
+nsubjpass(returned-10, it-7)
+aux(returned-10, will-8)
+auxpass(returned-10, be-9)
+dep(remove-16, returned-10)
+case(you-12, to-11)
+nmod:to(returned-10, you-12)
+nsubj(remove-16, You-14)
+nsubj(separate-21, You-14)
+aux(remove-16, can-15)
+root(ROOT-0, remove-16)
+det(pages-18, some-17)
+dobj(remove-16, pages-18)
+cc(remove-16, or-20)
+conj:or(remove-16, separate-21)
+det(pages-23, the-22)
+dobj(separate-21, pages-23)
+case(letters-28, into-24)
+nummod(letters-28, two-25)
+cc(two-25, or-26)
+conj:or(two-25, more-27)
+nummod(letters-28, more-27)
+nmod:into(separate-21, letters-28)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, returned-10)
+mark(overweight-5, If-1)
+nmod:poss(letter-3, your-2)
+nsubj(overweight-5, letter-3)
+cop(overweight-5, is-4)
+advcl:if(returned-10, overweight-5)
+punct(returned-10, ,-6)
+nsubjpass(returned-10, it-7)
+aux(returned-10, will-8)
+auxpass(returned-10, be-9)
+case(you-12, to-11)
+nmod:to(returned-10, you-12)
+punct(returned-10, .-13)
+---
+qqroot(ROOT-0, returned-10)
+mark(overweight-5, If-1)
+nmod:poss(letter-3, your-2)
+nsubj(overweight-5, letter-3)
+cop(overweight-5, is-4)
+advcl:if(returned-10, overweight-5)
+punct(returned-10, ,-6)
+nsubjpass(returned-10, it-7)
+aux(returned-10, will-8)
+auxpass(returned-10, be-9)
+case(you-12, to-11)
+nmod:to(returned-10, you-12)
+punct(returned-10, .-13)
+root(ROOT-0, remove-3)
+nsubj(remove-3, You-1)
+nsubj(separate-8, You-1)
+aux(remove-3, can-2)
+det(pages-5, some-4)
+dobj(remove-3, pages-5)
+punct(remove-3, ,-6)
+cc(remove-3, or-7)
+conj:or(remove-3, separate-8)
+det(pages-10, the-9)
+dobj(separate-8, pages-10)
+case(letters-15, into-11)
+nummod(letters-15, two-12)
+cc(two-12, or-13)
+conj:or(two-12, more-14)
+nummod(letters-15, more-14)
+nmod:into(separate-8, letters-15)
+punct(remove-3, .-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[16, 20] [?1, ?2, You1, it7, letter3, letters15, more14, overweight5, pages10, pages5, remove3, returned10, separate8, two12, you12, your2]
+separate8-or->remove3
+You1-==->your2
+letters15-into->separate8
+your2-poss->letter3
+You1- ->separate8
+overweight5-if->returned10
+?1-==->overweight5
+You1-  : can ->remove3
+it7-  : will  : be ->returned10
+more14- ->letters15
+more14-or->two12
+you12-to->returned10
+?1-the->pages10
+?2-some->pages5
+two12- ->letters15
+it7-==->letter3
+?1- ->separate8
+letter3-  : If  : is ->overweight5
+you12-==->your2
+?2- ->remove3
+
+[remove3
+	(<-or-separate8
+		(<-into-letters15(<- -two12<-or-more14)<- -*more14)
+		(<- -?1)
+		<- -^You1)
+	(<- -?2)
+	<-  : can -You1;
+returned10
+	(<-if-overweight5
+		(<-==-*?1)
+		<-  : If  : is -letter3(<-poss-your2(<-==-*You1)<-==-you12)<-==-it7)
+	(<-  : will  : be -*it7)
+	<-to-*you12;
+pages5<-some-*?2;
+pages10<-the-*?1]

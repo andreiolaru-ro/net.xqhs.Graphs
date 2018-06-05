@@ -1,0 +1,106 @@
+The phone must be listed with the phone company in the person's name making the request.
+------CorefChainz
+The-DT 
+phone-NN 
+must-MD 
+be-VB 
+listed-VBN 
+with-IN 
+the-DT 
+phone-NN 
+company-NN 
+in-IN 
+the-DT 
+person-NN 
+'s-POS 
+name-NN 
+making-VBG 
+the-DT 
+request-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> phone
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> listed
+	 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> phone
+	 	-> NN 	-> company
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> person
+	 	-> POS 	-> 's
+		 	-> NN 	-> name
+					 	-> S 	-> VP 	-> VBG 	-> making
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> request
+							 	-> . 	-> .
+			
+Dependensee repr
+det(phone-2, The-1)
+nsubjpass(listed-5, phone-2)
+aux(listed-5, must-3)
+auxpass(listed-5, be-4)
+root(ROOT-0, listed-5)
+case(company-9, with-6)
+det(company-9, the-7)
+compound(company-9, phone-8)
+nmod:with(listed-5, company-9)
+case(name-14, in-10)
+det(person-12, the-11)
+nmod:poss(name-14, person-12)
+case(person-12, 's-13)
+nmod:in(company-9, name-14)
+xcomp(listed-5, making-15)
+det(request-17, the-16)
+dobj(making-15, request-17)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, listed-5)
+det(phone-2, The-1)
+nsubjpass(listed-5, phone-2)
+aux(listed-5, must-3)
+auxpass(listed-5, be-4)
+case(company-9, with-6)
+det(company-9, the-7)
+compound(company-9, phone-8)
+nmod:with(listed-5, company-9)
+case(name-14, in-10)
+det(person-12, the-11)
+nmod:poss(name-14, person-12)
+case(person-12, 's-13)
+nmod:in(listed-5, name-14)
+acl(name-14, making-15)
+det(request-17, the-16)
+dobj(making-15, request-17)
+punct(listed-5, .-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[12, 11] [?1, ?2, ?3, ?4, company9, listed5, making15, name14, person12, phone8, phone2, request17]
+?3- ->making15
+?4-  : must  : be ->listed5
+?4-The->phone2
+?2-poss : 's ->name14
+name14-in->listed5
+?2-the->person12
+?1-with->listed5
+?1-the->company9
+?3-the->request17
+making15- ->name14
+phone8- ->?1
+
+[listed5
+	(<-in-name14
+		(<- -making15<- -?3)
+		<-poss : 's -?2)
+	(<-with-?1<- -phone8)
+	<-  : must  : be -?4;
+company9<-the-*?1;
+phone2<-The-*?4;
+person12<-the-*?2;
+request17<-the-*?3]

@@ -1,0 +1,163 @@
+Absolute sobriety will be required of all visitors. Visitors suspected of being under the influence of an intoxicant or drugs will not be allowed to visit.
+------CorefChainz
+Absolute-NNP 
+sobriety-RB 
+will-MD 
+be-VB 
+required-VBN 
+of-IN 
+all-PDT 
+visitors-NNP 
+.-. 
+Visitors-NNS 
+suspected-VBN 
+of-IN 
+being-VBG 
+under-IN 
+the-DT 
+influence-NN 
+of-IN 
+an-DT 
+intoxicant-NN 
+or-CC 
+drugs-NNS 
+will-MD 
+not-RB 
+be-VB 
+allowed-VBN 
+to-TO 
+visit-VB 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> Absolute
+		 	-> ADVP 	-> RB 	-> sobriety
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> required
+	 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> PDT 	-> all
+	 	-> NP 	-> NP 	-> NNP 	-> visitors
+	 	-> . 	-> .
+	 	-> NNS 	-> Visitors
+		 	-> VP 	-> VBN 	-> suspected
+	 	-> PP 	-> IN 	-> of
+	 	-> S 	-> VP 	-> VBG 	-> being
+	 	-> PP 	-> IN 	-> under
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> influence
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> intoxicant
+										 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> NNS 	-> drugs
+		 	-> SBAR 	-> S 	-> VP 	-> MD 	-> will
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> allowed
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> visit
+															 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(required-5, Absolute-1)
+advmod(required-5, sobriety-2)
+aux(required-5, will-3)
+auxpass(required-5, be-4)
+root(ROOT-0, required-5)
+case(Visitors-10, of-6)
+dep(Visitors-10, all-7)
+compound(Visitors-10, visitors-8)
+nmod:of(required-5, Visitors-10)
+acl(Visitors-10, suspected-11)
+mark(influence-16, of-12)
+cop(influence-16, being-13)
+case(influence-16, under-14)
+det(influence-16, the-15)
+advcl(suspected-11, influence-16)
+case(intoxicant-19, of-17)
+det(intoxicant-19, an-18)
+nmod:of(influence-16, intoxicant-19)
+cc(Visitors-10, or-20)
+nmod:of(required-5, drugs-21)
+conj:or(Visitors-10, drugs-21)
+aux(allowed-25, will-22)
+neg(allowed-25, not-23)
+auxpass(allowed-25, be-24)
+acl:relcl(drugs-21, allowed-25)
+mark(visit-27, to-26)
+xcomp(allowed-25, visit-27)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, required-5)
+amod(sobriety-2, Absolute-1)
+nsubjpass(required-5, sobriety-2)
+aux(required-5, will-3)
+auxpass(required-5, be-4)
+case(visitors-8, of-6)
+det(visitors-8, all-7)
+nmod:of(required-5, visitors-8)
+punct(required-5, .-9)
+---
+qqroot(ROOT-0, required-5)
+amod(sobriety-2, Absolute-1)
+nsubjpass(required-5, sobriety-2)
+aux(required-5, will-3)
+auxpass(required-5, be-4)
+case(visitors-8, of-6)
+det(visitors-8, all-7)
+nmod:of(required-5, visitors-8)
+punct(required-5, .-9)
+root(ROOT-0, allowed-16)
+nsubjpass(allowed-16, Visitors-1)
+nsubj:xsubj(visit-18, Visitors-1)
+acl(Visitors-1, suspected-2)
+mark(influence-7, of-3)
+cop(influence-7, being-4)
+case(influence-7, under-5)
+det(influence-7, the-6)
+advcl:under(suspected-2, influence-7)
+case(intoxicant-10, of-8)
+det(intoxicant-10, an-9)
+nmod:of(influence-7, intoxicant-10)
+cc(intoxicant-10, or-11)
+nmod:of(influence-7, drugs-12)
+conj:or(intoxicant-10, drugs-12)
+aux(allowed-16, will-13)
+neg(allowed-16, not-14)
+auxpass(allowed-16, be-15)
+mark(visit-18, to-17)
+xcomp(allowed-16, visit-18)
+punct(allowed-16, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[15, 15] [?1, ?2, ?3, Absolute1, Visitors1, allowed16, drugs12, influence7, intoxicant10, not14, required5, sobriety2, suspected2, visit18, visitors8]
+?3-all->visitors8
+Absolute1- ->sobriety2
+sobriety2-  : will  : be ->required5
+Visitors1- ->visit18
+suspected2- ->Visitors1
+?2-under : being ->suspected2
+Visitors1- ->allowed16
+drugs12-or->?1
+?1-of->?2
+drugs12-of->?2
+?2-the->influence7
+visit18-  : to ->allowed16
+?3-of->required5
+?1-an->intoxicant10
+not14-  : will  : be ->allowed16
+
+[allowed16
+	(<-  : to -visit18<- -Visitors1<- -suspected2<-under : being -?2(<-of-?1<-or-drugs12)<-of-*drugs12)
+	(<- -*Visitors1)
+	<-  : will  : be -not14;
+required5
+	(<-  : will  : be -sobriety2<- -Absolute1)
+	<-of-?3;
+visitors8<-all-*?3;
+influence7<-the-*?2;
+intoxicant10<-an-*?1]

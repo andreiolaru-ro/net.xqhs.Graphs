@@ -1,0 +1,60 @@
+Inmates will wake up when breakfast is served.
+------CorefChainz
+Inmates-NNS 
+will-MD 
+wake-VB 
+up-RP 
+when-WRB 
+breakfast-NN 
+is-VBZ 
+served-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> wake
+	 	-> PRT 	-> RP 	-> up
+		 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> NP 	-> NN 	-> breakfast
+		 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBN 	-> served
+							 	-> . 	-> .
+			
+Dependensee repr
+nsubj(wake-3, Inmates-1)
+aux(wake-3, will-2)
+root(ROOT-0, wake-3)
+compound:prt(wake-3, up-4)
+advmod(served-8, when-5)
+nsubjpass(served-8, breakfast-6)
+auxpass(served-8, is-7)
+advcl(wake-3, served-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, wake-3)
+nsubj(wake-3, Inmates-1)
+aux(wake-3, will-2)
+compound:prt(wake-3, up-4)
+advmod(served-8, when-5)
+nsubjpass(served-8, breakfast-6)
+auxpass(served-8, is-7)
+advcl(wake-3, served-8)
+punct(wake-3, .-9)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[6, 5] [Inmates1, breakfast6, served8, up4, wake3, when5]
+breakfast6-  : is ->served8
+served8- ->wake3
+when5- ->served8
+up4-prt->wake3
+Inmates1-  : will ->wake3
+
+[wake3
+	(<- -served8
+		(<-  : is -breakfast6)
+		<- -when5)
+	(<-  : will -Inmates1)
+	<-prt-up4]

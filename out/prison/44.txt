@@ -1,0 +1,195 @@
+If you have a medical emergency, or feel your medical condition cannot wait to see the nurse on the nurse’s next visit, you should notify the jail staff immediately.
+------CorefChainz
+CHAIN7-["you" in sentence 1, "your" in sentence 1, "you" in sentence 1]
+representative mention: "you" in sentence 1
+If-IN 
+you-PRP 
+have-VBP 
+a-DT 
+medical-JJ 
+emergency-NN 
+,-, 
+or-CC 
+feel-VBP 
+your-PRP$ 
+medical-JJ 
+condition-NN 
+can-MD 
+not-RB 
+wait-VB 
+to-TO 
+see-VB 
+the-DT 
+nurse-NN 
+on-IN 
+the-DT 
+nurse-NN 
+'s-POS 
+next-JJ 
+visit-NN 
+,-, 
+you-PRP 
+should-MD 
+notify-VB 
+the-DT 
+jail-NN 
+staff-NN 
+immediately-RB 
+.-. 
+ROOT 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VP 	-> VBP 	-> have
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> medical
+	 	-> NN 	-> emergency
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VBP 	-> feel
+	 	-> SBAR 	-> S 	-> NP 	-> PRP$ 	-> your
+	 	-> JJ 	-> medical
+	 	-> NN 	-> condition
+		 	-> VP 	-> MD 	-> can
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> wait
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> see
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> nurse
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> nurse
+	 	-> POS 	-> 's
+		 	-> JJ 	-> next
+	 	-> NN 	-> visit
+														 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> MD 	-> should
+	 	-> VP 	-> VB 	-> notify
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> staff
+		 	-> ADVP 	-> RB 	-> immediately
+				 	-> . 	-> .
+			
+Dependensee repr
+mark(have-3, If-1)
+nsubj(have-3, you-2)
+nsubj(feel-9, you-2)
+advcl(notify-29, have-3)
+det(emergency-6, a-4)
+amod(emergency-6, medical-5)
+dobj(have-3, emergency-6)
+cc(have-3, or-8)
+conj:or(have-3, feel-9)
+advcl(notify-29, feel-9)
+nmod:poss(condition-12, your-10)
+amod(condition-12, medical-11)
+nsubj(wait-15, condition-12)
+nsubj:xsubj(see-17, condition-12)
+aux(wait-15, can-13)
+neg(wait-15, not-14)
+ccomp(feel-9, wait-15)
+mark(see-17, to-16)
+xcomp(wait-15, see-17)
+det(nurse-19, the-18)
+dobj(see-17, nurse-19)
+case(visit-25, on-20)
+det(nurse-22, the-21)
+nmod:poss(visit-25, nurse-22)
+case(nurse-22, 's-23)
+amod(visit-25, next-24)
+nmod:on(see-17, visit-25)
+nsubj(notify-29, you-27)
+aux(notify-29, should-28)
+root(ROOT-0, notify-29)
+det(staff-32, the-30)
+compound(staff-32, jail-31)
+dobj(notify-29, staff-32)
+advmod(notify-29, immediately-33)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, notify-29)
+mark(have-3, If-1)
+nsubj(have-3, you-2)
+nsubj(feel-9, you-2)
+advcl:if(notify-29, have-3)
+det(emergency-6, a-4)
+amod(emergency-6, medical-5)
+dobj(have-3, emergency-6)
+punct(have-3, ,-7)
+cc(have-3, or-8)
+conj:or(have-3, feel-9)
+advcl:if(notify-29, feel-9)
+nmod:poss(condition-12, your-10)
+amod(condition-12, medical-11)
+nsubj(wait-15, condition-12)
+nsubj:xsubj(see-17, condition-12)
+aux(wait-15, can-13)
+neg(wait-15, not-14)
+ccomp(feel-9, wait-15)
+mark(see-17, to-16)
+xcomp(wait-15, see-17)
+det(nurse-19, the-18)
+dobj(see-17, nurse-19)
+case(visit-25, on-20)
+det(nurse-22, the-21)
+nmod:poss(visit-25, nurse-22)
+case(nurse-22, 's-23)
+amod(visit-25, next-24)
+nmod:on(nurse-19, visit-25)
+punct(notify-29, ,-26)
+nsubj(notify-29, you-27)
+aux(notify-29, should-28)
+det(staff-32, the-30)
+compound(staff-32, jail-31)
+dobj(notify-29, staff-32)
+advmod(notify-29, immediately-33)
+punct(notify-29, .-34)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[24, 27] [?1, ?2, ?3, ?4, condition12, emergency6, feel9, have3, immediately33, jail31, medical5, medical11, next24, not14, notify29, nurse22, nurse19, see17, staff32, visit25, wait15, you27, you2, your10]
+?1-the->nurse22
+?3- ->have3
+?1-poss : 's ->visit25
+condition12-  : can  : can ->wait15
+your10-poss->condition12
+visit25-on->?2
+?2-the->nurse19
+have3-if->notify29
+?2- ->see17
+medical11- ->condition12
+?4-the->staff32
+you2- ->feel9
+see17-  : to ->wait15
+medical5- ->?3
+condition12- ->see17
+feel9-or->have3
+you27-  : should ->notify29
+?3-a->emergency6
+your10-==->you2
+next24- ->visit25
+not14- ->wait15
+immediately33- ->notify29
+wait15- ->feel9
+feel9-if->notify29
+jail31- ->?4
+you2-  : If ->have3
+?4- ->notify29
+
+[notify29
+	(<-if-have3
+		(<-or-feel9(<- -wait15(<-  : to -see17(<- -?2<-on-visit25(<-poss : 's -?1)<- -next24)<- -condition12(<- -medical11)<-poss-your10)(<-  : can  : can -*condition12)<- -not14)<- -you2<-==-*your10)
+		(<-  : If -*you2)
+		<- -?3<- -medical5)
+	(<-if-*feel9)
+	(<- -?4<- -jail31)
+	(<- -immediately33)
+	<-  : should -you27;
+staff32<-the-*?4;
+emergency6<-a-*?3;
+nurse22<-the-*?1;
+nurse19<-the-*?2]

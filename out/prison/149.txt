@@ -1,0 +1,135 @@
+ALL MONIES MUST BE DEPOSITED IN THE INMATE’S CANTEEN ACCOUNT. It will not be placed in property envelopes.
+------CorefChainz
+CHAIN5-["THE INMATE 'S CANTEEN ACCOUNT" in sentence 1, "It" in sentence 2]
+representative mention: "THE INMATE 'S CANTEEN ACCOUNT" in sentence 1
+ALL-NNP 
+MONIES-NNP 
+MUST-NNP 
+BE-NNP 
+DEPOSITED-NNP 
+IN-IN 
+THE-DT 
+INMATE-NNP 
+'S-VBZ 
+CANTEEN-NNP 
+ACCOUNT-NNP 
+.-. 
+It-PRP 
+will-MD 
+not-RB 
+be-VB 
+placed-VBN 
+in-IN 
+property-NN 
+envelopes-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NNP 	-> ALL
+	 	-> NNP 	-> MONIES
+	 	-> NNP 	-> MUST
+	 	-> NNP 	-> BE
+	 	-> NNP 	-> DEPOSITED
+		 	-> PP 	-> IN 	-> IN
+	 	-> NP 	-> DT 	-> THE
+	 	-> NNP 	-> INMATE
+				 	-> VP 	-> VBZ 	-> 'S
+	 	-> NP 	-> NP 	-> NNP 	-> CANTEEN
+	 	-> NNP 	-> ACCOUNT
+	 	-> . 	-> .
+		 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> It
+		 	-> VP 	-> MD 	-> will
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> placed
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NN 	-> property
+	 	-> NNS 	-> envelopes
+										 	-> . 	-> .
+			
+Dependensee repr
+compound(DEPOSITED-5, ALL-1)
+compound(DEPOSITED-5, MONIES-2)
+compound(DEPOSITED-5, MUST-3)
+compound(DEPOSITED-5, BE-4)
+nsubj(ACCOUNT-11, DEPOSITED-5)
+case(INMATE-8, IN-6)
+det(INMATE-8, THE-7)
+nmod:in(DEPOSITED-5, INMATE-8)
+cop(ACCOUNT-11, 'S-9)
+compound(ACCOUNT-11, CANTEEN-10)
+root(ROOT-0, ACCOUNT-11)
+nsubjpass(placed-17, It-13)
+aux(placed-17, will-14)
+neg(placed-17, not-15)
+auxpass(placed-17, be-16)
+acl:relcl(ACCOUNT-11, placed-17)
+case(envelopes-20, in-18)
+compound(envelopes-20, property-19)
+nmod:in(placed-17, envelopes-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, MUST-3)
+compound(MONIES-2, ALL-1)
+nsubj(MUST-3, MONIES-2)
+xcomp(MUST-3, BE-4)
+dobj(BE-4, DEPOSITED-5)
+case(ACCOUNT-11, IN-6)
+det(INMATE-8, THE-7)
+nmod:poss(ACCOUNT-11, INMATE-8)
+case(INMATE-8, 'S-9)
+compound(ACCOUNT-11, CANTEEN-10)
+nmod:in(BE-4, ACCOUNT-11)
+punct(MUST-3, .-12)
+---
+qqroot(ROOT-0, MUST-3)
+compound(MONIES-2, ALL-1)
+nsubj(MUST-3, MONIES-2)
+xcomp(MUST-3, BE-4)
+dobj(BE-4, DEPOSITED-5)
+case(ACCOUNT-11, IN-6)
+det(INMATE-8, THE-7)
+nmod:poss(ACCOUNT-11, INMATE-8)
+case(INMATE-8, 'S-9)
+compound(ACCOUNT-11, CANTEEN-10)
+nmod:in(BE-4, ACCOUNT-11)
+punct(MUST-3, .-12)
+root(ROOT-0, placed-5)
+nsubjpass(placed-5, It-1)
+aux(placed-5, will-2)
+neg(placed-5, not-3)
+auxpass(placed-5, be-4)
+case(envelopes-8, in-6)
+compound(envelopes-8, property-7)
+nmod:in(placed-5, envelopes-8)
+punct(placed-5, .-9)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[14, 13] [?1, ACCOUNT11, ALL1, BE4, CANTEEN10, DEPOSITED5, INMATE8, It1, MONIES2, MUST3, envelopes8, not3, placed5, property7]
+envelopes8-in->placed5
+ALL1- ->MONIES2
+ACCOUNT11-in : IN  : IN ->BE4
+?1-poss : 'S ->ACCOUNT11
+BE4- ->MUST3
+property7- ->envelopes8
+MONIES2- ->MUST3
+DEPOSITED5- ->BE4
+It1-  : will  : will ->placed5
+not3-  : be ->placed5
+?1-THE->INMATE8
+It1-==->ACCOUNT11
+CANTEEN10- ->ACCOUNT11
+
+[MUST3
+	(<- -BE4
+		(<-in : IN  : IN -ACCOUNT11(<-poss : 'S -?1)(<- -CANTEEN10)<-==-^It1)
+		<- -DEPOSITED5)
+	<- -MONIES2<- -ALL1;
+placed5
+	(<-in-envelopes8<- -property7)
+	(<-  : will  : will -It1)
+	<-  : be -not3;
+INMATE8<-THE-*?1]

@@ -1,0 +1,253 @@
+If an inmate does not have any money in their canteen account for a 7 day stretch, they will be considered as indigent. They will be given 1 free envelope, and 1 sheet of paper each week.
+------CorefChainz
+CHAIN14-["an inmate" in sentence 1, "their" in sentence 1, "they" in sentence 1, "They" in sentence 2]
+representative mention: "an inmate" in sentence 1
+If-IN 
+an-DT 
+inmate-NN 
+does-VBZ 
+not-RB 
+have-VB 
+any-DT 
+money-NN 
+in-IN 
+their-PRP$ 
+canteen-NN 
+account-NN 
+for-IN 
+a-DT 
+7-CD 
+day-NN 
+stretch-NN 
+,-, 
+they-PRP 
+will-MD 
+be-VB 
+considered-VBN 
+as-IN 
+indigent-NNP 
+.-. 
+They-PRP 
+will-MD 
+be-VB 
+given-VBN 
+1-CD 
+free-JJ 
+envelope-NN 
+,-, 
+and-CC 
+1-CD 
+sheet-NN 
+of-IN 
+paper-NN 
+each-DT 
+week-NN 
+.-. 
+ROOT 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+		 	-> VP 	-> VBZ 	-> does
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> money
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NN 	-> canteen
+	 	-> NN 	-> account
+				 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> DT 	-> a
+	 	-> CD 	-> 7
+	 	-> NN 	-> day
+	 	-> NN 	-> stretch
+							 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> considered
+	 	-> PP 	-> IN 	-> as
+	 	-> NP 	-> NP 	-> NNP 	-> indigent
+	 	-> . 	-> .
+		 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> They
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> given
+	 	-> NP 	-> NP 	-> CD 	-> 1
+	 	-> JJ 	-> free
+	 	-> NN 	-> envelope
+		 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> CD 	-> 1
+	 	-> NN 	-> sheet
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> paper
+					 	-> NP 	-> DT 	-> each
+	 	-> NN 	-> week
+												 	-> . 	-> .
+			
+Dependensee repr
+mark(have-6, If-1)
+det(inmate-3, an-2)
+nsubj(have-6, inmate-3)
+aux(have-6, does-4)
+neg(have-6, not-5)
+advcl(considered-22, have-6)
+det(money-8, any-7)
+dobj(have-6, money-8)
+case(account-12, in-9)
+nmod:poss(account-12, their-10)
+compound(account-12, canteen-11)
+nmod:in(money-8, account-12)
+case(stretch-17, for-13)
+det(stretch-17, a-14)
+nummod(stretch-17, 7-15)
+compound(stretch-17, day-16)
+nmod:for(have-6, stretch-17)
+nsubjpass(considered-22, they-19)
+aux(considered-22, will-20)
+auxpass(considered-22, be-21)
+root(ROOT-0, considered-22)
+case(indigent-24, as-23)
+nmod:as(considered-22, indigent-24)
+nsubjpass(given-29, They-26)
+aux(given-29, will-27)
+auxpass(given-29, be-28)
+acl:relcl(indigent-24, given-29)
+nummod(envelope-32, 1-30)
+amod(envelope-32, free-31)
+dobj(given-29, envelope-32)
+cc(envelope-32, and-34)
+nummod(sheet-36, 1-35)
+dobj(given-29, sheet-36)
+conj:and(envelope-32, sheet-36)
+case(paper-38, of-37)
+nmod:of(sheet-36, paper-38)
+det(week-40, each-39)
+nmod:tmod(given-29, week-40)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, considered-22)
+mark(have-6, If-1)
+det(inmate-3, an-2)
+nsubj(have-6, inmate-3)
+aux(have-6, does-4)
+neg(have-6, not-5)
+advcl:if(considered-22, have-6)
+det(money-8, any-7)
+dobj(have-6, money-8)
+case(account-12, in-9)
+nmod:poss(account-12, their-10)
+compound(account-12, canteen-11)
+nmod:in(have-6, account-12)
+case(stretch-17, for-13)
+det(stretch-17, a-14)
+compound(day-16, 7-15)
+amod(stretch-17, day-16)
+nmod:for(account-12, stretch-17)
+punct(considered-22, ,-18)
+nsubjpass(considered-22, they-19)
+aux(considered-22, will-20)
+auxpass(considered-22, be-21)
+case(indigent-24, as-23)
+nmod:as(considered-22, indigent-24)
+punct(considered-22, .-25)
+---
+qqroot(ROOT-0, considered-22)
+mark(have-6, If-1)
+det(inmate-3, an-2)
+nsubj(have-6, inmate-3)
+aux(have-6, does-4)
+neg(have-6, not-5)
+advcl:if(considered-22, have-6)
+det(money-8, any-7)
+dobj(have-6, money-8)
+case(account-12, in-9)
+nmod:poss(account-12, their-10)
+compound(account-12, canteen-11)
+nmod:in(have-6, account-12)
+case(stretch-17, for-13)
+det(stretch-17, a-14)
+compound(day-16, 7-15)
+amod(stretch-17, day-16)
+nmod:for(account-12, stretch-17)
+punct(considered-22, ,-18)
+nsubjpass(considered-22, they-19)
+aux(considered-22, will-20)
+auxpass(considered-22, be-21)
+case(indigent-24, as-23)
+nmod:as(considered-22, indigent-24)
+punct(considered-22, .-25)
+root(ROOT-0, given-4)
+nsubjpass(given-4, They-1)
+aux(given-4, will-2)
+auxpass(given-4, be-3)
+nummod(envelope-7, 1-5)
+amod(envelope-7, free-6)
+dobj(given-4, envelope-7)
+punct(envelope-7, ,-8)
+cc(envelope-7, and-9)
+nummod(sheet-11, 1-10)
+dobj(given-4, sheet-11)
+conj:and(envelope-7, sheet-11)
+case(paper-13, of-12)
+nmod:of(sheet-11, paper-13)
+det(week-15, each-14)
+nmod:tmod(given-4, week-15)
+punct(given-4, .-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[26, 28] [110, 15, 715, ?1, ?2, ?3, ?4, They1, account12, canteen11, considered22, day16, envelope7, free6, given4, have6, indigent24, inmate3, money8, not5, paper13, sheet11, stretch17, their10, they19, week15]
+account12-in->have6
+day16- ->?1
+?4- ->have6
+?2-each->week15
+?3-  : If  : does  : does ->have6
+sheet11-and->envelope7
+?3-an->inmate3
+their10-==->?3
+they19-==->?3
+?4-any->money8
+their10-poss->account12
+canteen11- ->account12
+?1-a->stretch17
+?2-tmod->given4
+They1-  : will  : be ->given4
+110- ->sheet11
+free6- ->envelope7
+715- ->day16
+paper13-of->sheet11
+they19-  : will  : be ->considered22
+15- ->envelope7
+envelope7- ->given4
+have6-if->considered22
+not5- ->have6
+sheet11- ->given4
+?1-for->account12
+They1-==->?3
+indigent24-as->considered22
+
+[considered22
+	(<-if-have6
+		(<-in-account12(<-for-?1<- -day16<- -715)(<- -canteen11)<-poss-their10)
+		(<-  : If  : does  : does -?3(<-==-*their10)(<-==-they19)<-==-^They1)
+		(<- -?4)
+		<- -not5)
+	(<-  : will  : be -*they19)
+	<-as-indigent24;
+given4
+	(<- -envelope7
+		(<-and-sheet11(<- -110)<-of-paper13)
+		(<- -15)
+		<- -free6)
+	(<- -*sheet11)
+	(<-tmod-?2)
+	<-  : will  : be -They1;
+week15<-each-*?2;
+inmate3<-an-*?3;
+money8<-any-*?4;
+stretch17<-a-*?1]

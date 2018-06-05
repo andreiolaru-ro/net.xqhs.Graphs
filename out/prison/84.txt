@@ -1,0 +1,89 @@
+No prescription drugs will be administered to an inmate unless prescribed by a doctor.
+------CorefChainz
+No-DT 
+prescription-NN 
+drugs-NNS 
+will-MD 
+be-VB 
+administered-VBN 
+to-TO 
+an-DT 
+inmate-NN 
+unless-IN 
+prescribed-VBN 
+by-IN 
+a-DT 
+doctor-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> prescription
+	 	-> NNS 	-> drugs
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> administered
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+			 	-> SBAR 	-> IN 	-> unless
+	 	-> S 	-> VP 	-> VBN 	-> prescribed
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> doctor
+									 	-> . 	-> .
+			
+Dependensee repr
+neg(drugs-3, No-1)
+compound(drugs-3, prescription-2)
+nsubjpass(administered-6, drugs-3)
+aux(administered-6, will-4)
+auxpass(administered-6, be-5)
+root(ROOT-0, administered-6)
+case(inmate-9, to-7)
+det(inmate-9, an-8)
+nmod:to(administered-6, inmate-9)
+mark(prescribed-11, unless-10)
+advcl(administered-6, prescribed-11)
+case(doctor-14, by-12)
+det(doctor-14, a-13)
+nmod:by(prescribed-11, doctor-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, administered-6)
+neg(drugs-3, No-1)
+compound(drugs-3, prescription-2)
+nsubjpass(administered-6, drugs-3)
+aux(administered-6, will-4)
+auxpass(administered-6, be-5)
+case(inmate-9, to-7)
+det(inmate-9, an-8)
+nmod:to(administered-6, inmate-9)
+mark(prescribed-11, unless-10)
+advcl:unless(administered-6, prescribed-11)
+case(doctor-14, by-12)
+det(doctor-14, a-13)
+nmod:by(prescribed-11, doctor-14)
+punct(administered-6, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 8] [?1, ?2, No1, administered6, doctor14, drugs3, inmate9, prescribed11, prescription2]
+?1-by->prescribed11
+drugs3-  : will  : be ->administered6
+prescription2- ->drugs3
+prescribed11-unless->administered6
+No1- ->drugs3
+?2-to->administered6
+?2-an->inmate9
+?1-a->doctor14
+
+[administered6
+	(<-unless-prescribed11<-by-?1)
+	(<-  : will  : be -drugs3
+		(<- -No1)
+		<- -prescription2)
+	<-to-?2;
+inmate9<-an-*?2;
+doctor14<-a-*?1]

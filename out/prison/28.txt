@@ -1,0 +1,149 @@
+DO NOT throw any object in a cell, or day room, or any other place within the confines of the Grant County Jail.
+------CorefChainz
+DO-NNP 
+NOT-NNP 
+throw-VBP 
+any-DT 
+object-NN 
+in-IN 
+a-DT 
+cell-NN 
+,-, 
+or-CC 
+day-NN 
+room-NN 
+,-, 
+or-CC 
+any-DT 
+other-JJ 
+place-NN 
+within-IN 
+the-DT 
+confines-NNS 
+of-IN 
+the-DT 
+Grant-NNP 
+County-NNP 
+Jail-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> DO
+	 	-> NNP 	-> NOT
+		 	-> VP 	-> VBP 	-> throw
+	 	-> NP 	-> NP 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> object
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> cell
+				 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NN 	-> day
+	 	-> NN 	-> room
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> other
+	 	-> NN 	-> place
+		 	-> PP 	-> IN 	-> within
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> confines
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Grant
+	 	-> NNP 	-> County
+	 	-> NN 	-> Jail
+								 	-> . 	-> .
+			
+Dependensee repr
+compound(NOT-2, DO-1)
+nsubj(throw-3, NOT-2)
+root(ROOT-0, throw-3)
+det(object-5, any-4)
+dobj(throw-3, object-5)
+case(cell-8, in-6)
+det(cell-8, a-7)
+nmod:in(object-5, cell-8)
+cc(object-5, or-10)
+compound(room-12, day-11)
+dobj(throw-3, room-12)
+conj:or(object-5, room-12)
+cc(object-5, or-14)
+det(place-17, any-15)
+amod(place-17, other-16)
+dobj(throw-3, place-17)
+conj:or(object-5, place-17)
+case(confines-20, within-18)
+det(confines-20, the-19)
+nmod:within(place-17, confines-20)
+case(Jail-25, of-21)
+det(Jail-25, the-22)
+compound(Jail-25, Grant-23)
+compound(Jail-25, County-24)
+nmod:of(confines-20, Jail-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, throw-3)
+compound(NOT-2, DO-1)
+nsubj(throw-3, NOT-2)
+det(object-5, any-4)
+dobj(throw-3, object-5)
+case(cell-8, in-6)
+det(cell-8, a-7)
+nmod:in(throw-3, cell-8)
+punct(throw-3, ,-9)
+cc(throw-3, or-10)
+compound(room-12, day-11)
+conj:or(throw-3, room-12)
+punct(room-12, ,-13)
+cc(room-12, or-14)
+det(place-17, any-15)
+amod(place-17, other-16)
+conj:or(throw-3, place-17)
+conj:or(room-12, place-17)
+case(confines-20, within-18)
+det(confines-20, the-19)
+nmod:within(place-17, confines-20)
+case(Jail-25, of-21)
+det(Jail-25, the-22)
+compound(Jail-25, Grant-23)
+compound(Jail-25, County-24)
+nmod:of(confines-20, Jail-25)
+punct(throw-3, .-26)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[18, 18] [?1, ?2, ?3, ?4, ?5, County24, DO1, Grant23, Jail25, NOT2, cell8, confines20, day11, object5, other16, place17, room12, throw3]
+?1-within->?5
+DO1- ->NOT2
+Grant23- ->?2
+day11- ->room12
+County24- ->?2
+?5-or->throw3
+?2-of->?1
+?2-the->Jail25
+room12-or->throw3
+?3-a->cell8
+NOT2- ->throw3
+?5-any->place17
+other16- ->?5
+?4- ->throw3
+?3-in->throw3
+?5-or->room12
+?1-the->confines20
+?4-any->object5
+
+[throw3
+	(<-or-room12
+		(<-or-?5(<-within-?1<-of-?2(<- -County24)<- -Grant23)<- -other16)
+		<- -day11)
+	(<-or-*?5)
+	(<- -NOT2<- -DO1)
+	(<-in-?3)
+	<- -?4;
+cell8<-a-*?3;
+object5<-any-*?4;
+Jail25<-the-*?2;
+confines20<-the-*?1;
+place17<-any-*?5]

@@ -1,0 +1,137 @@
+A special phone request must be made in writing, to the Jail Administrator, to call individuals that do not accept collect calls.
+------CorefChainz
+A-DT 
+special-JJ 
+phone-NN 
+request-NN 
+must-MD 
+be-VB 
+made-VBN 
+in-IN 
+writing-VBG 
+,-, 
+to-TO 
+the-DT 
+Jail-NNP 
+Administrator-NNP 
+,-, 
+to-TO 
+call-VB 
+individuals-NNS 
+that-WDT 
+do-VBP 
+not-RB 
+accept-VB 
+collect-VB 
+calls-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> A
+	 	-> JJ 	-> special
+	 	-> NN 	-> phone
+	 	-> NN 	-> request
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> made
+	 	-> PP 	-> IN 	-> in
+	 	-> S 	-> VP 	-> VBG 	-> writing
+	 	-> , 	-> ,
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NNP 	-> Jail
+	 	-> NNP 	-> Administrator
+			 	-> , 	-> ,
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> call
+	 	-> NP 	-> NP 	-> NNS 	-> individuals
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> VP 	-> VBP 	-> do
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> accept
+	 	-> VP 	-> VB 	-> collect
+	 	-> NP 	-> NNS 	-> calls
+																	 	-> . 	-> .
+			
+Dependensee repr
+det(request-4, A-1)
+amod(request-4, special-2)
+compound(request-4, phone-3)
+nsubjpass(made-7, request-4)
+aux(made-7, must-5)
+auxpass(made-7, be-6)
+root(ROOT-0, made-7)
+mark(writing-9, in-8)
+advcl(made-7, writing-9)
+case(Administrator-14, to-11)
+det(Administrator-14, the-12)
+compound(Administrator-14, Jail-13)
+nmod:to(writing-9, Administrator-14)
+mark(call-17, to-16)
+xcomp(writing-9, call-17)
+dobj(call-17, individuals-18)
+nsubj(accept-22, individuals-18)
+ref(individuals-18, that-19)
+aux(accept-22, do-20)
+neg(accept-22, not-21)
+acl:relcl(individuals-18, accept-22)
+xcomp(accept-22, collect-23)
+dobj(collect-23, calls-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, made-7)
+det(request-4, A-1)
+amod(request-4, special-2)
+compound(request-4, phone-3)
+nsubjpass(made-7, request-4)
+aux(made-7, must-5)
+auxpass(made-7, be-6)
+mark(writing-9, in-8)
+advcl:in(made-7, writing-9)
+punct(writing-9, ,-10)
+case(Administrator-14, to-11)
+det(Administrator-14, the-12)
+compound(Administrator-14, Jail-13)
+nmod:to(writing-9, Administrator-14)
+punct(writing-9, ,-15)
+mark(call-17, to-16)
+advcl:to(writing-9, call-17)
+dobj(call-17, individuals-18)
+nsubj(accept-22, individuals-18)
+ref(individuals-18, that-19)
+aux(accept-22, do-20)
+neg(accept-22, not-21)
+acl:relcl(individuals-18, accept-22)
+ccomp(accept-22, collect-23)
+dobj(collect-23, calls-24)
+punct(made-7, .-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[15, 15] [?1, ?2, Administrator14, Jail13, accept22, call17, calls24, collect23, individuals18, made7, not21, phone3, request4, special2, writing9]
+call17-to->writing9
+Jail13- ->?1
+special2- ->?2
+collect23- ->accept22
+not21-  : do ->accept22
+phone3- ->?2
+individuals18-  : that ->call17
+accept22- ->individuals18
+calls24- ->collect23
+writing9-in->made7
+?1-the->Administrator14
+?1-to->writing9
+individuals18- ->accept22
+?2-  : must  : be ->made7
+?2-A->request4
+
+[made7
+	(<-in-writing9
+		(<-to-call17<-  : that -individuals18<- -accept22(<- -*individuals18)(<- -collect23<- -calls24)<-  : do -not21)
+		<-to-?1<- -Jail13)
+	<-  : must  : be -?2
+		(<- -phone3)
+		<- -special2;
+request4<-A-*?2;
+Administrator14<-the-*?1]

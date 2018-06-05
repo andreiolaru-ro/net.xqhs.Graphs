@@ -1,0 +1,109 @@
+No inmate shall use or consume any alcoholic beverages, marijuana, or any controlled substance.
+------CorefChainz
+No-DT 
+inmate-NN 
+shall-MD 
+use-VB 
+or-CC 
+consume-VB 
+any-DT 
+alcoholic-JJ 
+beverages-NNS 
+,-, 
+marijuana-NN 
+,-, 
+or-CC 
+any-DT 
+controlled-JJ 
+substance-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> use
+	 	-> CC 	-> or
+	 	-> VB 	-> consume
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> alcoholic
+	 	-> NNS 	-> beverages
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> marijuana
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> controlled
+	 	-> NN 	-> substance
+					 	-> . 	-> .
+			
+Dependensee repr
+neg(inmate-2, No-1)
+nsubj(use-4, inmate-2)
+nsubj(consume-6, inmate-2)
+aux(use-4, shall-3)
+root(ROOT-0, use-4)
+cc(use-4, or-5)
+conj:or(use-4, consume-6)
+det(beverages-9, any-7)
+amod(beverages-9, alcoholic-8)
+dobj(use-4, beverages-9)
+dobj(use-4, marijuana-11)
+conj:or(beverages-9, marijuana-11)
+cc(beverages-9, or-13)
+det(substance-16, any-14)
+amod(substance-16, controlled-15)
+dobj(use-4, substance-16)
+conj:or(beverages-9, substance-16)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, use-4)
+neg(inmate-2, No-1)
+nsubj(use-4, inmate-2)
+nsubj(consume-6, inmate-2)
+aux(use-4, shall-3)
+cc(use-4, or-5)
+conj:or(use-4, consume-6)
+det(beverages-9, any-7)
+amod(beverages-9, alcoholic-8)
+dobj(use-4, beverages-9)
+punct(beverages-9, ,-10)
+dobj(use-4, marijuana-11)
+conj:or(beverages-9, marijuana-11)
+punct(beverages-9, ,-12)
+cc(beverages-9, or-13)
+det(substance-16, any-14)
+amod(substance-16, controlled-15)
+dobj(use-4, substance-16)
+conj:or(beverages-9, substance-16)
+punct(use-4, .-17)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[11, 13] [?1, ?2, No1, alcoholic8, beverages9, consume6, controlled15, inmate2, marijuana11, substance16, use4]
+?1-any->beverages9
+marijuana11- ->use4
+inmate2-  : shall ->use4
+?2-or->?1
+?2- ->use4
+No1- ->inmate2
+consume6-or->use4
+?1- ->use4
+controlled15- ->?2
+inmate2- ->consume6
+alcoholic8- ->?1
+?2-any->substance16
+marijuana11-or->?1
+
+[beverages9<-any-?1
+	(<- -alcoholic8)
+	(<-or-^marijuana11)
+	<-or-^?2;
+use4
+	(<- -*?1)
+	(<-or-consume6<- -inmate2<- -No1)
+	(<-  : shall -*inmate2)
+	(<- -?2<- -controlled15)
+	<- -marijuana11;
+substance16<-any-*?2]

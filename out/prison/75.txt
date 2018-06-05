@@ -1,0 +1,84 @@
+Calls of a threatening nature will result in the phone number being blocked.
+------CorefChainz
+Calls-NNS 
+of-IN 
+a-DT 
+threatening-JJ 
+nature-NN 
+will-MD 
+result-VB 
+in-IN 
+the-DT 
+phone-NN 
+number-NN 
+being-VBG 
+blocked-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NNS 	-> Calls
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> threatening
+	 	-> NN 	-> nature
+				 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> result
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> phone
+	 	-> NN 	-> number
+		 	-> VP 	-> VBG 	-> being
+	 	-> VP 	-> VBN 	-> blocked
+							 	-> . 	-> .
+			
+Dependensee repr
+nsubj(result-7, Calls-1)
+case(nature-5, of-2)
+det(nature-5, a-3)
+amod(nature-5, threatening-4)
+nmod:of(Calls-1, nature-5)
+aux(result-7, will-6)
+root(ROOT-0, result-7)
+case(number-11, in-8)
+det(number-11, the-9)
+compound(number-11, phone-10)
+nmod:in(result-7, number-11)
+auxpass(blocked-13, being-12)
+acl(number-11, blocked-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, result-7)
+nsubj(result-7, Calls-1)
+case(nature-5, of-2)
+det(nature-5, a-3)
+amod(nature-5, threatening-4)
+nmod:of(Calls-1, nature-5)
+aux(result-7, will-6)
+case(number-11, in-8)
+det(number-11, the-9)
+compound(number-11, phone-10)
+nmod:in(result-7, number-11)
+auxpass(blocked-13, being-12)
+acl(number-11, blocked-13)
+punct(result-7, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 8] [?1, ?2, Calls1, blocked13, nature5, number11, phone10, result7, threatening4]
+?1-of->Calls1
+phone10- ->?2
+blocked13-  : being ->?2
+?2-in->result7
+?2-the->number11
+Calls1-  : will  : will ->result7
+?1-a->nature5
+threatening4- ->?1
+
+[result7
+	(<-  : will  : will -Calls1<-of-?1<- -threatening4)
+	<-in-?2
+		(<-  : being -blocked13)
+		<- -phone10;
+number11<-the-*?2;
+nature5<-a-*?1]

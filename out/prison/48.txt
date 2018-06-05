@@ -1,0 +1,137 @@
+ALL INMATES will conduct yourself in an orderly manner, and show RESPECT for the rights of other inmates and their property.
+------CorefChainz
+CHAIN6-["other inmates" in sentence 1, "their" in sentence 1]
+representative mention: "other inmates" in sentence 1
+ALL-NNP 
+INMATES-NNP 
+will-MD 
+conduct-VB 
+yourself-PRP 
+in-IN 
+an-DT 
+orderly-JJ 
+manner-NN 
+,-, 
+and-CC 
+show-VB 
+RESPECT-NNP 
+for-IN 
+the-DT 
+rights-NNS 
+of-IN 
+other-JJ 
+inmates-NNS 
+and-CC 
+their-PRP$ 
+property-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> ALL
+	 	-> NNP 	-> INMATES
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VP 	-> VB 	-> conduct
+	 	-> NP 	-> PRP 	-> yourself
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> an
+	 	-> JJ 	-> orderly
+	 	-> NN 	-> manner
+				 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> VP 	-> VB 	-> show
+	 	-> NP 	-> NP 	-> NNP 	-> RESPECT
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> rights
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> JJ 	-> other
+	 	-> NNS 	-> inmates
+		 	-> CC 	-> and
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NN 	-> property
+										 	-> . 	-> .
+			
+Dependensee repr
+compound(INMATES-2, ALL-1)
+nsubj(conduct-4, INMATES-2)
+nsubj(show-12, INMATES-2)
+aux(conduct-4, will-3)
+root(ROOT-0, conduct-4)
+dobj(conduct-4, yourself-5)
+case(manner-9, in-6)
+det(manner-9, an-7)
+amod(manner-9, orderly-8)
+nmod:in(conduct-4, manner-9)
+cc(conduct-4, and-11)
+conj:and(conduct-4, show-12)
+dobj(show-12, RESPECT-13)
+case(rights-16, for-14)
+det(rights-16, the-15)
+nmod:for(RESPECT-13, rights-16)
+case(inmates-19, of-17)
+amod(inmates-19, other-18)
+nmod:of(rights-16, inmates-19)
+cc(inmates-19, and-20)
+nmod:poss(property-22, their-21)
+nmod:of(rights-16, property-22)
+conj:and(inmates-19, property-22)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, conduct-4)
+compound(INMATES-2, ALL-1)
+nsubj(conduct-4, INMATES-2)
+nsubj(show-12, INMATES-2)
+aux(conduct-4, will-3)
+dobj(conduct-4, yourself-5)
+case(manner-9, in-6)
+det(manner-9, an-7)
+amod(manner-9, orderly-8)
+nmod:in(conduct-4, manner-9)
+punct(conduct-4, ,-10)
+cc(conduct-4, and-11)
+conj:and(conduct-4, show-12)
+dobj(show-12, RESPECT-13)
+case(rights-16, for-14)
+det(rights-16, the-15)
+nmod:for(show-12, rights-16)
+case(inmates-19, of-17)
+amod(inmates-19, other-18)
+nmod:of(rights-16, inmates-19)
+cc(inmates-19, and-20)
+nmod:poss(property-22, their-21)
+nmod:of(rights-16, property-22)
+conj:and(inmates-19, property-22)
+punct(conduct-4, .-23)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[15, 17] [?1, ?2, ALL1, INMATES2, RESPECT13, conduct4, inmates19, manner9, orderly8, other18, property22, rights16, show12, their21, yourself5]
+other18- ->inmates19
+their21-poss->property22
+?2-the->rights16
+show12-and->conduct4
+?1-in->conduct4
+inmates19-of->?2
+RESPECT13- ->show12
+yourself5- ->conduct4
+?1-an->manner9
+their21-==->inmates19
+property22-of->?2
+property22-and->inmates19
+orderly8- ->?1
+INMATES2- ->show12
+?2-for->show12
+INMATES2-  : will ->conduct4
+ALL1- ->INMATES2
+
+[conduct4
+	(<-and-show12
+		(<-for-?2(<-of-inmates19(<-and-property22<-poss-their21)(<-==-*their21)<- -other18)<-of-*property22)
+		(<- -INMATES2<- -ALL1)
+		<- -RESPECT13)
+	(<-  : will -*INMATES2)
+	(<-in-?1<- -orderly8)
+	<- -yourself5;
+manner9<-an-*?1;
+rights16<-the-*?2]

@@ -117,7 +117,7 @@ public class PatternInsertGUI {
 					// TODO: Atentie Carpeala
 					ContextPattern pat = Parser.convertContextPatterns(
 							sentences, pipeline).get(0);
-					Viewer view = Parser.contextPatternVisualize(pat, false);
+					Viewer view = Parser.displayContextPattern(pat, false);
 					ViewPanel v = view.getDefaultView();
 					v.setBounds(panel.getBounds());
 					panel.add(v);

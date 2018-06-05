@@ -1,0 +1,278 @@
+Mail will NOT be accepted at visitation for inmates. Mail cannot be dropped off for inmates. This includes greeting cards for inmates. All cards and letters must be sent to the inmate through the mail.
+------CorefChainz
+CHAIN9-["Mail" in sentence 1, "Mail" in sentence 2, "the mail" in sentence 4]
+representative mention: "Mail" in sentence 1
+Mail-NNP 
+will-MD 
+NOT-RB 
+be-VB 
+accepted-VBN 
+at-IN 
+visitation-NN 
+for-IN 
+inmates-NNP 
+.-. 
+Mail-NNP 
+can-MD 
+not-RB 
+be-VB 
+dropped-VBN 
+off-RP 
+for-IN 
+inmates-FW 
+.-. 
+This-DT 
+includes-VBZ 
+greeting-VBG 
+cards-NNS 
+for-IN 
+inmates-NNS 
+.-. 
+All-DT 
+cards-NNS 
+and-CC 
+letters-NNS 
+must-MD 
+be-VB 
+sent-VBN 
+to-TO 
+the-DT 
+inmate-NN 
+through-IN 
+the-DT 
+mail-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NNP 	-> Mail
+		 	-> VP 	-> MD 	-> will
+	 	-> ADVP 	-> RB 	-> NOT
+		 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> accepted
+	 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> NN 	-> visitation
+			 	-> SBAR 	-> IN 	-> for
+	 	-> S 	-> NP 	-> NNP 	-> inmates
+	 	-> . 	-> .
+	 	-> NNP 	-> Mail
+		 	-> VP 	-> MD 	-> can
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> dropped
+	 	-> PP 	-> RP 	-> off
+	 	-> PP 	-> IN 	-> for
+	 	-> FRAG 	-> ADJP 	-> FW 	-> inmates
+	 	-> . 	-> .
+		 	-> S 	-> NP 	-> DT 	-> This
+		 	-> VP 	-> VBZ 	-> includes
+	 	-> NP 	-> NP 	-> VBG 	-> greeting
+	 	-> NNS 	-> cards
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NNS 	-> inmates
+						 	-> . 	-> .
+													 	-> NP 	-> DT 	-> All
+	 	-> NNS 	-> cards
+	 	-> CC 	-> and
+	 	-> NNS 	-> letters
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> sent
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+			 	-> PP 	-> IN 	-> through
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> mail
+						 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(accepted-5, Mail-1)
+aux(accepted-5, will-2)
+neg(accepted-5, NOT-3)
+auxpass(accepted-5, be-4)
+dep(sent-33, accepted-5)
+case(visitation-7, at-6)
+nmod:at(accepted-5, visitation-7)
+mark(dropped-15, for-8)
+compound(Mail-11, inmates-9)
+nsubjpass(dropped-15, Mail-11)
+aux(dropped-15, can-12)
+neg(dropped-15, not-13)
+auxpass(dropped-15, be-14)
+advcl(accepted-5, dropped-15)
+dep(inmates-18, off-16)
+case(inmates-18, for-17)
+advcl(dropped-15, inmates-18)
+nsubj(includes-21, This-20)
+dep(inmates-18, includes-21)
+amod(cards-23, greeting-22)
+dobj(includes-21, cards-23)
+case(inmates-25, for-24)
+nmod:for(cards-23, inmates-25)
+det(cards-28, All-27)
+nsubjpass(sent-33, cards-28)
+cc(cards-28, and-29)
+conj:and(cards-28, letters-30)
+nsubjpass(sent-33, letters-30)
+aux(sent-33, must-31)
+auxpass(sent-33, be-32)
+root(ROOT-0, sent-33)
+case(inmate-36, to-34)
+det(inmate-36, the-35)
+nmod:to(sent-33, inmate-36)
+case(mail-39, through-37)
+det(mail-39, the-38)
+nmod:through(sent-33, mail-39)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, accepted-5)
+nsubjpass(accepted-5, Mail-1)
+aux(accepted-5, will-2)
+advmod(accepted-5, NOT-3)
+auxpass(accepted-5, be-4)
+case(visitation-7, at-6)
+nmod:at(accepted-5, visitation-7)
+case(inmates-9, for-8)
+nmod:for(visitation-7, inmates-9)
+punct(accepted-5, .-10)
+---
+qqroot(ROOT-0, accepted-5)
+nsubjpass(accepted-5, Mail-1)
+aux(accepted-5, will-2)
+advmod(accepted-5, NOT-3)
+auxpass(accepted-5, be-4)
+case(visitation-7, at-6)
+nmod:at(accepted-5, visitation-7)
+case(inmates-9, for-8)
+nmod:for(visitation-7, inmates-9)
+punct(accepted-5, .-10)
+root(ROOT-0, dropped-5)
+nsubjpass(dropped-5, Mail-1)
+aux(dropped-5, can-2)
+neg(dropped-5, not-3)
+auxpass(dropped-5, be-4)
+compound:prt(dropped-5, off-6)
+case(inmates-8, for-7)
+nmod:for(dropped-5, inmates-8)
+punct(dropped-5, .-9)
+---
+qqroot(ROOT-0, accepted-5)
+nsubjpass(accepted-5, Mail-1)
+aux(accepted-5, will-2)
+advmod(accepted-5, NOT-3)
+auxpass(accepted-5, be-4)
+case(visitation-7, at-6)
+nmod:at(accepted-5, visitation-7)
+case(inmates-9, for-8)
+nmod:for(visitation-7, inmates-9)
+punct(accepted-5, .-10)
+root(ROOT-0, dropped-5)
+nsubjpass(dropped-5, Mail-1)
+aux(dropped-5, can-2)
+neg(dropped-5, not-3)
+auxpass(dropped-5, be-4)
+compound:prt(dropped-5, off-6)
+case(inmates-8, for-7)
+nmod:for(dropped-5, inmates-8)
+punct(dropped-5, .-9)
+root(ROOT-0, includes-2)
+nsubj(includes-2, This-1)
+xcomp(includes-2, greeting-3)
+dobj(greeting-3, cards-4)
+case(inmates-6, for-5)
+nmod:for(greeting-3, inmates-6)
+punct(includes-2, .-7)
+---
+qqroot(ROOT-0, accepted-5)
+nsubjpass(accepted-5, Mail-1)
+aux(accepted-5, will-2)
+advmod(accepted-5, NOT-3)
+auxpass(accepted-5, be-4)
+case(visitation-7, at-6)
+nmod:at(accepted-5, visitation-7)
+case(inmates-9, for-8)
+nmod:for(visitation-7, inmates-9)
+punct(accepted-5, .-10)
+root(ROOT-0, dropped-5)
+nsubjpass(dropped-5, Mail-1)
+aux(dropped-5, can-2)
+neg(dropped-5, not-3)
+auxpass(dropped-5, be-4)
+compound:prt(dropped-5, off-6)
+case(inmates-8, for-7)
+nmod:for(dropped-5, inmates-8)
+punct(dropped-5, .-9)
+root(ROOT-0, includes-2)
+nsubj(includes-2, This-1)
+xcomp(includes-2, greeting-3)
+dobj(greeting-3, cards-4)
+case(inmates-6, for-5)
+nmod:for(greeting-3, inmates-6)
+punct(includes-2, .-7)
+root(ROOT-0, sent-7)
+det(cards-2, All-1)
+nsubjpass(sent-7, cards-2)
+cc(cards-2, and-3)
+conj:and(cards-2, letters-4)
+nsubjpass(sent-7, letters-4)
+aux(sent-7, must-5)
+auxpass(sent-7, be-6)
+case(inmate-10, to-8)
+det(inmate-10, the-9)
+nmod:to(sent-7, inmate-10)
+case(mail-13, through-11)
+det(mail-13, the-12)
+nmod:through(sent-7, mail-13)
+punct(sent-7, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+G[23, 21] [?1, ?2, ?3, Mail1, Mail1, NOT3, This1, accepted5, cards2, cards4, dropped5, greeting3, includes2, inmate10, inmates6, inmates9, inmates8, letters4, mail13, not3, off6, sent7, visitation7]
+Mail1-  : will  : will ->accepted5
+NOT3-  : be ->accepted5
+off6-prt->dropped5
+Mail1-  : can  : can ->dropped5
+greeting3- ->includes2
+inmates9-for->visitation7
+letters4-  : must  : be ->sent7
+This1- ->includes2
+?2-the->mail13
+?1-to->sent7
+visitation7-at->accepted5
+?3-All->cards2
+cards4- ->greeting3
+?1-the->inmate10
+?3- ->sent7
+inmates8-for->dropped5
+letters4-and->?3
+inmates6-for->greeting3
+?2-through->sent7
+?2-==->Mail1
+not3-  : be ->dropped5
+
+[cards2<-All-?3<-and-letters4;
+includes2
+	(<- -greeting3
+		(<- -cards4)
+		<-for-inmates6)
+	<- -This1;
+accepted5
+	(<-  : will  : will -Mail1<-==-?2)
+	(<-at-visitation7<-for-inmates9)
+	<-  : be -NOT3;
+inmate10<-the-?1;
+dropped5
+	(<-  : can  : can -Mail1)
+	(<-for-inmates8)
+	(<-  : be -not3)
+	<-prt-off6;
+mail13<-the-*?2;
+sent7
+	(<- -*?3)
+	(<-to-*?1)
+	(<-through-*?2)
+	<-  : must  : be -*letters4]

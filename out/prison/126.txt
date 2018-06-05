@@ -1,0 +1,168 @@
+Contraband is defined as any item, or substance, which cannot legally be in your possession, or which is forbidden by the jail policy or rules.
+------CorefChainz
+Contraband-NNP 
+is-VBZ 
+defined-VBN 
+as-IN 
+any-DT 
+item-NN 
+,-, 
+or-CC 
+substance-NN 
+,-, 
+which-WDT 
+can-MD 
+not-RB 
+legally-RB 
+be-VB 
+in-IN 
+your-PRP$ 
+possession-NN 
+,-, 
+or-CC 
+which-WDT 
+is-VBZ 
+forbidden-VBN 
+by-IN 
+the-DT 
+jail-NN 
+policy-NN 
+or-CC 
+rules-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> Contraband
+		 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBN 	-> defined
+	 	-> PP 	-> IN 	-> as
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> item
+	 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NN 	-> substance
+	 	-> , 	-> ,
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> VP 	-> MD 	-> can
+	 	-> RB 	-> not
+	 	-> ADVP 	-> RB 	-> legally
+		 	-> VP 	-> VB 	-> be
+	 	-> UCP 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> possession
+			 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> SBAR 	-> WHNP 	-> WDT 	-> which
+		 	-> S 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBN 	-> forbidden
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> policy
+		 	-> CC 	-> or
+	 	-> NP 	-> NNS 	-> rules
+																	 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(defined-3, Contraband-1)
+auxpass(defined-3, is-2)
+root(ROOT-0, defined-3)
+case(item-6, as-4)
+det(item-6, any-5)
+nmod:as(defined-3, item-6)
+nsubj(possession-18, item-6)
+cc(item-6, or-8)
+nmod:as(defined-3, substance-9)
+conj:or(item-6, substance-9)
+nsubj(possession-18, substance-9)
+ref(item-6, which-11)
+aux(possession-18, can-12)
+neg(possession-18, not-13)
+advmod(possession-18, legally-14)
+cop(possession-18, be-15)
+case(possession-18, in-16)
+nmod:poss(possession-18, your-17)
+acl:relcl(item-6, possession-18)
+cc(possession-18, or-20)
+nsubjpass(forbidden-23, which-21)
+auxpass(forbidden-23, is-22)
+acl:relcl(item-6, forbidden-23)
+conj:or(possession-18, forbidden-23)
+case(policy-27, by-24)
+det(policy-27, the-25)
+compound(policy-27, jail-26)
+nmod:agent(forbidden-23, policy-27)
+cc(policy-27, or-28)
+nmod:agent(forbidden-23, rules-29)
+conj:or(policy-27, rules-29)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, defined-3)
+nsubjpass(defined-3, Contraband-1)
+auxpass(defined-3, is-2)
+case(item-6, as-4)
+det(item-6, any-5)
+nmod:as(defined-3, item-6)
+nsubj(possession-18, item-6)
+punct(item-6, ,-7)
+cc(item-6, or-8)
+nmod:as(defined-3, substance-9)
+conj:or(item-6, substance-9)
+nsubj(possession-18, substance-9)
+punct(item-6, ,-10)
+ref(item-6, which-11)
+aux(possession-18, can-12)
+neg(possession-18, not-13)
+advmod(possession-18, legally-14)
+cop(possession-18, be-15)
+case(possession-18, in-16)
+nmod:poss(possession-18, your-17)
+acl:relcl(item-6, possession-18)
+punct(possession-18, ,-19)
+cc(possession-18, or-20)
+nsubjpass(forbidden-23, which-21)
+auxpass(forbidden-23, is-22)
+acl:relcl(item-6, forbidden-23)
+conj:or(possession-18, forbidden-23)
+case(policy-27, by-24)
+det(policy-27, the-25)
+compound(policy-27, jail-26)
+nmod:agent(forbidden-23, policy-27)
+cc(policy-27, or-28)
+nmod:agent(forbidden-23, rules-29)
+conj:or(policy-27, rules-29)
+punct(defined-3, .-30)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[15, 19] [?1, ?2, Contraband1, defined3, forbidden23, item6, jail26, legally14, not13, policy27, possession18, rules29, substance9, which21, your17]
+possession18- ->?1
+?1-any->item6
+?1- ->possession18
+?1-as->defined3
+jail26- ->?2
+not13-  : can ->possession18
+forbidden23- ->?1
+substance9-or : which ->?1
+forbidden23-or->possession18
+?2-agent : by ->forbidden23
+substance9-as->defined3
+?2-the->policy27
+your17-poss : in ->possession18
+legally14-  : be ->possession18
+Contraband1-  : is ->defined3
+rules29-agent->forbidden23
+which21-  : is ->forbidden23
+substance9- ->possession18
+rules29-or->?2
+
+[item6<-any-?1
+	(<- -possession18(<- -*?1)(<-or-forbidden23(<-agent : by -?2(<- -jail26)<-or-rules29)(<-agent-*rules29)<-  : is -which21)(<-  : be -legally14)(<-  : can -not13)(<- -substance9)<-poss : in -your17)
+	(<- -*forbidden23)
+	<-or : which -*substance9;
+defined3
+	(<-as-*?1)
+	(<-as-*substance9)
+	<-  : is -Contraband1;
+policy27<-the-*?2]

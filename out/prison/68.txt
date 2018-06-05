@@ -1,0 +1,75 @@
+No sitting on top of the tables in the day room.
+------CorefChainz
+No-DT 
+sitting-VBG 
+on-IN 
+top-NN 
+of-IN 
+the-DT 
+tables-NNS 
+in-IN 
+the-DT 
+day-NN 
+room-NN 
+.-. 
+ROOT 	-> NP 	-> NP 	-> DT 	-> No
+	 	-> VBG 	-> sitting
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> NN 	-> top
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> tables
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> day
+	 	-> NN 	-> room
+							 	-> . 	-> .
+			
+Dependensee repr
+root(ROOT-0, No-1)
+amod(No-1, sitting-2)
+case(tables-7, on-3)
+mwe(on-3, top-4)
+mwe(on-3, of-5)
+det(tables-7, the-6)
+nmod:on_top_of(No-1, tables-7)
+case(room-11, in-8)
+det(room-11, the-9)
+compound(room-11, day-10)
+nmod:in(tables-7, room-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, sitting-2)
+neg(sitting-2, No-1)
+case(tables-7, on-3)
+mwe(on-3, top-4)
+mwe(on-3, of-5)
+det(tables-7, the-6)
+nmod:on_top_of(sitting-2, tables-7)
+case(room-11, in-8)
+det(room-11, the-9)
+compound(room-11, day-10)
+nmod:in(sitting-2, room-11)
+punct(sitting-2, .-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[9, 6] [?1, ?2, No1, day10, of5, room11, sitting2, tables7, top4]
+day10- ->?2
+?2-in->sitting2
+No1- ->sitting2
+?1-the->tables7
+?1-on_top_of : on ->sitting2
+?2-the->room11
+
+[room11<-the-?2<- -day10;
+tables7<-the-?1;
+sitting2
+	(<-in-*?2)
+	(<-on_top_of : on -*?1)
+	<- -No1;
+of5;
+top4]

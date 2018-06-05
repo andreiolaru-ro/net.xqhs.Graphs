@@ -1,0 +1,248 @@
+This limitation on indigent inmates does not apply to privileged mail to the courts, licensed attorneys, clergy, and state or federal governmental offices and officials. Postage will be paid by the sheriff's department.
+------CorefChainz
+This-DT 
+limitation-NN 
+on-IN 
+indigent-JJ 
+inmates-NNS 
+does-VBZ 
+not-RB 
+apply-VB 
+to-TO 
+privileged-JJ 
+mail-NN 
+to-TO 
+the-DT 
+courts-NNS 
+,-, 
+licensed-VBD 
+attorneys-NNS 
+,-, 
+clergy-NNS 
+,-, 
+and-CC 
+state-NN 
+or-CC 
+federal-JJ 
+governmental-JJ 
+offices-NNS 
+and-CC 
+officials-NNS 
+.-. 
+Postage-NNP 
+will-MD 
+be-VB 
+paid-VBN 
+by-IN 
+the-DT 
+sheriff-NN 
+'s-POS 
+department-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> This
+		 	-> PRN 	-> SINV 	-> S 	-> NP 	-> NP 	-> NN 	-> limitation
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> JJ 	-> indigent
+	 	-> NNS 	-> inmates
+				 	-> VP 	-> VBZ 	-> does
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> apply
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> JJ 	-> privileged
+	 	-> NN 	-> mail
+			 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> courts
+						 	-> , 	-> ,
+	 	-> VP 	-> VBD 	-> licensed
+		 	-> NP 	-> NP 	-> NNS 	-> attorneys
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> clergy
+		 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> NP 	-> NP 	-> UCP 	-> NN 	-> state
+	 	-> CC 	-> or
+	 	-> JJ 	-> federal
+		 	-> JJ 	-> governmental
+	 	-> NNS 	-> offices
+		 	-> CC 	-> and
+	 	-> NP 	-> NNS 	-> officials
+				 	-> . 	-> .
+			 	-> NP 	-> NNP 	-> Postage
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> paid
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> sheriff
+	 	-> POS 	-> 's
+		 	-> NN 	-> department
+						 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(paid-33, This-1)
+nsubj(apply-8, limitation-2)
+case(inmates-5, on-3)
+amod(inmates-5, indigent-4)
+nmod:on(limitation-2, inmates-5)
+aux(apply-8, does-6)
+neg(apply-8, not-7)
+ccomp(licensed-16, apply-8)
+case(mail-11, to-9)
+amod(mail-11, privileged-10)
+nmod:to(apply-8, mail-11)
+case(courts-14, to-12)
+det(courts-14, the-13)
+nmod:to(apply-8, courts-14)
+parataxis(paid-33, licensed-16)
+nsubj(licensed-16, attorneys-17)
+nsubj(licensed-16, clergy-19)
+conj:and(attorneys-17, clergy-19)
+cc(attorneys-17, and-21)
+compound(offices-26, state-22)
+cc(state-22, or-23)
+conj:or(state-22, federal-24)
+compound(offices-26, federal-24)
+amod(offices-26, governmental-25)
+nsubj(licensed-16, offices-26)
+conj:and(attorneys-17, offices-26)
+cc(offices-26, and-27)
+conj:and(attorneys-17, officials-28)
+conj:and(offices-26, officials-28)
+nsubjpass(paid-33, Postage-30)
+aux(paid-33, will-31)
+auxpass(paid-33, be-32)
+root(ROOT-0, paid-33)
+case(department-38, by-34)
+det(sheriff-36, the-35)
+nmod:poss(department-38, sheriff-36)
+case(sheriff-36, 's-37)
+nmod:agent(paid-33, department-38)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, apply-8)
+det(limitation-2, This-1)
+nsubj(apply-8, limitation-2)
+case(inmates-5, on-3)
+amod(inmates-5, indigent-4)
+nmod:on(limitation-2, inmates-5)
+aux(apply-8, does-6)
+neg(apply-8, not-7)
+case(mail-11, to-9)
+amod(mail-11, privileged-10)
+nmod:to(apply-8, mail-11)
+case(courts-14, to-12)
+det(courts-14, the-13)
+nmod:to(apply-8, courts-14)
+punct(apply-8, ,-15)
+advcl(apply-8, licensed-16)
+dobj(licensed-16, attorneys-17)
+punct(attorneys-17, ,-18)
+dobj(licensed-16, clergy-19)
+conj:and(attorneys-17, clergy-19)
+punct(attorneys-17, ,-20)
+cc(attorneys-17, and-21)
+compound(offices-26, state-22)
+cc(state-22, or-23)
+conj:or(state-22, federal-24)
+compound(offices-26, federal-24)
+amod(offices-26, governmental-25)
+dobj(licensed-16, offices-26)
+conj:and(attorneys-17, offices-26)
+cc(offices-26, and-27)
+conj:and(attorneys-17, officials-28)
+conj:and(offices-26, officials-28)
+punct(apply-8, .-29)
+---
+qqroot(ROOT-0, apply-8)
+det(limitation-2, This-1)
+nsubj(apply-8, limitation-2)
+case(inmates-5, on-3)
+amod(inmates-5, indigent-4)
+nmod:on(limitation-2, inmates-5)
+aux(apply-8, does-6)
+neg(apply-8, not-7)
+case(mail-11, to-9)
+amod(mail-11, privileged-10)
+nmod:to(apply-8, mail-11)
+case(courts-14, to-12)
+det(courts-14, the-13)
+nmod:to(apply-8, courts-14)
+punct(apply-8, ,-15)
+advcl(apply-8, licensed-16)
+dobj(licensed-16, attorneys-17)
+punct(attorneys-17, ,-18)
+dobj(licensed-16, clergy-19)
+conj:and(attorneys-17, clergy-19)
+punct(attorneys-17, ,-20)
+cc(attorneys-17, and-21)
+compound(offices-26, state-22)
+cc(state-22, or-23)
+conj:or(state-22, federal-24)
+compound(offices-26, federal-24)
+amod(offices-26, governmental-25)
+dobj(licensed-16, offices-26)
+conj:and(attorneys-17, offices-26)
+cc(offices-26, and-27)
+conj:and(attorneys-17, officials-28)
+conj:and(offices-26, officials-28)
+punct(apply-8, .-29)
+root(ROOT-0, paid-4)
+nsubjpass(paid-4, Postage-1)
+aux(paid-4, will-2)
+auxpass(paid-4, be-3)
+case(department-9, by-5)
+det(sheriff-7, the-6)
+nmod:poss(department-9, sheriff-7)
+case(sheriff-7, 's-8)
+nmod:agent(paid-4, department-9)
+punct(paid-4, .-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[23, 25] [?1, ?2, ?3, Postage1, apply8, attorneys17, clergy19, courts14, department9, federal24, governmental25, indigent4, inmates5, licensed16, limitation2, mail11, not7, offices26, officials28, paid4, privileged10, sheriff7, state22]
+federal24- ->offices26
+?1-This->limitation2
+?2-the->sheriff7
+Postage1-  : will  : be ->paid4
+licensed16- ->apply8
+governmental25- ->offices26
+inmates5-on->?1
+?2-poss : 's ->department9
+privileged10- ->mail11
+?3-the->courts14
+officials28-and->offices26
+offices26-and->attorneys17
+clergy19- ->licensed16
+officials28-and->attorneys17
+?3-to->apply8
+federal24-or->state22
+mail11-to->apply8
+clergy19-and->attorneys17
+offices26- ->licensed16
+state22- ->offices26
+?1- ->apply8
+department9-agent : by ->paid4
+indigent4- ->inmates5
+attorneys17- ->licensed16
+not7-  : does ->apply8
+
+[apply8
+	(<- -licensed16
+		(<- -attorneys17(<-and-offices26(<- -state22<-or-federal24)(<- -*federal24)(<- -governmental25)<-and-officials28)(<-and-*officials28)<-and-clergy19)
+		(<- -*offices26)
+		<- -*clergy19)
+	(<- -?1<-on-inmates5<- -indigent4)
+	(<-to-mail11<- -privileged10)
+	(<-to-?3)
+	<-  : does -not7;
+limitation2<-This-*?1;
+paid4
+	(<-agent : by -department9<-poss : 's -?2)
+	<-  : will  : be -Postage1;
+courts14<-the-*?3;
+sheriff7<-the-*?2]

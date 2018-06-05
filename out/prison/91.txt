@@ -1,0 +1,112 @@
+There will be NO POUNDING on the walls, tables, or any other fixtures in the jail.
+------CorefChainz
+There-EX 
+will-MD 
+be-VB 
+NO-DT 
+POUNDING-NN 
+on-IN 
+the-DT 
+walls-NNS 
+,-, 
+tables-NNS 
+,-, 
+or-CC 
+any-DT 
+other-JJ 
+fixtures-NNS 
+in-IN 
+the-DT 
+jail-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> EX 	-> There
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> NP 	-> NP 	-> DT 	-> NO
+	 	-> NN 	-> POUNDING
+		 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> walls
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> tables
+		 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> other
+	 	-> NNS 	-> fixtures
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+									 	-> . 	-> .
+			
+Dependensee repr
+expl(POUNDING-5, There-1)
+aux(POUNDING-5, will-2)
+cop(POUNDING-5, be-3)
+neg(POUNDING-5, NO-4)
+root(ROOT-0, POUNDING-5)
+case(walls-8, on-6)
+det(walls-8, the-7)
+nmod:on(POUNDING-5, walls-8)
+nmod:on(POUNDING-5, tables-10)
+conj:or(walls-8, tables-10)
+cc(walls-8, or-12)
+det(fixtures-15, any-13)
+amod(fixtures-15, other-14)
+nmod:on(POUNDING-5, fixtures-15)
+conj:or(walls-8, fixtures-15)
+case(jail-18, in-16)
+det(jail-18, the-17)
+nmod:in(fixtures-15, jail-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, NO-4)
+expl(NO-4, There-1)
+aux(NO-4, will-2)
+cop(NO-4, be-3)
+acl(NO-4, POUNDING-5)
+case(walls-8, on-6)
+det(walls-8, the-7)
+nmod:on(POUNDING-5, walls-8)
+punct(walls-8, ,-9)
+nmod:on(POUNDING-5, tables-10)
+conj:or(walls-8, tables-10)
+punct(walls-8, ,-11)
+cc(walls-8, or-12)
+det(fixtures-15, any-13)
+amod(fixtures-15, other-14)
+nmod:on(POUNDING-5, fixtures-15)
+conj:or(walls-8, fixtures-15)
+case(jail-18, in-16)
+det(jail-18, the-17)
+nmod:in(fixtures-15, jail-18)
+punct(NO-4, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[11, 12] [?1, ?2, ?3, NO4, POUNDING5, There1, fixtures15, jail18, other14, tables10, walls8]
+POUNDING5- ->NO4
+?2-or->?3
+?2-on->POUNDING5
+tables10-on->POUNDING5
+There1-  : will  : be  : be ->NO4
+other14- ->?2
+tables10-or->?3
+?3-on->POUNDING5
+?3-the->walls8
+?1-in->?2
+?1-the->jail18
+?2-any->fixtures15
+
+[NO4
+	(<- -POUNDING5
+		(<-on-?3(<-or-?2(<-in-?1)<- -other14)<-or-tables10)
+		(<-on-*?2)
+		<-on-*tables10)
+	<-  : will  : be  : be -There1;
+fixtures15<-any-*?2;
+jail18<-the-*?1;
+walls8<-the-*?3]

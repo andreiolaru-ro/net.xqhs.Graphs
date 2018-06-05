@@ -1,0 +1,179 @@
+Envelopes not containing this specific information will be placed in the inmate’s file and handed over to the inmate at the time of release, or be returned to sender.
+------CorefChainz
+Envelopes-NNS 
+not-RB 
+containing-VBG 
+this-DT 
+specific-JJ 
+information-NN 
+will-MD 
+be-VB 
+placed-VBN 
+in-IN 
+the-DT 
+inmate-NN 
+'s-POS 
+file-NN 
+and-CC 
+handed-VBN 
+over-RP 
+to-TO 
+the-DT 
+inmate-NN 
+at-IN 
+the-DT 
+time-NN 
+of-IN 
+release-NN 
+,-, 
+or-CC 
+be-VB 
+returned-VBN 
+to-TO 
+sender-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NP 	-> NNS 	-> Envelopes
+		 	-> VP 	-> RB 	-> not
+	 	-> VBG 	-> containing
+	 	-> NP 	-> DT 	-> this
+	 	-> JJ 	-> specific
+	 	-> NN 	-> information
+				 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VP 	-> VBN 	-> placed
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> file
+				 	-> CC 	-> and
+	 	-> VP 	-> VBN 	-> handed
+	 	-> PRT 	-> RP 	-> over
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+			 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> time
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> release
+								 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> returned
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NN 	-> sender
+							 	-> . 	-> .
+			
+Dependensee repr
+nsubjpass(placed-9, Envelopes-1)
+nsubjpass(handed-16, Envelopes-1)
+nsubjpass(returned-29, Envelopes-1)
+neg(containing-3, not-2)
+acl(Envelopes-1, containing-3)
+det(information-6, this-4)
+amod(information-6, specific-5)
+dobj(containing-3, information-6)
+aux(placed-9, will-7)
+auxpass(placed-9, be-8)
+root(ROOT-0, placed-9)
+case(file-14, in-10)
+det(inmate-12, the-11)
+nmod:poss(file-14, inmate-12)
+case(inmate-12, 's-13)
+nmod:in(placed-9, file-14)
+cc(placed-9, and-15)
+conj:and(placed-9, handed-16)
+compound:prt(handed-16, over-17)
+case(inmate-20, to-18)
+det(inmate-20, the-19)
+nmod:to(handed-16, inmate-20)
+case(time-23, at-21)
+det(time-23, the-22)
+nmod:at(handed-16, time-23)
+case(release-25, of-24)
+nmod:of(time-23, release-25)
+cc(placed-9, or-27)
+auxpass(returned-29, be-28)
+conj:and(placed-9, returned-29)
+case(sender-31, to-30)
+nmod:to(returned-29, sender-31)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, placed-9)
+nsubjpass(placed-9, Envelopes-1)
+nsubjpass(handed-16, Envelopes-1)
+nsubjpass(returned-29, Envelopes-1)
+neg(containing-3, not-2)
+acl(Envelopes-1, containing-3)
+det(information-6, this-4)
+amod(information-6, specific-5)
+dobj(containing-3, information-6)
+aux(placed-9, will-7)
+auxpass(placed-9, be-8)
+case(file-14, in-10)
+det(inmate-12, the-11)
+nmod:poss(file-14, inmate-12)
+case(inmate-12, 's-13)
+nmod:in(placed-9, file-14)
+cc(placed-9, and-15)
+conj:and(placed-9, handed-16)
+compound:prt(handed-16, over-17)
+case(inmate-20, to-18)
+det(inmate-20, the-19)
+nmod:to(handed-16, inmate-20)
+case(time-23, at-21)
+det(time-23, the-22)
+nmod:at(handed-16, time-23)
+case(release-25, of-24)
+nmod:of(time-23, release-25)
+punct(placed-9, ,-26)
+cc(placed-9, or-27)
+auxpass(returned-29, be-28)
+conj:and(placed-9, returned-29)
+case(sender-31, to-30)
+nmod:to(returned-29, sender-31)
+punct(placed-9, .-32)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[19, 20] [?1, ?2, ?3, ?4, Envelopes1, containing3, file14, handed16, information6, inmate20, inmate12, not2, over17, placed9, release25, returned29, sender31, specific5, time23]
+release25-of->?3
+?4- ->containing3
+?1-the->inmate20
+Envelopes1-  : will ->placed9
+?2-the->inmate12
+not2- ->containing3
+?3-the->time23
+?2-poss : 's ->file14
+returned29-and : or ->placed9
+over17-prt->handed16
+sender31-to : be ->returned29
+?4-this->information6
+containing3- ->Envelopes1
+Envelopes1- ->returned29
+?1-to->handed16
+handed16-and->placed9
+specific5- ->?4
+Envelopes1- ->handed16
+?3-at->handed16
+file14-in : be ->placed9
+
+[placed9
+	(<-and : or -returned29
+		(<- -Envelopes1<- -containing3(<- -?4<- -specific5)<- -not2)
+		<-to : be -sender31)
+	(<-  : will -*Envelopes1)
+	(<-and-handed16
+		(<- -*Envelopes1)
+		(<-at-?3<-of-release25)
+		(<-to-?1)
+		<-prt-over17)
+	<-in : be -file14<-poss : 's -?2;
+information6<-this-*?4;
+inmate20<-the-*?1;
+inmate12<-the-*?2;
+time23<-the-*?3]

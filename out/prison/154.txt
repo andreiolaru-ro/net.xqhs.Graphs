@@ -1,0 +1,224 @@
+Inmates in possession of more than the allotted number of jail issued bedding, towels, clothing, mattresses or pillows will have the excess items removed, and the inmate may be considered in violation of the jail rules.
+------CorefChainz
+CHAIN10-["Inmates in possession of more than the allotted number of jail issued bedding , towels , clothing , mattresses or pillows" in sentence 1, "the inmate" in sentence 1]
+representative mention: "the inmate" in sentence 1
+Inmates-NNS 
+in-IN 
+possession-NN 
+of-IN 
+more-JJR 
+than-IN 
+the-DT 
+allotted-JJ 
+number-NN 
+of-IN 
+jail-NN 
+issued-VBD 
+bedding-NN 
+,-, 
+towels-NNS 
+,-, 
+clothing-NN 
+,-, 
+mattresses-NNS 
+or-CC 
+pillows-NNS 
+will-MD 
+have-VB 
+the-DT 
+excess-JJ 
+items-NNS 
+removed-VBN 
+,-, 
+and-CC 
+the-DT 
+inmate-NN 
+may-MD 
+be-VB 
+considered-VBN 
+in-IN 
+violation-NN 
+of-IN 
+the-DT 
+jail-NN 
+rules-NNS 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NP 	-> NNS 	-> Inmates
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> NN 	-> possession
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> QP 	-> JJR 	-> more
+	 	-> IN 	-> than
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> allotted
+	 	-> NN 	-> number
+				 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NN 	-> jail
+								 	-> VP 	-> VBD 	-> issued
+	 	-> SBAR 	-> S 	-> NP 	-> NP 	-> NN 	-> bedding
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> towels
+		 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> clothing
+		 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> mattresses
+		 	-> CC 	-> or
+	 	-> NP 	-> NNS 	-> pillows
+			 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> excess
+	 	-> NNS 	-> items
+		 	-> VP 	-> VBN 	-> removed
+									 	-> , 	-> ,
+	 	-> CC 	-> and
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> considered
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> NN 	-> violation
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NNS 	-> rules
+									 	-> . 	-> .
+			
+Dependensee repr
+nsubj(issued-12, Inmates-1)
+case(possession-3, in-2)
+nmod:in(Inmates-1, possession-3)
+case(number-9, of-4)
+advmod(number-9, more-5)
+mwe(more-5, than-6)
+det(number-9, the-7)
+amod(number-9, allotted-8)
+nmod:of(possession-3, number-9)
+case(jail-11, of-10)
+nmod:of(number-9, jail-11)
+root(ROOT-0, issued-12)
+nsubj(have-23, bedding-13)
+conj:or(bedding-13, towels-15)
+nsubj(have-23, towels-15)
+conj:or(bedding-13, clothing-17)
+nsubj(have-23, clothing-17)
+conj:or(bedding-13, mattresses-19)
+nsubj(have-23, mattresses-19)
+cc(bedding-13, or-20)
+conj:or(bedding-13, pillows-21)
+nsubj(have-23, pillows-21)
+aux(have-23, will-22)
+ccomp(issued-12, have-23)
+det(items-26, the-24)
+amod(items-26, excess-25)
+dobj(have-23, items-26)
+acl(items-26, removed-27)
+cc(issued-12, and-29)
+det(inmate-31, the-30)
+nsubjpass(considered-34, inmate-31)
+aux(considered-34, may-32)
+auxpass(considered-34, be-33)
+conj:and(issued-12, considered-34)
+case(violation-36, in-35)
+nmod:in(considered-34, violation-36)
+case(rules-40, of-37)
+det(rules-40, the-38)
+compound(rules-40, jail-39)
+nmod:of(violation-36, rules-40)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-23)
+nsubj(have-23, Inmates-1)
+case(possession-3, in-2)
+nmod:in(Inmates-1, possession-3)
+case(more-5, of-4)
+nmod:of(possession-3, more-5)
+case(number-9, than-6)
+det(number-9, the-7)
+amod(number-9, allotted-8)
+nmod:than(more-5, number-9)
+case(jail-11, of-10)
+nmod:of(number-9, jail-11)
+acl(number-9, issued-12)
+dobj(issued-12, bedding-13)
+punct(bedding-13, ,-14)
+dobj(issued-12, towels-15)
+conj:or(bedding-13, towels-15)
+punct(bedding-13, ,-16)
+dobj(issued-12, clothing-17)
+conj:or(bedding-13, clothing-17)
+punct(bedding-13, ,-18)
+dobj(issued-12, mattresses-19)
+conj:or(bedding-13, mattresses-19)
+cc(bedding-13, or-20)
+dobj(issued-12, pillows-21)
+conj:or(bedding-13, pillows-21)
+aux(have-23, will-22)
+det(items-26, the-24)
+amod(items-26, excess-25)
+dobj(have-23, items-26)
+acl(items-26, removed-27)
+punct(have-23, ,-28)
+cc(have-23, and-29)
+det(inmate-31, the-30)
+nsubjpass(considered-34, inmate-31)
+aux(considered-34, may-32)
+auxpass(considered-34, be-33)
+conj:and(have-23, considered-34)
+case(violation-36, in-35)
+nmod:in(considered-34, violation-36)
+case(rules-40, of-37)
+det(rules-40, the-38)
+compound(rules-40, jail-39)
+nmod:of(violation-36, rules-40)
+punct(have-23, .-41)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[25, 29] [?1, ?2, ?3, ?4, Inmates1, allotted8, bedding13, clothing17, considered34, excess25, have23, inmate31, issued12, items26, jail39, jail11, mattresses19, more5, number9, pillows21, possession3, removed27, rules40, towels15, violation36]
+Inmates1-==->?1
+clothing17- ->issued12
+more5-of->possession3
+?1-  : may  : be ->considered34
+?4-of->violation36
+?4-the->rules40
+towels15- ->issued12
+allotted8- ->?2
+jail39- ->?4
+removed27- ->?3
+bedding13- ->issued12
+possession3-in->Inmates1
+clothing17-or->bedding13
+?3-the->items26
+excess25- ->?3
+considered34-and->have23
+pillows21- ->issued12
+?3-  : will ->have23
+pillows21-or->bedding13
+mattresses19- ->issued12
+?2-than->more5
+violation36-in->considered34
+towels15-or->bedding13
+mattresses19-or->bedding13
+jail11-of->?2
+?2-the->number9
+Inmates1- ->have23
+?1-the->inmate31
+issued12- ->?2
+
+[have23
+	(<-and-considered34
+		(<-  : may  : be -?1<-==-Inmates1<-in-possession3<-of-more5<-than-?2(<- -issued12(<- -bedding13(<-or-clothing17)(<-or-mattresses19)(<-or-pillows21)<-or-towels15)(<- -*clothing17)(<- -*mattresses19)(<- -*pillows21)<- -*towels15)(<- -allotted8)<-of-jail11)
+		<-in-violation36<-of-?4<- -jail39)
+	(<- -*Inmates1)
+	<-  : will -?3
+		(<- -excess25)
+		<- -removed27;
+items26<-the-*?3;
+inmate31<-the-*?1;
+number9<-the-*?2;
+rules40<-the-*?4]

@@ -1,0 +1,141 @@
+Each inmate is responsible for the items he/she is issued and will be held financially responsible for any misuse, damage or loss.
+------CorefChainz
+Each-DT 
+inmate-NN 
+is-VBZ 
+responsible-JJ 
+for-IN 
+the-DT 
+items-NNS 
+he/she-NN 
+is-VBZ 
+issued-VBN 
+and-CC 
+will-MD 
+be-VB 
+held-VBN 
+financially-RB 
+responsible-JJ 
+for-IN 
+any-DT 
+misuse-NN 
+,-, 
+damage-NN 
+or-CC 
+loss-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> Each
+	 	-> NN 	-> inmate
+		 	-> VP 	-> VBZ 	-> is
+	 	-> ADJP 	-> JJ 	-> responsible
+		 	-> SBAR 	-> IN 	-> for
+	 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NNS 	-> items
+	 	-> NN 	-> he/she
+		 	-> VP 	-> VP 	-> VBZ 	-> is
+	 	-> VP 	-> VBN 	-> issued
+			 	-> CC 	-> and
+	 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> held
+	 	-> ADJP 	-> RB 	-> financially
+	 	-> JJ 	-> responsible
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> misuse
+	 	-> , 	-> ,
+	 	-> NN 	-> damage
+	 	-> CC 	-> or
+	 	-> NN 	-> loss
+										 	-> . 	-> .
+			
+Dependensee repr
+det(inmate-2, Each-1)
+nsubj(responsible-4, inmate-2)
+cop(responsible-4, is-3)
+root(ROOT-0, responsible-4)
+mark(issued-10, for-5)
+det(he/she-8, the-6)
+compound(he/she-8, items-7)
+nsubjpass(issued-10, he/she-8)
+nsubjpass(held-14, he/she-8)
+auxpass(issued-10, is-9)
+advcl(responsible-4, issued-10)
+cc(issued-10, and-11)
+aux(held-14, will-12)
+auxpass(held-14, be-13)
+advcl(responsible-4, held-14)
+conj:and(issued-10, held-14)
+advmod(responsible-16, financially-15)
+xcomp(held-14, responsible-16)
+case(misuse-19, for-17)
+det(misuse-19, any-18)
+nmod:for(held-14, misuse-19)
+nmod:for(held-14, damage-21)
+conj:or(misuse-19, damage-21)
+cc(misuse-19, or-22)
+nmod:for(held-14, loss-23)
+conj:or(misuse-19, loss-23)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, responsible-4)
+det(inmate-2, Each-1)
+nsubj(responsible-4, inmate-2)
+cop(responsible-4, is-3)
+case(items-7, for-5)
+det(items-7, the-6)
+nmod:for(responsible-4, items-7)
+nsubjpass(issued-10, he/she-8)
+nsubjpass(held-14, he/she-8)
+auxpass(issued-10, is-9)
+acl:relcl(items-7, issued-10)
+cc(issued-10, and-11)
+aux(held-14, will-12)
+auxpass(held-14, be-13)
+acl:relcl(items-7, held-14)
+conj:and(issued-10, held-14)
+advmod(responsible-16, financially-15)
+xcomp(held-14, responsible-16)
+case(misuse-19, for-17)
+det(misuse-19, any-18)
+nmod:for(responsible-16, misuse-19)
+punct(misuse-19, ,-20)
+nmod:for(responsible-16, damage-21)
+conj:or(misuse-19, damage-21)
+cc(misuse-19, or-22)
+nmod:for(responsible-16, loss-23)
+conj:or(misuse-19, loss-23)
+punct(responsible-4, .-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[14, 17] [?1, ?2, ?3, damage21, financially15, he/she8, held14, inmate2, issued10, items7, loss23, misuse19, responsible4, responsible16]
+loss23-for->responsible16
+?2-Each->inmate2
+?3-for->responsible4
+damage21-for->responsible16
+loss23-or->?1
+?2-  : is ->responsible4
+he/she8-  : is ->issued10
+damage21-or->?1
+held14- ->?3
+financially15- ->responsible16
+he/she8- ->held14
+issued10- ->?3
+responsible16- ->held14
+?3-the->items7
+held14-and : will  : be  : be ->issued10
+?1-for->responsible16
+?1-any->misuse19
+
+[items7<-the-?3
+	(<- -issued10(<-and : will  : be  : be -held14(<- -responsible16(<-for-?1(<-or-damage21)<-or-loss23)(<-for-*damage21)(<-for-*loss23)<- -financially15)<- -he/she8)<-  : is -*he/she8)
+	<- -*held14;
+inmate2<-Each-?2;
+misuse19<-any-*?1;
+responsible4
+	(<-for-*?3)
+	<-  : is -*?2]

@@ -1,0 +1,79 @@
+Tape or compact disc players are NOT allowed in the jail.
+------CorefChainz
+Tape-NN 
+or-CC 
+compact-JJ 
+disc-NN 
+players-NNS 
+are-VBP 
+NOT-RB 
+allowed-VBN 
+in-IN 
+the-DT 
+jail-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NN 	-> Tape
+	 	-> CC 	-> or
+	 	-> JJ 	-> compact
+	 	-> NN 	-> disc
+	 	-> NNS 	-> players
+		 	-> VP 	-> VBP 	-> are
+	 	-> ADVP 	-> RB 	-> NOT
+		 	-> VP 	-> VBN 	-> allowed
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+					 	-> . 	-> .
+			
+Dependensee repr
+compound(players-5, Tape-1)
+cc(Tape-1, or-2)
+conj:or(Tape-1, compact-3)
+compound(players-5, compact-3)
+compound(players-5, disc-4)
+nsubjpass(allowed-8, players-5)
+auxpass(allowed-8, are-6)
+neg(allowed-8, NOT-7)
+root(ROOT-0, allowed-8)
+case(jail-11, in-9)
+det(jail-11, the-10)
+nmod:in(allowed-8, jail-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, allowed-8)
+nsubjpass(allowed-8, Tape-1)
+cc(Tape-1, or-2)
+conj:or(Tape-1, compact-3)
+nsubjpass(allowed-8, compact-3)
+compound(players-5, disc-4)
+dep(Tape-1, players-5)
+auxpass(allowed-8, are-6)
+nsubjpass(allowed-8, NOT-7)
+case(jail-11, in-9)
+det(jail-11, the-10)
+nmod:in(allowed-8, jail-11)
+punct(allowed-8, .-12)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 8] [?1, NOT7, Tape1, allowed8, compact3, disc4, jail11, players5]
+compact3-or->Tape1
+disc4- ->players5
+players5- ->Tape1
+NOT7-  : are ->allowed8
+compact3- ->allowed8
+?1-in->allowed8
+Tape1- ->allowed8
+?1-the->jail11
+
+[allowed8
+	(<- -Tape1
+		(<- -players5<- -disc4)
+		<-or-compact3)
+	(<- -*compact3)
+	(<-in-?1)
+	<-  : are -NOT7;
+jail11<-the-*?1]

@@ -1,0 +1,114 @@
+Inmates may have prescriptions dropped off at the jail provided the medication is in the pharmacy issued container.
+------CorefChainz
+Inmates-NNS 
+may-MD 
+have-VB 
+prescriptions-NNS 
+dropped-VBN 
+off-RP 
+at-IN 
+the-DT 
+jail-NN 
+provided-VBD 
+the-DT 
+medication-NN 
+is-VBZ 
+in-IN 
+the-DT 
+pharmacy-RB 
+issued-VBN 
+container-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Inmates
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> NP 	-> NNS 	-> prescriptions
+		 	-> VP 	-> VBN 	-> dropped
+	 	-> PRT 	-> RP 	-> off
+		 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+			 	-> PP 	-> VBD 	-> provided
+	 	-> SBAR 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> medication
+		 	-> VP 	-> VBZ 	-> is
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> ADJP 	-> RB 	-> pharmacy
+	 	-> VBN 	-> issued
+		 	-> NN 	-> container
+											 	-> . 	-> .
+			
+Dependensee repr
+nsubj(have-3, Inmates-1)
+aux(have-3, may-2)
+root(ROOT-0, have-3)
+dobj(have-3, prescriptions-4)
+acl(prescriptions-4, dropped-5)
+compound:prt(dropped-5, off-6)
+case(jail-9, at-7)
+det(jail-9, the-8)
+nmod:at(dropped-5, jail-9)
+dep(container-18, provided-10)
+det(medication-12, the-11)
+nsubj(container-18, medication-12)
+cop(container-18, is-13)
+case(container-18, in-14)
+det(container-18, the-15)
+advmod(issued-17, pharmacy-16)
+amod(container-18, issued-17)
+advcl(dropped-5, container-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, have-3)
+nsubj(have-3, Inmates-1)
+aux(have-3, may-2)
+nsubj(dropped-5, prescriptions-4)
+ccomp(have-3, dropped-5)
+compound:prt(dropped-5, off-6)
+case(jail-9, at-7)
+det(jail-9, the-8)
+nmod:at(dropped-5, jail-9)
+csubj(pharmacy-16, provided-10)
+det(medication-12, the-11)
+dobj(provided-10, medication-12)
+cop(pharmacy-16, is-13)
+case(pharmacy-16, in-14)
+det(pharmacy-16, the-15)
+dep(have-3, pharmacy-16)
+amod(container-18, issued-17)
+dep(pharmacy-16, container-18)
+punct(have-3, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[14, 13] [?1, ?2, ?3, Inmates1, container18, dropped5, have3, issued17, jail9, medication12, off6, pharmacy16, prescriptions4, provided10]
+?1-at->dropped5
+?1-the->jail9
+?2- ->provided10
+?2-the->medication12
+?3- ->have3
+provided10-  : is  : in  : in ->?3
+dropped5- ->have3
+prescriptions4- ->dropped5
+Inmates1-  : may ->have3
+off6-prt->dropped5
+container18- ->?3
+?3-the->pharmacy16
+issued17- ->container18
+
+[pharmacy16<-the-?3
+	(<- -container18<- -issued17)
+	<-  : is  : in  : in -provided10<- -?2;
+have3
+	(<- -*?3)
+	(<- -dropped5
+		(<-at-?1)
+		(<-prt-off6)
+		<- -prescriptions4)
+	<-  : may -Inmates1;
+jail9<-the-*?1;
+medication12<-the-*?2]

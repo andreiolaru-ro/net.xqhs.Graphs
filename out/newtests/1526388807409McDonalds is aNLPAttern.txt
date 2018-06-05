@@ -1,0 +1,66 @@
+McDonalds is a fast food restaurant that serves french fries.
+------CorefChainz
+McDonalds-NNP 
+is-VBZ 
+a-DT 
+fast-JJ 
+food-NN 
+restaurant-NN 
+that-WDT 
+serves-VBZ 
+french-JJ 
+fries-NNS 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> McDonalds
+		 	-> VP 	-> VBZ 	-> is
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> fast
+	 	-> NN 	-> food
+	 	-> NN 	-> restaurant
+		 	-> SBAR 	-> WHNP 	-> WDT 	-> that
+		 	-> S 	-> VP 	-> VBZ 	-> serves
+	 	-> NP 	-> JJ 	-> french
+	 	-> NNS 	-> fries
+							 	-> . 	-> .
+			
+Dependensee repr
+nsubj(restaurant-6, McDonalds-1)
+cop(restaurant-6, is-2)
+det(restaurant-6, a-3)
+amod(restaurant-6, fast-4)
+compound(restaurant-6, food-5)
+root(ROOT-0, restaurant-6)
+nsubj(serves-8, restaurant-6)
+ref(restaurant-6, that-7)
+acl:relcl(restaurant-6, serves-8)
+amod(fries-10, french-9)
+dobj(serves-8, fries-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, restaurant-6)
+nsubj(restaurant-6, McDonalds-1)
+cop(restaurant-6, is-2)
+det(restaurant-6, a-3)
+amod(restaurant-6, fast-4)
+compound(restaurant-6, food-5)
+nsubj(serves-8, restaurant-6)
+ref(restaurant-6, that-7)
+acl:relcl(restaurant-6, serves-8)
+amod(fries-10, french-9)
+dobj(serves-8, fries-10)
+punct(restaurant-6, .-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 8] [?1, McDonalds1, fast4, food restaurant6, french9, fries10, serves8, that7]
+that7- ->?1
+fries10- ->serves8
+?1- ->serves8
+fast4- ->?1
+McDonalds1-  : is ->?1
+serves8-relcl->?1
+french9- ->fries10
+?1-a->food restaurant6

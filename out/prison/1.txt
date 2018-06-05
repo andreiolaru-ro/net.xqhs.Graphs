@@ -1,0 +1,70 @@
+Medical Care, Dental Care, Prescription and Non-Prescription Medication Rules
+------CorefChainz
+Medical-NNP 
+Care-NNP 
+,-, 
+Dental-NNP 
+Care-NNP 
+,-, 
+Prescription-NNP 
+and-CC 
+Non-Prescription-NNP 
+Medication-NNP 
+Rules-NNPS 
+ROOT 	-> FRAG 	-> NP 	-> NP 	-> NNP 	-> Medical
+	 	-> NNP 	-> Care
+		 	-> , 	-> ,
+	 	-> NP 	-> NNP 	-> Dental
+	 	-> NNP 	-> Care
+		 	-> , 	-> ,
+	 	-> NP 	-> NNP 	-> Prescription
+		 	-> CC 	-> and
+	 	-> NP 	-> NNP 	-> Non-Prescription
+	 	-> NNP 	-> Medication
+	 	-> NNPS 	-> Rules
+					
+Dependensee repr
+compound(Care-2, Medical-1)
+root(ROOT-0, Care-2)
+compound(Care-5, Dental-4)
+conj:and(Care-2, Care-5)
+conj:and(Care-2, Prescription-7)
+cc(Care-2, and-8)
+compound(Rules-11, Non-Prescription-9)
+compound(Rules-11, Medication-10)
+conj:and(Care-2, Rules-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, Care-2)
+compound(Care-2, Medical-1)
+punct(Care-2, ,-3)
+compound(Care-5, Dental-4)
+conj:and(Care-2, Care-5)
+punct(Care-2, ,-6)
+conj:and(Care-2, Prescription-7)
+cc(Care-2, and-8)
+amod(Rules-11, Non-Prescription-9)
+compound(Rules-11, Medication-10)
+conj:and(Care-2, Rules-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 7] [Care2, Care5, Dental4, Medical1, Medication10, Non-Prescription9, Prescription7, Rules11]
+Medication10- ->Rules11
+Dental4- ->Care5
+Care5-and->Care2
+Non-Prescription9- ->Rules11
+Rules11-and->Care2
+Prescription7-and->Care2
+Medical1- ->Care2
+
+[Care2
+	(<-and-Care5<- -Dental4)
+	(<-and-Rules11
+		(<- -Medication10)
+		<- -Non-Prescription9)
+	(<- -Medical1)
+	<-and-Prescription7]

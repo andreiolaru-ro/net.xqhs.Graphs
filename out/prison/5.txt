@@ -1,0 +1,513 @@
+Medical care will never be refused to any inmate. Those inmates who do not have any money to cover the medical expenses will still be seen by the nurse (or doctor) and given the needed medications. A negative balance will be placed on the inmate’s canteen account in the amount of the medical expense. The 50% Deposit Rule for inmate’s canteen account will be followed.
+------CorefChainz
+CHAIN16-["the inmate 's" in sentence 3, "inmate 's" in sentence 4]
+representative mention: "the inmate 's" in sentence 3
+CHAIN11-["the medical expenses" in sentence 2, "the medical expense" in sentence 3]
+representative mention: "the medical expenses" in sentence 2
+CHAIN14-["the inmate 's canteen account" in sentence 3, "inmate 's canteen account" in sentence 4]
+representative mention: "the inmate 's canteen account" in sentence 3
+Medical-NNP 
+care-VBP 
+will-MD 
+never-RB 
+be-VB 
+refused-VBN 
+to-TO 
+any-DT 
+inmate-NN 
+.-. 
+Those-DT 
+inmates-NNS 
+who-WP 
+do-VBP 
+not-RB 
+have-VB 
+any-DT 
+money-NN 
+to-TO 
+cover-VB 
+the-DT 
+medical-JJ 
+expenses-NNS 
+will-MD 
+still-RB 
+be-VB 
+seen-VBN 
+by-IN 
+the-DT 
+nurse-NN 
+-LRB---LRB- 
+or-CC 
+doctor-VB 
+-RRB---RRB- 
+and-CC 
+given-VBN 
+the-DT 
+needed-VBN 
+medications-NNS 
+.-. 
+A-DT 
+negative-JJ 
+balance-NN 
+will-MD 
+be-VB 
+placed-VBN 
+on-IN 
+the-DT 
+inmate-NN 
+'s-POS 
+canteen-NN 
+account-NN 
+in-IN 
+the-DT 
+amount-NN 
+of-IN 
+the-DT 
+medical-JJ 
+expense-NN 
+.-. 
+The-DT 
+50-CD 
+%-NN 
+Deposit-NNP 
+Rule-NNP 
+for-IN 
+inmate-NN 
+'s-POS 
+canteen-NN 
+account-NN 
+will-MD 
+be-VB 
+followed-VBN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NNP 	-> Medical
+		 	-> VP 	-> VBP 	-> care
+	 	-> SBAR 	-> SINV 	-> VP 	-> MD 	-> will
+	 	-> ADVP 	-> RB 	-> never
+		 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> refused
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> inmate
+			 	-> . 	-> .
+				 	-> NP 	-> NP 	-> DT 	-> Those
+	 	-> NNS 	-> inmates
+		 	-> SBAR 	-> WHNP 	-> WP 	-> who
+		 	-> S 	-> VP 	-> VBP 	-> do
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> have
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> money
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> cover
+	 	-> SBAR 	-> S 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> medical
+	 	-> NNS 	-> expenses
+		 	-> VP 	-> MD 	-> will
+	 	-> ADVP 	-> RB 	-> still
+		 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VP 	-> VBN 	-> seen
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> nurse
+				 	-> PRN 	-> -LRB- 	-> -LRB-
+	 	-> CC 	-> or
+	 	-> VB 	-> doctor
+	 	-> -RRB- 	-> -RRB-
+		 	-> CC 	-> and
+	 	-> VP 	-> VBN 	-> given
+	 	-> NP 	-> DT 	-> the
+	 	-> VBN 	-> needed
+	 	-> NNS 	-> medications
+						 	-> . 	-> .
+												 	-> S 	-> NP 	-> DT 	-> A
+	 	-> JJ 	-> negative
+	 	-> NN 	-> balance
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> placed
+	 	-> PP 	-> IN 	-> on
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> canteen
+	 	-> NN 	-> account
+			 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> amount
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> medical
+	 	-> NN 	-> expense
+									 	-> . 	-> .
+					 	-> NP 	-> NP 	-> DT 	-> The
+	 	-> ADJP 	-> CD 	-> 50
+	 	-> NN 	-> %
+		 	-> NNP 	-> Deposit
+	 	-> NNP 	-> Rule
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NP 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> canteen
+	 	-> NN 	-> account
+				 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> followed
+				 	-> . 	-> .
+			
+Dependensee repr
+nsubj(care-2, Medical-1)
+dep(followed-73, care-2)
+aux(refused-6, will-3)
+neg(refused-6, never-4)
+auxpass(refused-6, be-5)
+dep(care-2, refused-6)
+case(inmate-9, to-7)
+det(inmate-9, any-8)
+nmod:to(refused-6, inmate-9)
+det(inmates-12, Those-11)
+nsubjpass(refused-6, inmates-12)
+nsubj(have-16, inmates-12)
+ref(inmates-12, who-13)
+aux(have-16, do-14)
+neg(have-16, not-15)
+acl:relcl(inmates-12, have-16)
+det(money-18, any-17)
+dobj(have-16, money-18)
+mark(cover-20, to-19)
+acl(money-18, cover-20)
+det(expenses-23, the-21)
+amod(expenses-23, medical-22)
+nsubjpass(seen-27, expenses-23)
+nsubjpass(given-36, expenses-23)
+aux(seen-27, will-24)
+advmod(seen-27, still-25)
+auxpass(seen-27, be-26)
+ccomp(cover-20, seen-27)
+case(nurse-30, by-28)
+det(nurse-30, the-29)
+nmod:agent(seen-27, nurse-30)
+dep(seen-27, or-32)
+dep(or-32, doctor-33)
+cc(seen-27, and-35)
+ccomp(cover-20, given-36)
+conj:and(seen-27, given-36)
+det(medications-39, the-37)
+amod(medications-39, needed-38)
+dobj(given-36, medications-39)
+det(balance-43, A-41)
+amod(balance-43, negative-42)
+nsubjpass(placed-46, balance-43)
+aux(placed-46, will-44)
+auxpass(placed-46, be-45)
+ccomp(refused-6, placed-46)
+case(account-52, on-47)
+det(inmate-49, the-48)
+nmod:poss(account-52, inmate-49)
+case(inmate-49, 's-50)
+compound(account-52, canteen-51)
+nmod:on(placed-46, account-52)
+case(amount-55, in-53)
+det(amount-55, the-54)
+nmod:in(placed-46, amount-55)
+case(expense-59, of-56)
+det(expense-59, the-57)
+amod(expense-59, medical-58)
+nmod:of(amount-55, expense-59)
+det(Rule-65, The-61)
+compound(%-63, 50-62)
+amod(Rule-65, %-63)
+compound(Rule-65, Deposit-64)
+nsubjpass(followed-73, Rule-65)
+case(account-70, for-66)
+nmod:poss(account-70, inmate-67)
+case(inmate-67, 's-68)
+compound(account-70, canteen-69)
+nmod:for(Rule-65, account-70)
+aux(followed-73, will-71)
+auxpass(followed-73, be-72)
+root(ROOT-0, followed-73)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, refused-6)
+amod(care-2, Medical-1)
+nsubjpass(refused-6, care-2)
+aux(refused-6, will-3)
+neg(refused-6, never-4)
+auxpass(refused-6, be-5)
+case(inmate-9, to-7)
+det(inmate-9, any-8)
+nmod:to(refused-6, inmate-9)
+punct(refused-6, .-10)
+---
+qqroot(ROOT-0, refused-6)
+amod(care-2, Medical-1)
+nsubjpass(refused-6, care-2)
+aux(refused-6, will-3)
+neg(refused-6, never-4)
+auxpass(refused-6, be-5)
+case(inmate-9, to-7)
+det(inmate-9, any-8)
+nmod:to(refused-6, inmate-9)
+punct(refused-6, .-10)
+root(ROOT-0, seen-17)
+det(inmates-2, Those-1)
+nsubj(have-6, inmates-2)
+nsubjpass(seen-17, inmates-2)
+ref(inmates-2, who-3)
+aux(have-6, do-4)
+neg(have-6, not-5)
+acl:relcl(inmates-2, have-6)
+det(money-8, any-7)
+dobj(have-6, money-8)
+mark(cover-10, to-9)
+acl:to(money-8, cover-10)
+det(expenses-13, the-11)
+amod(expenses-13, medical-12)
+dobj(cover-10, expenses-13)
+aux(seen-17, will-14)
+advmod(seen-17, still-15)
+auxpass(seen-17, be-16)
+case(nurse-20, by-18)
+det(nurse-20, the-19)
+nmod:agent(seen-17, nurse-20)
+punct(doctor-23, -LRB--21)
+cc(doctor-23, or-22)
+appos(nurse-20, doctor-23)
+punct(doctor-23, -RRB--24)
+cc(seen-17, and-25)
+case(medications-29, given-26)
+det(medications-29, the-27)
+amod(medications-29, needed-28)
+conj:and(seen-17, medications-29)
+punct(seen-17, .-30)
+---
+qqroot(ROOT-0, refused-6)
+amod(care-2, Medical-1)
+nsubjpass(refused-6, care-2)
+aux(refused-6, will-3)
+neg(refused-6, never-4)
+auxpass(refused-6, be-5)
+case(inmate-9, to-7)
+det(inmate-9, any-8)
+nmod:to(refused-6, inmate-9)
+punct(refused-6, .-10)
+root(ROOT-0, seen-17)
+det(inmates-2, Those-1)
+nsubj(have-6, inmates-2)
+nsubjpass(seen-17, inmates-2)
+ref(inmates-2, who-3)
+aux(have-6, do-4)
+neg(have-6, not-5)
+acl:relcl(inmates-2, have-6)
+det(money-8, any-7)
+dobj(have-6, money-8)
+mark(cover-10, to-9)
+acl:to(money-8, cover-10)
+det(expenses-13, the-11)
+amod(expenses-13, medical-12)
+dobj(cover-10, expenses-13)
+aux(seen-17, will-14)
+advmod(seen-17, still-15)
+auxpass(seen-17, be-16)
+case(nurse-20, by-18)
+det(nurse-20, the-19)
+nmod:agent(seen-17, nurse-20)
+punct(doctor-23, -LRB--21)
+cc(doctor-23, or-22)
+appos(nurse-20, doctor-23)
+punct(doctor-23, -RRB--24)
+cc(seen-17, and-25)
+case(medications-29, given-26)
+det(medications-29, the-27)
+amod(medications-29, needed-28)
+conj:and(seen-17, medications-29)
+punct(seen-17, .-30)
+root(ROOT-0, placed-6)
+det(balance-3, A-1)
+amod(balance-3, negative-2)
+nsubjpass(placed-6, balance-3)
+aux(placed-6, will-4)
+auxpass(placed-6, be-5)
+case(account-12, on-7)
+det(inmate-9, the-8)
+nmod:poss(account-12, inmate-9)
+case(inmate-9, 's-10)
+compound(account-12, canteen-11)
+nmod:on(placed-6, account-12)
+case(amount-15, in-13)
+det(amount-15, the-14)
+nmod:in(placed-6, amount-15)
+case(expense-19, of-16)
+det(expense-19, the-17)
+amod(expense-19, medical-18)
+nmod:of(amount-15, expense-19)
+punct(placed-6, .-20)
+---
+qqroot(ROOT-0, refused-6)
+amod(care-2, Medical-1)
+nsubjpass(refused-6, care-2)
+aux(refused-6, will-3)
+neg(refused-6, never-4)
+auxpass(refused-6, be-5)
+case(inmate-9, to-7)
+det(inmate-9, any-8)
+nmod:to(refused-6, inmate-9)
+punct(refused-6, .-10)
+root(ROOT-0, seen-17)
+det(inmates-2, Those-1)
+nsubj(have-6, inmates-2)
+nsubjpass(seen-17, inmates-2)
+ref(inmates-2, who-3)
+aux(have-6, do-4)
+neg(have-6, not-5)
+acl:relcl(inmates-2, have-6)
+det(money-8, any-7)
+dobj(have-6, money-8)
+mark(cover-10, to-9)
+acl:to(money-8, cover-10)
+det(expenses-13, the-11)
+amod(expenses-13, medical-12)
+dobj(cover-10, expenses-13)
+aux(seen-17, will-14)
+advmod(seen-17, still-15)
+auxpass(seen-17, be-16)
+case(nurse-20, by-18)
+det(nurse-20, the-19)
+nmod:agent(seen-17, nurse-20)
+punct(doctor-23, -LRB--21)
+cc(doctor-23, or-22)
+appos(nurse-20, doctor-23)
+punct(doctor-23, -RRB--24)
+cc(seen-17, and-25)
+case(medications-29, given-26)
+det(medications-29, the-27)
+amod(medications-29, needed-28)
+conj:and(seen-17, medications-29)
+punct(seen-17, .-30)
+root(ROOT-0, placed-6)
+det(balance-3, A-1)
+amod(balance-3, negative-2)
+nsubjpass(placed-6, balance-3)
+aux(placed-6, will-4)
+auxpass(placed-6, be-5)
+case(account-12, on-7)
+det(inmate-9, the-8)
+nmod:poss(account-12, inmate-9)
+case(inmate-9, 's-10)
+compound(account-12, canteen-11)
+nmod:on(placed-6, account-12)
+case(amount-15, in-13)
+det(amount-15, the-14)
+nmod:in(placed-6, amount-15)
+case(expense-19, of-16)
+det(expense-19, the-17)
+amod(expense-19, medical-18)
+nmod:of(amount-15, expense-19)
+punct(placed-6, .-20)
+root(ROOT-0, followed-13)
+det(Rule-5, The-1)
+compound(%-3, 50-2)
+amod(Rule-5, %-3)
+compound(Rule-5, Deposit-4)
+nsubjpass(followed-13, Rule-5)
+case(account-10, for-6)
+nmod:poss(account-10, inmate-7)
+case(inmate-7, 's-8)
+compound(account-10, canteen-9)
+nmod:for(Rule-5, account-10)
+aux(followed-13, will-11)
+auxpass(followed-13, be-12)
+punct(followed-13, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+G[47, 47] [%3, 502, ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, Deposit4, Medical1, Rule5, account12, account10, amount15, balance3, canteen11, canteen9, care2, cover10, doctor23, expense19, expenses13, followed13, have6, inmate9, inmate7, inmate9, inmates2, medical18, medical12, medications29, money8, needed28, negative2, never4, not5, nurse20, placed6, refused6, seen17, still15, who3]
+502- ->%3
+?8-the->medications29
+cover10-to->?9
+?2- ->have6
+?3- ->cover10
+?8-and->seen17
+?2-Those->inmates2
+Medical1- ->care2
+medical12- ->?3
+?4-the->amount15
+have6- ->?2
+?9-any->money8
+?10-the->expense19
+?2- ->seen17
+?11-poss : 's ->account12
+canteen9- ->account10
+cover10-==->medical12
+medical18- ->?10
+account10-for->?7
+?6-any->inmate9
+?3-the->expenses13
+?7-The->Rule5
+account12-on->placed6
+?10-==->followed13
+canteen11- ->account12
+?4-in->placed6
+needed28-  : given ->?8
+inmate7-==->?6
+negative2- ->?1
+care2-  : will  : will ->refused6
+%3- ->?7
+?5-agent : by ->seen17
+?7-  : will  : be ->followed13
+?6-to->refused6
+not5-  : do ->have6
+doctor23-  : or ->?5
+?10-of->?4
+?1-  : will  : be ->placed6
+who3- ->?2
+?5-the->nurse20
+inmate7-poss : 's ->account10
+never4-  : be ->refused6
+Deposit4- ->?7
+?11-the->inmate9
+?1-A->balance3
+still15-  : will  : be ->seen17
+?9- ->have6
+
+[inmates2<-Those-?2
+	(<- -have6(<- -*?2)(<- -?9<-to-cover10<- -?3<- -medical12<-==-*cover10)<-  : do -not5)
+	<- -who3;
+Rule5<-The-?7
+	(<- -%3<- -502)
+	(<-for-account10(<- -canteen9)<-poss : 's -inmate7)
+	<- -Deposit4;
+amount15<-the-?4<-of-?10<- -medical18;
+balance3<-A-?1<- -negative2;
+medications29<-the-?8<-  : given -needed28;
+nurse20<-the-?5<-  : or -doctor23;
+placed6
+	(<-in-*?4)
+	(<-  : will  : be -*?1)
+	<-on-account12
+		(<-poss : 's -?11)
+		<- -canteen11;
+refused6
+	(<-  : will  : will -care2<- -Medical1)
+	(<-  : be -never4)
+	<-to-?6<-==-*inmate7;
+inmate9<-any-*?6;
+seen17
+	(<- -*?2)
+	(<-agent : by -*?5)
+	(<-and-*?8)
+	<-  : will  : be -still15;
+expense19<-the-*?10;
+expenses13<-the-*?3;
+inmate9<-the-*?11;
+money8<-any-*?9;
+followed13
+	(<-  : will  : be -*?7)
+	<-==-*?10]

@@ -1,0 +1,146 @@
+When mail volume is high, letters may be opened and inspected in the jail office and handed out to inmates when time allows.
+------CorefChainz
+When-WRB 
+mail-NN 
+volume-NN 
+is-VBZ 
+high-JJ 
+,-, 
+letters-NNS 
+may-MD 
+be-VB 
+opened-VBN 
+and-CC 
+inspected-VBN 
+in-IN 
+the-DT 
+jail-NN 
+office-NN 
+and-CC 
+handed-VBN 
+out-RP 
+to-TO 
+inmates-NNS 
+when-WRB 
+time-NN 
+allows-VBZ 
+.-. 
+ROOT 	-> S 	-> SBAR 	-> WHADVP 	-> WRB 	-> When
+		 	-> S 	-> NP 	-> NN 	-> mail
+	 	-> NN 	-> volume
+		 	-> VP 	-> VBZ 	-> is
+	 	-> ADJP 	-> JJ 	-> high
+					 	-> , 	-> ,
+	 	-> NP 	-> NNS 	-> letters
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VP 	-> VBN 	-> opened
+	 	-> CC 	-> and
+	 	-> VBN 	-> inspected
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> office
+				 	-> CC 	-> and
+	 	-> VP 	-> VBN 	-> handed
+	 	-> PRT 	-> RP 	-> out
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> NNS 	-> inmates
+		 	-> SBAR 	-> WHADVP 	-> WRB 	-> when
+		 	-> S 	-> NP 	-> NN 	-> time
+		 	-> VP 	-> VBZ 	-> allows
+										 	-> . 	-> .
+			
+Dependensee repr
+advmod(high-5, When-1)
+compound(volume-3, mail-2)
+nsubj(high-5, volume-3)
+cop(high-5, is-4)
+advcl(opened-10, high-5)
+nsubjpass(opened-10, letters-7)
+nsubjpass(inspected-12, letters-7)
+nsubjpass(handed-18, letters-7)
+aux(opened-10, may-8)
+auxpass(opened-10, be-9)
+root(ROOT-0, opened-10)
+cc(opened-10, and-11)
+conj:and(opened-10, inspected-12)
+case(office-16, in-13)
+det(office-16, the-14)
+compound(office-16, jail-15)
+nmod:in(opened-10, office-16)
+cc(opened-10, and-17)
+conj:and(opened-10, handed-18)
+compound:prt(handed-18, out-19)
+case(inmates-21, to-20)
+nmod:to(handed-18, inmates-21)
+advmod(allows-24, when-22)
+nsubj(allows-24, time-23)
+acl:relcl(inmates-21, allows-24)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, opened-10)
+advmod(high-5, When-1)
+compound(volume-3, mail-2)
+nsubj(high-5, volume-3)
+cop(high-5, is-4)
+advcl(opened-10, high-5)
+punct(opened-10, ,-6)
+nsubjpass(opened-10, letters-7)
+nsubjpass(inspected-12, letters-7)
+nsubjpass(handed-18, letters-7)
+aux(opened-10, may-8)
+auxpass(opened-10, be-9)
+cc(opened-10, and-11)
+conj:and(opened-10, inspected-12)
+case(office-16, in-13)
+det(office-16, the-14)
+compound(office-16, jail-15)
+nmod:in(opened-10, office-16)
+cc(opened-10, and-17)
+conj:and(opened-10, handed-18)
+compound:prt(handed-18, out-19)
+case(inmates-21, to-20)
+nmod:to(handed-18, inmates-21)
+advmod(allows-24, when-22)
+nsubj(allows-24, time-23)
+advcl(handed-18, allows-24)
+punct(opened-10, .-25)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[16, 17] [?1, When1, allows24, handed18, high5, inmates21, inspected12, jail15, letters7, mail2, office16, opened10, out19, time23, volume3, when22]
+letters7-  : may  : be ->opened10
+when22- ->allows24
+allows24- ->handed18
+out19-prt->handed18
+time23- ->allows24
+letters7- ->handed18
+jail15- ->?1
+?1-the->office16
+handed18-and->opened10
+When1- ->high5
+mail2- ->volume3
+volume3-  : is ->high5
+high5- ->opened10
+inmates21-to->handed18
+letters7- ->inspected12
+inspected12-and->opened10
+?1-in->opened10
+
+[opened10
+	(<- -high5
+		(<-  : is -volume3<- -mail2)
+		<- -When1)
+	(<-and-handed18
+		(<- -allows24(<- -time23)<- -when22)
+		(<-to-inmates21)
+		(<- -letters7)
+		<-prt-out19)
+	(<-  : may  : be -*letters7)
+	(<-in-?1<- -jail15)
+	<-and-inspected12<- -*letters7;
+office16<-the-*?1]

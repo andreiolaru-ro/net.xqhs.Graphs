@@ -1,0 +1,73 @@
+The staff will open and inspect non-privileged letters for contraband.
+------CorefChainz
+The-DT 
+staff-NN 
+will-MD 
+open-VB 
+and-CC 
+inspect-VB 
+non-privileged-JJ 
+letters-NNS 
+for-IN 
+contraband-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> staff
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> open
+	 	-> CC 	-> and
+	 	-> VB 	-> inspect
+	 	-> NP 	-> NP 	-> JJ 	-> non-privileged
+	 	-> NNS 	-> letters
+		 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> NN 	-> contraband
+						 	-> . 	-> .
+			
+Dependensee repr
+det(staff-2, The-1)
+nsubj(open-4, staff-2)
+nsubj(inspect-6, staff-2)
+aux(open-4, will-3)
+root(ROOT-0, open-4)
+cc(open-4, and-5)
+conj:and(open-4, inspect-6)
+amod(letters-8, non-privileged-7)
+dobj(open-4, letters-8)
+case(contraband-10, for-9)
+nmod:for(letters-8, contraband-10)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, open-4)
+det(staff-2, The-1)
+nsubj(open-4, staff-2)
+nsubj(inspect-6, staff-2)
+aux(open-4, will-3)
+cc(open-4, and-5)
+conj:and(open-4, inspect-6)
+amod(letters-8, non-privileged-7)
+dobj(open-4, letters-8)
+case(contraband-10, for-9)
+nmod:for(letters-8, contraband-10)
+punct(open-4, .-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 7] [?1, contraband10, inspect6, letters8, non-privileged7, open4, staff2]
+inspect6-and->open4
+non-privileged7- ->letters8
+?1- ->inspect6
+?1-  : will ->open4
+letters8- ->open4
+contraband10-for->letters8
+?1-The->staff2
+
+[open4
+	(<-and-inspect6<- -?1)
+	(<-  : will -*?1)
+	<- -letters8
+		(<-for-contraband10)
+		<- -non-privileged7;
+staff2<-The-*?1]

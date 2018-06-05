@@ -1,0 +1,115 @@
+Minor violations are those violations of the jail rules for which a minor penalty or penalties may be imposed.
+------CorefChainz
+Minor-JJ 
+violations-NNS 
+are-VBP 
+those-DT 
+violations-NNS 
+of-IN 
+the-DT 
+jail-NN 
+rules-NNS 
+for-IN 
+which-WDT 
+a-DT 
+minor-JJ 
+penalty-NN 
+or-CC 
+penalties-NNS 
+may-MD 
+be-VB 
+imposed-VBN 
+.-. 
+ROOT 	-> S 	-> NP 	-> JJ 	-> Minor
+	 	-> NNS 	-> violations
+		 	-> VP 	-> VBP 	-> are
+	 	-> NP 	-> NP 	-> DT 	-> those
+	 	-> NNS 	-> violations
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NNS 	-> rules
+			 	-> SBAR 	-> WHPP 	-> IN 	-> for
+	 	-> WHNP 	-> WDT 	-> which
+			 	-> S 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> JJ 	-> minor
+	 	-> NN 	-> penalty
+		 	-> CC 	-> or
+	 	-> NP 	-> NNS 	-> penalties
+			 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> imposed
+								 	-> . 	-> .
+			
+Dependensee repr
+amod(violations-2, Minor-1)
+nsubj(violations-5, violations-2)
+cop(violations-5, are-3)
+det(violations-5, those-4)
+root(ROOT-0, violations-5)
+nmod:for(imposed-19, violations-5)
+case(rules-9, of-6)
+det(rules-9, the-7)
+compound(rules-9, jail-8)
+nmod:of(violations-5, rules-9)
+case(which-11, for-10)
+ref(violations-5, which-11)
+det(penalty-14, a-12)
+amod(penalty-14, minor-13)
+nsubjpass(imposed-19, penalty-14)
+cc(penalty-14, or-15)
+conj:or(penalty-14, penalties-16)
+nsubjpass(imposed-19, penalties-16)
+aux(imposed-19, may-17)
+auxpass(imposed-19, be-18)
+acl:relcl(violations-5, imposed-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, violations-5)
+amod(violations-2, Minor-1)
+nsubj(violations-5, violations-2)
+cop(violations-5, are-3)
+det(violations-5, those-4)
+case(rules-9, of-6)
+det(rules-9, the-7)
+compound(rules-9, jail-8)
+nmod:of(violations-5, rules-9)
+nmod:for(imposed-19, rules-9)
+case(which-11, for-10)
+ref(rules-9, which-11)
+det(penalty-14, a-12)
+amod(penalty-14, minor-13)
+nsubjpass(imposed-19, penalty-14)
+cc(penalty-14, or-15)
+conj:or(penalty-14, penalties-16)
+nsubjpass(imposed-19, penalties-16)
+aux(imposed-19, may-17)
+auxpass(imposed-19, be-18)
+acl:relcl(rules-9, imposed-19)
+punct(violations-5, .-20)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[12, 13] [?1, ?2, ?3, Minor1, imposed19, jail8, minor13, penalties16, penalty14, rules9, violations2, violations5]
+imposed19- ->?2
+?2-the->rules9
+?1- ->imposed19
+?3-those->violations5
+?2-of->?3
+penalties16-  : may  : be ->imposed19
+violations2-  : are ->?3
+Minor1- ->violations2
+jail8-  : which ->?2
+minor13- ->?1
+?2-for->imposed19
+penalties16-or->?1
+?1-a->penalty14
+
+[violations5<-those-?3
+	(<-of-?2(<- -imposed19(<-for-*?2)(<- -?1(<- -minor13)<-or-penalties16)<-  : may  : be -*penalties16)<-  : which -jail8)
+	<-  : are -violations2<- -Minor1;
+penalty14<-a-*?1;
+rules9<-the-*?2]

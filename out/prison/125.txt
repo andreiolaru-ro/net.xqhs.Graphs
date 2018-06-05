@@ -1,0 +1,260 @@
+Lock-up time will be at 10:00 PM each night with no exceptions. Televisions will be turned off at that time. Items the inmate wishes to take into their cell must be taken into the cell prior to lock-up.
+------CorefChainz
+CHAIN10-["their cell" in sentence 3, "the cell prior to lock-up" in sentence 3]
+representative mention: "the cell prior to lock-up" in sentence 3
+Lock-up-JJ 
+time-NN 
+will-MD 
+be-VB 
+at-IN 
+10:00-CD 
+PM-NN 
+each-DT 
+night-NN 
+with-IN 
+no-DT 
+exceptions-NNS 
+.-. 
+Televisions-NNP 
+will-MD 
+be-VB 
+turned-VBN 
+off-RP 
+at-IN 
+that-IN 
+time-NN 
+.-. 
+Items-VBG 
+the-DT 
+inmate-NN 
+wishes-VBZ 
+to-TO 
+take-VB 
+into-IN 
+their-PRP$ 
+cell-NN 
+must-MD 
+be-VB 
+taken-VBN 
+into-IN 
+the-DT 
+cell-NN 
+prior-RB 
+to-TO 
+lock-up-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> JJ 	-> Lock-up
+	 	-> NN 	-> time
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> NP 	-> CD 	-> 10:00
+	 	-> NN 	-> PM
+		 	-> NP 	-> DT 	-> each
+	 	-> NN 	-> night
+				 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> DT 	-> no
+	 	-> NNS 	-> exceptions
+					 	-> . 	-> .
+		 	-> NP 	-> NNP 	-> Televisions
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> turned
+	 	-> PRT 	-> RP 	-> off
+		 	-> PP 	-> IN 	-> at
+	 	-> SBAR 	-> IN 	-> that
+	 	-> S 	-> NP 	-> NP 	-> NN 	-> time
+		 	-> . 	-> .
+	 	-> S 	-> VP 	-> VBG 	-> Items
+	 	-> SBAR 	-> S 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+		 	-> VP 	-> VBZ 	-> wishes
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> take
+	 	-> PP 	-> IN 	-> into
+	 	-> NP 	-> PRP$ 	-> their
+	 	-> NN 	-> cell
+												 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> taken
+	 	-> PP 	-> IN 	-> into
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> cell
+		 	-> ADVP 	-> RB 	-> prior
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NN 	-> lock-up
+															 	-> . 	-> .
+			
+Dependensee repr
+amod(time-2, Lock-up-1)
+nsubj(PM-7, time-2)
+aux(PM-7, will-3)
+cop(PM-7, be-4)
+case(PM-7, at-5)
+nummod(PM-7, 10:00-6)
+dep(turned-17, PM-7)
+det(night-9, each-8)
+dep(PM-7, night-9)
+case(exceptions-12, with-10)
+neg(exceptions-12, no-11)
+nmod:with(PM-7, exceptions-12)
+nsubjpass(turned-17, Televisions-14)
+aux(turned-17, will-15)
+auxpass(turned-17, be-16)
+root(ROOT-0, turned-17)
+compound:prt(turned-17, off-18)
+mark(taken-34, at-19)
+mark(taken-34, that-20)
+nsubjpass(taken-34, time-21)
+dep(time-21, Items-23)
+det(inmate-25, the-24)
+nsubj(wishes-26, inmate-25)
+nsubj:xsubj(take-28, inmate-25)
+ccomp(Items-23, wishes-26)
+mark(take-28, to-27)
+xcomp(wishes-26, take-28)
+case(cell-31, into-29)
+nmod:poss(cell-31, their-30)
+nmod:into(take-28, cell-31)
+aux(taken-34, must-32)
+auxpass(taken-34, be-33)
+advcl(turned-17, taken-34)
+case(cell-37, into-35)
+det(cell-37, the-36)
+nmod:into(taken-34, cell-37)
+advmod(cell-37, prior-38)
+case(lock-up-40, to-39)
+nmod:to(prior-38, lock-up-40)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, PM-7)
+amod(time-2, Lock-up-1)
+nsubj(PM-7, time-2)
+aux(PM-7, will-3)
+cop(PM-7, be-4)
+case(PM-7, at-5)
+nummod(PM-7, 10:00-6)
+det(night-9, each-8)
+nmod:tmod(PM-7, night-9)
+case(exceptions-12, with-10)
+neg(exceptions-12, no-11)
+nmod:with(PM-7, exceptions-12)
+punct(PM-7, .-13)
+---
+qqroot(ROOT-0, PM-7)
+amod(time-2, Lock-up-1)
+nsubj(PM-7, time-2)
+aux(PM-7, will-3)
+cop(PM-7, be-4)
+case(PM-7, at-5)
+nummod(PM-7, 10:00-6)
+det(night-9, each-8)
+nmod:tmod(PM-7, night-9)
+case(exceptions-12, with-10)
+neg(exceptions-12, no-11)
+nmod:with(PM-7, exceptions-12)
+punct(PM-7, .-13)
+root(ROOT-0, turned-4)
+nsubjpass(turned-4, Televisions-1)
+aux(turned-4, will-2)
+auxpass(turned-4, be-3)
+compound:prt(turned-4, off-5)
+case(time-8, at-6)
+det(time-8, that-7)
+nmod:at(turned-4, time-8)
+punct(turned-4, .-9)
+---
+qqroot(ROOT-0, PM-7)
+amod(time-2, Lock-up-1)
+nsubj(PM-7, time-2)
+aux(PM-7, will-3)
+cop(PM-7, be-4)
+case(PM-7, at-5)
+nummod(PM-7, 10:00-6)
+det(night-9, each-8)
+nmod:tmod(PM-7, night-9)
+case(exceptions-12, with-10)
+neg(exceptions-12, no-11)
+nmod:with(PM-7, exceptions-12)
+punct(PM-7, .-13)
+root(ROOT-0, turned-4)
+nsubjpass(turned-4, Televisions-1)
+aux(turned-4, will-2)
+auxpass(turned-4, be-3)
+compound:prt(turned-4, off-5)
+case(time-8, at-6)
+det(time-8, that-7)
+nmod:at(turned-4, time-8)
+punct(turned-4, .-9)
+root(ROOT-0, taken-12)
+nsubjpass(taken-12, Items-1)
+det(inmate-3, the-2)
+nsubj(wishes-4, inmate-3)
+nsubj:xsubj(take-6, inmate-3)
+acl:relcl(Items-1, wishes-4)
+mark(take-6, to-5)
+xcomp(wishes-4, take-6)
+case(cell-9, into-7)
+nmod:poss(cell-9, their-8)
+nmod:into(take-6, cell-9)
+aux(taken-12, must-10)
+auxpass(taken-12, be-11)
+case(cell-15, into-13)
+det(cell-15, the-14)
+nmod:into(taken-12, cell-15)
+amod(cell-15, prior-16)
+case(lock-up-18, to-17)
+nmod:to(prior-16, lock-up-18)
+punct(taken-12, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+G[25, 24] [10:006, ?1, ?2, ?3, ?4, Items1, Lock-up1, PM7, Televisions1, cell15, cell9, exceptions12, inmate3, lock-up18, night9, no11, off5, prior16, take6, taken12, their8, time8, time2, turned4, wishes4]
+?3-into : must  : be ->taken12
+?2- ->take6
+exceptions12-with->PM7
+10:006-  : at ->PM7
+Lock-up1- ->time2
+take6-  : to ->wishes4
+cell9-into->take6
+prior16- ->?3
+?1-at->turned4
+?4-tmod->PM7
+?2- ->wishes4
+time2-  : will  : be  : be ->PM7
+lock-up18-to->prior16
+Televisions1-  : will  : be  : be ->turned4
+Items1- ->taken12
+?1-that->time8
+?2-the->inmate3
+off5-prt->turned4
+?4-each->night9
+wishes4- ->Items1
+cell9-==->?3
+their8-poss->cell9
+?3-the->cell15
+no11- ->exceptions12
+
+[taken12
+	(<- -Items1<- -wishes4(<-  : to -take6(<-into-cell9<-poss-their8)<- -?2)<- -*?2)
+	<-into : must  : be -?3
+		(<-==-*cell9)
+		<- -prior16<-to-lock-up18;
+cell15<-the-*?3;
+PM7
+	(<-with-exceptions12<- -no11)
+	(<-  : will  : be  : be -time2<- -Lock-up1)
+	(<-  : at -10:006)
+	<-tmod-?4;
+night9<-each-*?4;
+time8<-that-?1;
+turned4
+	(<-at-*?1)
+	(<-  : will  : be  : be -Televisions1)
+	<-prt-off5;
+inmate3<-the-*?2]

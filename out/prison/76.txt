@@ -1,0 +1,87 @@
+Fees will start at $47.50 and are subject to change without notice.
+------CorefChainz
+Fees-NNS 
+will-MD 
+start-VB 
+at-IN 
+$-$ 
+47.50-CD 
+and-CC 
+are-VBP 
+subject-JJ 
+to-TO 
+change-VB 
+without-IN 
+notice-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNS 	-> Fees
+		 	-> VP 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> start
+	 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> $ 	-> $
+	 	-> CD 	-> 47.50
+					 	-> CC 	-> and
+	 	-> VP 	-> VBP 	-> are
+	 	-> ADJP 	-> JJ 	-> subject
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> change
+	 	-> PP 	-> IN 	-> without
+	 	-> NP 	-> NN 	-> notice
+									 	-> . 	-> .
+			
+Dependensee repr
+nsubj(start-3, Fees-1)
+nsubj(subject-9, Fees-1)
+nsubj:xsubj(change-11, Fees-1)
+aux(start-3, will-2)
+root(ROOT-0, start-3)
+case(47.50-6, at-4)
+dep(47.50-6, $-5)
+nmod:at(start-3, 47.50-6)
+cc(start-3, and-7)
+cop(subject-9, are-8)
+conj:and(start-3, subject-9)
+mark(change-11, to-10)
+xcomp(subject-9, change-11)
+case(notice-13, without-12)
+nmod:without(change-11, notice-13)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, start-3)
+nsubj(start-3, Fees-1)
+nsubj(subject-9, Fees-1)
+nsubj:xsubj(change-11, Fees-1)
+aux(start-3, will-2)
+case(47.50-6, at-4)
+dep(47.50-6, $-5)
+nmod:at(start-3, 47.50-6)
+cc(start-3, and-7)
+cop(subject-9, are-8)
+conj:and(start-3, subject-9)
+mark(change-11, to-10)
+xcomp(subject-9, change-11)
+case(notice-13, without-12)
+nmod:without(change-11, notice-13)
+punct(start-3, .-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[7, 8] [$5, 47.506, Fees1, change11, notice13, start3, subject9]
+Fees1- ->change11
+change11-  : to  : are ->subject9
+$5- ->47.506
+Fees1-  : will ->start3
+subject9-and->start3
+notice13-without->change11
+Fees1- ->subject9
+47.506-at->start3
+
+[start3
+	(<-and-subject9
+		(<-  : to  : are -change11(<- -Fees1)<-without-notice13)
+		<- -*Fees1)
+	(<-  : will -*Fees1)
+	<-at-47.506<- -$5]

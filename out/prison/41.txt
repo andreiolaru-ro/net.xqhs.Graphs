@@ -1,0 +1,286 @@
+If at any time during your incarceration at this facility you feel you need medical attention, you may request to see the nurse. The nurse will examine you and either suggest treatment or will seek treatment information from the jail physician.
+------CorefChainz
+CHAIN9-["your" in sentence 1, "you" in sentence 1, "you" in sentence 1, "you" in sentence 1, "you" in sentence 2]
+representative mention: "your" in sentence 1
+CHAIN13-["the nurse" in sentence 1, "The nurse" in sentence 2]
+representative mention: "the nurse" in sentence 1
+If-IN 
+at-IN 
+any-DT 
+time-NN 
+during-IN 
+your-PRP$ 
+incarceration-NN 
+at-IN 
+this-DT 
+facility-NN 
+you-PRP 
+feel-VBP 
+you-PRP 
+need-VBP 
+medical-JJ 
+attention-NN 
+,-, 
+you-PRP 
+may-MD 
+request-VB 
+to-TO 
+see-VB 
+the-DT 
+nurse-NN 
+.-. 
+The-DT 
+nurse-NN 
+will-MD 
+examine-VB 
+you-PRP 
+and-CC 
+either-DT 
+suggest-VBP 
+treatment-NN 
+or-CC 
+will-MD 
+seek-VB 
+treatment-NN 
+information-NN 
+from-IN 
+the-DT 
+jail-NN 
+physician-NN 
+.-. 
+ROOT 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> time
+		 	-> PP 	-> IN 	-> during
+	 	-> NP 	-> NP 	-> PRP$ 	-> your
+	 	-> NN 	-> incarceration
+		 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> DT 	-> this
+	 	-> NN 	-> facility
+							 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> feel
+	 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> need
+	 	-> NP 	-> JJ 	-> medical
+	 	-> NN 	-> attention
+								 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> request
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> see
+	 	-> S 	-> S 	-> FRAG 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> nurse
+		 	-> . 	-> .
+		 	-> NP 	-> DT 	-> The
+	 	-> NN 	-> nurse
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> examine
+	 	-> NP 	-> PRP 	-> you
+					 	-> CC 	-> and
+	 	-> S 	-> NP 	-> DT 	-> either
+		 	-> VP 	-> VP 	-> VBP 	-> suggest
+	 	-> NP 	-> NN 	-> treatment
+			 	-> CC 	-> or
+	 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> seek
+	 	-> NP 	-> NN 	-> treatment
+	 	-> NN 	-> information
+		 	-> PP 	-> IN 	-> from
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> jail
+	 	-> NN 	-> physician
+													 	-> . 	-> .
+			
+Dependensee repr
+mark(feel-12, If-1)
+case(time-4, at-2)
+det(time-4, any-3)
+nmod:at(feel-12, time-4)
+case(incarceration-7, during-5)
+nmod:poss(incarceration-7, your-6)
+nmod:during(time-4, incarceration-7)
+case(facility-10, at-8)
+det(facility-10, this-9)
+nmod:at(incarceration-7, facility-10)
+nsubj(feel-12, you-11)
+advcl(request-20, feel-12)
+nsubj(need-14, you-13)
+ccomp(feel-12, need-14)
+amod(attention-16, medical-15)
+dobj(need-14, attention-16)
+nsubj(request-20, you-18)
+nsubj:xsubj(see-22, you-18)
+aux(request-20, may-19)
+root(ROOT-0, request-20)
+mark(see-22, to-21)
+xcomp(request-20, see-22)
+det(nurse-24, the-23)
+dep(examine-29, nurse-24)
+det(nurse-27, The-26)
+nsubj(examine-29, nurse-27)
+aux(examine-29, will-28)
+xcomp(see-22, examine-29)
+dobj(examine-29, you-30)
+cc(examine-29, and-31)
+nsubj(suggest-33, either-32)
+nsubj(seek-37, either-32)
+xcomp(see-22, suggest-33)
+conj:and(examine-29, suggest-33)
+dobj(suggest-33, treatment-34)
+cc(suggest-33, or-35)
+aux(seek-37, will-36)
+conj:and(examine-29, seek-37)
+conj:or(suggest-33, seek-37)
+compound(information-39, treatment-38)
+dobj(seek-37, information-39)
+case(physician-43, from-40)
+det(physician-43, the-41)
+compound(physician-43, jail-42)
+nmod:from(seek-37, physician-43)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, request-20)
+mark(feel-12, If-1)
+case(time-4, at-2)
+det(time-4, any-3)
+nmod:at(feel-12, time-4)
+case(incarceration-7, during-5)
+nmod:poss(incarceration-7, your-6)
+nmod:during(time-4, incarceration-7)
+case(facility-10, at-8)
+det(facility-10, this-9)
+nmod:at(incarceration-7, facility-10)
+nsubj(feel-12, you-11)
+advcl:if(request-20, feel-12)
+nsubj(need-14, you-13)
+ccomp(feel-12, need-14)
+amod(attention-16, medical-15)
+dobj(need-14, attention-16)
+punct(request-20, ,-17)
+nsubj(request-20, you-18)
+nsubj:xsubj(see-22, you-18)
+aux(request-20, may-19)
+mark(see-22, to-21)
+xcomp(request-20, see-22)
+det(nurse-24, the-23)
+dobj(see-22, nurse-24)
+punct(request-20, .-25)
+---
+qqroot(ROOT-0, request-20)
+mark(feel-12, If-1)
+case(time-4, at-2)
+det(time-4, any-3)
+nmod:at(feel-12, time-4)
+case(incarceration-7, during-5)
+nmod:poss(incarceration-7, your-6)
+nmod:during(time-4, incarceration-7)
+case(facility-10, at-8)
+det(facility-10, this-9)
+nmod:at(incarceration-7, facility-10)
+nsubj(feel-12, you-11)
+advcl:if(request-20, feel-12)
+nsubj(need-14, you-13)
+ccomp(feel-12, need-14)
+amod(attention-16, medical-15)
+dobj(need-14, attention-16)
+punct(request-20, ,-17)
+nsubj(request-20, you-18)
+nsubj:xsubj(see-22, you-18)
+aux(request-20, may-19)
+mark(see-22, to-21)
+xcomp(request-20, see-22)
+det(nurse-24, the-23)
+dobj(see-22, nurse-24)
+punct(request-20, .-25)
+root(ROOT-0, examine-4)
+det(nurse-2, The-1)
+nsubj(examine-4, nurse-2)
+nsubj(suggest-8, nurse-2)
+nsubj(seek-12, nurse-2)
+aux(examine-4, will-3)
+dobj(examine-4, you-5)
+cc(examine-4, and-6)
+cc:preconj(suggest-8, either-7)
+conj:and(examine-4, suggest-8)
+dobj(suggest-8, treatment-9)
+cc(examine-4, or-10)
+aux(seek-12, will-11)
+conj:or(examine-4, seek-12)
+compound(information-14, treatment-13)
+dobj(seek-12, information-14)
+case(physician-18, from-15)
+det(physician-18, the-16)
+compound(physician-18, jail-17)
+nmod:from(information-14, physician-18)
+punct(examine-4, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[30, 36] [?1, ?2, ?3, ?4, ?5, attention16, either7, examine4, facility10, feel12, incarceration7, information14, jail17, medical15, need14, nurse2, nurse24, physician18, request20, see22, seek12, suggest8, time4, treatment9, treatment13, you13, you11, you18, you5, your6]
+information14-  : will ->seek12
+?1-this->facility10
+you11- ->feel12
+either7-preconj->suggest8
+your6-poss->incarceration7
+medical15- ->attention16
+you13- ->need14
+treatment13-==->your6
+you5- ->examine4
+you5-==->your6
+see22-  : to ->request20
+treatment13- ->information14
+?5-the->physician18
+?1-at->incarceration7
+you18- ->see22
+attention16- ->need14
+need14- ->feel12
+?4- ->see22
+?5-from->information14
+feel12-if->request20
+?2- ->seek12
+?3-any->time4
+treatment9- ->suggest8
+suggest8-and->examine4
+you11-==->your6
+?2- ->suggest8
+incarceration7-during->?3
+?2-The->nurse2
+?4-the->nurse24
+you18-==->your6
+?2-==->?4
+jail17- ->?5
+?3-at : If ->feel12
+you18-  : may ->request20
+seek12-or->examine4
+?2-  : will ->examine4
+
+[request20
+	(<-if-feel12
+		(<-at : If -?3<-during-incarceration7(<-poss-your6(<-==-you11)(<-==-^you18)(<-==-^you5)<-==-^treatment13)<-at-?1)
+		(<- -*you11)
+		<- -need14(<- -attention16<- -medical15)<- -you13)
+	(<-  : may -*you18)
+	<-  : to -see22
+		(<- -?4<-==-^?2)
+		<- -you18;
+examine4
+	(<-or-seek12
+		(<- -*?2)
+		<-  : will -information14(<-from-?5<- -jail17)<- -treatment13)
+	(<-and-suggest8
+		(<- -*?2)
+		(<-preconj-either7)
+		<- -treatment9)
+	(<-  : will -?2)
+	<- -you5;
+facility10<-this-*?1;
+nurse2<-The-*?2;
+nurse24<-the-*?4;
+physician18<-the-*?5;
+time4<-any-*?3]

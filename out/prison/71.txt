@@ -1,0 +1,145 @@
+Family members may set up a phone account with the phone provider Securus. They may do so by calling 1-800-844-6591.
+------CorefChainz
+CHAIN4-["Family members" in sentence 1, "They" in sentence 2]
+representative mention: "Family members" in sentence 1
+Family-NNP 
+members-NNS 
+may-MD 
+set-VB 
+up-RP 
+a-DT 
+phone-NN 
+account-NN 
+with-IN 
+the-DT 
+phone-NN 
+provider-NN 
+Securus-NNP 
+.-. 
+They-PRP 
+may-MD 
+do-VB 
+so-RB 
+by-IN 
+calling-VBG 
+1-800-844-6591-CD 
+.-. 
+ROOT 	-> S 	-> S 	-> NP 	-> NNP 	-> Family
+	 	-> NNS 	-> members
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> set
+	 	-> PRT 	-> RP 	-> up
+		 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> phone
+	 	-> NN 	-> account
+		 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> phone
+	 	-> NN 	-> provider
+	 	-> NNP 	-> Securus
+					 	-> . 	-> .
+		 	-> NP 	-> PRP 	-> They
+		 	-> VP 	-> MD 	-> may
+	 	-> VP 	-> VB 	-> do
+	 	-> ADVP 	-> RB 	-> so
+		 	-> PP 	-> IN 	-> by
+	 	-> S 	-> VP 	-> VBG 	-> calling
+	 	-> NP 	-> CD 	-> 1-800-844-6591
+							 	-> . 	-> .
+			
+Dependensee repr
+compound(members-2, Family-1)
+nsubj(set-4, members-2)
+aux(set-4, may-3)
+dep(do-17, set-4)
+compound:prt(set-4, up-5)
+det(account-8, a-6)
+compound(account-8, phone-7)
+dobj(set-4, account-8)
+case(Securus-13, with-9)
+det(Securus-13, the-10)
+compound(Securus-13, phone-11)
+compound(Securus-13, provider-12)
+nmod:with(set-4, Securus-13)
+nsubj(do-17, They-15)
+aux(do-17, may-16)
+root(ROOT-0, do-17)
+advmod(do-17, so-18)
+mark(calling-20, by-19)
+advcl(do-17, calling-20)
+dobj(calling-20, 1-800-844-6591-21)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, set-4)
+compound(members-2, Family-1)
+nsubj(set-4, members-2)
+aux(set-4, may-3)
+compound:prt(set-4, up-5)
+det(account-8, a-6)
+compound(account-8, phone-7)
+dobj(set-4, account-8)
+case(Securus-13, with-9)
+det(Securus-13, the-10)
+compound(Securus-13, phone-11)
+compound(Securus-13, provider-12)
+nmod:with(set-4, Securus-13)
+punct(set-4, .-14)
+---
+qqroot(ROOT-0, set-4)
+compound(members-2, Family-1)
+nsubj(set-4, members-2)
+aux(set-4, may-3)
+compound:prt(set-4, up-5)
+det(account-8, a-6)
+compound(account-8, phone-7)
+dobj(set-4, account-8)
+case(Securus-13, with-9)
+det(Securus-13, the-10)
+compound(Securus-13, phone-11)
+compound(Securus-13, provider-12)
+nmod:with(set-4, Securus-13)
+punct(set-4, .-14)
+root(ROOT-0, do-3)
+nsubj(do-3, They-1)
+aux(do-3, may-2)
+advmod(do-3, so-4)
+mark(calling-6, by-5)
+advcl:by(do-3, calling-6)
+dobj(calling-6, 1-800-844-6591-7)
+punct(do-3, .-8)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+G[16, 14] [1-800-844-65917, ?1, ?2, Family1, Securus13, They1, account8, calling6, do3, members2, phone7, phone11, provider12, set4, so4, up5]
+so4- ->do3
+?1-a->account8
+up5-prt->set4
+?1- ->set4
+Family1- :==->members2
+provider12- ->?2
+1-800-844-65917- ->calling6
+calling6-by->do3
+phone11- ->?2
+members2-  : may ->set4
+?2-with->set4
+?2-the->Securus13
+They1-  : may ->do3
+phone7- ->?1
+
+[Securus13<-the-?2
+	(<- -phone11)
+	<- -provider12;
+account8<-a-?1<- -phone7;
+do3
+	(<-by-calling6<- -1-800-844-65917)
+	(<-  : may -They1)
+	<- -so4;
+set4
+	(<- -*?1)
+	(<-with-*?2)
+	(<-  : may -members2<- :==-Family1)
+	<-prt-up5]

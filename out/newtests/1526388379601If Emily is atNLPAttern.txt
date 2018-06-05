@@ -1,0 +1,81 @@
+If Emily is at the front door, she must be leaving the house.
+------CorefChainz
+CHAIN2-["Emily" in sentence 1, "she" in sentence 1]
+representative mention: "Emily" in sentence 1
+If-IN 
+Emily-NNP 
+is-VBZ 
+at-IN 
+the-DT 
+front-JJ 
+door-NN 
+,-, 
+she-PRP 
+must-MD 
+be-VB 
+leaving-VBG 
+the-DT 
+house-NN 
+.-. 
+ROOT 	-> S 	-> SBAR 	-> IN 	-> If
+	 	-> S 	-> NP 	-> NNP 	-> Emily
+		 	-> VP 	-> VBZ 	-> is
+	 	-> PP 	-> IN 	-> at
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> front
+	 	-> NN 	-> door
+						 	-> , 	-> ,
+	 	-> NP 	-> PRP 	-> she
+		 	-> VP 	-> MD 	-> must
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBG 	-> leaving
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> house
+					 	-> . 	-> .
+			
+Dependensee repr
+mark(door-7, If-1)
+nsubj(door-7, Emily-2)
+cop(door-7, is-3)
+case(door-7, at-4)
+det(door-7, the-5)
+amod(door-7, front-6)
+advcl(leaving-12, door-7)
+nsubj(leaving-12, she-9)
+aux(leaving-12, must-10)
+aux(leaving-12, be-11)
+root(ROOT-0, leaving-12)
+det(house-14, the-13)
+dobj(leaving-12, house-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, leaving-12)
+mark(door-7, If-1)
+nsubj(door-7, Emily-2)
+cop(door-7, is-3)
+case(door-7, at-4)
+det(door-7, the-5)
+amod(door-7, front-6)
+advcl:at(leaving-12, door-7)
+punct(leaving-12, ,-8)
+nsubj(leaving-12, she-9)
+aux(leaving-12, must-10)
+aux(leaving-12, be-11)
+det(house-14, the-13)
+dobj(leaving-12, house-14)
+punct(leaving-12, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[8, 8] [?1, ?2, Emily2, door7, front6, house14, leaving12, she9]
+?1-the->house14
+she9-==->Emily2
+?2-at->leaving12
+Emily2-  : If  : is ->?2
+?2-the->door7
+?1- ->leaving12
+she9-  : must  : be ->leaving12
+front6- ->?2

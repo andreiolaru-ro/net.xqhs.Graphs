@@ -1,0 +1,88 @@
+Please be specific with the information you wish to convey to the medical staff.
+------CorefChainz
+Please-UH 
+be-VB 
+specific-JJ 
+with-IN 
+the-DT 
+information-NN 
+you-PRP 
+wish-VBP 
+to-TO 
+convey-VB 
+to-TO 
+the-DT 
+medical-JJ 
+staff-NN 
+.-. 
+ROOT 	-> S 	-> INTJ 	-> UH 	-> Please
+		 	-> VP 	-> VB 	-> be
+	 	-> ADJP 	-> JJ 	-> specific
+	 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> information
+		 	-> SBAR 	-> S 	-> NP 	-> PRP 	-> you
+		 	-> VP 	-> VBP 	-> wish
+	 	-> S 	-> VP 	-> TO 	-> to
+	 	-> VP 	-> VB 	-> convey
+	 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> DT 	-> the
+	 	-> JJ 	-> medical
+	 	-> NN 	-> staff
+													 	-> . 	-> .
+			
+Dependensee repr
+discourse(specific-3, Please-1)
+cop(specific-3, be-2)
+root(ROOT-0, specific-3)
+case(information-6, with-4)
+det(information-6, the-5)
+nmod:with(specific-3, information-6)
+nsubj(wish-8, you-7)
+nsubj:xsubj(convey-10, you-7)
+acl:relcl(information-6, wish-8)
+mark(convey-10, to-9)
+xcomp(wish-8, convey-10)
+case(staff-14, to-11)
+det(staff-14, the-12)
+amod(staff-14, medical-13)
+nmod:to(convey-10, staff-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, Please-1)
+cop(specific-3, be-2)
+ccomp(Please-1, specific-3)
+case(information-6, with-4)
+det(information-6, the-5)
+nmod:with(specific-3, information-6)
+nsubj(wish-8, you-7)
+nsubj:xsubj(convey-10, you-7)
+acl:relcl(information-6, wish-8)
+mark(convey-10, to-9)
+xcomp(wish-8, convey-10)
+case(staff-14, to-11)
+det(staff-14, the-12)
+amod(staff-14, medical-13)
+nmod:to(convey-10, staff-14)
+punct(Please-1, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[10, 10] [?1, ?2, Please1, convey10, information6, medical13, specific3, staff14, wish8, you7]
+you7- ->wish8
+?2-with->specific3
+specific3-  : be ->Please1
+?1-to->convey10
+convey10- ->wish8
+?1-the->staff14
+wish8- ->?2
+?2-the->information6
+medical13- ->?1
+you7- ->convey10
+
+[Please1<-  : be -specific3<-with-?2<- -wish8(<- -convey10(<-to-?1<- -medical13)<- -you7)<- -*you7;
+information6<-the-*?2;
+staff14<-the-*?1]

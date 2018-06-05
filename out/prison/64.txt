@@ -1,0 +1,331 @@
+No inmate shall deface, damage, alter, or destroy jail property or the property of another inmate in any way. Criminal charges will be brought against the inmate for any such actions. Inmates will be assessed the cost to replace/repair destroyed property.
+------CorefChainz
+CHAIN7-["another inmate" in sentence 1, "the inmate" in sentence 2]
+representative mention: "another inmate" in sentence 1
+No-DT 
+inmate-NN 
+shall-MD 
+deface-VB 
+,-, 
+damage-VB 
+,-, 
+alter-VB 
+,-, 
+or-CC 
+destroy-VB 
+jail-NN 
+property-NN 
+or-CC 
+the-DT 
+property-NN 
+of-IN 
+another-DT 
+inmate-NN 
+in-IN 
+any-DT 
+way-NN 
+.-. 
+Criminal-JJ 
+charges-NNS 
+will-MD 
+be-VB 
+brought-VBN 
+against-IN 
+the-DT 
+inmate-NN 
+for-IN 
+any-DT 
+such-JJ 
+actions-NNS 
+.-. 
+Inmates-NNP 
+will-MD 
+be-VB 
+assessed-VBN 
+the-DT 
+cost-NN 
+to-TO 
+replace/repair-NN 
+destroyed-VBN 
+property-NN 
+.-. 
+ROOT 	-> S 	-> S 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> shall
+	 	-> VP 	-> VB 	-> deface
+	 	-> , 	-> ,
+	 	-> VB 	-> damage
+	 	-> , 	-> ,
+	 	-> VB 	-> alter
+	 	-> , 	-> ,
+	 	-> CC 	-> or
+	 	-> VB 	-> destroy
+	 	-> NP 	-> NP 	-> NN 	-> jail
+	 	-> NN 	-> property
+		 	-> CC 	-> or
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> property
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> NP 	-> DT 	-> another
+	 	-> NN 	-> inmate
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> way
+									 	-> . 	-> .
+		 	-> NP 	-> JJ 	-> Criminal
+	 	-> NNS 	-> charges
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> brought
+	 	-> PP 	-> IN 	-> against
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> inmate
+			 	-> PP 	-> IN 	-> for
+	 	-> NP 	-> DT 	-> any
+	 	-> JJ 	-> such
+	 	-> NNS 	-> actions
+			 	-> . 	-> .
+					 	-> NP 	-> NNP 	-> Inmates
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> assessed
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> cost
+		 	-> PP 	-> TO 	-> to
+	 	-> NP 	-> NP 	-> NN 	-> replace/repair
+		 	-> VP 	-> VBN 	-> destroyed
+	 	-> NP 	-> NN 	-> property
+								 	-> . 	-> .
+			
+Dependensee repr
+neg(inmate-2, No-1)
+nsubj(deface-4, inmate-2)
+nsubj(damage-6, inmate-2)
+nsubj(alter-8, inmate-2)
+nsubj(destroy-11, inmate-2)
+aux(deface-4, shall-3)
+dep(brought-28, deface-4)
+conj:or(deface-4, damage-6)
+dep(brought-28, damage-6)
+conj:or(deface-4, alter-8)
+dep(brought-28, alter-8)
+cc(deface-4, or-10)
+conj:or(deface-4, destroy-11)
+dep(brought-28, destroy-11)
+compound(property-13, jail-12)
+dobj(deface-4, property-13)
+cc(property-13, or-14)
+det(property-16, the-15)
+dobj(deface-4, property-16)
+conj:or(property-13, property-16)
+case(inmate-19, of-17)
+det(inmate-19, another-18)
+nmod:of(property-16, inmate-19)
+case(way-22, in-20)
+det(way-22, any-21)
+nmod:in(inmate-19, way-22)
+amod(charges-25, Criminal-24)
+nsubjpass(brought-28, charges-25)
+aux(brought-28, will-26)
+auxpass(brought-28, be-27)
+dep(assessed-40, brought-28)
+case(inmate-31, against-29)
+det(inmate-31, the-30)
+nmod:against(brought-28, inmate-31)
+case(actions-35, for-32)
+det(actions-35, any-33)
+amod(actions-35, such-34)
+nmod:for(brought-28, actions-35)
+nsubjpass(assessed-40, Inmates-37)
+aux(assessed-40, will-38)
+auxpass(assessed-40, be-39)
+root(ROOT-0, assessed-40)
+det(cost-42, the-41)
+dobj(assessed-40, cost-42)
+case(replace/repair-44, to-43)
+nmod:to(assessed-40, replace/repair-44)
+acl(replace/repair-44, destroyed-45)
+dobj(destroyed-45, property-46)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, deface-4)
+neg(inmate-2, No-1)
+nsubj(deface-4, inmate-2)
+nsubj(alter-8, inmate-2)
+nsubj(destroy-11, inmate-2)
+aux(deface-4, shall-3)
+punct(deface-4, ,-5)
+dobj(deface-4, damage-6)
+punct(deface-4, ,-7)
+conj:or(deface-4, alter-8)
+punct(deface-4, ,-9)
+cc(deface-4, or-10)
+conj:or(deface-4, destroy-11)
+compound(property-13, jail-12)
+dobj(destroy-11, property-13)
+cc(property-13, or-14)
+det(property-16, the-15)
+dobj(destroy-11, property-16)
+conj:or(property-13, property-16)
+case(inmate-19, of-17)
+det(inmate-19, another-18)
+nmod:of(property-16, inmate-19)
+case(way-22, in-20)
+det(way-22, any-21)
+nmod:in(destroy-11, way-22)
+punct(deface-4, .-23)
+---
+qqroot(ROOT-0, deface-4)
+neg(inmate-2, No-1)
+nsubj(deface-4, inmate-2)
+nsubj(alter-8, inmate-2)
+nsubj(destroy-11, inmate-2)
+aux(deface-4, shall-3)
+punct(deface-4, ,-5)
+dobj(deface-4, damage-6)
+punct(deface-4, ,-7)
+conj:or(deface-4, alter-8)
+punct(deface-4, ,-9)
+cc(deface-4, or-10)
+conj:or(deface-4, destroy-11)
+compound(property-13, jail-12)
+dobj(destroy-11, property-13)
+cc(property-13, or-14)
+det(property-16, the-15)
+dobj(destroy-11, property-16)
+conj:or(property-13, property-16)
+case(inmate-19, of-17)
+det(inmate-19, another-18)
+nmod:of(property-16, inmate-19)
+case(way-22, in-20)
+det(way-22, any-21)
+nmod:in(destroy-11, way-22)
+punct(deface-4, .-23)
+root(ROOT-0, brought-5)
+compound(charges-2, Criminal-1)
+nsubjpass(brought-5, charges-2)
+aux(brought-5, will-3)
+auxpass(brought-5, be-4)
+case(inmate-8, against-6)
+det(inmate-8, the-7)
+nmod:against(brought-5, inmate-8)
+case(actions-12, for-9)
+det(actions-12, any-10)
+amod(actions-12, such-11)
+nmod:for(brought-5, actions-12)
+punct(brought-5, .-13)
+---
+qqroot(ROOT-0, deface-4)
+neg(inmate-2, No-1)
+nsubj(deface-4, inmate-2)
+nsubj(alter-8, inmate-2)
+nsubj(destroy-11, inmate-2)
+aux(deface-4, shall-3)
+punct(deface-4, ,-5)
+dobj(deface-4, damage-6)
+punct(deface-4, ,-7)
+conj:or(deface-4, alter-8)
+punct(deface-4, ,-9)
+cc(deface-4, or-10)
+conj:or(deface-4, destroy-11)
+compound(property-13, jail-12)
+dobj(destroy-11, property-13)
+cc(property-13, or-14)
+det(property-16, the-15)
+dobj(destroy-11, property-16)
+conj:or(property-13, property-16)
+case(inmate-19, of-17)
+det(inmate-19, another-18)
+nmod:of(property-16, inmate-19)
+case(way-22, in-20)
+det(way-22, any-21)
+nmod:in(destroy-11, way-22)
+punct(deface-4, .-23)
+root(ROOT-0, brought-5)
+compound(charges-2, Criminal-1)
+nsubjpass(brought-5, charges-2)
+aux(brought-5, will-3)
+auxpass(brought-5, be-4)
+case(inmate-8, against-6)
+det(inmate-8, the-7)
+nmod:against(brought-5, inmate-8)
+case(actions-12, for-9)
+det(actions-12, any-10)
+amod(actions-12, such-11)
+nmod:for(brought-5, actions-12)
+punct(brought-5, .-13)
+root(ROOT-0, assessed-4)
+nsubjpass(assessed-4, Inmates-1)
+aux(assessed-4, will-2)
+auxpass(assessed-4, be-3)
+det(cost-6, the-5)
+nsubj(destroyed-9, cost-6)
+case(replace/repair-8, to-7)
+nmod:to(cost-6, replace/repair-8)
+ccomp(assessed-4, destroyed-9)
+dobj(destroyed-9, property-10)
+punct(assessed-4, .-11)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+G[29, 30] [?1, ?2, ?3, ?4, ?5, ?6, Criminal1, Inmates1, No1, actions12, alter8, assessed4, brought5, charges2, cost6, damage6, deface4, destroy11, destroyed9, inmate8, inmate2, inmate19, jail12, property13, property10, property16, replace/repair8, such11, way22]
+charges2-  : will  : be ->brought5
+?5-for->brought5
+property13- ->destroy11
+No1- ->inmate2
+inmate2- ->destroy11
+such11- ->?5
+?3-in->destroy11
+?6-or->property13
+property10- ->destroyed9
+?1-the->inmate8
+?2-of->?6
+inmate2- ->alter8
+Inmates1-  : will  : be ->assessed4
+?3-any->way22
+?1-==->?2
+?5-any->actions12
+?6- ->destroy11
+destroyed9- ->assessed4
+Criminal1- ->charges2
+?4-the->cost6
+?2-another->inmate19
+jail12- ->property13
+inmate2-  : shall ->deface4
+destroy11-or->deface4
+damage6- ->deface4
+?1-against->brought5
+alter8-or->deface4
+replace/repair8-to->?4
+?6-the->property16
+?4- ->destroyed9
+
+[deface4
+	(<-or-destroy11
+		(<- -property13(<-or-?6<-of-?2<-==-^?1)<- -jail12)
+		(<- -*?6)
+		(<- -inmate2<- -No1)
+		<-in-?3)
+	(<-  : shall -*inmate2)
+	(<-or-alter8<- -*inmate2)
+	<- -damage6;
+assessed4
+	(<- -destroyed9
+		(<- -?4<-to-replace/repair8)
+		<- -property10)
+	<-  : will  : be -Inmates1;
+actions12<-any-?5<- -such11;
+brought5
+	(<-for-*?5)
+	(<-  : will  : be -charges2<- -Criminal1)
+	<-against-?1;
+cost6<-the-*?4;
+inmate8<-the-*?1;
+inmate19<-another-*?2;
+property16<-the-*?6;
+way22<-any-*?3]

@@ -1,0 +1,87 @@
+NO INMATE WILL BE DENIED EMERGENCY MEDICAL OR DENTAL CARE because they are indigent.
+------CorefChainz
+NO-DT 
+INMATE-NNP 
+WILL-MD 
+BE-VB 
+DENIED-NNP 
+EMERGENCY-NNP 
+MEDICAL-NNP 
+OR-NNP 
+DENTAL-NNP 
+CARE-NNP 
+because-IN 
+they-PRP 
+are-VBP 
+indigent-JJ 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> NO
+	 	-> NNP 	-> INMATE
+		 	-> VP 	-> MD 	-> WILL
+	 	-> VP 	-> VB 	-> BE
+	 	-> NP 	-> NP 	-> NNP 	-> DENIED
+	 	-> NNP 	-> EMERGENCY
+	 	-> NNP 	-> MEDICAL
+	 	-> NNP 	-> OR
+	 	-> NNP 	-> DENTAL
+	 	-> NNP 	-> CARE
+		 	-> SBAR 	-> IN 	-> because
+	 	-> S 	-> NP 	-> PRP 	-> they
+		 	-> VP 	-> VBP 	-> are
+	 	-> ADJP 	-> JJ 	-> indigent
+								 	-> . 	-> .
+			
+Dependensee repr
+neg(INMATE-2, NO-1)
+nsubj(CARE-10, INMATE-2)
+aux(CARE-10, WILL-3)
+cop(CARE-10, BE-4)
+compound(CARE-10, DENIED-5)
+compound(CARE-10, EMERGENCY-6)
+compound(CARE-10, MEDICAL-7)
+compound(CARE-10, OR-8)
+compound(CARE-10, DENTAL-9)
+root(ROOT-0, CARE-10)
+mark(indigent-14, because-11)
+nsubj(indigent-14, they-12)
+cop(indigent-14, are-13)
+dep(CARE-10, indigent-14)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, NO-1)
+nsubj(BE-4, INMATE-2)
+aux(BE-4, WILL-3)
+ccomp(NO-1, BE-4)
+compound(CARE-10, DENIED-5)
+compound(CARE-10, EMERGENCY-6)
+compound(CARE-10, MEDICAL-7)
+compound(CARE-10, OR-8)
+compound(CARE-10, DENTAL-9)
+dobj(BE-4, CARE-10)
+mark(indigent-14, because-11)
+nsubj(indigent-14, they-12)
+cop(indigent-14, are-13)
+advcl:because(BE-4, indigent-14)
+punct(NO-1, .-15)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[11, 10] [BE4, CARE10, DENIED5, DENTAL9, EMERGENCY6, INMATE2, MEDICAL7, NO1, OR8, indigent14, they12]
+OR8- ->CARE10
+EMERGENCY6- ->CARE10
+indigent14-because->BE4
+CARE10- ->BE4
+DENTAL9- ->CARE10
+INMATE2-  : WILL ->BE4
+BE4- ->NO1
+DENIED5- ->CARE10
+MEDICAL7- ->CARE10
+they12-  : are ->indigent14
+
+[NO1<- -BE4
+	(<-because-indigent14<-  : are -they12)
+	(<- -CARE10(<- -DENIED5)(<- -DENTAL9)(<- -EMERGENCY6)(<- -MEDICAL7)<- -OR8)
+	<-  : WILL -INMATE2]

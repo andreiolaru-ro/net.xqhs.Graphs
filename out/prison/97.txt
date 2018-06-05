@@ -1,0 +1,115 @@
+No inmate will cause, provoke, plan or participate in a riot or rebellion of any kind.
+------CorefChainz
+No-DT 
+inmate-NN 
+will-MD 
+cause-VB 
+,-, 
+provoke-VB 
+,-, 
+plan-NN 
+or-CC 
+participate-VB 
+in-IN 
+a-DT 
+riot-NN 
+or-CC 
+rebellion-NN 
+of-IN 
+any-DT 
+kind-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> DT 	-> No
+	 	-> NN 	-> inmate
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VP 	-> VB 	-> cause
+	 	-> , 	-> ,
+	 	-> VB 	-> provoke
+	 	-> , 	-> ,
+	 	-> NP 	-> NN 	-> plan
+			 	-> CC 	-> or
+	 	-> VP 	-> VB 	-> participate
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> a
+	 	-> NN 	-> riot
+	 	-> CC 	-> or
+	 	-> NN 	-> rebellion
+		 	-> PP 	-> IN 	-> of
+	 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> kind
+								 	-> . 	-> .
+			
+Dependensee repr
+neg(inmate-2, No-1)
+nsubj(cause-4, inmate-2)
+nsubj(participate-10, inmate-2)
+aux(cause-4, will-3)
+root(ROOT-0, cause-4)
+dep(cause-4, provoke-6)
+dobj(cause-4, plan-8)
+cc(cause-4, or-9)
+conj:or(cause-4, participate-10)
+case(riot-13, in-11)
+det(riot-13, a-12)
+nmod:in(participate-10, riot-13)
+cc(riot-13, or-14)
+nmod:in(participate-10, rebellion-15)
+conj:or(riot-13, rebellion-15)
+case(kind-18, of-16)
+det(kind-18, any-17)
+nmod:of(riot-13, kind-18)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, cause-4)
+neg(inmate-2, No-1)
+nsubj(cause-4, inmate-2)
+nsubj(provoke-6, inmate-2)
+nsubj(participate-10, inmate-2)
+aux(cause-4, will-3)
+punct(cause-4, ,-5)
+conj:or(cause-4, provoke-6)
+punct(cause-4, ,-7)
+conj:or(cause-4, plan-8)
+cc(cause-4, or-9)
+conj:or(cause-4, participate-10)
+case(riot-13, in-11)
+det(riot-13, a-12)
+nmod:in(participate-10, riot-13)
+cc(riot-13, or-14)
+nmod:in(participate-10, rebellion-15)
+conj:or(riot-13, rebellion-15)
+case(kind-18, of-16)
+det(kind-18, any-17)
+nmod:of(riot-13, kind-18)
+punct(cause-4, .-19)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+G[11, 13] [?1, ?2, No1, cause4, inmate2, kind18, participate10, plan8, provoke6, rebellion15, riot13]
+No1- ->inmate2
+inmate2-  : will ->cause4
+provoke6-or->cause4
+?2-any->kind18
+participate10-or->cause4
+?1-a->riot13
+inmate2- ->participate10
+plan8-or->cause4
+?2-of->?1
+?1-in->participate10
+rebellion15-in->participate10
+inmate2- ->provoke6
+rebellion15-or->?1
+
+[cause4
+	(<-or-provoke6<- -inmate2<- -No1)
+	(<-  : will -*inmate2)
+	(<-or-participate10
+		(<- -*inmate2)
+		(<-in-?1(<-of-?2)<-or-rebellion15)
+		<-in-*rebellion15)
+	<-or-plan8;
+kind18<-any-*?2;
+riot13<-a-*?1]

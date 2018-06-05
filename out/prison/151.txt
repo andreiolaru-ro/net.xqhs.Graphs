@@ -1,0 +1,414 @@
+Food not consumed during meals will be returned with the food tray. Food will not be kept by inmates. Do NOT flush any food items down the toilet. All unauthorized food items in an inmate’s possession will be confiscated as contraband and disposed of. Repeated violations will result in discipline.
+------CorefChainz
+Food-NNP 
+not-RB 
+consumed-VBN 
+during-IN 
+meals-NNS 
+will-MD 
+be-VB 
+returned-VBN 
+with-IN 
+the-DT 
+food-NN 
+tray-NN 
+.-. 
+Food-NNP 
+will-MD 
+not-RB 
+be-VB 
+kept-VBN 
+by-IN 
+inmates-NNS 
+.-. 
+Do-VBP 
+NOT-NNP 
+flush-JJ 
+any-DT 
+food-NN 
+items-NNS 
+down-IN 
+the-DT 
+toilet-NN 
+.-. 
+All-DT 
+unauthorized-JJ 
+food-NN 
+items-NNS 
+in-IN 
+an-DT 
+inmate-NN 
+'s-POS 
+possession-NN 
+will-MD 
+be-VB 
+confiscated-VBN 
+as-RB 
+contraband-JJ 
+and-CC 
+disposed-JJ 
+of-IN 
+.-. 
+Repeated-NNP 
+violations-NNS 
+will-MD 
+result-VB 
+in-IN 
+discipline-NN 
+.-. 
+ROOT 	-> S 	-> NP 	-> NNP 	-> Food
+		 	-> PRN 	-> SINV 	-> RB 	-> not
+	 	-> VP 	-> VBN 	-> consumed
+	 	-> PP 	-> IN 	-> during
+	 	-> NP 	-> NNS 	-> meals
+				 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> returned
+	 	-> SBAR 	-> SINV 	-> PP 	-> IN 	-> with
+	 	-> NP 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> food
+		 	-> SBAR 	-> S 	-> NP 	-> NN 	-> tray
+	 	-> . 	-> .
+	 	-> NNP 	-> Food
+		 	-> VP 	-> MD 	-> will
+	 	-> RB 	-> not
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> kept
+	 	-> PP 	-> IN 	-> by
+	 	-> NP 	-> NNS 	-> inmates
+									 	-> . 	-> .
+		 	-> VP 	-> VBP 	-> Do
+	 	-> S 	-> NP 	-> NNP 	-> NOT
+		 	-> ADJP 	-> JJ 	-> flush
+				 	-> NP 	-> NP 	-> DT 	-> any
+	 	-> NN 	-> food
+	 	-> NNS 	-> items
+		 	-> PP 	-> IN 	-> down
+	 	-> NP 	-> DT 	-> the
+	 	-> NN 	-> toilet
+				 	-> . 	-> .
+						 	-> NP 	-> NP 	-> DT 	-> All
+	 	-> JJ 	-> unauthorized
+	 	-> NN 	-> food
+		 	-> SBAR 	-> S 	-> NP 	-> NP 	-> NNS 	-> items
+		 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NP 	-> DT 	-> an
+	 	-> NN 	-> inmate
+	 	-> POS 	-> 's
+		 	-> NN 	-> possession
+				 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> be
+	 	-> VP 	-> VBN 	-> confiscated
+	 	-> ADJP 	-> RB 	-> as
+	 	-> JJ 	-> contraband
+	 	-> CC 	-> and
+	 	-> JJ 	-> disposed
+		 	-> PP 	-> IN 	-> of
+								 	-> . 	-> .
+			 	-> NP 	-> NNP 	-> Repeated
+	 	-> NNS 	-> violations
+		 	-> VP 	-> MD 	-> will
+	 	-> VP 	-> VB 	-> result
+	 	-> PP 	-> IN 	-> in
+	 	-> NP 	-> NN 	-> discipline
+					 	-> . 	-> .
+			
+Dependensee repr
+nsubj(result-53, Food-1)
+dep(consumed-3, not-2)
+parataxis(result-53, consumed-3)
+case(meals-5, during-4)
+nmod:during(consumed-3, meals-5)
+aux(returned-8, will-6)
+auxpass(returned-8, be-7)
+auxpass(consumed-3, returned-8)
+case(food-11, with-9)
+det(food-11, the-10)
+nmod:with(Do-22, food-11)
+compound(Food-14, tray-12)
+nsubjpass(kept-18, Food-14)
+aux(kept-18, will-15)
+neg(kept-18, not-16)
+auxpass(kept-18, be-17)
+acl:relcl(food-11, kept-18)
+case(inmates-20, by-19)
+nmod:agent(kept-18, inmates-20)
+dep(returned-8, Do-22)
+nsubj(flush-24, NOT-23)
+xcomp(Do-22, flush-24)
+det(items-27, any-25)
+compound(items-27, food-26)
+nsubj(Do-22, items-27)
+case(toilet-30, down-28)
+det(toilet-30, the-29)
+nmod:down(items-27, toilet-30)
+det(food-34, All-32)
+amod(food-34, unauthorized-33)
+nsubjpass(consumed-3, food-34)
+nsubjpass(confiscated-43, items-35)
+case(possession-40, in-36)
+det(inmate-38, an-37)
+nmod:poss(possession-40, inmate-38)
+case(inmate-38, 's-39)
+nmod:in(items-35, possession-40)
+aux(confiscated-43, will-41)
+auxpass(confiscated-43, be-42)
+acl:relcl(food-34, confiscated-43)
+advmod(contraband-45, as-44)
+xcomp(confiscated-43, contraband-45)
+cc(contraband-45, and-46)
+xcomp(confiscated-43, disposed-47)
+conj:and(contraband-45, disposed-47)
+nmod(confiscated-43, of-48)
+compound(violations-51, Repeated-50)
+nsubj(result-53, violations-51)
+aux(result-53, will-52)
+root(ROOT-0, result-53)
+case(discipline-55, in-54)
+nmod:in(result-53, discipline-55)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+qqroot(ROOT-0, returned-8)
+nsubjpass(returned-8, Food-1)
+neg(consumed-3, not-2)
+acl(Food-1, consumed-3)
+case(meals-5, during-4)
+nmod:during(consumed-3, meals-5)
+aux(returned-8, will-6)
+auxpass(returned-8, be-7)
+case(tray-12, with-9)
+det(tray-12, the-10)
+compound(tray-12, food-11)
+nmod:with(returned-8, tray-12)
+punct(returned-8, .-13)
+---
+qqroot(ROOT-0, returned-8)
+nsubjpass(returned-8, Food-1)
+neg(consumed-3, not-2)
+acl(Food-1, consumed-3)
+case(meals-5, during-4)
+nmod:during(consumed-3, meals-5)
+aux(returned-8, will-6)
+auxpass(returned-8, be-7)
+case(tray-12, with-9)
+det(tray-12, the-10)
+compound(tray-12, food-11)
+nmod:with(returned-8, tray-12)
+punct(returned-8, .-13)
+root(ROOT-0, kept-5)
+nsubjpass(kept-5, Food-1)
+aux(kept-5, will-2)
+neg(kept-5, not-3)
+auxpass(kept-5, be-4)
+case(inmates-7, by-6)
+nmod:agent(kept-5, inmates-7)
+punct(kept-5, .-8)
+---
+qqroot(ROOT-0, returned-8)
+nsubjpass(returned-8, Food-1)
+neg(consumed-3, not-2)
+acl(Food-1, consumed-3)
+case(meals-5, during-4)
+nmod:during(consumed-3, meals-5)
+aux(returned-8, will-6)
+auxpass(returned-8, be-7)
+case(tray-12, with-9)
+det(tray-12, the-10)
+compound(tray-12, food-11)
+nmod:with(returned-8, tray-12)
+punct(returned-8, .-13)
+root(ROOT-0, kept-5)
+nsubjpass(kept-5, Food-1)
+aux(kept-5, will-2)
+neg(kept-5, not-3)
+auxpass(kept-5, be-4)
+case(inmates-7, by-6)
+nmod:agent(kept-5, inmates-7)
+punct(kept-5, .-8)
+root(ROOT-0, flush-3)
+aux(flush-3, Do-1)
+nsubj(flush-3, NOT-2)
+det(items-6, any-4)
+compound(items-6, food-5)
+dobj(flush-3, items-6)
+case(toilet-9, down-7)
+det(toilet-9, the-8)
+nmod:down(flush-3, toilet-9)
+punct(flush-3, .-10)
+---
+qqroot(ROOT-0, returned-8)
+nsubjpass(returned-8, Food-1)
+neg(consumed-3, not-2)
+acl(Food-1, consumed-3)
+case(meals-5, during-4)
+nmod:during(consumed-3, meals-5)
+aux(returned-8, will-6)
+auxpass(returned-8, be-7)
+case(tray-12, with-9)
+det(tray-12, the-10)
+compound(tray-12, food-11)
+nmod:with(returned-8, tray-12)
+punct(returned-8, .-13)
+root(ROOT-0, kept-5)
+nsubjpass(kept-5, Food-1)
+aux(kept-5, will-2)
+neg(kept-5, not-3)
+auxpass(kept-5, be-4)
+case(inmates-7, by-6)
+nmod:agent(kept-5, inmates-7)
+punct(kept-5, .-8)
+root(ROOT-0, flush-3)
+aux(flush-3, Do-1)
+nsubj(flush-3, NOT-2)
+det(items-6, any-4)
+compound(items-6, food-5)
+dobj(flush-3, items-6)
+case(toilet-9, down-7)
+det(toilet-9, the-8)
+nmod:down(flush-3, toilet-9)
+punct(flush-3, .-10)
+root(ROOT-0, confiscated-12)
+det(items-4, All-1)
+amod(items-4, unauthorized-2)
+compound(items-4, food-3)
+nsubjpass(confiscated-12, items-4)
+case(possession-9, in-5)
+det(inmate-7, an-6)
+nmod:poss(possession-9, inmate-7)
+case(inmate-7, 's-8)
+nmod:in(items-4, possession-9)
+aux(confiscated-12, will-10)
+auxpass(confiscated-12, be-11)
+case(contraband-14, as-13)
+nmod:as(confiscated-12, contraband-14)
+cc(contraband-14, and-15)
+nmod:as(confiscated-12, disposed-16)
+conj:and(contraband-14, disposed-16)
+nmod(disposed-16, of-17)
+punct(confiscated-12, .-18)
+---
+qqroot(ROOT-0, returned-8)
+nsubjpass(returned-8, Food-1)
+neg(consumed-3, not-2)
+acl(Food-1, consumed-3)
+case(meals-5, during-4)
+nmod:during(consumed-3, meals-5)
+aux(returned-8, will-6)
+auxpass(returned-8, be-7)
+case(tray-12, with-9)
+det(tray-12, the-10)
+compound(tray-12, food-11)
+nmod:with(returned-8, tray-12)
+punct(returned-8, .-13)
+root(ROOT-0, kept-5)
+nsubjpass(kept-5, Food-1)
+aux(kept-5, will-2)
+neg(kept-5, not-3)
+auxpass(kept-5, be-4)
+case(inmates-7, by-6)
+nmod:agent(kept-5, inmates-7)
+punct(kept-5, .-8)
+root(ROOT-0, flush-3)
+aux(flush-3, Do-1)
+nsubj(flush-3, NOT-2)
+det(items-6, any-4)
+compound(items-6, food-5)
+dobj(flush-3, items-6)
+case(toilet-9, down-7)
+det(toilet-9, the-8)
+nmod:down(flush-3, toilet-9)
+punct(flush-3, .-10)
+root(ROOT-0, confiscated-12)
+det(items-4, All-1)
+amod(items-4, unauthorized-2)
+compound(items-4, food-3)
+nsubjpass(confiscated-12, items-4)
+case(possession-9, in-5)
+det(inmate-7, an-6)
+nmod:poss(possession-9, inmate-7)
+case(inmate-7, 's-8)
+nmod:in(items-4, possession-9)
+aux(confiscated-12, will-10)
+auxpass(confiscated-12, be-11)
+case(contraband-14, as-13)
+nmod:as(confiscated-12, contraband-14)
+cc(contraband-14, and-15)
+nmod:as(confiscated-12, disposed-16)
+conj:and(contraband-14, disposed-16)
+nmod(disposed-16, of-17)
+punct(confiscated-12, .-18)
+root(ROOT-0, result-4)
+amod(violations-2, Repeated-1)
+nsubj(result-4, violations-2)
+aux(result-4, will-3)
+case(discipline-6, in-5)
+nmod:in(result-4, discipline-6)
+punct(result-4, .-7)
+---
+Enhanced PLUS PLUS dependencies
+---
+---
+---
+---
+---
+---
+G[34, 30] [?1, ?2, ?3, ?4, ?5, Food1, Food1, NOT2, Repeated1, confiscated12, consumed3, contraband14, discipline6, disposed16, flush3, food3, food5, food11, inmate7, inmates7, items6, items4, kept5, meals5, not2, not3, of17, possession9, result4, returned8, toilet9, tray12, unauthorized2, violations2]
+Food1-  : will  : will ->kept5
+meals5-during->consumed3
+not3-  : be ->kept5
+disposed16-as->confiscated12
+discipline6-in->result4
+?3-any->items6
+inmates7-agent : by ->kept5
+?4-the->tray12
+?2-poss : 's ->possession9
+?5- ->confiscated12
+food3- ->?5
+food11- ->?4
+?2-an->inmate7
+of17- ->disposed16
+not2- ->consumed3
+NOT2-  : Do ->flush3
+disposed16-and->contraband14
+?1-the->toilet9
+contraband14-as : will  : be ->confiscated12
+violations2-  : will ->result4
+food5- ->?3
+Food1-  : will ->returned8
+Repeated1- ->violations2
+?3- ->flush3
+unauthorized2- ->?5
+?5-All->items4
+possession9-in->?5
+?4-with : be ->returned8
+?1-down->flush3
+consumed3- ->Food1
+
+[items4<-All-?5
+	(<-in-possession9<-poss : 's -?2)
+	(<- -food3)
+	<- -unauthorized2;
+returned8
+	(<-  : will -Food1<- -consumed3(<-during-meals5)<- -not2)
+	<-with : be -?4<- -food11;
+confiscated12
+	(<- -*?5)
+	(<-as : will  : be -contraband14<-and-disposed16<- -of17)
+	<-as-*disposed16;
+items6<-any-?3<- -food5;
+tray12<-the-*?4;
+result4
+	(<-  : will -violations2<- -Repeated1)
+	<-in-discipline6;
+toilet9<-the-?1;
+flush3
+	(<- -*?3)
+	(<-down-*?1)
+	<-  : Do -NOT2;
+kept5
+	(<-  : will  : will -Food1)
+	(<-agent : by -inmates7)
+	<-  : be -not3;
+inmate7<-an-*?2]
