@@ -1,17 +1,20 @@
 package net.xqhs.graphs.nlp;
 
-import net.xqhs.graphs.graph.Node;
 import edu.stanford.nlp.ling.IndexedWord;
+import net.xqhs.graphs.graph.Node;
 
-public class FunctionWord implements NodeWithIndex {
-	public FunctionWord(String tag, String label, int index) {
+public class FunctionWord implements NodeWithIndex
+{
+	public FunctionWord(String tag, String label, int index)
+	{
 		super();
 		this.tag = tag;
 		this.label = label;
 		this.index = index;
 	}
 
-	public FunctionWord(String tag, IndexedWord iw) {
+	public FunctionWord(String tag, IndexedWord iw)
+	{
 		super();
 		this.tag = tag;
 		this.label = iw.word();
@@ -19,14 +22,15 @@ public class FunctionWord implements NodeWithIndex {
 
 	}
 
-	private String tag;
-	private String label;
-	private int index;
+	private String	tag;
+	private String	label;
+	private int		index;
 
 	/**
 	 * @return the tag
 	 */
-	public String getTag() {
+	public String getTag()
+	{
 		return tag;
 	}
 
@@ -34,7 +38,8 @@ public class FunctionWord implements NodeWithIndex {
 	 * @param tag
 	 *            the tag to set
 	 */
-	public void setTag(String tag) {
+	public void setTag(String tag)
+	{
 		this.tag = tag;
 	}
 
@@ -42,7 +47,8 @@ public class FunctionWord implements NodeWithIndex {
 	 * @return the label
 	 */
 	@Override
-	public String getLabel() {
+	public String getLabel()
+	{
 		return label;
 	}
 
@@ -52,7 +58,8 @@ public class FunctionWord implements NodeWithIndex {
 	 * @return
 	 */
 	@Override
-	public Node setLabel(String label) {
+	public Node setLabel(String label)
+	{
 		this.label = label;
 		return this;
 	}
@@ -61,7 +68,8 @@ public class FunctionWord implements NodeWithIndex {
 	 * @return the index
 	 */
 	@Override
-	public int getWordIndex() {
+	public int getWordIndex()
+	{
 		return index;
 	}
 
@@ -70,7 +78,8 @@ public class FunctionWord implements NodeWithIndex {
 	 *            the index to set
 	 */
 	@Override
-	public void setWordIndex(int index) {
+	public void setWordIndex(int index)
+	{
 		this.index = index;
 	}
 
@@ -80,16 +89,26 @@ public class FunctionWord implements NodeWithIndex {
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return "\"" + tag + " - " + label + " [" + index + "]" + "\"";
 	}
-
-	public boolean equals(NLNodeP other) {
-		return this.getLabel().equals(other.getLabel())
-				&& this.index == other.getWordIndex();
+	
+	/**
+	 * @return string to be used when writing to a represenation.
+	 */
+	String toStringStorage()
+	{
+		return tag + "/" + label + "/" + index;
 	}
 
-	public boolean equalsByIndex(NLNodeP other) {
+	public boolean equals(NLNodeP other)
+	{
+		return this.getLabel().equals(other.getLabel()) && this.index == other.getWordIndex();
+	}
+
+	public boolean equalsByIndex(NLNodeP other)
+	{
 		return this.index == other.getWordIndex();
 	}
 }

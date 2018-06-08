@@ -75,28 +75,33 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	/**
 	 * The default branch separator.
 	 */
-	public static final String	DEFAULT_BRANCH_SEPARATOR	= "";
+	public static final String		DEFAULT_BRANCH_SEPARATOR	= "";
 	/**
 	 * The default separator increment.
 	 */
-	public static final String	DEFAULT_SEPARATOR_INCREMENT	= "";
+	public static final String		DEFAULT_SEPARATOR_INCREMENT	= "";
 	/**
 	 * The default increment limit.
 	 */
-	public static final int		DEFAULT_INCREMENT_LIMIT		= -1;
+	public static final int			DEFAULT_INCREMENT_LIMIT		= -1;
 
 	/**
 	 * Branch separator. See {@link #setLayout(String, String, int)}.
 	 */
-	protected String			indent						= DEFAULT_BRANCH_SEPARATOR;
+	protected String				indent						= DEFAULT_BRANCH_SEPARATOR;
 	/**
 	 * Separator increment. See {@link #setLayout(String, String, int)}.
 	 */
-	protected String			indentIncrement				= DEFAULT_SEPARATOR_INCREMENT;
+	protected String				indentIncrement				= DEFAULT_SEPARATOR_INCREMENT;
 	/**
 	 * Increment limit. See {@link #setLayout(String, String, int)}.
 	 */
-	protected int				incrementLimit				= DEFAULT_INCREMENT_LIMIT;
+	protected int					incrementLimit				= DEFAULT_INCREMENT_LIMIT;
+
+	/**
+	 * The {@link GraphComponentReader} to use for reading graph components.
+	 */
+	protected GraphComponentReader	componentReader				= new DefaultComponentReader();
 
 	/**
 	 * Creates a new instance and links it to the specified graph. No processing will occur until {@link #update()} is
@@ -122,7 +127,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	 * @param limit
 	 *            - the use of separator and increment are limited to a depth specified by this parameter. Use 0 so that
 	 *            no separation will occur. Use -1 to not limit the separation.
-	 * @return the {@link LinearGraphRepresentation} instance, for chained calls.
+	 * @return the {@link TextGraphRepresentation} instance, for chained calls.
 	 */
 	public TextGraphRepresentation setLayout(String branchSeparator, String separatorIncrement, int limit)
 	{
@@ -131,6 +136,19 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		if(separatorIncrement != null)
 			this.indentIncrement = separatorIncrement;
 		incrementLimit = limit;
+		return this;
+	}
+
+	/**
+	 * Configures a {@link GraphComponentReader} instance that will be used for reading individual graph components.
+	 *
+	 * @param reader
+	 *            - the instance to use.
+	 * @return the {@link TextGraphRepresentation} instance, for chained calls.
+	 */
+	public TextGraphRepresentation setComponentReader(GraphComponentReader reader)
+	{
+		this.componentReader = reader;
 		return this;
 	}
 
@@ -317,7 +335,8 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	 * parentheses for branches (the last branch of a node is not surrounded by parentheses) and "*" to refer nodes that
 	 * have already appeared in the representation earlier. Also, "^" for nodes outside the (sub)graph.
 	 * <p>
-	 * Example: a graph that is a triangle ABC with one other edge BD will be represented as (edges are not labeled): <br>
+	 * Example: a graph that is a triangle ABC with one other edge BD will be represented as (edges are not labeled):
+	 * <br>
 	 * A->B(-&gt;D)-&gt;C-&gt;*A<br>
 	 * That is, there is a cycle A-B-C-A, and also there is also a branch from B to D.
 	 * <p>
@@ -331,9 +350,8 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 	{
 		String firstIndent = indent.contains("\n") ? indent : ""; // see javadoc
 		if(theRepresentation != null)
-			return firstIndent
-					+ ((TextRepresentationElement) theRepresentation).toString(indent, indentIncrement, incrementLimit,
-							isBackwards);
+			return firstIndent + ((TextRepresentationElement) theRepresentation).toString(indent, indentIncrement,
+					incrementLimit, isBackwards);
 		le("representation not computed (use update()).");
 		return null;
 	}
@@ -443,8 +461,8 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 		{
 			// read the representation without connecting all the nodes and edges
 			TextRepresentationElement rootRepr = TextRepresentationElement.readRepresentation(input, this,
-					(UnitComponent) new UnitComponent().setUnitName(Unit.DEFAULT_UNIT_NAME).setLink(getUnitName())
-							.setLogLevel(Level.WARN));
+					componentReader, (UnitComponent) new UnitComponent().setUnitName(Unit.DEFAULT_UNIT_NAME)
+							.setLink(getUnitName()).setLogLevel(Level.WARN));
 			theRepresentation = rootRepr;
 			lf("result: [] \n====================================", theRepresentation.toString());
 
@@ -546,13 +564,12 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 						{ // target is pattern / generic node
 							lf("searching pattern target node []", dummyTargetNode);
 							for(Node candidateNode : theGraph.getNodesNamed(dummyTargetNode.getLabel()))
-								if(candidateNode instanceof NodeP
-										&& ((NodeP) dummyTargetNode).genericIndex() == ((NodeP) candidateNode)
-												.genericIndex())
+								if(candidateNode instanceof NodeP && ((NodeP) dummyTargetNode)
+										.genericIndex() == ((NodeP) candidateNode).genericIndex())
 									targetNode = candidateNode;
 							if(targetNode == null)
-								throw new IllegalArgumentException("Target pattern node [" + dummyTargetNode
-										+ "] not found in the graph.");
+								throw new IllegalArgumentException(
+										"Target pattern node [" + dummyTargetNode + "] not found in the graph.");
 							lf("found old target pattern node []", targetNode);
 						}
 						else
@@ -560,8 +577,8 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 							lf("searching target node []", dummyTargetNode);
 							Collection<Node> candidates = theGraph.getNodesNamed(dummyTargetNode.getLabel());
 							if(candidates.isEmpty())
-								throw new IllegalArgumentException("Target pattern node [" + dummyTargetNode
-										+ "] not found in the graph.");
+								throw new IllegalArgumentException(
+										"Target pattern node [" + dummyTargetNode + "] not found in the graph.");
 							targetNode = candidates.iterator().next();
 							lf("found old target node []", targetNode);
 						}
@@ -591,7 +608,7 @@ public class TextGraphRepresentation extends LinearGraphRepresentation
 					else
 						edge.setFrom(targetNode);
 					li("adding to graph edge []", edge);
-					theGraph.addEdge(edge.toSimpleEdge());
+					theGraph.addEdge(componentReader.compileEdge(edge));
 					break;
 				}
 				case EXTERNAL_LINK:

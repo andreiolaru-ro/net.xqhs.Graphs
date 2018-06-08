@@ -25,12 +25,12 @@ import net.xqhs.graphs.graph.SimpleEdge;
  * @author Andrei Olaru
  *
  */
-class SettableEdge extends SimpleEdge
+public class SettableEdge extends SimpleEdge
 {
 	/**
 	 * The serial UID.
 	 */
-	private static final long	serialVersionUID	= 1L;
+	private static final long serialVersionUID = 1L;
 	
 	/**
 	 * Constructs an {@link Edge} instance with the adjacent nodes not set.
@@ -65,13 +65,13 @@ class SettableEdge extends SimpleEdge
 		return this;
 	}
 
-	/**
-	 * Transfers the parameters of the current instance to a new {@link SimpleEdge} instance.
-	 *
-	 * @return the newly created {@link SimpleEdge} instance, with the same label and from and to nodes.
-	 */
-	protected SimpleEdge toSimpleEdge()
-	{
-		return new SimpleEdge(from, to, label);
-	}
+	// /**
+	// * Transfers the parameters of the current instance to a new {@link SimpleEdge} instance.
+	// *
+	// * @return the newly created {@link SimpleEdge} instance, with the same label and from and to nodes.
+	// */
+	// protected SimpleEdge toSimpleEdge()
+	// {
+	// return new SimpleEdge(from, to, label);
+	// }
 }

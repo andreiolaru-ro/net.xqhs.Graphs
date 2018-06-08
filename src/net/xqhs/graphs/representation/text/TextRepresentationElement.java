@@ -1,12 +1,12 @@
 /*******************************************************************************
  * Copyright (C) 2013 Andrei Olaru.
- * 
+ *
  * This file is part of net.xqhs.Graphs.
- * 
+ *
  * net.xqhs.Graphs is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
- * 
+ *
  * net.xqhs.Graphs is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with net.xqhs.Graphs.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
 package net.xqhs.graphs.representation.text;
@@ -19,7 +19,6 @@ import net.xqhs.graphs.graph.Edge;
 import net.xqhs.graphs.graph.GraphDescription;
 import net.xqhs.graphs.graph.Node;
 import net.xqhs.graphs.graph.SimpleNode;
-import net.xqhs.graphs.pattern.NodeP;
 import net.xqhs.graphs.representation.GraphRepresentation;
 import net.xqhs.graphs.representation.RepresentationElement;
 import net.xqhs.graphs.representation.VisualizableGraphComponent;
@@ -32,14 +31,14 @@ import net.xqhs.util.logging.UnitComponent;
  * <p>
  * The class contains method for displaying a textual representation of the represented element (and its children) and
  * for reading a textual representation of such an element and its children.
- * 
+ *
  * @author Andrei Olaru
  */
 public class TextRepresentationElement extends RepresentationElement
 {
 	/**
 	 * Enumeration containing the types of elements that may appear in a textual graph representation.
-	 * 
+	 *
 	 * @author Andrei Olaru
 	 */
 	public enum Type {
@@ -79,7 +78,7 @@ public class TextRepresentationElement extends RepresentationElement
 	 * in the label of nodes or edges, except for {@link #EDGE_LIMIT}, that may appear in edge labels.
 	 * <p>
 	 * These constants are used both at reading and at producing a representation.
-	 * 
+	 *
 	 * @author Andrei Olaru
 	 */
 	public enum Symbol {
@@ -96,7 +95,7 @@ public class TextRepresentationElement extends RepresentationElement
 		/**
 		 * Symbol that separates the description of the graph (e.g. name) from the description of nodes and edges.
 		 */
-		DESCRIPTION_SEPARATOR(":"),
+		DESCRIPTION_SEPARATOR(":::"), // just a temporary fix
 		
 		/**
 		 * Separator between the representations of two subgraphs.
@@ -149,11 +148,11 @@ public class TextRepresentationElement extends RepresentationElement
 		/**
 		 * The actual textual representation of the symbol.
 		 */
-		private String	symbol;
+		private String symbol;
 		
 		/**
 		 * Default constructor.
-		 * 
+		 *
 		 * @param symb
 		 *            - the representation of the symbol.
 		 */
@@ -171,7 +170,7 @@ public class TextRepresentationElement extends RepresentationElement
 		/**
 		 * Returns a value that can be included in a regular expressions pattern (as for {@link String#split(String)})
 		 * without worries that the characters in the symbol will be taken as special values.
-		 * 
+		 *
 		 * @return the 'quoted' symbol value.
 		 */
 		public String toRegexp()
@@ -227,7 +226,7 @@ public class TextRepresentationElement extends RepresentationElement
 	
 	/**
 	 * Creates a text representation for an element container (a level in a multi-level representation).
-	 * 
+	 *
 	 * @param root
 	 *            - the root representation.
 	 * @param type
@@ -243,7 +242,7 @@ public class TextRepresentationElement extends RepresentationElement
 	
 	/**
 	 * Creates a text representation of a subgraph (connected part of a graph).
-	 * 
+	 *
 	 * @param root
 	 *            - the root representation.
 	 * @param type
@@ -262,7 +261,7 @@ public class TextRepresentationElement extends RepresentationElement
 	
 	/**
 	 * Creates a text representation of a graph edge.
-	 * 
+	 *
 	 * @param root
 	 *            - the root representation.
 	 * @param representedEdge
@@ -288,7 +287,7 @@ public class TextRepresentationElement extends RepresentationElement
 	
 	/**
 	 * Creates a text representation of a graph node.
-	 * 
+	 *
 	 * @param root
 	 *            - the root representation.
 	 * @param representedNode
@@ -306,7 +305,7 @@ public class TextRepresentationElement extends RepresentationElement
 	
 	/**
 	 * Constructor aggregating all the other constructors.
-	 * 
+	 *
 	 * @param root
 	 *            - the root representation.
 	 * @param representedElement
@@ -341,7 +340,7 @@ public class TextRepresentationElement extends RepresentationElement
 	
 	/**
 	 * Adds a subordinate element to this representation element.
-	 * 
+	 *
 	 * @param sub
 	 *            - the subordinate element to add.
 	 * @return the instance itself.
@@ -354,7 +353,7 @@ public class TextRepresentationElement extends RepresentationElement
 	
 	/**
 	 * Adds a list of subordinate elements to this representation element.
-	 * 
+	 *
 	 * @param subs
 	 *            - the subordinate elements to add, as a {@link List}.
 	 * @return the instance itself.
@@ -379,7 +378,7 @@ public class TextRepresentationElement extends RepresentationElement
 	 * The method creates a textual rendering of the current representation element, as well as of its children.
 	 * <p>
 	 * See {@link TextGraphRepresentation}.
-	 * 
+	 *
 	 * @param indent
 	 *            - this will precede each new element, before <code>indentLimit</code> is reached. 'Only' children and
 	 *            nodes will not be prexeded by indent.
@@ -460,7 +459,7 @@ public class TextRepresentationElement extends RepresentationElement
 		if(content != null)
 			for(TextRepresentationElement el : content)
 				ret += el.toString(displayedIndent, displayedIndentIncrement, nextIndentLimit, isBackwards);
-		
+
 		if(isEdgeType(linkType) && !isOnlyChild && !isLastChild)
 			ret += Symbol.BRANCH_OUT;
 		if(linkType == Type.ELEMENT_CONTAINER)
@@ -472,7 +471,7 @@ public class TextRepresentationElement extends RepresentationElement
 	/**
 	 * True if the specified {@link Type} is a type of edge. True for {@link Type#INTERNAL_LINK},
 	 * {@link Type#EXTERNAL_LINK} and {@link Type#BRANCH}.
-	 * 
+	 *
 	 * @param elementType
 	 *            - the type of element.
 	 * @return <code>true</code> if the type is a type of edge.
@@ -487,43 +486,48 @@ public class TextRepresentationElement extends RepresentationElement
 	 * The method reads the representation of a whole graph from the given text input. If more top-level graph
 	 * representations are present in the input, only the first one will be read. To read the representation and get the
 	 * remaining input, use
-	 * {@link #readRepresentation(ContentHolder, Type, boolean, TextGraphRepresentation, UnitComponent)}.
+	 * {@link #readRepresentation(ContentHolder, Type, boolean, TextGraphRepresentation, GraphComponentReader, UnitComponent)}.
 	 * <p>
 	 * While the edges are placed correctly, they have no adjacent nodes. They will be filed in later, in
 	 * {@link TextGraphRepresentation#readRepresentation(String)}. Basically, elements are currently correct with
 	 * respect to their labels and their placement in a textual layout ({@link #toString()} returns an apparently
 	 * correct representation). The actual, correct graph is build later.
-	 * 
+	 *
 	 * @param input
 	 *            - the input, as a {@link String}.
 	 * @param representation
 	 *            - the representation that the read element belongs to.
+	 * @param componentReader
+	 *            - the {@link GraphComponentReader} instance to use for individual components.
 	 * @param log
 	 *            - a {@link UnitComponent} to use for logging messages.
 	 * @return the root element (of type {@link Type#ELEMENT_CONTAINER}) of the representation.
 	 */
 	static protected TextRepresentationElement readRepresentation(String input, TextGraphRepresentation representation,
-			UnitComponent log)
+			GraphComponentReader componentReader, UnitComponent log)
 	{
-		return readRepresentation(new ContentHolder<String>(input), Type.ELEMENT_CONTAINER, true, representation, log);
+		return readRepresentation(new ContentHolder<String>(input), Type.ELEMENT_CONTAINER, true, representation,
+				componentReader, log);
 	}
 	
 	/**
-	 * Same as {@link #readRepresentation(String, TextGraphRepresentation, UnitComponent)}, but using a content holder
-	 * and leaving all un-consumed input in the holder.
-	 * 
+	 * Same as {@link #readRepresentation(String, TextGraphRepresentation, GraphComponentReader, UnitComponent)}, but
+	 * using a content holder and leaving all un-consumed input in the holder.
+	 *
 	 * @param input
 	 *            - the input, held be a {@link ContentHolder} instance.
 	 * @param representation
 	 *            - the representation that the read element belongs to.
+	 * @param componentReader
+	 *            - the {@link GraphComponentReader} instance to use for individual components.
 	 * @param log
 	 *            - a {@link UnitComponent} to use for logging messages.
 	 * @return the root element (of type {@link Type#ELEMENT_CONTAINER}) of the representation.
 	 */
 	static protected TextRepresentationElement readRepresentation(ContentHolder<String> input,
-			TextGraphRepresentation representation, UnitComponent log)
+			TextGraphRepresentation representation, GraphComponentReader componentReader, UnitComponent log)
 	{
-		return readRepresentation(input, Type.ELEMENT_CONTAINER, true, representation, log);
+		return readRepresentation(input, Type.ELEMENT_CONTAINER, true, representation, componentReader, log);
 	}
 	
 	/**
@@ -534,7 +538,7 @@ public class TextRepresentationElement extends RepresentationElement
 	 * between {@link Symbol#ELEMENT_CONTAINER_IN} and {@link Symbol#ELEMENT_CONTAINER_OUT}.
 	 * <p>
 	 * The <code>input</code> argument is modified by using {@link ContentHolder#set(Object)}.
-	 * 
+	 *
 	 * @param input
 	 *            - the input, held be a {@link ContentHolder} instance. It is assumed to be a non-empty, correct
 	 *            representation.
@@ -545,12 +549,15 @@ public class TextRepresentationElement extends RepresentationElement
 	 *            parent).
 	 * @param representation
 	 *            - the representation that the read element belongs to.
+	 * @param componentReader
+	 *            - the {@link GraphComponentReader} instance to use for individual components.
 	 * @param log
 	 *            - a {@link UnitComponent} to use for logging messages.
 	 * @return the element read from the input, as a {@link TextRepresentationElement}.
 	 */
 	static protected TextRepresentationElement readRepresentation(ContentHolder<String> input, Type type,
-			boolean firstSibling, TextGraphRepresentation representation, UnitComponent log)
+			boolean firstSibling, TextGraphRepresentation representation, GraphComponentReader componentReader,
+			UnitComponent log)
 	{
 		log.lf("reading [] from []", type, input);
 		TextRepresentationElement ret = null;
@@ -589,7 +596,8 @@ public class TextRepresentationElement extends RepresentationElement
 			
 			while(input.get().length() > 0)
 				// input will be modified in the call below; each call reads a subgraph
-				ret.addSub(readRepresentation(input, Type.SUBGRAPH, (nChildren++ == 0), representation, log));
+				ret.addSub(readRepresentation(input, Type.SUBGRAPH, (nChildren++ == 0), representation, componentReader,
+						log));
 			if(rest != null)
 				input.set(rest);
 			break;
@@ -604,7 +612,7 @@ public class TextRepresentationElement extends RepresentationElement
 				log.li("create new subgraph");
 				ret = new TextRepresentationElement(representation, Type.SUBGRAPH, firstSibling);
 				// a representation begins with a node
-				ret.addSub(readRepresentation(input, Type.NODE, true, representation, log));
+				ret.addSub(readRepresentation(input, Type.NODE, true, representation, componentReader, log));
 			}
 			if(rez.length > 1) // more subgraphs left
 				input.set(rez[1]);
@@ -652,9 +660,9 @@ public class TextRepresentationElement extends RepresentationElement
 				String rez[] = branchString.split(Symbol.EDGE_ENDING_FORWARD.toRegexp(), 2);
 				// rez now contains: edge representation | rest of the branch
 				firstIndex = rez[0].indexOf(Symbol.EDGE_LIMIT.toString()) + Symbol.EDGE_LIMIT.toString().length();
-				if(rez[0].length() == 0)
-					lastIndex = -1; // no label; edge is just the EDGE_ENDING_FORWARD symbol.
-				else if(rez.length < 2)
+				// if(rez[0].length() == 0) // should not be necessary.
+				// lastIndex = -1; // no label; edge is just the EDGE_ENDING_FORWARD symbol.
+				if(rez.length < 2)
 					throw new IllegalArgumentException("No ending for edge.");
 				else if(rez[0].substring(rez[0].length() - 1).equals(Symbol.EDGE_LIMIT.toString()))
 					// the last character before EDGE_ENDING_FORWARD is again EDGE_LIMIT; ignore it.
@@ -680,17 +688,11 @@ public class TextRepresentationElement extends RepresentationElement
 				nextNode = branchString.substring(lastIndex + Symbol.EDGE_LIMIT.toString().length()).trim();
 			}
 			String edgeLabel;
-			if(firstIndex <= lastIndex)
-			{
-				// log.lf("===== [] === [] ", firstIndex, lastIndex);
-				edgeLabel = branchString.substring(firstIndex, lastIndex).trim();
-				if(edgeLabel.length() == 0)
-					edgeLabel = null;
-			}
-			else
-				// unnamed edge
-				edgeLabel = null;
-			
+			if(firstIndex > lastIndex)
+				lastIndex = firstIndex;
+			// log.lf("===== [] === [] ", firstIndex, lastIndex);
+			String edgeLabelHolder = branchString.substring(firstIndex, lastIndex).trim();
+
 			// get the type (internal, external or normal branch)
 			// nextNode has been trimmed
 			Type edgeType;
@@ -711,12 +713,12 @@ public class TextRepresentationElement extends RepresentationElement
 				edgeType = Type.BRANCH;
 			
 			// create
-			log.li("create new [][] edge: [].", edgeTypeChar, edgeType, edgeLabel);
-			SettableEdge edge = new SettableEdge(edgeLabel); // node names will be filled in later
+			log.li("create new [][] edge: [].", edgeTypeChar, edgeType, edgeLabelHolder);
+			SettableEdge edge = componentReader.readEdge(edgeLabelHolder); // node data will be filled in later
 			// level is unused
-			ret = new TextRepresentationElement(representation, edge, edgeType, -1, isLastChild, isLastChild
-					&& firstSibling);
-			ret.addSub(readRepresentation(input.set(nextNode), Type.NODE, true, representation, log));
+			ret = new TextRepresentationElement(representation, edge, edgeType, -1, isLastChild,
+					isLastChild && firstSibling);
+			ret.addSub(readRepresentation(input.set(nextNode), Type.NODE, true, representation, componentReader, log));
 			input.set(rest);
 			break;
 		}
@@ -729,29 +731,16 @@ public class TextRepresentationElement extends RepresentationElement
 			String nodeName = parts[0].trim();
 			if(nodeName.length() == 0)
 				throw new IllegalArgumentException("Node name is empty.");
-			SimpleNode node = null;
-			if(nodeName.startsWith(NodeP.NODEP_LABEL)
-					&& nodeName.substring(NodeP.NODEP_LABEL.length()).startsWith(NodeP.NODEP_INDEX_MARK))
-			{ // node is a generic node (?#number)
-				int index = Integer.parseInt(nodeName.substring(NodeP.NODEP_LABEL.length()
-						+ NodeP.NODEP_INDEX_MARK.length()));
-				log.li("create new pattern node #[]", new Integer(index));
-				// for internal links, this should not be a new node; it will be replaced later
-				node = new NodeP(index);
-			}
-			else
-			{ // normal, labeled node
-				log.li("create new node: []", nodeName);
-				// for internal links, this should not be a new node; it will be replaced later
-				node = new SimpleNode(nodeName);
-			}
+			SimpleNode node = componentReader.readNode(nodeName);
+			
 			ret = new TextRepresentationElement(representation, node, Type.NODE);
 			if(parts.length > 1)
 			{
 				// remember what was after the node name
 				input.set(input.get().substring(parts[0].length()));
 				while(input.get().length() > 0)
-					ret.addSub(readRepresentation(input, Type.BRANCH, (nChildren++ == 0), representation, log));
+					ret.addSub(readRepresentation(input, Type.BRANCH, (nChildren++ == 0), representation,
+							componentReader, log));
 			}
 			break;
 		}
@@ -769,7 +758,7 @@ public class TextRepresentationElement extends RepresentationElement
 	 * Example, for opening and closing symbols '(' and ')', respectively: the returned index for the input <br>
 	 * <code>aaa ( bbb (ccc) b) (dd) aaaa) xxxx )</code> <br>
 	 * is the closing parenthesis after the group <code>aaaa</code>.
-	 * 
+	 *
 	 * @param input
 	 *            - the input string.
 	 * @param openingSymbol
