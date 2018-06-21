@@ -7,18 +7,18 @@ import testing.ContextGraphsTest.IntTimeKeeper;
 
 public class NLGraphFactory {
 	public static SimpleGraph makeGraph(NLGraphType t) {
-		switch (t) {
-		case GRAPH:
-			System.out.println("Creating context graph...");
-			ContextGraph g = new ContextGraph();
-			g.setTimeKeeper(new IntTimeKeeper());// wtf
-			return g;
-		case PATTERN:
-			System.out.println("Creating context pattern...");
-			return new ContextPattern();
-		default:
-			return null;
-		}
+	switch (t) {
+	case GRAPH:
+	// System.out.println("Creating context graph...");
+	ContextGraph g = new ContextGraph();
+	g.setTimeKeeper(new IntTimeKeeper());// wtf
+	return g;
+	case PATTERN:
+	// System.out.println("Creating context pattern...");
+	return new ContextPattern();
+	default:
+	return null;
+	}
 	}
 
 }

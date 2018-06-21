@@ -63,8 +63,8 @@ public class ContextPatternConverter {
 	}
 
 	public static SimpleGraph relabelEdgesWithAuxWords(SimpleGraph g) {
-		System.out
-				.println("------------------PROCESSING FUNCTION WORDS---------------------");
+//		System.out
+//				.println("------------------PROCESSING FUNCTION WORDS---------------------");
 		// move roles off labels and into special property
 		g.getEdges()
 				.stream()
@@ -83,9 +83,9 @@ public class ContextPatternConverter {
 									"nsubj", "xsubj", "relcl").contains(
 									label.substring(1)) ? " " : label
 									.substring(1));
-							System.out.println(m.getFrom() + " --"
-									+ m.getLabel() + " -->" + m.getTo()
-									+ " has role:" + ((NLEdge) m).getRole());
+//							System.out.println(m.getFrom() + " --"
+//									+ m.getLabel() + " -->" + m.getTo()
+//									+ " has role:" + ((NLEdge) m).getRole());
 						});
 
 		for (Node node : g.getNodes()) {
@@ -126,7 +126,7 @@ public class ContextPatternConverter {
 				// if the node is isolated and has function words attached merge
 				// their labels
 				if (edges == null || edges.isEmpty()) {
-					System.out.println("Isolated node: " + nlNode);
+//					System.out.println("Isolated node: " + nlNode);
 					String finalLabel = null;
 					FunctionWord last = null;
 					for (int i = 0; i < fw.size()
@@ -168,8 +168,8 @@ public class ContextPatternConverter {
 									.getTo() : (NLNode) q.getFrom())
 							.collect(Collectors.toList());
 					// ArrayList<String> already = new ArrayList<String>();
-					System.out.println("Neighbors of node " + nlNode + " :"
-							+ neighbors);
+//					System.out.println("Neighbors of node " + nlNode + " :"
+//							+ neighbors);
 					// filter out words that have been assigned to edges by
 					// default parser
 					// fw.removeIf(f ->already.contains(f.getLabel()));
@@ -183,9 +183,9 @@ public class ContextPatternConverter {
 							.flatMap(e -> Arrays.asList(e.split(" ")).stream())
 							.collect(Collectors.toList())).contains(f
 							.getLabel()));
-					System.out
-							.println("Function words not already on edgelabels: "
-									+ fw);
+//					System.out
+//							.println("Function words not already on edgelabels: "
+//									+ fw);
 					// create the adjacency matrix
 					if (!fw.isEmpty()) {
 						ArrayList<ArrayList<Integer>> distances = new ArrayList<ArrayList<Integer>>();
@@ -198,9 +198,9 @@ public class ContextPatternConverter {
 										- neighborNode.getWordIndex()));
 							}
 							distances.add(distancesFromFWsPerNode);
-							System.out.println("The associations of node "
-									+ neighborNode + " :"
-									+ distancesFromFWsPerNode);
+//							System.out.println("The associations of node "
+//									+ neighborNode + " :"
+//									+ distancesFromFWsPerNode);
 						}
 						// create map of function word repartition
 						HashMap<NLNode, ArrayList<FunctionWord>> toMoveMap4All = new HashMap<NLNode, ArrayList<FunctionWord>>();
@@ -269,18 +269,18 @@ public class ContextPatternConverter {
 										.reduce(e.getLabel(),
 												(a, b) -> a += " : " + b + " ");
 								// + e.getLabel();
-								System.out.print("Relabeling edge "
-										+ e.getFrom() + " -- " + e.getLabel()
-										+ "->" + e.getTo() + "  to  ");
+//								System.out.print("Relabeling edge "
+//										+ e.getFrom() + " -- " + e.getLabel()
+//										+ "->" + e.getTo() + "  to  ");
 								e.setLabel(label);
-								System.out.println(label);
+//								System.out.println(label);
 								toMoveMap4All.remove(currentOppositeNode);
 
-								System.out
-										.println("Function words left after relabeling the edge to :"
-												+ e);
-								toMoveMap4All.values().stream()
-										.forEach(w -> System.out.println(w));
+//								System.out
+//										.println("Function words left after relabeling the edge to :"
+//												+ e);
+//								toMoveMap4All.values().stream()
+//										.forEach(w -> System.out.println(w));
 							}
 						}
 					}
@@ -302,15 +302,15 @@ public class ContextPatternConverter {
 	// }
 
 	public static SimpleGraph removeDuplicates(NLGraphType t, SimpleGraph g) {
-		System.out
-				.println("------------------DUPLICATES REMOVAL---------------------");
+//		System.out
+//				.println("------------------DUPLICATES REMOVAL---------------------");
 		GraphOperations goG = new GraphOperations(t, g);
 		ArrayList<NLNode> froms = new ArrayList<NLNode>(), tos = new ArrayList<NLNode>();
 		HashMap<String, ArrayList<NLNode>> abstractables = new HashMap<String, ArrayList<NLNode>>();
 		for (Node node : g.getNodes()) {
 
-			System.out.println("current node: " + node.getLabel()
-					+ ((NLNode) node).getWordIndex());
+//			System.out.println("current node: " + node.getLabel()
+//					+ ((NLNode) node).getWordIndex());
 			NLNode nlNode = (NLNode) node;
 			if (!(g instanceof ContextPattern && ((NLNodeP) nlNode).isGeneric())
 					&& !tos.contains(nlNode) && !froms.contains(nlNode)) {
@@ -324,9 +324,9 @@ public class ContextPatternConverter {
 							if (!((NLNode) duplicateNode).equals(nlNode)) {
 								froms.add((NLNode) duplicateNode);
 								tos.add(nlNode);
-								System.out.println("NLNode " + node.getLabel()
-										+ ((NLNode) node).getWordIndex()
-										+ nlNode.getPos() + " will be removed");
+//								System.out.println("NLNode " + node.getLabel()
+//										+ ((NLNode) node).getWordIndex()
+//										+ nlNode.getPos() + " will be removed");
 								// goG.mergeNodes((NodeP) n, (NodeP) nlNode);
 							}
 						}
@@ -381,8 +381,8 @@ public class ContextPatternConverter {
 
 	public static ContextPattern removeDuplicateNN(ContextPattern g) {
 
-		System.out
-				.println("------------------DUPLICATE NOUN REMOVAL---------------------");
+//		System.out
+//				.println("------------------DUPLICATE NOUN REMOVAL---------------------");
 		GraphOperations goG = new GraphOperations(NLGraphType.PATTERN, g);
 
 		ArrayList<NLNodeP> froms = new ArrayList<NLNodeP>(), tos = new ArrayList<NLNodeP>();
@@ -390,8 +390,8 @@ public class ContextPatternConverter {
 		// HashMap<String, ArrayList<NLNodeP>>();
 		for (Node node : g.getNodes()) {
 
-			System.out.println("current node: " + node.getLabel()
-					+ ((NLNodeP) node).getWordIndex());
+//			System.out.println("current node: " + node.getLabel()
+//					+ ((NLNodeP) node).getWordIndex());
 			NLNodeP nlNode = (NLNodeP) node;
 			if (!nlNode.isGeneric() && !tos.contains(nlNode)
 					&& !froms.contains(nlNode)) {
@@ -405,9 +405,9 @@ public class ContextPatternConverter {
 							if (!((NLNodeP) duplicateNode).equals(nlNode)) {
 								froms.add((NLNodeP) duplicateNode);
 								tos.add(nlNode);
-								System.out.println("NLNode " + node.getLabel()
-										+ ((NLNodeP) node).getWordIndex()
-										+ nlNode.getPos() + " will be removed");
+//								System.out.println("NLNode " + node.getLabel()
+//										+ ((NLNodeP) node).getWordIndex()
+//										+ nlNode.getPos() + " will be removed");
 								// goG.mergeNodes((NodeP) n, (NodeP) nlNode);
 							}
 						}
@@ -427,8 +427,8 @@ public class ContextPatternConverter {
 
 	public static SimpleGraph processCorefCP(NLGraphType t, SimpleGraph g,
 			Annotation document) throws Exception {
-		System.out
-				.println("\n------------------COREF RESOLUTION---------------------");
+//		System.out
+//				.println("\n------------------COREF RESOLUTION---------------------");
 		GraphOperations goCxt = new GraphOperations(t, g);
 
 		Map<Integer, CorefChain> chains = document
@@ -439,10 +439,10 @@ public class ContextPatternConverter {
 			NLNode headNLNode = goCxt.getByIndex(bossMention.headIndex);
 			if (headNLNode != null) {
 
-				System.out.println("Head mention: " + bossMention + " head: "
-						+ headNLNode.getLabel() + " startindex= "
-						+ bossMention.startIndex + " endindex"
-						+ bossMention.endIndex);
+//				System.out.println("Head mention: " + bossMention + " head: "
+//						+ headNLNode.getLabel() + " startindex= "
+//						+ bossMention.startIndex + " endindex"
+//						+ bossMention.endIndex);
 
 				// get other mentions & merge them with repr mention
 				for (IntPair k : chain.getMentionMap().keySet()) {
@@ -456,17 +456,17 @@ public class ContextPatternConverter {
 
 							if (nlNode != null) {
 
-								System.out.println("Mention: " + mention
-										+ " head: " + nlNode + " =?= "
-										+ mention.headIndex + " startindex= "
-										+ mention.startIndex + " endindex"
-										+ mention.endIndex);
+//								System.out.println("Mention: " + mention
+//										+ " head: " + nlNode + " =?= "
+//										+ mention.headIndex + " startindex= "
+//										+ mention.startIndex + " endindex"
+//										+ mention.endIndex);
 								if (!nlNode.equals(headNLNode)) {
 									goCxt.addEdge(nlNode, headNLNode, "==",
 											equivalence);
-								} else
-									System.out
-											.println("Not inserting reflexive edge.");
+								} //else
+//									System.out
+//											.println("Not inserting reflexive edge.");
 							}
 
 						}
@@ -490,7 +490,7 @@ public class ContextPatternConverter {
 			dets.add(fw.getLabel());
 
 		}
-		System.out.println("Determiners of node " + gov + " :" + dets);
+//		System.out.println("Determiners of node " + gov + " :" + dets);
 		if (!gov.isGeneric()) {
 			// gov.getAttributes().removeIf(a -> a.getTag().equals("det"));
 			// gov.getAttributes().removeAll(gov.getAttributes("det"));
@@ -499,8 +499,8 @@ public class ContextPatternConverter {
 				instantiate(g, gov, string);
 			}
 		} else {
-			System.out
-					.println("Generic node with determiner. Attempt to relabel");
+//			System.out
+//					.println("Generic node with determiner. Attempt to relabel");
 			gov.setLabel(gov.getLabel() + dets.toString());
 		}
 		return g;
@@ -554,12 +554,12 @@ public class ContextPatternConverter {
 	 *         label. Only for patterns
 	 */
 	public static NLNodeP instantiate(ContextPattern g, NLNodeP p, String label) {
-
-		System.out.println("INSTANTIATION OF NODE " + p);
+//
+//		System.out.println("INSTANTIATION OF NODE " + p);
 		GraphOperations gocxt = new GraphOperations(NLGraphType.PATTERN, g);
 		NLNodeP genericNode = new NLNodeP();
 		g.addNode(genericNode, true);
-		System.out.println("Added generic node " + genericNode);
+//		System.out.println("Added generic node " + genericNode);
 
 		genericNode.setLemma(p.getLemma());
 		genericNode.setPos(p.getPos());

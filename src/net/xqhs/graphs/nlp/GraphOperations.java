@@ -36,8 +36,8 @@ public class GraphOperations {
 	public NLEdge addEdge(NLNode from, NLNode to, String edgeLabel, String role) {
 		NLEdge edgeAlreadyThere = (NLEdge) containsEdge(from, to);
 		if (edgeAlreadyThere == null) {
-			System.out.println("Adding edge " + from + " -" + edgeLabel + "-> "
-					+ to);
+//			System.out.println("Adding edge " + from + " -" + edgeLabel + "-> "
+//					+ to);
 			NLEdge edge = NLEdgeFactory
 					.makeNLEdge(t, from, to, edgeLabel, role);
 			// new NLEdgeP(from, to, edgeLabel);
@@ -67,11 +67,11 @@ public class GraphOperations {
 
 	public void removeEdge(NLEdge edge) {
 		if (cxt.contains(edge)) {
-			System.out.println("Removing edge " + edge.getFrom() + " -"
-					+ edge.getLabel() + "-> " + edge.getTo());
+//			System.out.println("Removing edge " + edge.getFrom() + " -"
+//					+ edge.getLabel() + "-> " + edge.getTo());
 			cxt.removeEdge(edge);
-		} else
-			System.out.println("Edge already removed");
+		} //else
+//			System.out.println("Edge already removed");
 	}
 
 	// public NLNode addNode(String label) {
@@ -83,7 +83,7 @@ public class GraphOperations {
 
 	public void removeNode(NLNode node) {
 		if (cxt.contains(node)) {
-			System.out.println("Removing node " + node);
+//			System.out.println("Removing node " + node);
 			// prolly useless
 			if (node instanceof NLNodeP) {
 				if (((NLNodeP) node).isGeneric()) {
@@ -103,7 +103,7 @@ public class GraphOperations {
 
 	public NLNode addNode(NLNode node) {
 		cxt.addNode(node);
-		System.out.println("Adding node " + node);
+//		System.out.println("Adding node " + node);
 		return node;
 	}
 
@@ -172,11 +172,11 @@ public class GraphOperations {
 					// new NLEdgeP((NLNodeP) to,
 					// (NLNodeP) outEdgeP.getTo(), label, role));
 					deletables.add(outEdgeP);
-					System.out.println("Modifying outEdge:"
-							+ outEdgeP.getFrom() + " --" + outEdgeP.getLabel()
-							+ "-> " + outEdgeP.getTo() + " [role]:"
-							+ ((NLEdge) outEdgeP).getRole() + " to \n" + to
-							+ " -" + label + "-> " + outEdgeP.getTo());
+//					System.out.println("Modifying outEdge:"
+//							+ outEdgeP.getFrom() + " --" + outEdgeP.getLabel()
+//							+ "-> " + outEdgeP.getTo() + " [role]:"
+//							+ ((NLEdge) outEdgeP).getRole() + " to \n" + to
+//							+ " -" + label + "-> " + outEdgeP.getTo());
 				}
 			}
 			for (Edge inEdgeP : cxt.getInEdges(from)) {
@@ -194,19 +194,19 @@ public class GraphOperations {
 					// new NLEdgeP((NLNodeP) inEdgeP.getFrom(),
 					// (NLNodeP) to, label, role));
 					deletables.add(inEdgeP);
-					System.out.println("Modifying inEdge:" + inEdgeP.getFrom()
-							+ " --" + inEdgeP.getLabel() + "-> "
-							+ inEdgeP.getTo() + " [role]:"
-							+ ((NLEdge) inEdgeP).getRole() + "  to \n"
-							+ inEdgeP.getFrom() + " -" + label + "-> " + to);
+//					System.out.println("Modifying inEdge:" + inEdgeP.getFrom()
+//							+ " --" + inEdgeP.getLabel() + "-> "
+//							+ inEdgeP.getTo() + " [role]:"
+//							+ ((NLEdge) inEdgeP).getRole() + "  to \n"
+//							+ inEdgeP.getFrom() + " -" + label + "-> " + to);
 				}
 			}
 
 			apply();
 
-		} else
-			System.out.println("Node " + from + " or " + to
-					+ "not in graph or " + from + " == " + to);
+		} //else
+//			System.out.println("Node " + from + " or " + to
+//					+ "not in graph or " + from + " == " + to);
 	}
 
 }

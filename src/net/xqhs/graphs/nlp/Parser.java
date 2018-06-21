@@ -190,11 +190,11 @@ public class Parser {
 			Tree parent = leaf.parent(tree);
 			writer.println(leaf.label().value() + "-" + parent.label().value()
 					+ " ");
-			System.out.println(leaf.label().value() + "-"
-					+ parent.label().value() + " ");
+//			System.out.println(leaf.label().value() + "-"
+//					+ parent.label().value() + " ");
 		}
 		writer.println(parser.printPrettyTree(tree));
-		System.out.println(parser.printPrettyTree(tree));
+//		System.out.println(parser.printPrettyTree(tree));
 		writer.println("Dependensee repr");
 		TreebankLanguagePack tlp = new PennTreebankLanguagePack();
 		GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
@@ -350,11 +350,11 @@ public class Parser {
 				// + "NLPAttern.txt";
 				PrintWriter writer = new PrintWriter(filename, "UTF-8");
 				writer.println(str);
-				System.out.println("Output in " + filename);
+//				System.out.println("Output in " + filename);
 
 				Annotation document = new Annotation(str);
 				pipeline.annotate(document);
-				System.out.println(parser.getCorefChainz(document, writer));
+//				System.out.println(parser.getCorefChainz(document, writer));
 				// parser.getMentions(document, writer);
 				// ContextPattern g =
 				// parser.getContextPatternFromEnhanced(parser,
@@ -362,7 +362,7 @@ public class Parser {
 				// document);
 				// ContextPatternConverter cPc = new ContextPatternConverter(g);
 				parser.getVisual(str, writer, parser);
-				System.out.println(str);
+//				System.out.println(str);
 				// g = cPc.processCorefCP(g, document);
 				parser.getEnhancedPlusPlusPlusPlus(document, writer);
 				ContextPattern g = (ContextPattern) parser.getNLPattern(parser,
@@ -383,7 +383,7 @@ public class Parser {
 
 				// parser.getCorefChainz(document, writer);
 				// g = cPc.breakPatterns(g);
-				System.out.println(g.toString());
+//				System.out.println(g.toString());
 
 				// g = cxt.removeDuplicateNN(g);
 				g = (ContextPattern) ContextPatternConverter.removeDuplicates(
@@ -406,23 +406,23 @@ public class Parser {
 	 * @return
 	 */
 	public static ContextPattern fixDeterminers(ContextPattern g) {
-		System.out
-				.println("------------------INSTANTIATE NODES WITH DETERMINERS---------------------");
+//		System.out
+//				.println("------------------INSTANTIATE NODES WITH DETERMINERS---------------------");
 
 		ArrayList<NLNodeP> determinedNodes = new ArrayList<NLNodeP>();
 		for (net.xqhs.graphs.graph.Node node : g.getNodes()) {
 			NLNodeP nlnode = (NLNodeP) node;
 			Iterator<FunctionWord> attIt = nlnode.getAttributes().iterator();
-			System.out.println("Attributes of node " + nlnode);
-			while (attIt.hasNext()) {
-				System.out.println(" & " + attIt.next());
-			}
+//			System.out.println("Attributes of node " + nlnode);
+//			while (attIt.hasNext()) {
+//				System.out.println(" & " + attIt.next());
+//			}
 			// determine which nodes have determiners
 			ArrayList<FunctionWord> dets = nlnode.getAttributes("det");
 			if (dets != null && !dets.isEmpty()) {
 				determinedNodes.add(nlnode);
-				System.out.println("Found  node with determiner: "
-						+ nlnode.getLabel() + " " + dets);
+//				System.out.println("Found  node with determiner: "
+//						+ nlnode.getLabel() + " " + dets);
 			}
 		}
 		for (NLNodeP nlNodeP : determinedNodes) {
@@ -450,8 +450,8 @@ public class Parser {
 			List<SemanticGraphEdge> edge_set1 = sg.edgeListSorted();
 
 			patNodes.putAll(processLeafNodes(t, edge_set1, patNodes));
-			System.out
-					.println("Nodes in pattern before edge exam: " + patNodes);
+//			System.out
+//					.println("Nodes in pattern before edge exam: " + patNodes);
 			for (SemanticGraphEdge edge : edge_set1) {
 				NLNode to = null, from = null;
 				String flag = "REASONS";
@@ -459,9 +459,9 @@ public class Parser {
 					// used to b createOrRetrieve
 					from = retrieveNLNode(patNodes, edge.getDependent());
 					if (from == null) {
-						System.out.println("Dependent node: "
-								+ edge.getDependent().word()
-								+ " not registered in pattern." + edge);
+//						System.out.println("Dependent node: "
+//								+ edge.getDependent().word()
+//								+ " not registered in pattern." + edge);
 					}
 				} else
 					flag = "Dependent node no longer in graph";
@@ -469,9 +469,9 @@ public class Parser {
 					// used to b createOrRetrieve
 					to = retrieveNLNode(patNodes, edge.getGovernor());
 					if (to == null) {
-						System.out.println("Governor node: "
-								+ edge.getGovernor().word()
-								+ " not registered in pattern." + edge);
+//						System.out.println("Governor node: "
+//								+ edge.getGovernor().word()
+//								+ " not registered in pattern." + edge);
 					}
 				} else {
 
@@ -480,7 +480,7 @@ public class Parser {
 					// function word masquerading as node
 					NLNode zombie = retrieveNLNode(patNodes, edge.getGovernor());
 					if (zombie != null) {
-						System.out.println("Found zombie: " + zombie);
+//						System.out.println("Found zombie: " + zombie);
 
 						IndexedWord iwGov = edge.getGovernor();
 						List<SemanticGraphEdge> inEdgesZombie = sg
@@ -500,9 +500,9 @@ public class Parser {
 											&& fw.getWordIndex() == zombie
 													.getWordIndex()) {
 										found = true;
-										System.out
-												.println("Zombie found as attribute of "
-														+ patGov);
+//										System.out
+//												.println("Zombie found as attribute of "
+//														+ patGov);
 									}
 								}
 								// and move all its attributes to its governor
@@ -516,36 +516,36 @@ public class Parser {
 
 						// maybe should only work with indexes since labels can
 						// change with structures such as mwe
-						if (patNodes.remove(zombie.getLabel()
-								+ zombie.getWordIndex()) != null)
-							System.out.println("Zombie removed: " + zombie);
+//						if (patNodes.remove(zombie.getLabel()
+//								+ zombie.getWordIndex()) != null)
+//							System.out.println("Zombie removed: " + zombie);
 
-						System.out.println("Nodes after removal: " + patNodes);
+//						System.out.println("Nodes after removal: " + patNodes);
 					}
 				}
 				if (edge.getWeight() != Double.MIN_VALUE && to != null
 						&& from != null) {
 					NLEdge nlEdge = NLEdgeFactory.makeNLEdge(t, from, to, edge
 							.getRelation().toString());
-					System.out.println("Created edge " + nlEdge);
+//					System.out.println("Created edge " + nlEdge);
 					// NLEdgeP nlEdge = new NLEdgeP(from, to, edge.getRelation()
 					// .toString());
 					patEdges.put(
 							from.getLabel() + from.getWordIndex()
 									+ nlEdge.getLabel() + to.getLabel()
 									+ to.getWordIndex(), nlEdge);
-				} else
-					System.out
-							.println("Edge " + edge.getDependent().word()
-									+ " --" + edge.getRelation() + "->"
-									+ edge.getGovernor().word()
-									+ " not added. " + flag);
+				} //else
+//					System.out
+//							.println("Edge " + edge.getDependent().word()
+//									+ " --" + edge.getRelation() + "->"
+//									+ edge.getGovernor().word()
+//									+ " not added. " + flag);
 
 			}
-			System.out.println("Nodes to be added:");
-			for (NLNode patNode : patNodes.values()) {
-				System.out.print(" , " + patNode.getLabel());
-			}
+//			System.out.println("Nodes to be added:");
+//			for (NLNode patNode : patNodes.values()) {
+//				System.out.print(" , " + patNode.getLabel());
+//			}
 			if (t == NLGraphType.GRAPH) {
 				for (String key : patNodes.keySet()) {
 					NLNode n = patNodes.get(key);
@@ -555,7 +555,7 @@ public class Parser {
 							.filter(a -> a != n
 									&& a.getLabel().equals(n.getLabel()))
 							.collect(Collectors.toList()).isEmpty()) {
-						System.out.println("Renaming node " + n);
+//						System.out.println("Renaming node " + n);
 						n.setLabel(n.getLabel() + " ");
 
 					}
@@ -567,15 +567,15 @@ public class Parser {
 			// }
 			// set unit name to use in print
 			String unitName = " ";
-			System.out.println("Total nodes:");
+//			System.out.println("Total nodes:");
 			for (net.xqhs.graphs.graph.Node node : g.getNodes()) {
-				System.out.print(" , " + node);
+//				System.out.print(" , " + node);
 				unitName += node.getLabel() + " ";
 			}
 			g.setUnitName(unitName);
 			// g.addAll(patEdges.values());
 			for (net.xqhs.graphs.graph.Edge edgeP : patEdges.values()) {
-				System.out.println("Adding edge: " + edgeP);
+//				System.out.println("Adding edge: " + edgeP);
 				g.addEdge(edgeP);
 			}
 
@@ -593,7 +593,7 @@ public class Parser {
 			IndexedWord dep = edge.getDependent();
 
 			if (edge.getDependent().index() == edge.getGovernor().index()) {
-				System.out.println("Reflexive edge found:" + edge);
+//				System.out.println("Reflexive edge found:" + edge);
 				edge.setWeight(Double.MIN_VALUE);
 			} else {
 				switch (edge.getRelation().getShortName()) {
@@ -682,7 +682,7 @@ public class Parser {
 				NLNode node = nodes.get(functionWord.getLabel()
 						+ functionWord.getWordIndex());
 				// no idea why i'm doing this
-				System.out.println("Removed node " + node);
+//				System.out.println("Removed node " + node);
 				functionWord.setLabel(node.getLabel());
 				nodes.remove(node.getLabel() + node.getWordIndex());
 			}
@@ -758,8 +758,8 @@ public class Parser {
 				}
 			Node n = sg.addNode(label);
 			isomorphism.put(node, n);
-			System.out.println("Added for visualization node " + n.getId()
-					+ " equivalent in cxt of " + node.getLabel());
+//			System.out.println("Added for visualization node " + n.getId()
+//					+ " equivalent in cxt of " + node.getLabel());
 			n.addAttribute("ui.label", label);
 
 		}
@@ -775,13 +775,13 @@ public class Parser {
 				label += " ";
 			}
 			// }
-			System.out.println("Adding for visualization edge " + from + " --"
-					+ label + "-> " + to);
+//			System.out.println("Adding for visualization edge " + from + " --"
+//					+ label + "-> " + to);
 			Edge e = sg.addEdge(label, from, to, true);
 			if (e != null) {
 				e.addAttribute("ui.label", label);
-			} else
-				System.out.println("Edge not added for *REASONS*");
+			} //else
+//				System.out.println("Edge not added for *REASONS*");
 		}
 		sg.addAttribute("ui.stylesheet", "node { text-size: 18px; } "
 				+ "edge { text-size: 16px; } ");
@@ -867,7 +867,7 @@ public class Parser {
 		for (net.xqhs.graphs.graph.Node nod : cxt.getNodes()) {
 
 			NLNode node = (NLNode) nod;
-			System.out.println("Creating subtree of node: " + node);
+//			System.out.println("Creating subtree of node: " + node);
 			TreeNode<NLNode> root = new TreeNode<NLNode>(node);
 			root = getNodeSubtree(root, root, cxt);
 			final TreeNode<NLNode> rroot = root;
@@ -905,28 +905,28 @@ public class Parser {
 				// check for cycles
 
 				if (partialRoot.addChildDuplicateSafe(root, child) != null) {
-					System.out.println("   Added: " + child.getData() + " ");
-					System.out.println();
+//					System.out.println("   Added: " + child.getData() + " ");
+//					System.out.println();
 					getNodeSubtree(root, child, cxt);
 				} else {
-					System.out.println("   -| Cycle detected");
+//					System.out.println("   -| Cycle detected");
 					// return partialRoot;
 				}
 			}
-		} else
-			System.out.print(" -|");
+		} //else
+//			System.out.print(" -|");
 		return partialRoot;
 	}
 
 	public static String cxtToStr(SimpleGraph cxt) {
-		System.out.println("Turning to string...");
+//		System.out.println("Turning to string...");
 		String blah = " ";
 		for (TreeNode<NLNode> root : cxtAsForest(cxt)) {
 			// System.out.println("Rounded up all children of " + root.getData()
 			// + " ");
 			blah += " " + root.getData().toString() + ": ";
-			root.getChildrenData().stream()
-					.forEach(x -> System.out.print(x + " "));
+//			root.getChildrenData().stream()
+//					.forEach(x -> System.out.print(x + " "));
 			List<String> miniblah = root.getChildrenData().stream()
 					.sorted(new Comparator<NLNode>() {
 						@Override
