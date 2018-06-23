@@ -24,7 +24,7 @@ import net.xqhs.graphs.pattern.GraphPattern;
 public class UserRequest {
 
 	public enum RequestType {
-		IF, INFO, WHQUESTION, DETAIL
+		IF, INFO, WHQUESTION, DETAIL, NEW_INFO
 	}
 
 	private enum WhWords {
@@ -60,11 +60,11 @@ public class UserRequest {
 	public void setReqPattern(ContextPattern cp) {
 		this.reqPattern = cp;
 	}
-	
+
 	public RequestType getRequestType() {
 		return this.type;
 	}
-	
+
 	public void setRequestType(RequestType type) {
 		this.type = type;
 	}
@@ -85,10 +85,10 @@ public class UserRequest {
 		ArrayList<String> partsOfSpeech = new ArrayList<String>();
 		String[] words = req.trim().split("\\s+");
 		String firstWord = words[0];
-		
+
 		if (firstWord.toLowerCase().equals("if"))
 			return RequestType.IF;
-		
+
 		Collection<Node> nodes = reqPattern.getNodesNamed(firstWord);
 		int firstWordIdx = 0;
 		while (nodes.isEmpty()) {
@@ -98,7 +98,6 @@ public class UserRequest {
 		NLNodeP fn = (NLNodeP) nodes.iterator().next();
 		if (fn.getPos().equals("VB"))
 			return RequestType.INFO;
-		
 
 		for (Node n : reqPattern.getNodes()) {
 			NLNodeP nn = (NLNodeP) n;
@@ -109,6 +108,11 @@ public class UserRequest {
 		for (WhWords w : WhWords.values())
 			if (partsOfSpeech.contains(w.toString().toUpperCase()))
 				return RequestType.INFO;
+
+		if (partsOfSpeech.contains("VBZ") || partsOfSpeech.contains("VBP"))
+			return RequestType.NEW_INFO;
+		if (req.contains(" is "))
+			return RequestType.NEW_INFO;
 
 		return RequestType.DETAIL;
 
@@ -148,20 +152,20 @@ public class UserRequest {
 			if (!GMQ.getBestMatches().isEmpty()) {
 				Match bestMatch = GMQ.getBestMatches().get(0);
 				SimpleGraph gph = (SimpleGraph) bestMatch.getGraph();
-						
+
 				GraphPattern uns = bestMatch.getUnsolvedPart();
 				MatchMaker mm = new MatchMaker();
 				g = mm.nowKiss(gph, uns);
 				labels = getNodeLabels(entry.getValue());
 
 				switch (type) {
-				case IF:
+					case IF:
 					removeUnwantedNodes(g, labels);
 					g = GT.flattenGraph(g);
 					GT.computeArticles(reqPattern, g);
 
 					break;
-				case INFO:
+					case INFO:
 					reqLabels = getNodeLabels(reqPattern);
 					reqLabels.removeAll(labels);
 					removeUnwantedNodes(g, reqLabels);
@@ -174,7 +178,9 @@ public class UserRequest {
 					}
 
 					break;
-				case WHQUESTION:
+					case NEW_INFO: // nothing to do here
+					return null;
+					case WHQUESTION:
 					reqLabels = getNodeLabels(reqPattern);
 					removeUnwantedNodes(g, reqLabels);
 					g = GT.flattenGraph(g);
